@@ -1,6 +1,7 @@
 #include <cmath>
 #include <stdint.h>
 #include "tensor.hpp"
+#include "kernel_SwiGLU.hpp"
 
 using namespace std;
 
