@@ -1,0 +1,65 @@
+{
+    "1": {
+        "name": "kernel_matmul_Pipeline_VITIS_LOOP_26_3",
+        "file": "kernel_matmul.cpp",
+        "fileloc": "25",
+        "instructions": "40",
+        "total_instructions": "40",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "7",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "4"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "kernel_matmul",
+        "file": "kernel_matmul.cpp",
+        "fileloc": "4",
+        "instructions": "68",
+        "total_instructions": "137",
+        "calls": "2 1",
+        "basicblocks": "4",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "5",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "kernel_matmul_Pipeline_VITIS_LOOP_17_1",
+        "file": "kernel_matmul.cpp",
+        "fileloc": "17",
+        "instructions": "29",
+        "total_instructions": "29",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "5",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "3"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

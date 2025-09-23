@@ -1,0 +1,12 @@
+<pragmas>
+<pragma file="kernel_matmul.cpp" line="24" pragmaType="loop_tripcount" parentfunction="kernel_matmul" min="768" max="2048" avg="1408"/>
+<pragma file="kernel_matmul.cpp" line="27" pragmaType="pipeline" parentfunction="kernel_matmul" off="0" ii="1" rewind="0" style=""/>
+<pragma file="kernel_matmul.cpp" line="28" pragmaType="loop_tripcount" parentfunction="kernel_matmul" min="768" max="768" avg="768"/>
+<pragma file="kernel_matmul.cpp" line="18" pragmaType="pipeline" parentfunction="kernel_matmul" off="0" ii="1" rewind="0" style=""/>
+<pragma file="kernel_matmul.cpp" line="6" pragmaType="interface" parentfunction="kernel_matmul" mode="m_axi" port="i_vec" bundle="gmem0" offset="" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="32" channel=""/>
+<pragma file="kernel_matmul.cpp" line="7" pragmaType="interface" parentfunction="kernel_matmul" mode="m_axi" port="i_mat" bundle="gmem1" offset="" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="32" channel=""/>
+<pragma file="kernel_matmul.cpp" line="8" pragmaType="interface" parentfunction="kernel_matmul" mode="m_axi" port="o_vec" bundle="gmem0" offset="" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="32" channel=""/>
+<pragma file="kernel_matmul.cpp" line="9" pragmaType="interface" parentfunction="kernel_matmul" mode="s_axilite" port="vec_size" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="kernel_matmul.cpp" line="10" pragmaType="interface" parentfunction="kernel_matmul" mode="s_axilite" port="col_size" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="kernel_matmul.cpp" line="11" pragmaType="interface" parentfunction="kernel_matmul" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+</pragmas>
