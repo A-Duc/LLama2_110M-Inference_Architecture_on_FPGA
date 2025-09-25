@@ -1,4 +1,0 @@
-12 warnings and 31 errors generated.
-Error while processing C:\NCKH\LLma2_110M---UIT\Source_Code\llama_hls\solution1\.autopilot\db\llama_hls_top.pp.0.cpp.
-clang-tidy applied 132 of 132 suggested fixes.
-Suppressed 12 warnings (12 with check filters).

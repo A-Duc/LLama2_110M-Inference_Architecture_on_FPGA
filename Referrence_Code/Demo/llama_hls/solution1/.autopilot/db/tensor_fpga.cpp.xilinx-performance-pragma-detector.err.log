@@ -1,5 +1,0 @@
-In file included from C:\NCKH\LLma2_110M---UIT\Source_Code\tensor_fpga.cpp:1:
-In file included from C:\NCKH\LLma2_110M---UIT\Source_Code/tensor_fpga.hpp:9:
-C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:26:10: fatal error: 'cmath' file not found
-#include <cmath>
-         ^~~~~~~
