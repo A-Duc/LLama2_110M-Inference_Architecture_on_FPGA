@@ -11,7 +11,7 @@ int main() {
         return 1;
     }
 
-    const int SIN_LUT_SIZE = 1024;
+    const int SIN_LUT_SIZE = 4096;
     sin_file << std::fixed << std::setprecision(10);
     for (int i = 0; i < SIN_LUT_SIZE; ++i) {
         double angle = i * (M_PI / 2) / (SIN_LUT_SIZE - 1);

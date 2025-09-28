@@ -175,12 +175,13 @@ void kernel_rope_fixed(hls::stream<data_t> &q_input_stream,
                       hls::stream<token_t> &token_stream, 
                       hls::stream<data_t> &q_output_stream,
                       hls::stream<data_t> &k_output_stream) {
-    #pragma HLS INTERFACE axis port=q_input_stream
-    #pragma HLS INTERFACE axis port=k_input_stream
-    #pragma HLS INTERFACE axis port=token_stream
-    #pragma HLS INTERFACE axis port=q_output_stream
-    #pragma HLS INTERFACE axis port=k_output_stream
-    #pragma HLS INTERFACE s_axilite port=return
+                #pragma HLS INTERFACE axis port=q_input_stream
+                #pragma HLS INTERFACE axis port=k_input_stream
+                #pragma HLS INTERFACE axis port=token_stream
+                #pragma HLS INTERFACE axis port=q_output_stream
+                #pragma HLS INTERFACE axis port=k_output_stream
+                #pragma HLS INTERFACE axis port=index_debug_stream
+                #pragma HLS INTERFACE s_axilite port=return
     
     data_t q_buffer[DIM];
     data_t k_buffer[DIM];
@@ -193,6 +194,38 @@ void kernel_rope_fixed(hls::stream<data_t> &q_input_stream,
     #pragma HLS DATAFLOW
     
     read_data(q_input_stream, q_buffer);
+                    // Debug: sinh index LUT cho Q
+                    for (int i = 0; i < HALF_DIM; ++i) {
+                        ap_uint<12> index_debug = 0;
+                        token_t token = current_token;
+                        addr_t dim_idx = (addr_t)i;
+                        sin_cos_t s, c;
+                        // Tính index LUT cho debug
+                        wide_t wide_token = (wide_t)token;
+                        wide_t wide_inv = (wide_t)inv_freq_lut[(unsigned)dim_idx];
+                        wide_t wide_angle = wide_token * wide_inv;
+                        SinCosPair pair = lut_eval_optimized(wide_angle);
+                        // Tính lại index như trong lut_eval_optimized
+                        const data_t inv_half_pi = (data_t)0.6366197723675814;
+                        const data_t half_pi = (data_t)1.5707963267948966;
+                        const int Q = SIN_COS_LUT_SIZE;
+                        wide_t normalized_theta = wide_angle;
+                        if (wide_angle < 0) {
+                            data_t two_pi = (data_t)6.283185307179586;
+                            normalized_theta = wide_angle + two_pi * ((int)(-wide_angle * (data_t)0.15915494309189535) + 1);
+                        }
+                        data_t two_pi = (data_t)6.283185307179586;
+                        while (normalized_theta >= two_pi) {
+                            normalized_theta -= two_pi;
+                        }
+                        data_t quadrant_real = normalized_theta * inv_half_pi;
+                        ap_uint<2> quadrant = (ap_uint<2>)quadrant_real;
+                        data_t angle_in_quad = normalized_theta - (data_t)quadrant * half_pi;
+                        data_t scaled_angle = angle_in_quad * inv_half_pi;
+                        ap_uint<12> index = (ap_uint<12>)(scaled_angle * (Q - 1));
+                        if (index >= Q) index = Q - 1;
+                        index_debug_stream.write(index);
+                    }
     rope_compute(q_buffer, current_token, q_output_stream);
     read_data(k_input_stream, k_buffer);
     rope_compute(k_buffer, current_token, k_output_stream);

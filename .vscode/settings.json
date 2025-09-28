@@ -58,6 +58,9 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "chrono": "cpp",
-    "cmath": "cpp"
-  }
+    "cmath": "cpp",
+    "variant": "cpp",
+    "format": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }

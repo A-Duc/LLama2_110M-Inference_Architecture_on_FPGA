@@ -23,10 +23,6 @@ void kernel_rope_fixed(
     hls::stream<data_t> &k_out
 );
 
-// ---------------------------
-// RoPE reference CPU implementation (float)
-// ---------------------------
-// Note: This reference uses standard RoPE formula with cos/sin
 void rope_ref(const float q_in[DIM], const float k_in[DIM],
               float q_out[DIM], float k_out[DIM],
               token_t pos)
@@ -116,7 +112,7 @@ int main() {
 
     // Print first 10 results for debug
     std::cout << std::fixed << std::setprecision(4);
-    std::cout << "Index | Theta    | Q_IN     | Q_HW     | Q_REF     | K_IN      | K_HW      | K_REF" << std::endl;
+    std::cout << "Index     | Theta       | Q_IN           | Q_HW           | Q_REF         | K_IN           | K_HW           | K_REF" << std::endl;
     for (int i = 0; i < 10; i += 2) {  // Print per pair
         float freq = 1.0f / powf(10000.0f, 2.0f * i / (float)DIM);
         float theta = pos * freq;
