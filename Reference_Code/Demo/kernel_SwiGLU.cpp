@@ -8,9 +8,6 @@ using namespace std;
 extern "C"{
 void SwiGLU(float*  local_vec_i,
             float*  local_vec_o,
-            float*  local_vec_b1,
-            float*  local_vec_b2,
-            float*  local_vec_b3,
             float*  local_vec_W1,
             float*  local_vec_W2,
             float*  local_vec_W3){
@@ -39,14 +36,12 @@ void SwiGLU(float*  local_vec_i,
         for (int j = 0; j < kDim; j++)
 #pragma HLS PIPELINE II=1
             z1[i] += local_vec_i[j] * local_vec_W1[j * kFFNDim + i];
-        z1[i] += local_vec_b1[i];
     }
 
     for (int i = 0; i < kFFNDim; i++){
         for (int j = 0; j < kDim; j++)
 #pragma HLS PIPELINE II=1
             z2[i] += local_vec_i[j] * local_vec_W2[j * kFFNDim + i];
-        z2[i] += local_vec_b2[i];
     }
     
     for (int i = 0; i < kFFNDim; i++){
@@ -66,9 +61,5 @@ void SwiGLU(float*  local_vec_i,
 #pragma HLS PIPELINE II=1
             local_vec_o[i] += z3[j] * local_vec_W3[j * kDim + i];
     }
-
-    for (int i = 0; i < kDim; i++)
-#pragma HLS PIPELINE II=1
-        local_vec_o[i] += local_vec_b3[i];
 }
 }
