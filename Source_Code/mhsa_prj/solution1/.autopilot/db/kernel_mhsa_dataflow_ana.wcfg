@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="kernel_mhsa.wdb" id="1">
+         <top_modules>
+            <top_module name="apa_kernel_mhsa_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0ns"></ZoomStartTime>
+      <ZoomEndTime time="2000ns"></ZoomEndTime>
+      <Cursor1Time time="0ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="257"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="HLS Process Summary Group">
+      <obj_property name="label">HLS Process Summary</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa//AESL_inst_kernel_mhsa_activity">
+         <obj_property name="label">AESL_inst_kernel_mhsa_activity</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="UseFullPath">true</obj_property>
+         <obj_property name="ElementShortName">AESL_inst_kernel_mhsa_activity</obj_property>
+         <obj_property name="ObjectShortName">AESL_inst_kernel_mhsa_activity</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+         <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">turquoise</obj_property>
+         <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+         <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa//AESL_inst_kernel_mhsa_activity.dataflowTxWaveData.Cycles</obj_property>
+         <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa//AESL_inst_kernel_mhsa_activity.dataflowTxWaveData.OutStanding</obj_property>
+         <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa//AESL_inst_kernel_mhsa_activity.dataflowTxTooltipData</obj_property>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity">
+            <obj_property name="label">grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity">
+               <obj_property name="label">grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/grp_matmul_1_fu_1730_activity">
+            <obj_property name="label">grp_matmul_1_fu_1730_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_matmul_1_fu_1730_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_matmul_1_fu_1730_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/grp_matmul_1_fu_1730_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/grp_matmul_1_fu_1730_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/grp_matmul_1_fu_1730_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/load_vec_U0_activity">
+               <obj_property name="label">load_vec_U0_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">load_vec_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">load_vec_U0_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/load_vec_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/load_vec_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/load_vec_U0_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/load_mat_U0_activity">
+               <obj_property name="label">load_mat_U0_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">load_mat_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">load_mat_U0_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/load_mat_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/load_mat_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/load_mat_U0_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity">
+                  <obj_property name="label">grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity.dataflowTxTooltipData</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/compute_matmul_U0_activity">
+               <obj_property name="label">compute_matmul_U0_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">compute_matmul_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">compute_matmul_U0_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/compute_matmul_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/compute_matmul_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/compute_matmul_U0_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity">
+                  <obj_property name="label">grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity.dataflowTxTooltipData</obj_property>
+               </wvobject>
+               <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_execute_dot_product_fu_44/grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity">
+                  <obj_property name="label">grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_execute_dot_product_fu_44/grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_execute_dot_product_fu_44/grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_execute_dot_product_fu_44/grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity.dataflowTxTooltipData</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/store_result_U0_activity">
+               <obj_property name="label">store_result_U0_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">store_result_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">store_result_U0_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/store_result_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/store_result_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/store_result_U0_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_RoPE_fu_1762/grp_RoPE_fu_1762_activity">
+            <obj_property name="label">grp_RoPE_fu_1762_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_RoPE_fu_1762_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_RoPE_fu_1762_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_RoPE_fu_1762/grp_RoPE_fu_1762_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_RoPE_fu_1762/grp_RoPE_fu_1762_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_RoPE_fu_1762/grp_RoPE_fu_1762_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity">
+            <obj_property name="label">grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity">
+               <obj_property name="label">grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity">
+               <obj_property name="label">grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity">
+            <obj_property name="label">grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_softmax_fu_94/grp_kernel_softmax_fu_94_activity">
+               <obj_property name="label">grp_kernel_softmax_fu_94_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_kernel_softmax_fu_94_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_kernel_softmax_fu_94_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_softmax_fu_94/grp_kernel_softmax_fu_94_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_softmax_fu_94/grp_kernel_softmax_fu_94_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_softmax_fu_94/grp_kernel_softmax_fu_94_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa//AESL_inst_kernel_mhsa_activity">
+      <obj_property name="ElementShortName">AESL_inst_kernel_mhsa_activity</obj_property>
+      <obj_property name="ObjectShortName">AESL_inst_kernel_mhsa_activity</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="AESL_inst_kernel_mhsa_group">
+      <obj_property name="label">AESL_inst_kernel_mhsa</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/grp_matmul_1_fu_1730_activity">
+         <obj_property name="ElementShortName">grp_matmul_1_fu_1730_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_matmul_1_fu_1730_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_RoPE_fu_1762/grp_RoPE_fu_1762_activity">
+         <obj_property name="ElementShortName">grp_RoPE_fu_1762_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_RoPE_fu_1762_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity">
+         <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_activity</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="AESL_inst_kernel_mhsa_Handshake_group">
+         <obj_property name="label">Block-level handshake</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/ap_start">
+            <obj_property name="ElementShortName">ap_start</obj_property>
+            <obj_property name="ObjectShortName">ap_start</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/ap_ready">
+            <obj_property name="ElementShortName">ap_ready</obj_property>
+            <obj_property name="ObjectShortName">ap_ready</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/ap_done">
+            <obj_property name="ElementShortName">ap_done</obj_property>
+            <obj_property name="ObjectShortName">ap_done</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_group">
+         <obj_property name="label">grp_kernel_mhsa_Outline_ATT_INIT_fu_1676</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity">
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Outline_ATT_INIT_fu_1676_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_group">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_ATT_INIT_fu_1676/grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_matmul_1_fu_1730_group">
+         <obj_property name="label">grp_matmul_1_fu_1730</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/load_vec_U0_activity">
+            <obj_property name="ElementShortName">load_vec_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">load_vec_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/load_mat_U0_activity">
+            <obj_property name="ElementShortName">load_mat_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">load_mat_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/compute_matmul_U0_activity">
+            <obj_property name="ElementShortName">compute_matmul_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">compute_matmul_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/store_result_U0_activity">
+            <obj_property name="ElementShortName">store_result_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">store_result_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_matmul_1_fu_1730_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="load_vec_U0_group">
+            <obj_property name="label">load_vec_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="load_vec_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="load_vec_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/real_start">
+                  <obj_property name="ElementShortName">real_start</obj_property>
+                  <obj_property name="ObjectShortName">real_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="load_vec_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="vector_stream_group">
+                  <obj_property name="label">vector_stream(vector_stream_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/vector_stream_blk_n">
+                     <obj_property name="ElementShortName">vector_stream_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">vector_stream_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/vector_stream_din">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/vector_stream_full_n">
+                     <obj_property name="ElementShortName">vector_stream_full_n</obj_property>
+                     <obj_property name="ObjectShortName">vector_stream_full_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_vec_U0/vector_stream_write">
+                     <obj_property name="ElementShortName">vector_stream_write</obj_property>
+                     <obj_property name="ObjectShortName">vector_stream_write</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="load_mat_U0_group">
+            <obj_property name="label">load_mat_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity">
+               <obj_property name="ElementShortName">grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_activity</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="load_mat_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="load_mat_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="load_mat_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="matrix_stream_group">
+                  <obj_property name="label">matrix_stream(matrix_stream_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/matrix_stream_din">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/matrix_stream_full_n">
+                     <obj_property name="ElementShortName">matrix_stream_full_n</obj_property>
+                     <obj_property name="ObjectShortName">matrix_stream_full_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/matrix_stream_write">
+                     <obj_property name="ElementShortName">matrix_stream_write</obj_property>
+                     <obj_property name="ObjectShortName">matrix_stream_write</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_group">
+               <obj_property name="label">grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/load_mat_U0/grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="compute_matmul_U0_group">
+            <obj_property name="label">compute_matmul_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity">
+               <obj_property name="ElementShortName">grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_activity</obj_property>
+            </wvobject>
+            <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_execute_dot_product_fu_44/grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity">
+               <obj_property name="ElementShortName">grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_compute_matmul_Pipeline_execute_dot_product_fu_44_activity</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="compute_matmul_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="vector_stream_group">
+                  <obj_property name="label">vector_stream(vector_stream_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/vector_stream_dout">
+                     <obj_property name="ElementShortName">vector_stream_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">vector_stream_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/vector_stream_empty_n">
+                     <obj_property name="ElementShortName">vector_stream_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">vector_stream_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/vector_stream_read">
+                     <obj_property name="ElementShortName">vector_stream_read</obj_property>
+                     <obj_property name="ObjectShortName">vector_stream_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="matrix_stream_group">
+                  <obj_property name="label">matrix_stream(matrix_stream_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/matrix_stream_dout">
+                     <obj_property name="ElementShortName">matrix_stream_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">matrix_stream_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/matrix_stream_empty_n">
+                     <obj_property name="ElementShortName">matrix_stream_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">matrix_stream_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/matrix_stream_read">
+                     <obj_property name="ElementShortName">matrix_stream_read</obj_property>
+                     <obj_property name="ObjectShortName">matrix_stream_read</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="compute_matmul_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/real_start">
+                  <obj_property name="ElementShortName">real_start</obj_property>
+                  <obj_property name="ObjectShortName">real_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="compute_matmul_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="result_stream_group">
+                  <obj_property name="label">result_stream(result_stream_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/result_stream_din">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/result_stream_full_n">
+                     <obj_property name="ElementShortName">result_stream_full_n</obj_property>
+                     <obj_property name="ObjectShortName">result_stream_full_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/result_stream_write">
+                     <obj_property name="ElementShortName">result_stream_write</obj_property>
+                     <obj_property name="ObjectShortName">result_stream_write</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_group">
+               <obj_property name="label">grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_VITIS_LOOP_43_1_fu_30/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_compute_matmul_Pipeline_execute_dot_product_fu_44_group">
+               <obj_property name="label">grp_compute_matmul_Pipeline_execute_dot_product_fu_44</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="grp_compute_matmul_Pipeline_execute_dot_product_fu_44_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_execute_dot_product_fu_44/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_execute_dot_product_fu_44/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/compute_matmul_U0/grp_compute_matmul_Pipeline_execute_dot_product_fu_44/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="store_result_U0_group">
+            <obj_property name="label">store_result_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="store_result_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="result_stream_group">
+                  <obj_property name="label">result_stream(result_stream_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/result_stream_blk_n">
+                     <obj_property name="ElementShortName">result_stream_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">result_stream_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/result_stream_dout">
+                     <obj_property name="ElementShortName">result_stream_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">result_stream_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/result_stream_empty_n">
+                     <obj_property name="ElementShortName">result_stream_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">result_stream_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/result_stream_read">
+                     <obj_property name="ElementShortName">result_stream_read</obj_property>
+                     <obj_property name="ObjectShortName">result_stream_read</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="store_result_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="store_result_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="out_0_group">
+                  <obj_property name="label">out_0(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_0_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_0_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_0_ce0">
+                     <obj_property name="ElementShortName">out_0_ce0</obj_property>
+                     <obj_property name="ObjectShortName">out_0_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_0_we0">
+                     <obj_property name="ElementShortName">out_0_we0</obj_property>
+                     <obj_property name="ObjectShortName">out_0_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="out_1_group">
+                  <obj_property name="label">out_1(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_1_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_1_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_1_ce0">
+                     <obj_property name="ElementShortName">out_1_ce0</obj_property>
+                     <obj_property name="ObjectShortName">out_1_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_1_we0">
+                     <obj_property name="ElementShortName">out_1_we0</obj_property>
+                     <obj_property name="ObjectShortName">out_1_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="out_2_group">
+                  <obj_property name="label">out_2(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_2_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_2_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_2_ce0">
+                     <obj_property name="ElementShortName">out_2_ce0</obj_property>
+                     <obj_property name="ObjectShortName">out_2_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_2_we0">
+                     <obj_property name="ElementShortName">out_2_we0</obj_property>
+                     <obj_property name="ObjectShortName">out_2_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="out_3_group">
+                  <obj_property name="label">out_3(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_3_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_3_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_3_ce0">
+                     <obj_property name="ElementShortName">out_3_ce0</obj_property>
+                     <obj_property name="ObjectShortName">out_3_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_3_we0">
+                     <obj_property name="ElementShortName">out_3_we0</obj_property>
+                     <obj_property name="ObjectShortName">out_3_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="out_4_group">
+                  <obj_property name="label">out_4(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_4_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_4_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_4_ce0">
+                     <obj_property name="ElementShortName">out_4_ce0</obj_property>
+                     <obj_property name="ObjectShortName">out_4_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_4_we0">
+                     <obj_property name="ElementShortName">out_4_we0</obj_property>
+                     <obj_property name="ObjectShortName">out_4_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="out_5_group">
+                  <obj_property name="label">out_5(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_5_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_5_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_5_ce0">
+                     <obj_property name="ElementShortName">out_5_ce0</obj_property>
+                     <obj_property name="ObjectShortName">out_5_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_5_we0">
+                     <obj_property name="ElementShortName">out_5_we0</obj_property>
+                     <obj_property name="ObjectShortName">out_5_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="out_6_group">
+                  <obj_property name="label">out_6(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_6_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_6_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_6_ce0">
+                     <obj_property name="ElementShortName">out_6_ce0</obj_property>
+                     <obj_property name="ObjectShortName">out_6_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_6_we0">
+                     <obj_property name="ElementShortName">out_6_we0</obj_property>
+                     <obj_property name="ObjectShortName">out_6_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="out_7_group">
+                  <obj_property name="label">out_7(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_7_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_7_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_7_ce0">
+                     <obj_property name="ElementShortName">out_7_ce0</obj_property>
+                     <obj_property name="ObjectShortName">out_7_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/out_7_we0">
+                     <obj_property name="ElementShortName">out_7_we0</obj_property>
+                     <obj_property name="ObjectShortName">out_7_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_matmul_1_fu_1730/store_result_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_RoPE_fu_1762_group">
+         <obj_property name="label">grp_RoPE_fu_1762</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_RoPE_fu_1762_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_RoPE_fu_1762/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_RoPE_fu_1762/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_RoPE_fu_1762/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_group">
+         <obj_property name="label">grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity">
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity">
+            <obj_property name="ElementShortName">grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_group">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_Q_LOAD_fu_556/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_group">
+            <obj_property name="label">grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207/grp_kernel_mhsa_Pipeline_TOKEN_COMPUTE_fu_641/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_group">
+         <obj_property name="label">grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_softmax_fu_94/grp_kernel_softmax_fu_94_activity">
+            <obj_property name="ElementShortName">grp_kernel_softmax_fu_94_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_kernel_softmax_fu_94_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_kernel_softmax_fu_94_group">
+            <obj_property name="label">grp_kernel_softmax_fu_94</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_kernel_softmax_fu_94_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_softmax_fu_94/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_softmax_fu_94/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426/grp_kernel_softmax_fu_94/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_group">
+         <obj_property name="label">grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_kernel_mhsa_top/AESL_inst_kernel_mhsa/grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

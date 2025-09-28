@@ -1,8 +1,6 @@
-#include <hls_math.h>
-
-void kernel_softmax(float* i_vec, float* o_vec, int vec_size) {
+#include "kernel_Softmax.hpp"
+void kernel_softmax(float* i_vec, int vec_size) {
 #pragma HLS INTERFACE m_axi port = i_vec bundle = gmem0 max_widen_bitwidth = 32
-#pragma HLS INTERFACE m_axi port = o_vec bundle = gmem0 max_widen_bitwidth = 32
 #pragma HLS INTERFACE s_axilite port = vec_size bundle = control
 #pragma HLS INTERFACE s_axilite port = return bundle = control
 
@@ -37,8 +35,8 @@ void kernel_softmax(float* i_vec, float* o_vec, int vec_size) {
   normalize: for (int i = 0; i < 768; i++) {
 #pragma HLS PIPELINE II=1 rewind
 #pragma HLS LOOP_TRIPCOUNT min=768 max=768
-#pragma HLS DEPENDENCE variable=o_vec inter false
-    o_vec[i] = vec_local[i] / sum;
+#pragma HLS DEPENDENCE variable=i_vec inter false
+    i_vec[i] = vec_local[i] / sum;
   }
 }
 

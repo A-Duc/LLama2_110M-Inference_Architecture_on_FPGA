@@ -1,0 +1,243 @@
+
+
+================================================================
+== Vitis HLS Report for 'kernel_mhsa_Pipeline_ACCUM_WRITEBACK'
+================================================================
+* Date:           Sat Sep 27 23:15:47 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        mhsa_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.668 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min    |    max    | min | max |                      Type                      |
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+    |       18|       18|  72.000 ns|  72.000 ns|   17|   17|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- ACCUM_WRITEBACK  |       16|       16|         1|          1|          1|    16|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|       17|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        0|     2688|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|       17|     -|
+|Register             |        -|      -|        9|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|        9|     2722|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     2494|   3616|  1716138|   858069|   641|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     7482|  10848|  5148416|  2574208|  1925|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------+-----------------------+---------+----+---+-----+-----+
+    |           Instance          |         Module        | BRAM_18K| DSP| FF| LUT | URAM|
+    +-----------------------------+-----------------------+---------+----+---+-----+-----+
+    |sparsemux_33_6_32_1_1_U1273  |sparsemux_33_6_32_1_1  |        0|   0|  0|  672|    0|
+    |sparsemux_33_6_32_1_1_U1274  |sparsemux_33_6_32_1_1  |        0|   0|  0|  672|    0|
+    |sparsemux_33_6_32_1_1_U1275  |sparsemux_33_6_32_1_1  |        0|   0|  0|  672|    0|
+    |sparsemux_33_6_32_1_1_U1276  |sparsemux_33_6_32_1_1  |        0|   0|  0|  672|    0|
+    +-----------------------------+-----------------------+---------+----+---+-----+-----+
+    |Total                        |                       |        0|   0|  0| 2688|    0|
+    +-----------------------------+-----------------------+---------+----+---+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |add_ln213_fu_1122_p2   |         +|   0|  0|   8|           7|           3|
+    |add_ln216_fu_841_p2    |         +|   0|  0|   8|           7|           7|
+    |icmp_ln216_fu_1084_p2  |      icmp|   0|  0|   1|           3|           1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0|  17|          17|          11|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |ap_done_int           |   1|          2|    1|          2|
+    |ap_sig_allocacmp_i_9  |   8|          2|    7|         14|
+    |i_fu_218              |   8|          2|    7|         14|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 |  17|          6|   15|         30|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+---+----+-----+-----------+
+    |     Name    | FF| LUT| Bits| Const Bits|
+    +-------------+---+----+-----+-----------+
+    |ap_CS_fsm    |  1|   0|    1|          0|
+    |ap_done_reg  |  1|   0|    1|          0|
+    |i_fu_218     |  7|   0|    7|          0|
+    +-------------+---+----+-----+-----------+
+    |Total        |  9|   0|    9|          0|
+    +-------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+--------------------------------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  |             Source Object            |    C Type    |
++---------------------+-----+-----+------------+--------------------------------------+--------------+
+|ap_clk               |   in|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_rst               |   in|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_start             |   in|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_done              |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_idle              |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_ready             |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_ACCUM_WRITEBACK|  return value|
+|xb_7_address0        |  out|    7|   ap_memory|                                  xb_7|         array|
+|xb_7_ce0             |  out|    1|   ap_memory|                                  xb_7|         array|
+|xb_7_we0             |  out|    1|   ap_memory|                                  xb_7|         array|
+|xb_7_d0              |  out|   32|   ap_memory|                                  xb_7|         array|
+|xb_6_address0        |  out|    7|   ap_memory|                                  xb_6|         array|
+|xb_6_ce0             |  out|    1|   ap_memory|                                  xb_6|         array|
+|xb_6_we0             |  out|    1|   ap_memory|                                  xb_6|         array|
+|xb_6_d0              |  out|   32|   ap_memory|                                  xb_6|         array|
+|xb_5_address0        |  out|    7|   ap_memory|                                  xb_5|         array|
+|xb_5_ce0             |  out|    1|   ap_memory|                                  xb_5|         array|
+|xb_5_we0             |  out|    1|   ap_memory|                                  xb_5|         array|
+|xb_5_d0              |  out|   32|   ap_memory|                                  xb_5|         array|
+|xb_4_address0        |  out|    7|   ap_memory|                                  xb_4|         array|
+|xb_4_ce0             |  out|    1|   ap_memory|                                  xb_4|         array|
+|xb_4_we0             |  out|    1|   ap_memory|                                  xb_4|         array|
+|xb_4_d0              |  out|   32|   ap_memory|                                  xb_4|         array|
+|xb_3_address0        |  out|    7|   ap_memory|                                  xb_3|         array|
+|xb_3_ce0             |  out|    1|   ap_memory|                                  xb_3|         array|
+|xb_3_we0             |  out|    1|   ap_memory|                                  xb_3|         array|
+|xb_3_d0              |  out|   32|   ap_memory|                                  xb_3|         array|
+|xb_2_address0        |  out|    7|   ap_memory|                                  xb_2|         array|
+|xb_2_ce0             |  out|    1|   ap_memory|                                  xb_2|         array|
+|xb_2_we0             |  out|    1|   ap_memory|                                  xb_2|         array|
+|xb_2_d0              |  out|   32|   ap_memory|                                  xb_2|         array|
+|xb_1_address0        |  out|    7|   ap_memory|                                  xb_1|         array|
+|xb_1_ce0             |  out|    1|   ap_memory|                                  xb_1|         array|
+|xb_1_we0             |  out|    1|   ap_memory|                                  xb_1|         array|
+|xb_1_d0              |  out|   32|   ap_memory|                                  xb_1|         array|
+|xb_address0          |  out|    7|   ap_memory|                                    xb|         array|
+|xb_ce0               |  out|    1|   ap_memory|                                    xb|         array|
+|xb_we0               |  out|    1|   ap_memory|                                    xb|         array|
+|xb_d0                |  out|   32|   ap_memory|                                    xb|         array|
+|local_accum_load     |   in|   32|     ap_none|                      local_accum_load|        scalar|
+|local_accum_4_load   |   in|   32|     ap_none|                    local_accum_4_load|        scalar|
+|local_accum_8_load   |   in|   32|     ap_none|                    local_accum_8_load|        scalar|
+|local_accum_12_load  |   in|   32|     ap_none|                   local_accum_12_load|        scalar|
+|local_accum_16_load  |   in|   32|     ap_none|                   local_accum_16_load|        scalar|
+|local_accum_20_load  |   in|   32|     ap_none|                   local_accum_20_load|        scalar|
+|local_accum_24_load  |   in|   32|     ap_none|                   local_accum_24_load|        scalar|
+|local_accum_28_load  |   in|   32|     ap_none|                   local_accum_28_load|        scalar|
+|local_accum_32_load  |   in|   32|     ap_none|                   local_accum_32_load|        scalar|
+|local_accum_36_load  |   in|   32|     ap_none|                   local_accum_36_load|        scalar|
+|local_accum_40_load  |   in|   32|     ap_none|                   local_accum_40_load|        scalar|
+|local_accum_44_load  |   in|   32|     ap_none|                   local_accum_44_load|        scalar|
+|local_accum_48_load  |   in|   32|     ap_none|                   local_accum_48_load|        scalar|
+|local_accum_52_load  |   in|   32|     ap_none|                   local_accum_52_load|        scalar|
+|local_accum_56_load  |   in|   32|     ap_none|                   local_accum_56_load|        scalar|
+|local_accum_60_load  |   in|   32|     ap_none|                   local_accum_60_load|        scalar|
+|p_udiv1              |   in|    7|     ap_none|                               p_udiv1|        scalar|
+|local_accum_1_load   |   in|   32|     ap_none|                    local_accum_1_load|        scalar|
+|local_accum_5_load   |   in|   32|     ap_none|                    local_accum_5_load|        scalar|
+|local_accum_9_load   |   in|   32|     ap_none|                    local_accum_9_load|        scalar|
+|local_accum_13_load  |   in|   32|     ap_none|                   local_accum_13_load|        scalar|
+|local_accum_17_load  |   in|   32|     ap_none|                   local_accum_17_load|        scalar|
+|local_accum_21_load  |   in|   32|     ap_none|                   local_accum_21_load|        scalar|
+|local_accum_25_load  |   in|   32|     ap_none|                   local_accum_25_load|        scalar|
+|local_accum_29_load  |   in|   32|     ap_none|                   local_accum_29_load|        scalar|
+|local_accum_33_load  |   in|   32|     ap_none|                   local_accum_33_load|        scalar|
+|local_accum_37_load  |   in|   32|     ap_none|                   local_accum_37_load|        scalar|
+|local_accum_41_load  |   in|   32|     ap_none|                   local_accum_41_load|        scalar|
+|local_accum_45_load  |   in|   32|     ap_none|                   local_accum_45_load|        scalar|
+|local_accum_49_load  |   in|   32|     ap_none|                   local_accum_49_load|        scalar|
+|local_accum_53_load  |   in|   32|     ap_none|                   local_accum_53_load|        scalar|
+|local_accum_57_load  |   in|   32|     ap_none|                   local_accum_57_load|        scalar|
+|local_accum_61_load  |   in|   32|     ap_none|                   local_accum_61_load|        scalar|
+|local_accum_2_load   |   in|   32|     ap_none|                    local_accum_2_load|        scalar|
+|local_accum_6_load   |   in|   32|     ap_none|                    local_accum_6_load|        scalar|
+|local_accum_10_load  |   in|   32|     ap_none|                   local_accum_10_load|        scalar|
+|local_accum_14_load  |   in|   32|     ap_none|                   local_accum_14_load|        scalar|
+|local_accum_18_load  |   in|   32|     ap_none|                   local_accum_18_load|        scalar|
+|local_accum_22_load  |   in|   32|     ap_none|                   local_accum_22_load|        scalar|
+|local_accum_26_load  |   in|   32|     ap_none|                   local_accum_26_load|        scalar|
+|local_accum_30_load  |   in|   32|     ap_none|                   local_accum_30_load|        scalar|
+|local_accum_34_load  |   in|   32|     ap_none|                   local_accum_34_load|        scalar|
+|local_accum_38_load  |   in|   32|     ap_none|                   local_accum_38_load|        scalar|
+|local_accum_42_load  |   in|   32|     ap_none|                   local_accum_42_load|        scalar|
+|local_accum_46_load  |   in|   32|     ap_none|                   local_accum_46_load|        scalar|
+|local_accum_50_load  |   in|   32|     ap_none|                   local_accum_50_load|        scalar|
+|local_accum_54_load  |   in|   32|     ap_none|                   local_accum_54_load|        scalar|
+|local_accum_58_load  |   in|   32|     ap_none|                   local_accum_58_load|        scalar|
+|local_accum_62_load  |   in|   32|     ap_none|                   local_accum_62_load|        scalar|
+|local_accum_3_load   |   in|   32|     ap_none|                    local_accum_3_load|        scalar|
+|local_accum_7_load   |   in|   32|     ap_none|                    local_accum_7_load|        scalar|
+|local_accum_11_load  |   in|   32|     ap_none|                   local_accum_11_load|        scalar|
+|local_accum_15_load  |   in|   32|     ap_none|                   local_accum_15_load|        scalar|
+|local_accum_19_load  |   in|   32|     ap_none|                   local_accum_19_load|        scalar|
+|local_accum_23_load  |   in|   32|     ap_none|                   local_accum_23_load|        scalar|
+|local_accum_27_load  |   in|   32|     ap_none|                   local_accum_27_load|        scalar|
+|local_accum_31_load  |   in|   32|     ap_none|                   local_accum_31_load|        scalar|
+|local_accum_35_load  |   in|   32|     ap_none|                   local_accum_35_load|        scalar|
+|local_accum_39_load  |   in|   32|     ap_none|                   local_accum_39_load|        scalar|
+|local_accum_43_load  |   in|   32|     ap_none|                   local_accum_43_load|        scalar|
+|local_accum_47_load  |   in|   32|     ap_none|                   local_accum_47_load|        scalar|
+|local_accum_51_load  |   in|   32|     ap_none|                   local_accum_51_load|        scalar|
+|local_accum_55_load  |   in|   32|     ap_none|                   local_accum_55_load|        scalar|
+|local_accum_59_load  |   in|   32|     ap_none|                   local_accum_59_load|        scalar|
+|local_accum_63_load  |   in|   32|     ap_none|                   local_accum_63_load|        scalar|
++---------------------+-----+-----+------------+--------------------------------------+--------------+
+

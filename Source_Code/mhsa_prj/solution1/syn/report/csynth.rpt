@@ -1,0 +1,1150 @@
+
+
+================================================================
+== Synthesis Summary Report of 'kernel_mhsa'
+================================================================
++ General Information: 
+    * Date:           Sat Sep 27 23:16:00 2025
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        mhsa_prj
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: versalhbm
+    * Target device:  xcv80-lsva4737-2MHP-e-S
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------------------+---------+-------+----------+-----------+----------+----------+---------+----------+--------------+----------+-------------+-------------+-----+
+    |                      Modules                      |  Issue  |       |        Latency       | Iteration|          |   Trip  |          |              |          |             |             |     |
+    |                      & Loops                      |   Type  | Slack | (cycles) |    (ns)   |  Latency | Interval |  Count  | Pipelined|     BRAM     |    DSP   |      FF     |     LUT     | URAM|
+    +---------------------------------------------------+---------+-------+----------+-----------+----------+----------+---------+----------+--------------+----------+-------------+-------------+-----+
+    |+ kernel_mhsa                                      |   Timing|  -0.35|  38961597|  1.558e+08|         -|  38961598|        -|        no|  18464 (246%)|  65 (~0%)|  25592 (~0%)|   97883 (3%)|    -|
+    | + kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER      |        -|   0.60|   4718594|  1.887e+07|         -|   4718593|        -|    rewind|             -|         -|     73 (~0%)|    163 (~0%)|    -|
+    |  o INIT_OUTER_INIT_INNER                          |        -|   2.92|   4718592|  1.887e+07|         2|         1|  4718592|       yes|             -|         -|            -|            -|    -|
+    | + kernel_mhsa_Pipeline_INPUT_COPY                 |        -|   0.68|       770|  3.080e+03|         -|       769|        -|    rewind|             -|         -|     23 (~0%)|     53 (~0%)|    -|
+    |  o INPUT_COPY                                     |        -|   2.92|       768|  3.072e+03|         2|         1|      768|       yes|             -|         -|            -|            -|    -|
+    | + kernel_mhsa_Pipeline_OUTPUT_WRITE               |        -|   0.26|       770|  3.080e+03|         -|       769|        -|    rewind|             -|         -|     16 (~0%)|    149 (~0%)|    -|
+    |  o OUTPUT_WRITE                                   |        -|   2.92|       768|  3.072e+03|         2|         1|      768|       yes|             -|         -|            -|            -|    -|
+    | o LAYER_LOOP                                      |        -|   2.92|  34241436|  1.370e+08|   2853453|         -|       12|        no|             -|         -|            -|            -|    -|
+    |  + kernel_mhsa_Pipeline_VITIS_LOOP_19_1           |        -|   0.05|       772|  3.088e+03|         -|       769|        -|    rewind|             -|   1 (~0%)|     95 (~0%)|    253 (~0%)|    -|
+    |   o VITIS_LOOP_19_1                               |        -|   2.92|       770|  3.080e+03|         4|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |  + kernel_mhsa_Outline_ATT_INIT                   |        -|   0.67|      6193|  2.477e+04|         -|      6193|        -|        no|             -|         -|     24 (~0%)|     75 (~0%)|    -|
+    |   o ATT_INIT                                      |        -|   2.92|      6192|  2.477e+04|       516|         -|       12|        no|             -|         -|            -|            -|    -|
+    |    + kernel_mhsa_Pipeline_VITIS_LOOP_128_1        |        -|   0.71|       514|  2.056e+03|         -|       513|        -|    rewind|             -|         -|     12 (~0%)|     56 (~0%)|    -|
+    |     o VITIS_LOOP_128_1                            |        -|   2.92|       512|  2.048e+03|         1|         1|      512|       yes|             -|         -|            -|            -|    -|
+    |  + kernel_mhsa_Pipeline_XB_INIT                   |        -|   0.78|       770|  3.080e+03|         -|       769|        -|    rewind|             -|         -|     12 (~0%)|     47 (~0%)|    -|
+    |   o XB_INIT                                       |        -|   2.92|       768|  3.072e+03|         1|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |  + kernel_mhsa_Pipeline_VITIS_LOOP_27_2           |        -|   0.04|       775|  3.100e+03|         -|       769|        -|    rewind|             -|   1 (~0%)|    307 (~0%)|    281 (~0%)|    -|
+    |   o VITIS_LOOP_27_2                               |        -|   2.92|       773|  3.092e+03|         7|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |  + matmul_1*                                      |   Timing|  -0.35|    590611|  2.362e+06|         -|    590602|        -|  dataflow|             -|   1 (~0%)|    628 (~0%)|   1714 (~0%)|    -|
+    |   + load_vec                                      |        -|   0.36|       770|  3.080e+03|         -|       769|        -|    rewind|             -|         -|     17 (~0%)|    152 (~0%)|    -|
+    |    o mem_rd                                       |        -|   2.92|       768|  3.072e+03|         2|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |   + load_mat                                      |        -|   0.00|    589838|  2.359e+06|         -|    589838|        -|        no|             -|         -|    100 (~0%)|    331 (~0%)|    -|
+    |    + load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1     |        -|   0.40|    589826|  2.359e+06|         -|    589825|        -|    rewind|             -|         -|     23 (~0%)|    102 (~0%)|    -|
+    |     o mem_rd_VITIS_LOOP_25_1                      |        -|   2.92|    589824|  2.359e+06|         2|         1|   589824|       yes|             -|         -|            -|            -|    -|
+    |   + compute_matmul                                |   Timing|  -0.35|    590601|  2.362e+06|         -|    590601|        -|        no|             -|   1 (~0%)|    302 (~0%)|    914 (~0%)|    -|
+    |    + compute_matmul_Pipeline_VITIS_LOOP_43_1      |        -|   1.42|       770|  3.080e+03|         -|       769|        -|    rewind|             -|         -|     23 (~0%)|     53 (~0%)|    -|
+    |     o VITIS_LOOP_43_1                             |        -|   2.92|       768|  3.072e+03|         2|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |    + compute_matmul_Pipeline_execute_dot_product  |   Timing|  -0.35|    589828|  2.359e+06|         -|    589825|        -|    rewind|             -|   1 (~0%)|    143 (~0%)|    290 (~0%)|    -|
+    |     o execute_dot_product                         |        -|   2.92|    589826|  2.359e+06|         4|         1|   589824|       yes|             -|         -|            -|            -|    -|
+    |   + store_result                                  |        -|   1.42|       770|  3.080e+03|         -|       769|        -|    rewind|             -|         -|     23 (~0%)|     57 (~0%)|    -|
+    |    o mem_wr                                       |        -|   2.92|       768|  3.072e+03|         2|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |  + RoPE                                           |        -|   0.06|       424|  1.696e+03|         -|       424|        -|        no|       1 (~0%)|  26 (~0%)|   2668 (~0%)|   5166 (~0%)|    -|
+    |   o VITIS_LOOP_16_1                               |        -|   2.92|       420|  1.680e+03|        38|         1|      384|       yes|             -|         -|            -|            -|    -|
+    |    + pow_generic_float_s                          |        -|   0.30|        11|     44.000|         -|         1|        -|       yes|       1 (~0%)|   6 (~0%)|    482 (~0%)|   2111 (~0%)|    -|
+    |  + kernel_mhsa_Pipeline_CACHE_STORE               |        -|   0.60|       771|  3.084e+03|         -|       769|        -|    rewind|             -|         -|    108 (~0%)|    261 (~0%)|    -|
+    |   o CACHE_STORE                                   |        -|   2.92|       769|  3.076e+03|         3|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |  + kernel_mhsa_Outline_HEAD_COMPUTE               |        -|   0.32|     51565|  2.063e+05|         -|     51565|        -|        no|             -|  28 (~0%)|   8359 (~0%)|  14731 (~0%)|    -|
+    |   o HEAD_COMPUTE                                  |        -|   2.92|     51564|  2.063e+05|      4297|         -|       12|        no|             -|         -|            -|            -|    -|
+    |    + kernel_mhsa_Pipeline_Q_LOAD                  |        -|   1.18|        66|    264.000|         -|        65|        -|    rewind|             -|         -|   2067 (~0%)|    135 (~0%)|    -|
+    |     o Q_LOAD                                      |        -|   2.92|        64|    256.000|         2|         1|       64|       yes|             -|         -|            -|            -|    -|
+    |    + kernel_mhsa_Pipeline_TOKEN_COMPUTE           |        -|   0.32|      4227|  1.691e+04|         -|      4104|        -|    rewind|             -|  28 (~0%)|   6259 (~0%)|  14558 (~0%)|    -|
+    |     o TOKEN_COMPUTE                               |        -|   2.92|      4225|  1.690e+04|       138|         8|      512|       yes|             -|         -|            -|            -|    -|
+    |  + kernel_mhsa_Outline_SOFTMAX_HEADS              |        -|   0.00|     37285|  1.491e+05|         -|     37285|        -|        no|       2 (~0%)|   3 (~0%)|    850 (~0%)|   1858 (~0%)|    -|
+    |   o SOFTMAX_HEADS                                 |        -|   2.92|     37284|  1.491e+05|      3107|         -|       12|        no|             -|         -|            -|            -|    -|
+    |    + kernel_softmax                               |        -|   0.00|      3105|  1.242e+04|         -|      3105|        -|        no|       2 (~0%)|   3 (~0%)|    834 (~0%)|   1653 (~0%)|    -|
+    |     o load                                        |        -|   2.92|       768|  3.072e+03|         2|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |     o find_max                                    |        -|   2.92|       767|  3.068e+03|         4|         2|      383|       yes|             -|         -|            -|            -|    -|
+    |     o compute                                     |        -|   2.92|       780|  3.120e+03|        14|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |     o normalize                                   |        -|   2.92|       779|  3.116e+03|        13|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |  + kernel_mhsa_Pipeline_RESIDUAL                  |        -|   0.76|       773|  3.092e+03|         -|       769|        -|    rewind|             -|         -|    238 (~0%)|    382 (~0%)|    -|
+    |   o RESIDUAL                                      |        -|   2.92|       771|  3.084e+03|         5|         1|      768|       yes|             -|         -|            -|            -|    -|
+    |  o HEAD_STREAM                                    |        -|   2.92|    393588|  1.574e+06|     32799|         -|       12|        no|             -|         -|            -|            -|    -|
+    |   + kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC   |        -|   0.40|     32776|  1.311e+05|         -|     32770|        -|    rewind|             -|         -|   1346 (~0%)|   6725 (~0%)|    -|
+    |    o TOKEN_STREAM_VALUE_MAC                       |        -|   2.92|     32774|  1.311e+05|         9|         2|    16384|       yes|             -|         -|            -|            -|    -|
+    |   + kernel_mhsa_Pipeline_ACCUM_WRITEBACK          |        -|   0.25|        18|     72.000|         -|        17|        -|    rewind|             -|         -|      9 (~0%)|   2722 (~0%)|    -|
+    |    o ACCUM_WRITEBACK                              |        -|   2.92|        16|     64.000|         1|         1|       16|       yes|             -|         -|            -|            -|    -|
+    +---------------------------------------------------+---------+-------+----------+-----------+----------+----------+---------+----------+--------------+----------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface   | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|             |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem0 | READ_WRITE | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 256          | 256          | 16          | 16          | BRAM=9            |
+| m_axi_gmem1 | READ_ONLY  | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 256          | 16           | 16          | 16          | BRAM=8            |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-----------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register        | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+-----------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL            | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER            | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER          | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR          | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | current_token_1 | 0x10   | 32    | W      | Data signal of current_token     |                                                                      |
+| s_axi_control | current_token_2 | 0x14   | 32    | W      | Data signal of current_token     |                                                                      |
+| s_axi_control | position        | 0x1c   | 32    | W      | Data signal of position          |                                                                      |
+| s_axi_control | weights_1       | 0x24   | 32    | W      | Data signal of weights           |                                                                      |
+| s_axi_control | weights_2       | 0x28   | 32    | W      | Data signal of weights           |                                                                      |
++---------------+-----------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++---------------+-----------+----------+
+| Argument      | Direction | Datatype |
++---------------+-----------+----------+
+| current_token | inout     | float*   |
+| position      | in        | int      |
+| weights       | in        | float*   |
++---------------+-----------+----------+
+
+* SW-to-HW Mapping
++---------------+---------------+-----------+----------+-------------------------------------------+
+| Argument      | HW Interface  | HW Type   | HW Usage | HW Info                                   |
++---------------+---------------+-----------+----------+-------------------------------------------+
+| current_token | m_axi_gmem0   | interface |          | channel=0                                 |
+| current_token | s_axi_control | register  | offset   | name=current_token_1 offset=0x10 range=32 |
+| current_token | s_axi_control | register  | offset   | name=current_token_2 offset=0x14 range=32 |
+| position      | s_axi_control | register  |          | name=position offset=0x1c range=32        |
+| weights       | m_axi_gmem1   | interface |          | channel=0                                 |
+| weights       | s_axi_control | register  | offset   | name=weights_1 offset=0x24 range=32       |
+| weights       | s_axi_control | register  | offset   | name=weights_2 offset=0x28 range=32       |
++---------------+---------------+-----------+----------+-------------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+-----------------+---------------------------+
+| HW Interface | Direction | Length | Width | Loop            | Loop Location             |
++--------------+-----------+--------+-------+-----------------+---------------------------+
+| m_axi_gmem0  | read      | 768    | 32    | INPUT_COPY      | kernel_MHSA.cpp:71:14     |
+| m_axi_gmem0  | write     | 768    | 32    | OUTPUT_WRITE    | kernel_MHSA.cpp:232:19    |
+| m_axi_gmem1  | read      | 589824 | 32    | mem_rd          | kernel_MatMul.cpp:23:3    |
+| m_axi_gmem1  | read      | 768    | 32    | VITIS_LOOP_27_2 | kernel_RMS_Norm.cpp:27:22 |
++--------------+-----------+--------+-------+-----------------+---------------------------+
+
+* All M_AXI Variable Accesses
++--------------+---------------+---------------------------+-----------+--------------+--------+-----------------+---------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable      | Access Location           | Direction | Burst Status | Length | Loop            | Loop Location             | Resolution | Problem                                                                                                 |
++--------------+---------------+---------------------------+-----------+--------------+--------+-----------------+---------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| m_axi_gmem0  | current_token | kernel_MHSA.cpp:73:21     | read      | Widen Fail   |        | INPUT_COPY      | kernel_MHSA.cpp:71:14     | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem0  | current_token | kernel_MHSA.cpp:73:21     | read      | Inferred     | 768    | INPUT_COPY      | kernel_MHSA.cpp:71:14     |            |                                                                                                         |
+| m_axi_gmem0  | current_token | kernel_MHSA.cpp:234:19    | write     | Widen Fail   |        | OUTPUT_WRITE    | kernel_MHSA.cpp:232:19    | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem0  | current_token | kernel_MHSA.cpp:234:19    | write     | Inferred     | 768    | OUTPUT_WRITE    | kernel_MHSA.cpp:232:19    |            |                                                                                                         |
+| m_axi_gmem1  | i_mat         | kernel_MatMul.cpp:28:11   | read      | Inferred     | 589824 | mem_rd          | kernel_MatMul.cpp:23:3    |            |                                                                                                         |
+| m_axi_gmem1  | i_mat         | kernel_RMS_Norm.cpp:28:40 | read      | Widen Fail   |        | VITIS_LOOP_25_1 | kernel_MatMul.cpp:25:19   | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem1  | weights       | kernel_RMS_Norm.cpp:28:40 | read      | Widen Fail   |        | VITIS_LOOP_27_2 | kernel_RMS_Norm.cpp:27:22 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem1  | weights       | kernel_RMS_Norm.cpp:28:40 | read      | Fail         |        | LAYER_LOOP      | kernel_MHSA.cpp:77:17     | 214-230    | Stride is incompatible                                                                                  |
+| m_axi_gmem1  | weights       | kernel_RMS_Norm.cpp:28:40 | read      | Inferred     | 768    | VITIS_LOOP_27_2 | kernel_RMS_Norm.cpp:27:22 |            |                                                                                                         |
++--------------+---------------+---------------------------+-----------+--------------+--------+-----------------+---------------------------+------------+---------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------------------------+-----+--------+------------------------+-----------+--------------------------+---------+
+| Name                                                     | DSP | Pragma | Variable               | Op        | Impl                     | Latency |
++----------------------------------------------------------+-----+--------+------------------------+-----------+--------------------------+---------+
+| + kernel_mhsa                                            | 65  |        |                        |           |                          |         |
+|   sub_ln77_fu_2936_p2                                    |     |        | sub_ln77               | sub       | fabric                   | 0       |
+|   add_ln77_fu_2945_p2                                    |     |        | add_ln77               | add       | fabric                   | 0       |
+|   icmp_ln128_fu_2951_p2                                  |     |        | icmp_ln128             | setne     | auto                     | 0       |
+|   select_ln128_fu_2957_p3                                |     |        | select_ln128           | select    | auto_sel                 | 0       |
+|   icmp_fu_2975_p2                                        |     |        | icmp                   | setne     | auto                     | 0       |
+|   umax_fu_2981_p3                                        |     |        | umax                   | select    | auto_sel                 | 0       |
+|   add_ln77_2_fu_3006_p2                                  |     |        | add_ln77_2             | add       | fabric                   | 0       |
+|   add_ln77_3_fu_3012_p2                                  |     |        | add_ln77_3             | add       | fabric                   | 0       |
+|   add_ln77_4_fu_3018_p2                                  |     |        | add_ln77_4             | add       | fabric                   | 0       |
+|   icmp_ln77_fu_3024_p2                                   |     |        | icmp_ln77              | seteq     | auto                     | 0       |
+|   add_ln77_1_fu_3058_p2                                  |     |        | add_ln77_1             | add       | fabric                   | 0       |
+|   fdiv_32ns_32ns_32_11_no_dsp_1_U1382                    |     |        | div_i                  | fdiv      | fabric                   | 10      |
+|   fadd_32ns_32ns_32_1_primitive_dsp_1_U1381              | 1   |        | p_x_assign             | fadd      | primitivedsp             | 0       |
+|   fsqrt_32ns_32ns_32_15_no_dsp_1_U1383                   |     |        | tmp_s                  | fsqrt     | fabric                   | 14      |
+|   fdiv_32ns_32ns_32_11_no_dsp_1_U1382                    |     |        | norm                   | fdiv      | fabric                   | 10      |
+|   add_ln84_fu_3096_p2                                    |     |        | add_ln84               | add       | fabric                   | 0       |
+|   add_ln86_fu_3106_p2                                    |     |        | add_ln86               | add       | fabric                   | 0       |
+|   add_ln85_fu_3101_p2                                    |     |        | add_ln85               | add       | fabric                   | 0       |
+|   add_ln183_fu_3111_p2                                   |     |        | add_ln183              | add       | fabric                   | 0       |
+|   icmp_ln183_fu_3117_p2                                  |     |        | icmp_ln183             | seteq     | auto                     | 0       |
+|   add_ln87_fu_3451_p2                                    |     |        | add_ln87               | add       | fabric                   | 0       |
+|  + kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER            | 0   |        |                        |           |                          |         |
+|    add_ln33_fu_3209_p2                                   |     |        | add_ln33               | add       | fabric                   | 0       |
+|    icmp_ln33_fu_3215_p2                                  |     |        | icmp_ln33              | seteq     | auto                     | 0       |
+|    icmp_ln35_fu_3227_p2                                  |     |        | icmp_ln35              | seteq     | auto                     | 0       |
+|    select_ln33_fu_3233_p3                                |     |        | select_ln33            | select    | auto_sel                 | 0       |
+|    add_ln33_1_fu_3241_p2                                 |     |        | add_ln33_1             | add       | fabric                   | 0       |
+|    select_ln33_1_fu_3247_p3                              |     |        | select_ln33_1          | select    | auto_sel                 | 0       |
+|    add_ln35_fu_3296_p2                                   |     |        | add_ln35               | add       | fabric                   | 0       |
+|  + kernel_mhsa_Pipeline_INPUT_COPY                       | 0   |        |                        |           |                          |         |
+|    add_ln71_fu_218_p2                                    |     |        | add_ln71               | add       | fabric                   | 0       |
+|    icmp_ln71_fu_224_p2                                   |     |        | icmp_ln71              | seteq     | auto                     | 0       |
+|  + kernel_mhsa_Pipeline_VITIS_LOOP_19_1                  | 1   |        |                        |           |                          |         |
+|    add_ln19_fu_208_p2                                    |     |        | add_ln19               | add       | fabric                   | 0       |
+|    icmp_ln19_fu_214_p2                                   |     |        | icmp_ln19              | seteq     | auto                     | 0       |
+|    sparsemux_17_3_32_1_1_U203                            |     |        | v                      | sparsemux | compactencoding_dontcare | 0       |
+|    icmp_ln21_fu_278_p2                                   |     |        | icmp_ln21              | seteq     | auto                     | 0       |
+|    fmacc_32ns_32ns_32ns_1ns_32_2_primitive_dsp_1_U204    | 1   |        | sum_local_1            | fmacc     | primitivedsp             | 1       |
+|  + kernel_mhsa_Outline_ATT_INIT                          | 0   |        |                        |           |                          |         |
+|    add_ln127_fu_105_p2                                   |     |        | add_ln127              | add       | fabric                   | 0       |
+|    icmp_ln127_fu_111_p2                                  |     |        | icmp_ln127             | seteq     | auto                     | 0       |
+|   + kernel_mhsa_Pipeline_VITIS_LOOP_128_1                | 0   |        |                        |           |                          |         |
+|     add_ln128_fu_278_p2                                  |     |        | add_ln128              | add       | fabric                   | 0       |
+|     icmp_ln128_fu_288_p2                                 |     |        | icmp_ln128             | seteq     | auto                     | 0       |
+|  + kernel_mhsa_Pipeline_XB_INIT                          | 0   |        |                        |           |                          |         |
+|    add_ln175_fu_190_p2                                   |     |        | add_ln175              | add       | fabric                   | 0       |
+|    icmp_ln175_fu_196_p2                                  |     |        | icmp_ln175             | seteq     | auto                     | 0       |
+|  + kernel_mhsa_Pipeline_VITIS_LOOP_27_2                  | 1   |        |                        |           |                          |         |
+|    add_ln27_fu_354_p2                                    |     |        | add_ln27               | add       | fabric                   | 0       |
+|    icmp_ln27_fu_360_p2                                   |     |        | icmp_ln27              | seteq     | auto                     | 0       |
+|    sparsemux_17_3_32_1_1_U218                            |     |        | tmp_2                  | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_1_primitive_dsp_1_U217              | 1   |        | mul13_i                | fmul      | primitivedsp             | 0       |
+|  + matmul_1                                              | 1   |        |                        |           |                          |         |
+|   + load_vec                                             | 0   |        |                        |           |                          |         |
+|     add_ln12_fu_205_p2                                   |     |        | add_ln12               | add       | fabric                   | 0       |
+|     icmp_ln12_fu_211_p2                                  |     |        | icmp_ln12              | seteq     | auto                     | 0       |
+|     sparsemux_17_3_32_1_1_U239                           |     |        | tmp                    | sparsemux | compactencoding_dontcare | 0       |
+|   + load_mat                                             | 0   |        |                        |           |                          |         |
+|     add_ln23_fu_94_p2                                    |     |        | add_ln23               | add       | fabric                   | 0       |
+|    + load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1            | 0   |        |                        |           |                          |         |
+|      add_ln23_fu_91_p2                                   |     |        | add_ln23               | add       | fabric                   | 0       |
+|      icmp_ln23_fu_97_p2                                  |     |        | icmp_ln23              | seteq     | auto                     | 0       |
+|   + compute_matmul                                       | 1   |        |                        |           |                          |         |
+|    + compute_matmul_Pipeline_VITIS_LOOP_43_1             | 0   |        |                        |           |                          |         |
+|      add_ln43_fu_127_p2                                  |     |        | add_ln43               | add       | fabric                   | 0       |
+|      icmp_ln43_fu_133_p2                                 |     |        | icmp_ln43              | seteq     | auto                     | 0       |
+|    + compute_matmul_Pipeline_execute_dot_product         | 1   |        |                        |           |                          |         |
+|      add_ln50_fu_176_p2                                  |     |        | add_ln50               | add       | fabric                   | 0       |
+|      icmp_ln50_fu_182_p2                                 |     |        | icmp_ln50              | seteq     | auto                     | 0       |
+|      icmp_ln53_fu_191_p2                                 |     |        | icmp_ln53              | seteq     | auto                     | 0       |
+|      select_ln50_fu_197_p3                               |     |        | select_ln50            | select    | auto_sel                 | 0       |
+|      grp_fu_151_p3                                       |     |        | select_ln50_1          | select    | auto_sel                 | 0       |
+|      sparsemux_9_2_32_1_1_U262                           |     |        | tmp                    | sparsemux | compactencoding_dontcare | 0       |
+|      fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U261 | 1   |        | sum_local              | fmadd     | primitivedsp             | 1       |
+|      add_ln53_fu_243_p2                                  |     |        | add_ln53               | add       | fabric                   | 0       |
+|      icmp_ln53_1_fu_249_p2                               |     |        | icmp_ln53_1            | seteq     | auto                     | 0       |
+|   + store_result                                         | 0   |        |                        |           |                          |         |
+|     add_ln66_fu_195_p2                                   |     |        | add_ln66               | add       | fabric                   | 0       |
+|     icmp_ln66_fu_201_p2                                  |     |        | icmp_ln66              | seteq     | auto                     | 0       |
+|  + RoPE                                                  | 26  |        |                        |           |                          |         |
+|    sitofp_32ns_32_3_no_dsp_1_U326                        |     |        | conv                   | sitofp    | auto                     | 2       |
+|    icmp_ln16_fu_702_p2                                   |     |        | icmp_ln16              | setlt     | auto                     | 0       |
+|    sitofp_32ns_32_3_no_dsp_1_U326                        |     |        | conv1                  | sitofp    | auto                     | 2       |
+|    fmul_32ns_32ns_32_1_primitive_dsp_1_U321              | 1   |        | mul                    | fmul      | primitivedsp             | 0       |
+|    fmul_32ns_32ns_32_1_primitive_dsp_1_U322              | 1   |        | y_assign               | fmul      | primitivedsp             | 0       |
+|    fmul_32ns_32ns_32_1_primitive_dsp_1_U323              | 1   |        | val                    | fmul      | primitivedsp             | 0       |
+|    closepath_fu_775_p2                                   |     |        | closepath              | setlt     | auto                     | 0       |
+|    Ex_fu_923_p2                                          |     |        | Ex                     | add       | fabric                   | 0       |
+|    select_ln453_fu_928_p3                                |     |        | select_ln453           | select    | auto_sel                 | 0       |
+|    add_ln376_fu_781_p2                                   |     |        | add_ln376              | add       | fabric                   | 0       |
+|    addr_fu_787_p3                                        |     |        | addr                   | select    | auto_sel                 | 0       |
+|    shl_ln379_fu_821_p2                                   |     |        | shl_ln379              | shl       | auto_pipe                | 0       |
+|    mul_80s_24ns_80_2_1_U330                              | 4   |        | h                      | mul       | auto                     | 1       |
+|    k_fu_890_p3                                           |     |        | k                      | select    | auto_sel                 | 0       |
+|    Mx_bits_1_fu_901_p2                                   |     |        | Mx_bits_1              | sub       | fabric                   | 0       |
+|    Mx_bits_3_fu_907_p3                                   |     |        | Mx_bits_3              | select    | auto_sel                 | 0       |
+|    ctlz_30_30_1_1_U331                                   |     |        | Mx_zeros               | ctlz      | auto                     | 0       |
+|    shl_ln504_fu_954_p2                                   |     |        | shl_ln504              | shl       | auto_pipe                | 0       |
+|    Ex_1_fu_963_p2                                        |     |        | Ex_1                   | sub       | fabric                   | 0       |
+|    sub_ln506_fu_992_p2                                   |     |        | sub_ln506              | sub       | fabric                   | 0       |
+|    select_ln506_fu_997_p3                                |     |        | select_ln506           | select    | auto_sel                 | 0       |
+|    lshr_ln506_fu_1010_p2                                 |     |        | lshr_ln506             | lshr      | auto_pipe                | 0       |
+|    shl_ln506_fu_1016_p2                                  |     |        | shl_ln506              | shl       | auto_pipe                | 0       |
+|    select_ln506_1_fu_1022_p3                             |     |        | select_ln506_1         | select    | auto_sel                 | 0       |
+|    mul_15ns_15ns_30_1_1_U332                             | 1   |        | mul_ln69               | mul       | auto                     | 0       |
+|    mul_22ns_22ns_44_1_1_U333                             | 1   |        | mul_ln73               | mul       | auto                     | 0       |
+|    mul_15ns_14ns_29_1_1_U334                             | 1   |        | mul_ln74               | mul       | auto                     | 0       |
+|    cos_result_fu_1334_p2                                 |     |        | cos_result             | sub       | fabric                   | 0       |
+|    mul_22ns_21s_43_1_1_U335                              | 1   |        | mul_ln78               | mul       | auto                     | 0       |
+|    mul_15ns_13s_28_1_1_U336                              | 1   |        | mul_ln79               | mul       | auto                     | 0       |
+|    add_ln80_fu_1280_p2                                   |     |        | add_ln80               | add       | fabric                   | 0       |
+|    add_ln80_1_fu_1290_p2                                 |     |        | add_ln80_1             | add       | fabric                   | 0       |
+|    mul_29ns_28ns_57_2_1_U329                             | 4   |        | mul_ln80               | mul       | auto                     | 1       |
+|    ctlz_32_32_1_1_U337                                   |     |        | c_3                    | ctlz      | auto                     | 0       |
+|    ctlz_32_32_1_1_U340                                   |     |        | c_1                    | ctlz      | auto                     | 0       |
+|    shl_ln291_fu_1510_p2                                  |     |        | shl_ln291              | shl       | auto_pipe                | 0       |
+|    icmp_ln292_fu_1519_p2                                 |     |        | icmp_ln292             | seteq     | auto                     | 0       |
+|    shift_1_fu_1524_p2                                    |     |        | shift_1                | add       | fabric                   | 0       |
+|    shl_ln291_1_fu_1534_p2                                |     |        | shl_ln291_1            | shl       | auto_pipe                | 0       |
+|    shift_2_fu_1540_p3                                    |     |        | shift_2                | select    | auto_sel                 | 0       |
+|    newexp_2_fu_1551_p2                                   |     |        | newexp_2               | xor       | auto                     | 0       |
+|    significand_fu_1581_p3                                |     |        | significand            | select    | auto_sel                 | 0       |
+|    ctlz_32_32_1_1_U338                                   |     |        | c_4                    | ctlz      | auto                     | 0       |
+|    ctlz_32_32_1_1_U339                                   |     |        | c_2                    | ctlz      | auto                     | 0       |
+|    shl_ln291_2_fu_1595_p2                                |     |        | shl_ln291_2            | shl       | auto_pipe                | 0       |
+|    icmp_ln292_1_fu_1604_p2                               |     |        | icmp_ln292_1           | seteq     | auto                     | 0       |
+|    shift_4_fu_1609_p2                                    |     |        | shift_4                | add       | fabric                   | 0       |
+|    shl_ln291_3_fu_1618_p2                                |     |        | shl_ln291_3            | shl       | auto_pipe                | 0       |
+|    shift_5_fu_1623_p3                                    |     |        | shift_5                | select    | auto_sel                 | 0       |
+|    icmp_ln306_fu_1456_p2                                 |     |        | icmp_ln306             | seteq     | auto                     | 0       |
+|    or_ln306_fu_1654_p2                                   |     |        | or_ln306               | or        | auto                     | 0       |
+|    empty_518_fu_1683_p3                                  |     |        | empty_518              | select    | auto_sel                 | 0       |
+|    sparsemux_33_4_1_1_1_U341                             |     |        | sin_results_sign       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_33_4_1_1_1_U342                             |     |        | cos_results_sign       | sparsemux | compactencoding_dontcare | 0       |
+|    icmp_ln179_fu_854_p2                                  |     |        | icmp_ln179             | seteq     | auto                     | 0       |
+|    icmp_ln179_1_fu_859_p2                                |     |        | icmp_ln179_1           | seteq     | auto                     | 0       |
+|    and_ln179_fu_864_p2                                   |     |        | and_ln179              | and       | auto                     | 0       |
+|    icmp_ln186_fu_987_p2                                  |     |        | icmp_ln186             | seteq     | auto                     | 0       |
+|    xor_ln186_fu_1841_p2                                  |     |        | xor_ln186              | xor       | auto                     | 0       |
+|    sin_results_sign_1_fu_1846_p2                         |     |        | sin_results_sign_1     | and       | auto                     | 0       |
+|    select_ln186_fu_1852_p3                               |     |        | select_ln186           | select    | auto_sel                 | 0       |
+|    or_ln186_fu_1859_p2                                   |     |        | or_ln186               | or        | auto                     | 0       |
+|    sin_results_exp_fu_1864_p3                            |     |        | sin_results_exp        | select    | auto_sel                 | 0       |
+|    select_ln186_2_fu_1872_p3                             |     |        | select_ln186_2         | select    | auto_sel                 | 0       |
+|    sin_results_sig_fu_1879_p3                            |     |        | sin_results_sig        | select    | auto_sel                 | 0       |
+|    cos_results_sign_1_fu_1887_p2                         |     |        | cos_results_sign_1     | and       | auto                     | 0       |
+|    sin_results_sign_2_fu_1893_p3                         |     |        | sin_results_sign_2     | select    | auto_sel                 | 0       |
+|    sin_results_exp_1_fu_1899_p3                          |     |        | sin_results_exp_1      | select    | auto_sel                 | 0       |
+|    sin_results_sig_1_fu_1906_p3                          |     |        | sin_results_sig_1      | select    | auto_sel                 | 0       |
+|    not_and_ln179_fu_1913_p2                              |     |        | not_and_ln179          | xor       | auto                     | 0       |
+|    cos_results_sign_2_fu_1918_p2                         |     |        | cos_results_sign_2     | and       | auto                     | 0       |
+|    cos_results_exp_1_fu_1924_p3                          |     |        | cos_results_exp_1      | select    | auto_sel                 | 0       |
+|    empty_519_fu_1931_p2                                  |     |        | empty_519              | or        | auto                     | 0       |
+|    cos_results_exp_2_fu_1935_p3                          |     |        | cos_results_exp_2      | select    | auto_sel                 | 0       |
+|    cos_results_sig_1_cast_fu_1943_p3                     |     |        | cos_results_sig_1_cast | select    | auto_sel                 | 0       |
+|    cos_results_sig_1_fu_1951_p3                          |     |        | cos_results_sig_1      | select    | auto_sel                 | 0       |
+|    sparsemux_17_3_1_1_1_U343                             |     |        | tmp_43                 | sparsemux | compactencoding_dontcare | 0       |
+|    s_out_2_fu_2043_p3                                    |     |        | s_out_2                | select    | auto_sel                 | 0       |
+|    c_out_2_fu_2050_p3                                    |     |        | c_out_2                | select    | auto_sel                 | 0       |
+|    sparsemux_9_3_32_1_1_U345                             |     |        | tmp_44                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U344                             |     |        | tmp_45                 | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_1_primitive_dsp_1_U324              | 1   |        | mul7                   | fmul      | primitivedsp             | 0       |
+|    fmsub_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U328   | 1   |        | sub                    | fmsub     | primitivedsp             | 1       |
+|    fmul_32ns_32ns_32_1_primitive_dsp_1_U325              | 1   |        | mul5                   | fmul      | primitivedsp             | 0       |
+|    fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U327   | 1   |        | add                    | fmadd     | primitivedsp             | 1       |
+|    add_ln16_fu_708_p2                                    |     |        | add_ln16               | add       | fabric                   | 0       |
+|   + pow_generic_float_s                                  | 6   |        |                        |           |                          |         |
+|     m_exp_fu_277_p2                                      |     |        | m_exp                  | add       | fabric                   | 0       |
+|     y_is_0_fu_287_p2                                     |     |        | y_is_0                 | seteq     | auto                     | 0       |
+|     icmp_ln18_fu_292_p2                                  |     |        | icmp_ln18              | seteq     | auto                     | 0       |
+|     icmp_ln18_1_fu_236_p2                                |     |        | icmp_ln18_1            | seteq     | auto                     | 0       |
+|     y_is_inf_fu_297_p2                                   |     |        | y_is_inf               | and       | auto                     | 0       |
+|     icmp_ln18_2_fu_242_p2                                |     |        | icmp_ln18_2            | setne     | auto                     | 0       |
+|     y_is_NaN_fu_302_p2                                   |     |        | y_is_NaN               | and       | auto                     | 0       |
+|     or_ln378_fu_307_p2                                   |     |        | or_ln378               | or        | auto                     | 0       |
+|     UnifiedRetVal_fu_923_p2                              |     |        | select_ln378           | select    | auto_sel                 | 0       |
+|     xor_ln413_fu_731_p2                                  |     |        | xor_ln413              | xor       | auto                     | 0       |
+|     and_ln438_fu_736_p2                                  |     |        | and_ln438              | and       | auto                     | 0       |
+|     e_frac_1_fu_260_p2                                   |     |        | e_frac_1               | sub       | fabric                   | 0       |
+|     e_frac_2_fu_266_p3                                   |     |        | e_frac_2               | select    | auto_sel                 | 0       |
+|     mul_25s_39ns_63_1_1_U309                             | 2   |        | m_frac_l               | mul       | auto                     | 0       |
+|     sub_ln545_fu_333_p2                                  |     |        | sub_ln545              | sub       | fabric                   | 0       |
+|     select_ln545_fu_360_p3                               |     |        | select_ln545           | select    | auto_sel                 | 0       |
+|     ashr_ln545_fu_374_p2                                 |     |        | ashr_ln545             | ashr      | auto_pipe                | 0       |
+|     shl_ln545_fu_380_p2                                  |     |        | shl_ln545              | shl       | auto_pipe                | 0       |
+|     m_fix_l_fu_394_p3                                    |     |        | m_fix_l                | select    | auto_sel                 | 0       |
+|     shl_ln546_fu_508_p2                                  |     |        | shl_ln546              | shl       | auto_pipe                | 0       |
+|     ashr_ln546_fu_513_p2                                 |     |        | ashr_ln546             | ashr      | auto_pipe                | 0       |
+|     m_fix_back_fu_518_p3                                 |     |        | m_fix_back             | select    | auto_sel                 | 0       |
+|     shl_ln552_fu_404_p2                                  |     |        | shl_ln552              | shl       | auto_pipe                | 0       |
+|     select_ln553_fu_410_p3                               |     |        | select_ln553           | select    | auto_sel                 | 0       |
+|     shl_ln553_fu_423_p2                                  |     |        | shl_ln553              | shl       | auto_pipe                | 0       |
+|     ashr_ln553_fu_429_p2                                 |     |        | ashr_ln553             | ashr      | auto_pipe                | 0       |
+|     select_ln553_1_fu_435_p3                             |     |        | select_ln553_1         | select    | auto_sel                 | 0       |
+|     select_ln553_2_fu_442_p3                             |     |        | select_ln553_2         | select    | auto_sel                 | 0       |
+|     mac_muladd_13s_12ns_16s_25_4_1_U311                  | 1   |        | mul_ln563              | mul       | dsp_slice                | 3       |
+|     mac_muladd_13s_12ns_16s_25_4_1_U311                  | 1   |        | add_ln563              | add       | dsp_slice                | 3       |
+|     icmp_ln563_fu_561_p2                                 |     |        | icmp_ln563             | setne     | auto                     | 0       |
+|     add_ln563_1_fu_567_p2                                |     |        | add_ln563_1            | add       | fabric                   | 0       |
+|     select_ln563_fu_573_p3                               |     |        | select_ln563           | select    | auto_sel                 | 0       |
+|     r_exp_fu_581_p3                                      |     |        | r_exp                  | select    | auto_sel                 | 0       |
+|     mul_10s_36s_36_1_1_U308                              | 2   |        | mul_ln568              | mul       | auto                     | 0       |
+|     sub_ln574_fu_611_p2                                  |     |        | sub_ln574              | sub       | fabric                   | 0       |
+|     add_ln160_fu_664_p2                                  |     |        | add_ln160              | add       | fabric                   | 0       |
+|     add_ln616_fu_706_p2                                  |     |        | add_ln616              | add       | fabric                   | 0       |
+|     mac_muladd_18ns_18ns_44ns_44_4_1_U312                | 1   |        | mul_ln616              | mul       | dsp_slice                | 3       |
+|     mac_muladd_18ns_18ns_44ns_44_4_1_U312                | 1   |        | zext_ln616_2           | zext      | dsp_slice                | 3       |
+|     mac_muladd_18ns_18ns_44ns_44_4_1_U312                | 1   |        | add_ln616_1            | add       | dsp_slice                | 3       |
+|     r_exp_1_fu_719_p2                                    |     |        | r_exp_1                | add       | fabric                   | 0       |
+|     r_exp_2_fu_747_p3                                    |     |        | r_exp_2                | select    | auto_sel                 | 0       |
+|     icmp_ln628_fu_497_p2                                 |     |        | icmp_ln628             | setgt     | auto                     | 0       |
+|     icmp_ln628_1_fu_525_p2                               |     |        | icmp_ln628_1           | setne     | auto                     | 0       |
+|     and_ln628_fu_753_p2                                  |     |        | and_ln628              | and       | auto                     | 0       |
+|     icmp_ln628_2_fu_767_p2                               |     |        | icmp_ln628_2           | setgt     | auto                     | 0       |
+|     or_ln628_fu_773_p2                                   |     |        | or_ln628               | or        | auto                     | 0       |
+|     UnifiedRetVal_fu_923_p6                              |     |        | select_ln629           | select    | auto_sel                 | 0       |
+|     out_sig_fu_804_p3                                    |     |        | out_sig                | select    | auto_sel                 | 0       |
+|     out_exp_fu_816_p2                                    |     |        | out_exp                | add       | fabric                   | 0       |
+|     xor_ln378_fu_838_p2                                  |     |        | xor_ln378              | xor       | auto                     | 0       |
+|     and_ln431_fu_843_p2                                  |     |        | and_ln431              | and       | auto                     | 0       |
+|     and_ln431_1_fu_849_p2                                |     |        | and_ln431_1            | and       | auto                     | 0       |
+|     xor_ln431_fu_854_p2                                  |     |        | xor_ln431              | xor       | auto                     | 0       |
+|     or_ln431_fu_859_p2                                   |     |        | or_ln431               | or        | auto                     | 0       |
+|     xor_ln438_fu_864_p2                                  |     |        | xor_ln438              | xor       | auto                     | 0       |
+|     and_ln438_1_fu_870_p2                                |     |        | and_ln438_1            | and       | auto                     | 0       |
+|     and_ln438_2_fu_876_p2                                |     |        | and_ln438_2            | and       | auto                     | 0       |
+|     and_ln628_1_fu_882_p2                                |     |        | and_ln628_1            | and       | auto                     | 0       |
+|     xor_ln628_fu_888_p2                                  |     |        | xor_ln628              | xor       | auto                     | 0       |
+|     icmp_ln645_fu_894_p2                                 |     |        | icmp_ln645             | setgt     | auto                     | 0       |
+|     and_ln645_fu_900_p2                                  |     |        | and_ln645              | and       | auto                     | 0       |
+|     and_ln645_1_fu_906_p2                                |     |        | and_ln645_1            | and       | auto                     | 0       |
+|     sparsemux_11_4_32_1_1_U310                           |     |        | UnifiedRetVal          | sparsemux | onehotencoding_realdef   | 0       |
+|  + kernel_mhsa_Pipeline_CACHE_STORE                      | 0   |        |                        |           |                          |         |
+|    add_ln113_fu_3259_p2                                  |     |        | add_ln113              | add       | fabric                   | 0       |
+|    icmp_ln113_fu_3265_p2                                 |     |        | icmp_ln113             | seteq     | auto                     | 0       |
+|    sparsemux_17_3_32_1_1_U385                            |     |        | tmp_3                  | sparsemux | compactencoding_dontcare | 0       |
+|    add_ln115_fu_3442_p2                                  |     |        | add_ln115              | add       | fabric                   | 0       |
+|    sparsemux_17_3_32_1_1_U386                            |     |        | tmp_4                  | sparsemux | compactencoding_dontcare | 0       |
+|  + kernel_mhsa_Outline_HEAD_COMPUTE                      | 28  |        |                        |           |                          |         |
+|    icmp_ln136_fu_946_p2                                  |     |        | icmp_ln136             | seteq     | auto                     | 0       |
+|    add_ln136_fu_952_p2                                   |     |        | add_ln136              | add       | fabric                   | 0       |
+|    add_ln136_1_fu_1223_p2                                |     |        | add_ln136_1            | add       | fabric                   | 0       |
+|   + kernel_mhsa_Pipeline_Q_LOAD                          | 0   |        |                        |           |                          |         |
+|     add_ln143_fu_1152_p2                                 |     |        | add_ln143              | add       | fabric                   | 0       |
+|     icmp_ln143_fu_1158_p2                                |     |        | icmp_ln143             | seteq     | auto                     | 0       |
+|     add_ln145_fu_1186_p2                                 |     |        | add_ln145              | add       | fabric                   | 0       |
+|     sparsemux_17_3_32_1_1_U625                           |     |        | q_head_local           | sparsemux | compactencoding_dontcare | 0       |
+|   + kernel_mhsa_Pipeline_TOKEN_COMPUTE                   | 28  |        |                        |           |                          |         |
+|     add_ln149_fu_9186_p2                                 |     |        | add_ln149              | add       | fabric                   | 0       |
+|     icmp_ln149_fu_9080_p2                                |     |        | icmp_ln149             | seteq     | auto                     | 0       |
+|     sparsemux_25_4_32_1_1_U716                           |     |        | k_val                  | sparsemux | compactencoding_dontcare | 0       |
+|     sparsemux_25_4_32_1_1_U717                           |     |        | k_val_1                | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U708                   | 3   | yes    | mul138_1               | fmul      | maxdsp                   | 2       |
+|     sparsemux_25_4_32_1_1_U718                           |     |        | k_val_2                | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U709                   | 3   | yes    | mul138_2               | fmul      | maxdsp                   | 2       |
+|     sparsemux_25_4_32_1_1_U719                           |     |        | k_val_3                | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U710                   | 3   | yes    | mul138_3               | fmul      | maxdsp                   | 2       |
+|     sparsemux_25_4_32_1_1_U720                           |     |        | k_val_4                | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U711                   | 3   | yes    | mul138_4               | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U700             | 1   |        | dot_4                  | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U721                           |     |        | k_val_5                | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U712                   | 3   | yes    | mul138_5               | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U700             | 1   |        | dot_5                  | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U722                           |     |        | k_val_6                | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U713                   | 3   | yes    | mul138_6               | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U700             | 1   |        | dot_6                  | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U723                           |     |        | k_val_7                | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U714                   | 3   | yes    | mul138_7               | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U700             | 1   |        | dot_7                  | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U716                           |     |        | k_val_8                | sparsemux | compactencoding_dontcare | 0       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U701             | 1   |        | dot_8                  | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U717                           |     |        | k_val_9                | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U708                   | 3   | yes    | mul138_9               | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U701             | 1   |        | dot_9                  | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U718                           |     |        | k_val_10               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U709                   | 3   | yes    | mul138_s               | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U701             | 1   |        | dot_10                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U719                           |     |        | k_val_11               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U710                   | 3   | yes    | mul138_10              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U701             | 1   |        | dot_11                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U720                           |     |        | k_val_12               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U711                   | 3   | yes    | mul138_11              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U702             | 1   |        | dot_12                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U721                           |     |        | k_val_13               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U712                   | 3   | yes    | mul138_12              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U702             | 1   |        | dot_13                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U722                           |     |        | k_val_14               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U713                   | 3   | yes    | mul138_13              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U702             | 1   |        | dot_14                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U723                           |     |        | k_val_15               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U714                   | 3   | yes    | mul138_14              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U702             | 1   |        | dot_15                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U716                           |     |        | k_val_16               | sparsemux | compactencoding_dontcare | 0       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U703             | 1   |        | dot_16                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U717                           |     |        | k_val_17               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U708                   | 3   | yes    | mul138_16              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U703             | 1   |        | dot_17                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U718                           |     |        | k_val_18               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U709                   | 3   | yes    | mul138_17              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U703             | 1   |        | dot_18                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U719                           |     |        | k_val_19               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U710                   | 3   | yes    | mul138_18              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U703             | 1   |        | dot_19                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U720                           |     |        | k_val_20               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U711                   | 3   | yes    | mul138_19              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U704             | 1   |        | dot_20                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U721                           |     |        | k_val_21               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U712                   | 3   | yes    | mul138_20              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U704             | 1   |        | dot_21                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U722                           |     |        | k_val_22               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U713                   | 3   | yes    | mul138_21              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U704             | 1   |        | dot_22                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U723                           |     |        | k_val_23               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U714                   | 3   | yes    | mul138_22              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U704             | 1   |        | dot_23                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U716                           |     |        | k_val_24               | sparsemux | compactencoding_dontcare | 0       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U705             | 1   |        | dot_24                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U717                           |     |        | k_val_25               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U708                   | 3   | yes    | mul138_24              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U705             | 1   |        | dot_25                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U718                           |     |        | k_val_26               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U709                   | 3   | yes    | mul138_25              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U705             | 1   |        | dot_26                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U719                           |     |        | k_val_27               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U710                   | 3   | yes    | mul138_26              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U705             | 1   |        | dot_27                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U720                           |     |        | k_val_28               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U711                   | 3   | yes    | mul138_27              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U706             | 1   |        | dot_28                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U721                           |     |        | k_val_29               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U712                   | 3   | yes    | mul138_28              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U706             | 1   |        | dot_29                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U722                           |     |        | k_val_30               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U713                   | 3   | yes    | mul138_29              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U706             | 1   |        | dot_30                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U723                           |     |        | k_val_31               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U714                   | 3   | yes    | mul138_30              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U706             | 1   |        | dot_31                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U716                           |     |        | k_val_32               | sparsemux | compactencoding_dontcare | 0       |
+|     sparsemux_25_4_32_1_1_U717                           |     |        | k_val_33               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U708                   | 3   | yes    | mul138_32              | fmul      | maxdsp                   | 2       |
+|     sparsemux_25_4_32_1_1_U718                           |     |        | k_val_34               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U709                   | 3   | yes    | mul138_33              | fmul      | maxdsp                   | 2       |
+|     sparsemux_25_4_32_1_1_U719                           |     |        | k_val_35               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U710                   | 3   | yes    | mul138_34              | fmul      | maxdsp                   | 2       |
+|     sparsemux_25_4_32_1_1_U720                           |     |        | k_val_36               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U711                   | 3   | yes    | mul138_35              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U700             | 1   |        | dot_36                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U721                           |     |        | k_val_37               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U712                   | 3   | yes    | mul138_36              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U700             | 1   |        | dot_37                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U722                           |     |        | k_val_38               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U713                   | 3   | yes    | mul138_37              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U700             | 1   |        | dot_38                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U723                           |     |        | k_val_39               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U714                   | 3   | yes    | mul138_38              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U700             | 1   |        | dot_39                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U716                           |     |        | k_val_40               | sparsemux | compactencoding_dontcare | 0       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U701             | 1   |        | dot_40                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U717                           |     |        | k_val_41               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U708                   | 3   | yes    | mul138_40              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U701             | 1   |        | dot_41                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U718                           |     |        | k_val_42               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U709                   | 3   | yes    | mul138_41              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U701             | 1   |        | dot_42                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U719                           |     |        | k_val_43               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U710                   | 3   | yes    | mul138_42              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U701             | 1   |        | dot_43                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U720                           |     |        | k_val_44               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U711                   | 3   | yes    | mul138_43              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U702             | 1   |        | dot_44                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U721                           |     |        | k_val_45               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U712                   | 3   | yes    | mul138_44              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U702             | 1   |        | dot_45                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U722                           |     |        | k_val_46               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U713                   | 3   | yes    | mul138_45              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U702             | 1   |        | dot_46                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U723                           |     |        | k_val_47               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U714                   | 3   | yes    | mul138_46              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U702             | 1   |        | dot_47                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U724                           |     |        | k_val_48               | sparsemux | compactencoding_dontcare | 0       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U703             | 1   |        | dot_48                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U725                           |     |        | k_val_49               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U708                   | 3   | yes    | mul138_48              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U703             | 1   |        | dot_49                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U726                           |     |        | k_val_50               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U709                   | 3   | yes    | mul138_49              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U703             | 1   |        | dot_50                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U727                           |     |        | k_val_51               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U710                   | 3   | yes    | mul138_50              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U703             | 1   |        | dot_51                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U728                           |     |        | k_val_52               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U711                   | 3   | yes    | mul138_51              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U704             | 1   |        | dot_52                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U729                           |     |        | k_val_53               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U712                   | 3   | yes    | mul138_52              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U704             | 1   |        | dot_53                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U730                           |     |        | k_val_54               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U713                   | 3   | yes    | mul138_53              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U704             | 1   |        | dot_54                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U731                           |     |        | k_val_55               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U714                   | 3   | yes    | mul138_54              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U704             | 1   |        | dot_55                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U724                           |     |        | k_val_56               | sparsemux | compactencoding_dontcare | 0       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U705             | 1   |        | dot_56                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U725                           |     |        | k_val_57               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U708                   | 3   | yes    | mul138_56              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U705             | 1   |        | dot_57                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U726                           |     |        | k_val_58               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U709                   | 3   | yes    | mul138_57              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U705             | 1   |        | dot_58                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U727                           |     |        | k_val_59               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U710                   | 3   | yes    | mul138_58              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U705             | 1   |        | dot_59                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U728                           |     |        | k_val_60               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U711                   | 3   | yes    | mul138_59              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U706             | 1   |        | dot_60                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U729                           |     |        | k_val_61               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U712                   | 3   | yes    | mul138_60              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U706             | 1   |        | dot_61                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U730                           |     |        | k_val_62               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U713                   | 3   | yes    | mul138_61              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U706             | 1   |        | dot_62                 | fadd      | primitivedsp             | 0       |
+|     sparsemux_25_4_32_1_1_U731                           |     |        | k_val_63               | sparsemux | compactencoding_dontcare | 0       |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U714                   | 3   | yes    | mul138_62              | fmul      | maxdsp                   | 2       |
+|     fadd_32ns_32ns_32_1_primitive_dsp_1_U706             | 1   |        | dot_63                 | fadd      | primitivedsp             | 0       |
+|  + kernel_mhsa_Outline_SOFTMAX_HEADS                     | 3   |        |                        |           |                          |         |
+|    add_ln169_fu_119_p2                                   |     |        | add_ln169              | add       | fabric                   | 0       |
+|    icmp_ln169_fu_125_p2                                  |     |        | icmp_ln169             | seteq     | auto                     | 0       |
+|   + kernel_softmax                                       | 3   |        |                        |           |                          |         |
+|     i_fu_249_p2                                          |     |        | i                      | add       | fabric                   | 0       |
+|     icmp_ln10_fu_264_p2                                  |     |        | icmp_ln10              | seteq     | auto                     | 0       |
+|     icmp_ln21_8_fu_322_p2                                |     |        | icmp_ln21_8            | setne     | auto                     | 0       |
+|     icmp_ln21_9_fu_328_p2                                |     |        | icmp_ln21_9            | seteq     | auto                     | 0       |
+|     or_ln21_4_fu_350_p2                                  |     |        | or_ln21_4              | or        | auto                     | 0       |
+|     icmp_ln21_10_fu_334_p2                               |     |        | icmp_ln21_10           | setne     | auto                     | 0       |
+|     icmp_ln21_11_fu_340_p2                               |     |        | icmp_ln21_11           | seteq     | auto                     | 0       |
+|     or_ln21_5_fu_354_p2                                  |     |        | or_ln21_5              | or        | auto                     | 0       |
+|     and_ln21_4_fu_358_p2                                 |     |        | and_ln21_4             | and       | auto                     | 0       |
+|     fcmp_32ns_32ns_1_1_no_dsp_1_U1035                    |     |        | tmp_3                  | fcmp      | auto                     | 0       |
+|     and_ln21_5_fu_364_p2                                 |     |        | and_ln21_5             | and       | auto                     | 0       |
+|     i_3_fu_378_p2                                        |     |        | i_3                    | add       | fabric                   | 0       |
+|     icmp_ln21_4_fu_448_p2                                |     |        | icmp_ln21_4            | setne     | auto                     | 0       |
+|     icmp_ln21_5_fu_454_p2                                |     |        | icmp_ln21_5            | seteq     | auto                     | 0       |
+|     or_ln21_2_fu_460_p2                                  |     |        | or_ln21_2              | or        | auto                     | 0       |
+|     icmp_ln21_6_fu_466_p2                                |     |        | icmp_ln21_6            | setne     | auto                     | 0       |
+|     icmp_ln21_7_fu_472_p2                                |     |        | icmp_ln21_7            | seteq     | auto                     | 0       |
+|     or_ln21_3_fu_478_p2                                  |     |        | or_ln21_3              | or        | auto                     | 0       |
+|     fcmp_32ns_32ns_1_1_no_dsp_1_U1035                    |     |        | tmp_s                  | fcmp      | auto                     | 0       |
+|     and_ln21_2_fu_491_p2                                 |     |        | and_ln21_2             | and       | auto                     | 0       |
+|     and_ln21_3_fu_497_p2                                 |     |        | and_ln21_3             | and       | auto                     | 0       |
+|     max_val_5_fu_503_p3                                  |     |        | max_val_5              | select    | auto_sel                 | 0       |
+|     icmp_ln21_fu_544_p2                                  |     |        | icmp_ln21              | setne     | auto                     | 0       |
+|     icmp_ln21_1_fu_550_p2                                |     |        | icmp_ln21_1            | seteq     | auto                     | 0       |
+|     or_ln21_fu_556_p2                                    |     |        | or_ln21                | or        | auto                     | 0       |
+|     icmp_ln21_2_fu_562_p2                                |     |        | icmp_ln21_2            | setne     | auto                     | 0       |
+|     icmp_ln21_3_fu_568_p2                                |     |        | icmp_ln21_3            | seteq     | auto                     | 0       |
+|     or_ln21_1_fu_574_p2                                  |     |        | or_ln21_1              | or        | auto                     | 0       |
+|     fcmp_32ns_32ns_1_1_no_dsp_1_U1035                    |     |        | tmp_7                  | fcmp      | auto                     | 0       |
+|     and_ln21_fu_586_p2                                   |     |        | and_ln21               | and       | auto                     | 0       |
+|     and_ln21_1_fu_592_p2                                 |     |        | and_ln21_1             | and       | auto                     | 0       |
+|     max_val_7_fu_598_p3                                  |     |        | max_val_7              | select    | auto_sel                 | 0       |
+|     add_ln17_fu_402_p2                                   |     |        | add_ln17               | add       | fabric                   | 0       |
+|     icmp_ln17_fu_408_p2                                  |     |        | icmp_ln17              | setlt     | auto                     | 0       |
+|     i_4_fu_604_p2                                        |     |        | i_4                    | add       | fabric                   | 0       |
+|     icmp_ln27_fu_610_p2                                  |     |        | icmp_ln27              | seteq     | auto                     | 0       |
+|     fsub_32ns_32ns_32_1_primitive_dsp_1_U1033            | 1   |        | sub                    | fsub      | primitivedsp             | 0       |
+|     fexp_32ns_32ns_32_9_med_dsp_1_U1036                  | 1   |        | tmp                    | fexp      | meddsp                   | 8       |
+|     facc_32ns_32ns_1ns_32_2_primitive_dsp_1_U1037        | 1   |        | sum                    | facc      | primitivedsp             | 1       |
+|     i_5_fu_644_p2                                        |     |        | i_5                    | add       | fabric                   | 0       |
+|     fdiv_32ns_32ns_32_11_no_dsp_1_U1034                  |     |        | div                    | fdiv      | fabric                   | 10      |
+|     icmp_ln35_fu_659_p2                                  |     |        | icmp_ln35              | seteq     | auto                     | 0       |
+|  + kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC           | 0   |        |                        |           |                          |         |
+|    add_ln197_fu_2924_p2                                  |     |        | add_ln197              | add       | fabric                   | 0       |
+|    icmp_ln197_fu_2930_p2                                 |     |        | icmp_ln197             | seteq     | auto                     | 0       |
+|    select_ln203_fu_2953_p3                               |     |        | select_ln203           | select    | auto_sel                 | 0       |
+|    add_ln197_1_fu_2961_p2                                |     |        | add_ln197_1            | add       | fabric                   | 0       |
+|    select_ln197_fu_2967_p3                               |     |        | select_ln197           | select    | auto_sel                 | 0       |
+|    sparsemux_25_4_32_1_1_U1067                           |     |        | att_weight             | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1068                            |     |        | tmp_7                  | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1069                            |     |        | tmp_8                  | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1070                            |     |        | tmp_9                  | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1071                            |     |        | tmp_1                  | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1072                            |     |        | tmp_4                  | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1073                            |     |        | tmp_5                  | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1074                            |     |        | tmp_6                  | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1075                            |     |        | tmp_10                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1076                            |     |        | tmp_11                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1077                            |     |        | tmp_12                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1078                            |     |        | tmp_13                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1079                            |     |        | tmp_14                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_25_4_32_1_1_U1092                           |     |        | v_val                  | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_65_6_32_1_1_U1094                           |     |        | tmp_15                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1080                            |     |        | tmp_16                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1081                            |     |        | tmp_17                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1082                            |     |        | tmp_18                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1083                            |     |        | tmp_19                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1084                            |     |        | tmp_20                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1085                            |     |        | tmp_21                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1086                            |     |        | tmp_22                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1087                            |     |        | tmp_23                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1088                            |     |        | tmp_24                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1089                            |     |        | tmp_25                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1090                            |     |        | tmp_26                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_3_32_1_1_U1091                            |     |        | tmp_27                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_25_4_32_1_1_U1093                           |     |        | v_val_1                | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_65_6_32_1_1_U1095                           |     |        | tmp_28                 | sparsemux | compactencoding_dontcare | 0       |
+|    add_ln203_fu_3641_p2                                  |     |        | add_ln203              | add       | fabric                   | 0       |
+|  + kernel_mhsa_Pipeline_ACCUM_WRITEBACK                  | 0   |        |                        |           |                          |         |
+|    sparsemux_33_6_32_1_1_U1273                           |     |        | tmp_s                  | sparsemux | compactencoding_dontcare | 0       |
+|    add_ln216_fu_841_p2                                   |     |        | add_ln216              | add       | fabric                   | 0       |
+|    sparsemux_33_6_32_1_1_U1274                           |     |        | tmp_31                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_33_6_32_1_1_U1275                           |     |        | tmp_32                 | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_33_6_32_1_1_U1276                           |     |        | tmp_33                 | sparsemux | compactencoding_dontcare | 0       |
+|    icmp_ln216_fu_1084_p2                                 |     |        | icmp_ln216             | seteq     | auto                     | 0       |
+|    add_ln213_fu_1122_p2                                  |     |        | add_ln213              | add       | fabric                   | 0       |
+|  + kernel_mhsa_Pipeline_RESIDUAL                         | 0   |        |                        |           |                          |         |
+|    add_ln225_fu_341_p2                                   |     |        | add_ln225              | add       | fabric                   | 0       |
+|    icmp_ln225_fu_347_p2                                  |     |        | icmp_ln225             | seteq     | auto                     | 0       |
+|    sparsemux_17_3_32_1_1_U1352                           |     |        | tmp_5                  | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_17_3_32_1_1_U1353                           |     |        | tmp_6                  | sparsemux | compactencoding_dontcare | 0       |
+|  + kernel_mhsa_Pipeline_OUTPUT_WRITE                     | 0   |        |                        |           |                          |         |
+|    add_ln232_fu_226_p2                                   |     |        | add_ln232              | add       | fabric                   | 0       |
+|    icmp_ln232_fu_232_p2                                  |     |        | icmp_ln232             | seteq     | auto                     | 0       |
+|    sparsemux_17_3_32_1_1_U1370                           |     |        | tmp                    | sparsemux | compactencoding_dontcare | 0       |
++----------------------------------------------------------+-----+--------+------------------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------------------------------------------------------------------+--------------+-----------+-------+------+--------+-------------------------------------------------------------------------+--------+---------+------------------+
+| Name                                                                          | Usage        | Type      | BRAM  | URAM | Pragma | Variable                                                                | Impl   | Latency | Bitwidth, Depth, |
+|                                                                               |              |           |       |      |        |                                                                         |        |         | Banks            |
++-------------------------------------------------------------------------------+--------------+-----------+-------+------+--------+-------------------------------------------------------------------------+--------+---------+------------------+
+| + kernel_mhsa                                                                 |              |           | 18464 | 0    |        |                                                                         |        |         |                  |
+|   control_s_axi_U                                                             | interface    | s_axilite |       |      |        |                                                                         |        |         |                  |
+|   gmem0_m_axi_U                                                               | interface    | m_axi     | 9     |      |        |                                                                         |        |         |                  |
+|   gmem1_m_axi_U                                                               | interface    | m_axi     | 8     |      |        |                                                                         |        |         |                  |
+|   out_rms_vec_U                                                               | ram_1p array |           | 1     |      |        | out_rms_vec                                                             | auto   | 1       | 32, 96, 1        |
+|   out_rms_vec_1_U                                                             | ram_1p array |           | 1     |      |        | out_rms_vec_1                                                           | auto   | 1       | 32, 96, 1        |
+|   out_rms_vec_2_U                                                             | ram_1p array |           | 1     |      |        | out_rms_vec_2                                                           | auto   | 1       | 32, 96, 1        |
+|   out_rms_vec_3_U                                                             | ram_1p array |           | 1     |      |        | out_rms_vec_3                                                           | auto   | 1       | 32, 96, 1        |
+|   out_rms_vec_4_U                                                             | ram_1p array |           | 1     |      |        | out_rms_vec_4                                                           | auto   | 1       | 32, 96, 1        |
+|   out_rms_vec_5_U                                                             | ram_1p array |           | 1     |      |        | out_rms_vec_5                                                           | auto   | 1       | 32, 96, 1        |
+|   out_rms_vec_6_U                                                             | ram_1p array |           | 1     |      |        | out_rms_vec_6                                                           | auto   | 1       | 32, 96, 1        |
+|   out_rms_vec_7_U                                                             | ram_1p array |           | 1     |      |        | out_rms_vec_7                                                           | auto   | 1       | 32, 96, 1        |
+|   out_q_U                                                                     | ram_1p array |           | 1     |      |        | out_q                                                                   | auto   | 1       | 32, 96, 1        |
+|   out_q_1_U                                                                   | ram_1p array |           | 1     |      |        | out_q_1                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_q_2_U                                                                   | ram_1p array |           | 1     |      |        | out_q_2                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_q_3_U                                                                   | ram_1p array |           | 1     |      |        | out_q_3                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_q_4_U                                                                   | ram_1p array |           | 1     |      |        | out_q_4                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_q_5_U                                                                   | ram_1p array |           | 1     |      |        | out_q_5                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_q_6_U                                                                   | ram_1p array |           | 1     |      |        | out_q_6                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_q_7_U                                                                   | ram_1p array |           | 1     |      |        | out_q_7                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_q_rope_U                                                                | ram_1p array |           | 1     |      |        | out_q_rope                                                              | auto   | 1       | 32, 96, 1        |
+|   out_q_rope_1_U                                                              | ram_1p array |           | 1     |      |        | out_q_rope_1                                                            | auto   | 1       | 32, 96, 1        |
+|   out_q_rope_2_U                                                              | ram_1p array |           | 1     |      |        | out_q_rope_2                                                            | auto   | 1       | 32, 96, 1        |
+|   out_q_rope_3_U                                                              | ram_1p array |           | 1     |      |        | out_q_rope_3                                                            | auto   | 1       | 32, 96, 1        |
+|   out_q_rope_4_U                                                              | ram_1p array |           | 1     |      |        | out_q_rope_4                                                            | auto   | 1       | 32, 96, 1        |
+|   out_q_rope_5_U                                                              | ram_1p array |           | 1     |      |        | out_q_rope_5                                                            | auto   | 1       | 32, 96, 1        |
+|   out_q_rope_6_U                                                              | ram_1p array |           | 1     |      |        | out_q_rope_6                                                            | auto   | 1       | 32, 96, 1        |
+|   out_q_rope_7_U                                                              | ram_1p array |           | 1     |      |        | out_q_rope_7                                                            | auto   | 1       | 32, 96, 1        |
+|   out_k_U                                                                     | ram_1p array |           | 1     |      |        | out_k                                                                   | auto   | 1       | 32, 96, 1        |
+|   out_k_1_U                                                                   | ram_1p array |           | 1     |      |        | out_k_1                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_k_2_U                                                                   | ram_1p array |           | 1     |      |        | out_k_2                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_k_3_U                                                                   | ram_1p array |           | 1     |      |        | out_k_3                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_k_4_U                                                                   | ram_1p array |           | 1     |      |        | out_k_4                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_k_5_U                                                                   | ram_1p array |           | 1     |      |        | out_k_5                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_k_6_U                                                                   | ram_1p array |           | 1     |      |        | out_k_6                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_k_7_U                                                                   | ram_1p array |           | 1     |      |        | out_k_7                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_k_rope_U                                                                | ram_1p array |           | 1     |      |        | out_k_rope                                                              | auto   | 1       | 32, 96, 1        |
+|   out_k_rope_1_U                                                              | ram_1p array |           | 1     |      |        | out_k_rope_1                                                            | auto   | 1       | 32, 96, 1        |
+|   out_k_rope_2_U                                                              | ram_1p array |           | 1     |      |        | out_k_rope_2                                                            | auto   | 1       | 32, 96, 1        |
+|   out_k_rope_3_U                                                              | ram_1p array |           | 1     |      |        | out_k_rope_3                                                            | auto   | 1       | 32, 96, 1        |
+|   out_k_rope_4_U                                                              | ram_1p array |           | 1     |      |        | out_k_rope_4                                                            | auto   | 1       | 32, 96, 1        |
+|   out_k_rope_5_U                                                              | ram_1p array |           | 1     |      |        | out_k_rope_5                                                            | auto   | 1       | 32, 96, 1        |
+|   out_k_rope_6_U                                                              | ram_1p array |           | 1     |      |        | out_k_rope_6                                                            | auto   | 1       | 32, 96, 1        |
+|   out_k_rope_7_U                                                              | ram_1p array |           | 1     |      |        | out_k_rope_7                                                            | auto   | 1       | 32, 96, 1        |
+|   out_v_U                                                                     | ram_1p array |           | 1     |      |        | out_v                                                                   | auto   | 1       | 32, 96, 1        |
+|   out_v_1_U                                                                   | ram_1p array |           | 1     |      |        | out_v_1                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_v_2_U                                                                   | ram_1p array |           | 1     |      |        | out_v_2                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_v_3_U                                                                   | ram_1p array |           | 1     |      |        | out_v_3                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_v_4_U                                                                   | ram_1p array |           | 1     |      |        | out_v_4                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_v_5_U                                                                   | ram_1p array |           | 1     |      |        | out_v_5                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_v_6_U                                                                   | ram_1p array |           | 1     |      |        | out_v_6                                                                 | auto   | 1       | 32, 96, 1        |
+|   out_v_7_U                                                                   | ram_1p array |           | 1     |      |        | out_v_7                                                                 | auto   | 1       | 32, 96, 1        |
+|   xb_U                                                                        | ram_1p array |           | 1     |      |        | xb                                                                      | auto   | 1       | 32, 96, 1        |
+|   xb_1_U                                                                      | ram_1p array |           | 1     |      |        | xb_1                                                                    | auto   | 1       | 32, 96, 1        |
+|   xb_2_U                                                                      | ram_1p array |           | 1     |      |        | xb_2                                                                    | auto   | 1       | 32, 96, 1        |
+|   xb_3_U                                                                      | ram_1p array |           | 1     |      |        | xb_3                                                                    | auto   | 1       | 32, 96, 1        |
+|   xb_4_U                                                                      | ram_1p array |           | 1     |      |        | xb_4                                                                    | auto   | 1       | 32, 96, 1        |
+|   xb_5_U                                                                      | ram_1p array |           | 1     |      |        | xb_5                                                                    | auto   | 1       | 32, 96, 1        |
+|   xb_6_U                                                                      | ram_1p array |           | 1     |      |        | xb_6                                                                    | auto   | 1       | 32, 96, 1        |
+|   xb_7_U                                                                      | ram_1p array |           | 1     |      |        | xb_7                                                                    | auto   | 1       | 32, 96, 1        |
+|   xb2_U                                                                       | ram_1p array |           | 1     |      |        | xb2                                                                     | auto   | 1       | 32, 96, 1        |
+|   xb2_1_U                                                                     | ram_1p array |           | 1     |      |        | xb2_1                                                                   | auto   | 1       | 32, 96, 1        |
+|   xb2_2_U                                                                     | ram_1p array |           | 1     |      |        | xb2_2                                                                   | auto   | 1       | 32, 96, 1        |
+|   xb2_3_U                                                                     | ram_1p array |           | 1     |      |        | xb2_3                                                                   | auto   | 1       | 32, 96, 1        |
+|   xb2_4_U                                                                     | ram_1p array |           | 1     |      |        | xb2_4                                                                   | auto   | 1       | 32, 96, 1        |
+|   xb2_5_U                                                                     | ram_1p array |           | 1     |      |        | xb2_5                                                                   | auto   | 1       | 32, 96, 1        |
+|   xb2_6_U                                                                     | ram_1p array |           | 1     |      |        | xb2_6                                                                   | auto   | 1       | 32, 96, 1        |
+|   xb2_7_U                                                                     | ram_1p array |           | 1     |      |        | xb2_7                                                                   | auto   | 1       | 32, 96, 1        |
+|   current_input_U                                                             | ram_2p array |           | 1     |      |        | current_input                                                           | auto   | 1       | 32, 96, 1        |
+|   current_input_8_U                                                           | ram_2p array |           | 1     |      |        | current_input_8                                                         | auto   | 1       | 32, 96, 1        |
+|   current_input_9_U                                                           | ram_2p array |           | 1     |      |        | current_input_9                                                         | auto   | 1       | 32, 96, 1        |
+|   current_input_10_U                                                          | ram_2p array |           | 1     |      |        | current_input_10                                                        | auto   | 1       | 32, 96, 1        |
+|   current_input_11_U                                                          | ram_2p array |           | 1     |      |        | current_input_11                                                        | auto   | 1       | 32, 96, 1        |
+|   current_input_12_U                                                          | ram_2p array |           | 1     |      |        | current_input_12                                                        | auto   | 1       | 32, 96, 1        |
+|   current_input_13_U                                                          | ram_2p array |           | 1     |      |        | current_input_13                                                        | auto   | 1       | 32, 96, 1        |
+|   current_input_14_U                                                          | ram_2p array |           | 1     |      |        | current_input_14                                                        | auto   | 1       | 32, 96, 1        |
+|   att_U                                                                       | ram_1p array |           | 2     |      |        | att                                                                     | auto   | 1       | 32, 512, 1       |
+|   att_1_U                                                                     | ram_1p array |           | 2     |      |        | att_1                                                                   | auto   | 1       | 32, 512, 1       |
+|   att_2_U                                                                     | ram_1p array |           | 2     |      |        | att_2                                                                   | auto   | 1       | 32, 512, 1       |
+|   att_3_U                                                                     | ram_1p array |           | 2     |      |        | att_3                                                                   | auto   | 1       | 32, 512, 1       |
+|   att_4_U                                                                     | ram_1p array |           | 2     |      |        | att_4                                                                   | auto   | 1       | 32, 512, 1       |
+|   att_5_U                                                                     | ram_1p array |           | 2     |      |        | att_5                                                                   | auto   | 1       | 32, 512, 1       |
+|   att_6_U                                                                     | ram_1p array |           | 2     |      |        | att_6                                                                   | auto   | 1       | 32, 512, 1       |
+|   att_7_U                                                                     | ram_1p array |           | 2     |      |        | att_7                                                                   | auto   | 1       | 32, 512, 1       |
+|   att_8_U                                                                     | ram_1p array |           | 2     |      |        | att_8                                                                   | auto   | 1       | 32, 512, 1       |
+|   att_9_U                                                                     | ram_1p array |           | 2     |      |        | att_9                                                                   | auto   | 1       | 32, 512, 1       |
+|   att_10_U                                                                    | ram_1p array |           | 2     |      |        | att_10                                                                  | auto   | 1       | 32, 512, 1       |
+|   att_11_U                                                                    | ram_1p array |           | 2     |      |        | att_11                                                                  | auto   | 1       | 32, 512, 1       |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_0_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_0_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_0_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_0_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_0_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_0_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_0_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_0_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_0_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_0_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_0_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_0_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_0_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_0_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_0_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_0_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_0_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_0_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_0_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_0_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_0_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_0_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_0_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_0_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_0_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_0_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_0_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_0_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_0_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_0_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_0_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_0_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_1_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_1_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_1_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_1_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_1_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_1_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_1_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_1_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_1_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_1_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_1_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_1_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_1_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_1_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_1_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_1_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_1_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_1_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_1_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_1_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_1_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_1_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_1_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_1_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_1_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_1_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_1_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_1_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_1_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_1_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_1_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_1_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_2_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_2_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_2_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_2_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_2_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_2_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_2_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_2_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_2_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_2_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_2_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_2_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_2_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_2_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_2_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_2_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_2_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_2_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_2_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_2_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_2_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_2_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_2_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_2_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_2_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_2_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_2_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_2_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_2_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_2_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_2_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_2_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_3_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_3_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_3_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_3_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_3_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_3_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_3_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_3_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_3_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_3_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_3_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_3_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_3_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_3_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_3_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_3_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_3_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_3_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_3_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_3_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_3_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_3_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_3_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_3_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_3_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_3_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_3_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_3_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_3_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_3_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_3_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_3_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_4_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_4_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_4_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_4_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_4_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_4_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_4_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_4_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_4_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_4_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_4_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_4_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_4_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_4_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_4_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_4_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_4_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_4_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_4_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_4_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_4_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_4_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_4_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_4_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_4_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_4_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_4_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_4_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_4_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_4_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_4_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_4_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_5_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_5_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_5_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_5_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_5_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_5_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_5_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_5_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_5_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_5_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_5_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_5_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_5_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_5_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_5_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_5_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_5_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_5_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_5_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_5_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_5_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_5_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_5_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_5_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_5_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_5_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_5_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_5_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_5_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_5_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_5_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_5_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_6_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_6_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_6_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_6_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_6_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_6_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_6_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_6_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_6_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_6_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_6_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_6_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_6_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_6_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_6_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_6_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_6_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_6_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_6_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_6_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_6_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_6_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_6_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_6_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_6_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_6_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_6_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_6_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_6_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_6_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_6_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_6_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_7_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_7_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_7_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_7_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_7_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_7_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_7_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_7_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_7_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_7_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_7_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_7_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_7_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_7_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_7_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_7_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_7_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_7_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_7_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_7_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_7_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_7_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_7_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_7_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_7_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_7_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_7_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_7_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_7_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_7_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_7_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_7_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_8_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_8_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_8_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_8_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_8_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_8_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_8_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_8_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_8_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_8_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_8_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_8_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_8_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_8_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_8_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_8_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_8_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_8_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_8_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_8_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_8_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_8_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_8_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_8_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_8_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_8_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_8_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_8_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_8_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_8_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_8_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_8_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_9_0_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_9_0                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_9_0_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_9_0                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_9_1_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_9_1                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_9_1_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_9_1                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_9_2_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_9_2                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_9_2_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_9_2                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_9_3_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_9_3                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_9_3_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_9_3                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_9_4_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_9_4                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_9_4_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_9_4                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_9_5_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_9_5                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_9_5_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_9_5                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_9_6_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_9_6                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_9_6_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_9_6                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_9_7_U                                     | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_9_7                                   | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_9_7_U                                  | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_9_7                                | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_10_0_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_10_0                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_10_0_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_10_0                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_10_1_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_10_1                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_10_1_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_10_1                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_10_2_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_10_2                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_10_2_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_10_2                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_10_3_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_10_3                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_10_3_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_10_3                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_10_4_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_10_4                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_10_4_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_10_4                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_10_5_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_10_5                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_10_5_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_10_5                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_10_6_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_10_6                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_10_6_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_10_6                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_10_7_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_10_7                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_10_7_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_10_7                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_11_0_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_11_0                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_11_0_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_11_0                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_11_1_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_11_1                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_11_1_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_11_1                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_11_2_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_11_2                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_11_2_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_11_2                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_11_3_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_11_3                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_11_3_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_11_3                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_11_4_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_11_4                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_11_4_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_11_4                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_11_5_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_11_5                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_11_5_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_11_5                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_11_6_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_11_6                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_11_6_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_11_6                               | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E9key_cache_11_7_U                                    | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E9key_cache_11_7                                  | bram   | 1       | 32, 49152, 1     |
+|   p_ZZ11kernel_mhsaPfiS_E11value_cache_11_7_U                                 | ram_1p       |           | 96    |      | pragma | p_ZZ11kernel_mhsaPfiS_E11value_cache_11_7                               | bram   | 1       | 32, 49152, 1     |
+|  + matmul_1                                                                   |              |           | 0     | 0    |        |                                                                         |        |         |                  |
+|    vector_stream_U                                                            | fifo channel | stream    |       |      |        | vector_stream                                                           | memory | 0       | 32, 64, 1        |
+|    matrix_stream_U                                                            | fifo channel | stream    |       |      |        | matrix_stream                                                           | memory | 0       | 32, 64, 1        |
+|    result_stream_U                                                            | fifo channel | stream    |       |      |        | result_stream                                                           | memory | 0       | 32, 64, 1        |
+|   + compute_matmul                                                            |              |           | 0     | 0    |        |                                                                         |        |         |                  |
+|     compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_U   | ram_1p       |           |       |      |        | compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local   | auto   | 1       | 32, 192, 1       |
+|     compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1_U | ram_1p       |           |       |      |        | compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1 | auto   | 1       | 32, 192, 1       |
+|     compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2_U | ram_1p       |           |       |      |        | compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2 | auto   | 1       | 32, 192, 1       |
+|     compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3_U | ram_1p       |           |       |      |        | compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3 | auto   | 1       | 32, 192, 1       |
+|  + RoPE                                                                       |              |           | 1     | 0    |        |                                                                         |        |         |                  |
+|    ref_4oPi_table_100_U                                                       | rom_1p       |           |       |      | pragma | ref_4oPi_table_100                                                      | lutram | 1       | 100, 13, 1       |
+|    second_order_float_cos_K0_U                                                | rom_1p       |           |       |      | pragma | second_order_float_cos_K0                                               | lutram | 1       | 28, 128, 1       |
+|    second_order_float_cos_K1_U                                                | rom_1p       |           |       |      | pragma | second_order_float_cos_K1                                               | lutram | 1       | 22, 128, 1       |
+|    second_order_float_cos_K2_U                                                | rom_1p       |           |       |      | pragma | second_order_float_cos_K2                                               | lutram | 1       | 14, 128, 1       |
+|    second_order_float_sin_K0_U                                                | rom_1p       |           |       |      | pragma | second_order_float_sin_K0                                               | lutram | 1       | 29, 128, 1       |
+|    second_order_float_sin_K1_U                                                | rom_1p       |           |       |      | pragma | second_order_float_sin_K1                                               | lutram | 1       | 21, 128, 1       |
+|    second_order_float_sin_K2_U                                                | rom_1p       |           |       |      | pragma | second_order_float_sin_K2                                               | lutram | 1       | 13, 128, 1       |
+|   + pow_generic_float_s                                                       |              |           | 1     | 0    |        |                                                                         |        |         |                  |
+|     pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_U             | rom_1p       |           | 1     |      |        | pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array             | auto   | 1       | 27, 512, 1       |
+|     pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_U               | rom_1p       |           |       |      |        | pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array               | auto   | 1       | 8, 32, 1         |
+|  + kernel_mhsa_Outline_SOFTMAX_HEADS                                          |              |           | 2     | 0    |        |                                                                         |        |         |                  |
+|   + kernel_softmax                                                            |              |           | 2     | 0    |        |                                                                         |        |         |                  |
+|     vec_local_U                                                               | ram_2p array |           | 2     |      |        | vec_local                                                               | auto   | 1       | 32, 768, 1       |
++-------------------------------------------------------------------------------+--------------+-----------+-------+------+--------+-------------------------------------------------------------------------+--------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+---------+------------------------------------+--------------------------------------------------------------+
+| Type     | Options | Location                           | Messages                                                     |
++----------+---------+------------------------------------+--------------------------------------------------------------+
+| DATAFLOW |         | kernel_MHSA.cpp:91 in kernel_mhsa  | Only 'for' loop or function body support the dataflow pragma |
+| DATAFLOW |         | kernel_MHSA.cpp:98 in kernel_mhsa  | Only 'for' loop or function body support the dataflow pragma |
+| DATAFLOW |         | kernel_MHSA.cpp:107 in kernel_mhsa | Only 'for' loop or function body support the dataflow pragma |
++----------+---------+------------------------------------+--------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------------+---------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+| Type            | Options                                                                                                 | Location                                           |
++-----------------+---------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+| INLINE          | OFF                                                                                                     | kernel_MatMul.cpp:10 in load_vec                   |
+| PIPELINE        | ii=1                                                                                                    | kernel_MatMul.cpp:13 in load_vec                   |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_MatMul.cpp:14 in load_vec                   |
+| INLINE          | OFF                                                                                                     | kernel_MatMul.cpp:21 in load_mat                   |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_MatMul.cpp:24 in load_mat                   |
+| PIPELINE        | ii=1                                                                                                    | kernel_MatMul.cpp:26 in load_mat                   |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_MatMul.cpp:27 in load_mat                   |
+| INLINE          | OFF                                                                                                     | kernel_MatMul.cpp:37 in compute_matmul             |
+| ARRAY_PARTITION | variable=vec_local cyclic factor=4 dim=1                                                                | kernel_MatMul.cpp:40 in compute_matmul, vec_local  |
+| PIPELINE        | ii=1                                                                                                    | kernel_MatMul.cpp:44 in compute_matmul             |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_MatMul.cpp:45 in compute_matmul             |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_MatMul.cpp:51 in compute_matmul             |
+| PIPELINE        | ii=1                                                                                                    | kernel_MatMul.cpp:54 in compute_matmul             |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_MatMul.cpp:55 in compute_matmul             |
+| INLINE          | OFF                                                                                                     | kernel_MatMul.cpp:64 in store_result               |
+| PIPELINE        | ii=1                                                                                                    | kernel_MatMul.cpp:67 in store_result               |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_MatMul.cpp:68 in store_result               |
+| INTERFACE       | m_axi port = i_vec bundle = gmem0 max_widen_bitwidth = 32                                               | kernel_MatMul.cpp:76 in matmul                     |
+| INTERFACE       | m_axi port = i_mat bundle = gmem1 max_widen_bitwidth = 32                                               | kernel_MatMul.cpp:77 in matmul                     |
+| INTERFACE       | m_axi port = o_vec bundle = gmem0 max_widen_bitwidth = 32                                               | kernel_MatMul.cpp:78 in matmul                     |
+| INTERFACE       | s_axilite port = return bundle = control                                                                | kernel_MatMul.cpp:79 in matmul                     |
+| STREAM          | variable=vector_stream depth=64                                                                         | kernel_MatMul.cpp:85 in matmul, vector_stream      |
+| STREAM          | variable=matrix_stream depth=64                                                                         | kernel_MatMul.cpp:86 in matmul, matrix_stream      |
+| STREAM          | variable=result_stream depth=64                                                                         | kernel_MatMul.cpp:87 in matmul, result_stream      |
+| DATAFLOW        |                                                                                                         | kernel_MatMul.cpp:89 in matmul                     |
+| INTERFACE       | m_axi port=current_token bundle=gmem0 offset=slave max_read_burst_length=256 max_write_burst_length=256 | kernel_MHSA.cpp:9 in kernel_mhsa, current_token    |
+| INTERFACE       | m_axi port=weights bundle=gmem1 offset=slave max_read_burst_length=256                                  | kernel_MHSA.cpp:10 in kernel_mhsa, weights         |
+| INTERFACE       | s_axilite port=position                                                                                 | kernel_MHSA.cpp:11 in kernel_mhsa, position        |
+| INTERFACE       | s_axilite port=return                                                                                   | kernel_MHSA.cpp:12 in kernel_mhsa, return          |
+| ARRAY_PARTITION | variable=key_cache complete dim=1                                                                       | kernel_MHSA.cpp:24 in kernel_mhsa, key_cache       |
+| ARRAY_PARTITION | variable=key_cache cyclic factor=8 dim=2                                                                | kernel_MHSA.cpp:25 in kernel_mhsa, key_cache       |
+| BIND_STORAGE    | variable=key_cache type=ram_1p impl=bram                                                                | kernel_MHSA.cpp:26 in kernel_mhsa, key_cache       |
+| ARRAY_PARTITION | variable=value_cache complete dim=1                                                                     | kernel_MHSA.cpp:27 in kernel_mhsa, value_cache     |
+| ARRAY_PARTITION | variable=value_cache cyclic factor=8 dim=2                                                              | kernel_MHSA.cpp:28 in kernel_mhsa, value_cache     |
+| BIND_STORAGE    | variable=value_cache type=ram_1p impl=bram                                                              | kernel_MHSA.cpp:29 in kernel_mhsa, value_cache     |
+| LOOP_TRIPCOUNT  | min=1 max=12                                                                                            | kernel_MHSA.cpp:34 in kernel_mhsa                  |
+| PIPELINE        | ii=1                                                                                                    | kernel_MHSA.cpp:36 in kernel_mhsa                  |
+| LOOP_TRIPCOUNT  | min=1024 max=262144                                                                                     | kernel_MHSA.cpp:37 in kernel_mhsa                  |
+| ARRAY_PARTITION | variable=in_rms_vec cyclic factor=8                                                                     | kernel_MHSA.cpp:57 in kernel_mhsa, in_rms_vec      |
+| ARRAY_PARTITION | variable=out_rms_vec cyclic factor=8                                                                    | kernel_MHSA.cpp:58 in kernel_mhsa, out_rms_vec     |
+| ARRAY_PARTITION | variable=out_q cyclic factor=8                                                                          | kernel_MHSA.cpp:59 in kernel_mhsa, out_q           |
+| ARRAY_PARTITION | variable=out_q_rope cyclic factor=8                                                                     | kernel_MHSA.cpp:60 in kernel_mhsa, out_q_rope      |
+| ARRAY_PARTITION | variable=out_k cyclic factor=8                                                                          | kernel_MHSA.cpp:61 in kernel_mhsa, out_k           |
+| ARRAY_PARTITION | variable=out_k_rope cyclic factor=8                                                                     | kernel_MHSA.cpp:62 in kernel_mhsa, out_k_rope      |
+| ARRAY_PARTITION | variable=out_v cyclic factor=8                                                                          | kernel_MHSA.cpp:63 in kernel_mhsa, out_v           |
+| ARRAY_PARTITION | variable=xb cyclic factor=8                                                                             | kernel_MHSA.cpp:64 in kernel_mhsa, xb              |
+| ARRAY_PARTITION | variable=xb2 cyclic factor=8                                                                            | kernel_MHSA.cpp:65 in kernel_mhsa, xb2             |
+| ARRAY_PARTITION | variable=current_input cyclic factor=8                                                                  | kernel_MHSA.cpp:68 in kernel_mhsa, current_input   |
+| PIPELINE        | ii=1                                                                                                    | kernel_MHSA.cpp:72 in kernel_mhsa                  |
+| LOOP_TRIPCOUNT  | min=1 max=12                                                                                            | kernel_MHSA.cpp:78 in kernel_mhsa                  |
+| DEPENDENCE      | variable=current_input inter false                                                                      | kernel_MHSA.cpp:79 in kernel_mhsa, current_input   |
+| PIPELINE        | ii=1                                                                                                    | kernel_MHSA.cpp:114 in kernel_mhsa                 |
+| ARRAY_PARTITION | variable=att complete dim=1                                                                             | kernel_MHSA.cpp:121 in kernel_mhsa, att            |
+| PIPELINE        | ii=1                                                                                                    | kernel_MHSA.cpp:129 in kernel_mhsa                 |
+| LOOP_TRIPCOUNT  | min=1 max=512                                                                                           | kernel_MHSA.cpp:130 in kernel_mhsa                 |
+| LOOP_TRIPCOUNT  | min=1 max=16                                                                                            | kernel_MHSA.cpp:137 in kernel_mhsa                 |
+| ARRAY_PARTITION | variable=q_head_local complete                                                                          | kernel_MHSA.cpp:141 in kernel_mhsa, q_head_local   |
+| PIPELINE        | ii=1                                                                                                    | kernel_MHSA.cpp:144 in kernel_mhsa                 |
+| PIPELINE        | ii=8                                                                                                    | kernel_MHSA.cpp:150 in kernel_mhsa                 |
+| LOOP_TRIPCOUNT  | min=1 max=512                                                                                           | kernel_MHSA.cpp:151 in kernel_mhsa                 |
+| UNROLL          | factor=4                                                                                                | kernel_MHSA.cpp:157 in kernel_mhsa                 |
+| BIND_OP         | variable=dot op=fmul impl=dsp                                                                           | kernel_MHSA.cpp:159 in kernel_mhsa, dot            |
+| LOOP_TRIPCOUNT  | min=1 max=16                                                                                            | kernel_MHSA.cpp:170 in kernel_mhsa                 |
+| PIPELINE        | ii=1                                                                                                    | kernel_MHSA.cpp:176 in kernel_mhsa                 |
+| LOOP_TRIPCOUNT  | min=1 max=16                                                                                            | kernel_MHSA.cpp:184 in kernel_mhsa                 |
+| ARRAY_PARTITION | variable=local_accum complete                                                                           | kernel_MHSA.cpp:188 in kernel_mhsa, local_accum    |
+| UNROLL          |                                                                                                         | kernel_MHSA.cpp:192 in kernel_mhsa                 |
+| LOOP_TRIPCOUNT  | min=1 max=512                                                                                           | kernel_MHSA.cpp:198 in kernel_mhsa                 |
+| PIPELINE        | ii=2                                                                                                    | kernel_MHSA.cpp:204 in kernel_mhsa                 |
+| UNROLL          | factor=2                                                                                                | kernel_MHSA.cpp:205 in kernel_mhsa                 |
+| BIND_OP         | variable=local_accum op=fmul impl=dsp                                                                   | kernel_MHSA.cpp:207 in kernel_mhsa, local_accum    |
+| PIPELINE        | ii=1                                                                                                    | kernel_MHSA.cpp:214 in kernel_mhsa                 |
+| UNROLL          | factor=4                                                                                                | kernel_MHSA.cpp:215 in kernel_mhsa                 |
+| PIPELINE        | ii=1                                                                                                    | kernel_MHSA.cpp:226 in kernel_mhsa                 |
+| PIPELINE        | ii=1                                                                                                    | kernel_MHSA.cpp:233 in kernel_mhsa                 |
+| INTERFACE       | m_axi port=i_vec_1 offset=slave bundle=gmem                                                             | kernel_RMS_Norm.cpp:11 in kernel_rmsnorm, i_vec_1  |
+| INTERFACE       | m_axi port=i_vec_2 offset=slave bundle=gmem                                                             | kernel_RMS_Norm.cpp:12 in kernel_rmsnorm, i_vec_2  |
+| INTERFACE       | m_axi port=o_vec offset=slave bundle=gmem                                                               | kernel_RMS_Norm.cpp:13 in kernel_rmsnorm, o_vec    |
+| INTERFACE       | s_axilite port=return bundle=control                                                                    | kernel_RMS_Norm.cpp:14 in kernel_rmsnorm, return   |
+| INLINE          | off                                                                                                     | kernel_Rope.cpp:9 in rope                          |
+| INTERFACE       | m_axi port=out bundle=gmem0                                                                             | kernel_Rope.cpp:10 in rope, out                    |
+| INTERFACE       | m_axi port=in bundle=gmem1                                                                              | kernel_Rope.cpp:11 in rope, in                     |
+| INTERFACE       | s_axilite port=pos bundle=control                                                                       | kernel_Rope.cpp:12 in rope, pos                    |
+| INTERFACE       | s_axilite port=d_model bundle=control                                                                   | kernel_Rope.cpp:13 in rope, d_model                |
+| INTERFACE       | s_axilite port=return bundle=control                                                                    | kernel_Rope.cpp:14 in rope, return                 |
+| PIPELINE        | ii=1                                                                                                    | kernel_Rope.cpp:17 in rope                         |
+| INTERFACE       | m_axi port = i_vec bundle = gmem0 max_widen_bitwidth = 32                                               | kernel_Softmax.cpp:3 in kernel_softmax             |
+| INTERFACE       | s_axilite port = vec_size bundle = control                                                              | kernel_Softmax.cpp:4 in kernel_softmax             |
+| INTERFACE       | s_axilite port = return bundle = control                                                                | kernel_Softmax.cpp:5 in kernel_softmax             |
+| PIPELINE        | ii=1 rewind                                                                                             | kernel_Softmax.cpp:11 in kernel_softmax            |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_Softmax.cpp:12 in kernel_softmax            |
+| PIPELINE        | ii=2 rewind                                                                                             | kernel_Softmax.cpp:18 in kernel_softmax            |
+| LOOP_TRIPCOUNT  | min=767 max=767                                                                                         | kernel_Softmax.cpp:19 in kernel_softmax            |
+| UNROLL          | factor=2                                                                                                | kernel_Softmax.cpp:20 in kernel_softmax            |
+| PIPELINE        | ii=1 rewind                                                                                             | kernel_Softmax.cpp:28 in kernel_softmax            |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_Softmax.cpp:29 in kernel_softmax            |
+| DEPENDENCE      | variable=vec_local inter false                                                                          | kernel_Softmax.cpp:30 in kernel_softmax, vec_local |
+| PIPELINE        | ii=1 rewind                                                                                             | kernel_Softmax.cpp:36 in kernel_softmax            |
+| LOOP_TRIPCOUNT  | min=768 max=768                                                                                         | kernel_Softmax.cpp:37 in kernel_softmax            |
+| DEPENDENCE      | variable=i_vec inter false                                                                              | kernel_Softmax.cpp:38 in kernel_softmax, i_vec     |
++-----------------+---------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+
+

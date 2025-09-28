@@ -1,0 +1,194 @@
+
+
+================================================================
+== Vitis HLS Report for 'compute_matmul_Pipeline_execute_dot_product'
+================================================================
+* Date:           Sat Sep 27 23:15:29 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        mhsa_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  3.274 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   |   min  |   max  |                      Type                      |
+    +---------+---------+----------+----------+--------+--------+------------------------------------------------+
+    |   589828|   589828|  2.359 ms|  2.359 ms|  589825|  589825|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+--------+--------+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |                       |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip  |          |
+        |       Loop Name       |   min   |   max   |  Latency |  achieved |   target  |  Count | Pipelined|
+        +-----------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |- execute_dot_product  |   589826|   589826|         4|          1|          1|  589824|       yes|
+        +-----------------------+---------+---------+----------+-----------+-----------+--------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|       91|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      1|        1|       33|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|      164|     -|
+|Register             |        -|      -|      142|        2|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      1|      143|      290|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     2494|   3616|  1716138|   858069|   641|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|     ~0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     7482|  10848|  5148416|  2574208|  1925|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|     ~0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------------------+------------------------------------------------+---------+----+---+----+-----+
+    |                       Instance                      |                     Module                     | BRAM_18K| DSP| FF| LUT| URAM|
+    +-----------------------------------------------------+------------------------------------------------+---------+----+---+----+-----+
+    |fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U261  |fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1  |        0|   1|  1|   1|    0|
+    |sparsemux_9_2_32_1_1_U262                            |sparsemux_9_2_32_1_1                            |        0|   0|  0|  32|    0|
+    +-----------------------------------------------------+------------------------------------------------+---------+----+---+----+-----+
+    |Total                                                |                                                |        0|   1|  1|  33|    0|
+    +-----------------------------------------------------+------------------------------------------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------------+----------+----+---+----+------------+------------+
+    |             Variable Name             | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------------+----------+----+---+----+------------+------------+
+    |add_ln50_fu_176_p2                     |         +|   0|  0|  20|          20|           1|
+    |add_ln53_fu_243_p2                     |         +|   0|  0|  10|          10|           1|
+    |ap_block_state4_pp0_stage0_iter3_grp1  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln50_fu_182_p2                    |      icmp|   0|  0|   8|          20|          20|
+    |icmp_ln53_1_fu_249_p2                  |      icmp|   0|  0|   4|          10|          10|
+    |icmp_ln53_fu_191_p2                    |      icmp|   0|  0|   4|          10|          10|
+    |ap_block_pp0_stage0_01001_grp1         |        or|   0|  0|   2|           1|           1|
+    |grp_fu_151_p3                          |    select|   0|  0|  29|           1|           1|
+    |select_ln50_fu_197_p3                  |    select|   0|  0|  10|           1|           1|
+    |ap_enable_pp0                          |       xor|   0|  0|   2|           1|           2|
+    +---------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                  |          |   0|  0|  91|          75|          48|
+    +---------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                           |   1|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1               |   1|          2|    1|          2|
+    |ap_sig_allocacmp_indvar_flatten_load  |  32|          2|   20|         40|
+    |ap_sig_allocacmp_j_load               |  16|          2|   10|         20|
+    |ap_sig_allocacmp_sum_local_01_load    |  32|          2|   32|         64|
+    |indvar_flatten_fu_82                  |  32|          2|   20|         40|
+    |j_fu_78                               |  16|          2|   10|         20|
+    |matrix_stream_blk_n                   |   1|          2|    1|          2|
+    |result_stream_blk_n                   |   1|          2|    1|          2|
+    |sum_local_01_fu_74                    |  32|          2|   32|         64|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 | 164|         20|  128|        256|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                         |   1|   0|    1|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg  |   1|   0|    1|          0|
+    |icmp_ln53_1_reg_385               |   1|   0|    1|          0|
+    |icmp_ln53_reg_355                 |   1|   0|    1|          0|
+    |icmp_ln53_reg_355_pp0_iter1_reg   |   1|   0|    1|          0|
+    |indvar_flatten_fu_82              |  20|   0|   20|          0|
+    |j_fu_78                           |  10|   0|   10|          0|
+    |matrix_stream_read_reg_395        |  32|   0|   32|          0|
+    |sum_local_01_fu_74                |  32|   0|   32|          0|
+    |tmp_reg_389                       |  32|   0|   32|          0|
+    |trunc_ln53_reg_360                |   2|   0|    2|          0|
+    |icmp_ln53_1_reg_385               |   4|   2|    1|          0|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             | 142|   2|  139|          0|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------------------------------------------------------------+-----+-----+------------+-------------------------------------------------------------------------+--------------+
+|                                     RTL Ports                                    | Dir | Bits|  Protocol  |                              Source Object                              |    C Type    |
++----------------------------------------------------------------------------------+-----+-----+------------+-------------------------------------------------------------------------+--------------+
+|ap_clk                                                                            |   in|    1|  ap_ctrl_hs|                              compute_matmul_Pipeline_execute_dot_product|  return value|
+|ap_rst                                                                            |   in|    1|  ap_ctrl_hs|                              compute_matmul_Pipeline_execute_dot_product|  return value|
+|ap_start                                                                          |   in|    1|  ap_ctrl_hs|                              compute_matmul_Pipeline_execute_dot_product|  return value|
+|ap_done                                                                           |  out|    1|  ap_ctrl_hs|                              compute_matmul_Pipeline_execute_dot_product|  return value|
+|ap_idle                                                                           |  out|    1|  ap_ctrl_hs|                              compute_matmul_Pipeline_execute_dot_product|  return value|
+|ap_ready                                                                          |  out|    1|  ap_ctrl_hs|                              compute_matmul_Pipeline_execute_dot_product|  return value|
+|matrix_stream_dout                                                                |   in|   32|     ap_fifo|                                                            matrix_stream|       pointer|
+|matrix_stream_empty_n                                                             |   in|    1|     ap_fifo|                                                            matrix_stream|       pointer|
+|matrix_stream_read                                                                |  out|    1|     ap_fifo|                                                            matrix_stream|       pointer|
+|matrix_stream_num_data_valid                                                      |   in|    7|     ap_fifo|                                                            matrix_stream|       pointer|
+|matrix_stream_fifo_cap                                                            |   in|    7|     ap_fifo|                                                            matrix_stream|       pointer|
+|result_stream_din                                                                 |  out|   32|     ap_fifo|                                                            result_stream|       pointer|
+|result_stream_full_n                                                              |   in|    1|     ap_fifo|                                                            result_stream|       pointer|
+|result_stream_write                                                               |  out|    1|     ap_fifo|                                                            result_stream|       pointer|
+|result_stream_num_data_valid                                                      |   in|   32|     ap_fifo|                                                            result_stream|       pointer|
+|result_stream_fifo_cap                                                            |   in|   32|     ap_fifo|                                                            result_stream|       pointer|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_address0    |  out|    8|   ap_memory|    compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_ce0         |  out|    1|   ap_memory|    compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_q0          |   in|   32|   ap_memory|    compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1_address0  |  out|    8|   ap_memory|  compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1_ce0       |  out|    1|   ap_memory|  compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1_q0        |   in|   32|   ap_memory|  compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2_address0  |  out|    8|   ap_memory|  compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2_ce0       |  out|    1|   ap_memory|  compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2_q0        |   in|   32|   ap_memory|  compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3_address0  |  out|    8|   ap_memory|  compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3_ce0       |  out|    1|   ap_memory|  compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3|         array|
+|compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3_q0        |   in|   32|   ap_memory|  compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3|         array|
++----------------------------------------------------------------------------------+-----+-----+------------+-------------------------------------------------------------------------+--------------+
+

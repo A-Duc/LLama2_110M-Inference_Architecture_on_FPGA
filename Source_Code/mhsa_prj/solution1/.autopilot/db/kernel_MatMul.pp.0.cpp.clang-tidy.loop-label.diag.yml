@@ -1,0 +1,22 @@
+---
+MainSourceFile:  'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/.autopilot/db/kernel_MatMul.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_25_1:  '
+    FileOffset:      25
+    FilePath:        kernel_MatMul.cpp
+    Replacements:    
+      - FilePath:        'C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\mhsa_prj\solution1\.autopilot\db\kernel_MatMul.pp.0.cpp'
+        Offset:          21280
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_25_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_43_1:  '
+    FileOffset:      43
+    FilePath:        kernel_MatMul.cpp
+    Replacements:    
+      - FilePath:        'C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\mhsa_prj\solution1\.autopilot\db\kernel_MatMul.pp.0.cpp'
+        Offset:          21733
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_43_1: '
+...

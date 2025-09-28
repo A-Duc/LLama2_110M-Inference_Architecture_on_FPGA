@@ -1,0 +1,168 @@
+
+
+================================================================
+== Vitis HLS Report for 'kernel_mhsa_Pipeline_XB_INIT'
+================================================================
+* Date:           Sat Sep 27 23:15:46 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        mhsa_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.142 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |      770|      770|  3.080 us|  3.080 us|  769|  769|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+        |           |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- XB_INIT  |      768|      768|         1|          1|          1|   768|       yes|
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|       14|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        -|        -|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|       33|     -|
+|Register             |        -|      -|       12|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|       12|       47|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     2494|   3616|  1716138|   858069|   641|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     7482|  10848|  5148416|  2574208|  1925|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+----+---+----+------------+------------+
+    |add_ln175_fu_190_p2   |         +|   0|  0|  10|          10|           1|
+    |icmp_ln175_fu_196_p2  |      icmp|   0|  0|   4|          10|          10|
+    +----------------------+----------+----+---+----+------------+------------+
+    |Total                 |          |   0|  0|  14|          20|          11|
+    +----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |ap_done_int           |   1|          2|    1|          2|
+    |ap_sig_allocacmp_i_6  |  16|          2|   10|         20|
+    |i_fu_62               |  16|          2|   10|         20|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 |  33|          6|   21|         42|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+----+----+-----+-----------+
+    |     Name    | FF | LUT| Bits| Const Bits|
+    +-------------+----+----+-----+-----------+
+    |ap_CS_fsm    |   1|   0|    1|          0|
+    |ap_done_reg  |   1|   0|    1|          0|
+    |i_fu_62      |  10|   0|   10|          0|
+    +-------------+----+----+-----+-----------+
+    |Total        |  12|   0|   12|          0|
+    +-------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+------------------------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  |         Source Object        |    C Type    |
++---------------+-----+-----+------------+------------------------------+--------------+
+|ap_clk         |   in|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_XB_INIT|  return value|
+|ap_rst         |   in|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_XB_INIT|  return value|
+|ap_start       |   in|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_XB_INIT|  return value|
+|ap_done        |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_XB_INIT|  return value|
+|ap_idle        |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_XB_INIT|  return value|
+|ap_ready       |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_XB_INIT|  return value|
+|xb_7_address0  |  out|    7|   ap_memory|                          xb_7|         array|
+|xb_7_ce0       |  out|    1|   ap_memory|                          xb_7|         array|
+|xb_7_we0       |  out|    1|   ap_memory|                          xb_7|         array|
+|xb_7_d0        |  out|   32|   ap_memory|                          xb_7|         array|
+|xb_6_address0  |  out|    7|   ap_memory|                          xb_6|         array|
+|xb_6_ce0       |  out|    1|   ap_memory|                          xb_6|         array|
+|xb_6_we0       |  out|    1|   ap_memory|                          xb_6|         array|
+|xb_6_d0        |  out|   32|   ap_memory|                          xb_6|         array|
+|xb_5_address0  |  out|    7|   ap_memory|                          xb_5|         array|
+|xb_5_ce0       |  out|    1|   ap_memory|                          xb_5|         array|
+|xb_5_we0       |  out|    1|   ap_memory|                          xb_5|         array|
+|xb_5_d0        |  out|   32|   ap_memory|                          xb_5|         array|
+|xb_4_address0  |  out|    7|   ap_memory|                          xb_4|         array|
+|xb_4_ce0       |  out|    1|   ap_memory|                          xb_4|         array|
+|xb_4_we0       |  out|    1|   ap_memory|                          xb_4|         array|
+|xb_4_d0        |  out|   32|   ap_memory|                          xb_4|         array|
+|xb_3_address0  |  out|    7|   ap_memory|                          xb_3|         array|
+|xb_3_ce0       |  out|    1|   ap_memory|                          xb_3|         array|
+|xb_3_we0       |  out|    1|   ap_memory|                          xb_3|         array|
+|xb_3_d0        |  out|   32|   ap_memory|                          xb_3|         array|
+|xb_2_address0  |  out|    7|   ap_memory|                          xb_2|         array|
+|xb_2_ce0       |  out|    1|   ap_memory|                          xb_2|         array|
+|xb_2_we0       |  out|    1|   ap_memory|                          xb_2|         array|
+|xb_2_d0        |  out|   32|   ap_memory|                          xb_2|         array|
+|xb_1_address0  |  out|    7|   ap_memory|                          xb_1|         array|
+|xb_1_ce0       |  out|    1|   ap_memory|                          xb_1|         array|
+|xb_1_we0       |  out|    1|   ap_memory|                          xb_1|         array|
+|xb_1_d0        |  out|   32|   ap_memory|                          xb_1|         array|
+|xb_address0    |  out|    7|   ap_memory|                            xb|         array|
+|xb_ce0         |  out|    1|   ap_memory|                            xb|         array|
+|xb_we0         |  out|    1|   ap_memory|                            xb|         array|
+|xb_d0          |  out|   32|   ap_memory|                            xb|         array|
++---------------+-----+-----+------------+------------------------------+--------------+
+

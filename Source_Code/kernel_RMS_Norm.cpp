@@ -1,7 +1,7 @@
 #include <cmath>
 #include <stdint.h>
-#include <tensor.hpp>
-
+#include "tensor.hpp"
+#include "kernel_RMS_Norm.hpp"
 extern "C" {
 void kernel_rmsnorm(float* i_vec_1,
                     float* i_vec_2,
@@ -11,10 +11,9 @@ void kernel_rmsnorm(float* i_vec_1,
 #pragma HLS INTERFACE m_axi     port=i_vec_1  offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi     port=i_vec_2  offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi     port=o_vec    offset=slave bundle=gmem
-#pragma HLS INTERFACE s_axilite port=vec_size bundle=control
 #pragma HLS INTERFACE s_axilite port=return   bundle=control
 
-    int vec_size = kDim;
+    int vec_size = dim;
 
     float sum_local = 0.0f;
     for (int i = 0; i < vec_size; ++i) {

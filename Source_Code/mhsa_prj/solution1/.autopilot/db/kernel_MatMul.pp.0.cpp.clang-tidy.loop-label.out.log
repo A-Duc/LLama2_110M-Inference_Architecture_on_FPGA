@@ -1,0 +1,10 @@
+C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\mhsa_prj\solution1\.autopilot\db\kernel_MatMul.pp.0.cpp:539:2: warning: Added loop label VITIS_LOOP_25_1:   [xilinx-label-all-loops]
+ for (int j = 0; j < 768; j++) {
+ ^~~
+ VITIS_LOOP_25_1: 
+C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\mhsa_prj\solution1\.autopilot\db\kernel_MatMul.pp.0.cpp:539:2: note: FIX-IT applied suggested code changes
+C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\mhsa_prj\solution1\.autopilot\db\kernel_MatMul.pp.0.cpp:557:2: warning: Added loop label VITIS_LOOP_43_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < 768; i++) {
+ ^~~
+ VITIS_LOOP_43_1: 
+C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\mhsa_prj\solution1\.autopilot\db\kernel_MatMul.pp.0.cpp:557:2: note: FIX-IT applied suggested code changes

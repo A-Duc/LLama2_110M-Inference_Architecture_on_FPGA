@@ -1,0 +1,158 @@
+{
+  "0": {
+    "basicblocks": 463,
+    "calls": "5 5 5 3 3 6 5 6 6 6 6 6 6 6 6 6 6 6",
+    "control_depth": 2,
+    "def_use_depth": 71,
+    "file": "kernel_MHSA.cpp",
+    "fileloc": 6,
+    "instructions": 6387,
+    "loads": {
+      "G": 865,
+      "L": 204
+    },
+    "memory_accesses": 1674,
+    "name": "kernel_mhsa",
+    "stores": {
+      "G": 385,
+      "L": 192
+    },
+    "total_instructions": 8821
+  },
+  "1": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 20,
+    "instructions": 18,
+    "memory_accesses": 2,
+    "name": "load_mat",
+    "total_instructions": 18
+  },
+  "2": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 4,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 9,
+    "instructions": 26,
+    "loads": {
+      "L": 8
+    },
+    "memory_accesses": 9,
+    "name": "load_vec",
+    "total_instructions": 26
+  },
+  "3": {
+    "basicblocks": 20,
+    "calls": "7",
+    "control_depth": 4,
+    "def_use_depth": 55,
+    "file": "kernel_Rope.cpp",
+    "fileloc": 3,
+    "instructions": 341,
+    "loads": {
+      "G": 7,
+      "L": 8
+    },
+    "memory_accesses": 27,
+    "name": "RoPE",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 553
+  },
+  "4": {
+    "basicblocks": 12,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 5,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 34,
+    "instructions": 62,
+    "loads": {
+      "G": 4
+    },
+    "memory_accesses": 11,
+    "name": "compute_matmul",
+    "stores": {
+      "G": 4
+    },
+    "total_instructions": 62
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "2 1 4 8",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 75,
+    "instructions": 14,
+    "memory_accesses": 0,
+    "name": "matmul",
+    "total_instructions": 164
+  },
+  "6": {
+    "basicblocks": 10,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 5,
+    "file": "kernel_Softmax.cpp",
+    "fileloc": 2,
+    "instructions": 56,
+    "loads": {
+      "L": 6
+    },
+    "memory_accesses": 8,
+    "name": "kernel_softmax",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 56
+  },
+  "7": {
+    "basicblocks": 23,
+    "calls": "9 9 9 9 9 9 9 9",
+    "control_depth": 6,
+    "def_use_depth": 35,
+    "file": "hls_pow.h",
+    "fileloc": 291,
+    "instructions": 172,
+    "loads": {
+      "G": 2
+    },
+    "memory_accesses": 10,
+    "name": "pow_generic<float>",
+    "total_instructions": 212
+  },
+  "8": {
+    "basicblocks": 12,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 63,
+    "instructions": 44,
+    "memory_accesses": 10,
+    "name": "store_result",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 44
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "x_hls_utils.h",
+    "fileloc": 346,
+    "instructions": 5,
+    "memory_accesses": 0,
+    "name": "to_ieee",
+    "total_instructions": 5
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "0": {
+    "basicblocks": 748,
+    "calls": "8 8 8 6 6 9 8 9 9 9 9 9 9 9 9 9 9 9",
+    "control_depth": 4,
+    "def_use_depth": 73,
+    "file": "kernel_MHSA.cpp",
+    "fileloc": 6,
+    "instructions": 17419,
+    "loads": {
+      "G": 865,
+      "L": 268,
+      "T": 2
+    },
+    "memory_accesses": 1832,
+    "name": "kernel_mhsa",
+    "stores": {
+      "G": 385,
+      "L": 256,
+      "T": 1
+    },
+    "total_instructions": 20225
+  },
+  "1": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 4,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 20,
+    "instructions": 17,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 2,
+    "name": "load_mat",
+    "total_instructions": 17
+  },
+  "10": {
+    "basicblocks": 23,
+    "calls": "4 4 4 4 4 4 4 4",
+    "control_depth": 6,
+    "def_use_depth": 34,
+    "file": "hls_pow.h",
+    "fileloc": 291,
+    "instructions": 202,
+    "loads": {
+      "G": 2
+    },
+    "memory_accesses": 23,
+    "name": "pow_generic<float>",
+    "stores": {
+      "L": 13
+    },
+    "total_instructions": 274
+  },
+  "11": {
+    "basicblocks": 12,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 63,
+    "instructions": 45,
+    "memory_accesses": 10,
+    "name": "store_result",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 45
+  },
+  "2": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "x_hls_float_utils.h",
+    "fileloc": 256,
+    "instructions": 42,
+    "memory_accesses": 0,
+    "name": "scaled_fixed2ieee<29, 1>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 42
+  },
+  "3": {
+    "basicblocks": 5,
+    "calls": "2 2",
+    "control_depth": 0,
+    "def_use_depth": 19,
+    "file": "hls_hotbm.h",
+    "fileloc": 129,
+    "instructions": 255,
+    "loads": {
+      "G": 47,
+      "L": 2
+    },
+    "memory_accesses": 0,
+    "name": "generic_sincos<float>",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 339
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "x_hls_utils.h",
+    "fileloc": 346,
+    "instructions": 9,
+    "loads": {
+      "L": 3
+    },
+    "memory_accesses": 0,
+    "name": "to_ieee",
+    "total_instructions": 9
+  },
+  "5": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 4,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 9,
+    "instructions": 27,
+    "loads": {
+      "L": 8
+    },
+    "memory_accesses": 9,
+    "name": "load_vec",
+    "total_instructions": 27
+  },
+  "6": {
+    "basicblocks": 13,
+    "calls": "10 3",
+    "control_depth": 4,
+    "def_use_depth": 7,
+    "file": "kernel_Rope.cpp",
+    "fileloc": 3,
+    "instructions": 120,
+    "loads": {
+      "L": 10
+    },
+    "memory_accesses": 21,
+    "name": "RoPE",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 733
+  },
+  "7": {
+    "basicblocks": 12,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 5,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 34,
+    "instructions": 64,
+    "loads": {
+      "G": 4
+    },
+    "memory_accesses": 11,
+    "name": "compute_matmul",
+    "stores": {
+      "G": 4
+    },
+    "total_instructions": 64
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "5 1 7 11",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 75,
+    "instructions": 14,
+    "memory_accesses": 0,
+    "name": "matmul",
+    "total_instructions": 167
+  },
+  "9": {
+    "basicblocks": 10,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 5,
+    "file": "kernel_Softmax.cpp",
+    "fileloc": 2,
+    "instructions": 56,
+    "loads": {
+      "L": 6
+    },
+    "memory_accesses": 8,
+    "name": "kernel_softmax",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 56
+  }
+}
