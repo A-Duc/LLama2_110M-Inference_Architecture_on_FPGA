@@ -1,0 +1,188 @@
+
+
+================================================================
+== Synthesis Summary Report of 'kernel_matmul'
+================================================================
++ General Information: 
+    * Date:           Mon Sep 15 13:34:10 2025
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        matmul_simple_hls
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcu250-figd2104-2L-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+------------+------------+-----+
+    |                   Modules                  | Issue|      |       Latency       | Iteration|         | Trip |          |         |         |            |            |     |
+    |                   & Loops                  | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |     FF     |     LUT    | URAM|
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+------------+------------+-----+
+    |+ kernel_matmul                             |     -|  0.00|        -|          -|         -|        -|     -|        no|  4 (~0%)|  3 (~0%)|  3015 (~0%)|  3761 (~0%)|    -|
+    | + kernel_matmul_Pipeline_VITIS_LOOP_17_1   |     -|  0.00|        -|          -|         -|        0|     -|    rewind|        -|        -|   204 (~0%)|   223 (~0%)|    -|
+    |  o VITIS_LOOP_17_1                         |     -|  7.30|        -|          -|        11|        1|     -|       yes|        -|        -|           -|           -|    -|
+    | o VITIS_LOOP_23_2                          |     -|  7.30|  1617920|  1.618e+07|       790|        -|  2048|        no|        -|        -|           -|           -|    -|
+    |  + kernel_matmul_Pipeline_VITIS_LOOP_26_3  |     -|  0.00|      782|  7.820e+03|         -|      769|     -|    rewind|        -|  3 (~0%)|   595 (~0%)|   765 (~0%)|    -|
+    |   o VITIS_LOOP_26_3                        |     -|  7.30|      780|  7.800e+03|        14|        1|   768|       yes|        -|        -|           -|           -|    -|
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface   | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|             |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem0 | READ_WRITE | 32 -> 32   | 64            | 0       | slave  | 0        | 32        | 16           | 16           | 16          | 16          | BRAM=1            |
+| m_axi_gmem1 | READ_ONLY  | 32 -> 32   | 64            | 0       | slave  | 0        | 32        | 16           | 16           | 16          | 16          | BRAM=1            |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 7             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | i_vec_1  | 0x10   | 32    | W      | Data signal of i_vec             |                                                                      |
+| s_axi_control | i_vec_2  | 0x14   | 32    | W      | Data signal of i_vec             |                                                                      |
+| s_axi_control | i_mat_1  | 0x1c   | 32    | W      | Data signal of i_mat             |                                                                      |
+| s_axi_control | i_mat_2  | 0x20   | 32    | W      | Data signal of i_mat             |                                                                      |
+| s_axi_control | o_vec_1  | 0x28   | 32    | W      | Data signal of o_vec             |                                                                      |
+| s_axi_control | o_vec_2  | 0x2c   | 32    | W      | Data signal of o_vec             |                                                                      |
+| s_axi_control | vec_size | 0x34   | 32    | W      | Data signal of vec_size          |                                                                      |
+| s_axi_control | col_size | 0x3c   | 32    | W      | Data signal of col_size          |                                                                      |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| i_vec    | inout     | float*   |
+| i_mat    | in        | float*   |
+| o_vec    | inout     | float*   |
+| vec_size | in        | int      |
+| col_size | in        | int      |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                            |
++----------+---------------+-----------+----------+------------------------------------+
+| i_vec    | m_axi_gmem0   | interface |          | channel=0                          |
+| i_vec    | s_axi_control | register  | offset   | name=i_vec_1 offset=0x10 range=32  |
+| i_vec    | s_axi_control | register  | offset   | name=i_vec_2 offset=0x14 range=32  |
+| i_mat    | m_axi_gmem1   | interface |          | channel=0                          |
+| i_mat    | s_axi_control | register  | offset   | name=i_mat_1 offset=0x1c range=32  |
+| i_mat    | s_axi_control | register  | offset   | name=i_mat_2 offset=0x20 range=32  |
+| o_vec    | m_axi_gmem0   | interface |          | channel=0                          |
+| o_vec    | s_axi_control | register  | offset   | name=o_vec_1 offset=0x28 range=32  |
+| o_vec    | s_axi_control | register  | offset   | name=o_vec_2 offset=0x2c range=32  |
+| vec_size | s_axi_control | register  |          | name=vec_size offset=0x34 range=32 |
+| col_size | s_axi_control | register  |          | name=col_size offset=0x3c range=32 |
++----------+---------------+-----------+----------+------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------+-----+--------+---------------+--------+----------+---------+
+| Name                                      | DSP | Pragma | Variable      | Op     | Impl     | Latency |
++-------------------------------------------+-----+--------+---------------+--------+----------+---------+
+| + kernel_matmul                           | 3   |        |               |        |          |         |
+|   empty_fu_198_p2                         |     |        | empty         | setgt  | auto     | 0       |
+|   xor_ln17_fu_204_p2                      |     |        | xor_ln17      | xor    | auto     | 0       |
+|   select_ln17_fu_210_p3                   |     |        | select_ln17   | select | auto_sel | 0       |
+|   empty_23_fu_218_p2                      |     |        | empty_23      | setgt  | auto     | 0       |
+|   xor_ln17_1_fu_224_p2                    |     |        | xor_ln17_1    | xor    | auto     | 0       |
+|   select_ln17_1_fu_230_p3                 |     |        | select_ln17_1 | select | auto_sel | 0       |
+|   empty_24_fu_252_p2                      |     |        | empty_24      | setgt  | auto     | 0       |
+|   xor_ln23_fu_257_p2                      |     |        | xor_ln23      | xor    | auto     | 0       |
+|   select_ln23_fu_262_p3                   |     |        | select_ln23   | select | auto_sel | 0       |
+|   empty_25_fu_270_p2                      |     |        | empty_25      | setgt  | auto     | 0       |
+|   xor_ln23_1_fu_276_p2                    |     |        | xor_ln23_1    | xor    | auto     | 0       |
+|   select_ln23_1_fu_282_p3                 |     |        | select_ln23_1 | select | auto_sel | 0       |
+|   add_ln23_1_fu_301_p2                    |     |        | add_ln23_1    | add    | fabric   | 0       |
+|   icmp_ln23_fu_306_p2                     |     |        | icmp_ln23     | seteq  | auto     | 0       |
+|   add_ln23_fu_311_p2                      |     |        | add_ln23      | add    | fabric   | 0       |
+|   add_ln31_fu_323_p2                      |     |        | add_ln31      | add    | fabric   | 0       |
+|  + kernel_matmul_Pipeline_VITIS_LOOP_17_1 | 0   |        |               |        |          |         |
+|    icmp_ln17_fu_113_p2                    |     |        | icmp_ln17     | seteq  | auto     | 0       |
+|    add_ln17_fu_119_p2                     |     |        | add_ln17      | add    | fabric   | 0       |
+|    add_ln19_fu_137_p2                     |     |        | add_ln19      | add    | fabric   | 0       |
+|  + kernel_matmul_Pipeline_VITIS_LOOP_26_3 | 3   |        |               |        |          |         |
+|    icmp_ln26_fu_158_p2                    |     |        | icmp_ln26     | seteq  | auto     | 0       |
+|    add_ln26_fu_164_p2                     |     |        | add_ln26      | add    | fabric   | 0       |
+|    add_ln29_fu_174_p2                     |     |        | add_ln29      | add    | fabric   | 0       |
+|    add_ln29_1_fu_188_p2                   |     |        | add_ln29_1    | add    | fabric   | 0       |
+|    fmul_32ns_32ns_32_2_max_dsp_1_U6       | 3   |        | mul           | fmul   | maxdsp   | 1       |
+|    fadd_32ns_32ns_32_2_no_dsp_1_U5        |     |        | sum_1         | fadd   | fabric   | 1       |
++-------------------------------------------+-----+--------+---------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+--------------+-----------+------+------+--------+-----------+------+---------+------------------+
+| Name              | Usage        | Type      | BRAM | URAM | Pragma | Variable  | Impl | Latency | Bitwidth, Depth, |
+|                   |              |           |      |      |        |           |      |         | Banks            |
++-------------------+--------------+-----------+------+------+--------+-----------+------+---------+------------------+
+| + kernel_matmul   |              |           | 4    | 0    |        |           |      |         |                  |
+|   control_s_axi_U | interface    | s_axilite |      |      |        |           |      |         |                  |
+|   gmem0_m_axi_U   | interface    | m_axi     | 1    |      |        |           |      |         |                  |
+|   gmem1_m_axi_U   | interface    | m_axi     | 1    |      |        |           |      |         |                  |
+|   vec_local_U     | ram_1p array |           | 2    |      |        | vec_local | auto | 1       | 32, 768, 1       |
++-------------------+--------------+-----------+------+------+--------+-----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------------+-----------------------------------------------------------+---------------------------------------+
+| Type           | Options                                                   | Location                              |
++----------------+-----------------------------------------------------------+---------------------------------------+
+| INTERFACE      | m_axi port = i_vec bundle = gmem0 max_widen_bitwidth = 32 | kernel_matmul.cpp:6 in kernel_matmul  |
+| INTERFACE      | m_axi port = i_mat bundle = gmem1 max_widen_bitwidth = 32 | kernel_matmul.cpp:7 in kernel_matmul  |
+| INTERFACE      | m_axi port = o_vec bundle = gmem0 max_widen_bitwidth = 32 | kernel_matmul.cpp:8 in kernel_matmul  |
+| INTERFACE      | s_axilite port = vec_size bundle = control                | kernel_matmul.cpp:9 in kernel_matmul  |
+| INTERFACE      | s_axilite port = col_size bundle = control                | kernel_matmul.cpp:10 in kernel_matmul |
+| INTERFACE      | s_axilite port = return bundle = control                  | kernel_matmul.cpp:11 in kernel_matmul |
+| PIPELINE       | ii=1                                                      | kernel_matmul.cpp:18 in kernel_matmul |
+| LOOP_TRIPCOUNT | min=768 max=2048                                          | kernel_matmul.cpp:24 in kernel_matmul |
+| PIPELINE       | ii=1                                                      | kernel_matmul.cpp:27 in kernel_matmul |
+| LOOP_TRIPCOUNT | min=768 max=768                                           | kernel_matmul.cpp:28 in kernel_matmul |
++----------------+-----------------------------------------------------------+---------------------------------------+
+
+

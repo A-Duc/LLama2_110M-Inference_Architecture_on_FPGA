@@ -1,0 +1,31 @@
+---
+MainSourceFile:  'C:/NCKH/LLma2_110M---UIT/Source_Code/llama_hls/solution1/.autopilot/db/kernel_matmul.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_17_1:  '
+    FileOffset:      17
+    FilePath:        kernel_matmul.cpp
+    Replacements:    
+      - FilePath:        'C:\NCKH\LLma2_110M---UIT\Source_Code\llama_hls\solution1\.autopilot\db\kernel_matmul.pp.0.cpp'
+        Offset:          17622
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_17_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_23_2:  '
+    FileOffset:      23
+    FilePath:        kernel_matmul.cpp
+    Replacements:    
+      - FilePath:        'C:\NCKH\LLma2_110M---UIT\Source_Code\llama_hls\solution1\.autopilot\db\kernel_matmul.pp.0.cpp'
+        Offset:          17730
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_23_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_26_3:  '
+    FileOffset:      26
+    FilePath:        kernel_matmul.cpp
+    Replacements:    
+      - FilePath:        'C:\NCKH\LLma2_110M---UIT\Source_Code\llama_hls\solution1\.autopilot\db\kernel_matmul.pp.0.cpp'
+        Offset:          17843
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_26_3: '
+...
