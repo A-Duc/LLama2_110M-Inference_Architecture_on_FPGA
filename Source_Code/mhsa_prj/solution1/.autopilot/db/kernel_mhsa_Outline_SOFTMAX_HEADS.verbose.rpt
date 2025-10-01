@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'kernel_mhsa_Outline_SOFTMAX_HEADS'
 ================================================================
-* Date:           Sat Sep 27 23:15:46 2025
+* Date:           Tue Sep 30 23:59:05 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -20,34 +20,34 @@
     +--------+---------+----------+------------+
     |  Clock |  Target | Estimated| Uncertainty|
     +--------+---------+----------+------------+
-    |ap_clk  |  4.00 ns|  2.915 ns|     1.08 ns|
+    |ap_clk  |  4.00 ns|  3.696 ns|     1.08 ns|
     +--------+---------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+-------+-------+---------+
-    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
-    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
-    +---------+---------+----------+----------+-------+-------+---------+
-    |    37285|    37285|  0.149 ms|  0.149 ms|  37285|  37285|       no|
-    +---------+---------+----------+----------+-------+-------+---------+
+    +---------+---------+----------+----------+-----+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |   Interval  | Pipeline|
+    |   min   |   max   |    min   |    max   | min |  max  |   Type  |
+    +---------+---------+----------+----------+-----+-------+---------+
+    |      481|    37285|  1.924 us|  0.149 ms|  481|  37285|       no|
+    +---------+---------+----------+----------+-----+-------+---------+
 
     + Detail: 
         * Instance: 
-        +--------------------------+----------------+---------+---------+-----------+-----------+------+------+---------+
-        |                          |                |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
-        |         Instance         |     Module     |   min   |   max   |    min    |    max    |  min |  max |   Type  |
-        +--------------------------+----------------+---------+---------+-----------+-----------+------+------+---------+
-        |grp_kernel_softmax_fu_94  |kernel_softmax  |     3105|     3105|  12.420 us|  12.420 us|  3105|  3105|       no|
-        +--------------------------+----------------+---------+---------+-----------+-----------+------+------+---------+
+        +---------------------------+----------------+---------+---------+----------+-----------+-----+------+---------+
+        |                           |                |  Latency (cycles) |  Latency (absolute)  |  Interval  | Pipeline|
+        |          Instance         |     Module     |   min   |   max   |    min   |    max    | min |  max |   Type  |
+        +---------------------------+----------------+---------+---------+----------+-----------+-----+------+---------+
+        |grp_kernel_softmax_fu_104  |kernel_softmax  |       38|     3105|  0.152 us|  12.420 us|   38|  3105|       no|
+        +---------------------------+----------------+---------+---------+----------+-----------+-----+------+---------+
 
         * Loop: 
-        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
-        |                 |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
-        |    Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
-        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- SOFTMAX_HEADS  |    37284|    37284|      3107|          -|          -|    12|        no|
-        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        +-----------------+---------+---------+-----------+-----------+-----------+------+----------+
+        |                 |  Latency (cycles) | Iteration |  Initiation Interval  | Trip |          |
+        |    Loop Name    |   min   |   max   |  Latency  |  achieved |   target  | Count| Pipelined|
+        +-----------------+---------+---------+-----------+-----------+-----------+------+----------+
+        |- SOFTMAX_HEADS  |      480|    37284|  40 ~ 3107|          -|          -|    12|        no|
+        +-----------------+---------+---------+-----------+-----------+-----------+------+----------+
 
 
 
@@ -61,12 +61,12 @@
 |DSP                  |        -|      -|        -|        -|     -|
 |Expression           |        -|      -|        0|       12|     -|
 |FIFO                 |        -|      -|        -|        -|     -|
-|Instance             |        2|      3|      834|     1653|     0|
+|Instance             |        2|      3|      920|     1804|     0|
 |Memory               |        -|      -|        -|        -|     -|
 |Multiplexer          |        -|      -|        0|      193|     -|
 |Register             |        -|      -|       16|        -|     -|
 +---------------------+---------+-------+---------+---------+------+
-|Total                |        2|      3|      850|     1858|     0|
+|Total                |        2|      3|      936|     2009|     0|
 +---------------------+---------+-------+---------+---------+------+
 |Available SLR        |     2494|   3616|  1716138|   858069|   641|
 +---------------------+---------+-------+---------+---------+------+
@@ -79,13 +79,13 @@
 
 + Detail: 
     * Instance: 
-    +--------------------------+----------------+---------+----+-----+------+-----+
-    |         Instance         |     Module     | BRAM_18K| DSP|  FF |  LUT | URAM|
-    +--------------------------+----------------+---------+----+-----+------+-----+
-    |grp_kernel_softmax_fu_94  |kernel_softmax  |        2|   3|  834|  1653|    0|
-    +--------------------------+----------------+---------+----+-----+------+-----+
-    |Total                     |                |        2|   3|  834|  1653|    0|
-    +--------------------------+----------------+---------+----+-----+------+-----+
+    +---------------------------+----------------+---------+----+-----+------+-----+
+    |          Instance         |     Module     | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +---------------------------+----------------+---------+----+-----+------+-----+
+    |grp_kernel_softmax_fu_104  |kernel_softmax  |        2|   3|  920|  1804|    0|
+    +---------------------------+----------------+---------+----+-----+------+-----+
+    |Total                      |                |        2|   3|  920|  1804|    0|
+    +---------------------------+----------------+---------+----+-----+------+-----+
 
     * DSP: 
     N/A
@@ -100,61 +100,61 @@
     +---------------------------------+----------+----+---+----+------------+------------+
     |          Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------------+----------+----+---+----+------------+------------+
-    |add_ln169_fu_119_p2              |         +|   0|  0|   6|           4|           1|
-    |ap_condition_326                 |       and|   0|  0|   2|           1|           1|
-    |icmp_ln169_fu_125_p2             |      icmp|   0|  0|   2|           4|           4|
+    |add_ln141_fu_130_p2              |         +|   0|  0|   6|           4|           1|
+    |ap_condition_330                 |       and|   0|  0|   2|           1|           1|
+    |icmp_ln141_fu_136_p2             |      icmp|   0|  0|   2|           4|           4|
     |ap_block_state3_on_subcall_done  |        or|   0|  0|   2|           1|           1|
     +---------------------------------+----------+----+---+----+------------+------------+
     |Total                            |          |   0|  0|  12|          10|           7|
     +---------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
-    +-----------------------------------+-----+-----------+-----+-----------+
-    |                Name               | LUT | Input Size| Bits| Total Bits|
-    +-----------------------------------+-----+-----------+-----+-----------+
-    |ap_NS_fsm                          |    1|          4|    1|          4|
-    |att_10_ce0                         |    1|          2|    1|          2|
-    |att_10_we0                         |    1|          2|    1|          2|
-    |att_11_ce0                         |    1|          2|    1|          2|
-    |att_11_we0                         |    1|          2|    1|          2|
-    |att_1_ce0                          |    1|          2|    1|          2|
-    |att_1_we0                          |    1|          2|    1|          2|
-    |att_2_ce0                          |    1|          2|    1|          2|
-    |att_2_we0                          |    1|          2|    1|          2|
-    |att_3_ce0                          |    1|          2|    1|          2|
-    |att_3_we0                          |    1|          2|    1|          2|
-    |att_4_ce0                          |    1|          2|    1|          2|
-    |att_4_we0                          |    1|          2|    1|          2|
-    |att_5_ce0                          |    1|          2|    1|          2|
-    |att_5_we0                          |    1|          2|    1|          2|
-    |att_6_ce0                          |    1|          2|    1|          2|
-    |att_6_we0                          |    1|          2|    1|          2|
-    |att_7_ce0                          |    1|          2|    1|          2|
-    |att_7_we0                          |    1|          2|    1|          2|
-    |att_8_ce0                          |    1|          2|    1|          2|
-    |att_8_we0                          |    1|          2|    1|          2|
-    |att_9_ce0                          |    1|          2|    1|          2|
-    |att_9_we0                          |    1|          2|    1|          2|
-    |att_ce0                            |    1|          2|    1|          2|
-    |att_we0                            |    1|          2|    1|          2|
-    |grp_kernel_softmax_fu_94_i_vec_q0  |  160|         13|   32|        416|
-    |h_fu_90                            |    8|          2|    4|          8|
-    +-----------------------------------+-----+-----------+-----+-----------+
-    |Total                              |  193|         67|   61|        476|
-    +-----------------------------------+-----+-----------+-----+-----------+
+    +------------------------------------+-----+-----------+-----+-----------+
+    |                Name                | LUT | Input Size| Bits| Total Bits|
+    +------------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                           |    1|          4|    1|          4|
+    |att_10_ce0                          |    1|          2|    1|          2|
+    |att_10_we0                          |    1|          2|    1|          2|
+    |att_11_ce0                          |    1|          2|    1|          2|
+    |att_11_we0                          |    1|          2|    1|          2|
+    |att_1_ce0                           |    1|          2|    1|          2|
+    |att_1_we0                           |    1|          2|    1|          2|
+    |att_2_ce0                           |    1|          2|    1|          2|
+    |att_2_we0                           |    1|          2|    1|          2|
+    |att_3_ce0                           |    1|          2|    1|          2|
+    |att_3_we0                           |    1|          2|    1|          2|
+    |att_4_ce0                           |    1|          2|    1|          2|
+    |att_4_we0                           |    1|          2|    1|          2|
+    |att_5_ce0                           |    1|          2|    1|          2|
+    |att_5_we0                           |    1|          2|    1|          2|
+    |att_6_ce0                           |    1|          2|    1|          2|
+    |att_6_we0                           |    1|          2|    1|          2|
+    |att_7_ce0                           |    1|          2|    1|          2|
+    |att_7_we0                           |    1|          2|    1|          2|
+    |att_8_ce0                           |    1|          2|    1|          2|
+    |att_8_we0                           |    1|          2|    1|          2|
+    |att_9_ce0                           |    1|          2|    1|          2|
+    |att_9_we0                           |    1|          2|    1|          2|
+    |att_ce0                             |    1|          2|    1|          2|
+    |att_we0                             |    1|          2|    1|          2|
+    |grp_kernel_softmax_fu_104_i_vec_q0  |  160|         13|   32|        416|
+    |h_fu_94                             |    8|          2|    4|          8|
+    +------------------------------------+-----+-----------+-----+-----------+
+    |Total                               |  193|         67|   61|        476|
+    +------------------------------------+-----+-----------+-----+-----------+
 
     * Register: 
-    +---------------------------------------+---+----+-----+-----------+
-    |                  Name                 | FF| LUT| Bits| Const Bits|
-    +---------------------------------------+---+----+-----+-----------+
-    |add_ln169_reg_172                      |  4|   0|    4|          0|
-    |ap_CS_fsm                              |  3|   0|    3|          0|
-    |grp_kernel_softmax_fu_94_ap_start_reg  |  1|   0|    1|          0|
-    |h_1_reg_168                            |  4|   0|    4|          0|
-    |h_fu_90                                |  4|   0|    4|          0|
-    +---------------------------------------+---+----+-----+-----------+
-    |Total                                  | 16|   0|   16|          0|
-    +---------------------------------------+---+----+-----+-----------+
+    +----------------------------------------+---+----+-----+-----------+
+    |                  Name                  | FF| LUT| Bits| Const Bits|
+    +----------------------------------------+---+----+-----+-----------+
+    |add_ln141_reg_188                       |  4|   0|    4|          0|
+    |ap_CS_fsm                               |  3|   0|    3|          0|
+    |grp_kernel_softmax_fu_104_ap_start_reg  |  1|   0|    1|          0|
+    |h_1_reg_184                             |  4|   0|    4|          0|
+    |h_fu_94                                 |  4|   0|    4|          0|
+    +----------------------------------------+---+----+-----+-----------+
+    |Total                                   | 16|   0|   16|          0|
+    +----------------------------------------+---+----+-----+-----------+
 
 
 
@@ -176,6 +176,7 @@
 |att_we0          |  out|    1|   ap_memory|                                att|         array|
 |att_d0           |  out|   32|   ap_memory|                                att|         array|
 |att_q0           |   in|   32|   ap_memory|                                att|         array|
+|add141           |   in|   32|     ap_none|                             add141|        scalar|
 |att_1_address0   |  out|    9|   ap_memory|                              att_1|         array|
 |att_1_ce0        |  out|    1|   ap_memory|                              att_1|         array|
 |att_1_we0        |  out|    1|   ap_memory|                              att_1|         array|
@@ -271,92 +272,93 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.36>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%h = alloca i32 1" [kernel_MHSA.cpp:169]   --->   Operation 4 'alloca' 'h' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.36ns)   --->   "%store_ln169 = store i4 0, i4 %h" [kernel_MHSA.cpp:169]   --->   Operation 5 'store' 'store_ln169' <Predicate = true> <Delay = 0.36>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc163"   --->   Operation 6 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%h = alloca i32 1" [kernel_MHSA.cpp:141]   --->   Operation 4 'alloca' 'h' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%add141_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %add141"   --->   Operation 5 'read' 'add141_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.36ns)   --->   "%store_ln141 = store i4 0, i4 %h" [kernel_MHSA.cpp:141]   --->   Operation 6 'store' 'store_ln141' <Predicate = true> <Delay = 0.36>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc142"   --->   Operation 7 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 0.66>
-ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%h_1 = load i4 %h" [kernel_MHSA.cpp:169]   --->   Operation 7 'load' 'h_1' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 8 [1/1] (0.66ns)   --->   "%add_ln169 = add i4 %h_1, i4 1" [kernel_MHSA.cpp:169]   --->   Operation 8 'add' 'add_ln169' <Predicate = true> <Delay = 0.66> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 9 [1/1] (0.43ns)   --->   "%icmp_ln169 = icmp_eq  i4 %h_1, i4 12" [kernel_MHSA.cpp:169]   --->   Operation 9 'icmp' 'icmp_ln169' <Predicate = true> <Delay = 0.43> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln169 = br i1 %icmp_ln169, void %for.inc163.split, void %for.inc173.preheader.exitStub" [kernel_MHSA.cpp:169]   --->   Operation 10 'br' 'br_ln169' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%speclooptripcount_ln169 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 12, i64 12, i64 12" [kernel_MHSA.cpp:169]   --->   Operation 11 'speclooptripcount' 'speclooptripcount_ln169' <Predicate = (!icmp_ln169)> <Delay = 0.00>
-ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%specloopname_ln169 = specloopname void @_ssdm_op_SpecLoopName, void @empty_77" [kernel_MHSA.cpp:169]   --->   Operation 12 'specloopname' 'specloopname_ln169' <Predicate = (!icmp_ln169)> <Delay = 0.00>
-ST_2 : Operation 13 [1/1] (0.43ns)   --->   "%switch_ln171 = switch i4 %h_1, void %.case.11, i4 0, void %xlx_occurrence..case.0.12, i4 1, void %xlx_occurrence..case.1.11, i4 2, void %xlx_occurrence..case.2.10, i4 3, void %xlx_occurrence..case.3.9, i4 4, void %xlx_occurrence..case.4.8, i4 5, void %xlx_occurrence..case.5.7, i4 6, void %xlx_occurrence..case.6.6, i4 7, void %xlx_occurrence..case.7.5, i4 8, void %xlx_occurrence..case.8.4, i4 9, void %xlx_occurrence..case.9.3, i4 10, void %xlx_occurrence..case.10.2" [kernel_MHSA.cpp:171]   --->   Operation 13 'switch' 'switch_ln171' <Predicate = (!icmp_ln169)> <Delay = 0.43>
-ST_2 : Operation 14 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_10" [kernel_MHSA.cpp:171]   --->   Operation 14 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 10)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 15 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_9" [kernel_MHSA.cpp:171]   --->   Operation 15 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 9)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 16 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_8" [kernel_MHSA.cpp:171]   --->   Operation 16 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 8)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 17 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_7" [kernel_MHSA.cpp:171]   --->   Operation 17 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 7)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 18 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_6" [kernel_MHSA.cpp:171]   --->   Operation 18 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 6)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 19 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_5" [kernel_MHSA.cpp:171]   --->   Operation 19 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 5)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 20 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_4" [kernel_MHSA.cpp:171]   --->   Operation 20 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 4)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 21 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_3" [kernel_MHSA.cpp:171]   --->   Operation 21 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 3)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 22 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_2" [kernel_MHSA.cpp:171]   --->   Operation 22 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 2)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 23 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_1" [kernel_MHSA.cpp:171]   --->   Operation 23 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 1)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 24 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att" [kernel_MHSA.cpp:171]   --->   Operation 24 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 == 0)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 25 [2/2] (0.20ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_11" [kernel_MHSA.cpp:171]   --->   Operation 25 'call' 'call_ln171' <Predicate = (!icmp_ln169 & h_1 != 0 & h_1 != 1 & h_1 != 2 & h_1 != 3 & h_1 != 4 & h_1 != 5 & h_1 != 6 & h_1 != 7 & h_1 != 8 & h_1 != 9 & h_1 != 10)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 26 'ret' 'ret_ln0' <Predicate = (icmp_ln169)> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%h_1 = load i4 %h" [kernel_MHSA.cpp:141]   --->   Operation 8 'load' 'h_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.66ns)   --->   "%add_ln141 = add i4 %h_1, i4 1" [kernel_MHSA.cpp:141]   --->   Operation 9 'add' 'add_ln141' <Predicate = true> <Delay = 0.66> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.43ns)   --->   "%icmp_ln141 = icmp_eq  i4 %h_1, i4 12" [kernel_MHSA.cpp:141]   --->   Operation 10 'icmp' 'icmp_ln141' <Predicate = true> <Delay = 0.43> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%br_ln141 = br i1 %icmp_ln141, void %for.inc142.split, void %for.inc152.preheader.exitStub" [kernel_MHSA.cpp:141]   --->   Operation 11 'br' 'br_ln141' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%speclooptripcount_ln141 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 12, i64 12, i64 12" [kernel_MHSA.cpp:141]   --->   Operation 12 'speclooptripcount' 'speclooptripcount_ln141' <Predicate = (!icmp_ln141)> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%specloopname_ln141 = specloopname void @_ssdm_op_SpecLoopName, void @empty_95" [kernel_MHSA.cpp:141]   --->   Operation 13 'specloopname' 'specloopname_ln141' <Predicate = (!icmp_ln141)> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.43ns)   --->   "%switch_ln143 = switch i4 %h_1, void %.case.11, i4 0, void %xlx_occurrence..case.0.12, i4 1, void %xlx_occurrence..case.1.11, i4 2, void %xlx_occurrence..case.2.10, i4 3, void %xlx_occurrence..case.3.9, i4 4, void %xlx_occurrence..case.4.8, i4 5, void %xlx_occurrence..case.5.7, i4 6, void %xlx_occurrence..case.6.6, i4 7, void %xlx_occurrence..case.7.5, i4 8, void %xlx_occurrence..case.8.4, i4 9, void %xlx_occurrence..case.9.3, i4 10, void %xlx_occurrence..case.10.2" [kernel_MHSA.cpp:143]   --->   Operation 14 'switch' 'switch_ln143' <Predicate = (!icmp_ln141)> <Delay = 0.43>
+ST_2 : Operation 15 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_10, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 15 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 10)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 16 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_9, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 16 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 9)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 17 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_8, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 17 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 8)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 18 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_7, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 18 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 7)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 19 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_6, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 19 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 6)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 20 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_5, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 20 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 5)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 21 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_4, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 21 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 4)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 22 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_3, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 22 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 3)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 23 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_2, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 23 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 2)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 24 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_1, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 24 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 1)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 25 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 25 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 == 0)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 26 [2/2] (0.20ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_11, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 26 'call' 'call_ln143' <Predicate = (!icmp_ln141 & h_1 != 0 & h_1 != 1 & h_1 != 2 & h_1 != 3 & h_1 != 4 & h_1 != 5 & h_1 != 6 & h_1 != 7 & h_1 != 8 & h_1 != 9 & h_1 != 10)> <Delay = 0.20> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 27 'ret' 'ret_ln0' <Predicate = (icmp_ln141)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 0.36>
-ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%rbegin11 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_112" [kernel_MHSA.cpp:171]   --->   Operation 27 'specregionbegin' 'rbegin11' <Predicate = (h_1 == 10)> <Delay = 0.00>
-ST_3 : Operation 28 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_10" [kernel_MHSA.cpp:171]   --->   Operation 28 'call' 'call_ln171' <Predicate = (h_1 == 10)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 29 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 10)> <Delay = 0.00>
-ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%rend451 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_112, i32 %rbegin11" [kernel_MHSA.cpp:171]   --->   Operation 30 'specregionend' 'rend451' <Predicate = (h_1 == 10)> <Delay = 0.00>
-ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 31 'br' 'br_ln171' <Predicate = (h_1 == 10)> <Delay = 0.00>
-ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%rbegin10 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_114" [kernel_MHSA.cpp:171]   --->   Operation 32 'specregionbegin' 'rbegin10' <Predicate = (h_1 == 9)> <Delay = 0.00>
-ST_3 : Operation 33 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_9" [kernel_MHSA.cpp:171]   --->   Operation 33 'call' 'call_ln171' <Predicate = (h_1 == 9)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 34 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 9)> <Delay = 0.00>
-ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%rend467 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_114, i32 %rbegin10" [kernel_MHSA.cpp:171]   --->   Operation 35 'specregionend' 'rend467' <Predicate = (h_1 == 9)> <Delay = 0.00>
-ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 36 'br' 'br_ln171' <Predicate = (h_1 == 9)> <Delay = 0.00>
-ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%rbegin9 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_95" [kernel_MHSA.cpp:171]   --->   Operation 37 'specregionbegin' 'rbegin9' <Predicate = (h_1 == 8)> <Delay = 0.00>
-ST_3 : Operation 38 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_8" [kernel_MHSA.cpp:171]   --->   Operation 38 'call' 'call_ln171' <Predicate = (h_1 == 8)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 39 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 8)> <Delay = 0.00>
-ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%rend465 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_95, i32 %rbegin9" [kernel_MHSA.cpp:171]   --->   Operation 40 'specregionend' 'rend465' <Predicate = (h_1 == 8)> <Delay = 0.00>
-ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 41 'br' 'br_ln171' <Predicate = (h_1 == 8)> <Delay = 0.00>
-ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%rbegin8 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_96" [kernel_MHSA.cpp:171]   --->   Operation 42 'specregionbegin' 'rbegin8' <Predicate = (h_1 == 7)> <Delay = 0.00>
-ST_3 : Operation 43 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_7" [kernel_MHSA.cpp:171]   --->   Operation 43 'call' 'call_ln171' <Predicate = (h_1 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 44 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 7)> <Delay = 0.00>
-ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%rend463 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_96, i32 %rbegin8" [kernel_MHSA.cpp:171]   --->   Operation 45 'specregionend' 'rend463' <Predicate = (h_1 == 7)> <Delay = 0.00>
-ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 46 'br' 'br_ln171' <Predicate = (h_1 == 7)> <Delay = 0.00>
-ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%rbegin7 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_97" [kernel_MHSA.cpp:171]   --->   Operation 47 'specregionbegin' 'rbegin7' <Predicate = (h_1 == 6)> <Delay = 0.00>
-ST_3 : Operation 48 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_6" [kernel_MHSA.cpp:171]   --->   Operation 48 'call' 'call_ln171' <Predicate = (h_1 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 49 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 6)> <Delay = 0.00>
-ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%rend461 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_97, i32 %rbegin7" [kernel_MHSA.cpp:171]   --->   Operation 50 'specregionend' 'rend461' <Predicate = (h_1 == 6)> <Delay = 0.00>
-ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 51 'br' 'br_ln171' <Predicate = (h_1 == 6)> <Delay = 0.00>
-ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%rbegin6 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_98" [kernel_MHSA.cpp:171]   --->   Operation 52 'specregionbegin' 'rbegin6' <Predicate = (h_1 == 5)> <Delay = 0.00>
-ST_3 : Operation 53 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_5" [kernel_MHSA.cpp:171]   --->   Operation 53 'call' 'call_ln171' <Predicate = (h_1 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 54 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 5)> <Delay = 0.00>
-ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%rend459 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_98, i32 %rbegin6" [kernel_MHSA.cpp:171]   --->   Operation 55 'specregionend' 'rend459' <Predicate = (h_1 == 5)> <Delay = 0.00>
-ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 56 'br' 'br_ln171' <Predicate = (h_1 == 5)> <Delay = 0.00>
-ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%rbegin5 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_99" [kernel_MHSA.cpp:171]   --->   Operation 57 'specregionbegin' 'rbegin5' <Predicate = (h_1 == 4)> <Delay = 0.00>
-ST_3 : Operation 58 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_4" [kernel_MHSA.cpp:171]   --->   Operation 58 'call' 'call_ln171' <Predicate = (h_1 == 4)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 59 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 4)> <Delay = 0.00>
-ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%rend457 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_99, i32 %rbegin5" [kernel_MHSA.cpp:171]   --->   Operation 60 'specregionend' 'rend457' <Predicate = (h_1 == 4)> <Delay = 0.00>
-ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 61 'br' 'br_ln171' <Predicate = (h_1 == 4)> <Delay = 0.00>
-ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%rbegin4 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_93" [kernel_MHSA.cpp:171]   --->   Operation 62 'specregionbegin' 'rbegin4' <Predicate = (h_1 == 3)> <Delay = 0.00>
-ST_3 : Operation 63 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_3" [kernel_MHSA.cpp:171]   --->   Operation 63 'call' 'call_ln171' <Predicate = (h_1 == 3)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 64 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 3)> <Delay = 0.00>
-ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%rend455 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_93, i32 %rbegin4" [kernel_MHSA.cpp:171]   --->   Operation 65 'specregionend' 'rend455' <Predicate = (h_1 == 3)> <Delay = 0.00>
-ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 66 'br' 'br_ln171' <Predicate = (h_1 == 3)> <Delay = 0.00>
-ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%rbegin3 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_101" [kernel_MHSA.cpp:171]   --->   Operation 67 'specregionbegin' 'rbegin3' <Predicate = (h_1 == 2)> <Delay = 0.00>
-ST_3 : Operation 68 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_2" [kernel_MHSA.cpp:171]   --->   Operation 68 'call' 'call_ln171' <Predicate = (h_1 == 2)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 69 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 69 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 2)> <Delay = 0.00>
-ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%rend453 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_101, i32 %rbegin3" [kernel_MHSA.cpp:171]   --->   Operation 70 'specregionend' 'rend453' <Predicate = (h_1 == 2)> <Delay = 0.00>
-ST_3 : Operation 71 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 71 'br' 'br_ln171' <Predicate = (h_1 == 2)> <Delay = 0.00>
-ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%rbegin2 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_102" [kernel_MHSA.cpp:171]   --->   Operation 72 'specregionbegin' 'rbegin2' <Predicate = (h_1 == 1)> <Delay = 0.00>
-ST_3 : Operation 73 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_1" [kernel_MHSA.cpp:171]   --->   Operation 73 'call' 'call_ln171' <Predicate = (h_1 == 1)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 74 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 1)> <Delay = 0.00>
-ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%rend449 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_102, i32 %rbegin2" [kernel_MHSA.cpp:171]   --->   Operation 75 'specregionend' 'rend449' <Predicate = (h_1 == 1)> <Delay = 0.00>
-ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 76 'br' 'br_ln171' <Predicate = (h_1 == 1)> <Delay = 0.00>
-ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%rbegin1 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_0" [kernel_MHSA.cpp:171]   --->   Operation 77 'specregionbegin' 'rbegin1' <Predicate = (h_1 == 0)> <Delay = 0.00>
-ST_3 : Operation 78 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att" [kernel_MHSA.cpp:171]   --->   Operation 78 'call' 'call_ln171' <Predicate = (h_1 == 0)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%specoccurrence_ln171 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_113" [kernel_MHSA.cpp:171]   --->   Operation 79 'specoccurrence' 'specoccurrence_ln171' <Predicate = (h_1 == 0)> <Delay = 0.00>
-ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%rend447 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_0, i32 %rbegin1" [kernel_MHSA.cpp:171]   --->   Operation 80 'specregionend' 'rend447' <Predicate = (h_1 == 0)> <Delay = 0.00>
-ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 81 'br' 'br_ln171' <Predicate = (h_1 == 0)> <Delay = 0.00>
-ST_3 : Operation 82 [1/2] (0.00ns)   --->   "%call_ln171 = call void @kernel_softmax, i32 %att_11" [kernel_MHSA.cpp:171]   --->   Operation 82 'call' 'call_ln171' <Predicate = (h_1 != 0 & h_1 != 1 & h_1 != 2 & h_1 != 3 & h_1 != 4 & h_1 != 5 & h_1 != 6 & h_1 != 7 & h_1 != 8 & h_1 != 9 & h_1 != 10)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%br_ln171 = br void %.exit" [kernel_MHSA.cpp:171]   --->   Operation 83 'br' 'br_ln171' <Predicate = (h_1 != 0 & h_1 != 1 & h_1 != 2 & h_1 != 3 & h_1 != 4 & h_1 != 5 & h_1 != 6 & h_1 != 7 & h_1 != 8 & h_1 != 9 & h_1 != 10)> <Delay = 0.00>
-ST_3 : Operation 84 [1/1] (0.36ns)   --->   "%store_ln169 = store i4 %add_ln169, i4 %h" [kernel_MHSA.cpp:169]   --->   Operation 84 'store' 'store_ln169' <Predicate = true> <Delay = 0.36>
-ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%br_ln169 = br void %for.inc163" [kernel_MHSA.cpp:169]   --->   Operation 85 'br' 'br_ln169' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%rbegin11 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_114" [kernel_MHSA.cpp:143]   --->   Operation 28 'specregionbegin' 'rbegin11' <Predicate = (h_1 == 10)> <Delay = 0.00>
+ST_3 : Operation 29 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_10, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 29 'call' 'call_ln143' <Predicate = (h_1 == 10)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 30 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 10)> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%rend451 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_114, i32 %rbegin11" [kernel_MHSA.cpp:143]   --->   Operation 31 'specregionend' 'rend451' <Predicate = (h_1 == 10)> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 32 'br' 'br_ln143' <Predicate = (h_1 == 10)> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%rbegin10 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_118" [kernel_MHSA.cpp:143]   --->   Operation 33 'specregionbegin' 'rbegin10' <Predicate = (h_1 == 9)> <Delay = 0.00>
+ST_3 : Operation 34 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_9, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 34 'call' 'call_ln143' <Predicate = (h_1 == 9)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 35 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 9)> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%rend467 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_118, i32 %rbegin10" [kernel_MHSA.cpp:143]   --->   Operation 36 'specregionend' 'rend467' <Predicate = (h_1 == 9)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 37 'br' 'br_ln143' <Predicate = (h_1 == 9)> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%rbegin9 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_13" [kernel_MHSA.cpp:143]   --->   Operation 38 'specregionbegin' 'rbegin9' <Predicate = (h_1 == 8)> <Delay = 0.00>
+ST_3 : Operation 39 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_8, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 39 'call' 'call_ln143' <Predicate = (h_1 == 8)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 40 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 8)> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%rend465 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_13, i32 %rbegin9" [kernel_MHSA.cpp:143]   --->   Operation 41 'specregionend' 'rend465' <Predicate = (h_1 == 8)> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 42 'br' 'br_ln143' <Predicate = (h_1 == 8)> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%rbegin8 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_86" [kernel_MHSA.cpp:143]   --->   Operation 43 'specregionbegin' 'rbegin8' <Predicate = (h_1 == 7)> <Delay = 0.00>
+ST_3 : Operation 44 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_7, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 44 'call' 'call_ln143' <Predicate = (h_1 == 7)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 45 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 7)> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%rend463 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_86, i32 %rbegin8" [kernel_MHSA.cpp:143]   --->   Operation 46 'specregionend' 'rend463' <Predicate = (h_1 == 7)> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 47 'br' 'br_ln143' <Predicate = (h_1 == 7)> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%rbegin7 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_116" [kernel_MHSA.cpp:143]   --->   Operation 48 'specregionbegin' 'rbegin7' <Predicate = (h_1 == 6)> <Delay = 0.00>
+ST_3 : Operation 49 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_6, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 49 'call' 'call_ln143' <Predicate = (h_1 == 6)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 50 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 6)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%rend461 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_116, i32 %rbegin7" [kernel_MHSA.cpp:143]   --->   Operation 51 'specregionend' 'rend461' <Predicate = (h_1 == 6)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 52 'br' 'br_ln143' <Predicate = (h_1 == 6)> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%rbegin6 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_117" [kernel_MHSA.cpp:143]   --->   Operation 53 'specregionbegin' 'rbegin6' <Predicate = (h_1 == 5)> <Delay = 0.00>
+ST_3 : Operation 54 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_5, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 54 'call' 'call_ln143' <Predicate = (h_1 == 5)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 55 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 5)> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%rend459 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_117, i32 %rbegin6" [kernel_MHSA.cpp:143]   --->   Operation 56 'specregionend' 'rend459' <Predicate = (h_1 == 5)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 57 'br' 'br_ln143' <Predicate = (h_1 == 5)> <Delay = 0.00>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%rbegin5 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty" [kernel_MHSA.cpp:143]   --->   Operation 58 'specregionbegin' 'rbegin5' <Predicate = (h_1 == 4)> <Delay = 0.00>
+ST_3 : Operation 59 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_4, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 59 'call' 'call_ln143' <Predicate = (h_1 == 4)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 60 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 4)> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%rend457 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty, i32 %rbegin5" [kernel_MHSA.cpp:143]   --->   Operation 61 'specregionend' 'rend457' <Predicate = (h_1 == 4)> <Delay = 0.00>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 62 'br' 'br_ln143' <Predicate = (h_1 == 4)> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%rbegin4 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_0" [kernel_MHSA.cpp:143]   --->   Operation 63 'specregionbegin' 'rbegin4' <Predicate = (h_1 == 3)> <Delay = 0.00>
+ST_3 : Operation 64 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_3, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 64 'call' 'call_ln143' <Predicate = (h_1 == 3)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 65 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 3)> <Delay = 0.00>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%rend455 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_0, i32 %rbegin4" [kernel_MHSA.cpp:143]   --->   Operation 66 'specregionend' 'rend455' <Predicate = (h_1 == 3)> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 67 'br' 'br_ln143' <Predicate = (h_1 == 3)> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%rbegin3 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_1" [kernel_MHSA.cpp:143]   --->   Operation 68 'specregionbegin' 'rbegin3' <Predicate = (h_1 == 2)> <Delay = 0.00>
+ST_3 : Operation 69 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_2, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 69 'call' 'call_ln143' <Predicate = (h_1 == 2)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 70 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 2)> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (0.00ns)   --->   "%rend453 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_1, i32 %rbegin3" [kernel_MHSA.cpp:143]   --->   Operation 71 'specregionend' 'rend453' <Predicate = (h_1 == 2)> <Delay = 0.00>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 72 'br' 'br_ln143' <Predicate = (h_1 == 2)> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%rbegin2 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_2" [kernel_MHSA.cpp:143]   --->   Operation 73 'specregionbegin' 'rbegin2' <Predicate = (h_1 == 1)> <Delay = 0.00>
+ST_3 : Operation 74 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_1, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 74 'call' 'call_ln143' <Predicate = (h_1 == 1)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 75 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 1)> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%rend449 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_2, i32 %rbegin2" [kernel_MHSA.cpp:143]   --->   Operation 76 'specregionend' 'rend449' <Predicate = (h_1 == 1)> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 77 'br' 'br_ln143' <Predicate = (h_1 == 1)> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%rbegin1 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_3" [kernel_MHSA.cpp:143]   --->   Operation 78 'specregionbegin' 'rbegin1' <Predicate = (h_1 == 0)> <Delay = 0.00>
+ST_3 : Operation 79 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 79 'call' 'call_ln143' <Predicate = (h_1 == 0)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%specoccurrence_ln143 = specoccurrence void @_ssdm_op_SpecOccurrence, i64 12, void @empty_115" [kernel_MHSA.cpp:143]   --->   Operation 80 'specoccurrence' 'specoccurrence_ln143' <Predicate = (h_1 == 0)> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%rend447 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_3, i32 %rbegin1" [kernel_MHSA.cpp:143]   --->   Operation 81 'specregionend' 'rend447' <Predicate = (h_1 == 0)> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 82 'br' 'br_ln143' <Predicate = (h_1 == 0)> <Delay = 0.00>
+ST_3 : Operation 83 [1/2] (0.00ns)   --->   "%call_ln143 = call void @kernel_softmax, i32 %att_11, i32 %add141_read" [kernel_MHSA.cpp:143]   --->   Operation 83 'call' 'call_ln143' <Predicate = (h_1 != 0 & h_1 != 1 & h_1 != 2 & h_1 != 3 & h_1 != 4 & h_1 != 5 & h_1 != 6 & h_1 != 7 & h_1 != 8 & h_1 != 9 & h_1 != 10)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%br_ln143 = br void %.exit" [kernel_MHSA.cpp:143]   --->   Operation 84 'br' 'br_ln143' <Predicate = (h_1 != 0 & h_1 != 1 & h_1 != 2 & h_1 != 3 & h_1 != 4 & h_1 != 5 & h_1 != 6 & h_1 != 7 & h_1 != 8 & h_1 != 9 & h_1 != 10)> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.36ns)   --->   "%store_ln141 = store i4 %add_ln141, i4 %h" [kernel_MHSA.cpp:141]   --->   Operation 85 'store' 'store_ln141' <Predicate = true> <Delay = 0.36>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%br_ln141 = br void %for.inc142" [kernel_MHSA.cpp:141]   --->   Operation 86 'br' 'br_ln141' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -371,6 +373,7 @@ STG Binding:
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
 Port [ att]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ add141]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ att_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
 Port [ att_2]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
 Port [ att_3]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
@@ -389,75 +392,76 @@ Port [ att_11]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; ext
 <LifeTime>
 <method=bitvector/>
 h                       (alloca           ) [ 0111]
-store_ln169             (store            ) [ 0000]
+add141_read             (read             ) [ 0011]
+store_ln141             (store            ) [ 0000]
 br_ln0                  (br               ) [ 0000]
 h_1                     (load             ) [ 0011]
-add_ln169               (add              ) [ 0001]
-icmp_ln169              (icmp             ) [ 0011]
-br_ln169                (br               ) [ 0000]
-speclooptripcount_ln169 (speclooptripcount) [ 0000]
-specloopname_ln169      (specloopname     ) [ 0000]
-switch_ln171            (switch           ) [ 0000]
+add_ln141               (add              ) [ 0001]
+icmp_ln141              (icmp             ) [ 0011]
+br_ln141                (br               ) [ 0000]
+speclooptripcount_ln141 (speclooptripcount) [ 0000]
+specloopname_ln141      (specloopname     ) [ 0000]
+switch_ln143            (switch           ) [ 0000]
 ret_ln0                 (ret              ) [ 0000]
 rbegin11                (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend451                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin10                (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend467                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin9                 (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend465                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin8                 (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend463                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin7                 (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend461                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin6                 (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend459                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin5                 (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend457                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin4                 (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend455                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin3                 (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend453                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin2                 (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend449                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
 rbegin1                 (specregionbegin  ) [ 0000]
-call_ln171              (call             ) [ 0000]
-specoccurrence_ln171    (specoccurrence   ) [ 0000]
+call_ln143              (call             ) [ 0000]
+specoccurrence_ln143    (specoccurrence   ) [ 0000]
 rend447                 (specregionend    ) [ 0000]
-br_ln171                (br               ) [ 0000]
-call_ln171              (call             ) [ 0000]
-br_ln171                (br               ) [ 0000]
-store_ln169             (store            ) [ 0000]
-br_ln169                (br               ) [ 0000]
+br_ln143                (br               ) [ 0000]
+call_ln143              (call             ) [ 0000]
+br_ln143                (br               ) [ 0000]
+store_ln141             (store            ) [ 0000]
+br_ln141                (br               ) [ 0000]
 </LifeTime>
 
 <model>
@@ -473,9 +477,18 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="att_1">
+<comp id="2" class="1000" name="add141">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="add141"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="att_1">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_1"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -483,9 +496,9 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="4" class="1000" name="att_2">
+<comp id="6" class="1000" name="att_2">
 <pin_list>
-<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_2"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -493,9 +506,9 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="6" class="1000" name="att_3">
+<comp id="8" class="1000" name="att_3">
 <pin_list>
-<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_3"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -503,9 +516,9 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="8" class="1000" name="att_4">
+<comp id="10" class="1000" name="att_4">
 <pin_list>
-<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_4"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -513,9 +526,9 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="10" class="1000" name="att_5">
+<comp id="12" class="1000" name="att_5">
 <pin_list>
-<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_5"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -523,9 +536,9 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="12" class="1000" name="att_6">
+<comp id="14" class="1000" name="att_6">
 <pin_list>
-<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_6"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -533,9 +546,9 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="14" class="1000" name="att_7">
+<comp id="16" class="1000" name="att_7">
 <pin_list>
-<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_7"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -543,9 +556,9 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="16" class="1000" name="att_8">
+<comp id="18" class="1000" name="att_8">
 <pin_list>
-<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_8"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -553,9 +566,9 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="18" class="1000" name="att_9">
+<comp id="20" class="1000" name="att_9">
 <pin_list>
-<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_9"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -563,9 +576,9 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="20" class="1000" name="att_10">
+<comp id="22" class="1000" name="att_10">
 <pin_list>
-<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="att_10"/><MemPortTyVec>2 3 </MemPortTyVec>
@@ -573,22 +586,13 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="22" class="1000" name="att_11">
-<pin_list>
-<pin id="23" dir="1" index="0" bw="1" slack="0"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="att_11"/><MemPortTyVec>2 3 </MemPortTyVec>
-</StgValue>
-</bind>
-</comp>
-
-<comp id="24" class="1001" name="const_24">
+<comp id="24" class="1000" name="att_11">
 <pin_list>
 <pin id="25" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="att_11"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
 </bind>
 </comp>
 
@@ -606,7 +610,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="29" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
 </bind>
 </comp>
 
@@ -621,16 +625,16 @@ br_ln169                (br               ) [ 0000]
 
 <comp id="32" class="1001" name="const_32">
 <pin_list>
-<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
 <comp id="34" class="1001" name="const_34">
 <pin_list>
-<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name=""/></StgValue>
@@ -642,7 +646,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
 </bind>
 </comp>
 
@@ -651,25 +655,25 @@ br_ln169                (br               ) [ 0000]
 <pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_77"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
 <comp id="40" class="1001" name="const_40">
 <pin_list>
-<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
 </bind>
 </comp>
 
 <comp id="42" class="1001" name="const_42">
 <pin_list>
-<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="empty_95"/></StgValue>
 </bind>
 </comp>
 
@@ -741,25 +745,25 @@ br_ln169                (br               ) [ 0000]
 <pin id="59" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="kernel_softmax"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
 <comp id="60" class="1001" name="const_60">
 <pin_list>
-<pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecRegionBegin"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
 <comp id="62" class="1001" name="const_62">
 <pin_list>
-<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_112"/></StgValue>
+<StgValue><ssdm name="kernel_softmax"/></StgValue>
 </bind>
 </comp>
 
@@ -768,7 +772,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecOccurrence"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecRegionBegin"/></StgValue>
 </bind>
 </comp>
 
@@ -777,7 +781,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_113"/></StgValue>
+<StgValue><ssdm name="empty_114"/></StgValue>
 </bind>
 </comp>
 
@@ -786,7 +790,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecRegionEnd"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecOccurrence"/></StgValue>
 </bind>
 </comp>
 
@@ -795,7 +799,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_114"/></StgValue>
+<StgValue><ssdm name="empty_115"/></StgValue>
 </bind>
 </comp>
 
@@ -804,7 +808,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_95"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecRegionEnd"/></StgValue>
 </bind>
 </comp>
 
@@ -813,7 +817,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_96"/></StgValue>
+<StgValue><ssdm name="empty_118"/></StgValue>
 </bind>
 </comp>
 
@@ -822,7 +826,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="77" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_97"/></StgValue>
+<StgValue><ssdm name="empty_13"/></StgValue>
 </bind>
 </comp>
 
@@ -831,7 +835,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="79" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_98"/></StgValue>
+<StgValue><ssdm name="empty_86"/></StgValue>
 </bind>
 </comp>
 
@@ -840,7 +844,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_99"/></StgValue>
+<StgValue><ssdm name="empty_116"/></StgValue>
 </bind>
 </comp>
 
@@ -849,7 +853,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="83" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_93"/></StgValue>
+<StgValue><ssdm name="empty_117"/></StgValue>
 </bind>
 </comp>
 
@@ -858,7 +862,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="85" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_101"/></StgValue>
+<StgValue><ssdm name="empty"/></StgValue>
 </bind>
 </comp>
 
@@ -867,7 +871,7 @@ br_ln169                (br               ) [ 0000]
 <pin id="87" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_102"/></StgValue>
+<StgValue><ssdm name="empty_0"/></StgValue>
 </bind>
 </comp>
 
@@ -876,14 +880,32 @@ br_ln169                (br               ) [ 0000]
 <pin id="89" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_0"/></StgValue>
+<StgValue><ssdm name="empty_1"/></StgValue>
 </bind>
 </comp>
 
-<comp id="90" class="1004" name="h_fu_90">
+<comp id="90" class="1001" name="const_90">
 <pin_list>
-<pin id="91" dir="0" index="0" bw="1" slack="0"/>
-<pin id="92" dir="1" index="1" bw="4" slack="0"/>
+<pin id="91" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1001" name="const_92">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1004" name="h_fu_94">
+<pin_list>
+<pin id="95" dir="0" index="0" bw="1" slack="0"/>
+<pin id="96" dir="1" index="1" bw="4" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -891,34 +913,47 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="94" class="1004" name="grp_kernel_softmax_fu_94">
+<comp id="98" class="1004" name="add141_read_read_fu_98">
 <pin_list>
-<pin id="95" dir="0" index="0" bw="0" slack="0"/>
-<pin id="96" dir="0" index="1" bw="32" slack="0"/>
-<pin id="97" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="99" dir="0" index="0" bw="32" slack="0"/>
+<pin id="100" dir="0" index="1" bw="32" slack="0"/>
+<pin id="101" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="add141_read/1 "/>
+</bind>
+</comp>
+
+<comp id="104" class="1004" name="grp_kernel_softmax_fu_104">
+<pin_list>
+<pin id="105" dir="0" index="0" bw="0" slack="0"/>
+<pin id="106" dir="0" index="1" bw="32" slack="0"/>
+<pin id="107" dir="0" index="2" bw="32" slack="1"/>
+<pin id="108" dir="1" index="3" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
-<opset="call_ln171/2 call_ln171/2 call_ln171/2 call_ln171/2 call_ln171/2 call_ln171/2 call_ln171/2 call_ln171/2 call_ln171/2 call_ln171/2 call_ln171/2 call_ln171/2 "/>
+<opset="call_ln143/2 call_ln143/2 call_ln143/2 call_ln143/2 call_ln143/2 call_ln143/2 call_ln143/2 call_ln143/2 call_ln143/2 call_ln143/2 call_ln143/2 call_ln143/2 "/>
 </bind>
 </comp>
 
-<comp id="111" class="1004" name="store_ln169_store_fu_111">
+<comp id="122" class="1004" name="store_ln141_store_fu_122">
 <pin_list>
-<pin id="112" dir="0" index="0" bw="1" slack="0"/>
-<pin id="113" dir="0" index="1" bw="4" slack="0"/>
-<pin id="114" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="123" dir="0" index="0" bw="1" slack="0"/>
+<pin id="124" dir="0" index="1" bw="4" slack="0"/>
+<pin id="125" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln169/1 "/>
+<opset="store_ln141/1 "/>
 </bind>
 </comp>
 
-<comp id="116" class="1004" name="h_1_load_fu_116">
+<comp id="127" class="1004" name="h_1_load_fu_127">
 <pin_list>
-<pin id="117" dir="0" index="0" bw="4" slack="1"/>
-<pin id="118" dir="1" index="1" bw="4" slack="0"/>
+<pin id="128" dir="0" index="0" bw="4" slack="1"/>
+<pin id="129" dir="1" index="1" bw="4" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -926,172 +961,190 @@ br_ln169                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="119" class="1004" name="add_ln169_fu_119">
+<comp id="130" class="1004" name="add_ln141_fu_130">
 <pin_list>
-<pin id="120" dir="0" index="0" bw="4" slack="0"/>
-<pin id="121" dir="0" index="1" bw="1" slack="0"/>
-<pin id="122" dir="1" index="2" bw="4" slack="1"/>
+<pin id="131" dir="0" index="0" bw="4" slack="0"/>
+<pin id="132" dir="0" index="1" bw="1" slack="0"/>
+<pin id="133" dir="1" index="2" bw="4" slack="1"/>
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="add_ln169/2 "/>
+<opset="add_ln141/2 "/>
 </bind>
 </comp>
 
-<comp id="125" class="1004" name="icmp_ln169_fu_125">
+<comp id="136" class="1004" name="icmp_ln141_fu_136">
 <pin_list>
-<pin id="126" dir="0" index="0" bw="4" slack="0"/>
-<pin id="127" dir="0" index="1" bw="4" slack="0"/>
-<pin id="128" dir="1" index="2" bw="1" slack="2147483647"/>
+<pin id="137" dir="0" index="0" bw="4" slack="0"/>
+<pin id="138" dir="0" index="1" bw="4" slack="0"/>
+<pin id="139" dir="1" index="2" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln169/2 "/>
+<opset="icmp_ln141/2 "/>
 </bind>
 </comp>
 
-<comp id="131" class="1004" name="switch_ln171_fu_131">
+<comp id="142" class="1004" name="switch_ln143_fu_142">
 <pin_list>
-<pin id="132" dir="0" index="0" bw="4" slack="0"/>
-<pin id="133" dir="0" index="1" bw="1" slack="0"/>
-<pin id="134" dir="0" index="2" bw="1" slack="0"/>
-<pin id="135" dir="0" index="3" bw="3" slack="0"/>
-<pin id="136" dir="0" index="4" bw="3" slack="0"/>
-<pin id="137" dir="0" index="5" bw="4" slack="0"/>
-<pin id="138" dir="0" index="6" bw="4" slack="0"/>
-<pin id="139" dir="0" index="7" bw="4" slack="0"/>
-<pin id="140" dir="0" index="8" bw="4" slack="0"/>
-<pin id="141" dir="0" index="9" bw="4" slack="0"/>
-<pin id="142" dir="0" index="10" bw="4" slack="0"/>
-<pin id="143" dir="0" index="11" bw="4" slack="0"/>
-<pin id="144" dir="1" index="12" bw="0" slack="2147483647"/>
+<pin id="143" dir="0" index="0" bw="4" slack="0"/>
+<pin id="144" dir="0" index="1" bw="1" slack="0"/>
+<pin id="145" dir="0" index="2" bw="1" slack="0"/>
+<pin id="146" dir="0" index="3" bw="3" slack="0"/>
+<pin id="147" dir="0" index="4" bw="3" slack="0"/>
+<pin id="148" dir="0" index="5" bw="4" slack="0"/>
+<pin id="149" dir="0" index="6" bw="4" slack="0"/>
+<pin id="150" dir="0" index="7" bw="4" slack="0"/>
+<pin id="151" dir="0" index="8" bw="4" slack="0"/>
+<pin id="152" dir="0" index="9" bw="4" slack="0"/>
+<pin id="153" dir="0" index="10" bw="4" slack="0"/>
+<pin id="154" dir="0" index="11" bw="4" slack="0"/>
+<pin id="155" dir="1" index="12" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="switch(3) " fcode="switch"/>
-<opset="switch_ln171/2 "/>
+<opset="switch_ln143/2 "/>
 </bind>
 </comp>
 
-<comp id="157" class="1004" name="store_ln169_store_fu_157">
+<comp id="168" class="1004" name="store_ln141_store_fu_168">
 <pin_list>
-<pin id="158" dir="0" index="0" bw="4" slack="1"/>
-<pin id="159" dir="0" index="1" bw="4" slack="2"/>
-<pin id="160" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="169" dir="0" index="0" bw="4" slack="1"/>
+<pin id="170" dir="0" index="1" bw="4" slack="2"/>
+<pin id="171" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln169/3 "/>
+<opset="store_ln141/3 "/>
 </bind>
 </comp>
 
-<comp id="161" class="1005" name="h_reg_161">
+<comp id="172" class="1005" name="h_reg_172">
 <pin_list>
-<pin id="162" dir="0" index="0" bw="4" slack="0"/>
-<pin id="163" dir="1" index="1" bw="4" slack="0"/>
+<pin id="173" dir="0" index="0" bw="4" slack="0"/>
+<pin id="174" dir="1" index="1" bw="4" slack="0"/>
 </pin_list>
 <bind>
 <opset="h "/>
 </bind>
 </comp>
 
-<comp id="168" class="1005" name="h_1_reg_168">
+<comp id="179" class="1005" name="add141_read_reg_179">
 <pin_list>
-<pin id="169" dir="0" index="0" bw="4" slack="1"/>
-<pin id="170" dir="1" index="1" bw="4" slack="2147483647"/>
+<pin id="180" dir="0" index="0" bw="32" slack="1"/>
+<pin id="181" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="add141_read "/>
+</bind>
+</comp>
+
+<comp id="184" class="1005" name="h_1_reg_184">
+<pin_list>
+<pin id="185" dir="0" index="0" bw="4" slack="1"/>
+<pin id="186" dir="1" index="1" bw="4" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="h_1 "/>
 </bind>
 </comp>
 
-<comp id="172" class="1005" name="add_ln169_reg_172">
+<comp id="188" class="1005" name="add_ln141_reg_188">
 <pin_list>
-<pin id="173" dir="0" index="0" bw="4" slack="1"/>
-<pin id="174" dir="1" index="1" bw="4" slack="1"/>
+<pin id="189" dir="0" index="0" bw="4" slack="1"/>
+<pin id="190" dir="1" index="1" bw="4" slack="1"/>
 </pin_list>
 <bind>
-<opset="add_ln169 "/>
+<opset="add_ln141 "/>
 </bind>
 </comp>
 
 </comp_list>
 
 <net_list>
-<net id="93"><net_src comp="24" pin="0"/><net_sink comp="90" pin=0"/></net>
+<net id="97"><net_src comp="26" pin="0"/><net_sink comp="94" pin=0"/></net>
 
-<net id="98"><net_src comp="58" pin="0"/><net_sink comp="94" pin=0"/></net>
+<net id="102"><net_src comp="28" pin="0"/><net_sink comp="98" pin=0"/></net>
 
-<net id="99"><net_src comp="20" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="103"><net_src comp="2" pin="0"/><net_sink comp="98" pin=1"/></net>
 
-<net id="100"><net_src comp="18" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="109"><net_src comp="62" pin="0"/><net_sink comp="104" pin=0"/></net>
 
-<net id="101"><net_src comp="16" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="110"><net_src comp="22" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="102"><net_src comp="14" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="111"><net_src comp="20" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="103"><net_src comp="12" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="112"><net_src comp="18" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="104"><net_src comp="10" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="113"><net_src comp="16" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="105"><net_src comp="8" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="114"><net_src comp="14" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="106"><net_src comp="6" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="115"><net_src comp="12" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="107"><net_src comp="4" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="116"><net_src comp="10" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="108"><net_src comp="2" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="117"><net_src comp="8" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="109"><net_src comp="0" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="118"><net_src comp="6" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="110"><net_src comp="22" pin="0"/><net_sink comp="94" pin=1"/></net>
+<net id="119"><net_src comp="4" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="115"><net_src comp="26" pin="0"/><net_sink comp="111" pin=0"/></net>
+<net id="120"><net_src comp="0" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="123"><net_src comp="116" pin="1"/><net_sink comp="119" pin=0"/></net>
+<net id="121"><net_src comp="24" pin="0"/><net_sink comp="104" pin=1"/></net>
 
-<net id="124"><net_src comp="28" pin="0"/><net_sink comp="119" pin=1"/></net>
+<net id="126"><net_src comp="30" pin="0"/><net_sink comp="122" pin=0"/></net>
 
-<net id="129"><net_src comp="116" pin="1"/><net_sink comp="125" pin=0"/></net>
+<net id="134"><net_src comp="127" pin="1"/><net_sink comp="130" pin=0"/></net>
 
-<net id="130"><net_src comp="30" pin="0"/><net_sink comp="125" pin=1"/></net>
+<net id="135"><net_src comp="32" pin="0"/><net_sink comp="130" pin=1"/></net>
 
-<net id="145"><net_src comp="116" pin="1"/><net_sink comp="131" pin=0"/></net>
+<net id="140"><net_src comp="127" pin="1"/><net_sink comp="136" pin=0"/></net>
 
-<net id="146"><net_src comp="26" pin="0"/><net_sink comp="131" pin=1"/></net>
+<net id="141"><net_src comp="34" pin="0"/><net_sink comp="136" pin=1"/></net>
 
-<net id="147"><net_src comp="28" pin="0"/><net_sink comp="131" pin=2"/></net>
+<net id="156"><net_src comp="127" pin="1"/><net_sink comp="142" pin=0"/></net>
 
-<net id="148"><net_src comp="40" pin="0"/><net_sink comp="131" pin=3"/></net>
+<net id="157"><net_src comp="30" pin="0"/><net_sink comp="142" pin=1"/></net>
 
-<net id="149"><net_src comp="42" pin="0"/><net_sink comp="131" pin=4"/></net>
+<net id="158"><net_src comp="32" pin="0"/><net_sink comp="142" pin=2"/></net>
 
-<net id="150"><net_src comp="44" pin="0"/><net_sink comp="131" pin=5"/></net>
+<net id="159"><net_src comp="44" pin="0"/><net_sink comp="142" pin=3"/></net>
 
-<net id="151"><net_src comp="46" pin="0"/><net_sink comp="131" pin=6"/></net>
+<net id="160"><net_src comp="46" pin="0"/><net_sink comp="142" pin=4"/></net>
 
-<net id="152"><net_src comp="48" pin="0"/><net_sink comp="131" pin=7"/></net>
+<net id="161"><net_src comp="48" pin="0"/><net_sink comp="142" pin=5"/></net>
 
-<net id="153"><net_src comp="50" pin="0"/><net_sink comp="131" pin=8"/></net>
+<net id="162"><net_src comp="50" pin="0"/><net_sink comp="142" pin=6"/></net>
 
-<net id="154"><net_src comp="52" pin="0"/><net_sink comp="131" pin=9"/></net>
+<net id="163"><net_src comp="52" pin="0"/><net_sink comp="142" pin=7"/></net>
 
-<net id="155"><net_src comp="54" pin="0"/><net_sink comp="131" pin=10"/></net>
+<net id="164"><net_src comp="54" pin="0"/><net_sink comp="142" pin=8"/></net>
 
-<net id="156"><net_src comp="56" pin="0"/><net_sink comp="131" pin=11"/></net>
+<net id="165"><net_src comp="56" pin="0"/><net_sink comp="142" pin=9"/></net>
 
-<net id="164"><net_src comp="90" pin="1"/><net_sink comp="161" pin=0"/></net>
+<net id="166"><net_src comp="58" pin="0"/><net_sink comp="142" pin=10"/></net>
 
-<net id="165"><net_src comp="161" pin="1"/><net_sink comp="111" pin=1"/></net>
+<net id="167"><net_src comp="60" pin="0"/><net_sink comp="142" pin=11"/></net>
 
-<net id="166"><net_src comp="161" pin="1"/><net_sink comp="116" pin=0"/></net>
+<net id="175"><net_src comp="94" pin="1"/><net_sink comp="172" pin=0"/></net>
 
-<net id="167"><net_src comp="161" pin="1"/><net_sink comp="157" pin=1"/></net>
+<net id="176"><net_src comp="172" pin="1"/><net_sink comp="122" pin=1"/></net>
 
-<net id="171"><net_src comp="116" pin="1"/><net_sink comp="168" pin=0"/></net>
+<net id="177"><net_src comp="172" pin="1"/><net_sink comp="127" pin=0"/></net>
 
-<net id="175"><net_src comp="119" pin="2"/><net_sink comp="172" pin=0"/></net>
+<net id="178"><net_src comp="172" pin="1"/><net_sink comp="168" pin=1"/></net>
 
-<net id="176"><net_src comp="172" pin="1"/><net_sink comp="157" pin=0"/></net>
+<net id="182"><net_src comp="98" pin="2"/><net_sink comp="179" pin=0"/></net>
+
+<net id="183"><net_src comp="179" pin="1"/><net_sink comp="104" pin=2"/></net>
+
+<net id="187"><net_src comp="127" pin="1"/><net_sink comp="184" pin=0"/></net>
+
+<net id="191"><net_src comp="130" pin="2"/><net_sink comp="188" pin=0"/></net>
+
+<net id="192"><net_src comp="188" pin="1"/><net_sink comp="168" pin=0"/></net>
 
 </net_list>
 
@@ -1114,6 +1167,7 @@ br_ln169                (br               ) [ 0000]
 	Port: att_11 | {2 3 }
  - Input state : 
 	Port: kernel_mhsa_Outline_SOFTMAX_HEADS : att | {2 3 }
+	Port: kernel_mhsa_Outline_SOFTMAX_HEADS : add141 | {1 }
 	Port: kernel_mhsa_Outline_SOFTMAX_HEADS : att_1 | {2 3 }
 	Port: kernel_mhsa_Outline_SOFTMAX_HEADS : att_2 | {2 3 }
 	Port: kernel_mhsa_Outline_SOFTMAX_HEADS : att_3 | {2 3 }
@@ -1127,12 +1181,12 @@ br_ln169                (br               ) [ 0000]
 	Port: kernel_mhsa_Outline_SOFTMAX_HEADS : att_11 | {2 3 }
   - Chain level:
 	State 1
-		store_ln169 : 1
+		store_ln141 : 1
 	State 2
-		add_ln169 : 1
-		icmp_ln169 : 1
-		br_ln169 : 2
-		switch_ln171 : 1
+		add_ln141 : 1
+		icmp_ln141 : 1
+		br_ln141 : 2
+		switch_ln143 : 1
 	State 3
 		rend451 : 1
 		rend467 : 1
@@ -1152,42 +1206,45 @@ br_ln169                (br               ) [ 0000]
 ============================================================
 
 * Functional unit list:
-|----------|--------------------------|---------|---------|---------|---------|---------|---------|
-| Operation|      Functional Unit     |   BRAM  |   DSP   |  Delay  |    FF   |   LUT   |   URAM  |
-|----------|--------------------------|---------|---------|---------|---------|---------|---------|
-|   call   | grp_kernel_softmax_fu_94 |    2    |    3    |  3.357  |   902   |   1348  |    0    |
-|----------|--------------------------|---------|---------|---------|---------|---------|---------|
-|    add   |     add_ln169_fu_119     |    0    |    0    |    0    |    0    |    6    |    0    |
-|----------|--------------------------|---------|---------|---------|---------|---------|---------|
-|   icmp   |     icmp_ln169_fu_125    |    0    |    0    |    0    |    0    |    2    |    0    |
-|----------|--------------------------|---------|---------|---------|---------|---------|---------|
-|  switch  |    switch_ln171_fu_131   |    0    |    0    |    0    |    0    |    0    |    0    |
-|----------|--------------------------|---------|---------|---------|---------|---------|---------|
-|   Total  |                          |    2    |    3    |  3.357  |   902   |   1356  |    0    |
-|----------|--------------------------|---------|---------|---------|---------|---------|---------|
+|----------|---------------------------|---------|---------|---------|---------|---------|---------|
+| Operation|      Functional Unit      |   BRAM  |   DSP   |  Delay  |    FF   |   LUT   |   URAM  |
+|----------|---------------------------|---------|---------|---------|---------|---------|---------|
+|   call   | grp_kernel_softmax_fu_104 |    2    |    3    |  3.746  |   1114  |   1512  |    0    |
+|----------|---------------------------|---------|---------|---------|---------|---------|---------|
+|    add   |      add_ln141_fu_130     |    0    |    0    |    0    |    0    |    6    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|---------|---------|
+|   icmp   |     icmp_ln141_fu_136     |    0    |    0    |    0    |    0    |    2    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|---------|---------|
+|   read   |   add141_read_read_fu_98  |    0    |    0    |    0    |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|---------|---------|
+|  switch  |    switch_ln143_fu_142    |    0    |    0    |    0    |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|---------|---------|
+|   Total  |                           |    2    |    3    |  3.746  |   1114  |   1520  |    0    |
+|----------|---------------------------|---------|---------|---------|---------|---------|---------|
 
 Memories:
 N/A
 
 * Register list:
-+-----------------+--------+
-|                 |   FF   |
-+-----------------+--------+
-|add_ln169_reg_172|    4   |
-|   h_1_reg_168   |    4   |
-|    h_reg_161    |    4   |
-+-----------------+--------+
-|      Total      |   12   |
-+-----------------+--------+
++-------------------+--------+
+|                   |   FF   |
++-------------------+--------+
+|add141_read_reg_179|   32   |
+| add_ln141_reg_188 |    4   |
+|    h_1_reg_184    |    4   |
+|     h_reg_172     |    4   |
++-------------------+--------+
+|       Total       |   44   |
++-------------------+--------+
 
 * Multiplexer (MUX) list: 
-|--------------------------|------|------|------|--------||---------||---------||---------|
-|           Comp           |  Pin | Size |  BW  | S x BW ||  Delay  ||    FF   ||   LUT   |
-|--------------------------|------|------|------|--------||---------||---------||---------|
-| grp_kernel_softmax_fu_94 |  p1  |  12  |  32  |   384  ||    0    ||   160   |
-|--------------------------|------|------|------|--------||---------||---------||---------|
-|           Total          |      |      |      |   384  ||   0.79  ||    0    ||   160   |
-|--------------------------|------|------|------|--------||---------||---------||---------|
+|---------------------------|------|------|------|--------||---------||---------||---------|
+|            Comp           |  Pin | Size |  BW  | S x BW ||  Delay  ||    FF   ||   LUT   |
+|---------------------------|------|------|------|--------||---------||---------||---------|
+| grp_kernel_softmax_fu_104 |  p1  |  12  |  32  |   384  ||    0    ||   160   |
+|---------------------------|------|------|------|--------||---------||---------||---------|
+|           Total           |      |      |      |   384  ||   0.79  ||    0    ||   160   |
+|---------------------------|------|------|------|--------||---------||---------||---------|
 
 
 
@@ -1195,10 +1252,10 @@ N/A
 +-----------+--------+--------+--------+--------+--------+--------+
 |           |  BRAM  |   DSP  |  Delay |   FF   |   LUT  |  URAM  |
 +-----------+--------+--------+--------+--------+--------+--------+
-|  Function |    2   |    3   |    3   |   902  |  1356  |    0   |
+|  Function |    2   |    3   |    3   |  1114  |  1520  |    0   |
 |   Memory  |    -   |    -   |    -   |    -   |    -   |    -   |
 |Multiplexer|    -   |    -   |    0   |    0   |   160  |    -   |
-|  Register |    -   |    -   |    -   |   12   |    -   |    -   |
+|  Register |    -   |    -   |    -   |   44   |    -   |    -   |
 +-----------+--------+--------+--------+--------+--------+--------+
-|   Total   |    2   |    3   |    4   |   914  |  1516  |    0   |
+|   Total   |    2   |    3   |    4   |  1158  |  1680  |    0   |
 +-----------+--------+--------+--------+--------+--------+--------+

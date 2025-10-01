@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER'" level="0">
-<item name = "Date">Sat Sep 27 23:15:25 2025
+<item name = "Date">Tue Sep 30 22:39:03 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -80,13 +80,13 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln33_1_fu_3241_p2">+, 0, 0, 6, 4, 1</column>
-<column name="add_ln33_fu_3209_p2">+, 0, 0, 23, 23, 1</column>
-<column name="add_ln35_fu_3296_p2">+, 0, 0, 19, 19, 1</column>
-<column name="icmp_ln33_fu_3215_p2">icmp, 0, 0, 9, 23, 23</column>
-<column name="icmp_ln35_fu_3227_p2">icmp, 0, 0, 7, 19, 19</column>
-<column name="select_ln33_1_fu_3247_p3">select, 0, 0, 4, 1, 4</column>
-<column name="select_ln33_fu_3233_p3">select, 0, 0, 18, 1, 1</column>
+<column name="add_ln31_1_fu_3241_p2">+, 0, 0, 6, 4, 1</column>
+<column name="add_ln31_fu_3209_p2">+, 0, 0, 23, 23, 1</column>
+<column name="add_ln33_fu_3296_p2">+, 0, 0, 19, 19, 1</column>
+<column name="icmp_ln31_fu_3215_p2">icmp, 0, 0, 9, 23, 23</column>
+<column name="icmp_ln33_fu_3227_p2">icmp, 0, 0, 7, 19, 19</column>
+<column name="select_ln31_1_fu_3247_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln31_fu_3233_p3">select, 0, 0, 18, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -110,8 +110,8 @@
 <column name="indvar_flatten_fu_474">23, 0, 23, 0</column>
 <column name="l_fu_470">4, 0, 4, 0</column>
 <column name="lshr_ln_reg_4312">16, 0, 16, 0</column>
-<column name="select_ln33_1_reg_4304">4, 0, 4, 0</column>
-<column name="trunc_ln35_reg_4308">3, 0, 3, 0</column>
+<column name="select_ln31_1_reg_4304">4, 0, 4, 0</column>
+<column name="trunc_ln33_reg_4308">3, 0, 3, 0</column>
 </table>
 </item>
 </section>

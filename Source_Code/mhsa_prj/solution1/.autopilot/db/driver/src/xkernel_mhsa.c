@@ -131,6 +131,44 @@ u64 XKernel_mhsa_Get_weights(XKernel_mhsa *InstancePtr) {
     return Data;
 }
 
+void XKernel_mhsa_Set_key_cache(XKernel_mhsa *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XKernel_mhsa_WriteReg(InstancePtr->Control_BaseAddress, XKERNEL_MHSA_CONTROL_ADDR_KEY_CACHE_DATA, (u32)(Data));
+    XKernel_mhsa_WriteReg(InstancePtr->Control_BaseAddress, XKERNEL_MHSA_CONTROL_ADDR_KEY_CACHE_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XKernel_mhsa_Get_key_cache(XKernel_mhsa *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XKernel_mhsa_ReadReg(InstancePtr->Control_BaseAddress, XKERNEL_MHSA_CONTROL_ADDR_KEY_CACHE_DATA);
+    Data += (u64)XKernel_mhsa_ReadReg(InstancePtr->Control_BaseAddress, XKERNEL_MHSA_CONTROL_ADDR_KEY_CACHE_DATA + 4) << 32;
+    return Data;
+}
+
+void XKernel_mhsa_Set_value_cache(XKernel_mhsa *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XKernel_mhsa_WriteReg(InstancePtr->Control_BaseAddress, XKERNEL_MHSA_CONTROL_ADDR_VALUE_CACHE_DATA, (u32)(Data));
+    XKernel_mhsa_WriteReg(InstancePtr->Control_BaseAddress, XKERNEL_MHSA_CONTROL_ADDR_VALUE_CACHE_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XKernel_mhsa_Get_value_cache(XKernel_mhsa *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XKernel_mhsa_ReadReg(InstancePtr->Control_BaseAddress, XKERNEL_MHSA_CONTROL_ADDR_VALUE_CACHE_DATA);
+    Data += (u64)XKernel_mhsa_ReadReg(InstancePtr->Control_BaseAddress, XKERNEL_MHSA_CONTROL_ADDR_VALUE_CACHE_DATA + 4) << 32;
+    return Data;
+}
+
 void XKernel_mhsa_InterruptGlobalEnable(XKernel_mhsa *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

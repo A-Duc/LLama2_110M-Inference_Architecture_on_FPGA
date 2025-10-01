@@ -2,107 +2,109 @@
     <item name="Total Instructions per Compilation Phase">
         <table>
             <keys size="4">Phase, Step, Instructions, Description</keys>
-            <column name="Compile/Link">, 59991, After all functions are compiled and linked into a single design</column>
+            <column name="Compile/Link">, 59959, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll,  7102, user unroll pragmas are applied</column>
-            <column name="">(2) simplification,  4094, simplification of applied user unroll pragmas</column>
-            <column name="">(3) inline,  3735, user inline pragmas are applied</column>
-            <column name="">(4) simplification,  2678, simplification of applied user inline pragmas</column>
+            <column name="">(1) unroll,  7051, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  4052, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,  3773, user inline pragmas are applied</column>
+            <column name="">(4) simplification,  2716, simplification of applied user inline pragmas</column>
             <column name="">, , </column>
             <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(1) array partition, 20225, user array partition pragmas are applied</column>
-            <column name="">(2) simplification,  9005, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
-            <column name="">(3) aggregate/disaggregate ,  9005, user struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(4) array reshape,  9005, apply array reshape pragmas</column>
-            <column name="">(5) access patterns,  9083, array access pattern optmizations</column>
+            <column name="">(1) array partition,  5622, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,  5071, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,  5071, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,  5071, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,  4958, array access pattern optmizations</column>
             <column name="">, , </column>
             <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
-            <column name="">(1) loop simplification,  9007, loop and instruction simplification</column>
-            <column name="">(2) parallelization,  8884, loops are unrolled or pipelined to meet performance targets</column>
-            <column name="">(3) array partition,  8821, arrays are partitioned to meet performance targets</column>
-            <column name="">(4) simplification,  8821, simplification of design after performance transformations</column>
+            <column name="">(1) loop simplification,  4893, loop and instruction simplification</column>
+            <column name="">(2) parallelization,  4759, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition,  4696, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,  4696, simplification of design after performance transformations</column>
             <column name="">, , </column>
-            <column name="HW Transforms">,  8900, After hardware transfomations</column>
+            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering,  4856, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations,  5043, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="kernel_mhsa" col1="kernel_MHSA.cpp:6" col2="59991" col3="2678" col4="9083" col5="8821" col6="8900">
-                    <row id="15" col0="kernel_rmsnorm" col1="kernel_RMS_Norm.cpp:6" col2="43" col3="" col4="" col5="" col6=""/>
-                    <row id="10" col0="matmul" col1="kernel_MatMul.cpp:75" col2="728" col2_disp="  728 (4 calls)" col3="300" col3_disp=" 300 (4 calls)" col4="660" col4_disp=" 660 (4 calls)" col5="656" col5_disp=" 656 (4 calls)" col6="712" col6_disp=" 712 (4 calls)">
-                        <row id="42" col0="load_vec" col1="kernel_MatMul.cpp:9" col2="76" col2_disp="   76 (4 calls)" col3="36" col3_disp="  36 (4 calls)" col4="104" col4_disp=" 104 (4 calls)" col5="104" col5_disp=" 104 (4 calls)" col6="108" col6_disp=" 108 (4 calls)"/>
-                        <row id="63" col0="load_mat" col1="kernel_MatMul.cpp:20" col2="120" col2_disp="  120 (4 calls)" col3="64" col3_disp="  64 (4 calls)" col4="72" col4_disp="  72 (4 calls)" col5="72" col5_disp="  72 (4 calls)" col6="84" col6_disp="  84 (4 calls)"/>
-                        <row id="32" col0="compute_matmul" col1="kernel_MatMul.cpp:34" col2="312" col2_disp="  312 (4 calls)" col3="108" col3_disp=" 108 (4 calls)" col4="252" col4_disp=" 252 (4 calls)" col5="248" col5_disp=" 248 (4 calls)" col6="260" col6_disp=" 260 (4 calls)"/>
-                        <row id="18" col0="store_result" col1="kernel_MatMul.cpp:63" col2="104" col2_disp="  104 (4 calls)" col3="36" col3_disp="  36 (4 calls)" col4="176" col4_disp=" 176 (4 calls)" col5="176" col5_disp=" 176 (4 calls)" col6="180" col6_disp=" 180 (4 calls)"/>
+                <row id="0" col0="kernel_mhsa" col1="kernel_MHSA.cpp:6" col2="59959" col3="2716" col4="4958" col5="4696" col6="5043">
+                    <row id="16" col0="kernel_rmsnorm" col1="kernel_RMS_Norm.cpp:6" col2="43" col3="" col4="" col5="" col6=""/>
+                    <row id="4" col0="matmul" col1="kernel_MatMul.cpp:75" col2="728" col2_disp="  728 (4 calls)" col3="300" col3_disp=" 300 (4 calls)" col4="656" col4_disp=" 656 (4 calls)" col5="652" col5_disp=" 652 (4 calls)" col6="844" col6_disp=" 844 (4 calls)">
+                        <row id="20" col0="load_vec" col1="kernel_MatMul.cpp:9" col2="76" col2_disp="   76 (4 calls)" col3="36" col3_disp="  36 (4 calls)" col4="104" col4_disp=" 104 (4 calls)" col5="104" col5_disp=" 104 (4 calls)" col6="136" col6_disp=" 136 (4 calls)"/>
+                        <row id="22" col0="load_mat" col1="kernel_MatMul.cpp:20" col2="120" col2_disp="  120 (4 calls)" col3="64" col3_disp="  64 (4 calls)" col4="68" col4_disp="  68 (4 calls)" col5="68" col5_disp="  68 (4 calls)" col6="104" col6_disp=" 104 (4 calls)"/>
+                        <row id="37" col0="compute_matmul" col1="kernel_MatMul.cpp:34" col2="312" col2_disp="  312 (4 calls)" col3="108" col3_disp=" 108 (4 calls)" col4="252" col4_disp=" 252 (4 calls)" col5="248" col5_disp=" 248 (4 calls)" col6="332" col6_disp=" 332 (4 calls)"/>
+                        <row id="51" col0="store_result" col1="kernel_MatMul.cpp:63" col2="104" col2_disp="  104 (4 calls)" col3="36" col3_disp="  36 (4 calls)" col4="176" col4_disp=" 176 (4 calls)" col5="176" col5_disp=" 176 (4 calls)" col6="208" col6_disp=" 208 (4 calls)"/>
                     </row>
-                    <row id="25" col0="RoPE" col1="kernel_Rope.cpp:3" col2="58688" col2_disp="58,688 (2 calls)" col3="1232" col3_disp="1,232 (2 calls)" col4="1304" col4_disp="1,304 (2 calls)" col5="1106" col5_disp="1,106 (2 calls)" col6="1106" col6_disp="1,106 (2 calls)">
-                        <row id="27" col0="powf" col1="powfloat.cpp:10" col2="37316" col2_disp="37,316 (2 calls)" col3="" col4="" col5="" col6="">
-                            <row id="61" col0="pow" col1="powfloat.cpp:6" col2="37312" col2_disp="37,312 (2 calls)" col3="" col4="" col5="" col6="">
-                                <row id="37" col0="pow_generic&lt;float&gt;" col1="hls_pow.h:291" col2="37308" col2_disp="37,308 (2 calls)" col3="" col4="" col5="" col6="">
-                                    <row id="62" col0="fp_struct" col1="x_hls_utils.h:283" col2="1272" col2_disp="1,272 (4 calls)" col3="" col4="" col5="" col6=""/>
-                                    <row id="30" col0="fp_struct" col1="x_hls_utils.h:281" col2="8" col2_disp="    8 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                    <row id="6" col0="expv" col1="x_hls_utils.h:316" col2="436" col2_disp="  436 (4 calls)" col3="" col4="" col5="" col6=""/>
-                                    <row id="43" col0="generic_isinf&lt;float&gt;" col1="hls_isinf.h:16" col2="1552" col2_disp="1,552 (4 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="62" col0="fp_struct" col1="x_hls_utils.h:283" col2="1272" col2_disp="1,272 (4 calls)" col3="" col4="" col5="" col6=""/>
+                    <row id="46" col0="RoPE" col1="kernel_Rope.cpp:3" col2="58688" col2_disp="58,688 (2 calls)" col3="1232" col3_disp="1,232 (2 calls)" col4="1304" col4_disp="1,304 (2 calls)" col5="1106" col5_disp="1,106 (2 calls)" col6="1118" col6_disp="1,118 (2 calls)">
+                        <row id="55" col0="powf" col1="powfloat.cpp:10" col2="37316" col2_disp="37,316 (2 calls)" col3="" col4="" col5="" col6="">
+                            <row id="7" col0="pow" col1="powfloat.cpp:6" col2="37312" col2_disp="37,312 (2 calls)" col3="" col4="" col5="" col6="">
+                                <row id="28" col0="pow_generic&lt;float&gt;" col1="hls_pow.h:291" col2="37308" col2_disp="37,308 (2 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="56" col0="fp_struct" col1="x_hls_utils.h:283" col2="1272" col2_disp="1,272 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="3" col0="fp_struct" col1="x_hls_utils.h:281" col2="8" col2_disp="    8 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="60" col0="expv" col1="x_hls_utils.h:316" col2="436" col2_disp="  436 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="45" col0="generic_isinf&lt;float&gt;" col1="hls_isinf.h:16" col2="1552" col2_disp="1,552 (4 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="56" col0="fp_struct" col1="x_hls_utils.h:283" col2="1272" col2_disp="1,272 (4 calls)" col3="" col4="" col5="" col6=""/>
                                     </row>
-                                    <row id="12" col0="generic_isnan&lt;float&gt;" col1="hls_isnan.h:16" col2="1556" col2_disp="1,556 (4 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="62" col0="fp_struct" col1="x_hls_utils.h:283" col2="1272" col2_disp="1,272 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="61" col0="generic_isnan&lt;float&gt;" col1="hls_isnan.h:16" col2="1556" col2_disp="1,556 (4 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="56" col0="fp_struct" col1="x_hls_utils.h:283" col2="1272" col2_disp="1,272 (4 calls)" col3="" col4="" col5="" col6=""/>
                                     </row>
-                                    <row id="36" col0="log_range_reduction&lt;39&gt;" col1="hls_pow.h:130" col2="8798" col2_disp="8,798 (2 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="22" col0="log_range_reduce&lt;ap_fixed&lt;65, 9, AP_TRN, AP_WRAP, 0&gt;, 4, 4, 39, 41&gt;" col1="hls_pow.h:30" col2="2530" col2_disp="2,530 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                        <row id="14" col0="log_range_reduce&lt;ap_fixed&lt;65, 9, AP_TRN, AP_WRAP, 0&gt;, 7, 6, 41, 44&gt;" col1="hls_pow.h:30" col2="2484" col2_disp="2,484 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                        <row id="8" col0="log_range_reduce&lt;ap_fixed&lt;65, 9, AP_TRN, AP_WRAP, 0&gt;, 12, 6, 44, 39&gt;" col1="hls_pow.h:30" col2="2480" col2_disp="2,480 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="41" col0="log_range_reduction&lt;39&gt;" col1="hls_pow.h:130" col2="8798" col2_disp="8,798 (2 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="43" col0="log_range_reduce&lt;ap_fixed&lt;65, 9, AP_TRN, AP_WRAP, 0&gt;, 4, 4, 39, 41&gt;" col1="hls_pow.h:30" col2="2530" col2_disp="2,530 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="52" col0="log_range_reduce&lt;ap_fixed&lt;65, 9, AP_TRN, AP_WRAP, 0&gt;, 7, 6, 41, 44&gt;" col1="hls_pow.h:30" col2="2484" col2_disp="2,484 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="64" col0="log_range_reduce&lt;ap_fixed&lt;65, 9, AP_TRN, AP_WRAP, 0&gt;, 12, 6, 44, 39&gt;" col1="hls_pow.h:30" col2="2480" col2_disp="2,480 (2 calls)" col3="" col4="" col5="" col6=""/>
                                     </row>
-                                    <row id="31" col0="exp_Z1P_m_1" col1="hls_pow.h:156" col2="720" col2_disp="  720 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                    <row id="23" col0="to_ieee" col1="x_hls_utils.h:346" col2="5454" col2_disp="5,454 (18 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="28" col0="to_float" col1="x_hls_utils.h:322" col2="5418" col2_disp="5,418 (18 calls)" col3="" col4="" col5="" col6="">
-                                            <row id="29" col0="data" col1="x_hls_utils.h:309" col2="5022" col2_disp="5,022 (18 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="54" col0="exp_Z1P_m_1" col1="hls_pow.h:156" col2="720" col2_disp="  720 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="8" col0="to_ieee" col1="x_hls_utils.h:346" col2="5454" col2_disp="5,454 (18 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="39" col0="to_float" col1="x_hls_utils.h:322" col2="5418" col2_disp="5,418 (18 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="63" col0="data" col1="x_hls_utils.h:309" col2="5022" col2_disp="5,022 (18 calls)" col3="" col4="" col5="" col6=""/>
                                         </row>
                                     </row>
                                 </row>
                             </row>
                         </row>
-                        <row id="26" col0="sincosf" col1="sincoshotbmfloat.cpp:47" col2="21252" col2_disp="21,252 (2 calls)" col3="" col4="" col5="" col6="">
-                            <row id="52" col0="sincos" col1="sincoshotbmfloat.cpp:15" col2="21248" col2_disp="21,248 (2 calls)" col3="" col4="" col5="" col6="">
-                                <row id="17" col0="generic_sincos&lt;float&gt;" col1="hls_hotbm.h:129" col2="21244" col2_disp="21,244 (2 calls)" col3="" col4="" col5="" col6="">
-                                    <row id="62" col0="fp_struct" col1="x_hls_utils.h:283" col2="1908" col2_disp="1,908 (6 calls)" col3="" col4="" col5="" col6=""/>
-                                    <row id="1" col0="range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;" col1="hls_range_redux.h:431" col2="4284" col2_disp="4,284 (2 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="62" col0="fp_struct" col1="x_hls_utils.h:283" col2="636" col2_disp="  636 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                        <row id="6" col0="expv" col1="x_hls_utils.h:316" col2="218" col2_disp="  218 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                        <row id="7" col0="table_lookup_4oPi_hotbm&lt;23, 29&gt;" col1="hls_range_redux.h:373" col2="528" col2_disp="  528 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                        <row id="20" col0="clz&lt;29, 58, 0&gt;" col1="hls_normalize.h:69" col2="328" col2_disp="  328 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="17" col0="sincosf" col1="sincoshotbmfloat.cpp:47" col2="21252" col2_disp="21,252 (2 calls)" col3="" col4="" col5="" col6="">
+                            <row id="21" col0="sincos" col1="sincoshotbmfloat.cpp:15" col2="21248" col2_disp="21,248 (2 calls)" col3="" col4="" col5="" col6="">
+                                <row id="14" col0="generic_sincos&lt;float&gt;" col1="hls_hotbm.h:129" col2="21244" col2_disp="21,244 (2 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="56" col0="fp_struct" col1="x_hls_utils.h:283" col2="1908" col2_disp="1,908 (6 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="44" col0="range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;" col1="hls_range_redux.h:431" col2="4284" col2_disp="4,284 (2 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="56" col0="fp_struct" col1="x_hls_utils.h:283" col2="636" col2_disp="  636 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="60" col0="expv" col1="x_hls_utils.h:316" col2="218" col2_disp="  218 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="57" col0="table_lookup_4oPi_hotbm&lt;23, 29&gt;" col1="hls_range_redux.h:373" col2="528" col2_disp="  528 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="59" col0="clz&lt;29, 58, 0&gt;" col1="hls_normalize.h:69" col2="328" col2_disp="  328 (2 calls)" col3="" col4="" col5="" col6=""/>
                                     </row>
-                                    <row id="16" col0="sincos_approximation&lt;29, 29&gt;" col1="hls_hotbm_float.cpp:51" col2="5218" col2_disp="5,218 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                    <row id="11" col0="scaled_fixed2ieee&lt;29, 1&gt;" col1="x_hls_float_utils.h:256" col2="5928" col2_disp="5,928 (4 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="30" col0="fp_struct" col1="x_hls_utils.h:281" col2="16" col2_disp="   16 (4 calls)" col3="" col4="" col5="" col6=""/>
-                                        <row id="34" col0="clz" col1="hls_normalize.h:79" col2="116" col2_disp="  116 (4 calls)" col3="" col4="" col5="" col6=""/>
-                                        <row id="33" col0="set_mantissa" col1="x_hls_utils.h:336" col2="444" col2_disp="  444 (4 calls)" col3="" col4="" col5="" col6=""/>
-                                        <row id="23" col0="to_ieee" col1="x_hls_utils.h:346" col2="1212" col2_disp="1,212 (4 calls)" col3="" col4="" col5="" col6="">
-                                            <row id="28" col0="to_float" col1="x_hls_utils.h:322" col2="1204" col2_disp="1,204 (4 calls)" col3="" col4="" col5="" col6="">
-                                                <row id="29" col0="data" col1="x_hls_utils.h:309" col2="1116" col2_disp="1,116 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="40" col0="sincos_approximation&lt;29, 29&gt;" col1="hls_hotbm_float.cpp:51" col2="5218" col2_disp="5,218 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="31" col0="scaled_fixed2ieee&lt;29, 1&gt;" col1="x_hls_float_utils.h:256" col2="5928" col2_disp="5,928 (4 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="3" col0="fp_struct" col1="x_hls_utils.h:281" col2="16" col2_disp="   16 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="58" col0="clz" col1="hls_normalize.h:79" col2="116" col2_disp="  116 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="62" col0="set_mantissa" col1="x_hls_utils.h:336" col2="444" col2_disp="  444 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="8" col0="to_ieee" col1="x_hls_utils.h:346" col2="1212" col2_disp="1,212 (4 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="39" col0="to_float" col1="x_hls_utils.h:322" col2="1204" col2_disp="1,204 (4 calls)" col3="" col4="" col5="" col6="">
+                                                <row id="63" col0="data" col1="x_hls_utils.h:309" col2="1116" col2_disp="1,116 (4 calls)" col3="" col4="" col5="" col6=""/>
                                             </row>
                                         </row>
                                     </row>
-                                    <row id="23" col0="to_ieee" col1="x_hls_utils.h:346" col2="2424" col2_disp="2,424 (8 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="28" col0="to_float" col1="x_hls_utils.h:322" col2="2408" col2_disp="2,408 (8 calls)" col3="" col4="" col5="" col6="">
-                                            <row id="29" col0="data" col1="x_hls_utils.h:309" col2="2232" col2_disp="2,232 (8 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="8" col0="to_ieee" col1="x_hls_utils.h:346" col2="2424" col2_disp="2,424 (8 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="39" col0="to_float" col1="x_hls_utils.h:322" col2="2408" col2_disp="2,408 (8 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="63" col0="data" col1="x_hls_utils.h:309" col2="2232" col2_disp="2,232 (8 calls)" col3="" col4="" col5="" col6=""/>
                                         </row>
                                     </row>
                                 </row>
                             </row>
                         </row>
-                        <row id="37" col0="pow_generic&lt;float&gt;" col1="hls_pow.h:291" col2="" col3="548" col3_disp=" 548 (2 calls)" col4="548" col4_disp=" 548 (2 calls)" col5="424" col5_disp=" 424 (2 calls)" col6="424" col6_disp=" 424 (2 calls)">
-                            <row id="23" col0="to_ieee" col1="x_hls_utils.h:346" col2="" col3="144" col3_disp=" 144 (16 calls)" col4="144" col4_disp=" 144 (16 calls)" col5="80" col5_disp="  80 (16 calls)" col6="80" col6_disp="  80 (16 calls)"/>
+                        <row id="28" col0="pow_generic&lt;float&gt;" col1="hls_pow.h:291" col2="" col3="548" col3_disp=" 548 (2 calls)" col4="548" col4_disp=" 548 (2 calls)" col5="424" col5_disp=" 424 (2 calls)" col6="426" col6_disp=" 426 (2 calls)">
+                            <row id="8" col0="to_ieee" col1="x_hls_utils.h:346" col2="" col3="144" col3_disp=" 144 (16 calls)" col4="144" col4_disp=" 144 (16 calls)" col5="80" col5_disp="  80 (16 calls)" col6="80" col6_disp="  80 (16 calls)"/>
                         </row>
-                        <row id="17" col0="generic_sincos&lt;float&gt;" col1="hls_hotbm.h:129" col2="" col3="604" col3_disp=" 604 (2 calls)" col4="592" col4_disp=" 592 (2 calls)" col5="" col6="">
-                            <row id="11" col0="scaled_fixed2ieee&lt;29, 1&gt;" col1="x_hls_float_utils.h:256" col2="" col3="168" col3_disp=" 168 (4 calls)" col4="168" col4_disp=" 168 (4 calls)" col5="" col6=""/>
+                        <row id="14" col0="generic_sincos&lt;float&gt;" col1="hls_hotbm.h:129" col2="" col3="604" col3_disp=" 604 (2 calls)" col4="592" col4_disp=" 592 (2 calls)" col5="" col6="">
+                            <row id="31" col0="scaled_fixed2ieee&lt;29, 1&gt;" col1="x_hls_float_utils.h:256" col2="" col3="168" col3_disp=" 168 (4 calls)" col4="168" col4_disp=" 168 (4 calls)" col5="" col6=""/>
                         </row>
                     </row>
-                    <row id="35" col0="sqrtf" col1="sqrtfloat.cpp:11" col2="2" col3="" col4="" col5="" col6=""/>
-                    <row id="2" col0="kernel_softmax" col1="kernel_Softmax.cpp:2" col2="83" col3="55" col4="684" col4_disp=" 684 (12 calls)" col5="672" col5_disp=" 672 (12 calls)" col6="672" col6_disp=" 672 (12 calls)"/>
+                    <row id="27" col0="sqrtf" col1="sqrtfloat.cpp:11" col2="2" col3="" col4="" col5="" col6=""/>
+                    <row id="9" col0="kernel_softmax" col1="kernel_Softmax.cpp:2" col2="83" col3="60" col4="744" col4_disp=" 744 (12 calls)" col5="732" col5_disp=" 732 (12 calls)" col6="924" col6_disp=" 924 (12 calls)"/>
                 </row>
             </rows>
             <notes/>

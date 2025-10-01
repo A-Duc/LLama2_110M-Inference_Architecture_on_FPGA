@@ -88,7 +88,7 @@ wire   [63:0] zext_ln43_fu_168_p1;
 reg   [9:0] i_fu_54;
 wire   [9:0] add_ln43_fu_127_p2;
 wire    ap_loop_init;
-reg   [9:0] ap_sig_allocacmp_i_10;
+reg   [9:0] ap_sig_allocacmp_i_9;
 wire    ap_block_pp0_stage0;
 reg    ap_block_pp0_stage0_11001_grp1;
 reg    vector_stream_read_local;
@@ -178,7 +178,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        lshr_ln_reg_216 <= {{ap_sig_allocacmp_i_10[9:2]}};
+        lshr_ln_reg_216 <= {{ap_sig_allocacmp_i_9[9:2]}};
         trunc_ln43_reg_212 <= trunc_ln43_fu_139_p1;
     end
 end
@@ -225,9 +225,9 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
-        ap_sig_allocacmp_i_10 = 10'd0;
+        ap_sig_allocacmp_i_9 = 10'd0;
     end else begin
-        ap_sig_allocacmp_i_10 = i_fu_54;
+        ap_sig_allocacmp_i_9 = i_fu_54;
     end
 end
 
@@ -322,7 +322,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln43_fu_127_p2 = (ap_sig_allocacmp_i_10 + 10'd1);
+assign add_ln43_fu_127_p2 = (ap_sig_allocacmp_i_9 + 10'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -386,9 +386,9 @@ assign compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_d0 
 
 assign compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_we0 = compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_we0_local;
 
-assign icmp_ln43_fu_133_p2 = ((ap_sig_allocacmp_i_10 == 10'd768) ? 1'b1 : 1'b0);
+assign icmp_ln43_fu_133_p2 = ((ap_sig_allocacmp_i_9 == 10'd768) ? 1'b1 : 1'b0);
 
-assign trunc_ln43_fu_139_p1 = ap_sig_allocacmp_i_10[1:0];
+assign trunc_ln43_fu_139_p1 = ap_sig_allocacmp_i_9[1:0];
 
 assign vector_stream_read = vector_stream_read_local;
 

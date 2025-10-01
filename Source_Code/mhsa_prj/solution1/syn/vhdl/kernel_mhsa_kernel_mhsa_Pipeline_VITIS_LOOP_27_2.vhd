@@ -120,9 +120,9 @@ port (
     current_input_14_ce0 : OUT STD_LOGIC;
     current_input_14_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     norm : IN STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_4540_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_4540_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_4540_p_dout0 : IN STD_LOGIC_VECTOR (31 downto 0) );
+    grp_fu_3617_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_3617_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_3617_p_dout0 : IN STD_LOGIC_VECTOR (31 downto 0) );
 end;
 
 
@@ -240,7 +240,7 @@ attribute shreg_extract : string;
     signal i_fu_110 : STD_LOGIC_VECTOR (9 downto 0) := "0000000000";
     signal add_ln27_fu_354_p2 : STD_LOGIC_VECTOR (9 downto 0);
     signal ap_loop_init : STD_LOGIC;
-    signal ap_sig_allocacmp_i_7 : STD_LOGIC_VECTOR (9 downto 0);
+    signal ap_sig_allocacmp_i_5 : STD_LOGIC_VECTOR (9 downto 0);
     signal current_input_ce0_local : STD_LOGIC;
     signal current_input_8_ce0_local : STD_LOGIC;
     signal current_input_9_ce0_local : STD_LOGIC;
@@ -275,7 +275,7 @@ attribute shreg_extract : string;
     signal grp_fu_331_p1_keep : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_335_p0 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_335_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal lshr_ln4_fu_370_p4 : STD_LOGIC_VECTOR (6 downto 0);
+    signal lshr_ln3_fu_370_p4 : STD_LOGIC_VECTOR (6 downto 0);
     signal tmp_2_fu_455_p17 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_done_reg : STD_LOGIC := '0';
     signal ap_continue_int : STD_LOGIC;
@@ -371,7 +371,7 @@ attribute shreg_extract : string;
 
 
 begin
-    fmul_32ns_32ns_32_1_primitive_dsp_1_U217 : component kernel_mhsa_fmul_32ns_32ns_32_1_primitive_dsp_1
+    fmul_32ns_32ns_32_1_primitive_dsp_1_U25 : component kernel_mhsa_fmul_32ns_32ns_32_1_primitive_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -383,7 +383,7 @@ begin
         din1 => grp_fu_335_p1,
         dout => grp_fu_335_p2);
 
-    sparsemux_17_3_32_1_1_U218 : component kernel_mhsa_sparsemux_17_3_32_1_1
+    sparsemux_17_3_32_1_1_U26 : component kernel_mhsa_sparsemux_17_3_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -615,7 +615,7 @@ begin
                 ap_loop_exit_ready_pp0_iter3_reg <= ap_loop_exit_ready_pp0_iter2_reg;
                 ap_loop_exit_ready_pp0_iter4_reg <= ap_loop_exit_ready_pp0_iter3_reg;
                 ap_loop_exit_ready_pp0_iter5_reg <= ap_loop_exit_ready_pp0_iter4_reg;
-                mul10_i_reg_664 <= grp_fu_4540_p_dout0;
+                mul10_i_reg_664 <= grp_fu_3617_p_dout0;
                 mul13_i_reg_675 <= grp_fu_335_p2;
                 out_rms_vec_1_addr_reg_616_pp0_iter2_reg <= out_rms_vec_1_addr_reg_616_pp0_iter1_reg;
                 out_rms_vec_1_addr_reg_616_pp0_iter3_reg <= out_rms_vec_1_addr_reg_616_pp0_iter2_reg;
@@ -684,7 +684,7 @@ begin
                 ap_NS_fsm <= "X";
         end case;
     end process;
-    add_ln27_fu_354_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_i_7) + unsigned(ap_const_lv10_1));
+    add_ln27_fu_354_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_i_5) + unsigned(ap_const_lv10_1));
     ap_CS_fsm_pp0_stage0 <= ap_CS_fsm(0);
         ap_block_pp0_stage0 <= not((ap_const_boolean_1 = ap_const_boolean_1));
 
@@ -764,12 +764,12 @@ begin
     end process;
 
 
-    ap_sig_allocacmp_i_7_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_block_pp0_stage0, i_fu_110, ap_loop_init)
+    ap_sig_allocacmp_i_5_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_block_pp0_stage0, i_fu_110, ap_loop_init)
     begin
         if (((ap_loop_init = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (ap_const_boolean_0 = ap_block_pp0_stage0))) then 
-            ap_sig_allocacmp_i_7 <= ap_const_lv10_0;
+            ap_sig_allocacmp_i_5 <= ap_const_lv10_0;
         else 
-            ap_sig_allocacmp_i_7 <= i_fu_110;
+            ap_sig_allocacmp_i_5 <= i_fu_110;
         end if; 
     end process;
 
@@ -900,10 +900,10 @@ begin
         end if; 
     end process;
 
-    grp_fu_4540_p_din0 <= grp_fu_331_p0;
-    grp_fu_4540_p_din1 <= grp_fu_331_p1;
-    icmp_ln27_fu_360_p2 <= "1" when (ap_sig_allocacmp_i_7 = ap_const_lv10_300) else "0";
-    lshr_ln4_fu_370_p4 <= ap_sig_allocacmp_i_7(9 downto 3);
+    grp_fu_3617_p_din0 <= grp_fu_331_p0;
+    grp_fu_3617_p_din1 <= grp_fu_331_p1;
+    icmp_ln27_fu_360_p2 <= "1" when (ap_sig_allocacmp_i_5 = ap_const_lv10_300) else "0";
+    lshr_ln3_fu_370_p4 <= ap_sig_allocacmp_i_5(9 downto 3);
     m_axi_gmem1_0_ARADDR <= ap_const_lv64_0;
     m_axi_gmem1_0_ARBURST <= ap_const_lv2_0;
     m_axi_gmem1_0_ARCACHE <= ap_const_lv4_0;
@@ -1138,6 +1138,6 @@ begin
     end process;
 
     tmp_2_fu_455_p17 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-    trunc_ln27_fu_366_p1 <= ap_sig_allocacmp_i_7(3 - 1 downto 0);
-    zext_ln27_fu_380_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(lshr_ln4_fu_370_p4),64));
+    trunc_ln27_fu_366_p1 <= ap_sig_allocacmp_i_5(3 - 1 downto 0);
+    zext_ln27_fu_380_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(lshr_ln3_fu_370_p4),64));
 end behav;

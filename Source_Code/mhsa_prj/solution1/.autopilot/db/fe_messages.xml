@@ -1227,42 +1227,39 @@
         <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = i_vec bundle = gmem0 max_widen_bitwidth = 32" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:4:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = vec_size bundle = control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:5:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = return bundle = control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:11:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:10:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:12:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=768 max=768" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=768" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:18:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:17:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=2 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:19:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=767 max=767" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=768" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:20:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:19:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:28:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:27:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:28:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=768" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:29:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=768 max=768" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:30:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=vec_local inter false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:36:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:35:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1 rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:37:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=768 max=768" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:36:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=768" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:38:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:37:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_softmax" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=i_vec inter false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MatMul.cpp:10:9" msg_body="HLS pragma dump">
@@ -1970,15 +1967,6 @@
     <msg msg_groups="" msg_id="207-1016" msg_severity="WARNING" msg_loc="C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34" msg_body="unknown warning group '-Wmisleading-indentation', ignored">
         <args ClangWarningOption="unknown-warning-option"/>
     </msg>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5576" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:91:9" msg_body="Only 'for' loop or function body support the dataflow pragma">
-        <args ClangWarningOption="ignored-hls-attributes"/>
-    </msg>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5576" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:98:9" msg_body="Only 'for' loop or function body support the dataflow pragma">
-        <args ClangWarningOption="ignored-hls-attributes"/>
-    </msg>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5576" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:107:9" msg_body="Only 'for' loop or function body support the dataflow pragma">
-        <args ClangWarningOption="ignored-hls-attributes"/>
-    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\utils/x_hls_utils.h:224:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="reg" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
@@ -2592,159 +2580,129 @@
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=weights bundle=gmem1 offset=slave max_read_burst_length=256" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:11:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=position" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=key_cache bundle=gmem2 offset=slave max_read_burst_length=256 max_write_burst_length=256" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=value_cache bundle=gmem3 offset=slave max_read_burst_length=256 max_write_burst_length=256" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=position" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:14:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:24:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=key_cache complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:25:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=key_cache cyclic factor=8 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:26:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=key_cache type=ram_1p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:27:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=value_cache complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:28:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=value_cache cyclic factor=8 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:29:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=value_cache type=ram_1p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:34:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=12" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:36:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:37:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1024 max=262144" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:57:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:33:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_rms_vec cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:58:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:34:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_rms_vec cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:59:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:35:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_q cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:60:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:36:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_q_rope cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:61:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:37:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_k cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:62:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:38:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_k_rope cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:63:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:39:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_v cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:64:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:40:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=xb cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:65:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:41:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=xb2 cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:68:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:44:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=current_input cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:72:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:48:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:78:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:54:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=12" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:79:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:55:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=current_input inter false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:91:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:98:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:107:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:114:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:86:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:121:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:93:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=att complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:129:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:101:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:130:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:102:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=512" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:137:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:109:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=16" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:141:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:113:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=q_head_local complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:144:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:116:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:150:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:122:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=8" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:151:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:123:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=512" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:157:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:129:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:159:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:131:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=dot op=fmul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:170:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:142:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=16" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:176:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:148:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:184:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:156:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=16" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:188:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:160:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=local_accum complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:192:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:164:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:198:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:170:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=512" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:204:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:176:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=2" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:205:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:177:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:207:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:179:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=local_accum op=fmul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:214:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:186:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:215:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:187:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:226:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:198:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:233:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:205:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="kernel_mhsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:156:34" msg_body="Loop 'DOT_COMPUTE' is marked as complete unroll implied by the pipeline pragma">
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:128:34" msg_body="Loop 'DOT_COMPUTE' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="DOT_COMPUTE"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:289:5" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
@@ -2759,50 +2717,41 @@
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:268:41" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="anonymous"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1 to 12 for loop 'HEAD_COMPUTE' (kernel_MHSA.cpp:136:27) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:136:27" LoopName="HEAD_COMPUTE" NewBound="12" OldBound="1"/>
+    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1 to 12 for loop 'HEAD_COMPUTE' (kernel_MHSA.cpp:108:27) in function 'kernel_mhsa'.">
+        <args LoopLoc="kernel_MHSA.cpp:108:27" LoopName="HEAD_COMPUTE" NewBound="12" OldBound="1"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop upper bound from 16 to 12 for loop 'HEAD_COMPUTE' (kernel_MHSA.cpp:136:27) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:136:27" LoopName="HEAD_COMPUTE" NewBound="12" OldBound="16"/>
+    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop upper bound from 16 to 12 for loop 'HEAD_COMPUTE' (kernel_MHSA.cpp:108:27) in function 'kernel_mhsa'.">
+        <args LoopLoc="kernel_MHSA.cpp:108:27" LoopName="HEAD_COMPUTE" NewBound="12" OldBound="16"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1 to 12 for loop 'SOFTMAX_HEADS' (kernel_MHSA.cpp:169:24) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:169:24" LoopName="SOFTMAX_HEADS" NewBound="12" OldBound="1"/>
+    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1 to 12 for loop 'SOFTMAX_HEADS' (kernel_MHSA.cpp:141:24) in function 'kernel_mhsa'.">
+        <args LoopLoc="kernel_MHSA.cpp:141:24" LoopName="SOFTMAX_HEADS" NewBound="12" OldBound="1"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop upper bound from 16 to 12 for loop 'SOFTMAX_HEADS' (kernel_MHSA.cpp:169:24) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:169:24" LoopName="SOFTMAX_HEADS" NewBound="12" OldBound="16"/>
+    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop upper bound from 16 to 12 for loop 'SOFTMAX_HEADS' (kernel_MHSA.cpp:141:24) in function 'kernel_mhsa'.">
+        <args LoopLoc="kernel_MHSA.cpp:141:24" LoopName="SOFTMAX_HEADS" NewBound="12" OldBound="16"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1 to 12 for loop 'HEAD_STREAM' (kernel_MHSA.cpp:183:26) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:183:26" LoopName="HEAD_STREAM" NewBound="12" OldBound="1"/>
+    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1 to 12 for loop 'HEAD_STREAM' (kernel_MHSA.cpp:155:26) in function 'kernel_mhsa'.">
+        <args LoopLoc="kernel_MHSA.cpp:155:26" LoopName="HEAD_STREAM" NewBound="12" OldBound="1"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop upper bound from 16 to 12 for loop 'HEAD_STREAM' (kernel_MHSA.cpp:183:26) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:183:26" LoopName="HEAD_STREAM" NewBound="12" OldBound="16"/>
+    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop upper bound from 16 to 12 for loop 'HEAD_STREAM' (kernel_MHSA.cpp:155:26) in function 'kernel_mhsa'.">
+        <args LoopLoc="kernel_MHSA.cpp:155:26" LoopName="HEAD_STREAM" NewBound="12" OldBound="16"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1 to 12 for loop 'LAYER_LOOP' (kernel_MHSA.cpp:77:17) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:77:17" LoopName="LAYER_LOOP" NewBound="12" OldBound="1"/>
+    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1 to 12 for loop 'LAYER_LOOP' (kernel_MHSA.cpp:53:17) in function 'kernel_mhsa'.">
+        <args LoopLoc="kernel_MHSA.cpp:53:17" LoopName="LAYER_LOOP" NewBound="12" OldBound="1"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1024 to 393216 for loop 'INIT_INNER' (kernel_MHSA.cpp:35:14) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:35:14" LoopName="INIT_INNER" NewBound="393216" OldBound="1024"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Unrolling loop 'DOT_COMPUTE' (kernel_MHSA.cpp:128:34) in function 'kernel_mhsa' completely with a factor of 64">
+        <args Factor="64" LoopLoc="kernel_MHSA.cpp:128:34" LoopName="DOT_COMPUTE"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop upper bound from 262144 to 393216 for loop 'INIT_INNER' (kernel_MHSA.cpp:35:14) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:35:14" LoopName="INIT_INNER" NewBound="393216" OldBound="262144"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Unrolling loop 'ACCUM_ZERO' (kernel_MHSA.cpp:163:14) in function 'kernel_mhsa' completely with a factor of 64">
+        <args Factor="64" LoopLoc="kernel_MHSA.cpp:163:14" LoopName="ACCUM_ZERO"/>
     </msg>
-    <msg msg_groups="PRAGMA_LOOP_TRIPCOUNT" msg_id="214-398" msg_severity="WARNING" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Updating loop lower bound from 1 to 12 for loop 'INIT_OUTER' (kernel_MHSA.cpp:33:21) in function 'kernel_mhsa'.">
-        <args LoopLoc="kernel_MHSA.cpp:33:21" LoopName="INIT_OUTER" NewBound="12" OldBound="1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Unrolling loop 'VALUE_MAC' (kernel_MHSA.cpp:175:32) in function 'kernel_mhsa' partially with a factor of 2">
+        <args Factor="2" LoopLoc="kernel_MHSA.cpp:175:32" LoopName="VALUE_MAC"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Unrolling loop 'DOT_COMPUTE' (kernel_MHSA.cpp:156:34) in function 'kernel_mhsa' completely with a factor of 64">
-        <args Factor="64" LoopLoc="kernel_MHSA.cpp:156:34" LoopName="DOT_COMPUTE"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Unrolling loop 'ACCUM_WRITEBACK' (kernel_MHSA.cpp:185:34) in function 'kernel_mhsa' partially with a factor of 4">
+        <args Factor="4" LoopLoc="kernel_MHSA.cpp:185:34" LoopName="ACCUM_WRITEBACK"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Unrolling loop 'ACCUM_ZERO' (kernel_MHSA.cpp:191:14) in function 'kernel_mhsa' completely with a factor of 64">
-        <args Factor="64" LoopLoc="kernel_MHSA.cpp:191:14" LoopName="ACCUM_ZERO"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Unrolling loop 'VALUE_MAC' (kernel_MHSA.cpp:203:32) in function 'kernel_mhsa' partially with a factor of 2">
-        <args Factor="2" LoopLoc="kernel_MHSA.cpp:203:32" LoopName="VALUE_MAC"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Unrolling loop 'ACCUM_WRITEBACK' (kernel_MHSA.cpp:213:34) in function 'kernel_mhsa' partially with a factor of 4">
-        <args Factor="4" LoopLoc="kernel_MHSA.cpp:213:34" LoopName="ACCUM_WRITEBACK"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="kernel_Softmax.cpp:2:0" msg_body="Unrolling loop 'find_max' (kernel_Softmax.cpp:17:13) in function 'kernel_softmax' partially with a factor of 2">
-        <args Factor="2" LoopLoc="kernel_Softmax.cpp:17:13" LoopName="find_max"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="kernel_Softmax.cpp:2:0" msg_body="Unrolling loop 'find_max' (kernel_Softmax.cpp:16:13) in function 'kernel_softmax' partially with a factor of 2">
+        <args Factor="2" LoopLoc="kernel_Softmax.cpp:16:13" LoopName="find_max"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0" msg_body="Unrolling loop 'anonymous' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:289:5) in function 'scaled_fixed2ieee&lt;29, 1&gt;' completely with a factor of 2">
         <args Factor="2" LoopLoc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:289:5" LoopName="anonymous"/>
@@ -2906,23 +2855,17 @@
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="kernel_Rope.cpp:8:0" msg_body="Inlining function 'hls::sincosf(float, float*, float*)' into 'RoPE(float*, float const*, int, int)'">
         <args Callee="hls::sincosf(float, float*, float*)" Callee-DebugLoc="File {C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\c++\sincoshotbmfloat.cpp} Line 47 Column 0" Caller="RoPE(float*, float const*, int, int)" Caller-DebugLoc="File kernel_Rope.cpp Line 8 Column 0"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Inlining function 'kernel_rmsnorm' into 'kernel_mhsa(float*, int, float*)'">
-        <args Callee="kernel_rmsnorm" Callee-DebugLoc="File kernel_RMS_Norm.cpp Line 9 Column 0" Caller="kernel_mhsa(float*, int, float*)" Caller-DebugLoc="File kernel_MHSA.cpp Line 7 Column 0"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-464" msg_severity="WARNING" msg_loc="kernel_MatMul.cpp:75:0" msg_body="Skipping array undecay on variable length array 'i_vec'.">
-        <args ArrayName="i_vec"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:7:0" msg_body="Inlining function 'kernel_rmsnorm' into 'kernel_mhsa(float*, int, float*, float*, float*)'">
+        <args Callee="kernel_rmsnorm" Callee-DebugLoc="File kernel_RMS_Norm.cpp Line 9 Column 0" Caller="kernel_mhsa(float*, int, float*, float*, float*)" Caller-DebugLoc="File kernel_MHSA.cpp Line 7 Column 0"/>
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-464" msg_severity="WARNING" msg_loc="kernel_MatMul.cpp:75:0" msg_body="Skipping array undecay on variable length array 'i_mat'.">
         <args ArrayName="i_mat"/>
     </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-464" msg_severity="WARNING" msg_loc="kernel_MatMul.cpp:75:0" msg_body="Skipping array undecay on variable length array 'i_vec'.">
+        <args ArrayName="i_vec"/>
+    </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-464" msg_severity="WARNING" msg_loc="kernel_MatMul.cpp:75:0" msg_body="Skipping array undecay on variable length array 'o_vec'.">
         <args ArrayName="o_vec"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:19:0" msg_body="Applying array_partition to '_ZZ11kernel_mhsaPfiS_E11value_cache': Complete partitioning on dimension 1. Cyclic partitioning with factor 8 on dimension 2.">
-        <args Dim="islist 1 2" Factor="8" Mode="islist Complete Cyclic" UOName="_ZZ11kernel_mhsaPfiS_E11value_cache"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:18:0" msg_body="Applying array_partition to '_ZZ11kernel_mhsaPfiS_E9key_cache': Complete partitioning on dimension 1. Cyclic partitioning with factor 8 on dimension 2.">
-        <args Dim="islist 1 2" Factor="8" Mode="islist Complete Cyclic" UOName="_ZZ11kernel_mhsaPfiS_E9key_cache"/>
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:137:0" msg_body="Applying array_partition to '_ZZN6hotbm_14generic_sincosIfEEvT_PS1_S2_E13neg_cos_table': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="_ZZN6hotbm_14generic_sincosIfEEvT_PS1_S2_E13neg_cos_table"/>
@@ -2938,44 +2881,42 @@
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-358" msg_severity="WARNING" msg_loc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:175:8" msg_body="Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations."/>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-358" msg_severity="WARNING" msg_loc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:195:8" msg_body="Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations."/>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:47:11" msg_body="Applying array_partition to 'out_rms_vec': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:23:11" msg_body="Applying array_partition to 'out_rms_vec': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="out_rms_vec"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:48:11" msg_body="Applying array_partition to 'out_q': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:24:11" msg_body="Applying array_partition to 'out_q': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="out_q"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:49:11" msg_body="Applying array_partition to 'out_q_rope': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:25:11" msg_body="Applying array_partition to 'out_q_rope': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="out_q_rope"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:50:11" msg_body="Applying array_partition to 'out_k': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:26:11" msg_body="Applying array_partition to 'out_k': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="out_k"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:51:11" msg_body="Applying array_partition to 'out_k_rope': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:27:11" msg_body="Applying array_partition to 'out_k_rope': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="out_k_rope"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:52:11" msg_body="Applying array_partition to 'out_v': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:28:11" msg_body="Applying array_partition to 'out_v': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="out_v"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:53:11" msg_body="Applying array_partition to 'xb': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:29:11" msg_body="Applying array_partition to 'xb': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="xb"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:54:11" msg_body="Applying array_partition to 'xb2': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:30:11" msg_body="Applying array_partition to 'xb2': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="xb2"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:67:8" msg_body="Applying array_partition to 'current_input': Cyclic partitioning with factor 8 on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:43:8" msg_body="Applying array_partition to 'current_input': Cyclic partitioning with factor 8 on dimension 1.">
         <args Dim="1" Factor="8" Mode="Cyclic" UOName="current_input"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:120:15" msg_body="Applying array_partition to 'att': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:92:15" msg_body="Applying array_partition to 'att': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="att"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:140:8" msg_body="Applying array_partition to 'q_head_local': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:112:8" msg_body="Applying array_partition to 'q_head_local': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="q_head_local"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:187:8" msg_body="Applying array_partition to 'local_accum': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="kernel_MHSA.cpp:159:8" msg_body="Applying array_partition to 'local_accum': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="local_accum"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:13:17" msg_body="The program may have out of bound array access on variable 'i_vec'"/>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="kernel_Softmax.cpp:39:11" msg_body="The program may have out of bound array access on variable 'i_vec'"/>
     <msg msg_groups="AUTOMATION" msg_id="214-364" msg_severity="INFO" msg_loc="C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\c++\sincoshotbmfloat.cpp:16:7" msg_body="Automatically inlining function 'void hotbm_::generic_sincos&lt;float&gt;(float, float*, float*)' to improve effectiveness of pipeline pragma in function 'RoPE(float*, float const*, int, int)'">
         <args Callee="void hotbm_::generic_sincos&lt;float&gt;(float, float*, float*)" Callee-DebugLoc="File {C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h} Line 130 Column 0" Caller="RoPE(float*, float const*, int, int)" Caller-DebugLoc="File kernel_Rope.cpp Line 8 Column 0"/>
     </msg>

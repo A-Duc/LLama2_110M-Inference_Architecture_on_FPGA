@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'kernel_mhsa_Pipeline_RESIDUAL'
 ================================================================
-* Date:           Sat Sep 27 23:15:47 2025
+* Date:           Tue Sep 30 23:59:07 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -74,14 +74,14 @@
 
 + Detail: 
     * Instance: 
-    +-----------------------------+-----------------------+---------+----+---+----+-----+
-    |           Instance          |         Module        | BRAM_18K| DSP| FF| LUT| URAM|
-    +-----------------------------+-----------------------+---------+----+---+----+-----+
-    |sparsemux_17_3_32_1_1_U1352  |sparsemux_17_3_32_1_1  |        0|   0|  0|  96|    0|
-    |sparsemux_17_3_32_1_1_U1353  |sparsemux_17_3_32_1_1  |        0|   0|  0|  96|    0|
-    +-----------------------------+-----------------------+---------+----+---+----+-----+
-    |Total                        |                       |        0|   0|  0| 192|    0|
-    +-----------------------------+-----------------------+---------+----+---+----+-----+
+    +----------------------------+-----------------------+---------+----+---+----+-----+
+    |          Instance          |         Module        | BRAM_18K| DSP| FF| LUT| URAM|
+    +----------------------------+-----------------------+---------+----+---+----+-----+
+    |sparsemux_17_3_32_1_1_U627  |sparsemux_17_3_32_1_1  |        0|   0|  0|  96|    0|
+    |sparsemux_17_3_32_1_1_U628  |sparsemux_17_3_32_1_1  |        0|   0|  0|  96|    0|
+    +----------------------------+-----------------------+---------+----+---+----+-----+
+    |Total                       |                       |        0|   0|  0| 192|    0|
+    +----------------------------+-----------------------+---------+----+---+----+-----+
 
     * DSP: 
     N/A
@@ -96,12 +96,12 @@
     +-----------------------------------+----------+----+---+----+------------+------------+
     |           Variable Name           | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +-----------------------------------+----------+----+---+----+------------+------------+
-    |add_ln225_fu_341_p2                |         +|   0|  0|  10|          10|           1|
+    |add_ln197_fu_341_p2                |         +|   0|  0|  10|          10|           1|
     |ap_block_pp0                       |       and|   0|  0|   2|           1|           1|
     |ap_enable_state1_pp0_iter0_stage0  |       and|   0|  0|   2|           1|           1|
     |ap_enable_state2_pp0_iter1_stage0  |       and|   0|  0|   2|           1|           1|
     |ap_enable_state5_pp0_iter4_stage0  |       and|   0|  0|   2|           1|           1|
-    |icmp_ln225_fu_347_p2               |      icmp|   0|  0|   4|          10|          10|
+    |icmp_ln197_fu_347_p2               |      icmp|   0|  0|   4|          10|          10|
     |ap_enable_pp0                      |       xor|   0|  0|   2|           1|           2|
     +-----------------------------------+----------+----+---+----+------------+------------+
     |Total                              |          |   0|  0|  24|          25|          17|
@@ -113,7 +113,7 @@
     +-------------------------+----+-----------+-----+-----------+
     |ap_done_int              |   1|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |   1|          2|    1|          2|
-    |ap_sig_allocacmp_i_8     |  16|          2|   10|         20|
+    |ap_sig_allocacmp_i_6     |  16|          2|   10|         20|
     |grp_fu_326_p0            |  32|          2|   32|         64|
     |grp_fu_326_p1            |  32|          2|   32|         64|
     |i_fu_82                  |  16|          2|   10|         20|
@@ -148,7 +148,7 @@
     |i_fu_82                           |  10|   0|   10|          0|
     |tmp_5_reg_695                     |  32|   0|   32|          0|
     |tmp_6_reg_701                     |  32|   0|   32|          0|
-    |trunc_ln225_reg_593               |   3|   0|    3|          0|
+    |trunc_ln197_reg_593               |   3|   0|    3|          0|
     |current_input_10_addr_reg_620     |   0|   8|    7|          0|
     |current_input_11_addr_reg_627     |   0|   8|    7|          0|
     |current_input_12_addr_reg_634     |   0|   8|    7|          0|
@@ -157,7 +157,7 @@
     |current_input_8_addr_reg_606      |   0|   8|    7|          0|
     |current_input_9_addr_reg_613      |   0|   8|    7|          0|
     |current_input_addr_reg_599        |   0|   8|    7|          0|
-    |trunc_ln225_reg_593               |   0|   4|    3|          0|
+    |trunc_ln197_reg_593               |   0|   4|    3|          0|
     +----------------------------------+----+----+-----+-----------+
     |Total                             | 238|  68|  297|          0|
     +----------------------------------+----+----+-----+-----------+
@@ -177,10 +177,10 @@
 |ap_done                    |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
 |ap_idle                    |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
 |ap_ready                   |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
-|grp_fu_2831_p_din0         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
-|grp_fu_2831_p_din1         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
-|grp_fu_2831_p_opcode       |  out|    2|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
-|grp_fu_2831_p_dout0        |   in|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
+|grp_fu_2178_p_din0         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
+|grp_fu_2178_p_din1         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
+|grp_fu_2178_p_opcode       |  out|    2|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
+|grp_fu_2178_p_dout0        |   in|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
 |current_input_14_address0  |  out|    7|   ap_memory|               current_input_14|         array|
 |current_input_14_ce0       |  out|    1|   ap_memory|               current_input_14|         array|
 |current_input_14_we0       |  out|    1|   ap_memory|               current_input_14|         array|

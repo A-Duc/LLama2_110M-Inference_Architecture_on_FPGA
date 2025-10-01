@@ -1,10 +1,9 @@
 set SynModuleInfo {
-  {SRCNAME kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER MODELNAME kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER
+  {SRCNAME kernel_mhsa_Pipeline_INPUT_COPY MODELNAME kernel_mhsa_Pipeline_INPUT_COPY RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_INPUT_COPY
     SUBMODULES {
       {MODELNAME kernel_mhsa_flow_control_loop_pipe_sequential_init RTLNAME kernel_mhsa_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME kernel_mhsa_flow_control_loop_pipe_sequential_init_U}
     }
   }
-  {SRCNAME kernel_mhsa_Pipeline_INPUT_COPY MODELNAME kernel_mhsa_Pipeline_INPUT_COPY RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_INPUT_COPY}
   {SRCNAME kernel_mhsa_Pipeline_VITIS_LOOP_19_1 MODELNAME kernel_mhsa_Pipeline_VITIS_LOOP_19_1 RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_VITIS_LOOP_19_1
     SUBMODULES {
       {MODELNAME kernel_mhsa_sparsemux_17_3_32_1_1 RTLNAME kernel_mhsa_sparsemux_17_3_32_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
@@ -82,16 +81,10 @@ set SynModuleInfo {
     }
   }
   {SRCNAME kernel_mhsa_Pipeline_CACHE_STORE MODELNAME kernel_mhsa_Pipeline_CACHE_STORE RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_CACHE_STORE}
-  {SRCNAME kernel_mhsa_Pipeline_VITIS_LOOP_128_1 MODELNAME kernel_mhsa_Pipeline_VITIS_LOOP_128_1 RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_VITIS_LOOP_128_1}
+  {SRCNAME kernel_mhsa_Pipeline_VITIS_LOOP_100_1 MODELNAME kernel_mhsa_Pipeline_VITIS_LOOP_100_1 RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_VITIS_LOOP_100_1}
   {SRCNAME kernel_mhsa_Outline_ATT_INIT MODELNAME kernel_mhsa_Outline_ATT_INIT RTLNAME kernel_mhsa_kernel_mhsa_Outline_ATT_INIT}
   {SRCNAME kernel_mhsa_Pipeline_Q_LOAD MODELNAME kernel_mhsa_Pipeline_Q_LOAD RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_Q_LOAD}
-  {SRCNAME kernel_mhsa_Pipeline_TOKEN_COMPUTE MODELNAME kernel_mhsa_Pipeline_TOKEN_COMPUTE RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_TOKEN_COMPUTE
-    SUBMODULES {
-      {MODELNAME kernel_mhsa_fadd_32ns_32ns_32_1_primitive_dsp_1 RTLNAME kernel_mhsa_fadd_32ns_32ns_32_1_primitive_dsp_1 BINDTYPE op TYPE fadd IMPL primitivedsp LATENCY 0 ALLOW_PRAGMA 1}
-      {MODELNAME kernel_mhsa_fmul_32ns_32ns_32_3_max_dsp_1 RTLNAME kernel_mhsa_fmul_32ns_32ns_32_3_max_dsp_1 BINDTYPE op TYPE fmul IMPL maxdsp LATENCY 2 ALLOW_PRAGMA 1}
-      {MODELNAME kernel_mhsa_sparsemux_25_4_32_1_1 RTLNAME kernel_mhsa_sparsemux_25_4_32_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
-    }
-  }
+  {SRCNAME kernel_mhsa_Pipeline_TOKEN_COMPUTE MODELNAME kernel_mhsa_Pipeline_TOKEN_COMPUTE RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_TOKEN_COMPUTE}
   {SRCNAME kernel_mhsa_Outline_HEAD_COMPUTE MODELNAME kernel_mhsa_Outline_HEAD_COMPUTE RTLNAME kernel_mhsa_kernel_mhsa_Outline_HEAD_COMPUTE}
   {SRCNAME kernel_softmax MODELNAME kernel_softmax RTLNAME kernel_mhsa_kernel_softmax
     SUBMODULES {
@@ -99,7 +92,6 @@ set SynModuleInfo {
       {MODELNAME kernel_mhsa_fdiv_32ns_32ns_32_11_no_dsp_1 RTLNAME kernel_mhsa_fdiv_32ns_32ns_32_11_no_dsp_1 BINDTYPE op TYPE fdiv IMPL fabric LATENCY 10 ALLOW_PRAGMA 1}
       {MODELNAME kernel_mhsa_fcmp_32ns_32ns_1_1_no_dsp_1 RTLNAME kernel_mhsa_fcmp_32ns_32ns_1_1_no_dsp_1 BINDTYPE op TYPE fcmp IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME kernel_mhsa_fexp_32ns_32ns_32_9_med_dsp_1 RTLNAME kernel_mhsa_fexp_32ns_32ns_32_9_med_dsp_1 BINDTYPE op TYPE fexp IMPL meddsp LATENCY 8 ALLOW_PRAGMA 1}
-      {MODELNAME kernel_mhsa_facc_32ns_32ns_1ns_32_2_primitive_dsp_1 RTLNAME kernel_mhsa_facc_32ns_32ns_1ns_32_2_primitive_dsp_1 BINDTYPE op TYPE facc IMPL primitivedsp LATENCY 1 ALLOW_PRAGMA 1}
       {MODELNAME kernel_mhsa_kernel_softmax_vec_local_RAM_AUTO_1R1W RTLNAME kernel_mhsa_kernel_softmax_vec_local_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
@@ -107,6 +99,7 @@ set SynModuleInfo {
   {SRCNAME kernel_mhsa_Pipeline_XB_INIT MODELNAME kernel_mhsa_Pipeline_XB_INIT RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_XB_INIT}
   {SRCNAME kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC MODELNAME kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC
     SUBMODULES {
+      {MODELNAME kernel_mhsa_sparsemux_25_4_32_1_1 RTLNAME kernel_mhsa_sparsemux_25_4_32_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
       {MODELNAME kernel_mhsa_sparsemux_65_6_32_1_1 RTLNAME kernel_mhsa_sparsemux_65_6_32_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
     }
   }
@@ -119,13 +112,16 @@ set SynModuleInfo {
   {SRCNAME kernel_mhsa_Pipeline_OUTPUT_WRITE MODELNAME kernel_mhsa_Pipeline_OUTPUT_WRITE RTLNAME kernel_mhsa_kernel_mhsa_Pipeline_OUTPUT_WRITE}
   {SRCNAME kernel_mhsa MODELNAME kernel_mhsa RTLNAME kernel_mhsa IS_TOP 1
     SUBMODULES {
+      {MODELNAME kernel_mhsa_fadd_32ns_32ns_32_1_primitive_dsp_1 RTLNAME kernel_mhsa_fadd_32ns_32ns_32_1_primitive_dsp_1 BINDTYPE op TYPE fadd IMPL primitivedsp LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME kernel_mhsa_fsqrt_32ns_32ns_32_15_no_dsp_1 RTLNAME kernel_mhsa_fsqrt_32ns_32ns_32_15_no_dsp_1 BINDTYPE op TYPE fsqrt IMPL fabric LATENCY 14 ALLOW_PRAGMA 1}
-      {MODELNAME kernel_mhsa_p_ZZ11kernel_mhsaPfiS_E9key_cache_0_0_RAM_1P_BRAM_1R1W RTLNAME kernel_mhsa_p_ZZ11kernel_mhsaPfiS_E9key_cache_0_0_RAM_1P_BRAM_1R1W BINDTYPE storage TYPE ram_1p IMPL bram LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME kernel_mhsa_fmul_32ns_32ns_32_3_max_dsp_1 RTLNAME kernel_mhsa_fmul_32ns_32ns_32_3_max_dsp_1 BINDTYPE op TYPE fmul IMPL maxdsp LATENCY 2 ALLOW_PRAGMA 1}
       {MODELNAME kernel_mhsa_out_rms_vec_RAM_AUTO_1R1W RTLNAME kernel_mhsa_out_rms_vec_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
       {MODELNAME kernel_mhsa_current_input_RAM_AUTO_1R1W RTLNAME kernel_mhsa_current_input_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
       {MODELNAME kernel_mhsa_att_RAM_AUTO_1R1W RTLNAME kernel_mhsa_att_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
       {MODELNAME kernel_mhsa_gmem0_m_axi RTLNAME kernel_mhsa_gmem0_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
       {MODELNAME kernel_mhsa_gmem1_m_axi RTLNAME kernel_mhsa_gmem1_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
+      {MODELNAME kernel_mhsa_gmem2_m_axi RTLNAME kernel_mhsa_gmem2_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
+      {MODELNAME kernel_mhsa_gmem3_m_axi RTLNAME kernel_mhsa_gmem3_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
       {MODELNAME kernel_mhsa_control_s_axi RTLNAME kernel_mhsa_control_s_axi BINDTYPE interface TYPE interface_s_axilite}
     }
   }

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'kernel_mhsa_Outline_ATT_INIT'
 ================================================================
-* Date:           Sat Sep 27 23:14:55 2025
+* Date:           Tue Sep 30 23:58:19 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -38,7 +38,7 @@
         |                                                 |                                       |  Latency (cycles) |  Latency (absolute)  |  Interval |                    Pipeline                    |
         |                     Instance                    |                 Module                |   min   |   max   |    min    |    max   | min | max |                      Type                      |
         +-------------------------------------------------+---------------------------------------+---------+---------+-----------+----------+-----+-----+------------------------------------------------+
-        |grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66  |kernel_mhsa_Pipeline_VITIS_LOOP_128_1  |        3|      514|  12.000 ns|  2.056 us|    2|  513|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66  |kernel_mhsa_Pipeline_VITIS_LOOP_100_1  |        3|      514|  12.000 ns|  2.056 us|    2|  513|  loop auto-rewind stp (delay=0 clock cycles(s))|
         +-------------------------------------------------+---------------------------------------+---------+---------+-----------+----------+-----+-----+------------------------------------------------+
 
         * Loop: 
@@ -87,28 +87,28 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.36>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%h = alloca i32 1" [kernel_MHSA.cpp:127]   --->   Operation 4 'alloca' 'h' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%h = alloca i32 1" [kernel_MHSA.cpp:99]   --->   Operation 4 'alloca' 'h' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tmp = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %empty"   --->   Operation 5 'read' 'tmp' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%select_ln128_read = read i33 @_ssdm_op_Read.ap_auto.i33, i33 %select_ln128"   --->   Operation 6 'read' 'select_ln128_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.36ns)   --->   "%store_ln127 = store i4 0, i4 %h" [kernel_MHSA.cpp:127]   --->   Operation 7 'store' 'store_ln127' <Predicate = true> <Delay = 0.36>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%br_ln0 = br void %VITIS_LOOP_128_1"   --->   Operation 8 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%select_ln100_read = read i33 @_ssdm_op_Read.ap_auto.i33, i33 %select_ln100"   --->   Operation 6 'read' 'select_ln100_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.36ns)   --->   "%store_ln99 = store i4 0, i4 %h" [kernel_MHSA.cpp:99]   --->   Operation 7 'store' 'store_ln99' <Predicate = true> <Delay = 0.36>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%br_ln0 = br void %VITIS_LOOP_100_1"   --->   Operation 8 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 2.24>
-ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%h_2 = load i4 %h" [kernel_MHSA.cpp:127]   --->   Operation 9 'load' 'h_2' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 10 [1/1] (0.66ns)   --->   "%add_ln127 = add i4 %h_2, i4 1" [kernel_MHSA.cpp:127]   --->   Operation 10 'add' 'add_ln127' <Predicate = true> <Delay = 0.66> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 11 [1/1] (0.43ns)   --->   "%icmp_ln127 = icmp_eq  i4 %h_2, i4 12" [kernel_MHSA.cpp:127]   --->   Operation 11 'icmp' 'icmp_ln127' <Predicate = true> <Delay = 0.43> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln127 = br i1 %icmp_ln127, void %VITIS_LOOP_128_1.split, void %Q_LOAD.preheader.exitStub" [kernel_MHSA.cpp:127]   --->   Operation 12 'br' 'br_ln127' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%speclooptripcount_ln127 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 12, i64 12, i64 12" [kernel_MHSA.cpp:127]   --->   Operation 13 'speclooptripcount' 'speclooptripcount_ln127' <Predicate = (!icmp_ln127)> <Delay = 0.00>
-ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%specloopname_ln127 = specloopname void @_ssdm_op_SpecLoopName, void @empty_89" [kernel_MHSA.cpp:127]   --->   Operation 14 'specloopname' 'specloopname_ln127' <Predicate = (!icmp_ln127)> <Delay = 0.00>
-ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln128 = br i1 %tmp, void %for.inc94.lr.ph, void %for.inc97" [kernel_MHSA.cpp:128]   --->   Operation 15 'br' 'br_ln128' <Predicate = (!icmp_ln127)> <Delay = 0.00>
-ST_2 : Operation 16 [2/2] (1.81ns)   --->   "%call_ln127 = call void @kernel_mhsa_Pipeline_VITIS_LOOP_128_1, i33 %select_ln128_read, i32 %att_11, i32 %att_10, i32 %att_9, i32 %att_8, i32 %att_7, i32 %att_6, i32 %att_5, i32 %att_4, i32 %att_3, i32 %att_2, i32 %att_1, i32 %att, i4 %h_2" [kernel_MHSA.cpp:127]   --->   Operation 16 'call' 'call_ln127' <Predicate = (!icmp_ln127 & !tmp)> <Delay = 1.81> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 17 'ret' 'ret_ln0' <Predicate = (icmp_ln127)> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%h_2 = load i4 %h" [kernel_MHSA.cpp:99]   --->   Operation 9 'load' 'h_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.66ns)   --->   "%add_ln99 = add i4 %h_2, i4 1" [kernel_MHSA.cpp:99]   --->   Operation 10 'add' 'add_ln99' <Predicate = true> <Delay = 0.66> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.43ns)   --->   "%icmp_ln99 = icmp_eq  i4 %h_2, i4 12" [kernel_MHSA.cpp:99]   --->   Operation 11 'icmp' 'icmp_ln99' <Predicate = true> <Delay = 0.43> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln99 = br i1 %icmp_ln99, void %VITIS_LOOP_100_1.split, void %Q_LOAD.preheader.exitStub" [kernel_MHSA.cpp:99]   --->   Operation 12 'br' 'br_ln99' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%speclooptripcount_ln99 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 12, i64 12, i64 12" [kernel_MHSA.cpp:99]   --->   Operation 13 'speclooptripcount' 'speclooptripcount_ln99' <Predicate = (!icmp_ln99)> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%specloopname_ln99 = specloopname void @_ssdm_op_SpecLoopName, void @empty_91" [kernel_MHSA.cpp:99]   --->   Operation 14 'specloopname' 'specloopname_ln99' <Predicate = (!icmp_ln99)> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln100 = br i1 %tmp, void %for.inc72.lr.ph, void %for.inc75" [kernel_MHSA.cpp:100]   --->   Operation 15 'br' 'br_ln100' <Predicate = (!icmp_ln99)> <Delay = 0.00>
+ST_2 : Operation 16 [2/2] (1.81ns)   --->   "%call_ln99 = call void @kernel_mhsa_Pipeline_VITIS_LOOP_100_1, i33 %select_ln100_read, i32 %att_11, i32 %att_10, i32 %att_9, i32 %att_8, i32 %att_7, i32 %att_6, i32 %att_5, i32 %att_4, i32 %att_3, i32 %att_2, i32 %att_1, i32 %att, i4 %h_2" [kernel_MHSA.cpp:99]   --->   Operation 16 'call' 'call_ln99' <Predicate = (!icmp_ln99 & !tmp)> <Delay = 1.81> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 17 'ret' 'ret_ln0' <Predicate = (icmp_ln99)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 1.38>
-ST_3 : Operation 18 [1/2] (1.38ns)   --->   "%call_ln127 = call void @kernel_mhsa_Pipeline_VITIS_LOOP_128_1, i33 %select_ln128_read, i32 %att_11, i32 %att_10, i32 %att_9, i32 %att_8, i32 %att_7, i32 %att_6, i32 %att_5, i32 %att_4, i32 %att_3, i32 %att_2, i32 %att_1, i32 %att, i4 %h_2" [kernel_MHSA.cpp:127]   --->   Operation 18 'call' 'call_ln127' <Predicate = (!tmp)> <Delay = 1.38> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc97"   --->   Operation 19 'br' 'br_ln0' <Predicate = (!tmp)> <Delay = 0.00>
-ST_3 : Operation 20 [1/1] (0.36ns)   --->   "%store_ln127 = store i4 %add_ln127, i4 %h" [kernel_MHSA.cpp:127]   --->   Operation 20 'store' 'store_ln127' <Predicate = true> <Delay = 0.36>
-ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln127 = br void %VITIS_LOOP_128_1" [kernel_MHSA.cpp:127]   --->   Operation 21 'br' 'br_ln127' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/2] (1.38ns)   --->   "%call_ln99 = call void @kernel_mhsa_Pipeline_VITIS_LOOP_100_1, i33 %select_ln100_read, i32 %att_11, i32 %att_10, i32 %att_9, i32 %att_8, i32 %att_7, i32 %att_6, i32 %att_5, i32 %att_4, i32 %att_3, i32 %att_2, i32 %att_1, i32 %att, i4 %h_2" [kernel_MHSA.cpp:99]   --->   Operation 18 'call' 'call_ln99' <Predicate = (!tmp)> <Delay = 1.38> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc75"   --->   Operation 19 'br' 'br_ln0' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.36ns)   --->   "%store_ln99 = store i4 %add_ln99, i4 %h" [kernel_MHSA.cpp:99]   --->   Operation 20 'store' 'store_ln99' <Predicate = true> <Delay = 0.36>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln99 = br void %VITIS_LOOP_100_1" [kernel_MHSA.cpp:99]   --->   Operation 21 'br' 'br_ln99' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -122,7 +122,7 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ select_ln128]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ select_ln100]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ att_11]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
 Port [ att_10]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
 Port [ att_9]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
@@ -142,34 +142,34 @@ Port [ empty]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; exte
 
 <LifeTime>
 <method=bitvector/>
-h                       (alloca           ) [ 0111]
-tmp                     (read             ) [ 0011]
-select_ln128_read       (read             ) [ 0011]
-store_ln127             (store            ) [ 0000]
-br_ln0                  (br               ) [ 0000]
-h_2                     (load             ) [ 0001]
-add_ln127               (add              ) [ 0001]
-icmp_ln127              (icmp             ) [ 0011]
-br_ln127                (br               ) [ 0000]
-speclooptripcount_ln127 (speclooptripcount) [ 0000]
-specloopname_ln127      (specloopname     ) [ 0000]
-br_ln128                (br               ) [ 0000]
-ret_ln0                 (ret              ) [ 0000]
-call_ln127              (call             ) [ 0000]
-br_ln0                  (br               ) [ 0000]
-store_ln127             (store            ) [ 0000]
-br_ln127                (br               ) [ 0000]
+h                      (alloca           ) [ 0111]
+tmp                    (read             ) [ 0011]
+select_ln100_read      (read             ) [ 0011]
+store_ln99             (store            ) [ 0000]
+br_ln0                 (br               ) [ 0000]
+h_2                    (load             ) [ 0001]
+add_ln99               (add              ) [ 0001]
+icmp_ln99              (icmp             ) [ 0011]
+br_ln99                (br               ) [ 0000]
+speclooptripcount_ln99 (speclooptripcount) [ 0000]
+specloopname_ln99      (specloopname     ) [ 0000]
+br_ln100               (br               ) [ 0000]
+ret_ln0                (ret              ) [ 0000]
+call_ln99              (call             ) [ 0000]
+br_ln0                 (br               ) [ 0000]
+store_ln99             (store            ) [ 0000]
+br_ln99                (br               ) [ 0000]
 </LifeTime>
 
 <model>
 
 <comp_list>
-<comp id="0" class="1000" name="select_ln128">
+<comp id="0" class="1000" name="select_ln100">
 <pin_list>
 <pin id="1" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="select_ln128"/></StgValue>
+<StgValue><ssdm name="select_ln100"/></StgValue>
 </bind>
 </comp>
 
@@ -388,7 +388,7 @@ br_ln127                (br               ) [ 0000]
 <pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_89"/></StgValue>
+<StgValue><ssdm name="empty_91"/></StgValue>
 </bind>
 </comp>
 
@@ -397,7 +397,7 @@ br_ln127                (br               ) [ 0000]
 <pin id="49" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="kernel_mhsa_Pipeline_VITIS_LOOP_128_1"/></StgValue>
+<StgValue><ssdm name="kernel_mhsa_Pipeline_VITIS_LOOP_100_1"/></StgValue>
 </bind>
 </comp>
 
@@ -424,7 +424,7 @@ br_ln127                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="60" class="1004" name="select_ln128_read_read_fu_60">
+<comp id="60" class="1004" name="select_ln100_read_read_fu_60">
 <pin_list>
 <pin id="61" dir="0" index="0" bw="33" slack="0"/>
 <pin id="62" dir="0" index="1" bw="33" slack="0"/>
@@ -432,11 +432,11 @@ br_ln127                (br               ) [ 0000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="select_ln128_read/1 "/>
+<opset="select_ln100_read/1 "/>
 </bind>
 </comp>
 
-<comp id="66" class="1004" name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66">
+<comp id="66" class="1004" name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66">
 <pin_list>
 <pin id="67" dir="0" index="0" bw="0" slack="0"/>
 <pin id="68" dir="0" index="1" bw="33" slack="1"/>
@@ -457,11 +457,11 @@ br_ln127                (br               ) [ 0000]
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
-<opset="call_ln127/2 "/>
+<opset="call_ln99/2 "/>
 </bind>
 </comp>
 
-<comp id="96" class="1004" name="store_ln127_store_fu_96">
+<comp id="96" class="1004" name="store_ln99_store_fu_96">
 <pin_list>
 <pin id="97" dir="0" index="0" bw="1" slack="0"/>
 <pin id="98" dir="0" index="1" bw="4" slack="0"/>
@@ -469,7 +469,7 @@ br_ln127                (br               ) [ 0000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln127/1 "/>
+<opset="store_ln99/1 "/>
 </bind>
 </comp>
 
@@ -484,7 +484,7 @@ br_ln127                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="105" class="1004" name="add_ln127_fu_105">
+<comp id="105" class="1004" name="add_ln99_fu_105">
 <pin_list>
 <pin id="106" dir="0" index="0" bw="4" slack="0"/>
 <pin id="107" dir="0" index="1" bw="1" slack="0"/>
@@ -492,11 +492,11 @@ br_ln127                (br               ) [ 0000]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="add_ln127/2 "/>
+<opset="add_ln99/2 "/>
 </bind>
 </comp>
 
-<comp id="111" class="1004" name="icmp_ln127_fu_111">
+<comp id="111" class="1004" name="icmp_ln99_fu_111">
 <pin_list>
 <pin id="112" dir="0" index="0" bw="4" slack="0"/>
 <pin id="113" dir="0" index="1" bw="3" slack="0"/>
@@ -504,11 +504,11 @@ br_ln127                (br               ) [ 0000]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln127/2 "/>
+<opset="icmp_ln99/2 "/>
 </bind>
 </comp>
 
-<comp id="117" class="1004" name="store_ln127_store_fu_117">
+<comp id="117" class="1004" name="store_ln99_store_fu_117">
 <pin_list>
 <pin id="118" dir="0" index="0" bw="4" slack="1"/>
 <pin id="119" dir="0" index="1" bw="4" slack="2"/>
@@ -516,7 +516,7 @@ br_ln127                (br               ) [ 0000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln127/3 "/>
+<opset="store_ln99/3 "/>
 </bind>
 </comp>
 
@@ -540,23 +540,23 @@ br_ln127                (br               ) [ 0000]
 </bind>
 </comp>
 
-<comp id="132" class="1005" name="select_ln128_read_reg_132">
+<comp id="132" class="1005" name="select_ln100_read_reg_132">
 <pin_list>
 <pin id="133" dir="0" index="0" bw="33" slack="1"/>
 <pin id="134" dir="1" index="1" bw="33" slack="1"/>
 </pin_list>
 <bind>
-<opset="select_ln128_read "/>
+<opset="select_ln100_read "/>
 </bind>
 </comp>
 
-<comp id="140" class="1005" name="add_ln127_reg_140">
+<comp id="140" class="1005" name="add_ln99_reg_140">
 <pin_list>
 <pin id="141" dir="0" index="0" bw="4" slack="1"/>
 <pin id="142" dir="1" index="1" bw="4" slack="1"/>
 </pin_list>
 <bind>
-<opset="add_ln127 "/>
+<opset="add_ln99 "/>
 </bind>
 </comp>
 
@@ -649,16 +649,16 @@ br_ln127                (br               ) [ 0000]
 	Port: att_1 | {2 3 }
 	Port: att | {2 3 }
  - Input state : 
-	Port: kernel_mhsa_Outline_ATT_INIT : select_ln128 | {1 }
+	Port: kernel_mhsa_Outline_ATT_INIT : select_ln100 | {1 }
 	Port: kernel_mhsa_Outline_ATT_INIT : empty | {1 }
   - Chain level:
 	State 1
-		store_ln127 : 1
+		store_ln99 : 1
 	State 2
-		add_ln127 : 1
-		icmp_ln127 : 1
-		br_ln127 : 2
-		call_ln127 : 1
+		add_ln99 : 1
+		icmp_ln99 : 1
+		br_ln99 : 2
+		call_ln99 : 1
 	State 3
 
 
@@ -670,14 +670,14 @@ br_ln127                (br               ) [ 0000]
 |----------|-------------------------------------------------|---------|---------|
 | Operation|                 Functional Unit                 |    FF   |   LUT   |
 |----------|-------------------------------------------------|---------|---------|
-|   call   | grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66 |    10   |    23   |
+|   call   | grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66 |    10   |    23   |
 |----------|-------------------------------------------------|---------|---------|
-|    add   |                 add_ln127_fu_105                |    0    |    6    |
+|    add   |                 add_ln99_fu_105                 |    0    |    6    |
 |----------|-------------------------------------------------|---------|---------|
-|   icmp   |                icmp_ln127_fu_111                |    0    |    2    |
+|   icmp   |                 icmp_ln99_fu_111                |    0    |    2    |
 |----------|-------------------------------------------------|---------|---------|
 |   read   |                  tmp_read_fu_54                 |    0    |    0    |
-|          |           select_ln128_read_read_fu_60          |    0    |    0    |
+|          |           select_ln100_read_read_fu_60          |    0    |    0    |
 |----------|-------------------------------------------------|---------|---------|
 |   Total  |                                                 |    10   |    31   |
 |----------|-------------------------------------------------|---------|---------|
@@ -689,9 +689,9 @@ N/A
 +-------------------------+--------+
 |                         |   FF   |
 +-------------------------+--------+
-|    add_ln127_reg_140    |    4   |
+|     add_ln99_reg_140    |    4   |
 |        h_reg_121        |    4   |
-|select_ln128_read_reg_132|   33   |
+|select_ln100_read_reg_132|   33   |
 |       tmp_reg_128       |    1   |
 +-------------------------+--------+
 |          Total          |   42   |

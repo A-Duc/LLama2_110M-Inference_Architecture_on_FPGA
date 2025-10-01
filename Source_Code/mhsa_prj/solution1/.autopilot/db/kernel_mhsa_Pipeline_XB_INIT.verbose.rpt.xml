@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Pipeline_XB_INIT'" level="0">
-<item name = "Date">Sat Sep 27 23:15:46 2025
+<item name = "Date">Tue Sep 30 23:59:05 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -80,14 +80,14 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln175_fu_190_p2">+, 0, 0, 10, 10, 1</column>
-<column name="icmp_ln175_fu_196_p2">icmp, 0, 0, 4, 10, 10</column>
+<column name="add_ln147_fu_190_p2">+, 0, 0, 10, 10, 1</column>
+<column name="icmp_ln147_fu_196_p2">icmp, 0, 0, 4, 10, 10</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_done_int">1, 2, 1, 2</column>
-<column name="ap_sig_allocacmp_i_6">16, 2, 10, 20</column>
+<column name="ap_sig_allocacmp_i_4">16, 2, 10, 20</column>
 <column name="i_fu_62">16, 2, 10, 20</column>
 </table>
 </item>

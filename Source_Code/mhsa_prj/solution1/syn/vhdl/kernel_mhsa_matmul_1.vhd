@@ -217,12 +217,10 @@ port (
     m_axi_gmem1_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
     m_axi_gmem1_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
     i_mat : IN STD_LOGIC_VECTOR (63 downto 0);
-    idx2 : IN STD_LOGIC_VECTOR (24 downto 0);
     ap_clk : IN STD_LOGIC;
     ap_rst : IN STD_LOGIC;
     ap_start : IN STD_LOGIC;
     i_mat_ap_vld : IN STD_LOGIC;
-    idx2_ap_vld : IN STD_LOGIC;
     ap_done : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
@@ -494,8 +492,7 @@ attribute shreg_extract : string;
         matrix_stream_full_n : IN STD_LOGIC;
         matrix_stream_write : OUT STD_LOGIC;
         matrix_stream_num_data_valid : IN STD_LOGIC_VECTOR (6 downto 0);
-        matrix_stream_fifo_cap : IN STD_LOGIC_VECTOR (6 downto 0);
-        idx : IN STD_LOGIC_VECTOR (24 downto 0) );
+        matrix_stream_fifo_cap : IN STD_LOGIC_VECTOR (6 downto 0) );
     end component;
 
 
@@ -729,8 +726,7 @@ begin
         matrix_stream_full_n => matrix_stream_full_n,
         matrix_stream_write => load_mat_U0_matrix_stream_write,
         matrix_stream_num_data_valid => matrix_stream_num_data_valid,
-        matrix_stream_fifo_cap => matrix_stream_fifo_cap,
-        idx => idx2);
+        matrix_stream_fifo_cap => matrix_stream_fifo_cap);
 
     compute_matmul_U0 : component kernel_mhsa_compute_matmul
     port map (

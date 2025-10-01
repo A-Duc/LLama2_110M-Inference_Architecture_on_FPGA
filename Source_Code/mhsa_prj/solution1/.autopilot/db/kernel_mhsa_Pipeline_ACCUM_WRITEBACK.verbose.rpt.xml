@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Pipeline_ACCUM_WRITEBACK'" level="0">
-<item name = "Date">Sat Sep 27 23:15:47 2025
+<item name = "Date">Tue Sep 30 23:59:07 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -64,10 +64,10 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="sparsemux_33_6_32_1_1_U1273">sparsemux_33_6_32_1_1, 0, 0, 0, 672, 0</column>
-<column name="sparsemux_33_6_32_1_1_U1274">sparsemux_33_6_32_1_1, 0, 0, 0, 672, 0</column>
-<column name="sparsemux_33_6_32_1_1_U1275">sparsemux_33_6_32_1_1, 0, 0, 0, 672, 0</column>
-<column name="sparsemux_33_6_32_1_1_U1276">sparsemux_33_6_32_1_1, 0, 0, 0, 672, 0</column>
+<column name="sparsemux_33_6_32_1_1_U548">sparsemux_33_6_32_1_1, 0, 0, 0, 672, 0</column>
+<column name="sparsemux_33_6_32_1_1_U549">sparsemux_33_6_32_1_1, 0, 0, 0, 672, 0</column>
+<column name="sparsemux_33_6_32_1_1_U550">sparsemux_33_6_32_1_1, 0, 0, 0, 672, 0</column>
+<column name="sparsemux_33_6_32_1_1_U551">sparsemux_33_6_32_1_1, 0, 0, 0, 672, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -84,15 +84,15 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln213_fu_1122_p2">+, 0, 0, 8, 7, 3</column>
-<column name="add_ln216_fu_841_p2">+, 0, 0, 8, 7, 7</column>
-<column name="icmp_ln216_fu_1084_p2">icmp, 0, 0, 1, 3, 1</column>
+<column name="add_ln185_fu_1122_p2">+, 0, 0, 8, 7, 3</column>
+<column name="add_ln188_fu_841_p2">+, 0, 0, 8, 7, 7</column>
+<column name="icmp_ln188_fu_1084_p2">icmp, 0, 0, 1, 3, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_done_int">1, 2, 1, 2</column>
-<column name="ap_sig_allocacmp_i_9">8, 2, 7, 14</column>
+<column name="ap_sig_allocacmp_i_8">8, 2, 7, 14</column>
 <column name="i_fu_218">8, 2, 7, 14</column>
 </table>
 </item>

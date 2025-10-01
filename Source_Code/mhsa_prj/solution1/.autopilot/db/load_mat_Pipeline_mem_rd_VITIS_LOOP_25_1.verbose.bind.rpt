@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1'
 ================================================================
-* Date:           Sat Sep 27 23:14:43 2025
+* Date:           Tue Sep 30 23:58:11 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -89,8 +89,8 @@ ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%sext_ln23_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln23"   --->   Operation 6 'read' 'sext_ln23_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln23_cast = sext i62 %sext_ln23_read"   --->   Operation 7 'sext' 'sext_ln23_cast' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %gmem1, i1 1, void @p_str"   --->   Operation 8 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem1, void @empty_54, i32 0, i32 0, void @empty_113, i32 0, i32 0, void @empty_57, void @empty_56, void @empty_113, i32 16, i32 16, i32 256, i32 16, void @empty_113, void @empty_113, i32 4294967295, i32 0, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %matrix_stream, void @empty_65, i32 0, i32 0, void @empty_113, i32 0, i32 0, void @empty_113, void @empty_113, void @empty_113, i32 0, i32 0, i32 0, i32 0, void @empty_113, void @empty_113, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem1, void @empty_68, i32 0, i32 0, void @empty_115, i32 0, i32 0, void @empty_71, void @empty_70, void @empty_115, i32 16, i32 16, i32 256, i32 16, void @empty_115, void @empty_115, i32 4294967295, i32 0, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %matrix_stream, void @empty_101, i32 0, i32 0, void @empty_115, i32 0, i32 0, void @empty_115, void @empty_115, void @empty_115, i32 0, i32 0, i32 0, i32 0, void @empty_115, void @empty_115, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 11 [1/1] (0.42ns)   --->   "%store_ln0 = store i20 0, i20 %indvar_flatten"   --->   Operation 11 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i20 %indvar_flatten" [kernel_MatMul.cpp:23]   --->   Operation 13 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
@@ -104,7 +104,7 @@ State 2 <SV = 1> <Delay = 2.52>
 ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%gmem1_addr = getelementptr i32 %gmem1, i64 %sext_ln23_cast" [kernel_MatMul.cpp:23]   --->   Operation 18 'getelementptr' 'gmem1_addr' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @mem_rd_VITIS_LOOP_25_1_str"   --->   Operation 19 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 589824, i64 589824, i64 589824"   --->   Operation 20 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%specpipeline_ln26 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_113" [kernel_MatMul.cpp:26]   --->   Operation 21 'specpipeline' 'specpipeline_ln26' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%specpipeline_ln26 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_115" [kernel_MatMul.cpp:26]   --->   Operation 21 'specpipeline' 'specpipeline_ln26' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 22 [1/1] (0.54ns) (share mux size 5)   --->   "%muxLogicAXIMCE_to_gmem1_addr_read = muxlogic"   --->   Operation 22 'muxlogic' 'muxLogicAXIMCE_to_gmem1_addr_read' <Predicate = true> <Delay = 0.54>
 ST_2 : Operation 23 [1/1] (0.99ns) (share mux size 5)   --->   "%gmem1_addr_read = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem1_addr" [kernel_MatMul.cpp:28]   --->   Operation 23 'read' 'gmem1_addr_read' <Predicate = true> <Delay = 0.99> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 0> <II = 1> <Delay = 1.52> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%muxLogicFIFOData_to_write_ln28 = muxlogic i32 %gmem1_addr_read"   --->   Operation 24 'muxlogic' 'muxLogicFIFOData_to_write_ln28' <Predicate = true> <Delay = 0.00>
@@ -247,7 +247,7 @@ ret_ln0                           (ret              ) [ 000]
 <pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_54"/></StgValue>
+<StgValue><ssdm name="empty_68"/></StgValue>
 </bind>
 </comp>
 
@@ -265,7 +265,7 @@ ret_ln0                           (ret              ) [ 000]
 <pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_113"/></StgValue>
+<StgValue><ssdm name="empty_115"/></StgValue>
 </bind>
 </comp>
 
@@ -274,7 +274,7 @@ ret_ln0                           (ret              ) [ 000]
 <pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_57"/></StgValue>
+<StgValue><ssdm name="empty_71"/></StgValue>
 </bind>
 </comp>
 
@@ -283,7 +283,7 @@ ret_ln0                           (ret              ) [ 000]
 <pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_56"/></StgValue>
+<StgValue><ssdm name="empty_70"/></StgValue>
 </bind>
 </comp>
 
@@ -319,7 +319,7 @@ ret_ln0                           (ret              ) [ 000]
 <pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_65"/></StgValue>
+<StgValue><ssdm name="empty_101"/></StgValue>
 </bind>
 </comp>
 

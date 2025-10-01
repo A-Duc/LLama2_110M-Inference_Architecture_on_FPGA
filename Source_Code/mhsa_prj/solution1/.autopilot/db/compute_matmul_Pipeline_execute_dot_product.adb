@@ -1175,7 +1175,7 @@
             <Obj>
               <type>0</type>
               <id>31</id>
-              <name>lshr_ln</name>
+              <name>lshr_ln9</name>
               <fileName>kernel_MatMul.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>52</lineNumber>
@@ -1200,7 +1200,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>lshr_ln_fu_209_p4</rtlName>
+              <rtlName>lshr_ln9_fu_209_p4</rtlName>
               <control></control>
               <opType></opType>
               <implIndex></implIndex>
@@ -1939,7 +1939,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>sparsemux_9_2_32_1_1_U262</rtlName>
+              <rtlName>sparsemux_9_2_32_1_1_U69</rtlName>
               <control>auto</control>
               <opType>sparsemux</opType>
               <implIndex>compactencoding_dontcare</implIndex>
@@ -2286,7 +2286,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>sum_local</originalName>
-              <rtlName>fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U261</rtlName>
+              <rtlName>fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U68</rtlName>
               <control>auto</control>
               <opType>fmadd</opType>
               <implIndex>primitivedsp</implIndex>
@@ -4936,7 +4936,7 @@
           </second>
         </item>
         <item>
-          <first>fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U261 (fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1)</first>
+          <first>fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U68 (fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -4955,7 +4955,7 @@
           </second>
         </item>
         <item>
-          <first>sparsemux_9_2_32_1_1_U262 (sparsemux_9_2_32_1_1)</first>
+          <first>sparsemux_9_2_32_1_1_U69 (sparsemux_9_2_32_1_1)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
@@ -5813,14 +5813,14 @@
           </second>
         </item>
         <item>
-          <first>fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U261</first>
+          <first>fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U68</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>sparsemux_9_2_32_1_1_U262</first>
+          <first>sparsemux_9_2_32_1_1_U69</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -5831,7 +5831,7 @@
         <count>2</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U261 (fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1)</first>
+          <first>fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U68 (fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -5839,7 +5839,7 @@
           </second>
         </item>
         <item>
-          <first>sparsemux_9_2_32_1_1_U262 (sparsemux_9_2_32_1_1)</first>
+          <first>sparsemux_9_2_32_1_1_U69 (sparsemux_9_2_32_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -6827,7 +6827,7 @@
         </second>
       </item>
       <item>
-        <first>lshr_ln_fu_209</first>
+        <first>lshr_ln9_fu_209</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

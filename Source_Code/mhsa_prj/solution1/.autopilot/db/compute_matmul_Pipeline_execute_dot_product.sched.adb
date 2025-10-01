@@ -1175,7 +1175,7 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>lshr_ln</name>
+						<name>lshr_ln9</name>
 						<fileName>kernel_MatMul.cpp</fileName>
 						<fileDirectory>C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code</fileDirectory>
 						<lineNumber>52</lineNumber>

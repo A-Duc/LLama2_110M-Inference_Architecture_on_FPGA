@@ -1,0 +1,101 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "1 5 2 1 5 2 4 6 5 2 3",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 70,
+    "instructions": 39,
+    "memory_accesses": 0,
+    "name": "FFN",
+    "total_instructions": 372
+  },
+  "1": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 11,
+    "instructions": 12,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 2,
+    "name": "push_tensor1d",
+    "total_instructions": 12
+  },
+  "2": {
+    "basicblocks": 22,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 30,
+    "instructions": 60,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 6,
+    "name": "Multiply_VecMat",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 60
+  },
+  "3": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 17,
+    "instructions": 12,
+    "memory_accesses": 2,
+    "name": "pull_tensor1d",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 12
+  },
+  "4": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 6,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 50,
+    "instructions": 18,
+    "memory_accesses": 2,
+    "name": "Swish",
+    "total_instructions": 18
+  },
+  "5": {
+    "basicblocks": 11,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 4,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 23,
+    "instructions": 29,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 3,
+    "name": "push_tensor2d_bycol",
+    "total_instructions": 29
+  },
+  "6": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 59,
+    "instructions": 12,
+    "memory_accesses": 3,
+    "name": "Multiply_Vec",
+    "total_instructions": 12
+  }
+}

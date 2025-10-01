@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 30
+set cdfgNum 29
 set C_modelName {kernel_mhsa_Pipeline_OUTPUT_WRITE}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -28,7 +28,7 @@ dict set ap_memory_interface_dict current_input_13 { MEM_WIDTH 32 MEM_SIZE 384 M
 dict set ap_memory_interface_dict current_input_14 { MEM_WIDTH 32 MEM_SIZE 384 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 set C_modelArgList {
 	{ gmem0 int 32 regular {axi_master 1}  }
-	{ sext_ln71 int 62 regular  }
+	{ sext_ln47 int 62 regular  }
 	{ current_input float 32 regular {array 96 { 1 3 } 1 1 }  }
 	{ current_input_8 float 32 regular {array 96 { 1 3 } 1 1 }  }
 	{ current_input_9 float 32 regular {array 96 { 1 3 } 1 1 }  }
@@ -43,7 +43,7 @@ set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem0", "interface" : "axi_master", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "current_token","offset": { "type": "dynamic","port_name": "current_token","bundle": "control"},"direction": "READWRITE"}]}]} , 
- 	{ "Name" : "sext_ln71", "interface" : "wire", "bitwidth" : 62, "direction" : "READONLY"} , 
+ 	{ "Name" : "sext_ln47", "interface" : "wire", "bitwidth" : 62, "direction" : "READONLY"} , 
  	{ "Name" : "current_input", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "current_input_8", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "current_input_9", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
@@ -107,7 +107,7 @@ set portList {
 	{ m_axi_gmem0_0_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_gmem0_0_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_gmem0_0_BUSER sc_in sc_lv 1 signal 0 } 
-	{ sext_ln71 sc_in sc_lv 62 signal 1 } 
+	{ sext_ln47 sc_in sc_lv 62 signal 1 } 
 	{ current_input_address0 sc_out sc_lv 7 signal 2 } 
 	{ current_input_ce0 sc_out sc_logic 1 signal 2 } 
 	{ current_input_q0 sc_in sc_lv 32 signal 2 } 
@@ -186,7 +186,7 @@ set NewPortList {[
  	{ "name": "m_axi_gmem0_0_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "gmem0", "role": "0_BRESP" }} , 
  	{ "name": "m_axi_gmem0_0_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem0", "role": "0_BID" }} , 
  	{ "name": "m_axi_gmem0_0_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem0", "role": "0_BUSER" }} , 
- 	{ "name": "sext_ln71", "direction": "in", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "sext_ln71", "role": "default" }} , 
+ 	{ "name": "sext_ln47", "direction": "in", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "sext_ln47", "role": "default" }} , 
  	{ "name": "current_input_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "current_input", "role": "address0" }} , 
  	{ "name": "current_input_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "current_input", "role": "ce0" }} , 
  	{ "name": "current_input_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "current_input", "role": "q0" }} , 
@@ -215,7 +215,7 @@ set NewPortList {[
 set ArgLastReadFirstWriteLatency {
 	kernel_mhsa_Pipeline_OUTPUT_WRITE {
 		gmem0 {Type O LastRead -1 FirstWrite 1}
-		sext_ln71 {Type I LastRead 0 FirstWrite -1}
+		sext_ln47 {Type I LastRead 0 FirstWrite -1}
 		current_input {Type I LastRead 0 FirstWrite -1}
 		current_input_8 {Type I LastRead 0 FirstWrite -1}
 		current_input_9 {Type I LastRead 0 FirstWrite -1}
@@ -238,7 +238,7 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_gmem0_0_AWVALID VALID 1 1 }  { m_axi_gmem0_0_AWREADY READY 0 1 }  { m_axi_gmem0_0_AWADDR ADDR 1 64 }  { m_axi_gmem0_0_AWID ID 1 1 }  { m_axi_gmem0_0_AWLEN SIZE 1 32 }  { m_axi_gmem0_0_AWSIZE BURST 1 3 }  { m_axi_gmem0_0_AWBURST LOCK 1 2 }  { m_axi_gmem0_0_AWLOCK CACHE 1 2 }  { m_axi_gmem0_0_AWCACHE PROT 1 4 }  { m_axi_gmem0_0_AWPROT QOS 1 3 }  { m_axi_gmem0_0_AWQOS REGION 1 4 }  { m_axi_gmem0_0_AWREGION USER 1 4 }  { m_axi_gmem0_0_AWUSER DATA 1 1 }  { m_axi_gmem0_0_WVALID VALID 1 1 }  { m_axi_gmem0_0_WREADY READY 0 1 }  { m_axi_gmem0_0_WDATA FIFONUM 1 32 }  { m_axi_gmem0_0_WSTRB STRB 1 4 }  { m_axi_gmem0_0_WLAST LAST 1 1 }  { m_axi_gmem0_0_WID ID 1 1 }  { m_axi_gmem0_0_WUSER DATA 1 1 }  { m_axi_gmem0_0_ARVALID VALID 1 1 }  { m_axi_gmem0_0_ARREADY READY 0 1 }  { m_axi_gmem0_0_ARADDR ADDR 1 64 }  { m_axi_gmem0_0_ARID ID 1 1 }  { m_axi_gmem0_0_ARLEN SIZE 1 32 }  { m_axi_gmem0_0_ARSIZE BURST 1 3 }  { m_axi_gmem0_0_ARBURST LOCK 1 2 }  { m_axi_gmem0_0_ARLOCK CACHE 1 2 }  { m_axi_gmem0_0_ARCACHE PROT 1 4 }  { m_axi_gmem0_0_ARPROT QOS 1 3 }  { m_axi_gmem0_0_ARQOS REGION 1 4 }  { m_axi_gmem0_0_ARREGION USER 1 4 }  { m_axi_gmem0_0_ARUSER DATA 1 1 }  { m_axi_gmem0_0_RVALID VALID 0 1 }  { m_axi_gmem0_0_RREADY READY 1 1 }  { m_axi_gmem0_0_RDATA FIFONUM 0 32 }  { m_axi_gmem0_0_RLAST LAST 0 1 }  { m_axi_gmem0_0_RID ID 0 1 }  { m_axi_gmem0_0_RFIFONUM LEN 0 13 }  { m_axi_gmem0_0_RUSER DATA 0 1 }  { m_axi_gmem0_0_RRESP RESP 0 2 }  { m_axi_gmem0_0_BVALID VALID 0 1 }  { m_axi_gmem0_0_BREADY READY 1 1 }  { m_axi_gmem0_0_BRESP RESP 0 2 }  { m_axi_gmem0_0_BID ID 0 1 }  { m_axi_gmem0_0_BUSER DATA 0 1 } } }
-	sext_ln71 { ap_none {  { sext_ln71 in_data 0 62 } } }
+	sext_ln47 { ap_none {  { sext_ln47 in_data 0 62 } } }
 	current_input { ap_memory {  { current_input_address0 mem_address 1 7 }  { current_input_ce0 mem_ce 1 1 }  { current_input_q0 mem_dout 0 32 } } }
 	current_input_8 { ap_memory {  { current_input_8_address0 mem_address 1 7 }  { current_input_8_ce0 mem_ce 1 1 }  { current_input_8_q0 mem_dout 0 32 } } }
 	current_input_9 { ap_memory {  { current_input_9_address0 mem_address 1 7 }  { current_input_9_ce0 mem_ce 1 1 }  { current_input_9_q0 mem_dout 0 32 } } }

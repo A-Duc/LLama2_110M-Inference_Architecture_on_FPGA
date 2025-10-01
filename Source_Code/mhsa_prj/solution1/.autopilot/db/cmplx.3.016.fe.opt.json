@@ -1,25 +1,53 @@
 {
   "0": {
-    "basicblocks": 486,
-    "calls": "3 3 3 2 2 9 9 9 9 9 9 9 9 9 9 9 9 3",
-    "control_depth": 3,
-    "def_use_depth": 71,
+    "basicblocks": 236,
+    "calls": "1 1 1 5 5 2 2 2 2 2 2 2 2 2 2 2 2 1",
+    "control_depth": 2,
+    "def_use_depth": 73,
     "file": "kernel_MHSA.cpp",
     "fileloc": 6,
-    "instructions": 6047,
+    "instructions": 2157,
     "loads": {
-      "G": 865,
       "L": 204
     },
-    "memory_accesses": 1674,
+    "memory_accesses": 469,
     "name": "kernel_mhsa",
     "stores": {
-      "G": 385,
       "L": 192
     },
-    "total_instructions": 8929
+    "total_instructions": 5043
   },
   "1": {
+    "basicblocks": 1,
+    "calls": "4 6 8 9",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 75,
+    "instructions": 16,
+    "memory_accesses": 0,
+    "name": "matmul",
+    "total_instructions": 211
+  },
+  "2": {
+    "basicblocks": 14,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 5,
+    "file": "kernel_Softmax.cpp",
+    "fileloc": 2,
+    "instructions": 77,
+    "loads": {
+      "L": 6
+    },
+    "memory_accesses": 9,
+    "name": "kernel_softmax",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 77
+  },
+  "3": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
@@ -30,37 +58,6 @@
     "memory_accesses": 0,
     "name": "to_ieee",
     "total_instructions": 5
-  },
-  "2": {
-    "basicblocks": 21,
-    "calls": "6",
-    "control_depth": 2,
-    "def_use_depth": 55,
-    "file": "kernel_Rope.cpp",
-    "fileloc": 3,
-    "instructions": 346,
-    "loads": {
-      "G": 7,
-      "L": 8
-    },
-    "memory_accesses": 27,
-    "name": "RoPE",
-    "stores": {
-      "L": 8
-    },
-    "total_instructions": 559
-  },
-  "3": {
-    "basicblocks": 1,
-    "calls": "4 5 7 8",
-    "control_depth": 0,
-    "def_use_depth": 1,
-    "file": "kernel_MatMul.cpp",
-    "fileloc": 75,
-    "instructions": 16,
-    "memory_accesses": 0,
-    "name": "matmul",
-    "total_instructions": 213
   },
   "4": {
     "basicblocks": 4,
@@ -81,23 +78,42 @@
     "total_instructions": 34
   },
   "5": {
+    "basicblocks": 21,
+    "calls": "7",
+    "control_depth": 2,
+    "def_use_depth": 55,
+    "file": "kernel_Rope.cpp",
+    "fileloc": 3,
+    "instructions": 346,
+    "loads": {
+      "G": 7,
+      "L": 8
+    },
+    "memory_accesses": 27,
+    "name": "RoPE",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 559
+  },
+  "6": {
     "basicblocks": 7,
     "calls": "",
     "control_depth": 1,
-    "def_use_depth": 3,
+    "def_use_depth": 2,
     "file": "kernel_MatMul.cpp",
     "fileloc": 20,
-    "instructions": 28,
+    "instructions": 26,
     "memory_accesses": 3,
     "name": "load_mat",
     "stores": {
       "L": 1
     },
-    "total_instructions": 28
+    "total_instructions": 26
   },
-  "6": {
+  "7": {
     "basicblocks": 23,
-    "calls": "1 1 1 1 1 1 1 1",
+    "calls": "3 3 3 3 3 3 3 3",
     "control_depth": 6,
     "def_use_depth": 35,
     "file": "hls_pow.h",
@@ -110,7 +126,7 @@
     "name": "pow_generic<float>",
     "total_instructions": 213
   },
-  "7": {
+  "8": {
     "basicblocks": 15,
     "calls": "",
     "control_depth": 2,
@@ -130,7 +146,7 @@
     },
     "total_instructions": 83
   },
-  "8": {
+  "9": {
     "basicblocks": 13,
     "calls": "",
     "control_depth": 2,
@@ -147,23 +163,5 @@
       "L": 8
     },
     "total_instructions": 52
-  },
-  "9": {
-    "basicblocks": 15,
-    "calls": "",
-    "control_depth": 2,
-    "def_use_depth": 5,
-    "file": "kernel_Softmax.cpp",
-    "fileloc": 2,
-    "instructions": 76,
-    "loads": {
-      "L": 6
-    },
-    "memory_accesses": 9,
-    "name": "kernel_softmax",
-    "stores": {
-      "L": 3
-    },
-    "total_instructions": 76
   }
 }

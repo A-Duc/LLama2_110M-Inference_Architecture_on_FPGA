@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 30
+set cdfgNum 29
 set C_modelName {matmul.1}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -53,7 +53,6 @@ set C_modelArgList {
 	{ i_vec_7 float 32 regular {array 96 { 1 3 } 1 1 stable  }  }
 	{ gmem1 int 32 regular {axi_master 0 stable }  }
 	{ i_mat int 64 regular {ap_stable 0} }
-	{ idx2 int 25 regular {ap_stable 0} }
 }
 set hasAXIMCache 0
 set l_AXIML2Cache [list]
@@ -76,10 +75,9 @@ set C_modelArgMapList {[
  	{ "Name" : "i_vec_6", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "i_vec_7", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "gmem1", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "weights","offset": { "type": "dynamic","port_name": "weights","bundle": "control"},"direction": "READONLY"}]}]} , 
- 	{ "Name" : "i_mat", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "idx2", "interface" : "wire", "bitwidth" : 25, "direction" : "READONLY"} ]}
+ 	{ "Name" : "i_mat", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
-set portNum 217
+set portNum 215
 set portList { 
 	{ o_vec_0_address0 sc_out sc_lv 7 signal 0 } 
 	{ o_vec_0_ce0 sc_out sc_logic 1 signal 0 } 
@@ -288,12 +286,10 @@ set portList {
 	{ m_axi_gmem1_0_BID sc_in sc_lv 1 signal 16 } 
 	{ m_axi_gmem1_0_BUSER sc_in sc_lv 1 signal 16 } 
 	{ i_mat sc_in sc_lv 64 signal 17 } 
-	{ idx2 sc_in sc_lv 25 signal 18 } 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
 	{ ap_start sc_in sc_logic 1 start -1 } 
 	{ i_mat_ap_vld sc_in sc_logic 1 invld 17 } 
-	{ idx2_ap_vld sc_in sc_logic 1 invld 18 } 
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
@@ -507,12 +503,10 @@ set NewPortList {[
  	{ "name": "m_axi_gmem1_0_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem1", "role": "0_BID" }} , 
  	{ "name": "m_axi_gmem1_0_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem1", "role": "0_BUSER" }} , 
  	{ "name": "i_mat", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "i_mat", "role": "default" }} , 
- 	{ "name": "idx2", "direction": "in", "datatype": "sc_lv", "bitwidth":25, "type": "signal", "bundle":{"name": "idx2", "role": "default" }} , 
  	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
  	{ "name": "ap_rst", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst", "role": "default" }} , 
  	{ "name": "ap_start", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "start", "bundle":{"name": "ap_start", "role": "default" }} , 
  	{ "name": "i_mat_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "i_mat", "role": "ap_vld" }} , 
- 	{ "name": "idx2_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "idx2", "role": "ap_vld" }} , 
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
@@ -538,7 +532,6 @@ set ArgLastReadFirstWriteLatency {
 		i_vec_7 {Type I LastRead 0 FirstWrite -1}
 		gmem1 {Type I LastRead 1 FirstWrite -1}
 		i_mat {Type I LastRead 0 FirstWrite -1}
-		idx2 {Type I LastRead 0 FirstWrite -1}
 		compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local {Type IO LastRead -1 FirstWrite -1}
 		compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1 {Type IO LastRead -1 FirstWrite -1}
 		compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2 {Type IO LastRead -1 FirstWrite -1}
@@ -556,8 +549,7 @@ set ArgLastReadFirstWriteLatency {
 	load_mat {
 		gmem1 {Type I LastRead 1 FirstWrite -1}
 		i_mat {Type I LastRead 0 FirstWrite -1}
-		matrix_stream {Type O LastRead -1 FirstWrite 1}
-		idx {Type I LastRead 0 FirstWrite -1}}
+		matrix_stream {Type O LastRead -1 FirstWrite 1}}
 	load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1 {
 		gmem1 {Type I LastRead 1 FirstWrite -1}
 		sext_ln23 {Type I LastRead 0 FirstWrite -1}
@@ -623,5 +615,4 @@ set Spec2ImplPortList {
 	i_vec_7 { ap_memory {  { i_vec_7_address0 mem_address 1 7 }  { i_vec_7_ce0 mem_ce 1 1 }  { i_vec_7_d0 mem_din 1 32 }  { i_vec_7_q0 mem_dout 0 32 }  { i_vec_7_we0 mem_we 1 1 }  { i_vec_7_address1 mem_address 1 7 }  { i_vec_7_ce1 mem_ce 1 1 }  { i_vec_7_d1 mem_din 1 32 }  { i_vec_7_q1 mem_dout 0 32 }  { i_vec_7_we1 mem_we 1 1 } } }
 	 { m_axi {  { m_axi_gmem1_0_AWVALID VALID 1 1 }  { m_axi_gmem1_0_AWREADY READY 0 1 }  { m_axi_gmem1_0_AWADDR ADDR 1 64 }  { m_axi_gmem1_0_AWID ID 1 1 }  { m_axi_gmem1_0_AWLEN SIZE 1 32 }  { m_axi_gmem1_0_AWSIZE BURST 1 3 }  { m_axi_gmem1_0_AWBURST LOCK 1 2 }  { m_axi_gmem1_0_AWLOCK CACHE 1 2 }  { m_axi_gmem1_0_AWCACHE PROT 1 4 }  { m_axi_gmem1_0_AWPROT QOS 1 3 }  { m_axi_gmem1_0_AWQOS REGION 1 4 }  { m_axi_gmem1_0_AWREGION USER 1 4 }  { m_axi_gmem1_0_AWUSER DATA 1 1 }  { m_axi_gmem1_0_WVALID VALID 1 1 }  { m_axi_gmem1_0_WREADY READY 0 1 }  { m_axi_gmem1_0_WDATA FIFONUM 1 32 }  { m_axi_gmem1_0_WSTRB STRB 1 4 }  { m_axi_gmem1_0_WLAST LAST 1 1 }  { m_axi_gmem1_0_WID ID 1 1 }  { m_axi_gmem1_0_WUSER DATA 1 1 }  { m_axi_gmem1_0_ARVALID VALID 1 1 }  { m_axi_gmem1_0_ARREADY READY 0 1 }  { m_axi_gmem1_0_ARADDR ADDR 1 64 }  { m_axi_gmem1_0_ARID ID 1 1 }  { m_axi_gmem1_0_ARLEN SIZE 1 32 }  { m_axi_gmem1_0_ARSIZE BURST 1 3 }  { m_axi_gmem1_0_ARBURST LOCK 1 2 }  { m_axi_gmem1_0_ARLOCK CACHE 1 2 }  { m_axi_gmem1_0_ARCACHE PROT 1 4 }  { m_axi_gmem1_0_ARPROT QOS 1 3 }  { m_axi_gmem1_0_ARQOS REGION 1 4 }  { m_axi_gmem1_0_ARREGION USER 1 4 }  { m_axi_gmem1_0_ARUSER DATA 1 1 }  { m_axi_gmem1_0_RVALID VALID 0 1 }  { m_axi_gmem1_0_RREADY READY 1 1 }  { m_axi_gmem1_0_RDATA FIFONUM 0 32 }  { m_axi_gmem1_0_RLAST LAST 0 1 }  { m_axi_gmem1_0_RID ID 0 1 }  { m_axi_gmem1_0_RFIFONUM LEN 0 13 }  { m_axi_gmem1_0_RUSER DATA 0 1 }  { m_axi_gmem1_0_RRESP RESP 0 2 }  { m_axi_gmem1_0_BVALID VALID 0 1 }  { m_axi_gmem1_0_BREADY READY 1 1 }  { m_axi_gmem1_0_BRESP RESP 0 2 }  { m_axi_gmem1_0_BID ID 0 1 }  { m_axi_gmem1_0_BUSER DATA 0 1 } } }
 	i_mat { ap_none {  { i_mat in_data 0 64 }  { i_mat_ap_vld in_vld 0 1 } } }
-	idx2 { ap_none {  { idx2 in_data 0 25 }  { idx2_ap_vld in_vld 0 1 } } }
 }

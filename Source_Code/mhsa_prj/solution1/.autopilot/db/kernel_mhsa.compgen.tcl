@@ -25,11 +25,6 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler kernel_mhsa_p_ZZ11kernel_mhsaPfiS_E9key_cache_0_0_RAM_1P_BRAM_1R1W BINDTYPE {storage} TYPE {ram_1p} IMPL {bram} LATENCY 2 ALLOW_PRAGMA 1
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler kernel_mhsa_out_rms_vec_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
 
@@ -51,6 +46,16 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler kernel_mhsa_gmem1_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler kernel_mhsa_gmem2_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler kernel_mhsa_gmem3_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
 }
 
 
@@ -87,6 +92,22 @@ weights {
 	offset 36
 	offset_end 47
 }
+key_cache { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 48
+	offset_end 59
+}
+value_cache { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 60
+	offset_end 71
+}
 ap_start { }
 ap_done { }
 ap_ready { }
@@ -101,7 +122,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 1394 \
+			id 668 \
 			corename kernel_mhsa_control_axilite \
 			name kernel_mhsa_control_s_axi \
 			ports {$port_control} \

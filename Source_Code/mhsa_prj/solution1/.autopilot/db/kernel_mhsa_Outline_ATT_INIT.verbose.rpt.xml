@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Outline_ATT_INIT'" level="0">
-<item name = "Date">Sat Sep 27 23:15:37 2025
+<item name = "Date">Tue Sep 30 23:59:01 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66">kernel_mhsa_Pipeline_VITIS_LOOP_128_1, 3, 514, 12.000 ns, 2.056 us, 2, 513, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66">kernel_mhsa_Pipeline_VITIS_LOOP_100_1, 3, 514, 12.000 ns, 2.056 us, 2, 513, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -65,7 +65,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66">kernel_mhsa_Pipeline_VITIS_LOOP_128_1, 0, 0, 12, 56, 0</column>
+<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66">kernel_mhsa_Pipeline_VITIS_LOOP_100_1, 0, 0, 12, 56, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -82,9 +82,9 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln127_fu_105_p2">+, 0, 0, 6, 4, 1</column>
+<column name="add_ln99_fu_105_p2">+, 0, 0, 6, 4, 1</column>
 <column name="ap_block_state3_on_subcall_done">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln127_fu_111_p2">icmp, 0, 0, 2, 4, 4</column>
+<column name="icmp_ln99_fu_111_p2">icmp, 0, 0, 2, 4, 4</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -95,9 +95,9 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="add_ln127_reg_140">4, 0, 4, 0</column>
+<column name="add_ln99_reg_140">4, 0, 4, 0</column>
 <column name="ap_CS_fsm">3, 0, 3, 0</column>
-<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66_ap_start_reg">1, 0, 1, 0</column>
 <column name="h_fu_50">4, 0, 4, 0</column>
 </table>
 </item>
@@ -114,7 +114,7 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, kernel_mhsa_Outline_ATT_INIT, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, kernel_mhsa_Outline_ATT_INIT, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, kernel_mhsa_Outline_ATT_INIT, return value</column>
-<column name="select_ln128">in, 33, ap_none, select_ln128, scalar</column>
+<column name="select_ln100">in, 33, ap_none, select_ln100, scalar</column>
 <column name="att_11_address0">out, 9, ap_memory, att_11, array</column>
 <column name="att_11_ce0">out, 1, ap_memory, att_11, array</column>
 <column name="att_11_we0">out, 1, ap_memory, att_11, array</column>

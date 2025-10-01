@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa'" level="0">
-<item name = "Date">Sat Sep 27 23:15:24 2025
+<item name = "Date">Tue Sep 30 23:58:48 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 3.274 ns, 1.08 ns</column>
+<column name="ap_clk">4.00 ns, 3.696 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,34 +24,33 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">28849375, 38961597, 0.115 sec, 0.156 sec, 28849376, 38961598, no</column>
+<column name="">28407702, 38366562, 0.114 sec, 0.153 sec, 28407703, 38366563, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER_fu_1260">kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER, 4718594, 4718594, 18.874 ms, 18.874 ms, 4718593, 4718593, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1648">kernel_mhsa_Pipeline_INPUT_COPY, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1663">kernel_mhsa_Pipeline_VITIS_LOOP_19_1, 772, 772, 3.088 us, 3.088 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Outline_ATT_INIT_fu_1676">kernel_mhsa_Outline_ATT_INIT, 25, 6193, 0.100 us, 24.772 us, 25, 6193, no</column>
-<column name="grp_kernel_mhsa_Pipeline_XB_INIT_fu_1694">kernel_mhsa_Pipeline_XB_INIT, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1706">kernel_mhsa_Pipeline_VITIS_LOOP_27_2, 775, 775, 3.100 us, 3.100 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_matmul_1_fu_1730">matmul_1, 590611, 590611, 2.362 ms, 2.362 ms, 590602, 590602, dataflow</column>
-<column name="grp_RoPE_fu_1762">RoPE, 424, 424, 1.696 us, 1.696 us, 424, 424, no</column>
-<column name="grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1801">kernel_mhsa_Pipeline_CACHE_STORE, 771, 771, 3.084 us, 3.084 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_2207">kernel_mhsa_Outline_HEAD_COMPUTE, 841, 51565, 3.364 us, 0.206 ms, 841, 51565, no</column>
-<column name="grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_2426">kernel_mhsa_Outline_SOFTMAX_HEADS, 37285, 37285, 0.149 ms, 0.149 ms, 37285, 37285, no</column>
-<column name="grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2442">kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC, 72, 32776, 0.288 us, 0.131 ms, 66, 32770, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2719">kernel_mhsa_Pipeline_ACCUM_WRITEBACK, 18, 18, 72.000 ns, 72.000 ns, 17, 17, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2796">kernel_mhsa_Pipeline_RESIDUAL, 773, 773, 3.092 us, 3.092 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2816">kernel_mhsa_Pipeline_OUTPUT_WRITE, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1690">kernel_mhsa_Pipeline_INPUT_COPY, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1705">kernel_mhsa_Pipeline_VITIS_LOOP_19_1, 772, 772, 3.088 us, 3.088 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Outline_ATT_INIT_fu_1718">kernel_mhsa_Outline_ATT_INIT, 25, 6193, 0.100 us, 24.772 us, 25, 6193, no</column>
+<column name="grp_kernel_mhsa_Pipeline_XB_INIT_fu_1736">kernel_mhsa_Pipeline_XB_INIT, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1748">kernel_mhsa_Pipeline_VITIS_LOOP_27_2, 775, 775, 3.100 us, 3.100 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_matmul_1_fu_1772">matmul_1, 590611, 590611, 2.362 ms, 2.362 ms, 590602, 590602, dataflow</column>
+<column name="grp_RoPE_fu_1803">RoPE, 424, 424, 1.696 us, 1.696 us, 424, 424, no</column>
+<column name="grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1842">kernel_mhsa_Pipeline_CACHE_STORE, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_1868">kernel_mhsa_Outline_HEAD_COMPUTE, 841, 395065, 3.364 us, 1.580 ms, 841, 395065, no</column>
+<column name="grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_1898">kernel_mhsa_Outline_SOFTMAX_HEADS, 481, 37285, 1.924 us, 0.149 ms, 481, 37285, no</column>
+<column name="grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_1915">kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC, 82, 32786, 0.328 us, 0.131 ms, 66, 32770, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2002">kernel_mhsa_Pipeline_ACCUM_WRITEBACK, 18, 18, 72.000 ns, 72.000 ns, 17, 17, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2143">kernel_mhsa_Pipeline_RESIDUAL, 773, 773, 3.092 us, 3.092 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2163">kernel_mhsa_Pipeline_OUTPUT_WRITE, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LAYER_LOOP">28847808, 34241436, 2403984 ~ 2853453, -, -, 12, no</column>
-<column name=" + HEAD_STREAM">264, 393588, 22 ~ 32799, -, -, 12, no</column>
+<column name="- LAYER_LOOP">28406136, 38364996, 2367178 ~ 3197083, -, -, 12, no</column>
+<column name=" + HEAD_STREAM">252, 393708, 21 ~ 32809, -, -, 12, no</column>
 </table>
 </item>
 </section>

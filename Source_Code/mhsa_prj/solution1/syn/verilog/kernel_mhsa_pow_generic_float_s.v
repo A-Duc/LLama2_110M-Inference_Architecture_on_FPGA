@@ -278,7 +278,7 @@ kernel_mhsa_mul_10s_36s_36_1_1 #(
     .din0_WIDTH( 10 ),
     .din1_WIDTH( 36 ),
     .dout_WIDTH( 36 ))
-mul_10s_36s_36_1_1_U308(
+mul_10s_36s_36_1_1_U114(
     .din0(r_exp_reg_1105),
     .din1(36'd47632711549),
     .dout(mul_ln568_fu_202_p2)
@@ -290,7 +290,7 @@ kernel_mhsa_mul_25s_39ns_63_1_1 #(
     .din0_WIDTH( 25 ),
     .din1_WIDTH( 39 ),
     .dout_WIDTH( 63 ))
-mul_25s_39ns_63_1_1_U309(
+mul_25s_39ns_63_1_1_U115(
     .din0(e_frac_2_reg_998),
     .din1(m_frac_l_fu_207_p1),
     .dout(m_frac_l_fu_207_p2)
@@ -312,7 +312,7 @@ mul_25s_39ns_63_1_1_U309(
     .def_WIDTH( 32 ),
     .sel_WIDTH( 4 ),
     .dout_WIDTH( 32 ))
-sparsemux_11_4_32_1_1_U310(
+sparsemux_11_4_32_1_1_U116(
     .din0(UnifiedRetVal_fu_923_p2),
     .din1(32'd2139095040),
     .din2(UnifiedRetVal_fu_923_p6),
@@ -330,7 +330,7 @@ kernel_mhsa_mac_muladd_13s_12ns_16s_25_4_1 #(
     .din1_WIDTH( 12 ),
     .din2_WIDTH( 16 ),
     .dout_WIDTH( 25 ))
-mac_muladd_13s_12ns_16s_25_4_1_U311(
+mac_muladd_13s_12ns_16s_25_4_1_U117(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(m_fix_hi_fu_467_p4),
@@ -347,7 +347,7 @@ kernel_mhsa_mac_muladd_18ns_18ns_44ns_44_4_1 #(
     .din1_WIDTH( 18 ),
     .din2_WIDTH( 44 ),
     .dout_WIDTH( 44 ))
-mac_muladd_18ns_18ns_44ns_44_4_1_U312(
+mac_muladd_18ns_18ns_44ns_44_4_1_U118(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_962_p0),

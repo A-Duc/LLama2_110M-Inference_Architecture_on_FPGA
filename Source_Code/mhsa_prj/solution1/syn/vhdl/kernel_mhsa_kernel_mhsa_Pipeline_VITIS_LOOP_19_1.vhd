@@ -93,7 +93,7 @@ attribute shreg_extract : string;
     signal ap_loop_init : STD_LOGIC;
     signal ap_loop_exit_ready_pp0_iter1_reg : STD_LOGIC;
     signal ap_loop_exit_ready_pp0_iter2_reg : STD_LOGIC;
-    signal i_6_fu_80 : STD_LOGIC_VECTOR (9 downto 0) := "0000000000";
+    signal i_5_fu_80 : STD_LOGIC_VECTOR (9 downto 0) := "0000000000";
     signal add_ln19_fu_208_p2 : STD_LOGIC_VECTOR (9 downto 0);
     signal ap_sig_allocacmp_i : STD_LOGIC_VECTOR (9 downto 0);
     signal ap_block_pp0_stage0_01001 : BOOLEAN;
@@ -105,7 +105,7 @@ attribute shreg_extract : string;
     signal current_input_12_ce0_local : STD_LOGIC;
     signal current_input_13_ce0_local : STD_LOGIC;
     signal current_input_14_ce0_local : STD_LOGIC;
-    signal lshr_ln3_fu_224_p4 : STD_LOGIC_VECTOR (6 downto 0);
+    signal lshr_ln2_fu_224_p4 : STD_LOGIC_VECTOR (6 downto 0);
     signal v_fu_289_p17 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_328_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_328_p2 : STD_LOGIC_VECTOR (31 downto 0);
@@ -205,7 +205,7 @@ attribute shreg_extract : string;
 
 
 begin
-    sparsemux_17_3_32_1_1_U203 : component kernel_mhsa_sparsemux_17_3_32_1_1
+    sparsemux_17_3_32_1_1_U11 : component kernel_mhsa_sparsemux_17_3_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -241,7 +241,7 @@ begin
         sel => trunc_ln19_reg_362,
         dout => v_fu_289_p19);
 
-    fmacc_32ns_32ns_32ns_1ns_32_2_primitive_dsp_1_U204 : component kernel_mhsa_fmacc_32ns_32ns_32ns_1ns_32_2_primitive_dsp_1
+    fmacc_32ns_32ns_32ns_1ns_32_2_primitive_dsp_1_U12 : component kernel_mhsa_fmacc_32ns_32ns_32ns_1ns_32_2_primitive_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -348,14 +348,14 @@ begin
     end process;
 
 
-    i_6_fu_80_assign_proc : process (ap_clk)
+    i_5_fu_80_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then
                 if (((icmp_ln19_fu_214_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter0 = ap_const_logic_1))) then 
-                    i_6_fu_80 <= add_ln19_fu_208_p2;
+                    i_5_fu_80 <= add_ln19_fu_208_p2;
                 elsif ((ap_loop_init = ap_const_logic_1)) then 
-                    i_6_fu_80 <= ap_const_lv10_0;
+                    i_5_fu_80 <= ap_const_lv10_0;
                 end if;
             end if; 
         end if;
@@ -460,12 +460,12 @@ begin
     end process;
 
 
-    ap_sig_allocacmp_i_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_block_pp0_stage0, ap_loop_init, i_6_fu_80)
+    ap_sig_allocacmp_i_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_block_pp0_stage0, ap_loop_init, i_5_fu_80)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage0) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (ap_loop_init = ap_const_logic_1))) then 
             ap_sig_allocacmp_i <= ap_const_lv10_0;
         else 
-            ap_sig_allocacmp_i <= i_6_fu_80;
+            ap_sig_allocacmp_i <= i_5_fu_80;
         end if; 
     end process;
 
@@ -607,7 +607,7 @@ begin
 
     icmp_ln19_fu_214_p2 <= "1" when (ap_sig_allocacmp_i = ap_const_lv10_300) else "0";
     icmp_ln21_fu_278_p2 <= "1" when (add_ln19_fu_208_p2 = ap_const_lv10_300) else "0";
-    lshr_ln3_fu_224_p4 <= ap_sig_allocacmp_i(9 downto 3);
+    lshr_ln2_fu_224_p4 <= ap_sig_allocacmp_i(9 downto 3);
     sum_local_out <= sum_local_fu_76;
 
     sum_local_out_ap_vld_assign_proc : process(ap_block_pp0_stage0_11001, icmp_ln19_reg_358_pp0_iter1_reg, ap_loop_exit_ready_pp0_iter2_reg)
@@ -621,5 +621,5 @@ begin
 
     trunc_ln19_fu_220_p1 <= ap_sig_allocacmp_i(3 - 1 downto 0);
     v_fu_289_p17 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-    zext_ln18_fu_234_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(lshr_ln3_fu_224_p4),64));
+    zext_ln18_fu_234_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(lshr_ln2_fu_224_p4),64));
 end behav;

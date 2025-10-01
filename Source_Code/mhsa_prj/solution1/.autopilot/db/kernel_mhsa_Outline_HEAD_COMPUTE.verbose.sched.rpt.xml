@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Outline_HEAD_COMPUTE'" level="0">
-<item name = "Date">Sat Sep 27 23:15:12 2025
+<item name = "Date">Tue Sep 30 23:58:39 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.603 ns, 1.08 ns</column>
+<column name="ap_clk">4.00 ns, 3.379 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">841, 51565, 3.364 us, 0.206 ms, 841, 51565, no</column>
+<column name="">841, 395065, 3.364 us, 1.580 ms, 841, 395065, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- HEAD_COMPUTE">840, 51564, 70 ~ 4297, -, -, 12, no</column>
+<column name="- HEAD_COMPUTE">840, 395064, 70 ~ 32922, -, -, 12, no</column>
 </table>
 </item>
 </section>

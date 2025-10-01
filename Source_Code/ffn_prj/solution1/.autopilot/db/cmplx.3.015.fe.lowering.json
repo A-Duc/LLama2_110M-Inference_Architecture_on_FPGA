@@ -1,0 +1,164 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "3 6 8 7 5 11 4 10 2 9 1",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 70,
+    "instructions": 60,
+    "memory_accesses": 0,
+    "name": "FFN",
+    "total_instructions": 283
+  },
+  "1": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 17,
+    "instructions": 12,
+    "memory_accesses": 2,
+    "name": "pull_tensor1d",
+    "total_instructions": 12
+  },
+  "10": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 59,
+    "instructions": 13,
+    "memory_accesses": 3,
+    "name": "Multiply_Vec",
+    "total_instructions": 13
+  },
+  "11": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 30,
+    "instructions": 33,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 4,
+    "name": "Multiply_VecMat",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 33
+  },
+  "2": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 7,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 23,
+    "instructions": 19,
+    "memory_accesses": 2,
+    "name": "push_tensor2d_bycol",
+    "total_instructions": 19
+  },
+  "3": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 11,
+    "instructions": 12,
+    "memory_accesses": 2,
+    "name": "push_tensor1d",
+    "total_instructions": 12
+  },
+  "4": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 6,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 50,
+    "instructions": 18,
+    "memory_accesses": 2,
+    "name": "Swish",
+    "total_instructions": 18
+  },
+  "5": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 7,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 23,
+    "instructions": 19,
+    "memory_accesses": 2,
+    "name": "push_tensor2d_bycol",
+    "total_instructions": 19
+  },
+  "6": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 7,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 23,
+    "instructions": 19,
+    "memory_accesses": 2,
+    "name": "push_tensor2d_bycol",
+    "total_instructions": 19
+  },
+  "7": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 11,
+    "instructions": 12,
+    "memory_accesses": 2,
+    "name": "push_tensor1d",
+    "total_instructions": 12
+  },
+  "8": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 30,
+    "instructions": 33,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 4,
+    "name": "Multiply_VecMat",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 33
+  },
+  "9": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 30,
+    "instructions": 33,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 4,
+    "name": "Multiply_VecMat",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 33
+  }
+}

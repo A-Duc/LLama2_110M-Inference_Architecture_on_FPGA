@@ -30,6 +30,16 @@
 // 0x28 : Data signal of weights
 //        bit 31~0 - weights[63:32] (Read/Write)
 // 0x2c : reserved
+// 0x30 : Data signal of key_cache
+//        bit 31~0 - key_cache[31:0] (Read/Write)
+// 0x34 : Data signal of key_cache
+//        bit 31~0 - key_cache[63:32] (Read/Write)
+// 0x38 : reserved
+// 0x3c : Data signal of value_cache
+//        bit 31~0 - value_cache[31:0] (Read/Write)
+// 0x40 : Data signal of value_cache
+//        bit 31~0 - value_cache[63:32] (Read/Write)
+// 0x44 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define CONTROL_ADDR_AP_CTRL            0x00
@@ -42,3 +52,7 @@
 #define CONTROL_BITS_POSITION_DATA      32
 #define CONTROL_ADDR_WEIGHTS_DATA       0x24
 #define CONTROL_BITS_WEIGHTS_DATA       64
+#define CONTROL_ADDR_KEY_CACHE_DATA     0x30
+#define CONTROL_BITS_KEY_CACHE_DATA     64
+#define CONTROL_ADDR_VALUE_CACHE_DATA   0x3c
+#define CONTROL_BITS_VALUE_CACHE_DATA   64

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'kernel_mhsa_Pipeline_VITIS_LOOP_27_2'
 ================================================================
-* Date:           Sat Sep 27 23:15:26 2025
+* Date:           Tue Sep 30 23:58:50 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -74,14 +74,14 @@
 
 + Detail: 
     * Instance: 
-    +------------------------------------------+-------------------------------------+---------+----+---+----+-----+
-    |                 Instance                 |                Module               | BRAM_18K| DSP| FF| LUT| URAM|
-    +------------------------------------------+-------------------------------------+---------+----+---+----+-----+
-    |fmul_32ns_32ns_32_1_primitive_dsp_1_U217  |fmul_32ns_32ns_32_1_primitive_dsp_1  |        0|   1|  0|   0|    0|
-    |sparsemux_17_3_32_1_1_U218                |sparsemux_17_3_32_1_1                |        0|   0|  0|  96|    0|
-    +------------------------------------------+-------------------------------------+---------+----+---+----+-----+
-    |Total                                     |                                     |        0|   1|  0|  96|    0|
-    +------------------------------------------+-------------------------------------+---------+----+---+----+-----+
+    +-----------------------------------------+-------------------------------------+---------+----+---+----+-----+
+    |                 Instance                |                Module               | BRAM_18K| DSP| FF| LUT| URAM|
+    +-----------------------------------------+-------------------------------------+---------+----+---+----+-----+
+    |fmul_32ns_32ns_32_1_primitive_dsp_1_U25  |fmul_32ns_32ns_32_1_primitive_dsp_1  |        0|   1|  0|   0|    0|
+    |sparsemux_17_3_32_1_1_U26                |sparsemux_17_3_32_1_1                |        0|   0|  0|  96|    0|
+    +-----------------------------------------+-------------------------------------+---------+----+---+----+-----+
+    |Total                                    |                                     |        0|   1|  0|  96|    0|
+    +-----------------------------------------+-------------------------------------+---------+----+---+----+-----+
 
     * DSP: 
     N/A
@@ -110,7 +110,7 @@
     +-------------------------+----+-----------+-----+-----------+
     |ap_done_int              |   1|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |   1|          2|    1|          2|
-    |ap_sig_allocacmp_i_7     |  16|          2|   10|         20|
+    |ap_sig_allocacmp_i_5     |  16|          2|   10|         20|
     |gmem1_blk_n_R            |   1|          2|    1|          2|
     |grp_fu_331_p0            |  32|          2|   32|         64|
     |grp_fu_331_p1            |  32|          2|   32|         64|
@@ -182,9 +182,9 @@
 |ap_done                    |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_VITIS_LOOP_27_2|  return value|
 |ap_idle                    |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_VITIS_LOOP_27_2|  return value|
 |ap_ready                   |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_VITIS_LOOP_27_2|  return value|
-|grp_fu_4540_p_din0         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_VITIS_LOOP_27_2|  return value|
-|grp_fu_4540_p_din1         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_VITIS_LOOP_27_2|  return value|
-|grp_fu_4540_p_dout0        |   in|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_VITIS_LOOP_27_2|  return value|
+|grp_fu_3617_p_din0         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_VITIS_LOOP_27_2|  return value|
+|grp_fu_3617_p_din1         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_VITIS_LOOP_27_2|  return value|
+|grp_fu_3617_p_dout0        |   in|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_VITIS_LOOP_27_2|  return value|
 |m_axi_gmem1_0_AWVALID      |  out|    1|       m_axi|                                 gmem1|       pointer|
 |m_axi_gmem1_0_AWREADY      |   in|    1|       m_axi|                                 gmem1|       pointer|
 |m_axi_gmem1_0_AWADDR       |  out|   64|       m_axi|                                 gmem1|       pointer|

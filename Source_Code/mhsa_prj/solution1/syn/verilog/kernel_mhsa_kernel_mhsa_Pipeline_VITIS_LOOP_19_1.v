@@ -108,7 +108,7 @@ wire   [31:0] grp_fu_328_p4;
 wire    ap_loop_init;
 reg    ap_loop_exit_ready_pp0_iter1_reg;
 reg    ap_loop_exit_ready_pp0_iter2_reg;
-reg   [9:0] i_6_fu_80;
+reg   [9:0] i_5_fu_80;
 wire   [9:0] add_ln19_fu_208_p2;
 reg   [9:0] ap_sig_allocacmp_i;
 wire    ap_block_pp0_stage0_01001;
@@ -120,7 +120,7 @@ reg    current_input_11_ce0_local;
 reg    current_input_12_ce0_local;
 reg    current_input_13_ce0_local;
 reg    current_input_14_ce0_local;
-wire   [6:0] lshr_ln3_fu_224_p4;
+wire   [6:0] lshr_ln2_fu_224_p4;
 wire   [31:0] v_fu_289_p17;
 reg   [31:0] grp_fu_328_p1;
 reg   [31:0] grp_fu_328_p2;
@@ -152,7 +152,7 @@ initial begin
 #0 ap_enable_reg_pp0_iter2 = 1'b0;
 #0 ap_enable_reg_pp0_iter3 = 1'b0;
 #0 sum_local_fu_76 = 32'd0;
-#0 i_6_fu_80 = 10'd0;
+#0 i_5_fu_80 = 10'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -178,7 +178,7 @@ end
     .def_WIDTH( 32 ),
     .sel_WIDTH( 3 ),
     .dout_WIDTH( 32 ))
-sparsemux_17_3_32_1_1_U203(
+sparsemux_17_3_32_1_1_U11(
     .din0(current_input_q0),
     .din1(current_input_8_q0),
     .din2(current_input_9_q0),
@@ -197,7 +197,7 @@ kernel_mhsa_fmacc_32ns_32ns_32ns_1ns_32_2_primitive_dsp_1 #(
     .NUM_STAGE( 2 ),
     .DWIDTH( 32 ),
     .OUTPUT_DATA_WIDTH( 32 ))
-fmacc_32ns_32ns_32ns_1ns_32_2_primitive_dsp_1_U204(
+fmacc_32ns_32ns_32ns_1ns_32_2_primitive_dsp_1_U12(
     .clk(ap_clk),
     .reset(ap_rst),
     .ce(1'b1),
@@ -278,9 +278,9 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if (((icmp_ln19_fu_214_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            i_6_fu_80 <= add_ln19_fu_208_p2;
+            i_5_fu_80 <= add_ln19_fu_208_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            i_6_fu_80 <= 10'd0;
+            i_5_fu_80 <= 10'd0;
         end
     end
 end
@@ -352,7 +352,7 @@ always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
         ap_sig_allocacmp_i = 10'd0;
     end else begin
-        ap_sig_allocacmp_i = i_6_fu_80;
+        ap_sig_allocacmp_i = i_5_fu_80;
     end
 end
 
@@ -529,7 +529,7 @@ assign icmp_ln19_fu_214_p2 = ((ap_sig_allocacmp_i == 10'd768) ? 1'b1 : 1'b0);
 
 assign icmp_ln21_fu_278_p2 = ((add_ln19_fu_208_p2 == 10'd768) ? 1'b1 : 1'b0);
 
-assign lshr_ln3_fu_224_p4 = {{ap_sig_allocacmp_i[9:3]}};
+assign lshr_ln2_fu_224_p4 = {{ap_sig_allocacmp_i[9:3]}};
 
 assign sum_local_out = sum_local_fu_76;
 
@@ -537,6 +537,6 @@ assign trunc_ln19_fu_220_p1 = ap_sig_allocacmp_i[2:0];
 
 assign v_fu_289_p17 = 'bx;
 
-assign zext_ln18_fu_234_p1 = lshr_ln3_fu_224_p4;
+assign zext_ln18_fu_234_p1 = lshr_ln2_fu_224_p4;
 
 endmodule //kernel_mhsa_kernel_mhsa_Pipeline_VITIS_LOOP_19_1

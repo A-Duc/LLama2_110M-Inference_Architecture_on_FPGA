@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "FFN",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "FFN"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn.tcl",
+    "sourceLine": 10,
+    "success": true
+  }
+]

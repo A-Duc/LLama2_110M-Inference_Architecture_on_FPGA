@@ -125,7 +125,7 @@ reg    compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3_c
 wire   [31:0] grp_fu_151_p2;
 wire   [31:0] grp_fu_151_p3;
 wire   [9:0] select_ln50_fu_197_p3;
-wire   [7:0] lshr_ln_fu_209_p4;
+wire   [7:0] lshr_ln9_fu_209_p4;
 wire   [31:0] tmp_fu_265_p9;
 reg    grp_fu_151_ce;
 reg    ap_done_reg;
@@ -164,7 +164,7 @@ kernel_mhsa_fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1 #(
     .din2_WIDTH( 32 ),
     .din3_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U261(
+fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U68(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(32'd0),
@@ -189,7 +189,7 @@ fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U261(
     .def_WIDTH( 32 ),
     .sel_WIDTH( 2 ),
     .dout_WIDTH( 32 ))
-sparsemux_9_2_32_1_1_U262(
+sparsemux_9_2_32_1_1_U69(
     .din0(compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_q0),
     .din1(compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1_q0),
     .din2(compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2_q0),
@@ -540,7 +540,7 @@ assign icmp_ln53_1_fu_249_p2 = ((add_ln53_fu_243_p2 == 10'd768) ? 1'b1 : 1'b0);
 
 assign icmp_ln53_fu_191_p2 = ((ap_sig_allocacmp_j_load == 10'd768) ? 1'b1 : 1'b0);
 
-assign lshr_ln_fu_209_p4 = {{select_ln50_fu_197_p3[9:2]}};
+assign lshr_ln9_fu_209_p4 = {{select_ln50_fu_197_p3[9:2]}};
 
 assign matrix_stream_read = matrix_stream_read_local;
 
@@ -554,6 +554,6 @@ assign tmp_fu_265_p9 = 'bx;
 
 assign trunc_ln53_fu_205_p1 = select_ln50_fu_197_p3[1:0];
 
-assign zext_ln52_fu_219_p1 = lshr_ln_fu_209_p4;
+assign zext_ln52_fu_219_p1 = lshr_ln9_fu_209_p4;
 
 endmodule //kernel_mhsa_compute_matmul_Pipeline_execute_dot_product

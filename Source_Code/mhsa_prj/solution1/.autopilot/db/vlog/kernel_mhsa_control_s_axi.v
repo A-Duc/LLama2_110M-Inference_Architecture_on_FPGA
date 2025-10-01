@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module kernel_mhsa_control_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 6,
+    C_S_AXI_ADDR_WIDTH = 7,
     C_S_AXI_DATA_WIDTH = 32
 )(
     input  wire                          ACLK,
@@ -35,6 +35,8 @@ module kernel_mhsa_control_s_axi
     output wire [63:0]                   current_token,
     output wire [31:0]                   position,
     output wire [63:0]                   weights,
+    output wire [63:0]                   key_cache,
+    output wire [63:0]                   value_cache,
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,
@@ -75,22 +77,38 @@ module kernel_mhsa_control_s_axi
 // 0x28 : Data signal of weights
 //        bit 31~0 - weights[63:32] (Read/Write)
 // 0x2c : reserved
+// 0x30 : Data signal of key_cache
+//        bit 31~0 - key_cache[31:0] (Read/Write)
+// 0x34 : Data signal of key_cache
+//        bit 31~0 - key_cache[63:32] (Read/Write)
+// 0x38 : reserved
+// 0x3c : Data signal of value_cache
+//        bit 31~0 - value_cache[31:0] (Read/Write)
+// 0x40 : Data signal of value_cache
+//        bit 31~0 - value_cache[63:32] (Read/Write)
+// 0x44 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL              = 6'h00,
-    ADDR_GIE                  = 6'h04,
-    ADDR_IER                  = 6'h08,
-    ADDR_ISR                  = 6'h0c,
-    ADDR_CURRENT_TOKEN_DATA_0 = 6'h10,
-    ADDR_CURRENT_TOKEN_DATA_1 = 6'h14,
-    ADDR_CURRENT_TOKEN_CTRL   = 6'h18,
-    ADDR_POSITION_DATA_0      = 6'h1c,
-    ADDR_POSITION_CTRL        = 6'h20,
-    ADDR_WEIGHTS_DATA_0       = 6'h24,
-    ADDR_WEIGHTS_DATA_1       = 6'h28,
-    ADDR_WEIGHTS_CTRL         = 6'h2c,
+    ADDR_AP_CTRL              = 7'h00,
+    ADDR_GIE                  = 7'h04,
+    ADDR_IER                  = 7'h08,
+    ADDR_ISR                  = 7'h0c,
+    ADDR_CURRENT_TOKEN_DATA_0 = 7'h10,
+    ADDR_CURRENT_TOKEN_DATA_1 = 7'h14,
+    ADDR_CURRENT_TOKEN_CTRL   = 7'h18,
+    ADDR_POSITION_DATA_0      = 7'h1c,
+    ADDR_POSITION_CTRL        = 7'h20,
+    ADDR_WEIGHTS_DATA_0       = 7'h24,
+    ADDR_WEIGHTS_DATA_1       = 7'h28,
+    ADDR_WEIGHTS_CTRL         = 7'h2c,
+    ADDR_KEY_CACHE_DATA_0     = 7'h30,
+    ADDR_KEY_CACHE_DATA_1     = 7'h34,
+    ADDR_KEY_CACHE_CTRL       = 7'h38,
+    ADDR_VALUE_CACHE_DATA_0   = 7'h3c,
+    ADDR_VALUE_CACHE_DATA_1   = 7'h40,
+    ADDR_VALUE_CACHE_CTRL     = 7'h44,
     WRIDLE                    = 2'd0,
     WRDATA                    = 2'd1,
     WRRESP                    = 2'd2,
@@ -98,7 +116,7 @@ localparam
     RDIDLE                    = 2'd0,
     RDDATA                    = 2'd1,
     RDRESET                   = 2'd2,
-    ADDR_BITS                = 6;
+    ADDR_BITS                = 7;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -130,6 +148,8 @@ localparam
     reg  [63:0]                   int_current_token = 'b0;
     reg  [31:0]                   int_position = 'b0;
     reg  [63:0]                   int_weights = 'b0;
+    reg  [63:0]                   int_key_cache = 'b0;
+    reg  [63:0]                   int_value_cache = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -254,6 +274,18 @@ always @(posedge ACLK) begin
                 ADDR_WEIGHTS_DATA_1: begin
                     rdata <= int_weights[63:32];
                 end
+                ADDR_KEY_CACHE_DATA_0: begin
+                    rdata <= int_key_cache[31:0];
+                end
+                ADDR_KEY_CACHE_DATA_1: begin
+                    rdata <= int_key_cache[63:32];
+                end
+                ADDR_VALUE_CACHE_DATA_0: begin
+                    rdata <= int_value_cache[31:0];
+                end
+                ADDR_VALUE_CACHE_DATA_1: begin
+                    rdata <= int_value_cache[63:32];
+                end
             endcase
         end
     end
@@ -269,6 +301,8 @@ assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
 assign current_token     = int_current_token;
 assign position          = int_position;
 assign weights           = int_weights;
+assign key_cache         = int_key_cache;
+assign value_cache       = int_value_cache;
 // int_interrupt
 always @(posedge ACLK) begin
     if (ARESET)
@@ -448,6 +482,46 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_WEIGHTS_DATA_1)
             int_weights[63:32] <= (WDATA[31:0] & wmask) | (int_weights[63:32] & ~wmask);
+    end
+end
+
+// int_key_cache[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_key_cache[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_KEY_CACHE_DATA_0)
+            int_key_cache[31:0] <= (WDATA[31:0] & wmask) | (int_key_cache[31:0] & ~wmask);
+    end
+end
+
+// int_key_cache[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_key_cache[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_KEY_CACHE_DATA_1)
+            int_key_cache[63:32] <= (WDATA[31:0] & wmask) | (int_key_cache[63:32] & ~wmask);
+    end
+end
+
+// int_value_cache[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_value_cache[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_VALUE_CACHE_DATA_0)
+            int_value_cache[31:0] <= (WDATA[31:0] & wmask) | (int_value_cache[31:0] & ~wmask);
+    end
+end
+
+// int_value_cache[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_value_cache[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_VALUE_CACHE_DATA_1)
+            int_value_cache[63:32] <= (WDATA[31:0] & wmask) | (int_value_cache[63:32] & ~wmask);
     end
 end
 

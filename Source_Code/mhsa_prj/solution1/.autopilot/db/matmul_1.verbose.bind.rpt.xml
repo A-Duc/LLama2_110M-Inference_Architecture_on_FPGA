@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'matmul_1'" level="0">
-<item name = "Date">Sat Sep 27 23:14:46 2025
+<item name = "Date">Tue Sep 30 23:58:15 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -31,10 +31,10 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_vec_fu_124">load_vec, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_load_mat_fu_145">load_mat, 589838, 589838, 2.359 ms, 2.359 ms, 589838, 589838, no</column>
-<column name="grp_compute_matmul_fu_156">compute_matmul, 590601, 590601, 2.362 ms, 2.362 ms, 590601, 590601, no</column>
-<column name="grp_store_result_fu_171">store_result, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_vec_fu_114">load_vec, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_mat_fu_135">load_mat, 589838, 589838, 2.359 ms, 2.359 ms, 589838, 589838, no</column>
+<column name="grp_compute_matmul_fu_144">compute_matmul, 590601, 590601, 2.362 ms, 2.362 ms, 590601, 590601, no</column>
+<column name="grp_store_result_fu_159">store_result, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

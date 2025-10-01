@@ -8,7 +8,6 @@
 #include "tensor.hpp"
 #include "kernel_RMS_Norm.hpp"
 
-void kernel_mhsa(float current_token[dim], int position, 
-                 float weights[layers * (dim + 3 * dim * dim + dim * dim)]);
+void kernel_mhsa(float current_token[dim], int position);
 
 #endif // KERNEL_MHSA_HPP

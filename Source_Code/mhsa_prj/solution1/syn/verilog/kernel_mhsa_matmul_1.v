@@ -214,12 +214,10 @@ module kernel_mhsa_matmul_1 (
         m_axi_gmem1_0_BID,
         m_axi_gmem1_0_BUSER,
         i_mat,
-        idx2,
         ap_clk,
         ap_rst,
         ap_start,
         i_mat_ap_vld,
-        idx2_ap_vld,
         ap_done,
         ap_ready,
         ap_idle,
@@ -434,12 +432,10 @@ input  [1:0] m_axi_gmem1_0_BRESP;
 input  [0:0] m_axi_gmem1_0_BID;
 input  [0:0] m_axi_gmem1_0_BUSER;
 input  [63:0] i_mat;
-input  [24:0] idx2;
 input   ap_clk;
 input   ap_rst;
 input   ap_start;
 input   i_mat_ap_vld;
-input   idx2_ap_vld;
 output   ap_done;
 output   ap_ready;
 output   ap_idle;
@@ -699,8 +695,7 @@ kernel_mhsa_load_mat load_mat_U0(
     .matrix_stream_full_n(matrix_stream_full_n),
     .matrix_stream_write(load_mat_U0_matrix_stream_write),
     .matrix_stream_num_data_valid(matrix_stream_num_data_valid),
-    .matrix_stream_fifo_cap(matrix_stream_fifo_cap),
-    .idx(idx2)
+    .matrix_stream_fifo_cap(matrix_stream_fifo_cap)
 );
 
 kernel_mhsa_compute_matmul compute_matmul_U0(

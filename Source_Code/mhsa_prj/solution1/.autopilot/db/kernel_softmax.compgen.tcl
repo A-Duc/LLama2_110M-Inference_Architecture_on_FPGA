@@ -24,12 +24,6 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-set name kernel_mhsa_facc_32ns_32ns_1ns_32_2_primitive_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {facc} IMPL {primitivedsp} LATENCY 1 ALLOW_PRAGMA 1
-}
-
-
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler kernel_mhsa_kernel_softmax_vec_local_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
@@ -46,7 +40,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1044 \
+    id 437 \
     name i_vec \
     reset_level 1 \
     sync_rst true \
@@ -60,6 +54,21 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 }
 }
 
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 438 \
+    name vec_size \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_vec_size \
+    op interface \
+    ports { vec_size { I 32 vector } } \
+} "
+}
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {

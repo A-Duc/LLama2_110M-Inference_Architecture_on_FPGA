@@ -63,13 +63,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>kernel_MHSA.cpp:127</SourceLocation>
+<SourceLocation>kernel_MHSA.cpp:99</SourceLocation>
 <SummaryOfLoopViolations>
 <ATT_INIT>
 <Name>ATT_INIT</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>kernel_MHSA.cpp:127</SourceLocation>
+<SourceLocation>kernel_MHSA.cpp:99</SourceLocation>
 </ATT_INIT>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -160,8 +160,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>select_ln128</name>
-<Object>select_ln128</Object>
+<name>select_ln100</name>
+<Object>select_ln100</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

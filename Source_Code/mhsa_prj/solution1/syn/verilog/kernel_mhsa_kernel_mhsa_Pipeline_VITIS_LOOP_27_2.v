@@ -117,9 +117,9 @@ module kernel_mhsa_kernel_mhsa_Pipeline_VITIS_LOOP_27_2 (
         current_input_14_ce0,
         current_input_14_q0,
         norm,
-        grp_fu_4540_p_din0,
-        grp_fu_4540_p_din1,
-        grp_fu_4540_p_dout0
+        grp_fu_3617_p_din0,
+        grp_fu_3617_p_din1,
+        grp_fu_3617_p_dout0
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
@@ -234,9 +234,9 @@ output  [6:0] current_input_14_address0;
 output   current_input_14_ce0;
 input  [31:0] current_input_14_q0;
 input  [31:0] norm;
-output  [31:0] grp_fu_4540_p_din0;
-output  [31:0] grp_fu_4540_p_din1;
-input  [31:0] grp_fu_4540_p_dout0;
+output  [31:0] grp_fu_3617_p_din0;
+output  [31:0] grp_fu_3617_p_din1;
+input  [31:0] grp_fu_3617_p_dout0;
 
 reg ap_idle;
 reg m_axi_gmem1_0_RREADY;
@@ -325,7 +325,7 @@ wire   [63:0] zext_ln27_fu_380_p1;
 reg   [9:0] i_fu_110;
 wire   [9:0] add_ln27_fu_354_p2;
 wire    ap_loop_init;
-reg   [9:0] ap_sig_allocacmp_i_7;
+reg   [9:0] ap_sig_allocacmp_i_5;
 reg    current_input_ce0_local;
 reg    current_input_8_ce0_local;
 reg    current_input_9_ce0_local;
@@ -360,7 +360,7 @@ reg   [31:0] grp_fu_331_p1;
 reg   [31:0] grp_fu_331_p1_keep;
 reg   [31:0] grp_fu_335_p0;
 reg   [31:0] grp_fu_335_p1;
-wire   [6:0] lshr_ln4_fu_370_p4;
+wire   [6:0] lshr_ln3_fu_370_p4;
 wire   [31:0] tmp_2_fu_455_p17;
 reg    ap_done_reg;
 wire    ap_continue_int;
@@ -405,7 +405,7 @@ kernel_mhsa_fmul_32ns_32ns_32_1_primitive_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fmul_32ns_32ns_32_1_primitive_dsp_1_U217(
+fmul_32ns_32ns_32_1_primitive_dsp_1_U25(
     .din0(grp_fu_335_p0),
     .din1(grp_fu_335_p1),
     .dout(grp_fu_335_p2)
@@ -433,7 +433,7 @@ fmul_32ns_32ns_32_1_primitive_dsp_1_U217(
     .def_WIDTH( 32 ),
     .sel_WIDTH( 3 ),
     .dout_WIDTH( 32 ))
-sparsemux_17_3_32_1_1_U218(
+sparsemux_17_3_32_1_1_U26(
     .din0(current_input_q0),
     .din1(current_input_8_q0),
     .din2(current_input_9_q0),
@@ -597,7 +597,7 @@ always @ (posedge ap_clk) begin
         ap_loop_exit_ready_pp0_iter3_reg <= ap_loop_exit_ready_pp0_iter2_reg;
         ap_loop_exit_ready_pp0_iter4_reg <= ap_loop_exit_ready_pp0_iter3_reg;
         ap_loop_exit_ready_pp0_iter5_reg <= ap_loop_exit_ready_pp0_iter4_reg;
-        mul10_i_reg_664 <= grp_fu_4540_p_dout0;
+        mul10_i_reg_664 <= grp_fu_3617_p_dout0;
         mul13_i_reg_675 <= grp_fu_335_p2;
         out_rms_vec_1_addr_reg_616_pp0_iter2_reg <= out_rms_vec_1_addr_reg_616_pp0_iter1_reg;
         out_rms_vec_1_addr_reg_616_pp0_iter3_reg <= out_rms_vec_1_addr_reg_616_pp0_iter2_reg;
@@ -694,9 +694,9 @@ end
 
 always @ (*) begin
     if (((ap_loop_init == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0))) begin
-        ap_sig_allocacmp_i_7 = 10'd0;
+        ap_sig_allocacmp_i_5 = 10'd0;
     end else begin
-        ap_sig_allocacmp_i_7 = i_fu_110;
+        ap_sig_allocacmp_i_5 = i_fu_110;
     end
 end
 
@@ -935,7 +935,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln27_fu_354_p2 = (ap_sig_allocacmp_i_7 + 10'd1);
+assign add_ln27_fu_354_p2 = (ap_sig_allocacmp_i_5 + 10'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -1003,13 +1003,13 @@ assign current_input_address0 = zext_ln27_fu_380_p1;
 
 assign current_input_ce0 = current_input_ce0_local;
 
-assign grp_fu_4540_p_din0 = grp_fu_331_p0;
+assign grp_fu_3617_p_din0 = grp_fu_331_p0;
 
-assign grp_fu_4540_p_din1 = grp_fu_331_p1;
+assign grp_fu_3617_p_din1 = grp_fu_331_p1;
 
-assign icmp_ln27_fu_360_p2 = ((ap_sig_allocacmp_i_7 == 10'd768) ? 1'b1 : 1'b0);
+assign icmp_ln27_fu_360_p2 = ((ap_sig_allocacmp_i_5 == 10'd768) ? 1'b1 : 1'b0);
 
-assign lshr_ln4_fu_370_p4 = {{ap_sig_allocacmp_i_7[9:3]}};
+assign lshr_ln3_fu_370_p4 = {{ap_sig_allocacmp_i_5[9:3]}};
 
 assign m_axi_gmem1_0_ARADDR = 64'd0;
 
@@ -1139,8 +1139,8 @@ assign out_rms_vec_we0 = out_rms_vec_we0_local;
 
 assign tmp_2_fu_455_p17 = 'bx;
 
-assign trunc_ln27_fu_366_p1 = ap_sig_allocacmp_i_7[2:0];
+assign trunc_ln27_fu_366_p1 = ap_sig_allocacmp_i_5[2:0];
 
-assign zext_ln27_fu_380_p1 = lshr_ln4_fu_370_p4;
+assign zext_ln27_fu_380_p1 = lshr_ln3_fu_370_p4;
 
 endmodule //kernel_mhsa_kernel_mhsa_Pipeline_VITIS_LOOP_27_2

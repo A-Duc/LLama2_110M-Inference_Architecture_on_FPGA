@@ -1,45 +1,133 @@
 {
   "0": {
-    "basicblocks": 125,
-    "calls": "23 19 19 19 32 32 43 10 19",
+    "basicblocks": 111,
+    "calls": "24 13 13 13 53 53 34 18 13",
     "control_depth": 1,
-    "def_use_depth": 6,
+    "def_use_depth": 8,
     "file": "kernel_MHSA.cpp",
     "fileloc": 6,
-    "instructions": 447,
+    "instructions": 415,
     "loads": {
-      "G": 3,
       "L": 10,
-      "T": 1
+      "T": 3
     },
-    "memory_accesses": 29,
+    "memory_accesses": 27,
     "name": "kernel_mhsa",
     "stores": {
-      "G": 5,
       "L": 9,
-      "T": 1
+      "T": 3
     },
-    "total_instructions": 59991
+    "total_instructions": 59959
   },
   "1": {
-    "basicblocks": 9,
-    "calls": "7 14 15 28",
+    "basicblocks": 1,
+    "calls": "",
     "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "hls_range_redux.h",
-    "fileloc": 431,
-    "instructions": 200,
-    "loads": {
-      "L": 10
-    },
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 868,
+    "instructions": 65,
     "memory_accesses": 0,
-    "name": "range_redux_payne_hanek_hotbm<29, float, 29, 29>",
-    "stores": {
-      "L": 10
-    },
-    "total_instructions": 2142
+    "name": "__cxx_global_var_init.428",
+    "total_instructions": 1089
   },
   "10": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "x_hls_float_utils.h",
+    "fileloc": 48,
+    "instructions": 14,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.14",
+    "total_instructions": 222
+  },
+  "11": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "x_hls_utils.h",
+    "fileloc": 281,
+    "instructions": 4,
+    "memory_accesses": 0,
+    "name": "fp_struct",
+    "total_instructions": 4
+  },
+  "12": {
+    "basicblocks": 1,
+    "calls": "10",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "sincoshotbmfloat.pp.cpp",
+    "fileloc": 0,
+    "instructions": 2,
+    "memory_accesses": 0,
+    "name": "",
+    "total_instructions": 224
+  },
+  "13": {
+    "basicblocks": 1,
+    "calls": "28 3 44 58",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 75,
+    "instructions": 26,
+    "memory_accesses": 0,
+    "name": "matmul",
+    "total_instructions": 182
+  },
+  "14": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 2459,
+    "instructions": 257,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.1300",
+    "total_instructions": 4353
+  },
+  "15": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 679,
+    "instructions": 65,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.341",
+    "total_instructions": 1089
+  },
+  "16": {
+    "basicblocks": 1,
+    "calls": "35",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "powfloat.cpp",
+    "fileloc": 6,
+    "instructions": 2,
+    "memory_accesses": 0,
+    "name": "pow",
+    "total_instructions": 18656
+  },
+  "17": {
+    "basicblocks": 1,
+    "calls": "46",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "x_hls_utils.h",
+    "fileloc": 346,
+    "instructions": 2,
+    "memory_accesses": 0,
+    "name": "to_ieee",
+    "total_instructions": 303
+  },
+  "18": {
     "basicblocks": 27,
     "calls": "",
     "control_depth": 2,
@@ -57,189 +145,86 @@
     },
     "total_instructions": 83
   },
-  "11": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 529,
-    "instructions": 65,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.213",
-    "total_instructions": 1089
-  },
-  "12": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 379,
-    "instructions": 65,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.148",
-    "total_instructions": 1089
-  },
-  "13": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 454,
-    "instructions": 65,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.149",
-    "total_instructions": 1089
-  },
-  "14": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 2,
-    "file": "x_hls_utils.h",
-    "fileloc": 316,
-    "instructions": 8,
-    "memory_accesses": 0,
-    "name": "expv",
-    "total_instructions": 109
-  },
-  "15": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "hls_range_redux.h",
-    "fileloc": 373,
-    "instructions": 50,
-    "loads": {
-      "G": 1
-    },
-    "memory_accesses": 0,
-    "name": "table_lookup_4oPi_hotbm<23, 29>",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 264
-  },
-  "16": {
-    "basicblocks": 1,
-    "calls": "52 48 46 53",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "powrfloat.pp.cpp",
-    "fileloc": 0,
-    "instructions": 5,
-    "memory_accesses": 0,
-    "name": "",
-    "total_instructions": 19593
-  },
-  "17": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "hls_pow.h",
-    "fileloc": 30,
-    "instructions": 89,
-    "loads": {
-      "G": 1,
-      "L": 1
-    },
-    "memory_accesses": 0,
-    "name": "log_range_reduce<ap_fixed<65, 9, AP_TRN, AP_WRAP, 0>, 12, 6, 44, 39>",
-    "stores": {
-      "L": 2
-    },
-    "total_instructions": 1240
-  },
-  "18": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 39,
-    "instructions": 17,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.16",
-    "total_instructions": 273
-  },
   "19": {
     "basicblocks": 1,
-    "calls": "5 8 4 26",
+    "calls": "",
     "control_depth": 0,
-    "def_use_depth": 1,
-    "file": "kernel_MatMul.cpp",
-    "fileloc": 75,
-    "instructions": 26,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 2726,
+    "instructions": 257,
     "memory_accesses": 0,
-    "name": "matmul",
-    "total_instructions": 182
+    "name": "__cxx_global_var_init.1556",
+    "total_instructions": 4353
   },
   "2": {
-    "basicblocks": 25,
-    "calls": "38 42 41 30",
-    "control_depth": 2,
-    "def_use_depth": 7,
-    "file": "x_hls_float_utils.h",
-    "fileloc": 256,
-    "instructions": 240,
-    "loads": {
-      "L": 10
-    },
-    "memory_accesses": 21,
-    "name": "scaled_fixed2ieee<29, 1>",
-    "stores": {
-      "L": 9
-    },
-    "total_instructions": 1482
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 2420,
+    "instructions": 33,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.1268",
+    "total_instructions": 545
   },
   "20": {
-    "basicblocks": 3,
-    "calls": "7",
+    "basicblocks": 1,
+    "calls": "",
     "control_depth": 0,
-    "def_use_depth": 2,
-    "file": "hls_isnan.h",
-    "fileloc": 16,
-    "instructions": 18,
+    "def_use_depth": 0,
+    "file": "hls_hotbm_tables_float.h",
+    "fileloc": 10,
+    "instructions": 129,
     "memory_accesses": 0,
-    "name": "generic_isnan<float>",
-    "total_instructions": 389
+    "name": "__cxx_global_var_init",
+    "total_instructions": 2177
   },
   "21": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
     "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 679,
-    "instructions": 65,
+    "file": "hls_hotbm_tables_float.h",
+    "fileloc": 48,
+    "instructions": 129,
     "memory_accesses": 0,
-    "name": "__cxx_global_var_init.341",
-    "total_instructions": 1089
+    "name": "__cxx_global_var_init.257",
+    "total_instructions": 2177
   },
   "22": {
+    "basicblocks": 14,
+    "calls": "62 51 47 38 38 62 62 17 17 17 17",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "hls_hotbm.h",
+    "fileloc": 129,
+    "instructions": 255,
+    "loads": {
+      "G": 3,
+      "L": 18
+    },
+    "memory_accesses": 0,
+    "name": "generic_sincos<float>",
+    "stores": {
+      "L": 18
+    },
+    "total_instructions": 10622
+  },
+  "23": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "hls_pow.h",
-    "fileloc": 30,
-    "instructions": 89,
-    "loads": {
-      "G": 1,
-      "L": 1
-    },
+    "def_use_depth": 0,
+    "file": "hls_hotbm_tables_float.h",
+    "fileloc": 107,
+    "instructions": 129,
     "memory_accesses": 0,
-    "name": "log_range_reduce<ap_fixed<65, 9, AP_TRN, AP_WRAP, 0>, 7, 6, 41, 44>",
-    "stores": {
-      "L": 2
-    },
-    "total_instructions": 1242
+    "name": "__cxx_global_var_init.641",
+    "total_instructions": 2177
   },
-  "23": {
+  "24": {
     "basicblocks": 13,
     "calls": "",
     "control_depth": 1,
@@ -257,57 +242,29 @@
     },
     "total_instructions": 43
   },
-  "24": {
+  "25": {
+    "basicblocks": 1,
+    "calls": "29",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "sincoshotbmfloat.cpp",
+    "fileloc": 47,
+    "instructions": 2,
+    "memory_accesses": 0,
+    "name": "sincosf",
+    "total_instructions": 10626
+  },
+  "26": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 4,
-    "file": "hls_hotbm_float.cpp",
-    "fileloc": 51,
-    "instructions": 210,
-    "loads": {
-      "L": 2
-    },
+    "def_use_depth": 0,
+    "file": "hls_hotbm_tables_float.h",
+    "fileloc": 166,
+    "instructions": 257,
     "memory_accesses": 0,
-    "name": "sincos_approximation<29, 29>",
-    "stores": {
-      "L": 2
-    },
-    "total_instructions": 2609
-  },
-  "25": {
-    "basicblocks": 14,
-    "calls": "7 1 24 2 2 7 7 30 30 30 30",
-    "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "hls_hotbm.h",
-    "fileloc": 129,
-    "instructions": 255,
-    "loads": {
-      "G": 3,
-      "L": 18
-    },
-    "memory_accesses": 0,
-    "name": "generic_sincos<float>",
-    "stores": {
-      "L": 18
-    },
-    "total_instructions": 10622
-  },
-  "26": {
-    "basicblocks": 7,
-    "calls": "",
-    "control_depth": 1,
-    "def_use_depth": 2,
-    "file": "kernel_MatMul.cpp",
-    "fileloc": 63,
-    "instructions": 14,
-    "memory_accesses": 2,
-    "name": "store_result",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 26
+    "name": "__cxx_global_var_init.887",
+    "total_instructions": 4353
   },
   "27": {
     "basicblocks": 1,
@@ -315,68 +272,194 @@
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "hls_pow_tables.h",
-    "fileloc": 2420,
-    "instructions": 33,
+    "fileloc": 232,
+    "instructions": 65,
     "memory_accesses": 0,
-    "name": "__cxx_global_var_init.1268",
-    "total_instructions": 545
+    "name": "__cxx_global_var_init.83",
+    "total_instructions": 1089
   },
   "28": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 2,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 9,
+    "instructions": 13,
+    "memory_accesses": 1,
+    "name": "load_vec",
+    "total_instructions": 19
+  },
+  "29": {
+    "basicblocks": 1,
+    "calls": "22",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "sincoshotbmfloat.cpp",
+    "fileloc": 15,
+    "instructions": 2,
+    "memory_accesses": 0,
+    "name": "sincos",
+    "total_instructions": 10624
+  },
+  "3": {
+    "basicblocks": 13,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 2,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 20,
+    "instructions": 24,
+    "memory_accesses": 1,
+    "name": "load_mat",
+    "total_instructions": 30
+  },
+  "30": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "hls_normalize.h",
-    "fileloc": 69,
-    "instructions": 29,
+    "def_use_depth": 0,
+    "file": "hls_hotbm_tables_float.h",
+    "fileloc": 130,
+    "instructions": 257,
     "memory_accesses": 0,
-    "name": "clz<29, 58, 0>",
-    "total_instructions": 164
+    "name": "__cxx_global_var_init.758",
+    "total_instructions": 4353
   },
-  "29": {
+  "31": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "hls_pow_tables.h",
-    "fileloc": 2726,
-    "instructions": 257,
+    "fileloc": 379,
+    "instructions": 65,
     "memory_accesses": 0,
-    "name": "__cxx_global_var_init.1556",
-    "total_instructions": 4353
+    "name": "__cxx_global_var_init.148",
+    "total_instructions": 1089
   },
-  "3": {
+  "32": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "hls_pow.h",
-    "fileloc": 30,
-    "instructions": 102,
-    "loads": {
-      "G": 1,
-      "L": 1
-    },
+    "def_use_depth": 0,
+    "file": "hls_hotbm_tables_float.h",
+    "fileloc": 69,
+    "instructions": 129,
     "memory_accesses": 0,
-    "name": "log_range_reduce<ap_fixed<65, 9, AP_TRN, AP_WRAP, 0>, 4, 4, 39, 41>",
-    "stores": {
-      "L": 2
-    },
-    "total_instructions": 1265
+    "name": "__cxx_global_var_init.383",
+    "total_instructions": 2177
   },
-  "30": {
+  "33": {
     "basicblocks": 1,
-    "calls": "35",
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 1634,
+    "instructions": 513,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.1010",
+    "total_instructions": 8705
+  },
+  "34": {
+    "basicblocks": 1,
+    "calls": "",
     "control_depth": 0,
     "def_use_depth": 1,
-    "file": "x_hls_utils.h",
-    "fileloc": 346,
+    "file": "sqrtfloat.cpp",
+    "fileloc": 11,
     "instructions": 2,
     "memory_accesses": 0,
-    "name": "to_ieee",
-    "total_instructions": 303
+    "name": "sqrtf",
+    "total_instructions": 2
   },
-  "31": {
+  "35": {
+    "basicblocks": 71,
+    "calls": "62 62 11 66 66 52 67 67 52 48 60 17 17 17 17 17 17 17 17 17",
+    "control_depth": 9,
+    "def_use_depth": 9,
+    "file": "hls_pow.h",
+    "fileloc": 291,
+    "instructions": 1064,
+    "loads": {
+      "G": 3,
+      "L": 23
+    },
+    "memory_accesses": 219,
+    "name": "pow_generic<float>",
+    "stores": {
+      "L": 26
+    },
+    "total_instructions": 18654
+  },
+  "36": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 1041,
+    "instructions": 65,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.474",
+    "total_instructions": 1089
+  },
+  "37": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 16,
+    "instructions": 17,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init",
+    "total_instructions": 273
+  },
+  "38": {
+    "basicblocks": 25,
+    "calls": "11 64 68 17",
+    "control_depth": 2,
+    "def_use_depth": 7,
+    "file": "x_hls_float_utils.h",
+    "fileloc": 256,
+    "instructions": 240,
+    "loads": {
+      "L": 10
+    },
+    "memory_accesses": 21,
+    "name": "scaled_fixed2ieee<29, 1>",
+    "stores": {
+      "L": 9
+    },
+    "total_instructions": 1482
+  },
+  "39": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 529,
+    "instructions": 65,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.213",
+    "total_instructions": 1089
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "20 57 21 32 43 23 30 26 41",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_hotbm_float.pp.cpp",
+    "fileloc": 0,
+    "instructions": 10,
+    "memory_accesses": 0,
+    "name": "",
+    "total_instructions": 26131
+  },
+  "40": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
@@ -388,115 +471,43 @@
     "name": "__cxx_global_var_init.277",
     "total_instructions": 1089
   },
-  "32": {
-    "basicblocks": 7,
-    "calls": "34 33",
-    "control_depth": 1,
-    "def_use_depth": 6,
-    "file": "kernel_Rope.cpp",
-    "fileloc": 3,
-    "instructions": 60,
-    "loads": {
-      "L": 8
-    },
-    "memory_accesses": 12,
-    "name": "RoPE",
-    "stores": {
-      "L": 2
-    },
-    "total_instructions": 29344
-  },
-  "33": {
-    "basicblocks": 1,
-    "calls": "6",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "sincoshotbmfloat.cpp",
-    "fileloc": 47,
-    "instructions": 2,
-    "memory_accesses": 0,
-    "name": "sincosf",
-    "total_instructions": 10626
-  },
-  "34": {
-    "basicblocks": 1,
-    "calls": "68",
-    "control_depth": 0,
-    "def_use_depth": 1,
-    "file": "powfloat.cpp",
-    "fileloc": 10,
-    "instructions": 2,
-    "memory_accesses": 0,
-    "name": "powf",
-    "total_instructions": 18658
-  },
-  "35": {
-    "basicblocks": 1,
-    "calls": "36",
-    "control_depth": 0,
-    "def_use_depth": 2,
-    "file": "x_hls_utils.h",
-    "fileloc": 322,
-    "instructions": 18,
-    "loads": {
-      "L": 1
-    },
-    "memory_accesses": 0,
-    "name": "to_float",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 301
-  },
-  "36": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 2,
-    "file": "x_hls_utils.h",
-    "fileloc": 309,
-    "instructions": 32,
-    "memory_accesses": 0,
-    "name": "data",
-    "total_instructions": 279
-  },
-  "37": {
-    "basicblocks": 1,
-    "calls": "61",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "sincoshotbmfloat.pp.cpp",
-    "fileloc": 0,
-    "instructions": 2,
-    "memory_accesses": 0,
-    "name": "",
-    "total_instructions": 224
-  },
-  "38": {
+  "41": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
     "def_use_depth": 0,
-    "file": "x_hls_utils.h",
-    "fileloc": 281,
-    "instructions": 4,
+    "file": "hls_hotbm_tables_float.h",
+    "fileloc": 202,
+    "instructions": 257,
     "memory_accesses": 0,
-    "name": "fp_struct",
-    "total_instructions": 4
+    "name": "__cxx_global_var_init.1016",
+    "total_instructions": 4353
   },
-  "39": {
+  "42": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "hls_pow.h",
-    "fileloc": 156,
-    "instructions": 40,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 62,
+    "instructions": 17,
     "memory_accesses": 0,
-    "name": "exp_Z1P_m_1",
-    "total_instructions": 360
+    "name": "__cxx_global_var_init.17",
+    "total_instructions": 273
   },
-  "4": {
+  "43": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_hotbm_tables_float.h",
+    "fileloc": 88,
+    "instructions": 129,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.512",
+    "total_instructions": 2177
+  },
+  "44": {
     "basicblocks": 19,
     "calls": "",
     "control_depth": 1,
@@ -516,63 +527,57 @@
     },
     "total_instructions": 78
   },
-  "40": {
-    "basicblocks": 1,
-    "calls": "56 18 65 58 57 63 64 12 13 11 31 21 27 9 29",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "pownfloat.pp.cpp",
-    "fileloc": 0,
-    "instructions": 16,
-    "memory_accesses": 0,
-    "name": "",
-    "total_instructions": 19887
-  },
-  "41": {
+  "45": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 454,
+    "instructions": 65,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.149",
+    "total_instructions": 1089
+  },
+  "46": {
+    "basicblocks": 1,
+    "calls": "7",
+    "control_depth": 0,
     "def_use_depth": 2,
     "file": "x_hls_utils.h",
-    "fileloc": 336,
-    "instructions": 24,
+    "fileloc": 322,
+    "instructions": 18,
     "loads": {
       "L": 1
     },
     "memory_accesses": 0,
-    "name": "set_mantissa",
+    "name": "to_float",
     "stores": {
       "L": 1
     },
-    "total_instructions": 111
+    "total_instructions": 301
   },
-  "42": {
+  "47": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 2,
-    "file": "hls_normalize.h",
-    "fileloc": 79,
-    "instructions": 9,
+    "def_use_depth": 4,
+    "file": "hls_hotbm_float.cpp",
+    "fileloc": 51,
+    "instructions": 210,
+    "loads": {
+      "L": 2
+    },
     "memory_accesses": 0,
-    "name": "clz",
-    "total_instructions": 29
+    "name": "sincos_approximation<29, 29>",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 2609
   },
-  "43": {
+  "48": {
     "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 1,
-    "file": "sqrtfloat.cpp",
-    "fileloc": 11,
-    "instructions": 2,
-    "memory_accesses": 0,
-    "name": "sqrtf",
-    "total_instructions": 2
-  },
-  "44": {
-    "basicblocks": 1,
-    "calls": "3 22 17",
+    "calls": "5 59 9",
     "control_depth": 0,
     "def_use_depth": 2,
     "file": "hls_pow.h",
@@ -588,170 +593,7 @@
     },
     "total_instructions": 4399
   },
-  "45": {
-    "basicblocks": 71,
-    "calls": "7 7 38 14 14 50 20 20 50 44 39 30 30 30 30 30 30 30 30 30",
-    "control_depth": 9,
-    "def_use_depth": 9,
-    "file": "hls_pow.h",
-    "fileloc": 291,
-    "instructions": 1064,
-    "loads": {
-      "G": 3,
-      "L": 23
-    },
-    "memory_accesses": 219,
-    "name": "pow_generic<float>",
-    "stores": {
-      "L": 26
-    },
-    "total_instructions": 18654
-  },
-  "46": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 1115,
-    "instructions": 513,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.497",
-    "total_instructions": 8705
-  },
-  "47": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_tables_float.h",
-    "fileloc": 29,
-    "instructions": 129,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.128",
-    "total_instructions": 2177
-  },
-  "48": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 1041,
-    "instructions": 65,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.474",
-    "total_instructions": 1089
-  },
   "49": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_tables_float.h",
-    "fileloc": 69,
-    "instructions": 129,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.383",
-    "total_instructions": 2177
-  },
-  "5": {
-    "basicblocks": 7,
-    "calls": "",
-    "control_depth": 1,
-    "def_use_depth": 2,
-    "file": "kernel_MatMul.cpp",
-    "fileloc": 9,
-    "instructions": 13,
-    "memory_accesses": 1,
-    "name": "load_vec",
-    "total_instructions": 19
-  },
-  "50": {
-    "basicblocks": 3,
-    "calls": "7",
-    "control_depth": 0,
-    "def_use_depth": 2,
-    "file": "hls_isinf.h",
-    "fileloc": 16,
-    "instructions": 18,
-    "memory_accesses": 0,
-    "name": "generic_isinf<float>",
-    "total_instructions": 388
-  },
-  "51": {
-    "basicblocks": 1,
-    "calls": "59 47 55 49 54 66 67 62 60",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_float.pp.cpp",
-    "fileloc": 0,
-    "instructions": 10,
-    "memory_accesses": 0,
-    "name": "",
-    "total_instructions": 26131
-  },
-  "52": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 868,
-    "instructions": 65,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.428",
-    "total_instructions": 1089
-  },
-  "53": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 1634,
-    "instructions": 513,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.1010",
-    "total_instructions": 8705
-  },
-  "54": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_tables_float.h",
-    "fileloc": 88,
-    "instructions": 129,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.512",
-    "total_instructions": 2177
-  },
-  "55": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_tables_float.h",
-    "fileloc": 48,
-    "instructions": 129,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.257",
-    "total_instructions": 2177
-  },
-  "56": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 16,
-    "instructions": 17,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init",
-    "total_instructions": 273
-  },
-  "57": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
@@ -763,7 +605,98 @@
     "name": "__cxx_global_var_init.82",
     "total_instructions": 1089
   },
-  "58": {
+  "5": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "hls_pow.h",
+    "fileloc": 30,
+    "instructions": 102,
+    "loads": {
+      "G": 1,
+      "L": 1
+    },
+    "memory_accesses": 0,
+    "name": "log_range_reduce<ap_fixed<65, 9, AP_TRN, AP_WRAP, 0>, 4, 4, 39, 41>",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 1265
+  },
+  "50": {
+    "basicblocks": 1,
+    "calls": "37 54 42 55 49 27 56 31 45 39 40 15 2 14 19",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "pownfloat.pp.cpp",
+    "fileloc": 0,
+    "instructions": 16,
+    "memory_accesses": 0,
+    "name": "",
+    "total_instructions": 19887
+  },
+  "51": {
+    "basicblocks": 9,
+    "calls": "62 66 63 65",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "hls_range_redux.h",
+    "fileloc": 431,
+    "instructions": 200,
+    "loads": {
+      "L": 10
+    },
+    "memory_accesses": 0,
+    "name": "range_redux_payne_hanek_hotbm<29, float, 29, 29>",
+    "stores": {
+      "L": 10
+    },
+    "total_instructions": 2142
+  },
+  "52": {
+    "basicblocks": 3,
+    "calls": "62",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "hls_isinf.h",
+    "fileloc": 16,
+    "instructions": 18,
+    "memory_accesses": 0,
+    "name": "generic_isinf<float>",
+    "total_instructions": 388
+  },
+  "53": {
+    "basicblocks": 7,
+    "calls": "61 25",
+    "control_depth": 1,
+    "def_use_depth": 6,
+    "file": "kernel_Rope.cpp",
+    "fileloc": 3,
+    "instructions": 60,
+    "loads": {
+      "L": 8
+    },
+    "memory_accesses": 12,
+    "name": "RoPE",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 29344
+  },
+  "54": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_pow_tables.h",
+    "fileloc": 39,
+    "instructions": 17,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.16",
+    "total_instructions": 273
+  },
+  "55": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
@@ -775,79 +708,7 @@
     "name": "__cxx_global_var_init.18",
     "total_instructions": 1089
   },
-  "59": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_tables_float.h",
-    "fileloc": 10,
-    "instructions": 129,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init",
-    "total_instructions": 2177
-  },
-  "6": {
-    "basicblocks": 1,
-    "calls": "25",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "sincoshotbmfloat.cpp",
-    "fileloc": 15,
-    "instructions": 2,
-    "memory_accesses": 0,
-    "name": "sincos",
-    "total_instructions": 10624
-  },
-  "60": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_tables_float.h",
-    "fileloc": 202,
-    "instructions": 257,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.1016",
-    "total_instructions": 4353
-  },
-  "61": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "x_hls_float_utils.h",
-    "fileloc": 48,
-    "instructions": 14,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.14",
-    "total_instructions": 222
-  },
-  "62": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_tables_float.h",
-    "fileloc": 166,
-    "instructions": 257,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.887",
-    "total_instructions": 4353
-  },
-  "63": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 232,
-    "instructions": 65,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.83",
-    "total_instructions": 1089
-  },
-  "64": {
+  "56": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
@@ -859,55 +720,89 @@
     "name": "__cxx_global_var_init.84",
     "total_instructions": 1089
   },
-  "65": {
+  "57": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "hls_hotbm_tables_float.h",
+    "fileloc": 29,
+    "instructions": 129,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.128",
+    "total_instructions": 2177
+  },
+  "58": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 2,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 63,
+    "instructions": 14,
+    "memory_accesses": 2,
+    "name": "store_result",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 26
+  },
+  "59": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "hls_pow.h",
+    "fileloc": 30,
+    "instructions": 89,
+    "loads": {
+      "G": 1,
+      "L": 1
+    },
+    "memory_accesses": 0,
+    "name": "log_range_reduce<ap_fixed<65, 9, AP_TRN, AP_WRAP, 0>, 7, 6, 41, 44>",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 1242
+  },
+  "6": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "hls_pow_tables.h",
-    "fileloc": 62,
-    "instructions": 17,
+    "fileloc": 1115,
+    "instructions": 513,
     "memory_accesses": 0,
-    "name": "__cxx_global_var_init.17",
-    "total_instructions": 273
+    "name": "__cxx_global_var_init.497",
+    "total_instructions": 8705
   },
-  "66": {
+  "60": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_tables_float.h",
-    "fileloc": 107,
-    "instructions": 129,
+    "def_use_depth": 3,
+    "file": "hls_pow.h",
+    "fileloc": 156,
+    "instructions": 40,
     "memory_accesses": 0,
-    "name": "__cxx_global_var_init.641",
-    "total_instructions": 2177
+    "name": "exp_Z1P_m_1",
+    "total_instructions": 360
   },
-  "67": {
+  "61": {
     "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_hotbm_tables_float.h",
-    "fileloc": 130,
-    "instructions": 257,
-    "memory_accesses": 0,
-    "name": "__cxx_global_var_init.758",
-    "total_instructions": 4353
-  },
-  "68": {
-    "basicblocks": 1,
-    "calls": "45",
+    "calls": "16",
     "control_depth": 0,
     "def_use_depth": 1,
     "file": "powfloat.cpp",
-    "fileloc": 6,
+    "fileloc": 10,
     "instructions": 2,
     "memory_accesses": 0,
-    "name": "pow",
-    "total_instructions": 18656
+    "name": "powf",
+    "total_instructions": 18658
   },
-  "7": {
+  "62": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
@@ -925,28 +820,131 @@
     },
     "total_instructions": 318
   },
-  "8": {
-    "basicblocks": 13,
+  "63": {
+    "basicblocks": 1,
     "calls": "",
-    "control_depth": 1,
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "hls_range_redux.h",
+    "fileloc": 373,
+    "instructions": 50,
+    "loads": {
+      "G": 1
+    },
+    "memory_accesses": 0,
+    "name": "table_lookup_4oPi_hotbm<23, 29>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 264
+  },
+  "64": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
     "def_use_depth": 2,
-    "file": "kernel_MatMul.cpp",
-    "fileloc": 20,
+    "file": "hls_normalize.h",
+    "fileloc": 79,
+    "instructions": 9,
+    "memory_accesses": 0,
+    "name": "clz",
+    "total_instructions": 29
+  },
+  "65": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "hls_normalize.h",
+    "fileloc": 69,
+    "instructions": 29,
+    "memory_accesses": 0,
+    "name": "clz<29, 58, 0>",
+    "total_instructions": 164
+  },
+  "66": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "x_hls_utils.h",
+    "fileloc": 316,
+    "instructions": 8,
+    "memory_accesses": 0,
+    "name": "expv",
+    "total_instructions": 109
+  },
+  "67": {
+    "basicblocks": 3,
+    "calls": "62",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "hls_isnan.h",
+    "fileloc": 16,
+    "instructions": 18,
+    "memory_accesses": 0,
+    "name": "generic_isnan<float>",
+    "total_instructions": 389
+  },
+  "68": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "x_hls_utils.h",
+    "fileloc": 336,
     "instructions": 24,
-    "memory_accesses": 1,
-    "name": "load_mat",
-    "total_instructions": 30
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 0,
+    "name": "set_mantissa",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 111
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "x_hls_utils.h",
+    "fileloc": 309,
+    "instructions": 32,
+    "memory_accesses": 0,
+    "name": "data",
+    "total_instructions": 279
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "1 36 6 33",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "powrfloat.pp.cpp",
+    "fileloc": 0,
+    "instructions": 5,
+    "memory_accesses": 0,
+    "name": "",
+    "total_instructions": 19593
   },
   "9": {
     "basicblocks": 1,
     "calls": "",
     "control_depth": 0,
-    "def_use_depth": 0,
-    "file": "hls_pow_tables.h",
-    "fileloc": 2459,
-    "instructions": 257,
+    "def_use_depth": 3,
+    "file": "hls_pow.h",
+    "fileloc": 30,
+    "instructions": 89,
+    "loads": {
+      "G": 1,
+      "L": 1
+    },
     "memory_accesses": 0,
-    "name": "__cxx_global_var_init.1300",
-    "total_instructions": 4353
+    "name": "log_range_reduce<ap_fixed<65, 9, AP_TRN, AP_WRAP, 0>, 12, 6, 44, 39>",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 1240
   }
 }

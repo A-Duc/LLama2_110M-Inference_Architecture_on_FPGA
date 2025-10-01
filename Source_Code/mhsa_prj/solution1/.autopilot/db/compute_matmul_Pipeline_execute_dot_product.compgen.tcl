@@ -22,7 +22,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 267 \
+    id 74 \
     name compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local \
     reset_level 1 \
     sync_rst true \
@@ -41,7 +41,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 268 \
+    id 75 \
     name compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1 \
     reset_level 1 \
     sync_rst true \
@@ -60,7 +60,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 269 \
+    id 76 \
     name compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2 \
     reset_level 1 \
     sync_rst true \
@@ -79,7 +79,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 270 \
+    id 77 \
     name compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3 \
     reset_level 1 \
     sync_rst true \
@@ -97,7 +97,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 265 \
+    id 72 \
     name result_stream \
     type fifo \
     dir O \
@@ -112,7 +112,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 266 \
+    id 73 \
     name matrix_stream \
     type fifo \
     dir I \

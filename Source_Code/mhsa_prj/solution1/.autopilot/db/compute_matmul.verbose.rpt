@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_matmul'
 ================================================================
-* Date:           Sat Sep 27 23:15:29 2025
+* Date:           Tue Sep 30 23:58:53 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -233,9 +233,9 @@ ST_3 : Operation 8 [1/1] (0.00ns)   --->   "%fence_ln53 = fence void @_ssdm_op_F
 ST_3 : Operation 9 [2/2] (0.00ns)   --->   "%call_ln0 = call void @compute_matmul_Pipeline_execute_dot_product, i32 %result_stream, i32 %matrix_stream, i32 %compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local, i32 %compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1, i32 %compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2, i32 %compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3"   --->   Operation 9 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
 
 State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %result_stream, void @empty_65, i32 0, i32 0, void @empty_113, i32 0, i32 0, void @empty_113, void @empty_113, void @empty_113, i32 0, i32 0, i32 0, i32 0, void @empty_113, void @empty_113, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %matrix_stream, void @empty_65, i32 0, i32 0, void @empty_113, i32 0, i32 0, void @empty_113, void @empty_113, void @empty_113, i32 0, i32 0, i32 0, i32 0, void @empty_113, void @empty_113, i32 4294967295, i32 0, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %vector_stream, void @empty_65, i32 0, i32 0, void @empty_113, i32 0, i32 0, void @empty_113, void @empty_113, void @empty_113, i32 0, i32 0, i32 0, i32 0, void @empty_113, void @empty_113, i32 4294967295, i32 0, i32 0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %result_stream, void @empty_101, i32 0, i32 0, void @empty_115, i32 0, i32 0, void @empty_115, void @empty_115, void @empty_115, i32 0, i32 0, i32 0, i32 0, void @empty_115, void @empty_115, i32 4294967295, i32 0, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %matrix_stream, void @empty_101, i32 0, i32 0, void @empty_115, i32 0, i32 0, void @empty_115, void @empty_115, void @empty_115, i32 0, i32 0, i32 0, i32 0, void @empty_115, void @empty_115, i32 4294967295, i32 0, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %vector_stream, void @empty_101, i32 0, i32 0, void @empty_115, i32 0, i32 0, void @empty_115, void @empty_115, void @empty_115, i32 0, i32 0, i32 0, i32 0, void @empty_115, void @empty_115, i32 4294967295, i32 0, i32 0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 13 [1/2] (0.00ns)   --->   "%call_ln0 = call void @compute_matmul_Pipeline_execute_dot_product, i32 %result_stream, i32 %matrix_stream, i32 %compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local, i32 %compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_1, i32 %compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_2, i32 %compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3"   --->   Operation 13 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
 ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%ret_ln60 = ret" [kernel_MatMul.cpp:60]   --->   Operation 14 'ret' 'ret_ln60' <Predicate = true> <Delay = 0.00>
 
@@ -403,7 +403,7 @@ ret_ln60          (ret          ) [ 00000]
 <pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_65"/></StgValue>
+<StgValue><ssdm name="empty_101"/></StgValue>
 </bind>
 </comp>
 
@@ -412,7 +412,7 @@ ret_ln60          (ret          ) [ 00000]
 <pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_113"/></StgValue>
+<StgValue><ssdm name="empty_115"/></StgValue>
 </bind>
 </comp>
 

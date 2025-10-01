@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'pow_generic_float_s'" level="0">
-<item name = "Date">Sat Sep 27 23:15:33 2025
+<item name = "Date">Tue Sep 30 23:58:55 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -63,15 +63,15 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mul_10s_36s_36_1_1_U308">mul_10s_36s_36_1_1, 0, 2, 0, 0, 0</column>
-<column name="mul_25s_39ns_63_1_1_U309">mul_25s_39ns_63_1_1, 0, 2, 0, 0, 0</column>
-<column name="sparsemux_11_4_32_1_1_U310">sparsemux_11_4_32_1_1, 0, 0, 0, 65, 0</column>
+<column name="mul_10s_36s_36_1_1_U114">mul_10s_36s_36_1_1, 0, 2, 0, 0, 0</column>
+<column name="mul_25s_39ns_63_1_1_U115">mul_25s_39ns_63_1_1, 0, 2, 0, 0, 0</column>
+<column name="sparsemux_11_4_32_1_1_U116">sparsemux_11_4_32_1_1, 0, 0, 0, 65, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
 <keys size="3">Instance, Module, Expression</keys>
-<column name="mac_muladd_13s_12ns_16s_25_4_1_U311">mac_muladd_13s_12ns_16s_25_4_1, i0 * i1 + i2</column>
-<column name="mac_muladd_18ns_18ns_44ns_44_4_1_U312">mac_muladd_18ns_18ns_44ns_44_4_1, i0 + i1 * i2</column>
+<column name="mac_muladd_13s_12ns_16s_25_4_1_U117">mac_muladd_13s_12ns_16s_25_4_1, i0 * i1 + i2</column>
+<column name="mac_muladd_18ns_18ns_44ns_44_4_1_U118">mac_muladd_18ns_18ns_44ns_44_4_1, i0 + i1 * i2</column>
 </table>
 </item>
 <item name = "Memory"><table name="" hasTotal="1">

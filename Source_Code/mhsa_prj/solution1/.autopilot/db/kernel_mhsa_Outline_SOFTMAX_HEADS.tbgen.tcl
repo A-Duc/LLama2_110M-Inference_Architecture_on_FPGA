@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 30
+set cdfgNum 29
 set C_modelName {kernel_mhsa_Outline_SOFTMAX_HEADS}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -32,6 +32,7 @@ dict set ap_memory_interface_dict att_10 { MEM_WIDTH 32 MEM_SIZE 2048 MASTER_TYP
 dict set ap_memory_interface_dict att_11 { MEM_WIDTH 32 MEM_SIZE 2048 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 set C_modelArgList {
 	{ att float 32 regular {array 512 { 2 3 } 1 1 }  }
+	{ add141 int 32 regular  }
 	{ att_1 float 32 regular {array 512 { 2 3 } 1 1 }  }
 	{ att_2 float 32 regular {array 512 { 2 3 } 1 1 }  }
 	{ att_3 float 32 regular {array 512 { 2 3 } 1 1 }  }
@@ -49,6 +50,7 @@ set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
 	{ "Name" : "att", "interface" : "memory", "bitwidth" : 32, "direction" : "READWRITE"} , 
+ 	{ "Name" : "add141", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "att_1", "interface" : "memory", "bitwidth" : 32, "direction" : "READWRITE"} , 
  	{ "Name" : "att_2", "interface" : "memory", "bitwidth" : 32, "direction" : "READWRITE"} , 
  	{ "Name" : "att_3", "interface" : "memory", "bitwidth" : 32, "direction" : "READWRITE"} , 
@@ -61,7 +63,7 @@ set C_modelArgMapList {[
  	{ "Name" : "att_10", "interface" : "memory", "bitwidth" : 32, "direction" : "READWRITE"} , 
  	{ "Name" : "att_11", "interface" : "memory", "bitwidth" : 32, "direction" : "READWRITE"} ]}
 # RTL Port declarations: 
-set portNum 66
+set portNum 67
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -74,61 +76,62 @@ set portList {
 	{ att_we0 sc_out sc_logic 1 signal 0 } 
 	{ att_d0 sc_out sc_lv 32 signal 0 } 
 	{ att_q0 sc_in sc_lv 32 signal 0 } 
-	{ att_1_address0 sc_out sc_lv 9 signal 1 } 
-	{ att_1_ce0 sc_out sc_logic 1 signal 1 } 
-	{ att_1_we0 sc_out sc_logic 1 signal 1 } 
-	{ att_1_d0 sc_out sc_lv 32 signal 1 } 
-	{ att_1_q0 sc_in sc_lv 32 signal 1 } 
-	{ att_2_address0 sc_out sc_lv 9 signal 2 } 
-	{ att_2_ce0 sc_out sc_logic 1 signal 2 } 
-	{ att_2_we0 sc_out sc_logic 1 signal 2 } 
-	{ att_2_d0 sc_out sc_lv 32 signal 2 } 
-	{ att_2_q0 sc_in sc_lv 32 signal 2 } 
-	{ att_3_address0 sc_out sc_lv 9 signal 3 } 
-	{ att_3_ce0 sc_out sc_logic 1 signal 3 } 
-	{ att_3_we0 sc_out sc_logic 1 signal 3 } 
-	{ att_3_d0 sc_out sc_lv 32 signal 3 } 
-	{ att_3_q0 sc_in sc_lv 32 signal 3 } 
-	{ att_4_address0 sc_out sc_lv 9 signal 4 } 
-	{ att_4_ce0 sc_out sc_logic 1 signal 4 } 
-	{ att_4_we0 sc_out sc_logic 1 signal 4 } 
-	{ att_4_d0 sc_out sc_lv 32 signal 4 } 
-	{ att_4_q0 sc_in sc_lv 32 signal 4 } 
-	{ att_5_address0 sc_out sc_lv 9 signal 5 } 
-	{ att_5_ce0 sc_out sc_logic 1 signal 5 } 
-	{ att_5_we0 sc_out sc_logic 1 signal 5 } 
-	{ att_5_d0 sc_out sc_lv 32 signal 5 } 
-	{ att_5_q0 sc_in sc_lv 32 signal 5 } 
-	{ att_6_address0 sc_out sc_lv 9 signal 6 } 
-	{ att_6_ce0 sc_out sc_logic 1 signal 6 } 
-	{ att_6_we0 sc_out sc_logic 1 signal 6 } 
-	{ att_6_d0 sc_out sc_lv 32 signal 6 } 
-	{ att_6_q0 sc_in sc_lv 32 signal 6 } 
-	{ att_7_address0 sc_out sc_lv 9 signal 7 } 
-	{ att_7_ce0 sc_out sc_logic 1 signal 7 } 
-	{ att_7_we0 sc_out sc_logic 1 signal 7 } 
-	{ att_7_d0 sc_out sc_lv 32 signal 7 } 
-	{ att_7_q0 sc_in sc_lv 32 signal 7 } 
-	{ att_8_address0 sc_out sc_lv 9 signal 8 } 
-	{ att_8_ce0 sc_out sc_logic 1 signal 8 } 
-	{ att_8_we0 sc_out sc_logic 1 signal 8 } 
-	{ att_8_d0 sc_out sc_lv 32 signal 8 } 
-	{ att_8_q0 sc_in sc_lv 32 signal 8 } 
-	{ att_9_address0 sc_out sc_lv 9 signal 9 } 
-	{ att_9_ce0 sc_out sc_logic 1 signal 9 } 
-	{ att_9_we0 sc_out sc_logic 1 signal 9 } 
-	{ att_9_d0 sc_out sc_lv 32 signal 9 } 
-	{ att_9_q0 sc_in sc_lv 32 signal 9 } 
-	{ att_10_address0 sc_out sc_lv 9 signal 10 } 
-	{ att_10_ce0 sc_out sc_logic 1 signal 10 } 
-	{ att_10_we0 sc_out sc_logic 1 signal 10 } 
-	{ att_10_d0 sc_out sc_lv 32 signal 10 } 
-	{ att_10_q0 sc_in sc_lv 32 signal 10 } 
-	{ att_11_address0 sc_out sc_lv 9 signal 11 } 
-	{ att_11_ce0 sc_out sc_logic 1 signal 11 } 
-	{ att_11_we0 sc_out sc_logic 1 signal 11 } 
-	{ att_11_d0 sc_out sc_lv 32 signal 11 } 
-	{ att_11_q0 sc_in sc_lv 32 signal 11 } 
+	{ add141 sc_in sc_lv 32 signal 1 } 
+	{ att_1_address0 sc_out sc_lv 9 signal 2 } 
+	{ att_1_ce0 sc_out sc_logic 1 signal 2 } 
+	{ att_1_we0 sc_out sc_logic 1 signal 2 } 
+	{ att_1_d0 sc_out sc_lv 32 signal 2 } 
+	{ att_1_q0 sc_in sc_lv 32 signal 2 } 
+	{ att_2_address0 sc_out sc_lv 9 signal 3 } 
+	{ att_2_ce0 sc_out sc_logic 1 signal 3 } 
+	{ att_2_we0 sc_out sc_logic 1 signal 3 } 
+	{ att_2_d0 sc_out sc_lv 32 signal 3 } 
+	{ att_2_q0 sc_in sc_lv 32 signal 3 } 
+	{ att_3_address0 sc_out sc_lv 9 signal 4 } 
+	{ att_3_ce0 sc_out sc_logic 1 signal 4 } 
+	{ att_3_we0 sc_out sc_logic 1 signal 4 } 
+	{ att_3_d0 sc_out sc_lv 32 signal 4 } 
+	{ att_3_q0 sc_in sc_lv 32 signal 4 } 
+	{ att_4_address0 sc_out sc_lv 9 signal 5 } 
+	{ att_4_ce0 sc_out sc_logic 1 signal 5 } 
+	{ att_4_we0 sc_out sc_logic 1 signal 5 } 
+	{ att_4_d0 sc_out sc_lv 32 signal 5 } 
+	{ att_4_q0 sc_in sc_lv 32 signal 5 } 
+	{ att_5_address0 sc_out sc_lv 9 signal 6 } 
+	{ att_5_ce0 sc_out sc_logic 1 signal 6 } 
+	{ att_5_we0 sc_out sc_logic 1 signal 6 } 
+	{ att_5_d0 sc_out sc_lv 32 signal 6 } 
+	{ att_5_q0 sc_in sc_lv 32 signal 6 } 
+	{ att_6_address0 sc_out sc_lv 9 signal 7 } 
+	{ att_6_ce0 sc_out sc_logic 1 signal 7 } 
+	{ att_6_we0 sc_out sc_logic 1 signal 7 } 
+	{ att_6_d0 sc_out sc_lv 32 signal 7 } 
+	{ att_6_q0 sc_in sc_lv 32 signal 7 } 
+	{ att_7_address0 sc_out sc_lv 9 signal 8 } 
+	{ att_7_ce0 sc_out sc_logic 1 signal 8 } 
+	{ att_7_we0 sc_out sc_logic 1 signal 8 } 
+	{ att_7_d0 sc_out sc_lv 32 signal 8 } 
+	{ att_7_q0 sc_in sc_lv 32 signal 8 } 
+	{ att_8_address0 sc_out sc_lv 9 signal 9 } 
+	{ att_8_ce0 sc_out sc_logic 1 signal 9 } 
+	{ att_8_we0 sc_out sc_logic 1 signal 9 } 
+	{ att_8_d0 sc_out sc_lv 32 signal 9 } 
+	{ att_8_q0 sc_in sc_lv 32 signal 9 } 
+	{ att_9_address0 sc_out sc_lv 9 signal 10 } 
+	{ att_9_ce0 sc_out sc_logic 1 signal 10 } 
+	{ att_9_we0 sc_out sc_logic 1 signal 10 } 
+	{ att_9_d0 sc_out sc_lv 32 signal 10 } 
+	{ att_9_q0 sc_in sc_lv 32 signal 10 } 
+	{ att_10_address0 sc_out sc_lv 9 signal 11 } 
+	{ att_10_ce0 sc_out sc_logic 1 signal 11 } 
+	{ att_10_we0 sc_out sc_logic 1 signal 11 } 
+	{ att_10_d0 sc_out sc_lv 32 signal 11 } 
+	{ att_10_q0 sc_in sc_lv 32 signal 11 } 
+	{ att_11_address0 sc_out sc_lv 9 signal 12 } 
+	{ att_11_ce0 sc_out sc_logic 1 signal 12 } 
+	{ att_11_we0 sc_out sc_logic 1 signal 12 } 
+	{ att_11_d0 sc_out sc_lv 32 signal 12 } 
+	{ att_11_q0 sc_in sc_lv 32 signal 12 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -142,6 +145,7 @@ set NewPortList {[
  	{ "name": "att_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "att", "role": "we0" }} , 
  	{ "name": "att_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "att", "role": "d0" }} , 
  	{ "name": "att_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "att", "role": "q0" }} , 
+ 	{ "name": "add141", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "add141", "role": "default" }} , 
  	{ "name": "att_1_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "att_1", "role": "address0" }} , 
  	{ "name": "att_1_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "att_1", "role": "ce0" }} , 
  	{ "name": "att_1_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "att_1", "role": "we0" }} , 
@@ -200,26 +204,28 @@ set NewPortList {[
 
 set ArgLastReadFirstWriteLatency {
 	kernel_mhsa_Outline_SOFTMAX_HEADS {
-		att {Type IO LastRead 1 FirstWrite 39}
-		att_1 {Type IO LastRead 1 FirstWrite 39}
-		att_2 {Type IO LastRead 1 FirstWrite 39}
-		att_3 {Type IO LastRead 1 FirstWrite 39}
-		att_4 {Type IO LastRead 1 FirstWrite 39}
-		att_5 {Type IO LastRead 1 FirstWrite 39}
-		att_6 {Type IO LastRead 1 FirstWrite 39}
-		att_7 {Type IO LastRead 1 FirstWrite 39}
-		att_8 {Type IO LastRead 1 FirstWrite 39}
-		att_9 {Type IO LastRead 1 FirstWrite 39}
-		att_10 {Type IO LastRead 1 FirstWrite 39}
-		att_11 {Type IO LastRead 1 FirstWrite 39}}
+		att {Type IO LastRead 1 FirstWrite 22}
+		add141 {Type I LastRead 0 FirstWrite -1}
+		att_1 {Type IO LastRead 1 FirstWrite 22}
+		att_2 {Type IO LastRead 1 FirstWrite 22}
+		att_3 {Type IO LastRead 1 FirstWrite 22}
+		att_4 {Type IO LastRead 1 FirstWrite 22}
+		att_5 {Type IO LastRead 1 FirstWrite 22}
+		att_6 {Type IO LastRead 1 FirstWrite 22}
+		att_7 {Type IO LastRead 1 FirstWrite 22}
+		att_8 {Type IO LastRead 1 FirstWrite 22}
+		att_9 {Type IO LastRead 1 FirstWrite 22}
+		att_10 {Type IO LastRead 1 FirstWrite 22}
+		att_11 {Type IO LastRead 1 FirstWrite 22}}
 	kernel_softmax {
-		i_vec {Type IO LastRead 1 FirstWrite 39}}}
+		i_vec {Type IO LastRead 1 FirstWrite 22}
+		vec_size {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "37285", "Max" : "37285"}
-	, {"Name" : "Interval", "Min" : "37285", "Max" : "37285"}
+	{"Name" : "Latency", "Min" : "481", "Max" : "37285"}
+	, {"Name" : "Interval", "Min" : "481", "Max" : "37285"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -227,6 +233,7 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	att { ap_memory {  { att_address0 mem_address 1 9 }  { att_ce0 mem_ce 1 1 }  { att_we0 mem_we 1 1 }  { att_d0 mem_din 1 32 }  { att_q0 mem_dout 0 32 } } }
+	add141 { ap_none {  { add141 in_data 0 32 } } }
 	att_1 { ap_memory {  { att_1_address0 mem_address 1 9 }  { att_1_ce0 mem_ce 1 1 }  { att_1_we0 mem_we 1 1 }  { att_1_d0 mem_din 1 32 }  { att_1_q0 mem_dout 0 32 } } }
 	att_2 { ap_memory {  { att_2_address0 mem_address 1 9 }  { att_2_ce0 mem_ce 1 1 }  { att_2_we0 mem_we 1 1 }  { att_2_d0 mem_din 1 32 }  { att_2_q0 mem_dout 0 32 } } }
 	att_3 { ap_memory {  { att_3_address0 mem_address 1 9 }  { att_3_ce0 mem_ce 1 1 }  { att_3_we0 mem_we 1 1 }  { att_3_d0 mem_din 1 32 }  { att_3_q0 mem_dout 0 32 } } }

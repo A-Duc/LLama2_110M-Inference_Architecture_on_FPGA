@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'matmul_1'
 ================================================================
-* Date:           Sat Sep 27 23:15:30 2025
+* Date:           Tue Sep 30 23:58:54 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -59,12 +59,12 @@
 |DSP                  |        -|      -|        -|        -|     -|
 |Expression           |        -|      -|        0|       12|     -|
 |FIFO                 |        0|      -|      183|      246|     -|
-|Instance             |        0|      1|      442|     1452|     0|
+|Instance             |        0|      1|      442|     1388|     0|
 |Memory               |        -|      -|        -|        -|     -|
 |Multiplexer          |        -|      -|        0|        2|     -|
 |Register             |        -|      -|        3|        -|     -|
 +---------------------+---------+-------+---------+---------+------+
-|Total                |        0|      1|      628|     1712|     0|
+|Total                |        0|      1|      628|     1648|     0|
 +---------------------+---------+-------+---------+---------+------+
 |Available SLR        |     2494|   3616|  1716138|   858069|   641|
 +---------------------+---------+-------+---------+---------+------+
@@ -81,11 +81,11 @@
     |      Instance     |     Module     | BRAM_18K| DSP|  FF | LUT | URAM|
     +-------------------+----------------+---------+----+-----+-----+-----+
     |compute_matmul_U0  |compute_matmul  |        0|   1|  302|  914|    0|
-    |load_mat_U0        |load_mat        |        0|   0|  100|  331|    0|
+    |load_mat_U0        |load_mat        |        0|   0|  100|  267|    0|
     |load_vec_U0        |load_vec        |        0|   0|   17|  152|    0|
     |store_result_U0    |store_result    |        0|   0|   23|   55|    0|
     +-------------------+----------------+---------+----+-----+-----+-----+
-    |Total              |                |        0|   1|  442| 1452|    0|
+    |Total              |                |        0|   1|  442| 1388|    0|
     +-------------------+----------------+---------+----+-----+-----+-----+
 
     * DSP: 
@@ -357,8 +357,6 @@
 |m_axi_gmem1_0_BUSER     |   in|    1|       m_axi|         gmem1|       pointer|
 |i_mat                   |   in|   64|     ap_none|         i_mat|        scalar|
 |i_mat_ap_vld            |   in|    1|     ap_none|         i_mat|        scalar|
-|idx2                    |   in|   25|     ap_none|          idx2|        scalar|
-|idx2_ap_vld             |   in|    1|     ap_none|          idx2|        scalar|
 |ap_clk                  |   in|    1|  ap_ctrl_hs|      matmul.1|  return value|
 |ap_rst                  |   in|    1|  ap_ctrl_hs|      matmul.1|  return value|
 |ap_start                |   in|    1|  ap_ctrl_hs|      matmul.1|  return value|

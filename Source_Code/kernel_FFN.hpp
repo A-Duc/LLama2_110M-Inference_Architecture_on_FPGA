@@ -3,7 +3,7 @@
 
 extern "C" {
 void FFN(float*, float*,
-         float*, float*, float*);
+            float*, float*, float*);
 }
 
 #endif

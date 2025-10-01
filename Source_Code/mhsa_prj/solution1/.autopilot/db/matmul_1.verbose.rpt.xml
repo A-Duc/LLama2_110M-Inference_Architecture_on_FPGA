@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'matmul_1'" level="0">
-<item name = "Date">Sat Sep 27 23:15:30 2025
+<item name = "Date">Tue Sep 30 23:58:54 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -53,7 +53,7 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 12, -</column>
 <column name="FIFO">0, -, 183, 246, -</column>
-<column name="Instance">0, 1, 442, 1452, 0</column>
+<column name="Instance">0, 1, 442, 1388, 0</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 2, -</column>
 <column name="Register">-, -, 3, -, -</column>
@@ -68,7 +68,7 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="compute_matmul_U0">compute_matmul, 0, 1, 302, 914, 0</column>
-<column name="load_mat_U0">load_mat, 0, 0, 100, 331, 0</column>
+<column name="load_mat_U0">load_mat, 0, 0, 100, 267, 0</column>
 <column name="load_vec_U0">load_vec, 0, 0, 17, 152, 0</column>
 <column name="store_result_U0">store_result, 0, 0, 23, 55, 0</column>
 </table>
@@ -326,8 +326,6 @@
 <column name="m_axi_gmem1_0_BUSER">in, 1, m_axi, gmem1, pointer</column>
 <column name="i_mat">in, 64, ap_none, i_mat, scalar</column>
 <column name="i_mat_ap_vld">in, 1, ap_none, i_mat, scalar</column>
-<column name="idx2">in, 25, ap_none, idx2, scalar</column>
-<column name="idx2_ap_vld">in, 1, ap_none, idx2, scalar</column>
 <column name="ap_clk">in, 1, ap_ctrl_hs, matmul.1, return value</column>
 <column name="ap_rst">in, 1, ap_ctrl_hs, matmul.1, return value</column>
 <column name="ap_start">in, 1, ap_ctrl_hs, matmul.1, return value</column>

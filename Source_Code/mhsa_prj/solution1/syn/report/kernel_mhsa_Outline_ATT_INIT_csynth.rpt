@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'kernel_mhsa_Outline_ATT_INIT'
 ================================================================
-* Date:           Sat Sep 27 23:15:37 2025
+* Date:           Tue Sep 30 23:59:01 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -38,7 +38,7 @@
         |                                                 |                                       |  Latency (cycles) |  Latency (absolute)  |  Interval |                    Pipeline                    |
         |                     Instance                    |                 Module                |   min   |   max   |    min    |    max   | min | max |                      Type                      |
         +-------------------------------------------------+---------------------------------------+---------+---------+-----------+----------+-----+-----+------------------------------------------------+
-        |grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66  |kernel_mhsa_Pipeline_VITIS_LOOP_128_1  |        3|      514|  12.000 ns|  2.056 us|    2|  513|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66  |kernel_mhsa_Pipeline_VITIS_LOOP_100_1  |        3|      514|  12.000 ns|  2.056 us|    2|  513|  loop auto-rewind stp (delay=0 clock cycles(s))|
         +-------------------------------------------------+---------------------------------------+---------+---------+-----------+----------+-----+-----+------------------------------------------------+
 
         * Loop: 
@@ -82,7 +82,7 @@
     +-------------------------------------------------+---------------------------------------+---------+----+----+----+-----+
     |                     Instance                    |                 Module                | BRAM_18K| DSP| FF | LUT| URAM|
     +-------------------------------------------------+---------------------------------------+---------+----+----+----+-----+
-    |grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66  |kernel_mhsa_Pipeline_VITIS_LOOP_128_1  |        0|   0|  12|  56|    0|
+    |grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66  |kernel_mhsa_Pipeline_VITIS_LOOP_100_1  |        0|   0|  12|  56|    0|
     +-------------------------------------------------+---------------------------------------+---------+----+----+----+-----+
     |Total                                            |                                       |        0|   0|  12|  56|    0|
     +-------------------------------------------------+---------------------------------------+---------+----+----+----+-----+
@@ -100,9 +100,9 @@
     +---------------------------------+----------+----+---+----+------------+------------+
     |          Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------------+----------+----+---+----+------------+------------+
-    |add_ln127_fu_105_p2              |         +|   0|  0|   6|           4|           1|
+    |add_ln99_fu_105_p2               |         +|   0|  0|   6|           4|           1|
     |ap_block_state3_on_subcall_done  |       and|   0|  0|   2|           1|           1|
-    |icmp_ln127_fu_111_p2             |      icmp|   0|  0|   2|           4|           4|
+    |icmp_ln99_fu_111_p2              |      icmp|   0|  0|   2|           4|           4|
     +---------------------------------+----------+----+---+----+------------+------------+
     |Total                            |          |   0|  0|  10|           9|           6|
     +---------------------------------+----------+----+---+----+------------+------------+
@@ -121,9 +121,9 @@
     +--------------------------------------------------------------+---+----+-----+-----------+
     |                             Name                             | FF| LUT| Bits| Const Bits|
     +--------------------------------------------------------------+---+----+-----+-----------+
-    |add_ln127_reg_140                                             |  4|   0|    4|          0|
+    |add_ln99_reg_140                                              |  4|   0|    4|          0|
     |ap_CS_fsm                                                     |  3|   0|    3|          0|
-    |grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66_ap_start_reg  |  1|   0|    1|          0|
+    |grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66_ap_start_reg  |  1|   0|    1|          0|
     |h_fu_50                                                       |  4|   0|    4|          0|
     +--------------------------------------------------------------+---+----+-----+-----------+
     |Total                                                         | 12|   0|   12|          0|
@@ -144,7 +144,7 @@
 |ap_done          |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Outline_ATT_INIT|  return value|
 |ap_idle          |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Outline_ATT_INIT|  return value|
 |ap_ready         |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Outline_ATT_INIT|  return value|
-|select_ln128     |   in|   33|     ap_none|                  select_ln128|        scalar|
+|select_ln100     |   in|   33|     ap_none|                  select_ln100|        scalar|
 |att_11_address0  |  out|    9|   ap_memory|                        att_11|         array|
 |att_11_ce0       |  out|    1|   ap_memory|                        att_11|         array|
 |att_11_we0       |  out|    1|   ap_memory|                        att_11|         array|

@@ -1,9 +1,9 @@
   **** HLS Build v2025.1 6135595
-Sourcing Tcl script 'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/./MHSA.tcl'
+Sourcing Tcl script 'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/MHSA.tcl'
 INFO: [HLS 200-1510] Running: open_project mhsa_prj 
 WARNING: [HLS 200-2182] The 'mhsa_prj' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
 Resolution: For help on HLS 200-2182 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
-INFO: [HLS 200-10] Creating and opening solution 'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj'.
+INFO: [HLS 200-10] Opening solution 'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj'.
 INFO: [HLS 200-1510] Running: set_top kernel_mhsa 
 INFO: [HLS 200-1510] Running: add_files kernel_MHSA.cpp 
 INFO: [HLS 200-10] Adding design file 'kernel_MHSA.cpp' to the project
@@ -28,16 +28,17 @@ INFO: [HLS 200-10] Adding design file 'kernel_RMS_Norm.hpp' to the project
 INFO: [HLS 200-1510] Running: add_files tensor.hpp 
 INFO: [HLS 200-10] Adding design file 'tensor.hpp' to the project
 INFO: [HLS 200-1510] Running: open_solution solution1 
-INFO: [HLS 200-10] Creating and opening solution 'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1'.
-INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-10] Opening solution 'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+WARNING: [HLS 200-655] The device family 'versalhbm-2MHP' is new to HLS - using 'versalaicore-2HP' characterization library
+INFO: [HLS 200-1611] Setting target device to 'xcv80-lsva4737-2MHP-e-S'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1510] Running: set_part xcv80-lsva4737-2MHP-e-S 
 WARNING: [HLS 200-655] The device family 'versalhbm-2MHP' is new to HLS - using 'versalaicore-2HP' characterization library
-INFO: [HLS 200-1611] Setting target device to 'xcv80-lsva4737-2MHP-e-S'
 INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.047 seconds; current allocated memory: 521.336 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.083 seconds; current allocated memory: 583.141 MB.
 INFO: [HLS 200-10] Analyzing design file 'kernel_RMS_Norm.cpp' ... 
 WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
 INFO: [HLS 200-10] Analyzing design file 'kernel_Softmax.cpp' ... 
@@ -47,47 +48,42 @@ INFO: [HLS 200-10] Analyzing design file 'kernel_Rope.cpp' ...
 WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
 INFO: [HLS 200-10] Analyzing design file 'kernel_MHSA.cpp' ... 
 WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
-WARNING: [HLS 207-5576] Only 'for' loop or function body support the dataflow pragma (kernel_MHSA.cpp:91:9)
-WARNING: [HLS 207-5576] Only 'for' loop or function body support the dataflow pragma (kernel_MHSA.cpp:98:9)
-WARNING: [HLS 207-5576] Only 'for' loop or function body support the dataflow pragma (kernel_MHSA.cpp:107:9)
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 72.36 seconds; current allocated memory: 540.410 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 71.048 seconds; current allocated memory: 599.609 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 59,991 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 7,102 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,094 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 3,735 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,678 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 20,225 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 9,005 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 9,005 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 9,005 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 9,083 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 9,007 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 8,884 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 8,821 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 8,821 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 8,900 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 214-291] Loop 'DOT_COMPUTE' is marked as complete unroll implied by the pipeline pragma (kernel_MHSA.cpp:156:34)
+INFO: [HLS 200-1995] There were 59,959 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 7,051 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 4,052 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,773 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,716 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 5,622 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 5,071 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 5,071 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 5,071 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 4,958 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 4,893 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 4,759 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 4,696 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 4,696 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 4,856 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 5,043 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/mhsa_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-291] Loop 'DOT_COMPUTE' is marked as complete unroll implied by the pipeline pragma (kernel_MHSA.cpp:128:34)
 INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:289:5)
 INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:282:5)
 INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:269:5)
 INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:268:41)
 INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
-WARNING: [HLS 214-398] Updating loop lower bound from 1 to 12 for loop 'HEAD_COMPUTE' (kernel_MHSA.cpp:136:27) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-398] Updating loop upper bound from 16 to 12 for loop 'HEAD_COMPUTE' (kernel_MHSA.cpp:136:27) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-398] Updating loop lower bound from 1 to 12 for loop 'SOFTMAX_HEADS' (kernel_MHSA.cpp:169:24) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-398] Updating loop upper bound from 16 to 12 for loop 'SOFTMAX_HEADS' (kernel_MHSA.cpp:169:24) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-398] Updating loop lower bound from 1 to 12 for loop 'HEAD_STREAM' (kernel_MHSA.cpp:183:26) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-398] Updating loop upper bound from 16 to 12 for loop 'HEAD_STREAM' (kernel_MHSA.cpp:183:26) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-398] Updating loop lower bound from 1 to 12 for loop 'LAYER_LOOP' (kernel_MHSA.cpp:77:17) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-398] Updating loop lower bound from 1024 to 393216 for loop 'INIT_INNER' (kernel_MHSA.cpp:35:14) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-398] Updating loop upper bound from 262144 to 393216 for loop 'INIT_INNER' (kernel_MHSA.cpp:35:14) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-398] Updating loop lower bound from 1 to 12 for loop 'INIT_OUTER' (kernel_MHSA.cpp:33:21) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
-INFO: [HLS 214-186] Unrolling loop 'DOT_COMPUTE' (kernel_MHSA.cpp:156:34) in function 'kernel_mhsa' completely with a factor of 64 (kernel_MHSA.cpp:7:0)
-INFO: [HLS 214-186] Unrolling loop 'ACCUM_ZERO' (kernel_MHSA.cpp:191:14) in function 'kernel_mhsa' completely with a factor of 64 (kernel_MHSA.cpp:7:0)
-INFO: [HLS 214-188] Unrolling loop 'VALUE_MAC' (kernel_MHSA.cpp:203:32) in function 'kernel_mhsa' partially with a factor of 2 (kernel_MHSA.cpp:7:0)
-INFO: [HLS 214-188] Unrolling loop 'ACCUM_WRITEBACK' (kernel_MHSA.cpp:213:34) in function 'kernel_mhsa' partially with a factor of 4 (kernel_MHSA.cpp:7:0)
-INFO: [HLS 214-188] Unrolling loop 'find_max' (kernel_Softmax.cpp:17:13) in function 'kernel_softmax' partially with a factor of 2 (kernel_Softmax.cpp:2:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 12 for loop 'HEAD_COMPUTE' (kernel_MHSA.cpp:108:27) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
+WARNING: [HLS 214-398] Updating loop upper bound from 16 to 12 for loop 'HEAD_COMPUTE' (kernel_MHSA.cpp:108:27) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 12 for loop 'SOFTMAX_HEADS' (kernel_MHSA.cpp:141:24) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
+WARNING: [HLS 214-398] Updating loop upper bound from 16 to 12 for loop 'SOFTMAX_HEADS' (kernel_MHSA.cpp:141:24) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 12 for loop 'HEAD_STREAM' (kernel_MHSA.cpp:155:26) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
+WARNING: [HLS 214-398] Updating loop upper bound from 16 to 12 for loop 'HEAD_STREAM' (kernel_MHSA.cpp:155:26) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 12 for loop 'LAYER_LOOP' (kernel_MHSA.cpp:53:17) in function 'kernel_mhsa'. (kernel_MHSA.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'DOT_COMPUTE' (kernel_MHSA.cpp:128:34) in function 'kernel_mhsa' completely with a factor of 64 (kernel_MHSA.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ACCUM_ZERO' (kernel_MHSA.cpp:163:14) in function 'kernel_mhsa' completely with a factor of 64 (kernel_MHSA.cpp:7:0)
+INFO: [HLS 214-188] Unrolling loop 'VALUE_MAC' (kernel_MHSA.cpp:175:32) in function 'kernel_mhsa' partially with a factor of 2 (kernel_MHSA.cpp:7:0)
+INFO: [HLS 214-188] Unrolling loop 'ACCUM_WRITEBACK' (kernel_MHSA.cpp:185:34) in function 'kernel_mhsa' partially with a factor of 4 (kernel_MHSA.cpp:7:0)
+INFO: [HLS 214-188] Unrolling loop 'find_max' (kernel_Softmax.cpp:16:13) in function 'kernel_softmax' partially with a factor of 2 (kernel_Softmax.cpp:2:0)
 INFO: [HLS 214-186] Unrolling loop 'anonymous' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:289:5) in function 'scaled_fixed2ieee<29, 1>' completely with a factor of 2 (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0)
 INFO: [HLS 214-186] Unrolling loop 'anonymous' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:282:5) in function 'scaled_fixed2ieee<29, 1>' completely with a factor of 2 (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0)
 INFO: [HLS 214-186] Unrolling loop 'anonymous' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:269:5) in function 'scaled_fixed2ieee<29, 1>' completely with a factor of 1 (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0)
@@ -122,50 +118,48 @@ INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into '
 INFO: [HLS 214-178] Inlining function 'hls::hotbm::sincos(float, float*, float*)' into 'hls::sincosf(float, float*, float*)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\c++\sincoshotbmfloat.cpp:47:0)
 INFO: [HLS 214-178] Inlining function 'hls::powf(float, float)' into 'RoPE(float*, float const*, int, int)' (kernel_Rope.cpp:8:0)
 INFO: [HLS 214-178] Inlining function 'hls::sincosf(float, float*, float*)' into 'RoPE(float*, float const*, int, int)' (kernel_Rope.cpp:8:0)
-INFO: [HLS 214-178] Inlining function 'kernel_rmsnorm' into 'kernel_mhsa(float*, int, float*)' (kernel_MHSA.cpp:7:0)
-WARNING: [HLS 214-464] Skipping array undecay on variable length array 'i_vec'. (kernel_MatMul.cpp:75:0)
+INFO: [HLS 214-178] Inlining function 'kernel_rmsnorm' into 'kernel_mhsa(float*, int, float*, float*, float*)' (kernel_MHSA.cpp:7:0)
 WARNING: [HLS 214-464] Skipping array undecay on variable length array 'i_mat'. (kernel_MatMul.cpp:75:0)
+WARNING: [HLS 214-464] Skipping array undecay on variable length array 'i_vec'. (kernel_MatMul.cpp:75:0)
 WARNING: [HLS 214-464] Skipping array undecay on variable length array 'o_vec'. (kernel_MatMul.cpp:75:0)
-INFO: [HLS 214-248] Applying array_partition to '_ZZ11kernel_mhsaPfiS_E11value_cache': Complete partitioning on dimension 1. Cyclic partitioning with factor 8 on dimension 2. (kernel_MHSA.cpp:19:0)
-INFO: [HLS 214-248] Applying array_partition to '_ZZ11kernel_mhsaPfiS_E9key_cache': Complete partitioning on dimension 1. Cyclic partitioning with factor 8 on dimension 2. (kernel_MHSA.cpp:18:0)
 INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_14generic_sincosIfEEvT_PS1_S2_E13neg_cos_table': Complete partitioning on dimension 1. (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:137:0)
 INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_14generic_sincosIfEEvT_PS1_S2_E13neg_sin_table': Complete partitioning on dimension 1. (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:136:0)
 INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_14generic_sincosIfEEvT_PS1_S2_E10swap_table': Complete partitioning on dimension 1. (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:135:0)
 INFO: [HLS 214-248] Applying array_partition to '_ZZL14compute_matmulRN3hls6streamIfLi0EEES2_S2_E9vec_local': Cyclic partitioning with factor 4 on dimension 1. (kernel_MatMul.cpp:39:0)
 WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:175:8)
 WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:195:8)
-INFO: [HLS 214-248] Applying array_partition to 'out_rms_vec': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:47:11)
-INFO: [HLS 214-248] Applying array_partition to 'out_q': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:48:11)
-INFO: [HLS 214-248] Applying array_partition to 'out_q_rope': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:49:11)
-INFO: [HLS 214-248] Applying array_partition to 'out_k': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:50:11)
-INFO: [HLS 214-248] Applying array_partition to 'out_k_rope': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:51:11)
-INFO: [HLS 214-248] Applying array_partition to 'out_v': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:52:11)
-INFO: [HLS 214-248] Applying array_partition to 'xb': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:53:11)
-INFO: [HLS 214-248] Applying array_partition to 'xb2': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:54:11)
-INFO: [HLS 214-248] Applying array_partition to 'current_input': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:67:8)
-INFO: [HLS 214-248] Applying array_partition to 'att': Complete partitioning on dimension 1. (kernel_MHSA.cpp:120:15)
-INFO: [HLS 214-248] Applying array_partition to 'q_head_local': Complete partitioning on dimension 1. (kernel_MHSA.cpp:140:8)
-INFO: [HLS 214-248] Applying array_partition to 'local_accum': Complete partitioning on dimension 1. (kernel_MHSA.cpp:187:8)
-WARNING: [HLS 214-167] The program may have out of bound array access on variable 'i_vec' (kernel_Softmax.cpp:13:17)
-WARNING: [HLS 214-167] The program may have out of bound array access on variable 'i_vec' (kernel_Softmax.cpp:39:11)
+INFO: [HLS 214-248] Applying array_partition to 'out_rms_vec': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:23:11)
+INFO: [HLS 214-248] Applying array_partition to 'out_q': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:24:11)
+INFO: [HLS 214-248] Applying array_partition to 'out_q_rope': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:25:11)
+INFO: [HLS 214-248] Applying array_partition to 'out_k': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:26:11)
+INFO: [HLS 214-248] Applying array_partition to 'out_k_rope': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:27:11)
+INFO: [HLS 214-248] Applying array_partition to 'out_v': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:28:11)
+INFO: [HLS 214-248] Applying array_partition to 'xb': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:29:11)
+INFO: [HLS 214-248] Applying array_partition to 'xb2': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:30:11)
+INFO: [HLS 214-248] Applying array_partition to 'current_input': Cyclic partitioning with factor 8 on dimension 1. (kernel_MHSA.cpp:43:8)
+INFO: [HLS 214-248] Applying array_partition to 'att': Complete partitioning on dimension 1. (kernel_MHSA.cpp:92:15)
+INFO: [HLS 214-248] Applying array_partition to 'q_head_local': Complete partitioning on dimension 1. (kernel_MHSA.cpp:112:8)
+INFO: [HLS 214-248] Applying array_partition to 'local_accum': Complete partitioning on dimension 1. (kernel_MHSA.cpp:159:8)
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_27_2> at kernel_RMS_Norm.cpp:27:22 
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_19_1> at kernel_RMS_Norm.cpp:19:22 
 INFO: [HLS 214-364] Automatically inlining function 'void hotbm_::generic_sincos<float>(float, float*, float*)' to improve effectiveness of pipeline pragma in function 'RoPE(float*, float const*, int, int)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\c++\sincoshotbmfloat.cpp:16:7)
 INFO: [HLS 214-364] Automatically inlining function 'void scaled_fixed2ieee<29, 1>(ap_ufixed<29, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, float&, int)' to improve effectiveness of pipeline pragma in function 'RoPE(float*, float const*, int, int)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:162:5)
 INFO: [HLS 214-364] Automatically inlining function 'void scaled_fixed2ieee<29, 1>(ap_ufixed<29, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, float&, int)' to improve effectiveness of pipeline pragma in function 'RoPE(float*, float const*, int, int)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:163:5)
 INFO: [HLS 214-115] Multiple burst reads of length 589824 and bit width 32 in loop 'mem_rd'(kernel_MatMul.cpp:23:3) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_MatMul.cpp:23:3)
-INFO: [HLS 214-115] Multiple burst reads of length 768 and bit width 32 in loop 'INPUT_COPY'(kernel_MHSA.cpp:71:14) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_MHSA.cpp:71:14)
+INFO: [HLS 214-115] Multiple burst reads of length 768 and bit width 32 in loop 'INPUT_COPY'(kernel_MHSA.cpp:47:14) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_MHSA.cpp:47:14)
 INFO: [HLS 214-115] Multiple burst reads of length 768 and bit width 32 in loop 'VITIS_LOOP_27_2'(kernel_RMS_Norm.cpp:27:22) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_RMS_Norm.cpp:27:22)
-INFO: [HLS 214-115] Multiple burst writes of length 768 and bit width 32 in loop 'OUTPUT_WRITE'(kernel_MHSA.cpp:232:19) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_MHSA.cpp:232:19)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 11.229 seconds; current allocated memory: 545.625 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.008 seconds; current allocated memory: 545.625 MB.
+INFO: [HLS 214-115] Multiple burst writes of length 768 and bit width 32 in loop 'CACHE_STORE'(kernel_MHSA.cpp:85:22) has been inferred on bundle 'gmem2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_MHSA.cpp:85:22)
+INFO: [HLS 214-115] Multiple burst writes of length 768 and bit width 32 in loop 'CACHE_STORE'(kernel_MHSA.cpp:85:22) has been inferred on bundle 'gmem3'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_MHSA.cpp:85:22)
+INFO: [HLS 214-115] Multiple burst reads of length 64 and bit width 32 has been inferred on bundle 'gmem2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_MHSA.cpp:130:16)
+INFO: [HLS 214-115] Multiple burst reads of length 64 and bit width 32 in loop 'VALUE_MAC'(kernel_MHSA.cpp:175:32) has been inferred on bundle 'gmem3'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_MHSA.cpp:175:32)
+INFO: [HLS 214-115] Multiple burst writes of length 768 and bit width 32 in loop 'OUTPUT_WRITE'(kernel_MHSA.cpp:204:19) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (kernel_MHSA.cpp:204:19)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 10.584 seconds; current allocated memory: 605.914 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.008 seconds; current allocated memory: 605.914 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.938 seconds; current allocated memory: 561.008 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.277 seconds; current allocated memory: 616.895 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'pow_reduce::pow_generic<float>' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:383) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.798 seconds; current allocated memory: 571.746 MB.
-WARNING: [XFORM 203-561] Updating loop upper bound from 384 to 383 for loop 'find_max' (kernel_Softmax.cpp:19:9) in function 'kernel_softmax'.
-WARNING: [XFORM 203-561] Updating loop lower bound from 384 to 383 for loop 'find_max' (kernel_Softmax.cpp:19:9) in function 'kernel_softmax'.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.279 seconds; current allocated memory: 624.898 MB.
 INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'pow_reduce::pow_generic<float>' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:383) automatically.
 INFO: [HLS 200-1947] Automatically inferred stable function argument 'i_vec_0' of dataflow function 'matmul.1' (kernel_MatMul.cpp:81:1).
 INFO: [HLS 200-1947] Automatically inferred stable function argument 'i_vec_1' of dataflow function 'matmul.1' (kernel_MatMul.cpp:81:1).
@@ -177,7 +171,6 @@ INFO: [HLS 200-1947] Automatically inferred stable function argument 'i_vec_6' o
 INFO: [HLS 200-1947] Automatically inferred stable function argument 'i_vec_7' of dataflow function 'matmul.1' (kernel_MatMul.cpp:81:1).
 INFO: [HLS 200-1947] Automatically inferred stable function argument 'gmem1' of dataflow function 'matmul.1' (kernel_MatMul.cpp:81:1).
 INFO: [HLS 200-1947] Automatically inferred stable function argument 'i_mat' of dataflow function 'matmul.1' (kernel_MatMul.cpp:81:1).
-INFO: [HLS 200-1947] Automatically inferred stable function argument 'idx2' of dataflow function 'matmul.1' (kernel_MatMul.cpp:81:1).
 INFO: [XFORM 203-712] Applying dataflow to function 'matmul.1' (kernel_MatMul.cpp:81:1), detected/extracted 4 process function(s): 
 	 'load_vec'
 	 'load_mat'
@@ -185,49 +178,49 @@ INFO: [XFORM 203-712] Applying dataflow to function 'matmul.1' (kernel_MatMul.cp
 	 'store_result'.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:291:27) to (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:661:3) in function 'pow_reduce::pow_generic<float>'... converting 13 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (kernel_Rope.cpp:16:40) to (kernel_Rope.cpp:22:16) in function 'RoPE'... converting 11 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.385 seconds; current allocated memory: 602.340 MB.
-INFO: [HLS 200-2061] Successfully converted nested loops 'INIT_OUTER'(kernel_MHSA.cpp:33:21) and 'INIT_INNER'(kernel_MHSA.cpp:35:14) in function 'kernel_mhsa' into perfectly nested loops.
-INFO: [HLS 200-2061] Successfully converted nested loops 'TOKEN_STREAM'(kernel_MHSA.cpp:197:31) and 'VALUE_MAC'(kernel_MHSA.cpp:203:32) in function 'kernel_mhsa' into perfectly nested loops.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.049 seconds; current allocated memory: 652.738 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'TOKEN_STREAM'(kernel_MHSA.cpp:169:31) and 'VALUE_MAC'(kernel_MHSA.cpp:175:32) in function 'kernel_mhsa' into perfectly nested loops.
 INFO: [HLS 200-2061] Successfully converted nested loops 'execute'(kernel_MatMul.cpp:50:3) and 'dot_product'(kernel_MatMul.cpp:53:18) in function 'compute_matmul' into perfectly nested loops.
 INFO: [XFORM 203-541] Flattening a loop nest 'mem_rd' (kernel_MatMul.cpp:23:3) in function 'load_mat'.
-INFO: [XFORM 203-541] Flattening a loop nest 'INIT_OUTER' (kernel_MHSA.cpp:33:21) in function 'kernel_mhsa'.
-WARNING: [HLS 200-960] Cannot flatten loop 'ATT_INIT' (kernel_MHSA.cpp:127:23) in function 'kernel_mhsa' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+WARNING: [HLS 200-960] Cannot flatten loop 'ATT_INIT' (kernel_MHSA.cpp:99:23) in function 'kernel_mhsa' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
 Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-960.html
-INFO: [XFORM 203-541] Flattening a loop nest 'TOKEN_STREAM' (kernel_MHSA.cpp:197:31) in function 'kernel_mhsa'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TOKEN_STREAM' (kernel_MHSA.cpp:169:31) in function 'kernel_mhsa'.
 INFO: [XFORM 203-541] Flattening a loop nest 'execute' (kernel_MatMul.cpp:50:3) in function 'compute_matmul'.
-WARNING: [HLS 200-1991] Performance of loop 'load'(kernel_Softmax.cpp:10:9) in function 'kernel_softmax' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
-WARNING: [HLS 200-1992] Performance of loop 'load'(kernel_Softmax.cpp:10:9) in function 'kernel_softmax' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
-WARNING: [HLS 200-1991] Performance of loop 'find_max'(kernel_Softmax.cpp:17:13) in function 'kernel_softmax' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
-WARNING: [HLS 200-1992] Performance of loop 'find_max'(kernel_Softmax.cpp:17:13) in function 'kernel_softmax' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
-WARNING: [HLS 200-1991] Performance of loop 'compute'(kernel_Softmax.cpp:27:12) in function 'kernel_softmax' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
-WARNING: [HLS 200-1992] Performance of loop 'compute'(kernel_Softmax.cpp:27:12) in function 'kernel_softmax' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
-WARNING: [HLS 200-1991] Performance of loop 'normalize'(kernel_Softmax.cpp:35:14) in function 'kernel_softmax' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
-WARNING: [HLS 200-1992] Performance of loop 'normalize'(kernel_Softmax.cpp:35:14) in function 'kernel_softmax' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'vec_local' (kernel_Softmax.cpp:7).
+WARNING: [HLS 200-1990] Performance of loop 'load'(kernel_Softmax.cpp:9:9) in function 'kernel_softmax' can be improved with loop rewind inference if the loop bound can be asserted to execute at least once.
+WARNING: [HLS 200-1991] Performance of loop 'load'(kernel_Softmax.cpp:9:9) in function 'kernel_softmax' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
+WARNING: [HLS 200-1992] Performance of loop 'load'(kernel_Softmax.cpp:9:9) in function 'kernel_softmax' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
+WARNING: [HLS 200-1990] Performance of loop 'find_max'(kernel_Softmax.cpp:16:13) in function 'kernel_softmax' can be improved with loop rewind inference if the loop bound can be asserted to execute at least once.
+WARNING: [HLS 200-1991] Performance of loop 'find_max'(kernel_Softmax.cpp:16:13) in function 'kernel_softmax' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
+WARNING: [HLS 200-1992] Performance of loop 'find_max'(kernel_Softmax.cpp:16:13) in function 'kernel_softmax' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
+WARNING: [HLS 200-1990] Performance of loop 'compute'(kernel_Softmax.cpp:26:12) in function 'kernel_softmax' can be improved with loop rewind inference if the loop bound can be asserted to execute at least once.
+WARNING: [HLS 200-1991] Performance of loop 'compute'(kernel_Softmax.cpp:26:12) in function 'kernel_softmax' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
+WARNING: [HLS 200-1992] Performance of loop 'compute'(kernel_Softmax.cpp:26:12) in function 'kernel_softmax' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
+WARNING: [HLS 200-1990] Performance of loop 'normalize'(kernel_Softmax.cpp:34:14) in function 'kernel_softmax' can be improved with loop rewind inference if the loop bound can be asserted to execute at least once.
+WARNING: [HLS 200-1991] Performance of loop 'normalize'(kernel_Softmax.cpp:34:14) in function 'kernel_softmax' can be improved with loop rewind inference if the loop can be encapsulated as a standalone function.
+WARNING: [HLS 200-1992] Performance of loop 'normalize'(kernel_Softmax.cpp:34:14) in function 'kernel_softmax' can be improved with loop rewind inference if the loop is called from a region that can be executed in overlapped fashion such as a dataflow region or the top function.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'vec_local' (kernel_Softmax.cpp:6).
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'i_vec'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.14' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.13' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.12' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.11' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.10' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.9' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.8' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'vec_local' (kernel_Softmax.cpp:7).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.14' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.13' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.12' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.11' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.10' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.9' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.8' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'vec_local' (kernel_Softmax.cpp:6).
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'i_vec'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.14' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.13' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.12' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.11' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.10' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.9' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.8' (kernel_MHSA.cpp:67).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input' (kernel_MHSA.cpp:67).
-INFO: [HLS 200-1856] Using 'standard' precision for all 'facc' and 'dacc' operations
-Resolution: For help on HLS 200-1856 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1856.html
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.14' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.13' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.12' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.11' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.10' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.9' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input.8' (kernel_MHSA.cpp:43).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'current_input' (kernel_MHSA.cpp:43).
 INFO: [HLS 200-1856] Using 'standard' precision for all 'fmac' operations
 Resolution: For help on HLS 200-1856 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1856.html
-WARNING: [HLS 200-954] Cannot Rewind function kernel_softmax because there are multiple loops inside the region (kernel_Softmax.cpp:7:1)
+WARNING: [HLS 200-954] Cannot Rewind function kernel_softmax because there are multiple loops inside the region (kernel_Softmax.cpp:6:1)
 Resolution: For help on HLS 200-954 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-954.html
 INFO: [HLS 200-2039] Inferred 'occurrence' pragma with cycle 12 in function kernel_mhsa_Outline_SOFTMAX_HEADS'.
 INFO: [HLS 200-2039] Inferred 'occurrence' pragma with cycle 12 in function kernel_mhsa_Outline_SOFTMAX_HEADS'.
@@ -240,25 +233,11 @@ INFO: [HLS 200-2039] Inferred 'occurrence' pragma with cycle 12 in function kern
 INFO: [HLS 200-2039] Inferred 'occurrence' pragma with cycle 12 in function kernel_mhsa_Outline_SOFTMAX_HEADS'.
 INFO: [HLS 200-2039] Inferred 'occurrence' pragma with cycle 12 in function kernel_mhsa_Outline_SOFTMAX_HEADS'.
 INFO: [HLS 200-2039] Inferred 'occurrence' pragma with cycle 12 in function kernel_mhsa_Outline_SOFTMAX_HEADS'.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.015 seconds; current allocated memory: 865.059 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.916 seconds; current allocated memory: 886.953 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'kernel_mhsa' ...
 WARNING: [SYN 201-103] Legalizing function name 'matmul.1' to 'matmul_1'.
 WARNING: [SYN 201-103] Legalizing function name 'pow_generic<float>' to 'pow_generic_float_s'.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'INIT_OUTER_INIT_INNER'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'INIT_OUTER_INIT_INNER'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 4.4 seconds; current allocated memory: 885.031 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.508 seconds; current allocated memory: 886.074 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_INPUT_COPY' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -266,13 +245,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'INPUT_COPY'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'INPUT_COPY'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.785 seconds; current allocated memory: 886.230 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.955 seconds; current allocated memory: 892.344 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.045 seconds; current allocated memory: 886.246 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.047 seconds; current allocated memory: 893.461 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_VITIS_LOOP_19_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -280,13 +259,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_19_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, loop 'VITIS_LOOP_19_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.484 seconds; current allocated memory: 886.250 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.408 seconds; current allocated memory: 893.664 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.116 seconds; current allocated memory: 886.254 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.197 seconds; current allocated memory: 893.734 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_VITIS_LOOP_27_2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -294,13 +273,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_27_2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 7, loop 'VITIS_LOOP_27_2'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.699 seconds; current allocated memory: 886.324 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.61 seconds; current allocated memory: 894.734 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.046 seconds; current allocated memory: 886.332 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 894.785 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'load_vec' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -308,13 +287,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'mem_rd'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'mem_rd'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.209 seconds; current allocated memory: 886.332 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 895.266 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 886.398 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.016 seconds; current allocated memory: 895.332 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -322,25 +301,25 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'mem_rd_VITIS_LOOP_25_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'mem_rd_VITIS_LOOP_25_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.245 seconds; current allocated memory: 886.398 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.228 seconds; current allocated memory: 895.465 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.032 seconds; current allocated memory: 886.398 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.027 seconds; current allocated memory: 895.539 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'load_mat' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.541 seconds; current allocated memory: 886.418 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.235 seconds; current allocated memory: 895.613 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.199 seconds; current allocated memory: 886.418 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.565 seconds; current allocated memory: 895.652 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_matmul_Pipeline_VITIS_LOOP_43_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -348,13 +327,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_43_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_43_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.298 seconds; current allocated memory: 886.426 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.303 seconds; current allocated memory: 896.039 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.019 seconds; current allocated memory: 886.426 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.017 seconds; current allocated memory: 896.039 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_matmul_Pipeline_execute_dot_product' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -375,25 +354,25 @@ WARNING: [HLS 200-1016] The critical path in module 'compute_matmul_Pipeline_exe
 
 Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.262 seconds; current allocated memory: 886.504 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.134 seconds; current allocated memory: 896.684 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.141 seconds; current allocated memory: 886.504 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.107 seconds; current allocated memory: 896.941 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_matmul' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.024 seconds; current allocated memory: 886.539 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.025 seconds; current allocated memory: 897.102 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.016 seconds; current allocated memory: 886.570 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.015 seconds; current allocated memory: 897.133 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'store_result' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -401,25 +380,25 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'mem_wr'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'mem_wr'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 886.582 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.179 seconds; current allocated memory: 897.559 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.021 seconds; current allocated memory: 886.582 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.018 seconds; current allocated memory: 897.559 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'matmul_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.031 seconds; current allocated memory: 886.613 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.025 seconds; current allocated memory: 897.715 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.246 seconds; current allocated memory: 886.613 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.101 seconds; current allocated memory: 897.715 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'pow_generic_float_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -429,13 +408,13 @@ INFO: [HLS 200-486] Changing DSP latency (root=add_ln563) to 3 in order to utili
 INFO: [SCHED 204-61] Pipelining function 'pow_generic<float>'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 12, function 'pow_generic<float>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.362 seconds; current allocated memory: 886.781 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.186 seconds; current allocated memory: 898.766 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.69 seconds; current allocated memory: 886.887 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.544 seconds; current allocated memory: 898.957 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'RoPE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -443,53 +422,53 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_16_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 38, loop 'VITIS_LOOP_16_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1 seconds; current allocated memory: 888.570 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.893 seconds; current allocated memory: 902.672 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.484 seconds; current allocated memory: 888.598 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.514 seconds; current allocated memory: 902.832 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_CACHE_STORE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'CACHE_STORE'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'CACHE_STORE'
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'CACHE_STORE'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.591 seconds; current allocated memory: 904.965 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.792 seconds; current allocated memory: 903.023 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.519 seconds; current allocated memory: 905.082 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 903.492 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_VITIS_LOOP_128_1' 
+INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_VITIS_LOOP_100_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_128_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_128_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_100_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_100_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.499 seconds; current allocated memory: 905.105 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.312 seconds; current allocated memory: 903.918 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.035 seconds; current allocated memory: 905.105 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 903.980 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Outline_ATT_INIT' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 905.113 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.031 seconds; current allocated memory: 904.094 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 905.113 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.015 seconds; current allocated memory: 904.098 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_Q_LOAD' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -497,39 +476,65 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'Q_LOAD'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'Q_LOAD'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.321 seconds; current allocated memory: 905.148 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.266 seconds; current allocated memory: 907.312 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.097 seconds; current allocated memory: 905.160 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 907.328 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'TOKEN_COMPUTE'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 8, Final II = 8, Depth = 138, loop 'TOKEN_COMPUTE'
+WARNING: [HLS 200-880] The II Violation in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' (loop 'TOKEN_COMPUTE'): Unable to enforce a carried dependence constraint (II = 8, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_63', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) and bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' (loop 'TOKEN_COMPUTE'): Unable to enforce a carried dependence constraint (II = 9, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_63', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) and bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' (loop 'TOKEN_COMPUTE'): Unable to enforce a carried dependence constraint (II = 10, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_63', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) and bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' (loop 'TOKEN_COMPUTE'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_63', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) and bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' (loop 'TOKEN_COMPUTE'): Unable to enforce a carried dependence constraint (II = 41, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_63', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) and bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' (loop 'TOKEN_COMPUTE'): Unable to enforce a carried dependence constraint (II = 56, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_63', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) and bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' (loop 'TOKEN_COMPUTE'): Unable to enforce a carried dependence constraint (II = 60, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_63', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) and bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' (loop 'TOKEN_COMPUTE'): Unable to enforce a carried dependence constraint (II = 62, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_63', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) and bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' (loop 'TOKEN_COMPUTE'): Unable to enforce a carried dependence constraint (II = 63, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_63', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) and bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 8, Final II = 64, Depth = 147, loop 'TOKEN_COMPUTE'
+WARNING: [HLS 200-871] Estimated clock period (3.379 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' consists of the following:
+	'muxlogic' operation 32 bit ('muxLogicAXIMCE_to_gmem2_addr_read') [181]  (0.947 ns)
+	bus read operation ('gmem2_addr_read', kernel_MHSA.cpp:130) on port 'gmem2' (kernel_MHSA.cpp:130) [182]  (1.082 ns)
+	'muxlogic' operation 32 bit ('muxLogicI1_to_mul') [375]  (1.350 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 13 seconds. CPU system time: 0 seconds. Elapsed time: 13.739 seconds; current allocated memory: 934.066 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 14 seconds. CPU system time: 0 seconds. Elapsed time: 15.217 seconds; current allocated memory: 917.836 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.596 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.247 seconds; current allocated memory: 917.879 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Outline_HEAD_COMPUTE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.548 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.879 seconds; current allocated memory: 917.969 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.123 seconds; current allocated memory: 917.969 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_softmax' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -537,31 +542,42 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'load'.
 INFO: [SCHED 204-61] Pipelining loop 'find_max'.
 INFO: [SCHED 204-61] Pipelining loop 'compute'.
+WARNING: [HLS 200-887] Cannot meet target clock period from 'fadd' operation 32 bit ('sum', kernel_Softmax.cpp:31) to 'muxlogic' operation 32 bit ('muxLogicI0_to_sum_1') (combination delay: 3.696 ns) to honor II or Latency constraint in region 'compute'.
+Resolution: For help on HLS 200-887 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
 INFO: [SCHED 204-61] Pipelining loop 'normalize'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'load'
-INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 2, Depth = 4, loop 'find_max'
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 14, loop 'compute'
+INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 2, Depth = 3, loop 'find_max'
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 13, loop 'compute'
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 13, loop 'normalize'
+WARNING: [HLS 200-871] Estimated clock period (3.696 ns) exceeds the target (target clock period: 4.000 ns, clock uncertainty: 1.080 ns, effective delay budget: 2.920 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'kernel_softmax' consists of the following:
+	'fadd' operation 32 bit ('sum', kernel_Softmax.cpp:31) [119]  (1.925 ns)
+	multiplexor before 'phi' operation 32 bit ('sum') with incoming values : ('sum', kernel_Softmax.cpp:31) [96]  (0.421 ns)
+	'phi' operation 32 bit ('sum') with incoming values : ('sum', kernel_Softmax.cpp:31) [96]  (0.000 ns)
+	'muxlogic' operation 32 bit ('muxLogicI0_to_sum_1') [117]  (1.350 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.328 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.228 seconds; current allocated memory: 918.172 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.333 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.302 seconds; current allocated memory: 918.219 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Outline_SOFTMAX_HEADS' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.13 seconds; current allocated memory: 918.426 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.233 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.214 seconds; current allocated memory: 918.434 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_XB_INIT' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -569,27 +585,27 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'XB_INIT'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'XB_INIT'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.182 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 918.586 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.751 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.019 seconds; current allocated memory: 918.586 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'TOKEN_STREAM_VALUE_MAC'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 2, Depth = 10, loop 'TOKEN_STREAM_VALUE_MAC'
+INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 2, Depth = 19, loop 'TOKEN_STREAM_VALUE_MAC'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.138 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.23 seconds; current allocated memory: 922.695 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.295 seconds; current allocated memory: 934.137 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.416 seconds; current allocated memory: 923.051 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_ACCUM_WRITEBACK' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -597,13 +613,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ACCUM_WRITEBACK'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'ACCUM_WRITEBACK'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.408 seconds; current allocated memory: 934.207 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.679 seconds; current allocated memory: 923.430 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.031 seconds; current allocated memory: 934.293 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.031 seconds; current allocated memory: 923.754 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_RESIDUAL' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -611,13 +627,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'RESIDUAL'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'RESIDUAL'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.35 seconds; current allocated memory: 934.695 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.333 seconds; current allocated memory: 924.539 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.121 seconds; current allocated memory: 934.695 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.112 seconds; current allocated memory: 924.586 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa_Pipeline_OUTPUT_WRITE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -625,31 +641,25 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'OUTPUT_WRITE'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'OUTPUT_WRITE'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.395 seconds; current allocated memory: 934.742 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.383 seconds; current allocated memory: 924.961 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.044 seconds; current allocated memory: 934.742 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.043 seconds; current allocated memory: 925.012 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'kernel_mhsa' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.537 seconds; current allocated memory: 937.941 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.802 seconds; current allocated memory: 927.762 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 3.431 seconds; current allocated memory: 940.328 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER' pipeline 'INIT_OUTER_INIT_INNER' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_INIT_OUTER_INIT_INNER'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.192 seconds; current allocated memory: 949.363 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.634 seconds; current allocated memory: 928.430 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_INPUT_COPY' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -667,14 +677,14 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_INPUT_C
 WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_INPUT_COPY/m_axi_gmem0_0_ARREGION' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_INPUT_COPY/m_axi_gmem0_0_ARUSER' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_INPUT_COPY'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.796 seconds; current allocated memory: 970.387 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.484 seconds; current allocated memory: 930.660 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_VITIS_LOOP_19_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kernel_mhsa_Pipeline_VITIS_LOOP_19_1' pipeline 'VITIS_LOOP_19_1' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_VITIS_LOOP_19_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.159 seconds; current allocated memory: 970.387 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.146 seconds; current allocated memory: 933.285 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_VITIS_LOOP_27_2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -694,14 +704,14 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_VITIS_L
 INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_1_primitive_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_VITIS_LOOP_27_2'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.227 seconds; current allocated memory: 970.387 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.362 seconds; current allocated memory: 934.824 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'load_vec' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'load_vec' pipeline 'mem_rd' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'load_vec'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.839 seconds; current allocated memory: 970.387 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.821 seconds; current allocated memory: 937.188 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -719,18 +729,18 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'load_mat_Pipeline_mem_rd_VIT
 WARNING: [RTGEN 206-101] Setting dangling out port 'load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1/m_axi_gmem1_0_ARREGION' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1/m_axi_gmem1_0_ARUSER' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.111 seconds; current allocated memory: 970.387 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.103 seconds; current allocated memory: 937.996 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'load_mat' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'load_mat'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.102 seconds; current allocated memory: 970.387 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.096 seconds; current allocated memory: 938.742 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_matmul_Pipeline_VITIS_LOOP_43_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_matmul_Pipeline_VITIS_LOOP_43_1' pipeline 'VITIS_LOOP_43_1' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_matmul_Pipeline_VITIS_LOOP_43_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.677 seconds; current allocated memory: 970.387 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.983 seconds; current allocated memory: 939.457 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_matmul_Pipeline_execute_dot_product' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -738,7 +748,7 @@ INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_matmul_Pi
 INFO: [RTGEN 206-100] Generating core module 'fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_2_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_matmul_Pipeline_execute_dot_product'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.135 seconds; current allocated memory: 970.902 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 940.891 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_matmul' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -748,13 +758,13 @@ INFO: [SYN 201-210] Renamed object name 'compute_matmul_compute_matmul_stream_fl
 INFO: [SYN 201-210] Renamed object name 'compute_matmul_compute_matmul_stream_float_0_stream_float_0_stream_float_0_vec_local_3_RAM_AUTO_1R1W' to 'compute_matmul_compute_matmul_stream_float_0_stream_float_0_stream_float_0_veeOg' due to the length limit 80
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_matmul'.
 INFO: [RTMG 210-278] Implementing memory 'kernel_mhsa_compute_matmul_compute_matmul_stream_float_0_stream_float_0_stream_float_0_vebkb' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.235 seconds; current allocated memory: 972.602 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.247 seconds; current allocated memory: 942.477 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'store_result' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'store_result' pipeline 'mem_wr' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'store_result'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.873 seconds; current allocated memory: 973.102 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.255 seconds; current allocated memory: 943.234 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'matmul_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -783,7 +793,7 @@ INFO: [RTMG 210-285] Implementing FIFO 'matrix_stream_U(kernel_mhsa_fifo_w32_d64
 INFO: [RTMG 210-285] Implementing FIFO 'result_stream_U(kernel_mhsa_fifo_w32_d64_A)' using Vivado Default RAMs.
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_compute_matmul_U0_U(kernel_mhsa_start_for_compute_matmul_U0)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_store_result_U0_U(kernel_mhsa_start_for_store_result_U0)' using Shift Registers.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.201 seconds; current allocated memory: 975.805 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.421 seconds; current allocated memory: 945.207 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'pow_generic_float_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -797,7 +807,7 @@ INFO: [RTGEN 206-100] Generating core module 'sparsemux_11_4_32_1_1': 1 instance
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pow_generic_float_s'.
 INFO: [RTMG 210-279] Implementing memory 'kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arrfYi' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arrayg8j' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.834 seconds; current allocated memory: 977.867 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.167 seconds; current allocated memory: 946.945 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'RoPE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -825,87 +835,112 @@ INFO: [RTMG 210-279] Implementing memory 'kernel_mhsa_RoPE_second_order_float_co
 INFO: [RTMG 210-279] Implementing memory 'kernel_mhsa_RoPE_second_order_float_sin_K0_ROM_1P_LUTRAM_1R' using distributed ROMs.
 INFO: [RTMG 210-279] Implementing memory 'kernel_mhsa_RoPE_second_order_float_sin_K1_ROM_1P_LUTRAM_1R' using distributed ROMs.
 INFO: [RTMG 210-279] Implementing memory 'kernel_mhsa_RoPE_second_order_float_sin_K2_ROM_1P_LUTRAM_1R' using distributed ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.139 seconds; current allocated memory: 983.289 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.887 seconds; current allocated memory: 952.559 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_CACHE_STORE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kernel_mhsa_Pipeline_CACHE_STORE' pipeline 'CACHE_STORE' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem2_0_BREADY' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_CACHE_STORE/m_axi_gmem3_0_BREADY' to 0.
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_CACHE_STORE'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.42 seconds; current allocated memory: 999.227 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.997 seconds; current allocated memory: 962.230 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_VITIS_LOOP_128_1' 
+INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_VITIS_LOOP_100_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_VITIS_LOOP_128_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.886 seconds; current allocated memory: 1020.742 MB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_VITIS_LOOP_100_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.191 seconds; current allocated memory: 962.230 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Outline_ATT_INIT' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Outline_ATT_INIT'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.151 seconds; current allocated memory: 1020.742 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.148 seconds; current allocated memory: 963.227 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_Q_LOAD' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kernel_mhsa_Pipeline_Q_LOAD' pipeline 'Q_LOAD' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_Q_LOAD'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.153 seconds; current allocated memory: 1020.742 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.156 seconds; current allocated memory: 965.211 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kernel_mhsa_Pipeline_TOKEN_COMPUTE' pipeline 'TOKEN_COMPUTE' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_1_primitive_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 8 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sparsemux_25_4_32_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_TOKEN_COMPUTE'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.253 seconds; current allocated memory: 1.012 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.569 seconds; current allocated memory: 976.316 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Outline_HEAD_COMPUTE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Outline_HEAD_COMPUTE/grp_fu_2831_p_opcode' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Outline_HEAD_COMPUTE/grp_fu_2178_p_opcode' to 0.
 INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Outline_HEAD_COMPUTE'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 6 seconds. CPU system time: 1 seconds. Elapsed time: 6.9 seconds; current allocated memory: 1.064 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.705 seconds; current allocated memory: 989.914 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_softmax' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_1_no_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_11_no_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fexp_32ns_32ns_32_9_med_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_softmax'.
 INFO: [RTMG 210-278] Implementing memory 'kernel_mhsa_kernel_softmax_vec_local_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.286 seconds; current allocated memory: 1.064 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.189 seconds; current allocated memory: 990.453 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Outline_SOFTMAX_HEADS' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Outline_SOFTMAX_HEADS'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.63 seconds; current allocated memory: 1.064 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.743 seconds; current allocated memory: 993.215 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_XB_INIT' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_XB_INIT'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.227 seconds; current allocated memory: 1.064 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.208 seconds; current allocated memory: 994.504 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC' pipeline 'TOKEN_STREAM_VALUE_MAC' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sparsemux_25_4_32_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_25_4_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_65_6_32_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_32_1_1': 24 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 1.067 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.516 seconds; current allocated memory: 1000.281 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_ACCUM_WRITEBACK' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_6_32_1_1': 4 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_ACCUM_WRITEBACK'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.764 seconds; current allocated memory: 1.081 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.075 seconds; current allocated memory: 1012.867 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_RESIDUAL' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -913,7 +948,7 @@ INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'kernel_mhsa_Pipel
 INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_RESIDUAL'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.184 seconds; current allocated memory: 1.083 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.164 seconds; current allocated memory: 1012.906 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa_Pipeline_OUTPUT_WRITE' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -933,39 +968,40 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_OUTPUT_
 WARNING: [RTGEN 206-101] Setting dangling out port 'kernel_mhsa_Pipeline_OUTPUT_WRITE/m_axi_gmem0_0_BREADY' to 0.
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa_Pipeline_OUTPUT_WRITE'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.821 seconds; current allocated memory: 1.085 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.785 seconds; current allocated memory: 1015.098 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'kernel_mhsa' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
 INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_mhsa/gmem0' to 'm_axi'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_mhsa/gmem1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_mhsa/gmem2' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_mhsa/gmem3' to 'm_axi'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_mhsa/current_token' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_mhsa/position' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_mhsa/weights' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_mhsa/key_cache' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_mhsa/value_cache' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'kernel_mhsa' to 's_axilite & ap_ctrl_hs'.
-WARNING: [RTGEN 206-101] Register 'cache_initialized' is power-on initialization.
-INFO: [RTGEN 206-100] Bundling port 'current_token', 'position', 'weights' and 'return' to AXI-Lite port control.
-INFO: [RTGEN 206-104] Estimated max fanout for 'kernel_mhsa' is 9728 from HDL expression: (1'b1 == ap_CS_fsm_state64)
+INFO: [RTGEN 206-100] Bundling port 'current_token', 'position', 'weights', 'key_cache', 'value_cache' and 'return' to AXI-Lite port control.
 INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_11_no_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fsqrt_32ns_32ns_32_15_no_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_mhsa'.
-INFO: [RTMG 210-278] Implementing memory 'kernel_mhsa_p_ZZ11kernel_mhsaPfiS_E9key_cache_0_0_RAM_1P_BRAM_1R1W' using block RAMs.
 INFO: [RTMG 210-278] Implementing memory 'kernel_mhsa_out_rms_vec_RAM_AUTO_1R1W' using auto RAMs.
 INFO: [RTMG 210-278] Implementing memory 'kernel_mhsa_current_input_RAM_AUTO_1R1W' using auto RAMs.
 INFO: [RTMG 210-278] Implementing memory 'kernel_mhsa_att_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.95 seconds; current allocated memory: 1.112 GB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 9 seconds. CPU system time: 1 seconds. Elapsed time: 10.905 seconds; current allocated memory: 1.138 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.097 seconds; current allocated memory: 1.005 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 8 seconds. CPU system time: 0 seconds. Elapsed time: 8.829 seconds; current allocated memory: 1.020 GB.
 INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 4.049 seconds; current allocated memory: 1.164 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.39 seconds; current allocated memory: 1.039 GB.
 INFO: [VHDL 208-304] Generating VHDL RTL for kernel_mhsa.
 INFO: [VLOG 209-307] Generating Verilog RTL for kernel_mhsa.
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 305.44 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:03:02; Allocated memory: 671.281 MB.
-INFO: [HLS 200-112] Total CPU user time: 84 seconds. Total CPU system time: 9 seconds. Total elapsed time: 185.847 seconds; peak allocated memory: 1.164 GB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 3m 7s
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 270.56 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:02:40; Allocated memory: 481.387 MB.
+INFO: [HLS 200-112] Total CPU user time: 64 seconds. Total CPU system time: 6 seconds. Total elapsed time: 164.202 seconds; peak allocated memory: 1.039 GB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 2m 45s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

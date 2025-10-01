@@ -3277,7 +3277,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=s_axilite port=position_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=key_cache bundle=gmem2 offset=slave max_read_burst_length=256 max_write_burst_length=256_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3293,6 +3293,38 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=value_cache bundle=gmem3 offset=slave max_read_burst_length=256 max_write_burst_length=256_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>kernel_MHSA.cpp</string>
+      <key>line</key>
+      <integer>13</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=s_axilite port=position_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>kernel_MHSA.cpp</string>
+      <key>line</key>
+      <integer>14</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=s_axilite port=return_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
@@ -3305,151 +3337,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>24</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=key_cache complete dim=1_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>25</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=key_cache cyclic factor=8 dim=2_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>26</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=key_cache type=ram_1p impl=bram_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>27</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=value_cache complete dim=1_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>28</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=value_cache cyclic factor=8 dim=2_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>29</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=value_cache type=ram_1p impl=bram_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>34</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=12_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>36</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>37</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1024 max=262144_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>57</integer>
+      <integer>33</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3465,7 +3353,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>58</integer>
+      <integer>34</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3481,7 +3369,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>59</integer>
+      <integer>35</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3497,7 +3385,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>60</integer>
+      <integer>36</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3513,7 +3401,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>61</integer>
+      <integer>37</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3529,7 +3417,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>62</integer>
+      <integer>38</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3545,7 +3433,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>63</integer>
+      <integer>39</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3561,7 +3449,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>64</integer>
+      <integer>40</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3577,7 +3465,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>65</integer>
+      <integer>41</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3593,7 +3481,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>68</integer>
+      <integer>44</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3609,7 +3497,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>72</integer>
+      <integer>48</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3625,7 +3513,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>78</integer>
+      <integer>54</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3641,7 +3529,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>79</integer>
+      <integer>55</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3657,55 +3545,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>91</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dataflow_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>98</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dataflow_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>107</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dataflow_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>114</integer>
+      <integer>86</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3721,7 +3561,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>121</integer>
+      <integer>93</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3737,7 +3577,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>129</integer>
+      <integer>101</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3753,7 +3593,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>130</integer>
+      <integer>102</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3769,7 +3609,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>137</integer>
+      <integer>109</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3785,7 +3625,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>141</integer>
+      <integer>113</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3801,7 +3641,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>144</integer>
+      <integer>116</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3817,7 +3657,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>150</integer>
+      <integer>122</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3833,7 +3673,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>151</integer>
+      <integer>123</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3849,7 +3689,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>157</integer>
+      <integer>129</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3865,7 +3705,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>159</integer>
+      <integer>131</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3881,7 +3721,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>170</integer>
+      <integer>142</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3897,7 +3737,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>176</integer>
+      <integer>148</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3913,7 +3753,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>184</integer>
+      <integer>156</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3929,7 +3769,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>188</integer>
+      <integer>160</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3945,7 +3785,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>192</integer>
+      <integer>164</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3961,7 +3801,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>198</integer>
+      <integer>170</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3977,7 +3817,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>204</integer>
+      <integer>176</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3993,7 +3833,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>205</integer>
+      <integer>177</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -4009,7 +3849,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>207</integer>
+      <integer>179</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -4025,7 +3865,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>214</integer>
+      <integer>186</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -4041,7 +3881,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>215</integer>
+      <integer>187</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -4057,7 +3897,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>226</integer>
+      <integer>198</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -4073,7 +3913,7 @@
       <key>filename</key>
       <string>kernel_MHSA.cpp</string>
       <key>line</key>
-      <integer>233</integer>
+      <integer>205</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -4082,54 +3922,6 @@
       <integer>5471</integer>
       <key>WarningOption</key>
       <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>91</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>Only &apos;for&apos; loop or function body support the dataflow pragma</string>
-      <key>ID</key>
-      <integer>5576</integer>
-      <key>WarningOption</key>
-      <string>ignored-hls-attributes</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>98</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>Only &apos;for&apos; loop or function body support the dataflow pragma</string>
-      <key>ID</key>
-      <integer>5576</integer>
-      <key>WarningOption</key>
-      <string>ignored-hls-attributes</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>kernel_MHSA.cpp</string>
-      <key>line</key>
-      <integer>107</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>Only &apos;for&apos; loop or function body support the dataflow pragma</string>
-      <key>ID</key>
-      <integer>5576</integer>
-      <key>WarningOption</key>
-      <string>ignored-hls-attributes</string>
     </dict>
   </array>
 </dict>

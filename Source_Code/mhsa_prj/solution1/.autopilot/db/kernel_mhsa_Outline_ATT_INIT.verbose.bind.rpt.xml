@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Outline_ATT_INIT'" level="0">
-<item name = "Date">Sat Sep 27 23:14:55 2025
+<item name = "Date">Tue Sep 30 23:58:19 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_128_1_fu_66">kernel_mhsa_Pipeline_VITIS_LOOP_128_1, 3, 514, 12.000 ns, 2.056 us, 2, 513, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_100_1_fu_66">kernel_mhsa_Pipeline_VITIS_LOOP_100_1, 3, 514, 12.000 ns, 2.056 us, 2, 513, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

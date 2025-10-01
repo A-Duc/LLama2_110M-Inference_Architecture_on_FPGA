@@ -27,15 +27,25 @@ using namespace std;
 #define AUTOTB_TVOUT_position "../tv/cdatafile/c.kernel_mhsa.autotvout_position.dat"
 #define AUTOTB_TVIN_weights "../tv/cdatafile/c.kernel_mhsa.autotvin_weights.dat"
 #define AUTOTB_TVOUT_weights "../tv/cdatafile/c.kernel_mhsa.autotvout_weights.dat"
+#define AUTOTB_TVIN_key_cache "../tv/cdatafile/c.kernel_mhsa.autotvin_key_cache.dat"
+#define AUTOTB_TVOUT_key_cache "../tv/cdatafile/c.kernel_mhsa.autotvout_key_cache.dat"
+#define AUTOTB_TVIN_value_cache "../tv/cdatafile/c.kernel_mhsa.autotvin_value_cache.dat"
+#define AUTOTB_TVOUT_value_cache "../tv/cdatafile/c.kernel_mhsa.autotvout_value_cache.dat"
 #define AUTOTB_TVIN_gmem0 "../tv/cdatafile/c.kernel_mhsa.autotvin_gmem0.dat"
 #define AUTOTB_TVOUT_gmem0 "../tv/cdatafile/c.kernel_mhsa.autotvout_gmem0.dat"
 #define AUTOTB_TVIN_gmem1 "../tv/cdatafile/c.kernel_mhsa.autotvin_gmem1.dat"
 #define AUTOTB_TVOUT_gmem1 "../tv/cdatafile/c.kernel_mhsa.autotvout_gmem1.dat"
+#define AUTOTB_TVIN_gmem2 "../tv/cdatafile/c.kernel_mhsa.autotvin_gmem2.dat"
+#define AUTOTB_TVOUT_gmem2 "../tv/cdatafile/c.kernel_mhsa.autotvout_gmem2.dat"
+#define AUTOTB_TVIN_gmem3 "../tv/cdatafile/c.kernel_mhsa.autotvin_gmem3.dat"
+#define AUTOTB_TVOUT_gmem3 "../tv/cdatafile/c.kernel_mhsa.autotvout_gmem3.dat"
 
 
 // tvout file define:
 #define AUTOTB_TVOUT_PC_gmem0 "../tv/rtldatafile/rtl.kernel_mhsa.autotvout_gmem0.dat"
 #define AUTOTB_TVOUT_PC_gmem1 "../tv/rtldatafile/rtl.kernel_mhsa.autotvout_gmem1.dat"
+#define AUTOTB_TVOUT_PC_gmem2 "../tv/rtldatafile/rtl.kernel_mhsa.autotvout_gmem2.dat"
+#define AUTOTB_TVOUT_PC_gmem3 "../tv/rtldatafile/rtl.kernel_mhsa.autotvout_gmem3.dat"
 
 
 namespace hls::sim
@@ -1239,10 +1249,10 @@ namespace hls::sim
 
 
 extern "C"
-void kernel_mhsa_hw_stub_wrapper(void*, hls::sim::Byte<4>, void*);
+void kernel_mhsa_hw_stub_wrapper(void*, hls::sim::Byte<4>, void*, void*, void*);
 
 extern "C"
-void apatb_kernel_mhsa_hw(void* __xlx_apatb_param_current_token, hls::sim::Byte<4> __xlx_apatb_param_position, void* __xlx_apatb_param_weights)
+void apatb_kernel_mhsa_hw(void* __xlx_apatb_param_current_token, hls::sim::Byte<4> __xlx_apatb_param_position, void* __xlx_apatb_param_weights, void* __xlx_apatb_param_key_cache, void* __xlx_apatb_param_value_cache)
 {
   static hls::sim::Byte<4> __xlx_offset_byte_param_current_token;
   static hls::sim::Register port0 {
@@ -1279,10 +1289,34 @@ void apatb_kernel_mhsa_hw(void* __xlx_apatb_param_current_token, hls::sim::Byte<
   };
   port2.param = &__xlx_offset_byte_param_weights;
 
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port3 {
+  static hls::sim::Byte<4> __xlx_offset_byte_param_key_cache;
+  static hls::sim::Register port3 {
+    .name = "key_cache",
+    .width = 32,
+#ifdef POST_CHECK
 #else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port3 {
+    .owriter = nullptr,
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_key_cache),
+#endif
+  };
+  port3.param = &__xlx_offset_byte_param_key_cache;
+
+  static hls::sim::Byte<4> __xlx_offset_byte_param_value_cache;
+  static hls::sim::Register port4 {
+    .name = "value_cache",
+    .width = 32,
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_value_cache),
+#endif
+  };
+  port4.param = &__xlx_offset_byte_param_value_cache;
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port5 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port5 {
 #endif
     .width = 32,
     .asize = 4,
@@ -1309,14 +1343,14 @@ void apatb_kernel_mhsa_hw(void* __xlx_apatb_param_current_token, hls::sim::Byte<
     .hasWrite = { true },
     .max_nbytes = { 0 },
   };
-  port3.param = { __xlx_apatb_param_current_token };
-  port3.mname = { "current_token" };
-  port3.nbytes = { 3072 };
+  port5.param = { __xlx_apatb_param_current_token };
+  port5.mname = { "current_token" };
+  port5.nbytes = { 3072 };
 
 #ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port4 {
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port6 {
 #else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port4 {
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port6 {
 #endif
     .width = 32,
     .asize = 4,
@@ -1326,7 +1360,7 @@ void apatb_kernel_mhsa_hw(void* __xlx_apatb_param_current_token, hls::sim::Byte<
 #else
     .owriter = nullptr,
 #ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_gmem1),
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem1),
 #else
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem1),
 #endif
@@ -1334,32 +1368,112 @@ void apatb_kernel_mhsa_hw(void* __xlx_apatb_param_current_token, hls::sim::Byte<
     .hasWrite = { false },
     .max_nbytes = { 0 },
   };
-  port4.param = { __xlx_apatb_param_weights };
-  port4.mname = { "weights" };
-  port4.nbytes = { 113283072 };
+  port6.param = { __xlx_apatb_param_weights };
+  port6.mname = { "weights" };
+  port6.nbytes = { 0 };
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port7 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port7 {
+#endif
+    .width = 32,
+    .asize = 4,
+    .hbm = false,
+    .name = { "gmem2" },
+#ifdef POST_CHECK
+#ifdef USE_BINARY_TV_FILE
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_gmem2),
+#else
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_gmem2),
+#endif
+#else
+#ifdef USE_BINARY_TV_FILE
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_gmem2),
+#else
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_gmem2),
+#endif
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem2),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem2),
+#endif
+#endif
+    .hasWrite = { true },
+    .max_nbytes = { 0 },
+  };
+  port7.param = { __xlx_apatb_param_key_cache };
+  port7.mname = { "key_cache" };
+  port7.nbytes = { 0 };
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port8 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port8 {
+#endif
+    .width = 32,
+    .asize = 4,
+    .hbm = false,
+    .name = { "gmem3" },
+#ifdef POST_CHECK
+#ifdef USE_BINARY_TV_FILE
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_gmem3),
+#else
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_gmem3),
+#endif
+#else
+#ifdef USE_BINARY_TV_FILE
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_gmem3),
+#else
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_gmem3),
+#endif
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem3),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem3),
+#endif
+#endif
+    .hasWrite = { true },
+    .max_nbytes = { 0 },
+  };
+  port8.param = { __xlx_apatb_param_value_cache };
+  port8.mname = { "value_cache" };
+  port8.nbytes = { 0 };
 
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port3);
+    check(port5);
+    check(port7);
+    check(port8);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     tcl.containsVLA = 0;
     CodeState = DUMP_INPUTS;
     delay_dump(port0, port0.iwriter, tcl.AESL_transaction);
     delay_dump(port2, port2.iwriter, tcl.AESL_transaction);
+    delay_dump(port3, port3.iwriter, tcl.AESL_transaction);
+    delay_dump(port4, port4.iwriter, tcl.AESL_transaction);
     dump(port1, port1.iwriter, tcl.AESL_transaction);
-    dump(port3, port3.iwriter, tcl.AESL_transaction);
-    dump(port4, port4.iwriter, tcl.AESL_transaction);
+    dump(port5, port5.iwriter, tcl.AESL_transaction);
+    dump(port6, port6.iwriter, tcl.AESL_transaction);
+    dump(port7, port7.iwriter, tcl.AESL_transaction);
+    dump(port8, port8.iwriter, tcl.AESL_transaction);
     port0.doTCL(tcl);
     port1.doTCL(tcl);
     port2.doTCL(tcl);
     port3.doTCL(tcl);
     port4.doTCL(tcl);
+    port5.doTCL(tcl);
+    port6.doTCL(tcl);
+    port7.doTCL(tcl);
+    port8.doTCL(tcl);
     CodeState = CALL_C_DUT;
-    kernel_mhsa_hw_stub_wrapper(__xlx_apatb_param_current_token, __xlx_apatb_param_position, __xlx_apatb_param_weights);
+    kernel_mhsa_hw_stub_wrapper(__xlx_apatb_param_current_token, __xlx_apatb_param_position, __xlx_apatb_param_weights, __xlx_apatb_param_key_cache, __xlx_apatb_param_value_cache);
     CodeState = DUMP_OUTPUTS;
-    dump(port3, port3.owriter, tcl.AESL_transaction);
+    dump(port5, port5.owriter, tcl.AESL_transaction);
+    dump(port7, port7.owriter, tcl.AESL_transaction);
+    dump(port8, port8.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

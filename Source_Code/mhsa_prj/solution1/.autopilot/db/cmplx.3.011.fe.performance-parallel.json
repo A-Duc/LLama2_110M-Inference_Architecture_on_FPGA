@@ -1,37 +1,59 @@
 {
   "0": {
-    "basicblocks": 466,
-    "calls": "5 5 5 3 3 6 5 6 6 6 6 6 6 6 6 6 6 6",
+    "basicblocks": 218,
+    "calls": "2 2 2 7 7 6 2 6 6 6 6 6 6 6 6 6 6 6",
     "control_depth": 2,
     "def_use_depth": 71,
     "file": "kernel_MHSA.cpp",
     "fileloc": 6,
-    "instructions": 6390,
+    "instructions": 2209,
     "loads": {
-      "G": 865,
       "L": 204
     },
-    "memory_accesses": 1674,
+    "memory_accesses": 470,
     "name": "kernel_mhsa",
     "stores": {
-      "G": 385,
       "L": 192
     },
-    "total_instructions": 8884
+    "total_instructions": 4759
   },
   "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "x_hls_utils.h",
+    "fileloc": 346,
+    "instructions": 5,
+    "memory_accesses": 0,
+    "name": "to_ieee",
+    "total_instructions": 5
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "4 3 5 8",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 75,
+    "instructions": 14,
+    "memory_accesses": 0,
+    "name": "matmul",
+    "total_instructions": 163
+  },
+  "3": {
     "basicblocks": 5,
     "calls": "",
     "control_depth": 0,
     "def_use_depth": 3,
     "file": "kernel_MatMul.cpp",
     "fileloc": 20,
-    "instructions": 18,
+    "instructions": 17,
     "memory_accesses": 2,
     "name": "load_mat",
-    "total_instructions": 18
+    "total_instructions": 17
   },
-  "2": {
+  "4": {
     "basicblocks": 3,
     "calls": "",
     "control_depth": 0,
@@ -46,26 +68,7 @@
     "name": "load_vec",
     "total_instructions": 26
   },
-  "3": {
-    "basicblocks": 20,
-    "calls": "7",
-    "control_depth": 4,
-    "def_use_depth": 58,
-    "file": "kernel_Rope.cpp",
-    "fileloc": 3,
-    "instructions": 371,
-    "loads": {
-      "G": 7,
-      "L": 8
-    },
-    "memory_accesses": 31,
-    "name": "RoPE",
-    "stores": {
-      "L": 12
-    },
-    "total_instructions": 583
-  },
-  "4": {
+  "5": {
     "basicblocks": 12,
     "calls": "",
     "control_depth": 2,
@@ -83,26 +86,14 @@
     },
     "total_instructions": 62
   },
-  "5": {
-    "basicblocks": 1,
-    "calls": "2 1 4 8",
-    "control_depth": 0,
-    "def_use_depth": 1,
-    "file": "kernel_MatMul.cpp",
-    "fileloc": 75,
-    "instructions": 14,
-    "memory_accesses": 0,
-    "name": "matmul",
-    "total_instructions": 164
-  },
   "6": {
-    "basicblocks": 10,
+    "basicblocks": 14,
     "calls": "",
-    "control_depth": 1,
+    "control_depth": 2,
     "def_use_depth": 5,
     "file": "kernel_Softmax.cpp",
     "fileloc": 2,
-    "instructions": 56,
+    "instructions": 61,
     "loads": {
       "L": 6
     },
@@ -111,22 +102,26 @@
     "stores": {
       "L": 3
     },
-    "total_instructions": 56
+    "total_instructions": 61
   },
   "7": {
-    "basicblocks": 23,
-    "calls": "9 9 9 9 9 9 9 9",
-    "control_depth": 6,
-    "def_use_depth": 35,
-    "file": "hls_pow.h",
-    "fileloc": 291,
-    "instructions": 172,
+    "basicblocks": 20,
+    "calls": "9",
+    "control_depth": 4,
+    "def_use_depth": 58,
+    "file": "kernel_Rope.cpp",
+    "fileloc": 3,
+    "instructions": 371,
     "loads": {
-      "G": 2
+      "G": 7,
+      "L": 8
     },
-    "memory_accesses": 10,
-    "name": "pow_generic<float>",
-    "total_instructions": 212
+    "memory_accesses": 31,
+    "name": "RoPE",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 583
   },
   "8": {
     "basicblocks": 12,
@@ -144,15 +139,18 @@
     "total_instructions": 44
   },
   "9": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 2,
-    "file": "x_hls_utils.h",
-    "fileloc": 346,
-    "instructions": 5,
-    "memory_accesses": 0,
-    "name": "to_ieee",
-    "total_instructions": 5
+    "basicblocks": 23,
+    "calls": "1 1 1 1 1 1 1 1",
+    "control_depth": 6,
+    "def_use_depth": 35,
+    "file": "hls_pow.h",
+    "fileloc": 291,
+    "instructions": 172,
+    "loads": {
+      "G": 2
+    },
+    "memory_accesses": 10,
+    "name": "pow_generic<float>",
+    "total_instructions": 212
   }
 }

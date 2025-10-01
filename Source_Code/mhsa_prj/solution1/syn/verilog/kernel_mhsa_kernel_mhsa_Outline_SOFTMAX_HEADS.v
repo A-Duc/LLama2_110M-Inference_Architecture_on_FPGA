@@ -18,6 +18,7 @@ module kernel_mhsa_kernel_mhsa_Outline_SOFTMAX_HEADS (
         att_we0,
         att_d0,
         att_q0,
+        add141,
         att_1_address0,
         att_1_ce0,
         att_1_we0,
@@ -90,6 +91,7 @@ output   att_ce0;
 output   att_we0;
 output  [31:0] att_d0;
 input  [31:0] att_q0;
+input  [31:0] add141;
 output  [8:0] att_1_address0;
 output   att_1_ce0;
 output   att_1_we0;
@@ -176,52 +178,53 @@ reg att_11_we0;
 
 (* fsm_encoding = "none" *) reg   [2:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [3:0] h_1_load_fu_116_p1;
-reg   [3:0] h_1_reg_168;
+wire   [3:0] h_1_load_fu_127_p1;
+reg   [3:0] h_1_reg_184;
 wire    ap_CS_fsm_state2;
-wire   [3:0] add_ln169_fu_119_p2;
-reg   [3:0] add_ln169_reg_172;
-wire    grp_kernel_softmax_fu_94_ap_start;
-wire    grp_kernel_softmax_fu_94_ap_done;
-wire    grp_kernel_softmax_fu_94_ap_idle;
-wire    grp_kernel_softmax_fu_94_ap_ready;
-wire   [8:0] grp_kernel_softmax_fu_94_i_vec_address0;
-wire    grp_kernel_softmax_fu_94_i_vec_ce0;
-wire    grp_kernel_softmax_fu_94_i_vec_we0;
-wire   [31:0] grp_kernel_softmax_fu_94_i_vec_d0;
-reg   [31:0] grp_kernel_softmax_fu_94_i_vec_q0;
-reg    grp_kernel_softmax_fu_94_ap_start_reg;
-wire   [0:0] icmp_ln169_fu_125_p2;
+wire   [3:0] add_ln141_fu_130_p2;
+reg   [3:0] add_ln141_reg_188;
+wire    grp_kernel_softmax_fu_104_ap_start;
+wire    grp_kernel_softmax_fu_104_ap_done;
+wire    grp_kernel_softmax_fu_104_ap_idle;
+wire    grp_kernel_softmax_fu_104_ap_ready;
+wire   [8:0] grp_kernel_softmax_fu_104_i_vec_address0;
+wire    grp_kernel_softmax_fu_104_i_vec_ce0;
+wire    grp_kernel_softmax_fu_104_i_vec_we0;
+wire   [31:0] grp_kernel_softmax_fu_104_i_vec_d0;
+reg   [31:0] grp_kernel_softmax_fu_104_i_vec_q0;
+reg    grp_kernel_softmax_fu_104_ap_start_reg;
+wire   [0:0] icmp_ln141_fu_136_p2;
 wire    ap_CS_fsm_state3;
-reg   [3:0] h_fu_90;
-reg    ap_predicate_op82_call_state3;
+reg   [3:0] h_fu_94;
+reg    ap_predicate_op83_call_state3;
 reg    ap_block_state3_on_subcall_done;
 reg   [2:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
 reg    ap_ST_fsm_state3_blk;
-reg    ap_condition_326;
+reg    ap_condition_330;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
 #0 ap_CS_fsm = 3'd1;
-#0 grp_kernel_softmax_fu_94_ap_start_reg = 1'b0;
-#0 h_fu_90 = 4'd0;
+#0 grp_kernel_softmax_fu_104_ap_start_reg = 1'b0;
+#0 h_fu_94 = 4'd0;
 end
 
-kernel_mhsa_kernel_softmax grp_kernel_softmax_fu_94(
+kernel_mhsa_kernel_softmax grp_kernel_softmax_fu_104(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_kernel_softmax_fu_94_ap_start),
-    .ap_done(grp_kernel_softmax_fu_94_ap_done),
-    .ap_idle(grp_kernel_softmax_fu_94_ap_idle),
-    .ap_ready(grp_kernel_softmax_fu_94_ap_ready),
-    .i_vec_address0(grp_kernel_softmax_fu_94_i_vec_address0),
-    .i_vec_ce0(grp_kernel_softmax_fu_94_i_vec_ce0),
-    .i_vec_we0(grp_kernel_softmax_fu_94_i_vec_we0),
-    .i_vec_d0(grp_kernel_softmax_fu_94_i_vec_d0),
-    .i_vec_q0(grp_kernel_softmax_fu_94_i_vec_q0)
+    .ap_start(grp_kernel_softmax_fu_104_ap_start),
+    .ap_done(grp_kernel_softmax_fu_104_ap_done),
+    .ap_idle(grp_kernel_softmax_fu_104_ap_idle),
+    .ap_ready(grp_kernel_softmax_fu_104_ap_ready),
+    .i_vec_address0(grp_kernel_softmax_fu_104_i_vec_address0),
+    .i_vec_ce0(grp_kernel_softmax_fu_104_i_vec_ce0),
+    .i_vec_we0(grp_kernel_softmax_fu_104_i_vec_we0),
+    .i_vec_d0(grp_kernel_softmax_fu_104_i_vec_d0),
+    .i_vec_q0(grp_kernel_softmax_fu_104_i_vec_q0),
+    .vec_size(add141)
 );
 
 always @ (posedge ap_clk) begin
@@ -234,29 +237,29 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_kernel_softmax_fu_94_ap_start_reg <= 1'b0;
+        grp_kernel_softmax_fu_104_ap_start_reg <= 1'b0;
     end else begin
-        if (((~(h_1_load_fu_116_p1 == 4'd0) & ~(h_1_load_fu_116_p1 == 4'd1) & ~(h_1_load_fu_116_p1 == 4'd2) & ~(h_1_load_fu_116_p1 == 4'd3) & ~(h_1_load_fu_116_p1 == 4'd4) & ~(h_1_load_fu_116_p1 == 4'd5) & ~(h_1_load_fu_116_p1 == 4'd6) & ~(h_1_load_fu_116_p1 == 4'd7) & ~(h_1_load_fu_116_p1 == 4'd8) & ~(h_1_load_fu_116_p1 == 4'd9) & ~(h_1_load_fu_116_p1 == 4'd10) & (1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd0)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd1)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd2)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd3)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd4)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd5)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 
-    == 1'd0) & (h_1_load_fu_116_p1 == 4'd6)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd7)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd8)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd9)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd0) & (h_1_load_fu_116_p1 == 4'd10)))) begin
-            grp_kernel_softmax_fu_94_ap_start_reg <= 1'b1;
-        end else if ((grp_kernel_softmax_fu_94_ap_ready == 1'b1)) begin
-            grp_kernel_softmax_fu_94_ap_start_reg <= 1'b0;
+        if (((~(h_1_load_fu_127_p1 == 4'd0) & ~(h_1_load_fu_127_p1 == 4'd1) & ~(h_1_load_fu_127_p1 == 4'd2) & ~(h_1_load_fu_127_p1 == 4'd3) & ~(h_1_load_fu_127_p1 == 4'd4) & ~(h_1_load_fu_127_p1 == 4'd5) & ~(h_1_load_fu_127_p1 == 4'd6) & ~(h_1_load_fu_127_p1 == 4'd7) & ~(h_1_load_fu_127_p1 == 4'd8) & ~(h_1_load_fu_127_p1 == 4'd9) & ~(h_1_load_fu_127_p1 == 4'd10) & (1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd0)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd1)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd2)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd3)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd4)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd5)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 
+    == 1'd0) & (h_1_load_fu_127_p1 == 4'd6)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd7)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd8)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd9)) | ((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd0) & (h_1_load_fu_127_p1 == 4'd10)))) begin
+            grp_kernel_softmax_fu_104_ap_start_reg <= 1'b1;
+        end else if ((grp_kernel_softmax_fu_104_ap_ready == 1'b1)) begin
+            grp_kernel_softmax_fu_104_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        h_fu_90 <= 4'd0;
+        h_fu_94 <= 4'd0;
     end else if (((1'b0 == ap_block_state3_on_subcall_done) & (1'b1 == ap_CS_fsm_state3))) begin
-        h_fu_90 <= add_ln169_reg_172;
+        h_fu_94 <= add_ln141_reg_188;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        add_ln169_reg_172 <= add_ln169_fu_119_p2;
-        h_1_reg_168 <= h_fu_90;
+        add_ln141_reg_188 <= add_ln141_fu_130_p2;
+        h_1_reg_184 <= h_fu_94;
     end
 end
 
@@ -279,7 +282,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd1)) | ((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)))) begin
+    if ((((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd1)) | ((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -295,7 +298,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd1))) begin
+    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd1))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -303,192 +306,192 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd10))) begin
-        att_10_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd10))) begin
+        att_10_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_10_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd10))) begin
-        att_10_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd10))) begin
+        att_10_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_10_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((~(h_1_reg_168 == 4'd0) & ~(h_1_reg_168 == 4'd1) & ~(h_1_reg_168 == 4'd2) & ~(h_1_reg_168 == 4'd3) & ~(h_1_reg_168 == 4'd4) & ~(h_1_reg_168 == 4'd5) & ~(h_1_reg_168 == 4'd6) & ~(h_1_reg_168 == 4'd7) & ~(h_1_reg_168 == 4'd8) & ~(h_1_reg_168 == 4'd9) & ~(h_1_reg_168 == 4'd10) & (1'b1 == ap_CS_fsm_state3))) begin
-        att_11_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if ((~(h_1_reg_184 == 4'd0) & ~(h_1_reg_184 == 4'd1) & ~(h_1_reg_184 == 4'd2) & ~(h_1_reg_184 == 4'd3) & ~(h_1_reg_184 == 4'd4) & ~(h_1_reg_184 == 4'd5) & ~(h_1_reg_184 == 4'd6) & ~(h_1_reg_184 == 4'd7) & ~(h_1_reg_184 == 4'd8) & ~(h_1_reg_184 == 4'd9) & ~(h_1_reg_184 == 4'd10) & (1'b1 == ap_CS_fsm_state3))) begin
+        att_11_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_11_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((~(h_1_reg_168 == 4'd0) & ~(h_1_reg_168 == 4'd1) & ~(h_1_reg_168 == 4'd2) & ~(h_1_reg_168 == 4'd3) & ~(h_1_reg_168 == 4'd4) & ~(h_1_reg_168 == 4'd5) & ~(h_1_reg_168 == 4'd6) & ~(h_1_reg_168 == 4'd7) & ~(h_1_reg_168 == 4'd8) & ~(h_1_reg_168 == 4'd9) & ~(h_1_reg_168 == 4'd10) & (1'b1 == ap_CS_fsm_state3))) begin
-        att_11_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if ((~(h_1_reg_184 == 4'd0) & ~(h_1_reg_184 == 4'd1) & ~(h_1_reg_184 == 4'd2) & ~(h_1_reg_184 == 4'd3) & ~(h_1_reg_184 == 4'd4) & ~(h_1_reg_184 == 4'd5) & ~(h_1_reg_184 == 4'd6) & ~(h_1_reg_184 == 4'd7) & ~(h_1_reg_184 == 4'd8) & ~(h_1_reg_184 == 4'd9) & ~(h_1_reg_184 == 4'd10) & (1'b1 == ap_CS_fsm_state3))) begin
+        att_11_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_11_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd1))) begin
-        att_1_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd1))) begin
+        att_1_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_1_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd1))) begin
-        att_1_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd1))) begin
+        att_1_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_1_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd2))) begin
-        att_2_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd2))) begin
+        att_2_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_2_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd2))) begin
-        att_2_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd2))) begin
+        att_2_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_2_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd3))) begin
-        att_3_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd3))) begin
+        att_3_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_3_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd3))) begin
-        att_3_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd3))) begin
+        att_3_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_3_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd4))) begin
-        att_4_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd4))) begin
+        att_4_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_4_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd4))) begin
-        att_4_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd4))) begin
+        att_4_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_4_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd5))) begin
-        att_5_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd5))) begin
+        att_5_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_5_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd5))) begin
-        att_5_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd5))) begin
+        att_5_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_5_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd6))) begin
-        att_6_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd6))) begin
+        att_6_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_6_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd6))) begin
-        att_6_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd6))) begin
+        att_6_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_6_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd7))) begin
-        att_7_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd7))) begin
+        att_7_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_7_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd7))) begin
-        att_7_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd7))) begin
+        att_7_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_7_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd8))) begin
-        att_8_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd8))) begin
+        att_8_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_8_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd8))) begin
-        att_8_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd8))) begin
+        att_8_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_8_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd9))) begin
-        att_9_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd9))) begin
+        att_9_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_9_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd9))) begin
-        att_9_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd9))) begin
+        att_9_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_9_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd0))) begin
-        att_ce0 = grp_kernel_softmax_fu_94_i_vec_ce0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd0))) begin
+        att_ce0 = grp_kernel_softmax_fu_104_i_vec_ce0;
     end else begin
         att_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_168 == 4'd0))) begin
-        att_we0 = grp_kernel_softmax_fu_94_i_vec_we0;
+    if (((1'b1 == ap_CS_fsm_state3) & (h_1_reg_184 == 4'd0))) begin
+        att_we0 = grp_kernel_softmax_fu_104_i_vec_we0;
     end else begin
         att_we0 = 1'b0;
     end
@@ -496,35 +499,35 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        if ((1'b1 == ap_condition_326)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_11_q0;
-        end else if ((h_1_reg_168 == 4'd0)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_q0;
-        end else if ((h_1_reg_168 == 4'd1)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_1_q0;
-        end else if ((h_1_reg_168 == 4'd2)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_2_q0;
-        end else if ((h_1_reg_168 == 4'd3)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_3_q0;
-        end else if ((h_1_reg_168 == 4'd4)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_4_q0;
-        end else if ((h_1_reg_168 == 4'd5)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_5_q0;
-        end else if ((h_1_reg_168 == 4'd6)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_6_q0;
-        end else if ((h_1_reg_168 == 4'd7)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_7_q0;
-        end else if ((h_1_reg_168 == 4'd8)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_8_q0;
-        end else if ((h_1_reg_168 == 4'd9)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_9_q0;
-        end else if ((h_1_reg_168 == 4'd10)) begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = att_10_q0;
+        if ((1'b1 == ap_condition_330)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_11_q0;
+        end else if ((h_1_reg_184 == 4'd0)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_q0;
+        end else if ((h_1_reg_184 == 4'd1)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_1_q0;
+        end else if ((h_1_reg_184 == 4'd2)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_2_q0;
+        end else if ((h_1_reg_184 == 4'd3)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_3_q0;
+        end else if ((h_1_reg_184 == 4'd4)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_4_q0;
+        end else if ((h_1_reg_184 == 4'd5)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_5_q0;
+        end else if ((h_1_reg_184 == 4'd6)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_6_q0;
+        end else if ((h_1_reg_184 == 4'd7)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_7_q0;
+        end else if ((h_1_reg_184 == 4'd8)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_8_q0;
+        end else if ((h_1_reg_184 == 4'd9)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_9_q0;
+        end else if ((h_1_reg_184 == 4'd10)) begin
+            grp_kernel_softmax_fu_104_i_vec_q0 = att_10_q0;
         end else begin
-            grp_kernel_softmax_fu_94_i_vec_q0 = 'bx;
+            grp_kernel_softmax_fu_104_i_vec_q0 = 'bx;
         end
     end else begin
-        grp_kernel_softmax_fu_94_i_vec_q0 = 'bx;
+        grp_kernel_softmax_fu_104_i_vec_q0 = 'bx;
     end
 end
 
@@ -538,7 +541,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln169_fu_125_p2 == 1'd1))) begin
+            if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln141_fu_136_p2 == 1'd1))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -557,7 +560,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln169_fu_119_p2 = (h_fu_90 + 4'd1);
+assign add_ln141_fu_130_p2 = (h_fu_94 + 4'd1);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -566,69 +569,69 @@ assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
 assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
 always @ (*) begin
-    ap_block_state3_on_subcall_done = (((ap_predicate_op82_call_state3 == 1'b1) & (grp_kernel_softmax_fu_94_ap_done == 1'b0)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd0)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd1)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd2)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd3)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd4)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd5)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd6)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd7)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd8)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd9)) | ((grp_kernel_softmax_fu_94_ap_done == 1'b0) & (h_1_reg_168 == 4'd10)));
+    ap_block_state3_on_subcall_done = (((ap_predicate_op83_call_state3 == 1'b1) & (grp_kernel_softmax_fu_104_ap_done == 1'b0)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd0)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd1)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd2)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd3)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd4)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd5)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd6)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd7)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd8)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd9)) | ((grp_kernel_softmax_fu_104_ap_done == 1'b0) & (h_1_reg_184 == 4'd10)));
 end
 
 always @ (*) begin
-    ap_condition_326 = (~(h_1_reg_168 == 4'd0) & ~(h_1_reg_168 == 4'd1) & ~(h_1_reg_168 == 4'd2) & ~(h_1_reg_168 == 4'd3) & ~(h_1_reg_168 == 4'd4) & ~(h_1_reg_168 == 4'd5) & ~(h_1_reg_168 == 4'd6) & ~(h_1_reg_168 == 4'd7) & ~(h_1_reg_168 == 4'd8) & ~(h_1_reg_168 == 4'd9) & ~(h_1_reg_168 == 4'd10));
+    ap_condition_330 = (~(h_1_reg_184 == 4'd0) & ~(h_1_reg_184 == 4'd1) & ~(h_1_reg_184 == 4'd2) & ~(h_1_reg_184 == 4'd3) & ~(h_1_reg_184 == 4'd4) & ~(h_1_reg_184 == 4'd5) & ~(h_1_reg_184 == 4'd6) & ~(h_1_reg_184 == 4'd7) & ~(h_1_reg_184 == 4'd8) & ~(h_1_reg_184 == 4'd9) & ~(h_1_reg_184 == 4'd10));
 end
 
 always @ (*) begin
-    ap_predicate_op82_call_state3 = (~(h_1_reg_168 == 4'd0) & ~(h_1_reg_168 == 4'd1) & ~(h_1_reg_168 == 4'd2) & ~(h_1_reg_168 == 4'd3) & ~(h_1_reg_168 == 4'd4) & ~(h_1_reg_168 == 4'd5) & ~(h_1_reg_168 == 4'd6) & ~(h_1_reg_168 == 4'd7) & ~(h_1_reg_168 == 4'd8) & ~(h_1_reg_168 == 4'd9) & ~(h_1_reg_168 == 4'd10));
+    ap_predicate_op83_call_state3 = (~(h_1_reg_184 == 4'd0) & ~(h_1_reg_184 == 4'd1) & ~(h_1_reg_184 == 4'd2) & ~(h_1_reg_184 == 4'd3) & ~(h_1_reg_184 == 4'd4) & ~(h_1_reg_184 == 4'd5) & ~(h_1_reg_184 == 4'd6) & ~(h_1_reg_184 == 4'd7) & ~(h_1_reg_184 == 4'd8) & ~(h_1_reg_184 == 4'd9) & ~(h_1_reg_184 == 4'd10));
 end
 
-assign att_10_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_10_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_10_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_10_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_11_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_11_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_11_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_11_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_1_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_1_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_1_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_1_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_2_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_2_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_2_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_2_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_3_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_3_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_3_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_3_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_4_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_4_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_4_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_4_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_5_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_5_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_5_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_5_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_6_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_6_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_6_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_6_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_7_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_7_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_7_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_7_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_8_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_8_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_8_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_8_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_9_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_9_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_9_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_9_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign att_address0 = grp_kernel_softmax_fu_94_i_vec_address0;
+assign att_address0 = grp_kernel_softmax_fu_104_i_vec_address0;
 
-assign att_d0 = grp_kernel_softmax_fu_94_i_vec_d0;
+assign att_d0 = grp_kernel_softmax_fu_104_i_vec_d0;
 
-assign grp_kernel_softmax_fu_94_ap_start = grp_kernel_softmax_fu_94_ap_start_reg;
+assign grp_kernel_softmax_fu_104_ap_start = grp_kernel_softmax_fu_104_ap_start_reg;
 
-assign h_1_load_fu_116_p1 = h_fu_90;
+assign h_1_load_fu_127_p1 = h_fu_94;
 
-assign icmp_ln169_fu_125_p2 = ((h_fu_90 == 4'd12) ? 1'b1 : 1'b0);
+assign icmp_ln141_fu_136_p2 = ((h_fu_94 == 4'd12) ? 1'b1 : 1'b0);
 
 endmodule //kernel_mhsa_kernel_mhsa_Outline_SOFTMAX_HEADS

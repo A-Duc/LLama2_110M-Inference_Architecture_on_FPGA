@@ -1,0 +1,285 @@
+
+
+================================================================
+== Vitis HLS Report for 'push_tensor2d_bycol_2'
+================================================================
+* Date:           Tue Sep 30 15:49:16 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        ffn_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.920 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+---------+---------+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |      Interval     |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   |   min   |   max   |                      Type                      |
+    +---------+---------+----------+----------+---------+---------+------------------------------------------------+
+    |  2359309|  2359309|  9.437 ms|  9.437 ms|  2359297|  2359297|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+---------+---------+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |                                   |  Latency (cycles) | Iteration|  Initiation Interval  |   Trip  |          |
+        |             Loop Name             |   min   |   max   |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |- VITIS_LOOP_24_1_VITIS_LOOP_25_2  |  2359307|  2359307|        13|          1|          1|  2359296|       yes|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+---------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 14
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 14
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 14, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.42>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%r = alloca i32 1" [kernel_FFN.cpp:25]   --->   Operation 16 'alloca' 'r' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%c = alloca i32 1" [kernel_FFN.cpp:24]   --->   Operation 17 'alloca' 'c' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 18 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %W_strm, void @empty_16, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_12, i32 4294967295, i32 0, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_11, void @empty_10, void @empty_12, i32 16, i32 16, i32 16, i32 16, void @empty_12, void @empty_12, i32 4294967295, i32 0, i32 0"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tsor_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %tsor" [kernel_FFN.cpp:23]   --->   Operation 21 'read' 'tsor_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.42ns)   --->   "%store_ln0 = store i22 0, i22 %indvar_flatten"   --->   Operation 22 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 23 [1/1] (0.39ns)   --->   "%store_ln24 = store i12 0, i12 %c" [kernel_FFN.cpp:24]   --->   Operation 23 'store' 'store_ln24' <Predicate = true> <Delay = 0.39>
+ST_1 : Operation 24 [1/1] (0.39ns)   --->   "%store_ln25 = store i10 0, i10 %r" [kernel_FFN.cpp:25]   --->   Operation 24 'store' 'store_ln25' <Predicate = true> <Delay = 0.39>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln24 = br void %for.inc" [kernel_FFN.cpp:24]   --->   Operation 25 'br' 'br_ln24' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.12>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i22 %indvar_flatten" [kernel_FFN.cpp:24]   --->   Operation 26 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.81ns)   --->   "%add_ln24 = add i22 %indvar_flatten_load, i22 1" [kernel_FFN.cpp:24]   --->   Operation 27 'add' 'add_ln24' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.67ns)   --->   "%icmp_ln24 = icmp_eq  i22 %indvar_flatten_load, i22 2359296" [kernel_FFN.cpp:24]   --->   Operation 28 'icmp' 'icmp_ln24' <Predicate = true> <Delay = 0.67> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%br_ln24 = br i1 %icmp_ln24, void %for.inc5, void %for.end7" [kernel_FFN.cpp:24]   --->   Operation 29 'br' 'br_ln24' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%r_load = load i10 %r" [kernel_FFN.cpp:25]   --->   Operation 30 'load' 'r_load' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%c_load = load i12 %c" [kernel_FFN.cpp:24]   --->   Operation 31 'load' 'c_load' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.60ns)   --->   "%icmp_ln25 = icmp_eq  i10 %r_load, i10 768" [kernel_FFN.cpp:25]   --->   Operation 32 'icmp' 'icmp_ln25' <Predicate = (!icmp_ln24)> <Delay = 0.60> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.60> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.37ns)   --->   "%select_ln24 = select i1 %icmp_ln25, i10 0, i10 %r_load" [kernel_FFN.cpp:24]   --->   Operation 33 'select' 'select_ln24' <Predicate = (!icmp_ln24)> <Delay = 0.37> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.77ns)   --->   "%add_ln24_2 = add i12 %c_load, i12 1" [kernel_FFN.cpp:24]   --->   Operation 34 'add' 'add_ln24_2' <Predicate = (!icmp_ln24)> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.38ns)   --->   "%select_ln24_2 = select i1 %icmp_ln25, i12 %add_ln24_2, i12 %c_load" [kernel_FFN.cpp:24]   --->   Operation 35 'select' 'select_ln24_2' <Predicate = (!icmp_ln24)> <Delay = 0.38> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%zext_ln24 = zext i12 %select_ln24_2" [kernel_FFN.cpp:24]   --->   Operation 36 'zext' 'zext_ln24' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%p_shl = bitconcatenate i22 @_ssdm_op_BitConcatenate.i22.i10.i12, i10 %select_ln24, i12 0" [kernel_FFN.cpp:27]   --->   Operation 37 'bitconcatenate' 'p_shl' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i20 @_ssdm_op_BitConcatenate.i20.i10.i10, i10 %select_ln24, i10 0" [kernel_FFN.cpp:27]   --->   Operation 38 'bitconcatenate' 'tmp' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%zext_ln27_2 = zext i20 %tmp" [kernel_FFN.cpp:27]   --->   Operation 39 'zext' 'zext_ln27_2' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln27 = sub i22 %p_shl, i22 %zext_ln27_2" [kernel_FFN.cpp:27]   --->   Operation 40 'sub' 'sub_ln27' <Predicate = (!icmp_ln24)> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 41 [1/1] (0.96ns) (root node of TernaryAdder)   --->   "%add_ln27 = add i22 %sub_ln27, i22 %zext_ln24" [kernel_FFN.cpp:27]   --->   Operation 41 'add' 'add_ln27' <Predicate = (!icmp_ln24)> <Delay = 0.96> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 42 [1/1] (0.71ns)   --->   "%add_ln25 = add i10 %select_ln24, i10 1" [kernel_FFN.cpp:25]   --->   Operation 42 'add' 'add_ln25' <Predicate = (!icmp_ln24)> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 43 [1/1] (0.42ns)   --->   "%store_ln24 = store i22 %add_ln24, i22 %indvar_flatten" [kernel_FFN.cpp:24]   --->   Operation 43 'store' 'store_ln24' <Predicate = (!icmp_ln24)> <Delay = 0.42>
+ST_2 : Operation 44 [1/1] (0.39ns)   --->   "%store_ln24 = store i12 %select_ln24_2, i12 %c" [kernel_FFN.cpp:24]   --->   Operation 44 'store' 'store_ln24' <Predicate = (!icmp_ln24)> <Delay = 0.39>
+ST_2 : Operation 45 [1/1] (0.39ns)   --->   "%store_ln25 = store i10 %add_ln25, i10 %r" [kernel_FFN.cpp:25]   --->   Operation 45 'store' 'store_ln25' <Predicate = (!icmp_ln24)> <Delay = 0.39>
+
+State 3 <SV = 2> <Delay = 2.75>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i24 @_ssdm_op_BitConcatenate.i24.i22.i2, i22 %add_ln27, i2 0" [kernel_FFN.cpp:27]   --->   Operation 46 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln27 = zext i24 %shl_ln" [kernel_FFN.cpp:27]   --->   Operation 47 'zext' 'zext_ln27' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (1.01ns)   --->   "%add_ln27_2 = add i64 %zext_ln27, i64 %tsor_read" [kernel_FFN.cpp:27]   --->   Operation 48 'add' 'add_ln27_2' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln27_2, i32 2, i32 63" [kernel_FFN.cpp:27]   --->   Operation 49 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%sext_ln27 = sext i62 %trunc_ln" [kernel_FFN.cpp:27]   --->   Operation 50 'sext' 'sext_ln27' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr i32 %gmem, i64 %sext_ln27" [kernel_FFN.cpp:27]   --->   Operation 51 'getelementptr' 'gmem_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.70ns) (share mux size 5)   --->   "%muxLogicAXIMAddr_to_gmem_load_req = muxlogic i32 %gmem_addr"   --->   Operation 52 'muxlogic' 'muxLogicAXIMAddr_to_gmem_load_req' <Predicate = true> <Delay = 0.70>
+ST_3 : Operation 53 [1/1] (0.70ns) (share mux size 5)   --->   "%muxLogicAXIMBurst_to_gmem_load_req = muxlogic i64 1"   --->   Operation 53 'muxlogic' 'muxLogicAXIMBurst_to_gmem_load_req' <Predicate = true> <Delay = 0.70>
+ST_3 : Operation 54 [11/11] (1.03ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 54 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 1.03> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 2.92>
+ST_4 : Operation 55 [10/11] (2.92ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 55 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 2.92>
+ST_5 : Operation 56 [9/11] (2.92ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 56 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 2.92>
+ST_6 : Operation 57 [8/11] (2.92ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 57 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 2.92>
+ST_7 : Operation 58 [7/11] (2.92ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 58 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 2.92>
+ST_8 : Operation 59 [6/11] (2.92ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 59 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 2.92>
+ST_9 : Operation 60 [5/11] (2.92ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 60 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 2.92>
+ST_10 : Operation 61 [4/11] (2.92ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 61 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 2.92>
+ST_11 : Operation 62 [3/11] (2.92ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 62 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 2.92>
+ST_12 : Operation 63 [2/11] (2.92ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 63 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 12> <Delay = 1.03>
+ST_13 : Operation 64 [1/11] (1.03ns) (share mux size 5)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i64 1" [kernel_FFN.cpp:27]   --->   Operation 64 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 1.03> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 73 [1/1] (0.28ns)   --->   "%ret_ln28 = ret" [kernel_FFN.cpp:28]   --->   Operation 73 'ret' 'ret_ln28' <Predicate = (icmp_ln24)> <Delay = 0.28>
+
+State 14 <SV = 13> <Delay = 2.90>
+ST_14 : Operation 65 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_24_1_VITIS_LOOP_25_2_str"   --->   Operation 65 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 66 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2359296, i64 2359296, i64 2359296"   --->   Operation 66 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 67 [1/1] (0.00ns)   --->   "%specpipeline_ln26 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_12" [kernel_FFN.cpp:26]   --->   Operation 67 'specpipeline' 'specpipeline_ln26' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 68 [1/1] (0.54ns) (share mux size 5)   --->   "%muxLogicAXIMCE_to_gmem_addr_read = muxlogic"   --->   Operation 68 'muxlogic' 'muxLogicAXIMCE_to_gmem_addr_read' <Predicate = true> <Delay = 0.54>
+ST_14 : Operation 69 [1/1] (1.03ns) (share mux size 5)   --->   "%gmem_addr_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr" [kernel_FFN.cpp:27]   --->   Operation 69 'read' 'gmem_addr_read' <Predicate = true> <Delay = 1.03> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 0> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 70 [1/1] (0.34ns) (share mux size 3)   --->   "%muxLogicFIFOData_to_write_ln27 = muxlogic i32 %gmem_addr_read"   --->   Operation 70 'muxlogic' 'muxLogicFIFOData_to_write_ln27' <Predicate = true> <Delay = 0.34>
+ST_14 : Operation 71 [1/1] ( I:0.98ns O:0.98ns ) (share mux size 3)   --->   "%write_ln27 = write void @_ssdm_op_Write.ap_fifo.volatile.i32P0A, i32 %W_strm, i32 %gmem_addr_read" [kernel_FFN.cpp:27]   --->   Operation 71 'write' 'write_ln27' <Predicate = true> <Delay = 0.98> <CoreInst = "FIFO">   --->   Core 81 'FIFO' <Latency = 0> <II = 1> <Delay = 0.98> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 64> <FIFO>
+ST_14 : Operation 72 [1/1] (0.00ns)   --->   "%br_ln25 = br void %for.inc" [kernel_FFN.cpp:25]   --->   Operation 72 'br' 'br_ln25' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4.000ns, clock uncertainty: 1.080ns.
+
+ <State 1>: 0.421ns
+The critical path consists of the following:
+	'alloca' operation 22 bit ('indvar_flatten') [6]  (0.000 ns)
+	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'indvar_flatten' [10]  (0.421 ns)
+
+ <State 2>: 2.128ns
+The critical path consists of the following:
+	'load' operation 12 bit ('c_load', kernel_FFN.cpp:24) on local variable 'c', kernel_FFN.cpp:24 [21]  (0.000 ns)
+	'add' operation 12 bit ('add_ln24_2', kernel_FFN.cpp:24) [26]  (0.778 ns)
+	'select' operation 12 bit ('select_ln24_2', kernel_FFN.cpp:24) [27]  (0.382 ns)
+	'add' operation 22 bit ('add_ln27', kernel_FFN.cpp:27) [34]  (0.968 ns)
+
+ <State 3>: 2.752ns
+The critical path consists of the following:
+	'add' operation 64 bit ('add_ln27_2', kernel_FFN.cpp:27) [37]  (1.014 ns)
+	'getelementptr' operation 32 bit ('gmem_addr', kernel_FFN.cpp:27) [40]  (0.000 ns)
+	'muxlogic' operation 1 bit ('muxLogicAXIMAddr_to_gmem_load_req') [41]  (0.705 ns)
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (1.033 ns)
+
+ <State 4>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (2.920 ns)
+
+ <State 5>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (2.920 ns)
+
+ <State 6>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (2.920 ns)
+
+ <State 7>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (2.920 ns)
+
+ <State 8>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (2.920 ns)
+
+ <State 9>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (2.920 ns)
+
+ <State 10>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (2.920 ns)
+
+ <State 11>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (2.920 ns)
+
+ <State 12>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (2.920 ns)
+
+ <State 13>: 1.033ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [43]  (1.033 ns)
+
+ <State 14>: 2.907ns
+The critical path consists of the following:
+	'muxlogic' operation 32 bit ('muxLogicAXIMCE_to_gmem_addr_read') [44]  (0.540 ns)
+	bus read operation ('gmem_addr_read', kernel_FFN.cpp:27) on port 'gmem' (kernel_FFN.cpp:27) [45]  (1.033 ns)
+	'muxlogic' operation 0 bit ('muxLogicFIFOData_to_write_ln27') [46]  (0.347 ns)
+	fifo write operation ('write_ln27', kernel_FFN.cpp:27) on port 'W_strm' (kernel_FFN.cpp:27) [47]  (0.987 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

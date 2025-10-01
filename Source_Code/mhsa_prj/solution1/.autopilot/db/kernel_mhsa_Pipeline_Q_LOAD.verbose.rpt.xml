@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Pipeline_Q_LOAD'" level="0">
-<item name = "Date">Sat Sep 27 23:15:37 2025
+<item name = "Date">Tue Sep 30 23:59:01 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -64,7 +64,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="sparsemux_17_3_32_1_1_U625">sparsemux_17_3_32_1_1, 0, 0, 0, 96, 0</column>
+<column name="sparsemux_17_3_32_1_1_U241">sparsemux_17_3_32_1_1, 0, 0, 0, 96, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -81,9 +81,9 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln143_fu_1152_p2">+, 0, 0, 8, 7, 1</column>
-<column name="add_ln145_fu_1186_p2">+, 0, 0, 8, 7, 7</column>
-<column name="icmp_ln143_fu_1158_p2">icmp, 0, 0, 3, 7, 8</column>
+<column name="add_ln115_fu_1152_p2">+, 0, 0, 8, 7, 1</column>
+<column name="add_ln117_fu_1186_p2">+, 0, 0, 8, 7, 7</column>
+<column name="icmp_ln115_fu_1158_p2">icmp, 0, 0, 3, 7, 8</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -100,73 +100,73 @@
 <column name="ap_CS_fsm">1, 0, 1, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
-<column name="empty_194_fu_334">32, 0, 32, 0</column>
-<column name="empty_195_fu_338">32, 0, 32, 0</column>
-<column name="empty_196_fu_342">32, 0, 32, 0</column>
-<column name="empty_197_fu_346">32, 0, 32, 0</column>
-<column name="empty_198_fu_350">32, 0, 32, 0</column>
-<column name="empty_199_fu_354">32, 0, 32, 0</column>
-<column name="empty_200_fu_358">32, 0, 32, 0</column>
-<column name="empty_201_fu_362">32, 0, 32, 0</column>
-<column name="empty_202_fu_366">32, 0, 32, 0</column>
-<column name="empty_203_fu_370">32, 0, 32, 0</column>
-<column name="empty_204_fu_374">32, 0, 32, 0</column>
-<column name="empty_205_fu_378">32, 0, 32, 0</column>
-<column name="empty_206_fu_382">32, 0, 32, 0</column>
-<column name="empty_207_fu_386">32, 0, 32, 0</column>
-<column name="empty_208_fu_390">32, 0, 32, 0</column>
-<column name="empty_209_fu_394">32, 0, 32, 0</column>
-<column name="empty_210_fu_398">32, 0, 32, 0</column>
-<column name="empty_211_fu_402">32, 0, 32, 0</column>
-<column name="empty_212_fu_406">32, 0, 32, 0</column>
-<column name="empty_213_fu_410">32, 0, 32, 0</column>
-<column name="empty_214_fu_414">32, 0, 32, 0</column>
-<column name="empty_215_fu_418">32, 0, 32, 0</column>
-<column name="empty_216_fu_422">32, 0, 32, 0</column>
-<column name="empty_217_fu_426">32, 0, 32, 0</column>
-<column name="empty_218_fu_430">32, 0, 32, 0</column>
-<column name="empty_219_fu_434">32, 0, 32, 0</column>
-<column name="empty_220_fu_438">32, 0, 32, 0</column>
-<column name="empty_221_fu_442">32, 0, 32, 0</column>
-<column name="empty_222_fu_446">32, 0, 32, 0</column>
-<column name="empty_223_fu_450">32, 0, 32, 0</column>
-<column name="empty_224_fu_454">32, 0, 32, 0</column>
-<column name="empty_225_fu_458">32, 0, 32, 0</column>
-<column name="empty_226_fu_462">32, 0, 32, 0</column>
-<column name="empty_227_fu_466">32, 0, 32, 0</column>
-<column name="empty_228_fu_470">32, 0, 32, 0</column>
-<column name="empty_229_fu_474">32, 0, 32, 0</column>
-<column name="empty_230_fu_478">32, 0, 32, 0</column>
-<column name="empty_231_fu_482">32, 0, 32, 0</column>
-<column name="empty_232_fu_486">32, 0, 32, 0</column>
-<column name="empty_233_fu_490">32, 0, 32, 0</column>
-<column name="empty_234_fu_494">32, 0, 32, 0</column>
-<column name="empty_235_fu_498">32, 0, 32, 0</column>
-<column name="empty_236_fu_502">32, 0, 32, 0</column>
-<column name="empty_237_fu_506">32, 0, 32, 0</column>
-<column name="empty_238_fu_510">32, 0, 32, 0</column>
-<column name="empty_239_fu_514">32, 0, 32, 0</column>
-<column name="empty_240_fu_518">32, 0, 32, 0</column>
-<column name="empty_241_fu_522">32, 0, 32, 0</column>
-<column name="empty_242_fu_526">32, 0, 32, 0</column>
-<column name="empty_243_fu_530">32, 0, 32, 0</column>
-<column name="empty_244_fu_534">32, 0, 32, 0</column>
-<column name="empty_245_fu_538">32, 0, 32, 0</column>
-<column name="empty_246_fu_542">32, 0, 32, 0</column>
-<column name="empty_247_fu_546">32, 0, 32, 0</column>
-<column name="empty_248_fu_550">32, 0, 32, 0</column>
-<column name="empty_249_fu_554">32, 0, 32, 0</column>
-<column name="empty_250_fu_558">32, 0, 32, 0</column>
-<column name="empty_251_fu_562">32, 0, 32, 0</column>
-<column name="empty_252_fu_566">32, 0, 32, 0</column>
-<column name="empty_253_fu_570">32, 0, 32, 0</column>
-<column name="empty_254_fu_574">32, 0, 32, 0</column>
-<column name="empty_255_fu_578">32, 0, 32, 0</column>
-<column name="empty_256_fu_582">32, 0, 32, 0</column>
+<column name="empty_172_fu_334">32, 0, 32, 0</column>
+<column name="empty_173_fu_338">32, 0, 32, 0</column>
+<column name="empty_174_fu_342">32, 0, 32, 0</column>
+<column name="empty_175_fu_346">32, 0, 32, 0</column>
+<column name="empty_176_fu_350">32, 0, 32, 0</column>
+<column name="empty_177_fu_354">32, 0, 32, 0</column>
+<column name="empty_178_fu_358">32, 0, 32, 0</column>
+<column name="empty_179_fu_362">32, 0, 32, 0</column>
+<column name="empty_180_fu_366">32, 0, 32, 0</column>
+<column name="empty_181_fu_370">32, 0, 32, 0</column>
+<column name="empty_182_fu_374">32, 0, 32, 0</column>
+<column name="empty_183_fu_378">32, 0, 32, 0</column>
+<column name="empty_184_fu_382">32, 0, 32, 0</column>
+<column name="empty_185_fu_386">32, 0, 32, 0</column>
+<column name="empty_186_fu_390">32, 0, 32, 0</column>
+<column name="empty_187_fu_394">32, 0, 32, 0</column>
+<column name="empty_188_fu_398">32, 0, 32, 0</column>
+<column name="empty_189_fu_402">32, 0, 32, 0</column>
+<column name="empty_190_fu_406">32, 0, 32, 0</column>
+<column name="empty_191_fu_410">32, 0, 32, 0</column>
+<column name="empty_192_fu_414">32, 0, 32, 0</column>
+<column name="empty_193_fu_418">32, 0, 32, 0</column>
+<column name="empty_194_fu_422">32, 0, 32, 0</column>
+<column name="empty_195_fu_426">32, 0, 32, 0</column>
+<column name="empty_196_fu_430">32, 0, 32, 0</column>
+<column name="empty_197_fu_434">32, 0, 32, 0</column>
+<column name="empty_198_fu_438">32, 0, 32, 0</column>
+<column name="empty_199_fu_442">32, 0, 32, 0</column>
+<column name="empty_200_fu_446">32, 0, 32, 0</column>
+<column name="empty_201_fu_450">32, 0, 32, 0</column>
+<column name="empty_202_fu_454">32, 0, 32, 0</column>
+<column name="empty_203_fu_458">32, 0, 32, 0</column>
+<column name="empty_204_fu_462">32, 0, 32, 0</column>
+<column name="empty_205_fu_466">32, 0, 32, 0</column>
+<column name="empty_206_fu_470">32, 0, 32, 0</column>
+<column name="empty_207_fu_474">32, 0, 32, 0</column>
+<column name="empty_208_fu_478">32, 0, 32, 0</column>
+<column name="empty_209_fu_482">32, 0, 32, 0</column>
+<column name="empty_210_fu_486">32, 0, 32, 0</column>
+<column name="empty_211_fu_490">32, 0, 32, 0</column>
+<column name="empty_212_fu_494">32, 0, 32, 0</column>
+<column name="empty_213_fu_498">32, 0, 32, 0</column>
+<column name="empty_214_fu_502">32, 0, 32, 0</column>
+<column name="empty_215_fu_506">32, 0, 32, 0</column>
+<column name="empty_216_fu_510">32, 0, 32, 0</column>
+<column name="empty_217_fu_514">32, 0, 32, 0</column>
+<column name="empty_218_fu_518">32, 0, 32, 0</column>
+<column name="empty_219_fu_522">32, 0, 32, 0</column>
+<column name="empty_220_fu_526">32, 0, 32, 0</column>
+<column name="empty_221_fu_530">32, 0, 32, 0</column>
+<column name="empty_222_fu_534">32, 0, 32, 0</column>
+<column name="empty_223_fu_538">32, 0, 32, 0</column>
+<column name="empty_224_fu_542">32, 0, 32, 0</column>
+<column name="empty_225_fu_546">32, 0, 32, 0</column>
+<column name="empty_226_fu_550">32, 0, 32, 0</column>
+<column name="empty_227_fu_554">32, 0, 32, 0</column>
+<column name="empty_228_fu_558">32, 0, 32, 0</column>
+<column name="empty_229_fu_562">32, 0, 32, 0</column>
+<column name="empty_230_fu_566">32, 0, 32, 0</column>
+<column name="empty_231_fu_570">32, 0, 32, 0</column>
+<column name="empty_232_fu_574">32, 0, 32, 0</column>
+<column name="empty_233_fu_578">32, 0, 32, 0</column>
+<column name="empty_234_fu_582">32, 0, 32, 0</column>
 <column name="empty_fu_330">32, 0, 32, 0</column>
 <column name="j_fu_326">7, 0, 7, 0</column>
-<column name="trunc_ln143_1_reg_2384">3, 0, 3, 0</column>
-<column name="trunc_ln143_reg_2380">6, 0, 6, 0</column>
+<column name="trunc_ln115_1_reg_2384">3, 0, 3, 0</column>
+<column name="trunc_ln115_reg_2380">6, 0, 6, 0</column>
 </table>
 </item>
 </section>

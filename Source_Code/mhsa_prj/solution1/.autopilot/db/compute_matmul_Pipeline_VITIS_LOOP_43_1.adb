@@ -369,7 +369,7 @@
             <Obj>
               <type>0</type>
               <id>11</id>
-              <name>i_10</name>
+              <name>i_9</name>
               <fileName>kernel_MatMul.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>43</lineNumber>
@@ -3857,7 +3857,7 @@
           </second>
         </item>
         <item>
-          <first>ap_sig_allocacmp_i_10</first>
+          <first>ap_sig_allocacmp_i_9</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -4834,7 +4834,7 @@
       <count>4</count>
       <item_version>0</item_version>
       <item>
-        <first>i_10_load_fu_124</first>
+        <first>i_9_load_fu_124</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

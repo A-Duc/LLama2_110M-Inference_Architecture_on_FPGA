@@ -1039,74 +1039,74 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 94, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 68, Column: 13 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          kernel_rmsnorm
     DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 9, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 99, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 72, Column: 17 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          matmul
     DebugLoc:        { File: kernel_MatMul.cpp, Line: 75, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 108, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 80, Column: 13 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          'RoPE(float*, float const*, int, int)'
     DebugLoc:        { File: kernel_Rope.cpp, Line: 8, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 163, Column: 47 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 135, Column: 47 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          'hls::sqrtf(float)'
     DebugLoc:        { File: 'C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\c++\sqrtfloat.cpp', 
                        Line: 11, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 171, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 143, Column: 2 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          'kernel_softmax(float*, int)'
     DebugLoc:        { File: kernel_Softmax.cpp, Line: 2, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 156, Column: 34 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 128, Column: 34 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Loop '''
   - LoopName:        DOT_COMPUTE
@@ -1169,7 +1169,7 @@ Args:
 Pass:            reflow-infer-loop-tripcount
 Name:            UpdateLoopBound
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Updating loop '
   - String:          lower
@@ -1180,7 +1180,7 @@ Args:
   - String:          ' for loop '''
   - LoopName:        HEAD_COMPUTE
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:136:27'
+  - LoopLoc:         'kernel_MHSA.cpp:108:27'
   - String:          ')'
   - String:          ' in function '''
   - String:          kernel_mhsa
@@ -1190,7 +1190,7 @@ Args:
 Pass:            reflow-infer-loop-tripcount
 Name:            UpdateLoopBound
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Updating loop '
   - String:          upper
@@ -1201,7 +1201,7 @@ Args:
   - String:          ' for loop '''
   - LoopName:        HEAD_COMPUTE
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:136:27'
+  - LoopLoc:         'kernel_MHSA.cpp:108:27'
   - String:          ')'
   - String:          ' in function '''
   - String:          kernel_mhsa
@@ -1211,7 +1211,7 @@ Args:
 Pass:            reflow-infer-loop-tripcount
 Name:            UpdateLoopBound
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Updating loop '
   - String:          lower
@@ -1222,7 +1222,7 @@ Args:
   - String:          ' for loop '''
   - LoopName:        SOFTMAX_HEADS
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:169:24'
+  - LoopLoc:         'kernel_MHSA.cpp:141:24'
   - String:          ')'
   - String:          ' in function '''
   - String:          kernel_mhsa
@@ -1232,7 +1232,7 @@ Args:
 Pass:            reflow-infer-loop-tripcount
 Name:            UpdateLoopBound
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Updating loop '
   - String:          upper
@@ -1243,7 +1243,7 @@ Args:
   - String:          ' for loop '''
   - LoopName:        SOFTMAX_HEADS
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:169:24'
+  - LoopLoc:         'kernel_MHSA.cpp:141:24'
   - String:          ')'
   - String:          ' in function '''
   - String:          kernel_mhsa
@@ -1253,7 +1253,7 @@ Args:
 Pass:            reflow-infer-loop-tripcount
 Name:            UpdateLoopBound
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Updating loop '
   - String:          lower
@@ -1264,7 +1264,7 @@ Args:
   - String:          ' for loop '''
   - LoopName:        HEAD_STREAM
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:183:26'
+  - LoopLoc:         'kernel_MHSA.cpp:155:26'
   - String:          ')'
   - String:          ' in function '''
   - String:          kernel_mhsa
@@ -1274,7 +1274,7 @@ Args:
 Pass:            reflow-infer-loop-tripcount
 Name:            UpdateLoopBound
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Updating loop '
   - String:          upper
@@ -1285,7 +1285,7 @@ Args:
   - String:          ' for loop '''
   - LoopName:        HEAD_STREAM
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:183:26'
+  - LoopLoc:         'kernel_MHSA.cpp:155:26'
   - String:          ')'
   - String:          ' in function '''
   - String:          kernel_mhsa
@@ -1295,7 +1295,7 @@ Args:
 Pass:            reflow-infer-loop-tripcount
 Name:            UpdateLoopBound
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Updating loop '
   - String:          lower
@@ -1306,70 +1306,7 @@ Args:
   - String:          ' for loop '''
   - LoopName:        LAYER_LOOP
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:77:17'
-  - String:          ')'
-  - String:          ' in function '''
-  - String:          kernel_mhsa
-  - String:          '''.'
-...
---- !Missed
-Pass:            reflow-infer-loop-tripcount
-Name:            UpdateLoopBound
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
-Args:            
-  - String:          'Updating loop '
-  - String:          lower
-  - String:          ' bound from '
-  - OldBound:        '1024'
-  - String:          ' to '
-  - NewBound:        '393216'
-  - String:          ' for loop '''
-  - LoopName:        INIT_INNER
-  - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:35:14'
-  - String:          ')'
-  - String:          ' in function '''
-  - String:          kernel_mhsa
-  - String:          '''.'
-...
---- !Missed
-Pass:            reflow-infer-loop-tripcount
-Name:            UpdateLoopBound
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
-Args:            
-  - String:          'Updating loop '
-  - String:          upper
-  - String:          ' bound from '
-  - OldBound:        '262144'
-  - String:          ' to '
-  - NewBound:        '393216'
-  - String:          ' for loop '''
-  - LoopName:        INIT_INNER
-  - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:35:14'
-  - String:          ')'
-  - String:          ' in function '''
-  - String:          kernel_mhsa
-  - String:          '''.'
-...
---- !Missed
-Pass:            reflow-infer-loop-tripcount
-Name:            UpdateLoopBound
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
-Args:            
-  - String:          'Updating loop '
-  - String:          lower
-  - String:          ' bound from '
-  - OldBound:        '1'
-  - String:          ' to '
-  - NewBound:        '12'
-  - String:          ' for loop '''
-  - LoopName:        INIT_OUTER
-  - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:33:21'
+  - LoopLoc:         'kernel_MHSA.cpp:53:17'
   - String:          ')'
   - String:          ' in function '''
   - String:          kernel_mhsa
@@ -1379,12 +1316,12 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Unrolling loop '''
   - LoopName:        DOT_COMPUTE
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:156:34'
+  - LoopLoc:         'kernel_MHSA.cpp:128:34'
   - String:          ') '
   - String:          'in function '''
   - String:          kernel_mhsa
@@ -1395,12 +1332,12 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Unrolling loop '''
   - LoopName:        ACCUM_ZERO
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:191:14'
+  - LoopLoc:         'kernel_MHSA.cpp:163:14'
   - String:          ') '
   - String:          'in function '''
   - String:          kernel_mhsa
@@ -1411,12 +1348,12 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaPartiallyUnroll
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Unrolling loop '''
   - LoopName:        VALUE_MAC
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:203:32'
+  - LoopLoc:         'kernel_MHSA.cpp:175:32'
   - String:          ') '
   - String:          'in function '''
   - String:          kernel_mhsa
@@ -1429,12 +1366,12 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaPartiallyUnroll
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Unrolling loop '''
   - LoopName:        ACCUM_WRITEBACK
   - String:          ''' ('
-  - LoopLoc:         'kernel_MHSA.cpp:213:34'
+  - LoopLoc:         'kernel_MHSA.cpp:185:34'
   - String:          ') '
   - String:          'in function '''
   - String:          kernel_mhsa
@@ -1452,7 +1389,7 @@ Args:
   - String:          'Unrolling loop '''
   - LoopName:        find_max
   - String:          ''' ('
-  - LoopLoc:         'kernel_Softmax.cpp:17:13'
+  - LoopLoc:         'kernel_Softmax.cpp:16:13'
   - String:          ') '
   - String:          'in function '''
   - String:          kernel_softmax
@@ -2140,52 +2077,52 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 94, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 68, Column: 13 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          kernel_rmsnorm
     DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 9, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 99, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 72, Column: 17 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          matmul
     DebugLoc:        { File: kernel_MatMul.cpp, Line: 75, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 108, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 80, Column: 13 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          'RoPE(float*, float const*, int, int)'
     DebugLoc:        { File: kernel_Rope.cpp, Line: 8, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 171, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 143, Column: 2 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          'kernel_softmax(float*, int)'
     DebugLoc:        { File: kernel_Softmax.cpp, Line: 2, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
@@ -2194,7 +2131,7 @@ Pass:            inline
 Name:            NeverInline
 Function:        apatb_kernel_mhsa_ir
 Args:            
-  - Callee:          'kernel_mhsa(float*, int, float*)'
+  - Callee:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          apatb_kernel_mhsa_ir
@@ -2691,15 +2628,25 @@ Args:
 Pass:            reflow-inliner
 Name:            Inline
 DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Inlining function '''
   - Callee:          kernel_rmsnorm
     DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 9, Column: 0 }
   - String:          ''' into '''
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ''''
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: kernel_MatMul.cpp, Line: 75, Column: 0 }
+Function:        matmul
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       i_mat
+  - String:          '''.'
 ...
 --- !Failure
 Pass:            reflow-array-undecay
@@ -2730,58 +2677,6 @@ Args:
   - String:          'Skipping array undecay on variable length array '''
   - ArrayName:       o_vec
   - String:          '''.'
-...
---- !Passed
-Pass:            reflow-array-partition
-Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 19, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
-Args:            
-  - String:          'Applying '
-  - String:          array_partition
-  - String:          ' to '''
-  - UOName:          _ZZ11kernel_mhsaPfiS_E11value_cache
-  - String:          ''':'
-  - String:          ' '
-  - Mode:            Complete
-  - String:          ' partitioning'
-  - String:          ' on dimension '
-  - Dim:             '1'
-  - String:          .
-  - String:          ' '
-  - Mode:            Cyclic
-  - String:          ' partitioning'
-  - String:          ' with factor '
-  - Factor:          '8'
-  - String:          ' on dimension '
-  - Dim:             '2'
-  - String:          .
-...
---- !Passed
-Pass:            reflow-array-partition
-Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 18, Column: 0 }
-Function:        _Z11kernel_mhsaPfiS_
-Args:            
-  - String:          'Applying '
-  - String:          array_partition
-  - String:          ' to '''
-  - UOName:          _ZZ11kernel_mhsaPfiS_E9key_cache
-  - String:          ''':'
-  - String:          ' '
-  - Mode:            Complete
-  - String:          ' partitioning'
-  - String:          ' on dimension '
-  - Dim:             '1'
-  - String:          .
-  - String:          ' '
-  - Mode:            Cyclic
-  - String:          ' partitioning'
-  - String:          ' with factor '
-  - Factor:          '8'
-  - String:          ' on dimension '
-  - Dim:             '2'
-  - String:          .
 ...
 --- !Passed
 Pass:            reflow-array-partition
@@ -2890,8 +2785,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 47, Column: 11 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 23, Column: 11 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -2910,8 +2805,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 48, Column: 11 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 24, Column: 11 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -2930,8 +2825,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 49, Column: 11 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 25, Column: 11 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -2950,8 +2845,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 50, Column: 11 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 26, Column: 11 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -2970,8 +2865,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 51, Column: 11 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 27, Column: 11 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -2990,8 +2885,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 52, Column: 11 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 28, Column: 11 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -3010,8 +2905,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 53, Column: 11 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 29, Column: 11 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -3030,8 +2925,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 54, Column: 11 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 30, Column: 11 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -3050,8 +2945,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 67, Column: 8 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 43, Column: 8 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -3070,8 +2965,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 120, Column: 15 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 92, Column: 15 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -3088,8 +2983,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 140, Column: 8 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 112, Column: 8 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -3106,8 +3001,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 187, Column: 8 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 159, Column: 8 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Applying '
   - String:          array_partition
@@ -3124,120 +3019,6 @@ Args:
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 71, Column: 14 }
-Function:        _Z11kernel_mhsaPfiS_
-Args:            
-  - String:          'Sequential '
-  - Direction:       read
-  - String:          ' of length '
-  - Length:          '768'
-  - String:          ' has been inferred'
-  - String:          ' _XLX_SEP_ '
-  - AccessID:        current_token3363seq
-  - ArrayName:       current_token
-  - String:          ' '
-  - BundleName:      gmem0
-  - String:          ' '
-  - LoopName:        INPUT_COPY
-  - String:          ' '
-  - LoopLoc:         'kernel_MHSA.cpp:71:14'
-  - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
-    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-  - String:          ' '
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      load
-    DebugLoc:        { File: kernel_MHSA.cpp, Line: 73, Column: 21 }
-  - OrigDirection:   read
-  - OrigID:          for.inc23.load.14
-...
---- !Passed
-Pass:            reflow-burst-inference
-Name:            BurstInferred
-DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
-Function:        _Z11kernel_mhsaPfiS_
-Args:            
-  - String:          'Sequential '
-  - Direction:       read
-  - String:          ' of length '
-  - Length:          '768'
-  - String:          ' has been inferred'
-  - String:          ' _XLX_SEP_ '
-  - AccessID:        scevgepseq
-  - ArrayName:       weights
-  - String:          ' '
-  - BundleName:      gmem1
-  - String:          ' '
-  - LoopName:        VITIS_LOOP_27_2
-  - String:          ' '
-  - LoopLoc:         'kernel_RMS_Norm.cpp:27:22'
-  - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
-    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-  - String:          ' '
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      load
-    DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 28, Column: 40 }
-  - OrigDirection:   read
-  - OrigID:          for.inc16.i.load.33
-...
---- !Passed
-Pass:            reflow-burst-inference
-Name:            BurstInferred
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 232, Column: 19 }
-Function:        _Z11kernel_mhsaPfiS_
-Args:            
-  - String:          'Sequential '
-  - Direction:       write
-  - String:          ' of length '
-  - Length:          '768'
-  - String:          ' has been inferred'
-  - String:          ' _XLX_SEP_ '
-  - AccessID:        current_token3363seq3364
-  - ArrayName:       current_token
-  - String:          ' '
-  - BundleName:      gmem0
-  - String:          ' '
-  - LoopName:        OUTPUT_WRITE
-  - String:          ' '
-  - LoopLoc:         'kernel_MHSA.cpp:232:19'
-  - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
-    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-  - String:          ' '
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: kernel_MHSA.cpp, Line: 234, Column: 19 }
-  - OrigDirection:   write
-  - OrigID:          for.inc269.store.23
-...
---- !Missed
-Pass:            reflow-burst-inference
-Name:            IncompatibleStride
-DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
-Function:        _Z11kernel_mhsaPfiS_
-Args:            
-  - String:          Stride is incompatible
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      call
-    DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
-  - OrigDirection:   read
-  - OrigID:          scevgepseq
-  - ArrayName:       weights
-  - String:          ' '
-  - BundleName:      gmem1
-  - String:          ' '
-  - LoopName:        LAYER_LOOP
-  - String:          ' '
-  - LoopLoc:         'kernel_MHSA.cpp:77:17'
-  - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
-    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
-  - String:          ' '
-...
---- !Passed
-Pass:            reflow-burst-inference
-Name:            BurstInferred
 DebugLoc:        { File: kernel_MatMul.cpp, Line: 23, Column: 3 }
 Function:        _ZL8load_matPfRN3hls6streamIfLi0EEE
 Args:            
@@ -3247,7 +3028,7 @@ Args:
   - Length:          '589824'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        scevgepseq
+  - AccessID:        i_matseq
   - ArrayName:       i_mat
   - String:          ' '
   - BundleName:      gmem1
@@ -3263,45 +3044,529 @@ Args:
   - OrigAccess:      load
     DebugLoc:        { File: kernel_MatMul.cpp, Line: 28, Column: 11 }
   - OrigDirection:   read
-  - OrigID:          for.inc.load.7
+  - OrigID:          for.inc.load.6
 ...
---- !Missed
-Pass:            reflow-burst-widen
-Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 232, Column: 19 }
-Function:        _Z11kernel_mhsaPfiS_
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 47, Column: 14 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
-  - String:          'Could not widen since type '
-  - Type:            float
-  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
-  - Threshold:       '0'
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '768'
+  - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - OrigAccess:      call
-    DebugLoc:        { File: kernel_MHSA.cpp, Line: 232, Column: 19 }
+  - AccessID:        current_token659seq
+  - ArrayName:       current_token
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        INPUT_COPY
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:47:14'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 49, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.14
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '768'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       weights
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_27_2
+  - String:          ' '
+  - LoopLoc:         'kernel_RMS_Norm.cpp:27:22'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 28, Column: 40 }
+  - OrigDirection:   read
+  - OrigID:          for.inc16.i.load.33
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '768'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep660seq
+  - ArrayName:       key_cache
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        CACHE_STORE
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:85:22'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 87, Column: 48 }
   - OrigDirection:   write
-  - OrigID:          current_token3363seq3364
+  - OrigID:          for.inc57.store.26
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '768'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep661seq
+  - ArrayName:       value_cache
+  - String:          ' '
+  - BundleName:      gmem3
+  - String:          ' '
+  - LoopName:        CACHE_STORE
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:85:22'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 88, Column: 61 }
+  - OrigDirection:   write
+  - OrigID:          for.inc57.store.46
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep662seq
+  - ArrayName:       key_cache
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        TOKEN_COMPUTE
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:121:32'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.91
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.103
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.115
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.127
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.139
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.151
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.163
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.175
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.187
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.199
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.211
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.223
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.235
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.247
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.259
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.271
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.283
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.295
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.307
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.319
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.331
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.343
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.355
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.367
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.379
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.391
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.403
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.415
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.427
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.439
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.451
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.463
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.475
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.487
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.499
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.511
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.523
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.535
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.547
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.559
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.571
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.583
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.595
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.607
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.619
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.631
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.643
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.655
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.667
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.679
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.691
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.703
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.715
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.727
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.739
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.751
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.763
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.775
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.787
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.799
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.811
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.823
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.835
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          DOT_COMPUTE.load.847
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 175, Column: 32 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep663seq
+  - ArrayName:       value_cache
+  - String:          ' '
+  - BundleName:      gmem3
+  - String:          ' '
+  - LoopName:        VALUE_MAC
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:175:32'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 178, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          for.inc197.load.73
+  - OrigAccess:      load
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 178, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          for.inc197.load.117
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 204, Column: 19 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '768'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        current_token659seq664
   - ArrayName:       current_token
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
   - LoopName:        OUTPUT_WRITE
   - String:          ' '
-  - LoopLoc:         'kernel_MHSA.cpp:232:19'
+  - LoopLoc:         'kernel_MHSA.cpp:204:19'
   - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 206, Column: 19 }
+  - OrigDirection:   write
+  - OrigID:          for.inc249.store.23
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          scevgep662seq
+  - ArrayName:       key_cache
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        TOKEN_COMPUTE
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:121:32'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
-Pass:            reflow-burst-widen
-Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
-Function:        _Z11kernel_mhsaPfiS_
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 175, Column: 32 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
-  - String:          'Could not widen since type '
-  - Type:            float
-  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
-  - Threshold:       '0'
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 175, Column: 32 }
+  - OrigDirection:   read
+  - OrigID:          scevgep663seq
+  - ArrayName:       value_cache
+  - String:          ' '
+  - BundleName:      gmem3
+  - String:          ' '
+  - LoopName:        TOKEN_STREAM
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:169:31'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          Stride is incompatible
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
     DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
@@ -3311,39 +3576,76 @@ Args:
   - String:          ' '
   - BundleName:      gmem1
   - String:          ' '
-  - LoopName:        VITIS_LOOP_27_2
+  - LoopName:        LAYER_LOOP
   - String:          ' '
-  - LoopLoc:         'kernel_RMS_Norm.cpp:27:22'
+  - LoopLoc:         'kernel_MHSA.cpp:53:17'
   - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
-Pass:            reflow-burst-widen
-Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 71, Column: 14 }
-Function:        _Z11kernel_mhsaPfiS_
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
-  - String:          'Could not widen since type '
-  - Type:            float
-  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
-  - Threshold:       '0'
+  - String:          Stride is incompatible
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: kernel_MHSA.cpp, Line: 71, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          current_token3363seq
-  - ArrayName:       current_token
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          scevgep660seq
+  - ArrayName:       key_cache
   - String:          ' '
-  - BundleName:      gmem0
+  - BundleName:      gmem2
   - String:          ' '
-  - LoopName:        INPUT_COPY
+  - LoopName:        LAYER_LOOP
   - String:          ' '
-  - LoopLoc:         'kernel_MHSA.cpp:71:14'
+  - LoopLoc:         'kernel_MHSA.cpp:53:17'
   - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          scevgep661seq
+  - ArrayName:       value_cache
+  - String:          ' '
+  - BundleName:      gmem3
+  - String:          ' '
+  - LoopName:        LAYER_LOOP
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:53:17'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: kernel_Softmax.cpp, Line: 16, Column: 13 }
+Function:        _Z14kernel_softmaxPfi
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        find_max
+  - String:          ' '
+  - LoopLoc:         'kernel_Softmax.cpp:16:13'
+  - String:          ' '
+  - Function:        'kernel_softmax(float*, int)'
+    DebugLoc:        { File: kernel_Softmax.cpp, Line: 2, Column: 0 }
   - String:          ' '
 ...
 --- !Missed
@@ -3360,7 +3662,7 @@ Args:
   - OrigAccess:      call
     DebugLoc:        { File: kernel_MatMul.cpp, Line: 23, Column: 3 }
   - OrigDirection:   read
-  - OrigID:          scevgepseq
+  - OrigID:          i_matseq
   - ArrayName:       i_mat
   - String:          ' '
   - BundleName:      gmem1
@@ -3373,64 +3675,227 @@ Args:
     DebugLoc:        { File: kernel_MatMul.cpp, Line: 20, Column: 0 }
   - String:          ' '
 ...
---- !Failure
-Pass:            reflow-syncheck
-Name:            WarningOutOfBoundArrayAccess
-DebugLoc:        { File: kernel_Softmax.cpp, Line: 13, Column: 17 }
-Function:        _Z14kernel_softmaxPfi
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 204, Column: 19 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
-  - String:          The program may have out of bound array access
-  - String:          ' on variable '''
-  - String:          i_vec
-  - String:          ''''
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 204, Column: 19 }
+  - OrigDirection:   write
+  - OrigID:          current_token659seq664
+  - ArrayName:       current_token
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        OUTPUT_WRITE
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:204:19'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
 ...
---- !Failure
-Pass:            reflow-syncheck
-Name:            WarningOutOfBoundArrayAccess
-DebugLoc:        { File: kernel_Softmax.cpp, Line: 39, Column: 11 }
-Function:        _Z14kernel_softmaxPfi
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 175, Column: 32 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
-  - String:          The program may have out of bound array access
-  - String:          ' on variable '''
-  - String:          i_vec
-  - String:          ''''
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 175, Column: 32 }
+  - OrigDirection:   read
+  - OrigID:          scevgep663seq
+  - ArrayName:       value_cache
+  - String:          ' '
+  - BundleName:      gmem3
+  - String:          ' '
+  - LoopName:        VALUE_MAC
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:175:32'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          scevgep662seq
+  - ArrayName:       key_cache
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          scevgep660seq
+  - ArrayName:       key_cache
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        CACHE_STORE
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:85:22'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          scevgep661seq
+  - ArrayName:       value_cache
+  - String:          ' '
+  - BundleName:      gmem3
+  - String:          ' '
+  - LoopName:        CACHE_STORE
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:85:22'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       weights
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_27_2
+  - String:          ' '
+  - LoopLoc:         'kernel_RMS_Norm.cpp:27:22'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 47, Column: 14 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 47, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          current_token659seq
+  - ArrayName:       current_token
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        INPUT_COPY
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:47:14'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
 ...
 --- !Failure
 Pass:            reflow-occurrence-analysis
 Name:            CouldNotAnalyzeBBInfo
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 171, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 143, Column: 2 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Could not analyze occurrence information for '''
   - BBName:          .case.11
   - String:          ''' living in '''
   - LoopName:        SOFTMAX_HEADS
   - String:          '''('
-  - LoopLoc:         'kernel_MHSA.cpp:169:24'
+  - LoopLoc:         'kernel_MHSA.cpp:141:24'
   - String:          ') .'
 ...
 --- !Passed
 Pass:            reflow-occurrence-inference
 Name:            OccurrenceInference
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 169, Column: 24 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 141, Column: 24 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Occurrence cycles within '''
   - LoopName:        SOFTMAX_HEADS
   - String:          '''('
-  - LoopLoc:         'kernel_MHSA.cpp:169:24'
+  - LoopLoc:         'kernel_MHSA.cpp:141:24'
   - String:          ') has been inferred.'
 ...
 --- !Passed
 Pass:            reflow-occurrence-inference
 Name:            OccurrenceInference
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 77, Column: 17 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 53, Column: 17 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Occurrence cycles within '''
   - LoopName:        LAYER_LOOP
   - String:          '''('
-  - LoopLoc:         'kernel_MHSA.cpp:77:17'
+  - LoopLoc:         'kernel_MHSA.cpp:53:17'
   - String:          ') has been inferred.'
 ...
 --- !HLSReportInfo
@@ -3554,8 +4019,8 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 71, Column: 14 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 47, Column: 14 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
@@ -3573,17 +4038,17 @@ Args:
   - String:          ' '
   - LoopName:        INPUT_COPY
   - String:          ' '
-  - LoopLoc:         'kernel_MHSA.cpp:71:14'
+  - LoopLoc:         'kernel_MHSA.cpp:47:14'
   - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 71, Column: 14 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 47, Column: 14 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
@@ -3594,7 +4059,7 @@ Args:
   - String:          ' in loop '''
   - LoopName:        INPUT_COPY
   - String:          '''('
-  - LoopLoc:         'kernel_MHSA.cpp:71:14'
+  - LoopLoc:         'kernel_MHSA.cpp:47:14'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem0
@@ -3605,7 +4070,7 @@ Args:
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
 DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
@@ -3625,7 +4090,7 @@ Args:
   - String:          ' '
   - LoopLoc:         'kernel_RMS_Norm.cpp:27:22'
   - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' '
 ...
@@ -3633,7 +4098,7 @@ Args:
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
 DebugLoc:        { File: kernel_RMS_Norm.cpp, Line: 27, Column: 22 }
-Function:        _Z11kernel_mhsaPfiS_
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
@@ -3654,8 +4119,8 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 232, Column: 19 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       writes
@@ -3669,21 +4134,212 @@ Args:
   - AccessID:        seq2
   - ArrayName:       ''
   - String:          ' '
-  - BundleName:      gmem0
+  - BundleName:      gmem2
   - String:          ' '
-  - LoopName:        OUTPUT_WRITE
+  - LoopName:        CACHE_STORE
   - String:          ' '
-  - LoopLoc:         'kernel_MHSA.cpp:232:19'
+  - LoopLoc:         'kernel_MHSA.cpp:85:22'
   - String:          ' '
-  - Function:        'kernel_mhsa(float*, int, float*)'
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 232, Column: 19 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '768'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        CACHE_STORE
+  - String:          '''('
+  - LoopLoc:         'kernel_MHSA.cpp:85:22'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem2
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '768'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq3
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem3
+  - String:          ' '
+  - LoopName:        CACHE_STORE
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:85:22'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 85, Column: 22 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '768'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        CACHE_STORE
+  - String:          '''('
+  - LoopLoc:         'kernel_MHSA.cpp:85:22'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem3
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq4
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 130, Column: 16 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem2
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 175, Column: 32 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq5
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem3
+  - String:          ' '
+  - LoopName:        VALUE_MAC
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:175:32'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 175, Column: 32 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        VALUE_MAC
+  - String:          '''('
+  - LoopLoc:         'kernel_MHSA.cpp:175:32'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem3
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 204, Column: 19 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '768'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq6
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        OUTPUT_WRITE
+  - String:          ' '
+  - LoopLoc:         'kernel_MHSA.cpp:204:19'
+  - String:          ' '
+  - Function:        'kernel_mhsa(float*, int, float*, float*, float*)'
+    DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 204, Column: 19 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       writes
@@ -3694,7 +4350,7 @@ Args:
   - String:          ' in loop '''
   - LoopName:        OUTPUT_WRITE
   - String:          '''('
-  - LoopLoc:         'kernel_MHSA.cpp:232:19'
+  - LoopLoc:         'kernel_MHSA.cpp:204:19'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem0
@@ -3787,39 +4443,39 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 99, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 72, Column: 17 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          matmul.1
     DebugLoc:        { File: kernel_MatMul.cpp, Line: 75, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 108, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 80, Column: 13 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          'RoPE(float*, float const*, int, int)'
     DebugLoc:        { File: kernel_Rope.cpp, Line: 8, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: kernel_MHSA.cpp, Line: 171, Column: 2 }
-Function:        _Z11kernel_mhsaPfiS_
+DebugLoc:        { File: kernel_MHSA.cpp, Line: 143, Column: 2 }
+Function:        _Z11kernel_mhsaPfiS_S_S_
 Args:            
   - Callee:          'kernel_softmax(float*, int)'
     DebugLoc:        { File: kernel_Softmax.cpp, Line: 2, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'kernel_mhsa(float*, int, float*)'
+  - Caller:          'kernel_mhsa(float*, int, float*, float*, float*)'
     DebugLoc:        { File: kernel_MHSA.cpp, Line: 7, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...

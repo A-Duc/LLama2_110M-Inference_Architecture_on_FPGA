@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_mat'" level="0">
-<item name = "Date">Sat Sep 27 23:14:44 2025
+<item name = "Date">Tue Sep 30 23:58:12 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_73">load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1, 589826, 589826, 2.359 ms, 2.359 ms, 589825, 589825, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1_fu_59">load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1, 589826, 589826, 2.359 ms, 2.359 ms, 589825, 589825, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

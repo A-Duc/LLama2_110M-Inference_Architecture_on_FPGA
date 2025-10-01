@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'kernel_mhsa_Pipeline_INPUT_COPY'
 ================================================================
-* Date:           Sat Sep 27 23:15:26 2025
+* Date:           Tue Sep 30 23:58:50 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -89,9 +89,9 @@
     +---------------------------+----------+----+---+----+------------+------------+
     |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------+----------+----+---+----+------------+------------+
-    |add_ln71_fu_218_p2         |         +|   0|  0|  10|          10|           1|
+    |add_ln47_fu_218_p2         |         +|   0|  0|  10|          10|           1|
     |ap_block_pp0_stage0_11001  |       and|   0|  0|   2|           1|           1|
-    |icmp_ln71_fu_224_p2        |      icmp|   0|  0|   4|          10|          10|
+    |icmp_ln47_fu_224_p2        |      icmp|   0|  0|   4|          10|          10|
     |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
     +---------------------------+----------+----+---+----+------------+------------+
     |Total                      |          |   0|  0|  18|          22|          14|
@@ -103,9 +103,9 @@
     +-------------------------+----+-----------+-----+-----------+
     |ap_done_int              |   1|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |   1|          2|    1|          2|
-    |ap_sig_allocacmp_i       |  16|          2|   10|         20|
+    |ap_sig_allocacmp_i_7     |  16|          2|   10|         20|
     |gmem0_blk_n_R            |   1|          2|    1|          2|
-    |i_4_fu_84                |  16|          2|   10|         20|
+    |i_fu_84                  |  16|          2|   10|         20|
     +-------------------------+----+-----------+-----+-----------+
     |Total                    |  35|         10|   23|         46|
     +-------------------------+----+-----------+-----+-----------+
@@ -117,9 +117,9 @@
     |ap_CS_fsm                |   1|   0|    1|          0|
     |ap_done_reg              |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
-    |i_4_fu_84                |  10|   0|   10|          0|
-    |lshr_ln1_reg_350         |   7|   0|    7|          0|
-    |trunc_ln71_reg_346       |   3|   0|    3|          0|
+    |i_fu_84                  |  10|   0|   10|          0|
+    |lshr_ln_reg_350          |   7|   0|    7|          0|
+    |trunc_ln47_reg_346       |   3|   0|    3|          0|
     +-------------------------+----+----+-----+-----------+
     |Total                    |  23|   0|   23|          0|
     +-------------------------+----+----+-----+-----------+
@@ -185,7 +185,7 @@
 |m_axi_gmem0_0_BRESP        |   in|    2|       m_axi|                            gmem0|       pointer|
 |m_axi_gmem0_0_BID          |   in|    1|       m_axi|                            gmem0|       pointer|
 |m_axi_gmem0_0_BUSER        |   in|    1|       m_axi|                            gmem0|       pointer|
-|sext_ln71                  |   in|   62|     ap_none|                        sext_ln71|        scalar|
+|sext_ln47                  |   in|   62|     ap_none|                        sext_ln47|        scalar|
 |current_input_14_address0  |  out|    7|   ap_memory|                 current_input_14|         array|
 |current_input_14_ce0       |  out|    1|   ap_memory|                 current_input_14|         array|
 |current_input_14_we0       |  out|    1|   ap_memory|                 current_input_14|         array|

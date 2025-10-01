@@ -369,7 +369,7 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>i_10</name>
+						<name>i_9</name>
 						<fileName>kernel_MatMul.cpp</fileName>
 						<fileDirectory>C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code</fileDirectory>
 						<lineNumber>43</lineNumber>
@@ -4418,7 +4418,7 @@
 		<count>4</count>
 		<item_version>0</item_version>
 		<item>
-			<first>i_10_load_fu_124</first>
+			<first>i_9_load_fu_124</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

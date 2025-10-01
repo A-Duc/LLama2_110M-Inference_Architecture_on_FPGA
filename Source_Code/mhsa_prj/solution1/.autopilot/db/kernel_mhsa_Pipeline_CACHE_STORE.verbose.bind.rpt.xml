@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Pipeline_CACHE_STORE'" level="0">
-<item name = "Date">Sat Sep 27 23:14:54 2025
+<item name = "Date">Tue Sep 30 23:58:18 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.320 ns, 1.08 ns</column>
+<column name="ap_clk">4.00 ns, 2.657 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">771, 771, 3.084 us, 3.084 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- CACHE_STORE">769, 769, 3, 1, 1, 768, yes</column>
+<column name="- CACHE_STORE">768, 768, 2, 1, 1, 768, yes</column>
 </table>
 </item>
 </section>

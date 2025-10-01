@@ -186,7 +186,7 @@ attribute shreg_extract : string;
 
 
 begin
-    sparsemux_17_3_32_1_1_U239 : component kernel_mhsa_sparsemux_17_3_32_1_1
+    sparsemux_17_3_32_1_1_U47 : component kernel_mhsa_sparsemux_17_3_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,

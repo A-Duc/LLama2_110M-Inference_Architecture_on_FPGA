@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 30
+set cdfgNum 29
 set C_modelName {kernel_mhsa_Pipeline_VITIS_LOOP_27_2}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -191,9 +191,9 @@ set portList {
 	{ current_input_14_ce0 sc_out sc_logic 1 signal 17 } 
 	{ current_input_14_q0 sc_in sc_lv 32 signal 17 } 
 	{ norm sc_in sc_lv 32 signal 18 } 
-	{ grp_fu_4540_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_4540_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_4540_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_3617_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3617_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_3617_p_dout0 sc_in sc_lv 32 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -306,9 +306,9 @@ set NewPortList {[
  	{ "name": "current_input_14_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "current_input_14", "role": "ce0" }} , 
  	{ "name": "current_input_14_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "current_input_14", "role": "q0" }} , 
  	{ "name": "norm", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "norm", "role": "default" }} , 
- 	{ "name": "grp_fu_4540_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_4540_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_4540_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_4540_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_4540_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_4540_p_dout0", "role": "default" }}  ]}
+ 	{ "name": "grp_fu_3617_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3617_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_3617_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3617_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_3617_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_3617_p_dout0", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	kernel_mhsa_Pipeline_VITIS_LOOP_27_2 {

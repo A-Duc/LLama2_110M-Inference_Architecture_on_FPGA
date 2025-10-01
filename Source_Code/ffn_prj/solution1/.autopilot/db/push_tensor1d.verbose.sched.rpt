@@ -1,0 +1,224 @@
+
+
+================================================================
+== Vitis HLS Report for 'push_tensor1d'
+================================================================
+* Date:           Tue Sep 30 15:49:10 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        ffn_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.920 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      782|      782|  3.128 us|  3.128 us|  782|  782|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 13
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.73>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tsor_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %tsor" [kernel_FFN.cpp:11]   --->   Operation 14 'read' 'tsor_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %tsor_read, i32 2, i32 63" [kernel_FFN.cpp:12]   --->   Operation 15 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%sext_ln12 = sext i62 %trunc_ln" [kernel_FFN.cpp:12]   --->   Operation 16 'sext' 'sext_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr i32 %gmem, i64 %sext_ln12" [kernel_FFN.cpp:12]   --->   Operation 17 'getelementptr' 'gmem_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.70ns) (share mux size 5)   --->   "%muxLogicAXIMAddr_to_empty = muxlogic i32 %gmem_addr"   --->   Operation 18 'muxlogic' 'muxLogicAXIMAddr_to_empty' <Predicate = true> <Delay = 0.70>
+ST_1 : Operation 19 [1/1] (0.70ns) (share mux size 5)   --->   "%muxLogicAXIMBurst_to_empty = muxlogic i64 768"   --->   Operation 19 'muxlogic' 'muxLogicAXIMBurst_to_empty' <Predicate = true> <Delay = 0.70>
+ST_1 : Operation 20 [11/11] (1.03ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 20 'readreq' 'empty' <Predicate = true> <Delay = 1.03> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 2 <SV = 1> <Delay = 2.92>
+ST_2 : Operation 21 [10/11] (2.92ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 21 'readreq' 'empty' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 2.92>
+ST_3 : Operation 22 [9/11] (2.92ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 22 'readreq' 'empty' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 2.92>
+ST_4 : Operation 23 [8/11] (2.92ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 23 'readreq' 'empty' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 2.92>
+ST_5 : Operation 24 [7/11] (2.92ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 24 'readreq' 'empty' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 2.92>
+ST_6 : Operation 25 [6/11] (2.92ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 25 'readreq' 'empty' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 2.92>
+ST_7 : Operation 26 [5/11] (2.92ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 26 'readreq' 'empty' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 2.92>
+ST_8 : Operation 27 [4/11] (2.92ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 27 'readreq' 'empty' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 2.92>
+ST_9 : Operation 28 [3/11] (2.92ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 28 'readreq' 'empty' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 2.92>
+ST_10 : Operation 29 [2/11] (2.92ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 29 'readreq' 'empty' <Predicate = true> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 1.03>
+ST_11 : Operation 30 [1/11] (1.03ns) (share mux size 5)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 768" [kernel_FFN.cpp:12]   --->   Operation 30 'readreq' 'empty' <Predicate = true> <Delay = 1.03> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.56> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 31 [2/2] (0.00ns)   --->   "%call_ln12 = call void @push_tensor1d_Pipeline_VITIS_LOOP_12_1, i32 %gmem, i62 %trunc_ln, i32 %x_strm" [kernel_FFN.cpp:12]   --->   Operation 31 'call' 'call_ln12' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 13 <SV = 12> <Delay = 1.28>
+ST_13 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %x_strm, void @empty_16, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_12, i32 4294967295, i32 0, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_11, void @empty_10, void @empty_12, i32 16, i32 16, i32 16, i32 16, void @empty_12, void @empty_12, i32 4294967295, i32 0, i32 0"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 34 [1/2] (1.28ns)   --->   "%call_ln12 = call void @push_tensor1d_Pipeline_VITIS_LOOP_12_1, i32 %gmem, i62 %trunc_ln, i32 %x_strm" [kernel_FFN.cpp:12]   --->   Operation 34 'call' 'call_ln12' <Predicate = true> <Delay = 1.28> <CoreType = "Generic">   --->   Generic Core
+ST_13 : Operation 35 [1/1] (0.00ns)   --->   "%ret_ln15 = ret" [kernel_FFN.cpp:15]   --->   Operation 35 'ret' 'ret_ln15' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4.000ns, clock uncertainty: 1.080ns.
+
+ <State 1>: 1.738ns
+The critical path consists of the following:
+	wire read operation ('tsor_read', kernel_FFN.cpp:11) on port 'tsor' (kernel_FFN.cpp:11) [6]  (0.000 ns)
+	'getelementptr' operation 32 bit ('gmem_addr', kernel_FFN.cpp:12) [9]  (0.000 ns)
+	'muxlogic' operation 1 bit ('muxLogicAXIMAddr_to_empty') [10]  (0.705 ns)
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (1.033 ns)
+
+ <State 2>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (2.920 ns)
+
+ <State 3>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (2.920 ns)
+
+ <State 4>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (2.920 ns)
+
+ <State 5>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (2.920 ns)
+
+ <State 6>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (2.920 ns)
+
+ <State 7>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (2.920 ns)
+
+ <State 8>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (2.920 ns)
+
+ <State 9>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (2.920 ns)
+
+ <State 10>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (2.920 ns)
+
+ <State 11>: 1.033ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_FFN.cpp:12) on port 'gmem' (kernel_FFN.cpp:12) [12]  (1.033 ns)
+
+ <State 12>: 0.000ns
+The critical path consists of the following:
+
+ <State 13>: 1.284ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln12', kernel_FFN.cpp:12) to 'push_tensor1d_Pipeline_VITIS_LOOP_12_1' [13]  (1.284 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -243,8 +243,8 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 using hls::sim::Byte;
-extern "C" void kernel_mhsa(Byte<4>*, Byte<4>*, int, int, int);
-extern "C" void apatb_kernel_mhsa_hw(volatile void * __xlx_apatb_param_current_token, int __xlx_apatb_param_position, volatile void * __xlx_apatb_param_weights) {
+extern "C" void kernel_mhsa(Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, int, int, int, int, int);
+extern "C" void apatb_kernel_mhsa_hw(volatile void * __xlx_apatb_param_current_token, int __xlx_apatb_param_position, volatile void * __xlx_apatb_param_weights, volatile void * __xlx_apatb_param_key_cache, volatile void * __xlx_apatb_param_value_cache) {
 using hls::sim::createStream;
   // Collect __xlx_current_token__tmp_vec
 std::vector<Byte<4>> __xlx_current_token__tmp_vec;
@@ -256,14 +256,30 @@ __xlx_current_token__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_current_toke
   int __xlx_offset_byte_param_current_token = 0*4;
   // Collect __xlx_weights__tmp_vec
 std::vector<Byte<4>> __xlx_weights__tmp_vec;
-for (size_t i = 0; i < 28320768; ++i){
+for (size_t i = 0; i < 1; ++i){
 __xlx_weights__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_weights)[i]);
 }
-  int __xlx_size_param_weights = 28320768;
+  int __xlx_size_param_weights = 1;
   int __xlx_offset_param_weights = 0;
   int __xlx_offset_byte_param_weights = 0*4;
+  // Collect __xlx_key_cache__tmp_vec
+std::vector<Byte<4>> __xlx_key_cache__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_key_cache__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_key_cache)[i]);
+}
+  int __xlx_size_param_key_cache = 1;
+  int __xlx_offset_param_key_cache = 0;
+  int __xlx_offset_byte_param_key_cache = 0*4;
+  // Collect __xlx_value_cache__tmp_vec
+std::vector<Byte<4>> __xlx_value_cache__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_value_cache__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_value_cache)[i]);
+}
+  int __xlx_size_param_value_cache = 1;
+  int __xlx_offset_param_value_cache = 0;
+  int __xlx_offset_byte_param_value_cache = 0*4;
   // DUT call
-  kernel_mhsa(__xlx_current_token__tmp_vec.data(), __xlx_weights__tmp_vec.data(), __xlx_offset_byte_param_current_token, __xlx_apatb_param_position, __xlx_offset_byte_param_weights);
+  kernel_mhsa(__xlx_current_token__tmp_vec.data(), __xlx_weights__tmp_vec.data(), __xlx_key_cache__tmp_vec.data(), __xlx_value_cache__tmp_vec.data(), __xlx_offset_byte_param_current_token, __xlx_apatb_param_position, __xlx_offset_byte_param_weights, __xlx_offset_byte_param_key_cache, __xlx_offset_byte_param_value_cache);
 // print __xlx_apatb_param_current_token
 for (size_t i = 0; i < __xlx_size_param_current_token; ++i) {
 ((Byte<4>*)__xlx_apatb_param_current_token)[i] = __xlx_current_token__tmp_vec[__xlx_offset_param_current_token+i];
@@ -271,5 +287,13 @@ for (size_t i = 0; i < __xlx_size_param_current_token; ++i) {
 // print __xlx_apatb_param_weights
 for (size_t i = 0; i < __xlx_size_param_weights; ++i) {
 ((Byte<4>*)__xlx_apatb_param_weights)[i] = __xlx_weights__tmp_vec[__xlx_offset_param_weights+i];
+}
+// print __xlx_apatb_param_key_cache
+for (size_t i = 0; i < __xlx_size_param_key_cache; ++i) {
+((Byte<4>*)__xlx_apatb_param_key_cache)[i] = __xlx_key_cache__tmp_vec[__xlx_offset_param_key_cache+i];
+}
+// print __xlx_apatb_param_value_cache
+for (size_t i = 0; i < __xlx_size_param_value_cache; ++i) {
+((Byte<4>*)__xlx_apatb_param_value_cache)[i] = __xlx_value_cache__tmp_vec[__xlx_offset_param_value_cache+i];
 }
 }

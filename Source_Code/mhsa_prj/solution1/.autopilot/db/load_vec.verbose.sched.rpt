@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'load_vec'
 ================================================================
-* Date:           Sat Sep 27 23:14:43 2025
+* Date:           Tue Sep 30 23:58:11 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -94,7 +94,7 @@ ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstable
 ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %i_vec_2, i1 1, void @p_str"   --->   Operation 11 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %i_vec_1, i1 1, void @p_str"   --->   Operation 12 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %i_vec_0, i1 1, void @p_str"   --->   Operation 13 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %vector_stream, void @empty_65, i32 0, i32 0, void @empty_113, i32 0, i32 0, void @empty_113, void @empty_113, void @empty_113, i32 0, i32 0, i32 0, i32 0, void @empty_113, void @empty_113, i32 4294967295, i32 0, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %vector_stream, void @empty_101, i32 0, i32 0, void @empty_115, i32 0, i32 0, void @empty_115, void @empty_115, void @empty_115, i32 0, i32 0, i32 0, i32 0, void @empty_115, void @empty_115, i32 4294967295, i32 0, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 15 [1/1] (0.39ns)   --->   "%store_ln12 = store i10 0, i10 %i" [kernel_MatMul.cpp:12]   --->   Operation 15 'store' 'store_ln12' <Predicate = true> <Delay = 0.39>
 ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln12 = br void %for.inc" [kernel_MatMul.cpp:12]   --->   Operation 16 'br' 'br_ln12' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%i_2 = load i10 %i" [kernel_MatMul.cpp:12]   --->   Operation 17 'load' 'i_2' <Predicate = true> <Delay = 0.00>
@@ -132,9 +132,9 @@ ST_1 : Operation 48 [1/1] (0.39ns)   --->   "%store_ln12 = store i10 %add_ln12, 
 ST_1 : Operation 65 [1/1] (0.28ns)   --->   "%ret_ln17 = ret" [kernel_MatMul.cpp:17]   --->   Operation 65 'ret' 'ret_ln17' <Predicate = (icmp_ln12)> <Delay = 0.28>
 
 State 2 <SV = 1> <Delay = 2.56>
-ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%specpipeline_ln13 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_113" [kernel_MatMul.cpp:13]   --->   Operation 49 'specpipeline' 'specpipeline_ln13' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%specpipeline_ln13 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_115" [kernel_MatMul.cpp:13]   --->   Operation 49 'specpipeline' 'specpipeline_ln13' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%speclooptripcount_ln14 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 768, i64 768, i64 768" [kernel_MatMul.cpp:14]   --->   Operation 50 'speclooptripcount' 'speclooptripcount_ln14' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%specloopname_ln12 = specloopname void @_ssdm_op_SpecLoopName, void @empty_106" [kernel_MatMul.cpp:12]   --->   Operation 51 'specloopname' 'specloopname_ln12' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%specloopname_ln12 = specloopname void @_ssdm_op_SpecLoopName, void @empty_110" [kernel_MatMul.cpp:12]   --->   Operation 51 'specloopname' 'specloopname_ln12' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 52 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 4)   --->   "%i_vec_0_load = load i7 %i_vec_0_addr" [kernel_MatMul.cpp:15]   --->   Operation 52 'load' 'i_vec_0_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
 ST_2 : Operation 53 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 4)   --->   "%i_vec_1_load = load i7 %i_vec_1_addr" [kernel_MatMul.cpp:15]   --->   Operation 53 'load' 'i_vec_1_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
 ST_2 : Operation 54 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 4)   --->   "%i_vec_2_load = load i7 %i_vec_2_addr" [kernel_MatMul.cpp:15]   --->   Operation 54 'load' 'i_vec_2_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>

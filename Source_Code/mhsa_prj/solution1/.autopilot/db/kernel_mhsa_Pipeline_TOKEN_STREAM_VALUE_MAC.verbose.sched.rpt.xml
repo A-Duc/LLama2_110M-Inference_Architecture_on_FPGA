@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC'" level="0">
-<item name = "Date">Sat Sep 27 23:15:16 2025
+<item name = "Date">Tue Sep 30 23:58:42 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.516 ns, 1.08 ns</column>
+<column name="ap_clk">4.00 ns, 2.920 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">72, 32776, 0.288 us, 0.131 ms, 66, 32770, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">82, 32786, 0.328 us, 0.131 ms, 66, 32770, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- TOKEN_STREAM_VALUE_MAC">70, 32774, 9, 2, 2, 32 ~ 16384, yes</column>
+<column name="- TOKEN_STREAM_VALUE_MAC">80, 32784, 19, 2, 2, 32 ~ 16384, yes</column>
 </table>
 </item>
 </section>

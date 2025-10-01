@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 30
+set cdfgNum 29
 set C_modelName {kernel_mhsa_Pipeline_RESIDUAL}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -161,10 +161,10 @@ set portList {
 	{ xb2_7_address0 sc_out sc_lv 7 signal 15 } 
 	{ xb2_7_ce0 sc_out sc_logic 1 signal 15 } 
 	{ xb2_7_q0 sc_in sc_lv 32 signal 15 } 
-	{ grp_fu_2831_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_2831_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_2831_p_opcode sc_out sc_lv 2 signal -1 } 
-	{ grp_fu_2831_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_2178_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_2178_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_2178_p_opcode sc_out sc_lv 2 signal -1 } 
+	{ grp_fu_2178_p_dout0 sc_in sc_lv 32 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -253,10 +253,10 @@ set NewPortList {[
  	{ "name": "xb2_7_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "xb2_7", "role": "address0" }} , 
  	{ "name": "xb2_7_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "xb2_7", "role": "ce0" }} , 
  	{ "name": "xb2_7_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "xb2_7", "role": "q0" }} , 
- 	{ "name": "grp_fu_2831_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2831_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_2831_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2831_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_2831_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "grp_fu_2831_p_opcode", "role": "default" }} , 
- 	{ "name": "grp_fu_2831_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2831_p_dout0", "role": "default" }}  ]}
+ 	{ "name": "grp_fu_2178_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2178_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_2178_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2178_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_2178_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "grp_fu_2178_p_opcode", "role": "default" }} , 
+ 	{ "name": "grp_fu_2178_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_2178_p_dout0", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	kernel_mhsa_Pipeline_RESIDUAL {

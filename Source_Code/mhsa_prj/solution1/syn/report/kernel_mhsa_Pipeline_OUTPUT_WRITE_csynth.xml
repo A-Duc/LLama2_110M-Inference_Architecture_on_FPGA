@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>kernel_MHSA.cpp:232</SourceLocation>
+<SourceLocation>kernel_MHSA.cpp:204</SourceLocation>
 <SummaryOfLoopViolations>
 <OUTPUT_WRITE>
 <Name>OUTPUT_WRITE</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>kernel_MHSA.cpp:232</SourceLocation>
+<SourceLocation>kernel_MHSA.cpp:204</SourceLocation>
 </OUTPUT_WRITE>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -652,8 +652,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln71</name>
-<Object>sext_ln71</Object>
+<name>sext_ln47</name>
+<Object>sext_ln47</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

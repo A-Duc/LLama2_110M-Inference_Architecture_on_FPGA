@@ -363,7 +363,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -407,7 +407,7 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>i_6</name>
+						<name>i_5</name>
 						<fileName>kernel_RMS_Norm.cpp</fileName>
 						<fileDirectory>C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code</fileDirectory>
 						<lineNumber>19</lineNumber>
@@ -426,7 +426,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -470,7 +470,7 @@
 					<Obj>
 						<type>0</type>
 						<id>12</id>
-						<name>i_6_write_ln19</name>
+						<name>i_5_write_ln19</name>
 						<fileName>kernel_RMS_Norm.cpp</fileName>
 						<fileDirectory>C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code</fileDirectory>
 						<lineNumber>19</lineNumber>
@@ -489,7 +489,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -553,7 +553,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -659,7 +659,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -723,7 +723,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -787,7 +787,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -851,7 +851,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -916,7 +916,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -960,7 +960,7 @@
 					<Obj>
 						<type>0</type>
 						<id>25</id>
-						<name>lshr_ln3</name>
+						<name>lshr_ln2</name>
 						<fileName>kernel_RMS_Norm.cpp</fileName>
 						<fileDirectory>C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code</fileDirectory>
 						<lineNumber>18</lineNumber>
@@ -979,7 +979,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1045,7 +1045,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1108,7 +1108,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1173,7 +1173,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1238,7 +1238,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1303,7 +1303,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1368,7 +1368,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1433,7 +1433,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1498,7 +1498,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1563,7 +1563,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1670,7 +1670,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1775,7 +1775,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1880,7 +1880,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1985,7 +1985,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2090,7 +2090,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2195,7 +2195,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2300,7 +2300,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2405,7 +2405,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2468,7 +2468,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2549,7 +2549,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2613,7 +2613,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2660,7 +2660,7 @@
 					<Obj>
 						<type>0</type>
 						<id>54</id>
-						<name>i_6_write_ln19</name>
+						<name>i_5_write_ln19</name>
 						<fileName>kernel_RMS_Norm.cpp</fileName>
 						<fileDirectory>C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code</fileDirectory>
 						<lineNumber>19</lineNumber>
@@ -2679,7 +2679,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2745,7 +2745,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2810,7 +2810,7 @@
 											<first>kernel_MHSA.cpp</first>
 											<second>kernel_mhsa</second>
 										</first>
-										<second>94</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -5644,7 +5644,7 @@
 			</second>
 		</item>
 		<item>
-			<first>i_6_fu_80</first>
+			<first>i_5_fu_80</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -5668,7 +5668,7 @@
 			</second>
 		</item>
 		<item>
-			<first>lshr_ln3_fu_224</first>
+			<first>lshr_ln2_fu_224</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -6133,7 +6133,7 @@
 			</second>
 		</item>
 		<item>
-			<first>i_6_reg_351</first>
+			<first>i_5_reg_351</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'store_result'
 ================================================================
-* Date:           Sat Sep 27 23:15:30 2025
+* Date:           Tue Sep 30 23:58:53 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -222,7 +222,7 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.50>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [kernel_MatMul.cpp:66]   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %result_stream, void @empty_65, i32 0, i32 0, void @empty_113, i32 0, i32 0, void @empty_113, void @empty_113, void @empty_113, i32 0, i32 0, i32 0, i32 0, void @empty_113, void @empty_113, i32 4294967295, i32 0, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %result_stream, void @empty_101, i32 0, i32 0, void @empty_115, i32 0, i32 0, void @empty_115, void @empty_115, void @empty_115, i32 0, i32 0, i32 0, i32 0, void @empty_115, void @empty_115, i32 4294967295, i32 0, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (0.39ns)   --->   "%store_ln66 = store i10 0, i10 %i" [kernel_MatMul.cpp:66]   --->   Operation 7 'store' 'store_ln66' <Predicate = true> <Delay = 0.39>
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%br_ln66 = br void %for.inc" [kernel_MatMul.cpp:66]   --->   Operation 8 'br' 'br_ln66' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i_1 = load i10 %i" [kernel_MatMul.cpp:66]   --->   Operation 9 'load' 'i_1' <Predicate = true> <Delay = 0.00>
@@ -237,9 +237,9 @@ ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln66 = br void %for.inc" [kerne
 ST_1 : Operation 65 [1/1] (0.28ns)   --->   "%ret_ln71 = ret" [kernel_MatMul.cpp:71]   --->   Operation 65 'ret' 'ret_ln71' <Predicate = (icmp_ln66)> <Delay = 0.28>
 
 State 2 <SV = 1> <Delay = 0.98>
-ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln67 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_113" [kernel_MatMul.cpp:67]   --->   Operation 18 'specpipeline' 'specpipeline_ln67' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln67 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_115" [kernel_MatMul.cpp:67]   --->   Operation 18 'specpipeline' 'specpipeline_ln67' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%speclooptripcount_ln68 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 768, i64 768, i64 768" [kernel_MatMul.cpp:68]   --->   Operation 19 'speclooptripcount' 'speclooptripcount_ln68' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln66 = specloopname void @_ssdm_op_SpecLoopName, void @empty_111" [kernel_MatMul.cpp:66]   --->   Operation 20 'specloopname' 'specloopname_ln66' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln66 = specloopname void @_ssdm_op_SpecLoopName, void @empty_80" [kernel_MatMul.cpp:66]   --->   Operation 20 'specloopname' 'specloopname_ln66' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln66 = zext i7 %lshr_ln" [kernel_MatMul.cpp:66]   --->   Operation 21 'zext' 'zext_ln66' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicFIFOCE_to_result_stream_read = muxlogic"   --->   Operation 22 'muxlogic' 'muxLogicFIFOCE_to_result_stream_read' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 23 [1/1] ( I:0.98ns O:0.09ns )   --->   "%result_stream_read = read i32 @_ssdm_op_Read.ap_fifo.volatile.i32P0A, i32 %result_stream" [kernel_MatMul.cpp:69]   --->   Operation 23 'read' 'result_stream_read' <Predicate = true> <Delay = 0.98> <CoreInst = "FIFO">   --->   Core 81 'FIFO' <Latency = 0> <II = 1> <Delay = 0.98> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 64> <FIFO>
@@ -490,7 +490,7 @@ ret_ln71                             (ret              ) [ 000]
 <pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_65"/></StgValue>
+<StgValue><ssdm name="empty_101"/></StgValue>
 </bind>
 </comp>
 
@@ -508,7 +508,7 @@ ret_ln71                             (ret              ) [ 000]
 <pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_113"/></StgValue>
+<StgValue><ssdm name="empty_115"/></StgValue>
 </bind>
 </comp>
 
@@ -679,7 +679,7 @@ ret_ln71                             (ret              ) [ 000]
 <pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_111"/></StgValue>
+<StgValue><ssdm name="empty_80"/></StgValue>
 </bind>
 </comp>
 

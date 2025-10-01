@@ -181,7 +181,7 @@ end
     .def_WIDTH( 32 ),
     .sel_WIDTH( 3 ),
     .dout_WIDTH( 32 ))
-sparsemux_17_3_32_1_1_U239(
+sparsemux_17_3_32_1_1_U47(
     .din0(i_vec_0_q0),
     .din1(i_vec_1_q0),
     .din2(i_vec_2_q0),

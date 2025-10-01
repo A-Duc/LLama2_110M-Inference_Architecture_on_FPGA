@@ -1552,7 +1552,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>m_frac_l</originalName>
-              <rtlName>mul_25s_39ns_63_1_1_U309</rtlName>
+              <rtlName>mul_25s_39ns_63_1_1_U115</rtlName>
               <control>auto</control>
               <opType>mul</opType>
               <implIndex>auto</implIndex>
@@ -3573,7 +3573,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>mac_muladd_13s_12ns_16s_25_4_1_U311</rtlName>
+              <rtlName>mac_muladd_13s_12ns_16s_25_4_1_U117</rtlName>
               <control>auto</control>
               <opType>mul</opType>
               <implIndex>dsp_slice</implIndex>
@@ -3744,7 +3744,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>mac_muladd_13s_12ns_16s_25_4_1_U311</rtlName>
+              <rtlName>mac_muladd_13s_12ns_16s_25_4_1_U117</rtlName>
               <control>auto</control>
               <opType>add</opType>
               <implIndex>dsp_slice</implIndex>
@@ -4344,7 +4344,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>mul_10s_36s_36_1_1_U308</rtlName>
+              <rtlName>mul_10s_36s_36_1_1_U114</rtlName>
               <control>auto</control>
               <opType>mul</opType>
               <implIndex>auto</implIndex>
@@ -5711,7 +5711,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>mac_muladd_18ns_18ns_44ns_44_4_1_U312</rtlName>
+              <rtlName>mac_muladd_18ns_18ns_44ns_44_4_1_U118</rtlName>
               <control>auto</control>
               <opType>mul</opType>
               <implIndex>dsp_slice</implIndex>
@@ -5826,7 +5826,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>mac_muladd_18ns_18ns_44ns_44_4_1_U312</rtlName>
+              <rtlName>mac_muladd_18ns_18ns_44ns_44_4_1_U118</rtlName>
               <control>auto</control>
               <opType>zext</opType>
               <implIndex>dsp_slice</implIndex>
@@ -5882,7 +5882,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>mac_muladd_18ns_18ns_44ns_44_4_1_U312</rtlName>
+              <rtlName>mac_muladd_18ns_18ns_44ns_44_4_1_U118</rtlName>
               <control>auto</control>
               <opType>add</opType>
               <implIndex>dsp_slice</implIndex>
@@ -7888,7 +7888,7 @@
                 </item>
               </inlineStackInfo>
               <originalName></originalName>
-              <rtlName>sparsemux_11_4_32_1_1_U310</rtlName>
+              <rtlName>sparsemux_11_4_32_1_1_U116</rtlName>
               <control>auto</control>
               <opType>sparsemux</opType>
               <implIndex>onehotencoding_realdef</implIndex>
@@ -12777,7 +12777,7 @@
         <count>3</count>
         <item_version>0</item_version>
         <item class_id="36" tracking_level="0" version="0">
-          <first>mul_10s_36s_36_1_1_U308 (mul_10s_36s_36_1_1)</first>
+          <first>mul_10s_36s_36_1_1_U114 (mul_10s_36s_36_1_1)</first>
           <second class_id="37" tracking_level="0" version="0">
             <count>3</count>
             <item_version>0</item_version>
@@ -12796,7 +12796,7 @@
           </second>
         </item>
         <item>
-          <first>mul_25s_39ns_63_1_1_U309 (mul_25s_39ns_63_1_1)</first>
+          <first>mul_25s_39ns_63_1_1_U115 (mul_25s_39ns_63_1_1)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -12815,7 +12815,7 @@
           </second>
         </item>
         <item>
-          <first>sparsemux_11_4_32_1_1_U310 (sparsemux_11_4_32_1_1)</first>
+          <first>sparsemux_11_4_32_1_1_U116 (sparsemux_11_4_32_1_1)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
@@ -14876,7 +14876,7 @@
         <count>5</count>
         <item_version>0</item_version>
         <item>
-          <first>mac_muladd_13s_12ns_16s_25_4_1_U311</first>
+          <first>mac_muladd_13s_12ns_16s_25_4_1_U117</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -14887,7 +14887,7 @@
           </second>
         </item>
         <item>
-          <first>mac_muladd_18ns_18ns_44ns_44_4_1_U312</first>
+          <first>mac_muladd_18ns_18ns_44ns_44_4_1_U118</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -14898,21 +14898,21 @@
           </second>
         </item>
         <item>
-          <first>mul_10s_36s_36_1_1_U308</first>
+          <first>mul_10s_36s_36_1_1_U114</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>mul_25s_39ns_63_1_1_U309</first>
+          <first>mul_25s_39ns_63_1_1_U115</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>sparsemux_11_4_32_1_1_U310</first>
+          <first>sparsemux_11_4_32_1_1_U116</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -14923,7 +14923,7 @@
         <count>3</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>mul_10s_36s_36_1_1_U308 (mul_10s_36s_36_1_1)</first>
+          <first>mul_10s_36s_36_1_1_U114 (mul_10s_36s_36_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -14931,7 +14931,7 @@
           </second>
         </item>
         <item>
-          <first>mul_25s_39ns_63_1_1_U309 (mul_25s_39ns_63_1_1)</first>
+          <first>mul_25s_39ns_63_1_1_U115 (mul_25s_39ns_63_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -14939,7 +14939,7 @@
           </second>
         </item>
         <item>
-          <first>sparsemux_11_4_32_1_1_U310 (sparsemux_11_4_32_1_1)</first>
+          <first>sparsemux_11_4_32_1_1_U116 (sparsemux_11_4_32_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>

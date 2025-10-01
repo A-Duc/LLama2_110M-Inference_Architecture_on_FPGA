@@ -105,6 +105,10 @@ void XKernel_mhsa_Set_position(XKernel_mhsa *InstancePtr, u32 Data);
 u32 XKernel_mhsa_Get_position(XKernel_mhsa *InstancePtr);
 void XKernel_mhsa_Set_weights(XKernel_mhsa *InstancePtr, u64 Data);
 u64 XKernel_mhsa_Get_weights(XKernel_mhsa *InstancePtr);
+void XKernel_mhsa_Set_key_cache(XKernel_mhsa *InstancePtr, u64 Data);
+u64 XKernel_mhsa_Get_key_cache(XKernel_mhsa *InstancePtr);
+void XKernel_mhsa_Set_value_cache(XKernel_mhsa *InstancePtr, u64 Data);
+u64 XKernel_mhsa_Get_value_cache(XKernel_mhsa *InstancePtr);
 
 void XKernel_mhsa_InterruptGlobalEnable(XKernel_mhsa *InstancePtr);
 void XKernel_mhsa_InterruptGlobalDisable(XKernel_mhsa *InstancePtr);

@@ -4,7 +4,7 @@
 #include <hls_stream.h>
 
 #include "tensor.hpp"
-#include "FFN.hpp"
+#include "kernel_FFN.hpp"
 
 #define MAX_TENSOR_SIZE 3072
 
@@ -49,7 +49,6 @@ void Multiply_VecMat(hls::stream<float> &res_strm,
 
 void Swish(hls::stream<float> &res_strm,
            hls::stream<float> &vec_strm, int vec_size){
-
     for (int i = 0; i < vec_size; i++){
 #pragma HLS PIPELINE II=1
         float vec_el = vec_strm.read();
@@ -69,7 +68,7 @@ void Multiply_Vec(hls::stream<float> &res_strm,
 
 extern "C" {
 void FFN(float* i_vec, float* o_vec,
-         float* W1_vec, float* W2_vec, float* W3_vec){
+            float* W1_vec, float* W2_vec, float* W3_vec) {
 
 #pragma HLS INTERFACE m_axi     port=i_vec  offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi     port=o_vec  offset=slave bundle=gmem
@@ -84,7 +83,7 @@ void FFN(float* i_vec, float* o_vec,
     hls::stream<float> z2_strm;
     hls::stream<float> z3_strm;
     hls::stream<float> res_strm;
-    hls::stream<float> z2_Silu_strm;
+    hls::stream<float> z2_Silu_strm;    
 
 #pragma HLS STREAM variable=x_strm depth=64
 #pragma HLS STREAM variable=W_strm depth=64
@@ -96,19 +95,19 @@ void FFN(float* i_vec, float* o_vec,
 
 #pragma HLS dataflow
 
-    push_tensor1d(i_vec, x_strm, kDim);
-    push_tensor2d_bycol(W1_vec, W_strm, kDim, kFFNDim);
-    Multiply_VecMat(z1_strm, x_strm, kDim, W_strm, kDim, kFFNDim);
+    push_tensor1d(i_vec, x_strm, dim);
+    push_tensor2d_bycol(W1_vec, W_strm, dim, ffn_dim);
+    Multiply_VecMat(z1_strm, x_strm, dim, W_strm, dim, ffn_dim);
 
-    push_tensor1d(i_vec, x_strm, kDim);
-    push_tensor2d_bycol(W2_vec, W_strm, kDim, kFFNDim);
-    Multiply_VecMat(z2_strm, x_strm, kDim, W_strm, kDim, kFFNDim);
+    push_tensor1d(i_vec, x_strm, dim);
+    push_tensor2d_bycol(W2_vec, W_strm, dim, ffn_dim);
+    Multiply_VecMat(z2_strm, x_strm, dim, W_strm, dim, ffn_dim);
 
-    Swish(z2_Silu_strm, z2_strm, kFFNDim);
-    Multiply_Vec(z3_strm, z1_strm, z2_Silu_strm, kFFNDim);
+    Swish(z2_Silu_strm, z2_strm, ffn_dim);
+    Multiply_Vec(z3_strm, z1_strm, z2_Silu_strm, ffn_dim);
     
-    push_tensor2d_bycol(W3_vec, W_strm, kFFNDim, kDim);
-    Multiply_VecMat(res_strm, z3_strm, kFFNDim, W_strm, kFFNDim, kDim);
-    pull_tensor1d(o_vec, res_strm, kDim);
+    push_tensor2d_bycol(W3_vec, W_strm, ffn_dim, dim);
+    Multiply_VecMat(res_strm, z3_strm, ffn_dim, W_strm, ffn_dim, dim);
+    pull_tensor1d(o_vec, res_strm, dim);
 }
 }

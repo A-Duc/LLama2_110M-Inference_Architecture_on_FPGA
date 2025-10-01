@@ -118,7 +118,7 @@ attribute shreg_extract : string;
     signal grp_fu_151_p2 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_151_p3 : STD_LOGIC_VECTOR (31 downto 0);
     signal select_ln50_fu_197_p3 : STD_LOGIC_VECTOR (9 downto 0);
-    signal lshr_ln_fu_209_p4 : STD_LOGIC_VECTOR (7 downto 0);
+    signal lshr_ln9_fu_209_p4 : STD_LOGIC_VECTOR (7 downto 0);
     signal tmp_fu_265_p9 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_151_ce : STD_LOGIC;
     signal ap_done_reg : STD_LOGIC := '0';
@@ -203,7 +203,7 @@ attribute shreg_extract : string;
 
 
 begin
-    fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U261 : component kernel_mhsa_fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1
+    fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1_U68 : component kernel_mhsa_fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -222,7 +222,7 @@ begin
         ce => grp_fu_151_ce,
         dout => grp_fu_151_p4);
 
-    sparsemux_9_2_32_1_1_U262 : component kernel_mhsa_sparsemux_9_2_32_1_1
+    sparsemux_9_2_32_1_1_U69 : component kernel_mhsa_sparsemux_9_2_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -604,7 +604,7 @@ begin
     icmp_ln50_fu_182_p2 <= "1" when (ap_sig_allocacmp_indvar_flatten_load = ap_const_lv20_90000) else "0";
     icmp_ln53_1_fu_249_p2 <= "1" when (add_ln53_fu_243_p2 = ap_const_lv10_300) else "0";
     icmp_ln53_fu_191_p2 <= "1" when (ap_sig_allocacmp_j_load = ap_const_lv10_300) else "0";
-    lshr_ln_fu_209_p4 <= select_ln50_fu_197_p3(9 downto 2);
+    lshr_ln9_fu_209_p4 <= select_ln50_fu_197_p3(9 downto 2);
 
     matrix_stream_blk_n_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, matrix_stream_empty_n, ap_block_pp0_stage0_grp1)
     begin
@@ -653,5 +653,5 @@ begin
         ap_sig_allocacmp_j_load;
     tmp_fu_265_p9 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
     trunc_ln53_fu_205_p1 <= select_ln50_fu_197_p3(2 - 1 downto 0);
-    zext_ln52_fu_219_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(lshr_ln_fu_209_p4),64));
+    zext_ln52_fu_219_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(lshr_ln9_fu_209_p4),64));
 end behav;

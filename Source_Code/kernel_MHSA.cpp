@@ -1,46 +1,23 @@
-#include "kernel_MHSA.hpp"
 #include "kernel_Rope.hpp"
 #include "kernel_MatMul.hpp"
 #include "kernel_RMS_Norm.hpp"
+#include "kernel_Softmax.hpp"  // Thêm include cho kernel_softmax
 
-void kernel_mhsa(float current_token[dim], int position, 
-                 float weights[layers * (dim + 3 * dim * dim + dim * dim)]) {
+void kernel_mhsa(float current_token[dim], int position) {  // Thêm key_cache và value_cache như con trỏ
 
 #pragma HLS INTERFACE m_axi port=current_token bundle=gmem0 offset=slave max_read_burst_length=256 max_write_burst_length=256
 #pragma HLS INTERFACE m_axi port=weights bundle=gmem1 offset=slave max_read_burst_length=256
+#pragma HLS INTERFACE m_axi port=key_cache bundle=gmem2 offset=slave max_read_burst_length=256 max_write_burst_length=256  // Interface cho key_cache
+#pragma HLS INTERFACE m_axi port=value_cache bundle=gmem3 offset=slave max_read_burst_length=256 max_write_burst_length=256  // Interface cho value_cache
 #pragma HLS INTERFACE s_axilite port=position
 #pragma HLS INTERFACE s_axilite port=return
 
+    float* weights;
+    float* key_cache, float* value_cache;
     int head_num = n_heads;
     int head_dim = dim / n_heads;
 
-    // Giảm dependency URAM bằng cách chia cache thành BRAM blocks
-    static float key_cache[layers][seq_len * dim];
-    static float value_cache[layers][seq_len * dim];
-    static bool cache_initialized = false;
-    
-    // Cân bằng BRAM/URAM usage - mixed partitioning strategy
-    // Partition key_cache và value_cache với factor nhỏ hơn, bind một phần sang BRAM
-    #pragma HLS ARRAY_PARTITION variable=key_cache complete dim=1
-    #pragma HLS ARRAY_PARTITION variable=key_cache cyclic factor=8 dim=2
-    #pragma HLS bind_storage variable=key_cache type=ram_1p impl=bram
-    #pragma HLS ARRAY_PARTITION variable=value_cache complete dim=1
-    #pragma HLS ARRAY_PARTITION variable=value_cache cyclic factor=8 dim=2
-    #pragma HLS bind_storage variable=value_cache type=ram_1p impl=bram
-    
-    // Cache initialization với dataflow
-    if (!cache_initialized) {
-        INIT_OUTER: for (int l = 0; l < layers; l++) {
-            #pragma HLS LOOP_TRIPCOUNT min=1 max=12
-            INIT_INNER: for (int i = 0; i < seq_len * dim; i++) {
-                #pragma HLS PIPELINE II=1
-                #pragma HLS LOOP_TRIPCOUNT min=1024 max=262144
-                key_cache[l][i] = 0.0f;
-                value_cache[l][i] = 0.0f;
-            }
-        }
-        cache_initialized = true;
-    }
+    // Loại bỏ static, initialization, và bind_storage vì giờ là DDR
 
     // Local buffers với streaming interface design
     float in_rms_vec[dim];
@@ -86,34 +63,30 @@ void kernel_mhsa(float current_token[dim], int position,
         float* wv = &weights[weight_offset + dim + 2 * dim * dim];
         float* wo = &weights[weight_offset + dim + 3 * dim * dim];
 
-        // Compute pipeline với dataflow sections
+        // Compute pipeline với dataflow sections (loại bỏ pragma không hợp lệ)
         {
-            #pragma HLS DATAFLOW
-            
             // RMSNorm
             kernel_rmsnorm(current_input, rms_att_weight, out_rms_vec);
 
-            // QKV projection pipeline
+            // QKV projection pipeline (loại bỏ pragma không hợp lệ)
             {
-                #pragma HLS DATAFLOW
                 matmul(out_q, out_rms_vec, wq);
                 matmul(out_k, out_rms_vec, wk);  
                 matmul(out_v, out_rms_vec, wv);
             }
         }
 
-        // RoPE pipeline
+        // RoPE pipeline (loại bỏ pragma không hợp lệ)
         {
-            #pragma HLS DATAFLOW
             RoPE(out_q_rope, out_q, position, dim);
             RoPE(out_k_rope, out_k, position, dim);
         }
 
-        // Cache update với streaming write
+        // Cache update với streaming write (giờ là write qua AXI)
         CACHE_STORE: for (int i = 0; i < dim; i++) {
             #pragma HLS PIPELINE II=1
-            key_cache[l][position * dim + i] = out_k_rope[i];
-            value_cache[l][position * dim + i] = out_v[i];
+            key_cache[l * seq_len * dim + position * dim + i] = out_k_rope[i];  // Truy cập như mảng 1D
+            value_cache[l * seq_len * dim + position * dim + i] = out_v[i];
         }
 
         // Attention computation với tiled approach để reduce memory pressure
@@ -145,7 +118,7 @@ void kernel_mhsa(float current_token[dim], int position,
                     q_head_local[j] = out_q_rope[h * head_dim + j];
                 }
 
-                // Compute với K vectors - streaming access pattern
+                // Compute với K vectors - streaming access pattern (giờ là read qua AXI)
                 TOKEN_COMPUTE: for (int t = 0; t <= position; t++) {
                     #pragma HLS PIPELINE II=8  // Balanced để avoid memory conflicts
                     #pragma HLS LOOP_TRIPCOUNT min=1 max=512
@@ -155,7 +128,7 @@ void kernel_mhsa(float current_token[dim], int position,
                     // Vectorized dot product
                     DOT_COMPUTE: for (int j = 0; j < head_dim; j++) {
                         #pragma HLS UNROLL factor=4
-                        float k_val = key_cache[l][t * dim + h * head_dim + j];
+                        float k_val = key_cache[l * seq_len * dim + t * dim + h * head_dim + j];  // Truy cập như mảng 1D
                         #pragma HLS BIND_OP variable=dot op=fmul impl=dsp
                         dot += q_head_local[j] * k_val;
                     }
@@ -193,7 +166,7 @@ void kernel_mhsa(float current_token[dim], int position,
                     local_accum[i] = 0.0f;
                 }
                 
-                // Accumulate values với streaming pattern
+                // Accumulate values với streaming pattern (giờ là read qua AXI)
                 TOKEN_STREAM: for (int t = 0; t <= position; t++) {
                     #pragma HLS LOOP_TRIPCOUNT min=1 max=512
                     
@@ -203,7 +176,7 @@ void kernel_mhsa(float current_token[dim], int position,
                     VALUE_MAC: for (int i = 0; i < head_dim; i++) {
                         #pragma HLS PIPELINE II=2
                         #pragma HLS UNROLL factor=2
-                        float v_val = value_cache[l][t * dim + h * head_dim + i];
+                        float v_val = value_cache[l * seq_len * dim + t * dim + h * head_dim + i];  // Truy cập như mảng 1D
                         #pragma HLS BIND_OP variable=local_accum op=fmul impl=dsp
                         local_accum[i] += att_weight * v_val;
                     }
@@ -233,4 +206,5 @@ void kernel_mhsa(float current_token[dim], int position,
         #pragma HLS PIPELINE II=1
         current_token[i] = current_input[i];
     }
+    
 }

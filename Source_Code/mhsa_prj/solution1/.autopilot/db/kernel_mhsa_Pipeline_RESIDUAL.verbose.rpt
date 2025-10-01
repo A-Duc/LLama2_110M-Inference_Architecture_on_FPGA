@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'kernel_mhsa_Pipeline_RESIDUAL'
 ================================================================
-* Date:           Sat Sep 27 23:15:48 2025
+* Date:           Tue Sep 30 23:59:07 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -74,14 +74,14 @@
 
 + Detail: 
     * Instance: 
-    +-----------------------------+-----------------------+---------+----+---+----+-----+
-    |           Instance          |         Module        | BRAM_18K| DSP| FF| LUT| URAM|
-    +-----------------------------+-----------------------+---------+----+---+----+-----+
-    |sparsemux_17_3_32_1_1_U1352  |sparsemux_17_3_32_1_1  |        0|   0|  0|  96|    0|
-    |sparsemux_17_3_32_1_1_U1353  |sparsemux_17_3_32_1_1  |        0|   0|  0|  96|    0|
-    +-----------------------------+-----------------------+---------+----+---+----+-----+
-    |Total                        |                       |        0|   0|  0| 192|    0|
-    +-----------------------------+-----------------------+---------+----+---+----+-----+
+    +----------------------------+-----------------------+---------+----+---+----+-----+
+    |          Instance          |         Module        | BRAM_18K| DSP| FF| LUT| URAM|
+    +----------------------------+-----------------------+---------+----+---+----+-----+
+    |sparsemux_17_3_32_1_1_U627  |sparsemux_17_3_32_1_1  |        0|   0|  0|  96|    0|
+    |sparsemux_17_3_32_1_1_U628  |sparsemux_17_3_32_1_1  |        0|   0|  0|  96|    0|
+    +----------------------------+-----------------------+---------+----+---+----+-----+
+    |Total                       |                       |        0|   0|  0| 192|    0|
+    +----------------------------+-----------------------+---------+----+---+----+-----+
 
     * DSP: 
     N/A
@@ -96,12 +96,12 @@
     +-----------------------------------+----------+----+---+----+------------+------------+
     |           Variable Name           | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +-----------------------------------+----------+----+---+----+------------+------------+
-    |add_ln225_fu_341_p2                |         +|   0|  0|  10|          10|           1|
+    |add_ln197_fu_341_p2                |         +|   0|  0|  10|          10|           1|
     |ap_block_pp0                       |       and|   0|  0|   2|           1|           1|
     |ap_enable_state1_pp0_iter0_stage0  |       and|   0|  0|   2|           1|           1|
     |ap_enable_state2_pp0_iter1_stage0  |       and|   0|  0|   2|           1|           1|
     |ap_enable_state5_pp0_iter4_stage0  |       and|   0|  0|   2|           1|           1|
-    |icmp_ln225_fu_347_p2               |      icmp|   0|  0|   4|          10|          10|
+    |icmp_ln197_fu_347_p2               |      icmp|   0|  0|   4|          10|          10|
     |ap_enable_pp0                      |       xor|   0|  0|   2|           1|           2|
     +-----------------------------------+----------+----+---+----+------------+------------+
     |Total                              |          |   0|  0|  24|          25|          17|
@@ -113,7 +113,7 @@
     +-------------------------+----+-----------+-----+-----------+
     |ap_done_int              |   1|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |   1|          2|    1|          2|
-    |ap_sig_allocacmp_i_8     |  16|          2|   10|         20|
+    |ap_sig_allocacmp_i_6     |  16|          2|   10|         20|
     |grp_fu_326_p0            |  32|          2|   32|         64|
     |grp_fu_326_p1            |  32|          2|   32|         64|
     |i_fu_82                  |  16|          2|   10|         20|
@@ -148,7 +148,7 @@
     |i_fu_82                           |  10|   0|   10|          0|
     |tmp_5_reg_695                     |  32|   0|   32|          0|
     |tmp_6_reg_701                     |  32|   0|   32|          0|
-    |trunc_ln225_reg_593               |   3|   0|    3|          0|
+    |trunc_ln197_reg_593               |   3|   0|    3|          0|
     |current_input_10_addr_reg_620     |   0|   8|    7|          0|
     |current_input_11_addr_reg_627     |   0|   8|    7|          0|
     |current_input_12_addr_reg_634     |   0|   8|    7|          0|
@@ -157,7 +157,7 @@
     |current_input_8_addr_reg_606      |   0|   8|    7|          0|
     |current_input_9_addr_reg_613      |   0|   8|    7|          0|
     |current_input_addr_reg_599        |   0|   8|    7|          0|
-    |trunc_ln225_reg_593               |   0|   4|    3|          0|
+    |trunc_ln197_reg_593               |   0|   4|    3|          0|
     +----------------------------------+----+----+-----+-----------+
     |Total                             | 238|  68|  297|          0|
     +----------------------------------+----+----+-----+-----------+
@@ -177,10 +177,10 @@
 |ap_done                    |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
 |ap_idle                    |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
 |ap_ready                   |  out|    1|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
-|grp_fu_2831_p_din0         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
-|grp_fu_2831_p_din1         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
-|grp_fu_2831_p_opcode       |  out|    2|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
-|grp_fu_2831_p_dout0        |   in|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
+|grp_fu_2178_p_din0         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
+|grp_fu_2178_p_din1         |  out|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
+|grp_fu_2178_p_opcode       |  out|    2|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
+|grp_fu_2178_p_dout0        |   in|   32|  ap_ctrl_hs|  kernel_mhsa_Pipeline_RESIDUAL|  return value|
 |current_input_14_address0  |  out|    7|   ap_memory|               current_input_14|         array|
 |current_input_14_ce0       |  out|    1|   ap_memory|               current_input_14|         array|
 |current_input_14_we0       |  out|    1|   ap_memory|               current_input_14|         array|
@@ -307,132 +307,132 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 2.15>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [kernel_MHSA.cpp:225]   --->   Operation 8 'alloca' 'i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.39ns)   --->   "%store_ln225 = store i10 0, i10 %i" [kernel_MHSA.cpp:225]   --->   Operation 9 'store' 'store_ln225' <Predicate = true> <Delay = 0.39>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc254"   --->   Operation 10 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%i_8 = load i10 %i" [kernel_MHSA.cpp:225]   --->   Operation 11 'load' 'i_8' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.71ns)   --->   "%add_ln225 = add i10 %i_8, i10 1" [kernel_MHSA.cpp:225]   --->   Operation 12 'add' 'add_ln225' <Predicate = true> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 13 [1/1] (0.60ns)   --->   "%icmp_ln225 = icmp_eq  i10 %i_8, i10 768" [kernel_MHSA.cpp:225]   --->   Operation 13 'icmp' 'icmp_ln225' <Predicate = true> <Delay = 0.60> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.60> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln225 = br i1 %icmp_ln225, void %for.inc254.split, void %for.inc257.exitStub" [kernel_MHSA.cpp:225]   --->   Operation 14 'br' 'br_ln225' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%trunc_ln225 = trunc i10 %i_8" [kernel_MHSA.cpp:225]   --->   Operation 15 'trunc' 'trunc_ln225' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%lshr_ln9 = partselect i7 @_ssdm_op_PartSelect.i7.i10.i32.i32, i10 %i_8, i32 3, i32 9" [kernel_MHSA.cpp:225]   --->   Operation 16 'partselect' 'lshr_ln9' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln225 = zext i7 %lshr_ln9" [kernel_MHSA.cpp:225]   --->   Operation 17 'zext' 'zext_ln225' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%current_input_addr = getelementptr i32 %current_input, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 18 'getelementptr' 'current_input_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%current_input_8_addr = getelementptr i32 %current_input_8, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 19 'getelementptr' 'current_input_8_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%current_input_9_addr = getelementptr i32 %current_input_9, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 20 'getelementptr' 'current_input_9_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%current_input_10_addr = getelementptr i32 %current_input_10, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 21 'getelementptr' 'current_input_10_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%current_input_11_addr = getelementptr i32 %current_input_11, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 22 'getelementptr' 'current_input_11_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%current_input_12_addr = getelementptr i32 %current_input_12, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 23 'getelementptr' 'current_input_12_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%current_input_13_addr = getelementptr i32 %current_input_13, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 24 'getelementptr' 'current_input_13_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%current_input_14_addr = getelementptr i32 %current_input_14, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 25 'getelementptr' 'current_input_14_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 26 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_load = muxlogic i7 %current_input_addr"   --->   Operation 26 'muxlogic' 'muxLogicRAMAddr_to_current_input_load' <Predicate = (!icmp_ln225)> <Delay = 0.43>
-ST_1 : Operation 27 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_load = load i7 %current_input_addr" [kernel_MHSA.cpp:227]   --->   Operation 27 'load' 'current_input_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 28 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_8_load = muxlogic i7 %current_input_8_addr"   --->   Operation 28 'muxlogic' 'muxLogicRAMAddr_to_current_input_8_load' <Predicate = (!icmp_ln225)> <Delay = 0.43>
-ST_1 : Operation 29 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_8_load = load i7 %current_input_8_addr" [kernel_MHSA.cpp:227]   --->   Operation 29 'load' 'current_input_8_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 30 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_9_load = muxlogic i7 %current_input_9_addr"   --->   Operation 30 'muxlogic' 'muxLogicRAMAddr_to_current_input_9_load' <Predicate = (!icmp_ln225)> <Delay = 0.43>
-ST_1 : Operation 31 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_9_load = load i7 %current_input_9_addr" [kernel_MHSA.cpp:227]   --->   Operation 31 'load' 'current_input_9_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 32 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_10_load = muxlogic i7 %current_input_10_addr"   --->   Operation 32 'muxlogic' 'muxLogicRAMAddr_to_current_input_10_load' <Predicate = (!icmp_ln225)> <Delay = 0.43>
-ST_1 : Operation 33 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_10_load = load i7 %current_input_10_addr" [kernel_MHSA.cpp:227]   --->   Operation 33 'load' 'current_input_10_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 34 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_11_load = muxlogic i7 %current_input_11_addr"   --->   Operation 34 'muxlogic' 'muxLogicRAMAddr_to_current_input_11_load' <Predicate = (!icmp_ln225)> <Delay = 0.43>
-ST_1 : Operation 35 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_11_load = load i7 %current_input_11_addr" [kernel_MHSA.cpp:227]   --->   Operation 35 'load' 'current_input_11_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 36 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_12_load = muxlogic i7 %current_input_12_addr"   --->   Operation 36 'muxlogic' 'muxLogicRAMAddr_to_current_input_12_load' <Predicate = (!icmp_ln225)> <Delay = 0.43>
-ST_1 : Operation 37 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_12_load = load i7 %current_input_12_addr" [kernel_MHSA.cpp:227]   --->   Operation 37 'load' 'current_input_12_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 38 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_13_load = muxlogic i7 %current_input_13_addr"   --->   Operation 38 'muxlogic' 'muxLogicRAMAddr_to_current_input_13_load' <Predicate = (!icmp_ln225)> <Delay = 0.43>
-ST_1 : Operation 39 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_13_load = load i7 %current_input_13_addr" [kernel_MHSA.cpp:227]   --->   Operation 39 'load' 'current_input_13_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 40 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_14_load = muxlogic i7 %current_input_14_addr"   --->   Operation 40 'muxlogic' 'muxLogicRAMAddr_to_current_input_14_load' <Predicate = (!icmp_ln225)> <Delay = 0.43>
-ST_1 : Operation 41 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_14_load = load i7 %current_input_14_addr" [kernel_MHSA.cpp:227]   --->   Operation 41 'load' 'current_input_14_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%xb2_addr = getelementptr i32 %xb2, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 42 'getelementptr' 'xb2_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%xb2_1_addr = getelementptr i32 %xb2_1, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 43 'getelementptr' 'xb2_1_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%xb2_2_addr = getelementptr i32 %xb2_2, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 44 'getelementptr' 'xb2_2_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%xb2_3_addr = getelementptr i32 %xb2_3, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 45 'getelementptr' 'xb2_3_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%xb2_4_addr = getelementptr i32 %xb2_4, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 46 'getelementptr' 'xb2_4_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%xb2_5_addr = getelementptr i32 %xb2_5, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 47 'getelementptr' 'xb2_5_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%xb2_6_addr = getelementptr i32 %xb2_6, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 48 'getelementptr' 'xb2_6_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%xb2_7_addr = getelementptr i32 %xb2_7, i64 0, i64 %zext_ln225" [kernel_MHSA.cpp:227]   --->   Operation 49 'getelementptr' 'xb2_7_addr' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_load = muxlogic i7 %xb2_addr"   --->   Operation 50 'muxlogic' 'muxLogicRAMAddr_to_xb2_load' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 51 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_load = load i7 %xb2_addr" [kernel_MHSA.cpp:227]   --->   Operation 51 'load' 'xb2_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_1_load = muxlogic i7 %xb2_1_addr"   --->   Operation 52 'muxlogic' 'muxLogicRAMAddr_to_xb2_1_load' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 53 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_1_load = load i7 %xb2_1_addr" [kernel_MHSA.cpp:227]   --->   Operation 53 'load' 'xb2_1_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_2_load = muxlogic i7 %xb2_2_addr"   --->   Operation 54 'muxlogic' 'muxLogicRAMAddr_to_xb2_2_load' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 55 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_2_load = load i7 %xb2_2_addr" [kernel_MHSA.cpp:227]   --->   Operation 55 'load' 'xb2_2_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_3_load = muxlogic i7 %xb2_3_addr"   --->   Operation 56 'muxlogic' 'muxLogicRAMAddr_to_xb2_3_load' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 57 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_3_load = load i7 %xb2_3_addr" [kernel_MHSA.cpp:227]   --->   Operation 57 'load' 'xb2_3_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_4_load = muxlogic i7 %xb2_4_addr"   --->   Operation 58 'muxlogic' 'muxLogicRAMAddr_to_xb2_4_load' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 59 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_4_load = load i7 %xb2_4_addr" [kernel_MHSA.cpp:227]   --->   Operation 59 'load' 'xb2_4_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_5_load = muxlogic i7 %xb2_5_addr"   --->   Operation 60 'muxlogic' 'muxLogicRAMAddr_to_xb2_5_load' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 61 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_5_load = load i7 %xb2_5_addr" [kernel_MHSA.cpp:227]   --->   Operation 61 'load' 'xb2_5_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_6_load = muxlogic i7 %xb2_6_addr"   --->   Operation 62 'muxlogic' 'muxLogicRAMAddr_to_xb2_6_load' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 63 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_6_load = load i7 %xb2_6_addr" [kernel_MHSA.cpp:227]   --->   Operation 63 'load' 'xb2_6_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_7_load = muxlogic i7 %xb2_7_addr"   --->   Operation 64 'muxlogic' 'muxLogicRAMAddr_to_xb2_7_load' <Predicate = (!icmp_ln225)> <Delay = 0.00>
-ST_1 : Operation 65 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_7_load = load i7 %xb2_7_addr" [kernel_MHSA.cpp:227]   --->   Operation 65 'load' 'xb2_7_load' <Predicate = (!icmp_ln225)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_1 : Operation 66 [1/1] (0.36ns)   --->   "%switch_ln227 = switch i3 %trunc_ln225, void %arrayidx248.case.7, i3 0, void %arrayidx248.case.0, i3 1, void %arrayidx248.case.1, i3 2, void %arrayidx248.case.2, i3 3, void %arrayidx248.case.3, i3 4, void %arrayidx248.case.4, i3 5, void %arrayidx248.case.5, i3 6, void %arrayidx248.case.6" [kernel_MHSA.cpp:227]   --->   Operation 66 'switch' 'switch_ln227' <Predicate = (!icmp_ln225)> <Delay = 0.36>
-ST_1 : Operation 67 [1/1] (0.39ns)   --->   "%store_ln225 = store i10 %add_ln225, i10 %i" [kernel_MHSA.cpp:225]   --->   Operation 67 'store' 'store_ln225' <Predicate = (!icmp_ln225)> <Delay = 0.39>
-ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%br_ln225 = br void %for.inc254" [kernel_MHSA.cpp:225]   --->   Operation 68 'br' 'br_ln225' <Predicate = (!icmp_ln225)> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [kernel_MHSA.cpp:197]   --->   Operation 8 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.39ns)   --->   "%store_ln197 = store i10 0, i10 %i" [kernel_MHSA.cpp:197]   --->   Operation 9 'store' 'store_ln197' <Predicate = true> <Delay = 0.39>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc234"   --->   Operation 10 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%i_6 = load i10 %i" [kernel_MHSA.cpp:197]   --->   Operation 11 'load' 'i_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.71ns)   --->   "%add_ln197 = add i10 %i_6, i10 1" [kernel_MHSA.cpp:197]   --->   Operation 12 'add' 'add_ln197' <Predicate = true> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.60ns)   --->   "%icmp_ln197 = icmp_eq  i10 %i_6, i10 768" [kernel_MHSA.cpp:197]   --->   Operation 13 'icmp' 'icmp_ln197' <Predicate = true> <Delay = 0.60> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.60> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln197 = br i1 %icmp_ln197, void %for.inc234.split, void %for.inc237.exitStub" [kernel_MHSA.cpp:197]   --->   Operation 14 'br' 'br_ln197' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%trunc_ln197 = trunc i10 %i_6" [kernel_MHSA.cpp:197]   --->   Operation 15 'trunc' 'trunc_ln197' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%lshr_ln7 = partselect i7 @_ssdm_op_PartSelect.i7.i10.i32.i32, i10 %i_6, i32 3, i32 9" [kernel_MHSA.cpp:197]   --->   Operation 16 'partselect' 'lshr_ln7' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln197 = zext i7 %lshr_ln7" [kernel_MHSA.cpp:197]   --->   Operation 17 'zext' 'zext_ln197' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%current_input_addr = getelementptr i32 %current_input, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 18 'getelementptr' 'current_input_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%current_input_8_addr = getelementptr i32 %current_input_8, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 19 'getelementptr' 'current_input_8_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%current_input_9_addr = getelementptr i32 %current_input_9, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 20 'getelementptr' 'current_input_9_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%current_input_10_addr = getelementptr i32 %current_input_10, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 21 'getelementptr' 'current_input_10_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%current_input_11_addr = getelementptr i32 %current_input_11, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 22 'getelementptr' 'current_input_11_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%current_input_12_addr = getelementptr i32 %current_input_12, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 23 'getelementptr' 'current_input_12_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%current_input_13_addr = getelementptr i32 %current_input_13, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 24 'getelementptr' 'current_input_13_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%current_input_14_addr = getelementptr i32 %current_input_14, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 25 'getelementptr' 'current_input_14_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_load = muxlogic i7 %current_input_addr"   --->   Operation 26 'muxlogic' 'muxLogicRAMAddr_to_current_input_load' <Predicate = (!icmp_ln197)> <Delay = 0.43>
+ST_1 : Operation 27 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_load = load i7 %current_input_addr" [kernel_MHSA.cpp:199]   --->   Operation 27 'load' 'current_input_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 28 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_8_load = muxlogic i7 %current_input_8_addr"   --->   Operation 28 'muxlogic' 'muxLogicRAMAddr_to_current_input_8_load' <Predicate = (!icmp_ln197)> <Delay = 0.43>
+ST_1 : Operation 29 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_8_load = load i7 %current_input_8_addr" [kernel_MHSA.cpp:199]   --->   Operation 29 'load' 'current_input_8_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 30 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_9_load = muxlogic i7 %current_input_9_addr"   --->   Operation 30 'muxlogic' 'muxLogicRAMAddr_to_current_input_9_load' <Predicate = (!icmp_ln197)> <Delay = 0.43>
+ST_1 : Operation 31 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_9_load = load i7 %current_input_9_addr" [kernel_MHSA.cpp:199]   --->   Operation 31 'load' 'current_input_9_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 32 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_10_load = muxlogic i7 %current_input_10_addr"   --->   Operation 32 'muxlogic' 'muxLogicRAMAddr_to_current_input_10_load' <Predicate = (!icmp_ln197)> <Delay = 0.43>
+ST_1 : Operation 33 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_10_load = load i7 %current_input_10_addr" [kernel_MHSA.cpp:199]   --->   Operation 33 'load' 'current_input_10_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 34 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_11_load = muxlogic i7 %current_input_11_addr"   --->   Operation 34 'muxlogic' 'muxLogicRAMAddr_to_current_input_11_load' <Predicate = (!icmp_ln197)> <Delay = 0.43>
+ST_1 : Operation 35 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_11_load = load i7 %current_input_11_addr" [kernel_MHSA.cpp:199]   --->   Operation 35 'load' 'current_input_11_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 36 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_12_load = muxlogic i7 %current_input_12_addr"   --->   Operation 36 'muxlogic' 'muxLogicRAMAddr_to_current_input_12_load' <Predicate = (!icmp_ln197)> <Delay = 0.43>
+ST_1 : Operation 37 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_12_load = load i7 %current_input_12_addr" [kernel_MHSA.cpp:199]   --->   Operation 37 'load' 'current_input_12_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 38 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_13_load = muxlogic i7 %current_input_13_addr"   --->   Operation 38 'muxlogic' 'muxLogicRAMAddr_to_current_input_13_load' <Predicate = (!icmp_ln197)> <Delay = 0.43>
+ST_1 : Operation 39 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_13_load = load i7 %current_input_13_addr" [kernel_MHSA.cpp:199]   --->   Operation 39 'load' 'current_input_13_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 40 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_current_input_14_load = muxlogic i7 %current_input_14_addr"   --->   Operation 40 'muxlogic' 'muxLogicRAMAddr_to_current_input_14_load' <Predicate = (!icmp_ln197)> <Delay = 0.43>
+ST_1 : Operation 41 [2/2] (0.72ns) (share mux size 6)   --->   "%current_input_14_load = load i7 %current_input_14_addr" [kernel_MHSA.cpp:199]   --->   Operation 41 'load' 'current_input_14_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%xb2_addr = getelementptr i32 %xb2, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 42 'getelementptr' 'xb2_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%xb2_1_addr = getelementptr i32 %xb2_1, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 43 'getelementptr' 'xb2_1_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%xb2_2_addr = getelementptr i32 %xb2_2, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 44 'getelementptr' 'xb2_2_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%xb2_3_addr = getelementptr i32 %xb2_3, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 45 'getelementptr' 'xb2_3_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%xb2_4_addr = getelementptr i32 %xb2_4, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 46 'getelementptr' 'xb2_4_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%xb2_5_addr = getelementptr i32 %xb2_5, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 47 'getelementptr' 'xb2_5_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%xb2_6_addr = getelementptr i32 %xb2_6, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 48 'getelementptr' 'xb2_6_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%xb2_7_addr = getelementptr i32 %xb2_7, i64 0, i64 %zext_ln197" [kernel_MHSA.cpp:199]   --->   Operation 49 'getelementptr' 'xb2_7_addr' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_load = muxlogic i7 %xb2_addr"   --->   Operation 50 'muxlogic' 'muxLogicRAMAddr_to_xb2_load' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 51 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_load = load i7 %xb2_addr" [kernel_MHSA.cpp:199]   --->   Operation 51 'load' 'xb2_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_1_load = muxlogic i7 %xb2_1_addr"   --->   Operation 52 'muxlogic' 'muxLogicRAMAddr_to_xb2_1_load' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 53 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_1_load = load i7 %xb2_1_addr" [kernel_MHSA.cpp:199]   --->   Operation 53 'load' 'xb2_1_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_2_load = muxlogic i7 %xb2_2_addr"   --->   Operation 54 'muxlogic' 'muxLogicRAMAddr_to_xb2_2_load' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 55 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_2_load = load i7 %xb2_2_addr" [kernel_MHSA.cpp:199]   --->   Operation 55 'load' 'xb2_2_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_3_load = muxlogic i7 %xb2_3_addr"   --->   Operation 56 'muxlogic' 'muxLogicRAMAddr_to_xb2_3_load' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 57 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_3_load = load i7 %xb2_3_addr" [kernel_MHSA.cpp:199]   --->   Operation 57 'load' 'xb2_3_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_4_load = muxlogic i7 %xb2_4_addr"   --->   Operation 58 'muxlogic' 'muxLogicRAMAddr_to_xb2_4_load' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 59 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_4_load = load i7 %xb2_4_addr" [kernel_MHSA.cpp:199]   --->   Operation 59 'load' 'xb2_4_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_5_load = muxlogic i7 %xb2_5_addr"   --->   Operation 60 'muxlogic' 'muxLogicRAMAddr_to_xb2_5_load' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 61 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_5_load = load i7 %xb2_5_addr" [kernel_MHSA.cpp:199]   --->   Operation 61 'load' 'xb2_5_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_6_load = muxlogic i7 %xb2_6_addr"   --->   Operation 62 'muxlogic' 'muxLogicRAMAddr_to_xb2_6_load' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 63 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_6_load = load i7 %xb2_6_addr" [kernel_MHSA.cpp:199]   --->   Operation 63 'load' 'xb2_6_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_xb2_7_load = muxlogic i7 %xb2_7_addr"   --->   Operation 64 'muxlogic' 'muxLogicRAMAddr_to_xb2_7_load' <Predicate = (!icmp_ln197)> <Delay = 0.00>
+ST_1 : Operation 65 [2/2] (0.72ns) (share mux size 2)   --->   "%xb2_7_load = load i7 %xb2_7_addr" [kernel_MHSA.cpp:199]   --->   Operation 65 'load' 'xb2_7_load' <Predicate = (!icmp_ln197)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_1 : Operation 66 [1/1] (0.36ns)   --->   "%switch_ln199 = switch i3 %trunc_ln197, void %arrayidx228.case.7, i3 0, void %arrayidx228.case.0, i3 1, void %arrayidx228.case.1, i3 2, void %arrayidx228.case.2, i3 3, void %arrayidx228.case.3, i3 4, void %arrayidx228.case.4, i3 5, void %arrayidx228.case.5, i3 6, void %arrayidx228.case.6" [kernel_MHSA.cpp:199]   --->   Operation 66 'switch' 'switch_ln199' <Predicate = (!icmp_ln197)> <Delay = 0.36>
+ST_1 : Operation 67 [1/1] (0.39ns)   --->   "%store_ln197 = store i10 %add_ln197, i10 %i" [kernel_MHSA.cpp:197]   --->   Operation 67 'store' 'store_ln197' <Predicate = (!icmp_ln197)> <Delay = 0.39>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%br_ln197 = br void %for.inc234" [kernel_MHSA.cpp:197]   --->   Operation 68 'br' 'br_ln197' <Predicate = (!icmp_ln197)> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 1.57>
-ST_2 : Operation 69 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_load = load i7 %current_input_addr" [kernel_MHSA.cpp:227]   --->   Operation 69 'load' 'current_input_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 70 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_8_load = load i7 %current_input_8_addr" [kernel_MHSA.cpp:227]   --->   Operation 70 'load' 'current_input_8_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 71 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_9_load = load i7 %current_input_9_addr" [kernel_MHSA.cpp:227]   --->   Operation 71 'load' 'current_input_9_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 72 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_10_load = load i7 %current_input_10_addr" [kernel_MHSA.cpp:227]   --->   Operation 72 'load' 'current_input_10_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 73 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_11_load = load i7 %current_input_11_addr" [kernel_MHSA.cpp:227]   --->   Operation 73 'load' 'current_input_11_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 74 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_12_load = load i7 %current_input_12_addr" [kernel_MHSA.cpp:227]   --->   Operation 74 'load' 'current_input_12_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 75 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_13_load = load i7 %current_input_13_addr" [kernel_MHSA.cpp:227]   --->   Operation 75 'load' 'current_input_13_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 76 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_14_load = load i7 %current_input_14_addr" [kernel_MHSA.cpp:227]   --->   Operation 76 'load' 'current_input_14_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 77 [1/1] (0.70ns)   --->   "%tmp_5 = sparsemux i32 @_ssdm_op_SparseMux.ap_auto.8float.float.i3, i3 0, i32 %current_input_load, i3 1, i32 %current_input_8_load, i3 2, i32 %current_input_9_load, i3 3, i32 %current_input_10_load, i3 4, i32 %current_input_11_load, i3 5, i32 %current_input_12_load, i3 6, i32 %current_input_13_load, i3 7, i32 %current_input_14_load, i32 <undef>, i3 %trunc_ln225" [kernel_MHSA.cpp:227]   --->   Operation 77 'sparsemux' 'tmp_5' <Predicate = true> <Delay = 0.70> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 150 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 0> <OutPorts = 1>
-ST_2 : Operation 78 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_load = load i7 %xb2_addr" [kernel_MHSA.cpp:227]   --->   Operation 78 'load' 'xb2_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 79 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_1_load = load i7 %xb2_1_addr" [kernel_MHSA.cpp:227]   --->   Operation 79 'load' 'xb2_1_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 80 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_2_load = load i7 %xb2_2_addr" [kernel_MHSA.cpp:227]   --->   Operation 80 'load' 'xb2_2_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 81 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_3_load = load i7 %xb2_3_addr" [kernel_MHSA.cpp:227]   --->   Operation 81 'load' 'xb2_3_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 82 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_4_load = load i7 %xb2_4_addr" [kernel_MHSA.cpp:227]   --->   Operation 82 'load' 'xb2_4_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 83 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_5_load = load i7 %xb2_5_addr" [kernel_MHSA.cpp:227]   --->   Operation 83 'load' 'xb2_5_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 84 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_6_load = load i7 %xb2_6_addr" [kernel_MHSA.cpp:227]   --->   Operation 84 'load' 'xb2_6_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 85 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_7_load = load i7 %xb2_7_addr" [kernel_MHSA.cpp:227]   --->   Operation 85 'load' 'xb2_7_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_2 : Operation 86 [1/1] (0.70ns)   --->   "%tmp_6 = sparsemux i32 @_ssdm_op_SparseMux.ap_auto.8float.float.i3, i3 0, i32 %xb2_load, i3 1, i32 %xb2_1_load, i3 2, i32 %xb2_2_load, i3 3, i32 %xb2_3_load, i3 4, i32 %xb2_4_load, i3 5, i32 %xb2_5_load, i3 6, i32 %xb2_6_load, i3 7, i32 %xb2_7_load, i32 <undef>, i3 %trunc_ln225" [kernel_MHSA.cpp:227]   --->   Operation 86 'sparsemux' 'tmp_6' <Predicate = true> <Delay = 0.70> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 150 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 0> <OutPorts = 1>
+ST_2 : Operation 69 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_load = load i7 %current_input_addr" [kernel_MHSA.cpp:199]   --->   Operation 69 'load' 'current_input_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 70 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_8_load = load i7 %current_input_8_addr" [kernel_MHSA.cpp:199]   --->   Operation 70 'load' 'current_input_8_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 71 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_9_load = load i7 %current_input_9_addr" [kernel_MHSA.cpp:199]   --->   Operation 71 'load' 'current_input_9_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 72 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_10_load = load i7 %current_input_10_addr" [kernel_MHSA.cpp:199]   --->   Operation 72 'load' 'current_input_10_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 73 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_11_load = load i7 %current_input_11_addr" [kernel_MHSA.cpp:199]   --->   Operation 73 'load' 'current_input_11_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 74 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_12_load = load i7 %current_input_12_addr" [kernel_MHSA.cpp:199]   --->   Operation 74 'load' 'current_input_12_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 75 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_13_load = load i7 %current_input_13_addr" [kernel_MHSA.cpp:199]   --->   Operation 75 'load' 'current_input_13_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 76 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 6)   --->   "%current_input_14_load = load i7 %current_input_14_addr" [kernel_MHSA.cpp:199]   --->   Operation 76 'load' 'current_input_14_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 77 [1/1] (0.70ns)   --->   "%tmp_5 = sparsemux i32 @_ssdm_op_SparseMux.ap_auto.8float.float.i3, i3 0, i32 %current_input_load, i3 1, i32 %current_input_8_load, i3 2, i32 %current_input_9_load, i3 3, i32 %current_input_10_load, i3 4, i32 %current_input_11_load, i3 5, i32 %current_input_12_load, i3 6, i32 %current_input_13_load, i3 7, i32 %current_input_14_load, i32 <undef>, i3 %trunc_ln197" [kernel_MHSA.cpp:199]   --->   Operation 77 'sparsemux' 'tmp_5' <Predicate = true> <Delay = 0.70> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 150 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 0> <OutPorts = 1>
+ST_2 : Operation 78 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_load = load i7 %xb2_addr" [kernel_MHSA.cpp:199]   --->   Operation 78 'load' 'xb2_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 79 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_1_load = load i7 %xb2_1_addr" [kernel_MHSA.cpp:199]   --->   Operation 79 'load' 'xb2_1_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 80 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_2_load = load i7 %xb2_2_addr" [kernel_MHSA.cpp:199]   --->   Operation 80 'load' 'xb2_2_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 81 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_3_load = load i7 %xb2_3_addr" [kernel_MHSA.cpp:199]   --->   Operation 81 'load' 'xb2_3_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 82 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_4_load = load i7 %xb2_4_addr" [kernel_MHSA.cpp:199]   --->   Operation 82 'load' 'xb2_4_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 83 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_5_load = load i7 %xb2_5_addr" [kernel_MHSA.cpp:199]   --->   Operation 83 'load' 'xb2_5_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 84 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_6_load = load i7 %xb2_6_addr" [kernel_MHSA.cpp:199]   --->   Operation 84 'load' 'xb2_6_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 85 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 2)   --->   "%xb2_7_load = load i7 %xb2_7_addr" [kernel_MHSA.cpp:199]   --->   Operation 85 'load' 'xb2_7_load' <Predicate = true> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_2 : Operation 86 [1/1] (0.70ns)   --->   "%tmp_6 = sparsemux i32 @_ssdm_op_SparseMux.ap_auto.8float.float.i3, i3 0, i32 %xb2_load, i3 1, i32 %xb2_1_load, i3 2, i32 %xb2_2_load, i3 3, i32 %xb2_3_load, i3 4, i32 %xb2_4_load, i3 5, i32 %xb2_5_load, i3 6, i32 %xb2_6_load, i3 7, i32 %xb2_7_load, i32 <undef>, i3 %trunc_ln197" [kernel_MHSA.cpp:199]   --->   Operation 86 'sparsemux' 'tmp_6' <Predicate = true> <Delay = 0.70> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 150 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 0> <OutPorts = 1>
 
 State 3 <SV = 2> <Delay = 1.35>
-ST_3 : Operation 87 [1/1] (1.35ns) (share mux size 69)   --->   "%muxLogicI0_to_add = muxlogic i32 %tmp_5"   --->   Operation 87 'muxlogic' 'muxLogicI0_to_add' <Predicate = true> <Delay = 1.35>
-ST_3 : Operation 88 [1/1] (1.35ns) (share mux size 69)   --->   "%muxLogicI1_to_add = muxlogic i32 %tmp_6"   --->   Operation 88 'muxlogic' 'muxLogicI1_to_add' <Predicate = true> <Delay = 1.35>
+ST_3 : Operation 87 [1/1] (1.35ns) (share mux size 70)   --->   "%muxLogicI0_to_add = muxlogic i32 %tmp_5"   --->   Operation 87 'muxlogic' 'muxLogicI0_to_add' <Predicate = true> <Delay = 1.35>
+ST_3 : Operation 88 [1/1] (1.35ns) (share mux size 70)   --->   "%muxLogicI1_to_add = muxlogic i32 %tmp_6"   --->   Operation 88 'muxlogic' 'muxLogicI1_to_add' <Predicate = true> <Delay = 1.35>
 
 State 4 <SV = 3> <Delay = 1.92>
-ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%specpipeline_ln226 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_113" [kernel_MHSA.cpp:226]   --->   Operation 89 'specpipeline' 'specpipeline_ln226' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 90 [1/1] (0.00ns)   --->   "%speclooptripcount_ln225 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 768, i64 768, i64 768" [kernel_MHSA.cpp:225]   --->   Operation 90 'speclooptripcount' 'speclooptripcount_ln225' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%specloopname_ln225 = specloopname void @_ssdm_op_SpecLoopName, void @empty_81" [kernel_MHSA.cpp:225]   --->   Operation 91 'specloopname' 'specloopname_ln225' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 92 [1/1] (1.92ns) (share mux size 69)   --->   "%add = fadd i32 %tmp_5, i32 %tmp_6" [kernel_MHSA.cpp:227]   --->   Operation 92 'fadd' 'add' <Predicate = true> <Delay = 1.92> <CoreInst = "FAddSub_primitivedsp">   --->   Core 13 'FAddSub_primitivedsp' <Latency = 0> <II = 1> <Delay = 1.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 125 [1/1] (0.28ns)   --->   "%ret_ln0 = ret"   --->   Operation 125 'ret' 'ret_ln0' <Predicate = (icmp_ln225)> <Delay = 0.28>
+ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%specpipeline_ln198 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_115" [kernel_MHSA.cpp:198]   --->   Operation 89 'specpipeline' 'specpipeline_ln198' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 90 [1/1] (0.00ns)   --->   "%speclooptripcount_ln197 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 768, i64 768, i64 768" [kernel_MHSA.cpp:197]   --->   Operation 90 'speclooptripcount' 'speclooptripcount_ln197' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%specloopname_ln197 = specloopname void @_ssdm_op_SpecLoopName, void @empty_100" [kernel_MHSA.cpp:197]   --->   Operation 91 'specloopname' 'specloopname_ln197' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 92 [1/1] (1.92ns) (share mux size 70)   --->   "%add = fadd i32 %tmp_5, i32 %tmp_6" [kernel_MHSA.cpp:199]   --->   Operation 92 'fadd' 'add' <Predicate = true> <Delay = 1.92> <CoreInst = "FAddSub_primitivedsp">   --->   Core 13 'FAddSub_primitivedsp' <Latency = 0> <II = 1> <Delay = 1.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 125 [1/1] (0.28ns)   --->   "%ret_ln0 = ret"   --->   Operation 125 'ret' 'ret_ln0' <Predicate = (icmp_ln197)> <Delay = 0.28>
 
 State 5 <SV = 4> <Delay = 1.15>
-ST_5 : Operation 93 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln227 = muxlogic i32 %add"   --->   Operation 93 'muxlogic' 'muxLogicRAMData_to_store_ln227' <Predicate = (trunc_ln225 == 6)> <Delay = 0.43>
-ST_5 : Operation 94 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln227 = muxlogic i7 %current_input_13_addr"   --->   Operation 94 'muxlogic' 'muxLogicRAMAddr_to_store_ln227' <Predicate = (trunc_ln225 == 6)> <Delay = 0.43>
-ST_5 : Operation 95 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln227 = store i32 %add, i7 %current_input_13_addr" [kernel_MHSA.cpp:227]   --->   Operation 95 'store' 'store_ln227' <Predicate = (trunc_ln225 == 6)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_5 : Operation 96 [1/1] (0.00ns)   --->   "%br_ln227 = br void %arrayidx248.exit" [kernel_MHSA.cpp:227]   --->   Operation 96 'br' 'br_ln227' <Predicate = (trunc_ln225 == 6)> <Delay = 0.00>
-ST_5 : Operation 97 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln227 = muxlogic i32 %add"   --->   Operation 97 'muxlogic' 'muxLogicRAMData_to_store_ln227' <Predicate = (trunc_ln225 == 5)> <Delay = 0.43>
-ST_5 : Operation 98 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln227 = muxlogic i7 %current_input_12_addr"   --->   Operation 98 'muxlogic' 'muxLogicRAMAddr_to_store_ln227' <Predicate = (trunc_ln225 == 5)> <Delay = 0.43>
-ST_5 : Operation 99 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln227 = store i32 %add, i7 %current_input_12_addr" [kernel_MHSA.cpp:227]   --->   Operation 99 'store' 'store_ln227' <Predicate = (trunc_ln225 == 5)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_5 : Operation 100 [1/1] (0.00ns)   --->   "%br_ln227 = br void %arrayidx248.exit" [kernel_MHSA.cpp:227]   --->   Operation 100 'br' 'br_ln227' <Predicate = (trunc_ln225 == 5)> <Delay = 0.00>
-ST_5 : Operation 101 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln227 = muxlogic i32 %add"   --->   Operation 101 'muxlogic' 'muxLogicRAMData_to_store_ln227' <Predicate = (trunc_ln225 == 4)> <Delay = 0.43>
-ST_5 : Operation 102 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln227 = muxlogic i7 %current_input_11_addr"   --->   Operation 102 'muxlogic' 'muxLogicRAMAddr_to_store_ln227' <Predicate = (trunc_ln225 == 4)> <Delay = 0.43>
-ST_5 : Operation 103 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln227 = store i32 %add, i7 %current_input_11_addr" [kernel_MHSA.cpp:227]   --->   Operation 103 'store' 'store_ln227' <Predicate = (trunc_ln225 == 4)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_5 : Operation 104 [1/1] (0.00ns)   --->   "%br_ln227 = br void %arrayidx248.exit" [kernel_MHSA.cpp:227]   --->   Operation 104 'br' 'br_ln227' <Predicate = (trunc_ln225 == 4)> <Delay = 0.00>
-ST_5 : Operation 105 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln227 = muxlogic i32 %add"   --->   Operation 105 'muxlogic' 'muxLogicRAMData_to_store_ln227' <Predicate = (trunc_ln225 == 3)> <Delay = 0.43>
-ST_5 : Operation 106 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln227 = muxlogic i7 %current_input_10_addr"   --->   Operation 106 'muxlogic' 'muxLogicRAMAddr_to_store_ln227' <Predicate = (trunc_ln225 == 3)> <Delay = 0.43>
-ST_5 : Operation 107 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln227 = store i32 %add, i7 %current_input_10_addr" [kernel_MHSA.cpp:227]   --->   Operation 107 'store' 'store_ln227' <Predicate = (trunc_ln225 == 3)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_5 : Operation 108 [1/1] (0.00ns)   --->   "%br_ln227 = br void %arrayidx248.exit" [kernel_MHSA.cpp:227]   --->   Operation 108 'br' 'br_ln227' <Predicate = (trunc_ln225 == 3)> <Delay = 0.00>
-ST_5 : Operation 109 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln227 = muxlogic i32 %add"   --->   Operation 109 'muxlogic' 'muxLogicRAMData_to_store_ln227' <Predicate = (trunc_ln225 == 2)> <Delay = 0.43>
-ST_5 : Operation 110 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln227 = muxlogic i7 %current_input_9_addr"   --->   Operation 110 'muxlogic' 'muxLogicRAMAddr_to_store_ln227' <Predicate = (trunc_ln225 == 2)> <Delay = 0.43>
-ST_5 : Operation 111 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln227 = store i32 %add, i7 %current_input_9_addr" [kernel_MHSA.cpp:227]   --->   Operation 111 'store' 'store_ln227' <Predicate = (trunc_ln225 == 2)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_5 : Operation 112 [1/1] (0.00ns)   --->   "%br_ln227 = br void %arrayidx248.exit" [kernel_MHSA.cpp:227]   --->   Operation 112 'br' 'br_ln227' <Predicate = (trunc_ln225 == 2)> <Delay = 0.00>
-ST_5 : Operation 113 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln227 = muxlogic i32 %add"   --->   Operation 113 'muxlogic' 'muxLogicRAMData_to_store_ln227' <Predicate = (trunc_ln225 == 1)> <Delay = 0.43>
-ST_5 : Operation 114 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln227 = muxlogic i7 %current_input_8_addr"   --->   Operation 114 'muxlogic' 'muxLogicRAMAddr_to_store_ln227' <Predicate = (trunc_ln225 == 1)> <Delay = 0.43>
-ST_5 : Operation 115 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln227 = store i32 %add, i7 %current_input_8_addr" [kernel_MHSA.cpp:227]   --->   Operation 115 'store' 'store_ln227' <Predicate = (trunc_ln225 == 1)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_5 : Operation 116 [1/1] (0.00ns)   --->   "%br_ln227 = br void %arrayidx248.exit" [kernel_MHSA.cpp:227]   --->   Operation 116 'br' 'br_ln227' <Predicate = (trunc_ln225 == 1)> <Delay = 0.00>
-ST_5 : Operation 117 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln227 = muxlogic i32 %add"   --->   Operation 117 'muxlogic' 'muxLogicRAMData_to_store_ln227' <Predicate = (trunc_ln225 == 0)> <Delay = 0.43>
-ST_5 : Operation 118 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln227 = muxlogic i7 %current_input_addr"   --->   Operation 118 'muxlogic' 'muxLogicRAMAddr_to_store_ln227' <Predicate = (trunc_ln225 == 0)> <Delay = 0.43>
-ST_5 : Operation 119 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln227 = store i32 %add, i7 %current_input_addr" [kernel_MHSA.cpp:227]   --->   Operation 119 'store' 'store_ln227' <Predicate = (trunc_ln225 == 0)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_5 : Operation 120 [1/1] (0.00ns)   --->   "%br_ln227 = br void %arrayidx248.exit" [kernel_MHSA.cpp:227]   --->   Operation 120 'br' 'br_ln227' <Predicate = (trunc_ln225 == 0)> <Delay = 0.00>
-ST_5 : Operation 121 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln227 = muxlogic i32 %add"   --->   Operation 121 'muxlogic' 'muxLogicRAMData_to_store_ln227' <Predicate = (trunc_ln225 == 7)> <Delay = 0.43>
-ST_5 : Operation 122 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln227 = muxlogic i7 %current_input_14_addr"   --->   Operation 122 'muxlogic' 'muxLogicRAMAddr_to_store_ln227' <Predicate = (trunc_ln225 == 7)> <Delay = 0.43>
-ST_5 : Operation 123 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln227 = store i32 %add, i7 %current_input_14_addr" [kernel_MHSA.cpp:227]   --->   Operation 123 'store' 'store_ln227' <Predicate = (trunc_ln225 == 7)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
-ST_5 : Operation 124 [1/1] (0.00ns)   --->   "%br_ln227 = br void %arrayidx248.exit" [kernel_MHSA.cpp:227]   --->   Operation 124 'br' 'br_ln227' <Predicate = (trunc_ln225 == 7)> <Delay = 0.00>
+ST_5 : Operation 93 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln199 = muxlogic i32 %add"   --->   Operation 93 'muxlogic' 'muxLogicRAMData_to_store_ln199' <Predicate = (trunc_ln197 == 6)> <Delay = 0.43>
+ST_5 : Operation 94 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln199 = muxlogic i7 %current_input_13_addr"   --->   Operation 94 'muxlogic' 'muxLogicRAMAddr_to_store_ln199' <Predicate = (trunc_ln197 == 6)> <Delay = 0.43>
+ST_5 : Operation 95 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln199 = store i32 %add, i7 %current_input_13_addr" [kernel_MHSA.cpp:199]   --->   Operation 95 'store' 'store_ln199' <Predicate = (trunc_ln197 == 6)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_5 : Operation 96 [1/1] (0.00ns)   --->   "%br_ln199 = br void %arrayidx228.exit" [kernel_MHSA.cpp:199]   --->   Operation 96 'br' 'br_ln199' <Predicate = (trunc_ln197 == 6)> <Delay = 0.00>
+ST_5 : Operation 97 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln199 = muxlogic i32 %add"   --->   Operation 97 'muxlogic' 'muxLogicRAMData_to_store_ln199' <Predicate = (trunc_ln197 == 5)> <Delay = 0.43>
+ST_5 : Operation 98 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln199 = muxlogic i7 %current_input_12_addr"   --->   Operation 98 'muxlogic' 'muxLogicRAMAddr_to_store_ln199' <Predicate = (trunc_ln197 == 5)> <Delay = 0.43>
+ST_5 : Operation 99 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln199 = store i32 %add, i7 %current_input_12_addr" [kernel_MHSA.cpp:199]   --->   Operation 99 'store' 'store_ln199' <Predicate = (trunc_ln197 == 5)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_5 : Operation 100 [1/1] (0.00ns)   --->   "%br_ln199 = br void %arrayidx228.exit" [kernel_MHSA.cpp:199]   --->   Operation 100 'br' 'br_ln199' <Predicate = (trunc_ln197 == 5)> <Delay = 0.00>
+ST_5 : Operation 101 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln199 = muxlogic i32 %add"   --->   Operation 101 'muxlogic' 'muxLogicRAMData_to_store_ln199' <Predicate = (trunc_ln197 == 4)> <Delay = 0.43>
+ST_5 : Operation 102 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln199 = muxlogic i7 %current_input_11_addr"   --->   Operation 102 'muxlogic' 'muxLogicRAMAddr_to_store_ln199' <Predicate = (trunc_ln197 == 4)> <Delay = 0.43>
+ST_5 : Operation 103 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln199 = store i32 %add, i7 %current_input_11_addr" [kernel_MHSA.cpp:199]   --->   Operation 103 'store' 'store_ln199' <Predicate = (trunc_ln197 == 4)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_5 : Operation 104 [1/1] (0.00ns)   --->   "%br_ln199 = br void %arrayidx228.exit" [kernel_MHSA.cpp:199]   --->   Operation 104 'br' 'br_ln199' <Predicate = (trunc_ln197 == 4)> <Delay = 0.00>
+ST_5 : Operation 105 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln199 = muxlogic i32 %add"   --->   Operation 105 'muxlogic' 'muxLogicRAMData_to_store_ln199' <Predicate = (trunc_ln197 == 3)> <Delay = 0.43>
+ST_5 : Operation 106 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln199 = muxlogic i7 %current_input_10_addr"   --->   Operation 106 'muxlogic' 'muxLogicRAMAddr_to_store_ln199' <Predicate = (trunc_ln197 == 3)> <Delay = 0.43>
+ST_5 : Operation 107 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln199 = store i32 %add, i7 %current_input_10_addr" [kernel_MHSA.cpp:199]   --->   Operation 107 'store' 'store_ln199' <Predicate = (trunc_ln197 == 3)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_5 : Operation 108 [1/1] (0.00ns)   --->   "%br_ln199 = br void %arrayidx228.exit" [kernel_MHSA.cpp:199]   --->   Operation 108 'br' 'br_ln199' <Predicate = (trunc_ln197 == 3)> <Delay = 0.00>
+ST_5 : Operation 109 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln199 = muxlogic i32 %add"   --->   Operation 109 'muxlogic' 'muxLogicRAMData_to_store_ln199' <Predicate = (trunc_ln197 == 2)> <Delay = 0.43>
+ST_5 : Operation 110 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln199 = muxlogic i7 %current_input_9_addr"   --->   Operation 110 'muxlogic' 'muxLogicRAMAddr_to_store_ln199' <Predicate = (trunc_ln197 == 2)> <Delay = 0.43>
+ST_5 : Operation 111 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln199 = store i32 %add, i7 %current_input_9_addr" [kernel_MHSA.cpp:199]   --->   Operation 111 'store' 'store_ln199' <Predicate = (trunc_ln197 == 2)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_5 : Operation 112 [1/1] (0.00ns)   --->   "%br_ln199 = br void %arrayidx228.exit" [kernel_MHSA.cpp:199]   --->   Operation 112 'br' 'br_ln199' <Predicate = (trunc_ln197 == 2)> <Delay = 0.00>
+ST_5 : Operation 113 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln199 = muxlogic i32 %add"   --->   Operation 113 'muxlogic' 'muxLogicRAMData_to_store_ln199' <Predicate = (trunc_ln197 == 1)> <Delay = 0.43>
+ST_5 : Operation 114 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln199 = muxlogic i7 %current_input_8_addr"   --->   Operation 114 'muxlogic' 'muxLogicRAMAddr_to_store_ln199' <Predicate = (trunc_ln197 == 1)> <Delay = 0.43>
+ST_5 : Operation 115 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln199 = store i32 %add, i7 %current_input_8_addr" [kernel_MHSA.cpp:199]   --->   Operation 115 'store' 'store_ln199' <Predicate = (trunc_ln197 == 1)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_5 : Operation 116 [1/1] (0.00ns)   --->   "%br_ln199 = br void %arrayidx228.exit" [kernel_MHSA.cpp:199]   --->   Operation 116 'br' 'br_ln199' <Predicate = (trunc_ln197 == 1)> <Delay = 0.00>
+ST_5 : Operation 117 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln199 = muxlogic i32 %add"   --->   Operation 117 'muxlogic' 'muxLogicRAMData_to_store_ln199' <Predicate = (trunc_ln197 == 0)> <Delay = 0.43>
+ST_5 : Operation 118 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln199 = muxlogic i7 %current_input_addr"   --->   Operation 118 'muxlogic' 'muxLogicRAMAddr_to_store_ln199' <Predicate = (trunc_ln197 == 0)> <Delay = 0.43>
+ST_5 : Operation 119 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln199 = store i32 %add, i7 %current_input_addr" [kernel_MHSA.cpp:199]   --->   Operation 119 'store' 'store_ln199' <Predicate = (trunc_ln197 == 0)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_5 : Operation 120 [1/1] (0.00ns)   --->   "%br_ln199 = br void %arrayidx228.exit" [kernel_MHSA.cpp:199]   --->   Operation 120 'br' 'br_ln199' <Predicate = (trunc_ln197 == 0)> <Delay = 0.00>
+ST_5 : Operation 121 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln199 = muxlogic i32 %add"   --->   Operation 121 'muxlogic' 'muxLogicRAMData_to_store_ln199' <Predicate = (trunc_ln197 == 7)> <Delay = 0.43>
+ST_5 : Operation 122 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln199 = muxlogic i7 %current_input_14_addr"   --->   Operation 122 'muxlogic' 'muxLogicRAMAddr_to_store_ln199' <Predicate = (trunc_ln197 == 7)> <Delay = 0.43>
+ST_5 : Operation 123 [1/1] ( I:0.72ns O:0.72ns ) (share mux size 6)   --->   "%store_ln199 = store i32 %add, i7 %current_input_14_addr" [kernel_MHSA.cpp:199]   --->   Operation 123 'store' 'store_ln199' <Predicate = (trunc_ln197 == 7)> <Delay = 0.72> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 96> <RAM>
+ST_5 : Operation 124 [1/1] (0.00ns)   --->   "%br_ln199 = br void %arrayidx228.exit" [kernel_MHSA.cpp:199]   --->   Operation 124 'br' 'br_ln199' <Predicate = (trunc_ln197 == 7)> <Delay = 0.00>
 
 
 ============================================================
@@ -469,15 +469,15 @@ Port [ xb2_7]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; exte
 <LifeTime>
 <method=bitvector/>
 i                                        (alloca           ) [ 010000]
-store_ln225                              (store            ) [ 000000]
+store_ln197                              (store            ) [ 000000]
 br_ln0                                   (br               ) [ 000000]
-i_8                                      (load             ) [ 000000]
-add_ln225                                (add              ) [ 000000]
-icmp_ln225                               (icmp             ) [ 011110]
-br_ln225                                 (br               ) [ 000000]
-trunc_ln225                              (trunc            ) [ 011111]
-lshr_ln9                                 (partselect       ) [ 000000]
-zext_ln225                               (zext             ) [ 000000]
+i_6                                      (load             ) [ 000000]
+add_ln197                                (add              ) [ 000000]
+icmp_ln197                               (icmp             ) [ 011110]
+br_ln197                                 (br               ) [ 000000]
+trunc_ln197                              (trunc            ) [ 011111]
+lshr_ln7                                 (partselect       ) [ 000000]
+zext_ln197                               (zext             ) [ 000000]
 current_input_addr                       (getelementptr    ) [ 011111]
 current_input_8_addr                     (getelementptr    ) [ 011111]
 current_input_9_addr                     (getelementptr    ) [ 011111]
@@ -510,9 +510,9 @@ muxLogicRAMAddr_to_xb2_4_load            (muxlogic         ) [ 000000]
 muxLogicRAMAddr_to_xb2_5_load            (muxlogic         ) [ 000000]
 muxLogicRAMAddr_to_xb2_6_load            (muxlogic         ) [ 000000]
 muxLogicRAMAddr_to_xb2_7_load            (muxlogic         ) [ 000000]
-switch_ln227                             (switch           ) [ 000000]
-store_ln225                              (store            ) [ 000000]
-br_ln225                                 (br               ) [ 000000]
+switch_ln199                             (switch           ) [ 000000]
+store_ln197                              (store            ) [ 000000]
+br_ln197                                 (br               ) [ 000000]
 current_input_load                       (load             ) [ 000000]
 current_input_8_load                     (load             ) [ 000000]
 current_input_9_load                     (load             ) [ 000000]
@@ -533,42 +533,42 @@ xb2_7_load                               (load             ) [ 000000]
 tmp_6                                    (sparsemux        ) [ 010110]
 muxLogicI0_to_add                        (muxlogic         ) [ 000000]
 muxLogicI1_to_add                        (muxlogic         ) [ 000000]
-specpipeline_ln226                       (specpipeline     ) [ 000000]
-speclooptripcount_ln225                  (speclooptripcount) [ 000000]
-specloopname_ln225                       (specloopname     ) [ 000000]
+specpipeline_ln198                       (specpipeline     ) [ 000000]
+speclooptripcount_ln197                  (speclooptripcount) [ 000000]
+specloopname_ln197                       (specloopname     ) [ 000000]
 add                                      (fadd             ) [ 010001]
-muxLogicRAMData_to_store_ln227           (muxlogic         ) [ 000000]
-muxLogicRAMAddr_to_store_ln227           (muxlogic         ) [ 000000]
-store_ln227                              (store            ) [ 000000]
-br_ln227                                 (br               ) [ 000000]
-muxLogicRAMData_to_store_ln227           (muxlogic         ) [ 000000]
-muxLogicRAMAddr_to_store_ln227           (muxlogic         ) [ 000000]
-store_ln227                              (store            ) [ 000000]
-br_ln227                                 (br               ) [ 000000]
-muxLogicRAMData_to_store_ln227           (muxlogic         ) [ 000000]
-muxLogicRAMAddr_to_store_ln227           (muxlogic         ) [ 000000]
-store_ln227                              (store            ) [ 000000]
-br_ln227                                 (br               ) [ 000000]
-muxLogicRAMData_to_store_ln227           (muxlogic         ) [ 000000]
-muxLogicRAMAddr_to_store_ln227           (muxlogic         ) [ 000000]
-store_ln227                              (store            ) [ 000000]
-br_ln227                                 (br               ) [ 000000]
-muxLogicRAMData_to_store_ln227           (muxlogic         ) [ 000000]
-muxLogicRAMAddr_to_store_ln227           (muxlogic         ) [ 000000]
-store_ln227                              (store            ) [ 000000]
-br_ln227                                 (br               ) [ 000000]
-muxLogicRAMData_to_store_ln227           (muxlogic         ) [ 000000]
-muxLogicRAMAddr_to_store_ln227           (muxlogic         ) [ 000000]
-store_ln227                              (store            ) [ 000000]
-br_ln227                                 (br               ) [ 000000]
-muxLogicRAMData_to_store_ln227           (muxlogic         ) [ 000000]
-muxLogicRAMAddr_to_store_ln227           (muxlogic         ) [ 000000]
-store_ln227                              (store            ) [ 000000]
-br_ln227                                 (br               ) [ 000000]
-muxLogicRAMData_to_store_ln227           (muxlogic         ) [ 000000]
-muxLogicRAMAddr_to_store_ln227           (muxlogic         ) [ 000000]
-store_ln227                              (store            ) [ 000000]
-br_ln227                                 (br               ) [ 000000]
+muxLogicRAMData_to_store_ln199           (muxlogic         ) [ 000000]
+muxLogicRAMAddr_to_store_ln199           (muxlogic         ) [ 000000]
+store_ln199                              (store            ) [ 000000]
+br_ln199                                 (br               ) [ 000000]
+muxLogicRAMData_to_store_ln199           (muxlogic         ) [ 000000]
+muxLogicRAMAddr_to_store_ln199           (muxlogic         ) [ 000000]
+store_ln199                              (store            ) [ 000000]
+br_ln199                                 (br               ) [ 000000]
+muxLogicRAMData_to_store_ln199           (muxlogic         ) [ 000000]
+muxLogicRAMAddr_to_store_ln199           (muxlogic         ) [ 000000]
+store_ln199                              (store            ) [ 000000]
+br_ln199                                 (br               ) [ 000000]
+muxLogicRAMData_to_store_ln199           (muxlogic         ) [ 000000]
+muxLogicRAMAddr_to_store_ln199           (muxlogic         ) [ 000000]
+store_ln199                              (store            ) [ 000000]
+br_ln199                                 (br               ) [ 000000]
+muxLogicRAMData_to_store_ln199           (muxlogic         ) [ 000000]
+muxLogicRAMAddr_to_store_ln199           (muxlogic         ) [ 000000]
+store_ln199                              (store            ) [ 000000]
+br_ln199                                 (br               ) [ 000000]
+muxLogicRAMData_to_store_ln199           (muxlogic         ) [ 000000]
+muxLogicRAMAddr_to_store_ln199           (muxlogic         ) [ 000000]
+store_ln199                              (store            ) [ 000000]
+br_ln199                                 (br               ) [ 000000]
+muxLogicRAMData_to_store_ln199           (muxlogic         ) [ 000000]
+muxLogicRAMAddr_to_store_ln199           (muxlogic         ) [ 000000]
+store_ln199                              (store            ) [ 000000]
+br_ln199                                 (br               ) [ 000000]
+muxLogicRAMData_to_store_ln199           (muxlogic         ) [ 000000]
+muxLogicRAMAddr_to_store_ln199           (muxlogic         ) [ 000000]
+store_ln199                              (store            ) [ 000000]
+br_ln199                                 (br               ) [ 000000]
 ret_ln0                                  (ret              ) [ 000000]
 </LifeTime>
 
@@ -920,7 +920,7 @@ ret_ln0                                  (ret              ) [ 000000]
 <pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_113"/></StgValue>
+<StgValue><ssdm name="empty_115"/></StgValue>
 </bind>
 </comp>
 
@@ -956,7 +956,7 @@ ret_ln0                                  (ret              ) [ 000000]
 <pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_81"/></StgValue>
+<StgValue><ssdm name="empty_100"/></StgValue>
 </bind>
 </comp>
 
@@ -1088,7 +1088,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="load(27) store(28) " fcode="store"/>
-<opset="current_input_load/1 store_ln227/5 "/>
+<opset="current_input_load/1 store_ln199/5 "/>
 </bind>
 </comp>
 
@@ -1105,7 +1105,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="load(27) store(28) " fcode="store"/>
-<opset="current_input_8_load/1 store_ln227/5 "/>
+<opset="current_input_8_load/1 store_ln199/5 "/>
 </bind>
 </comp>
 
@@ -1122,7 +1122,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="load(27) store(28) " fcode="store"/>
-<opset="current_input_9_load/1 store_ln227/5 "/>
+<opset="current_input_9_load/1 store_ln199/5 "/>
 </bind>
 </comp>
 
@@ -1139,7 +1139,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="load(27) store(28) " fcode="store"/>
-<opset="current_input_10_load/1 store_ln227/5 "/>
+<opset="current_input_10_load/1 store_ln199/5 "/>
 </bind>
 </comp>
 
@@ -1156,7 +1156,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="load(27) store(28) " fcode="store"/>
-<opset="current_input_11_load/1 store_ln227/5 "/>
+<opset="current_input_11_load/1 store_ln199/5 "/>
 </bind>
 </comp>
 
@@ -1173,7 +1173,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="load(27) store(28) " fcode="store"/>
-<opset="current_input_12_load/1 store_ln227/5 "/>
+<opset="current_input_12_load/1 store_ln199/5 "/>
 </bind>
 </comp>
 
@@ -1190,7 +1190,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="load(27) store(28) " fcode="store"/>
-<opset="current_input_13_load/1 store_ln227/5 "/>
+<opset="current_input_13_load/1 store_ln199/5 "/>
 </bind>
 </comp>
 
@@ -1207,7 +1207,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="load(27) store(28) " fcode="store"/>
-<opset="current_input_14_load/1 store_ln227/5 "/>
+<opset="current_input_14_load/1 store_ln199/5 "/>
 </bind>
 </comp>
 
@@ -1438,11 +1438,11 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicRAMData_to_store_ln227/5 muxLogicRAMData_to_store_ln227/5 muxLogicRAMData_to_store_ln227/5 muxLogicRAMData_to_store_ln227/5 muxLogicRAMData_to_store_ln227/5 muxLogicRAMData_to_store_ln227/5 muxLogicRAMData_to_store_ln227/5 muxLogicRAMData_to_store_ln227/5 "/>
+<opset="muxLogicRAMData_to_store_ln199/5 muxLogicRAMData_to_store_ln199/5 muxLogicRAMData_to_store_ln199/5 muxLogicRAMData_to_store_ln199/5 muxLogicRAMData_to_store_ln199/5 muxLogicRAMData_to_store_ln199/5 muxLogicRAMData_to_store_ln199/5 muxLogicRAMData_to_store_ln199/5 "/>
 </bind>
 </comp>
 
-<comp id="333" class="1004" name="store_ln225_store_fu_333">
+<comp id="333" class="1004" name="store_ln197_store_fu_333">
 <pin_list>
 <pin id="334" dir="0" index="0" bw="1" slack="0"/>
 <pin id="335" dir="0" index="1" bw="10" slack="0"/>
@@ -1450,22 +1450,22 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln225/1 "/>
+<opset="store_ln197/1 "/>
 </bind>
 </comp>
 
-<comp id="338" class="1004" name="i_8_load_fu_338">
+<comp id="338" class="1004" name="i_6_load_fu_338">
 <pin_list>
 <pin id="339" dir="0" index="0" bw="10" slack="0"/>
 <pin id="340" dir="1" index="1" bw="10" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="i_8/1 "/>
+<opset="i_6/1 "/>
 </bind>
 </comp>
 
-<comp id="341" class="1004" name="add_ln225_fu_341">
+<comp id="341" class="1004" name="add_ln197_fu_341">
 <pin_list>
 <pin id="342" dir="0" index="0" bw="10" slack="0"/>
 <pin id="343" dir="0" index="1" bw="1" slack="0"/>
@@ -1473,11 +1473,11 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="add_ln225/1 "/>
+<opset="add_ln197/1 "/>
 </bind>
 </comp>
 
-<comp id="347" class="1004" name="icmp_ln225_fu_347">
+<comp id="347" class="1004" name="icmp_ln197_fu_347">
 <pin_list>
 <pin id="348" dir="0" index="0" bw="10" slack="0"/>
 <pin id="349" dir="0" index="1" bw="10" slack="0"/>
@@ -1485,22 +1485,22 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln225/1 "/>
+<opset="icmp_ln197/1 "/>
 </bind>
 </comp>
 
-<comp id="353" class="1004" name="trunc_ln225_fu_353">
+<comp id="353" class="1004" name="trunc_ln197_fu_353">
 <pin_list>
 <pin id="354" dir="0" index="0" bw="10" slack="0"/>
 <pin id="355" dir="1" index="1" bw="3" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln225/1 "/>
+<opset="trunc_ln197/1 "/>
 </bind>
 </comp>
 
-<comp id="357" class="1004" name="lshr_ln9_fu_357">
+<comp id="357" class="1004" name="lshr_ln7_fu_357">
 <pin_list>
 <pin id="358" dir="0" index="0" bw="7" slack="0"/>
 <pin id="359" dir="0" index="1" bw="10" slack="0"/>
@@ -1510,18 +1510,18 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="lshr_ln9/1 "/>
+<opset="lshr_ln7/1 "/>
 </bind>
 </comp>
 
-<comp id="367" class="1004" name="zext_ln225_fu_367">
+<comp id="367" class="1004" name="zext_ln197_fu_367">
 <pin_list>
 <pin id="368" dir="0" index="0" bw="7" slack="0"/>
 <pin id="369" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln225/1 "/>
+<opset="zext_ln197/1 "/>
 </bind>
 </comp>
 
@@ -1701,7 +1701,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </bind>
 </comp>
 
-<comp id="451" class="1004" name="switch_ln227_fu_451">
+<comp id="451" class="1004" name="switch_ln199_fu_451">
 <pin_list>
 <pin id="452" dir="0" index="0" bw="3" slack="0"/>
 <pin id="453" dir="0" index="1" bw="1" slack="0"/>
@@ -1715,11 +1715,11 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="switch(3) " fcode="switch"/>
-<opset="switch_ln227/1 "/>
+<opset="switch_ln199/1 "/>
 </bind>
 </comp>
 
-<comp id="469" class="1004" name="store_ln225_store_fu_469">
+<comp id="469" class="1004" name="store_ln197_store_fu_469">
 <pin_list>
 <pin id="470" dir="0" index="0" bw="10" slack="0"/>
 <pin id="471" dir="0" index="1" bw="10" slack="0"/>
@@ -1727,7 +1727,7 @@ ret_ln0                                  (ret              ) [ 000000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln225/1 "/>
+<opset="store_ln197/1 "/>
 </bind>
 </comp>
 
@@ -1811,91 +1811,91 @@ ret_ln0                                  (ret              ) [ 000000]
 </bind>
 </comp>
 
-<comp id="558" class="1004" name="muxLogicRAMAddr_to_store_ln227_fu_558">
+<comp id="558" class="1004" name="muxLogicRAMAddr_to_store_ln199_fu_558">
 <pin_list>
 <pin id="559" dir="0" index="0" bw="7" slack="4"/>
 <pin id="560" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicRAMAddr_to_store_ln227/5 "/>
+<opset="muxLogicRAMAddr_to_store_ln199/5 "/>
 </bind>
 </comp>
 
-<comp id="561" class="1004" name="muxLogicRAMAddr_to_store_ln227_fu_561">
+<comp id="561" class="1004" name="muxLogicRAMAddr_to_store_ln199_fu_561">
 <pin_list>
 <pin id="562" dir="0" index="0" bw="7" slack="4"/>
 <pin id="563" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicRAMAddr_to_store_ln227/5 "/>
+<opset="muxLogicRAMAddr_to_store_ln199/5 "/>
 </bind>
 </comp>
 
-<comp id="564" class="1004" name="muxLogicRAMAddr_to_store_ln227_fu_564">
+<comp id="564" class="1004" name="muxLogicRAMAddr_to_store_ln199_fu_564">
 <pin_list>
 <pin id="565" dir="0" index="0" bw="7" slack="4"/>
 <pin id="566" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicRAMAddr_to_store_ln227/5 "/>
+<opset="muxLogicRAMAddr_to_store_ln199/5 "/>
 </bind>
 </comp>
 
-<comp id="567" class="1004" name="muxLogicRAMAddr_to_store_ln227_fu_567">
+<comp id="567" class="1004" name="muxLogicRAMAddr_to_store_ln199_fu_567">
 <pin_list>
 <pin id="568" dir="0" index="0" bw="7" slack="4"/>
 <pin id="569" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicRAMAddr_to_store_ln227/5 "/>
+<opset="muxLogicRAMAddr_to_store_ln199/5 "/>
 </bind>
 </comp>
 
-<comp id="570" class="1004" name="muxLogicRAMAddr_to_store_ln227_fu_570">
+<comp id="570" class="1004" name="muxLogicRAMAddr_to_store_ln199_fu_570">
 <pin_list>
 <pin id="571" dir="0" index="0" bw="7" slack="4"/>
 <pin id="572" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicRAMAddr_to_store_ln227/5 "/>
+<opset="muxLogicRAMAddr_to_store_ln199/5 "/>
 </bind>
 </comp>
 
-<comp id="573" class="1004" name="muxLogicRAMAddr_to_store_ln227_fu_573">
+<comp id="573" class="1004" name="muxLogicRAMAddr_to_store_ln199_fu_573">
 <pin_list>
 <pin id="574" dir="0" index="0" bw="7" slack="4"/>
 <pin id="575" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicRAMAddr_to_store_ln227/5 "/>
+<opset="muxLogicRAMAddr_to_store_ln199/5 "/>
 </bind>
 </comp>
 
-<comp id="576" class="1004" name="muxLogicRAMAddr_to_store_ln227_fu_576">
+<comp id="576" class="1004" name="muxLogicRAMAddr_to_store_ln199_fu_576">
 <pin_list>
 <pin id="577" dir="0" index="0" bw="7" slack="4"/>
 <pin id="578" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicRAMAddr_to_store_ln227/5 "/>
+<opset="muxLogicRAMAddr_to_store_ln199/5 "/>
 </bind>
 </comp>
 
-<comp id="579" class="1004" name="muxLogicRAMAddr_to_store_ln227_fu_579">
+<comp id="579" class="1004" name="muxLogicRAMAddr_to_store_ln199_fu_579">
 <pin_list>
 <pin id="580" dir="0" index="0" bw="7" slack="4"/>
 <pin id="581" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicRAMAddr_to_store_ln227/5 "/>
+<opset="muxLogicRAMAddr_to_store_ln199/5 "/>
 </bind>
 </comp>
 
@@ -1909,23 +1909,23 @@ ret_ln0                                  (ret              ) [ 000000]
 </bind>
 </comp>
 
-<comp id="589" class="1005" name="icmp_ln225_reg_589">
+<comp id="589" class="1005" name="icmp_ln197_reg_589">
 <pin_list>
 <pin id="590" dir="0" index="0" bw="1" slack="3"/>
 <pin id="591" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="icmp_ln225 "/>
+<opset="icmp_ln197 "/>
 </bind>
 </comp>
 
-<comp id="593" class="1005" name="trunc_ln225_reg_593">
+<comp id="593" class="1005" name="trunc_ln197_reg_593">
 <pin_list>
 <pin id="594" dir="0" index="0" bw="3" slack="1"/>
 <pin id="595" dir="1" index="1" bw="3" slack="1"/>
 </pin_list>
 <bind>
-<opset="trunc_ln225 "/>
+<opset="trunc_ln197 "/>
 </bind>
 </comp>
 
@@ -2574,14 +2574,14 @@ ret_ln0                                  (ret              ) [ 000000]
 	Port: kernel_mhsa_Pipeline_RESIDUAL : xb2_7 | {1 2 }
   - Chain level:
 	State 1
-		store_ln225 : 1
-		i_8 : 1
-		add_ln225 : 2
-		icmp_ln225 : 2
-		br_ln225 : 3
-		trunc_ln225 : 2
-		lshr_ln9 : 2
-		zext_ln225 : 3
+		store_ln197 : 1
+		i_6 : 1
+		add_ln197 : 2
+		icmp_ln197 : 2
+		br_ln197 : 3
+		trunc_ln197 : 2
+		lshr_ln7 : 2
+		zext_ln197 : 3
 		current_input_addr : 4
 		current_input_8_addr : 4
 		current_input_9_addr : 4
@@ -2630,8 +2630,8 @@ ret_ln0                                  (ret              ) [ 000000]
 		xb2_6_load : 5
 		muxLogicRAMAddr_to_xb2_7_load : 5
 		xb2_7_load : 5
-		switch_ln227 : 3
-		store_ln225 : 3
+		switch_ln199 : 3
+		store_ln197 : 3
 	State 2
 		tmp_5 : 1
 		tmp_6 : 1
@@ -2651,9 +2651,9 @@ ret_ln0                                  (ret              ) [ 000000]
 | sparsemux|                   tmp_5_fu_474                  |    0    |    0    |    96   |
 |          |                   tmp_6_fu_513                  |    0    |    0    |    96   |
 |----------|-------------------------------------------------|---------|---------|---------|
-|    add   |                 add_ln225_fu_341                |    0    |    0    |    10   |
+|    add   |                 add_ln197_fu_341                |    0    |    0    |    10   |
 |----------|-------------------------------------------------|---------|---------|---------|
-|   icmp   |                icmp_ln225_fu_347                |    0    |    0    |    4    |
+|   icmp   |                icmp_ln197_fu_347                |    0    |    0    |    4    |
 |----------|-------------------------------------------------|---------|---------|---------|
 |   fadd   |                    grp_fu_326                   |    1    |    0    |    0    |
 |----------|-------------------------------------------------|---------|---------|---------|
@@ -2676,22 +2676,22 @@ ret_ln0                                  (ret              ) [ 000000]
 |          |       muxLogicRAMAddr_to_xb2_7_load_fu_447      |    0    |    0    |    0    |
 |          |             muxLogicI0_to_add_fu_552            |    0    |    0    |    0    |
 |          |             muxLogicI1_to_add_fu_555            |    0    |    0    |    0    |
-|          |      muxLogicRAMAddr_to_store_ln227_fu_558      |    0    |    0    |    0    |
-|          |      muxLogicRAMAddr_to_store_ln227_fu_561      |    0    |    0    |    0    |
-|          |      muxLogicRAMAddr_to_store_ln227_fu_564      |    0    |    0    |    0    |
-|          |      muxLogicRAMAddr_to_store_ln227_fu_567      |    0    |    0    |    0    |
-|          |      muxLogicRAMAddr_to_store_ln227_fu_570      |    0    |    0    |    0    |
-|          |      muxLogicRAMAddr_to_store_ln227_fu_573      |    0    |    0    |    0    |
-|          |      muxLogicRAMAddr_to_store_ln227_fu_576      |    0    |    0    |    0    |
-|          |      muxLogicRAMAddr_to_store_ln227_fu_579      |    0    |    0    |    0    |
+|          |      muxLogicRAMAddr_to_store_ln199_fu_558      |    0    |    0    |    0    |
+|          |      muxLogicRAMAddr_to_store_ln199_fu_561      |    0    |    0    |    0    |
+|          |      muxLogicRAMAddr_to_store_ln199_fu_564      |    0    |    0    |    0    |
+|          |      muxLogicRAMAddr_to_store_ln199_fu_567      |    0    |    0    |    0    |
+|          |      muxLogicRAMAddr_to_store_ln199_fu_570      |    0    |    0    |    0    |
+|          |      muxLogicRAMAddr_to_store_ln199_fu_573      |    0    |    0    |    0    |
+|          |      muxLogicRAMAddr_to_store_ln199_fu_576      |    0    |    0    |    0    |
+|          |      muxLogicRAMAddr_to_store_ln199_fu_579      |    0    |    0    |    0    |
 |----------|-------------------------------------------------|---------|---------|---------|
-|   trunc  |                trunc_ln225_fu_353               |    0    |    0    |    0    |
+|   trunc  |                trunc_ln197_fu_353               |    0    |    0    |    0    |
 |----------|-------------------------------------------------|---------|---------|---------|
-|partselect|                 lshr_ln9_fu_357                 |    0    |    0    |    0    |
+|partselect|                 lshr_ln7_fu_357                 |    0    |    0    |    0    |
 |----------|-------------------------------------------------|---------|---------|---------|
-|   zext   |                zext_ln225_fu_367                |    0    |    0    |    0    |
+|   zext   |                zext_ln197_fu_367                |    0    |    0    |    0    |
 |----------|-------------------------------------------------|---------|---------|---------|
-|  switch  |               switch_ln227_fu_451               |    0    |    0    |    0    |
+|  switch  |               switch_ln199_fu_451               |    0    |    0    |    0    |
 |----------|-------------------------------------------------|---------|---------|---------|
 |   Total  |                                                 |    1    |    0    |   206   |
 |----------|-------------------------------------------------|---------|---------|---------|
@@ -2713,10 +2713,10 @@ N/A
 | current_input_9_addr_reg_613|    7   |
 |  current_input_addr_reg_599 |    7   |
 |          i_reg_582          |   10   |
-|      icmp_ln225_reg_589     |    1   |
+|      icmp_ln197_reg_589     |    1   |
 |        tmp_5_reg_695        |   32   |
 |        tmp_6_reg_701        |   32   |
-|     trunc_ln225_reg_593     |    3   |
+|     trunc_ln197_reg_593     |    3   |
 |      xb2_1_addr_reg_660     |    7   |
 |      xb2_2_addr_reg_665     |    7   |
 |      xb2_3_addr_reg_670     |    7   |

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa_Outline_SOFTMAX_HEADS'" level="0">
-<item name = "Date">Sat Sep 27 23:15:13 2025
+<item name = "Date">Tue Sep 30 23:58:40 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.915 ns, 1.08 ns</column>
+<column name="ap_clk">4.00 ns, 3.696 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">37285, 37285, 0.149 ms, 0.149 ms, 37285, 37285, no</column>
+<column name="">481, 37285, 1.924 us, 0.149 ms, 481, 37285, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- SOFTMAX_HEADS">37284, 37284, 3107, -, -, 12, no</column>
+<column name="- SOFTMAX_HEADS">480, 37284, 40 ~ 3107, -, -, 12, no</column>
 </table>
 </item>
 </section>

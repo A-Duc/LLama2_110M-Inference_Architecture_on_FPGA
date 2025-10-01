@@ -115,7 +115,7 @@ newFuncRoot:3 %sext_ln27_cast = sext i62 %sext_ln27_read
 
 <Node id="24" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem1, void @empty_54, i32 0, i32 0, void @empty_113, i32 0, i32 0, void @empty_57, void @empty_56, void @empty_113, i32 16, i32 16, i32 256, i32 16, void @empty_113, void @empty_113, i32 4294967295, i32 0, i32 0
+newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem1, void @empty_68, i32 0, i32 0, void @empty_115, i32 0, i32 0, void @empty_71, void @empty_70, void @empty_115, i32 16, i32 16, i32 256, i32 16, void @empty_115, void @empty_115, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -160,10 +160,10 @@ newFuncRoot:6 %br_ln0 = br void %for.inc16.i
 
 <Node id="28" bw="10" op_0_bw="10" op_1_bw="0">
 <![CDATA[
-for.inc16.i:0 %i_7 = load i10 %i
+for.inc16.i:0 %i_5 = load i10 %i
 
 ]]></Node>
-<StgValue><ssdm name="i_7"/></StgValue>
+<StgValue><ssdm name="i_5"/></StgValue>
 </operation>
 
 <operation id="18" st_id="1" stage="1" lat="1">
@@ -175,7 +175,7 @@ for.inc16.i:0 %i_7 = load i10 %i
 
 <Node id="29" bw="10" op_0_bw="10" op_1_bw="10">
 <![CDATA[
-for.inc16.i:1 %add_ln27 = add i10 %i_7, i10 1
+for.inc16.i:1 %add_ln27 = add i10 %i_5, i10 1
 
 ]]></Node>
 <StgValue><ssdm name="add_ln27"/></StgValue>
@@ -205,7 +205,7 @@ for.inc16.i:2 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gm
 
 <Node id="31" bw="1" op_0_bw="10" op_1_bw="10">
 <![CDATA[
-for.inc16.i:3 %icmp_ln27 = icmp_eq  i10 %i_7, i10 768
+for.inc16.i:3 %icmp_ln27 = icmp_eq  i10 %i_5, i10 768
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln27"/></StgValue>
@@ -236,7 +236,7 @@ for.inc16.i:4 %br_ln27 = br i1 %icmp_ln27, void %for.inc16.i.split, void %kernel
 
 <Node id="35" bw="3" op_0_bw="10">
 <![CDATA[
-for.inc16.i.split:1 %trunc_ln27 = trunc i10 %i_7
+for.inc16.i.split:1 %trunc_ln27 = trunc i10 %i_5
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln27"/></StgValue>
@@ -252,10 +252,10 @@ for.inc16.i.split:1 %trunc_ln27 = trunc i10 %i_7
 
 <Node id="39" bw="7" op_0_bw="7" op_1_bw="10" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-for.inc16.i.split:5 %lshr_ln4 = partselect i7 @_ssdm_op_PartSelect.i7.i10.i32.i32, i10 %i_7, i32 3, i32 9
+for.inc16.i.split:5 %lshr_ln3 = partselect i7 @_ssdm_op_PartSelect.i7.i10.i32.i32, i10 %i_5, i32 3, i32 9
 
 ]]></Node>
-<StgValue><ssdm name="lshr_ln4"/></StgValue>
+<StgValue><ssdm name="lshr_ln3"/></StgValue>
 </operation>
 
 <operation id="24" st_id="1" stage="1" lat="1">
@@ -268,7 +268,7 @@ for.inc16.i.split:5 %lshr_ln4 = partselect i7 @_ssdm_op_PartSelect.i7.i10.i32.i3
 
 <Node id="40" bw="64" op_0_bw="7">
 <![CDATA[
-for.inc16.i.split:6 %zext_ln27 = zext i7 %lshr_ln4
+for.inc16.i.split:6 %zext_ln27 = zext i7 %lshr_ln3
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln27"/></StgValue>
@@ -796,7 +796,7 @@ for.inc16.i.split:48 %out_rms_vec_7_addr = getelementptr i32 %out_rms_vec_7, i64
 
 <Node id="83" bw="0" op_0_bw="3" op_1_bw="0" op_2_bw="3" op_3_bw="0" op_4_bw="3" op_5_bw="0" op_6_bw="3" op_7_bw="0" op_8_bw="3" op_9_bw="0" op_10_bw="3" op_11_bw="0" op_12_bw="3" op_13_bw="0" op_14_bw="3" op_15_bw="0">
 <![CDATA[
-for.inc16.i.split:49 %switch_ln28 = switch i3 %trunc_ln27, void %arrayidx15.i170.case.7, i3 0, void %arrayidx15.i170.case.0, i3 1, void %arrayidx15.i170.case.1, i3 2, void %arrayidx15.i170.case.2, i3 3, void %arrayidx15.i170.case.3, i3 4, void %arrayidx15.i170.case.4, i3 5, void %arrayidx15.i170.case.5, i3 6, void %arrayidx15.i170.case.6
+for.inc16.i.split:49 %switch_ln28 = switch i3 %trunc_ln27, void %arrayidx15.i90.case.7, i3 0, void %arrayidx15.i90.case.0, i3 1, void %arrayidx15.i90.case.1, i3 2, void %arrayidx15.i90.case.2, i3 3, void %arrayidx15.i90.case.3, i3 4, void %arrayidx15.i90.case.4, i3 5, void %arrayidx15.i90.case.5, i3 6, void %arrayidx15.i90.case.6
 
 ]]></Node>
 <StgValue><ssdm name="switch_ln28"/></StgValue>
@@ -812,7 +812,7 @@ for.inc16.i.split:49 %switch_ln28 = switch i3 %trunc_ln27, void %arrayidx15.i170
 
 <Node id="125" bw="0" op_0_bw="10" op_1_bw="10" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-arrayidx15.i170.exit:0 %store_ln27 = store i10 %add_ln27, i10 %i
+arrayidx15.i90.exit:0 %store_ln27 = store i10 %add_ln27, i10 %i
 
 ]]></Node>
 <StgValue><ssdm name="store_ln27"/></StgValue>
@@ -828,7 +828,7 @@ arrayidx15.i170.exit:0 %store_ln27 = store i10 %add_ln27, i10 %i
 
 <Node id="126" bw="0" op_0_bw="0">
 <![CDATA[
-arrayidx15.i170.exit:1 %br_ln27 = br void %for.inc16.i
+arrayidx15.i90.exit:1 %br_ln27 = br void %for.inc16.i
 
 ]]></Node>
 <StgValue><ssdm name="br_ln27"/></StgValue>
@@ -1128,7 +1128,7 @@ for.inc16.i.split:39 %muxLogicI1_to_mul13_i = muxlogic i32 %bitcast_ln28
 
 <Node id="36" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-for.inc16.i.split:2 %specpipeline_ln27 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_113
+for.inc16.i.split:2 %specpipeline_ln27 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_115
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln27"/></StgValue>
@@ -1158,7 +1158,7 @@ for.inc16.i.split:3 %speclooptripcount_ln27 = speclooptripcount void @_ssdm_op_S
 
 <Node id="38" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.inc16.i.split:4 %specloopname_ln27 = specloopname void @_ssdm_op_SpecLoopName, void @empty_69
+for.inc16.i.split:4 %specloopname_ln27 = specloopname void @_ssdm_op_SpecLoopName, void @empty_88
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln27"/></StgValue>
@@ -1208,7 +1208,7 @@ kernel_rmsnorm.exit.exitStub:0 %ret_ln0 = ret
 
 <Node id="85" bw="0" op_0_bw="32">
 <![CDATA[
-arrayidx15.i170.case.6:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
+arrayidx15.i90.case.6:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMData_to_store_ln28"/></StgValue>
@@ -1224,7 +1224,7 @@ arrayidx15.i170.case.6:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 <Node id="86" bw="0" op_0_bw="7">
 <![CDATA[
-arrayidx15.i170.case.6:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_6_addr
+arrayidx15.i90.case.6:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_6_addr
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMAddr_to_store_ln28"/></StgValue>
@@ -1240,7 +1240,7 @@ arrayidx15.i170.case.6:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_v
 
 <Node id="87" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-arrayidx15.i170.case.6:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_6_addr
+arrayidx15.i90.case.6:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_6_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln28"/></StgValue>
@@ -1256,7 +1256,7 @@ arrayidx15.i170.case.6:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_6_add
 
 <Node id="88" bw="0" op_0_bw="0">
 <![CDATA[
-arrayidx15.i170.case.6:3 %br_ln28 = br void %arrayidx15.i170.exit
+arrayidx15.i90.case.6:3 %br_ln28 = br void %arrayidx15.i90.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln28"/></StgValue>
@@ -1272,7 +1272,7 @@ arrayidx15.i170.case.6:3 %br_ln28 = br void %arrayidx15.i170.exit
 
 <Node id="90" bw="0" op_0_bw="32">
 <![CDATA[
-arrayidx15.i170.case.5:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
+arrayidx15.i90.case.5:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMData_to_store_ln28"/></StgValue>
@@ -1288,7 +1288,7 @@ arrayidx15.i170.case.5:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 <Node id="91" bw="0" op_0_bw="7">
 <![CDATA[
-arrayidx15.i170.case.5:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_5_addr
+arrayidx15.i90.case.5:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_5_addr
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMAddr_to_store_ln28"/></StgValue>
@@ -1304,7 +1304,7 @@ arrayidx15.i170.case.5:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_v
 
 <Node id="92" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-arrayidx15.i170.case.5:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_5_addr
+arrayidx15.i90.case.5:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_5_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln28"/></StgValue>
@@ -1320,7 +1320,7 @@ arrayidx15.i170.case.5:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_5_add
 
 <Node id="93" bw="0" op_0_bw="0">
 <![CDATA[
-arrayidx15.i170.case.5:3 %br_ln28 = br void %arrayidx15.i170.exit
+arrayidx15.i90.case.5:3 %br_ln28 = br void %arrayidx15.i90.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln28"/></StgValue>
@@ -1336,7 +1336,7 @@ arrayidx15.i170.case.5:3 %br_ln28 = br void %arrayidx15.i170.exit
 
 <Node id="95" bw="0" op_0_bw="32">
 <![CDATA[
-arrayidx15.i170.case.4:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
+arrayidx15.i90.case.4:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMData_to_store_ln28"/></StgValue>
@@ -1352,7 +1352,7 @@ arrayidx15.i170.case.4:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 <Node id="96" bw="0" op_0_bw="7">
 <![CDATA[
-arrayidx15.i170.case.4:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_4_addr
+arrayidx15.i90.case.4:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_4_addr
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMAddr_to_store_ln28"/></StgValue>
@@ -1368,7 +1368,7 @@ arrayidx15.i170.case.4:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_v
 
 <Node id="97" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-arrayidx15.i170.case.4:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_4_addr
+arrayidx15.i90.case.4:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_4_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln28"/></StgValue>
@@ -1384,7 +1384,7 @@ arrayidx15.i170.case.4:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_4_add
 
 <Node id="98" bw="0" op_0_bw="0">
 <![CDATA[
-arrayidx15.i170.case.4:3 %br_ln28 = br void %arrayidx15.i170.exit
+arrayidx15.i90.case.4:3 %br_ln28 = br void %arrayidx15.i90.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln28"/></StgValue>
@@ -1400,7 +1400,7 @@ arrayidx15.i170.case.4:3 %br_ln28 = br void %arrayidx15.i170.exit
 
 <Node id="100" bw="0" op_0_bw="32">
 <![CDATA[
-arrayidx15.i170.case.3:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
+arrayidx15.i90.case.3:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMData_to_store_ln28"/></StgValue>
@@ -1416,7 +1416,7 @@ arrayidx15.i170.case.3:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 <Node id="101" bw="0" op_0_bw="7">
 <![CDATA[
-arrayidx15.i170.case.3:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_3_addr
+arrayidx15.i90.case.3:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_3_addr
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMAddr_to_store_ln28"/></StgValue>
@@ -1432,7 +1432,7 @@ arrayidx15.i170.case.3:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_v
 
 <Node id="102" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-arrayidx15.i170.case.3:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_3_addr
+arrayidx15.i90.case.3:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_3_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln28"/></StgValue>
@@ -1448,7 +1448,7 @@ arrayidx15.i170.case.3:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_3_add
 
 <Node id="103" bw="0" op_0_bw="0">
 <![CDATA[
-arrayidx15.i170.case.3:3 %br_ln28 = br void %arrayidx15.i170.exit
+arrayidx15.i90.case.3:3 %br_ln28 = br void %arrayidx15.i90.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln28"/></StgValue>
@@ -1464,7 +1464,7 @@ arrayidx15.i170.case.3:3 %br_ln28 = br void %arrayidx15.i170.exit
 
 <Node id="105" bw="0" op_0_bw="32">
 <![CDATA[
-arrayidx15.i170.case.2:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
+arrayidx15.i90.case.2:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMData_to_store_ln28"/></StgValue>
@@ -1480,7 +1480,7 @@ arrayidx15.i170.case.2:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 <Node id="106" bw="0" op_0_bw="7">
 <![CDATA[
-arrayidx15.i170.case.2:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_2_addr
+arrayidx15.i90.case.2:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_2_addr
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMAddr_to_store_ln28"/></StgValue>
@@ -1496,7 +1496,7 @@ arrayidx15.i170.case.2:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_v
 
 <Node id="107" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-arrayidx15.i170.case.2:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_2_addr
+arrayidx15.i90.case.2:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_2_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln28"/></StgValue>
@@ -1512,7 +1512,7 @@ arrayidx15.i170.case.2:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_2_add
 
 <Node id="108" bw="0" op_0_bw="0">
 <![CDATA[
-arrayidx15.i170.case.2:3 %br_ln28 = br void %arrayidx15.i170.exit
+arrayidx15.i90.case.2:3 %br_ln28 = br void %arrayidx15.i90.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln28"/></StgValue>
@@ -1528,7 +1528,7 @@ arrayidx15.i170.case.2:3 %br_ln28 = br void %arrayidx15.i170.exit
 
 <Node id="110" bw="0" op_0_bw="32">
 <![CDATA[
-arrayidx15.i170.case.1:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
+arrayidx15.i90.case.1:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMData_to_store_ln28"/></StgValue>
@@ -1544,7 +1544,7 @@ arrayidx15.i170.case.1:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 <Node id="111" bw="0" op_0_bw="7">
 <![CDATA[
-arrayidx15.i170.case.1:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_1_addr
+arrayidx15.i90.case.1:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_1_addr
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMAddr_to_store_ln28"/></StgValue>
@@ -1560,7 +1560,7 @@ arrayidx15.i170.case.1:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_v
 
 <Node id="112" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-arrayidx15.i170.case.1:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_1_addr
+arrayidx15.i90.case.1:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_1_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln28"/></StgValue>
@@ -1576,7 +1576,7 @@ arrayidx15.i170.case.1:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_1_add
 
 <Node id="113" bw="0" op_0_bw="0">
 <![CDATA[
-arrayidx15.i170.case.1:3 %br_ln28 = br void %arrayidx15.i170.exit
+arrayidx15.i90.case.1:3 %br_ln28 = br void %arrayidx15.i90.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln28"/></StgValue>
@@ -1592,7 +1592,7 @@ arrayidx15.i170.case.1:3 %br_ln28 = br void %arrayidx15.i170.exit
 
 <Node id="115" bw="0" op_0_bw="32">
 <![CDATA[
-arrayidx15.i170.case.0:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
+arrayidx15.i90.case.0:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMData_to_store_ln28"/></StgValue>
@@ -1608,7 +1608,7 @@ arrayidx15.i170.case.0:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 <Node id="116" bw="0" op_0_bw="7">
 <![CDATA[
-arrayidx15.i170.case.0:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_addr
+arrayidx15.i90.case.0:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_addr
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMAddr_to_store_ln28"/></StgValue>
@@ -1624,7 +1624,7 @@ arrayidx15.i170.case.0:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_v
 
 <Node id="117" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-arrayidx15.i170.case.0:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_addr
+arrayidx15.i90.case.0:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln28"/></StgValue>
@@ -1640,7 +1640,7 @@ arrayidx15.i170.case.0:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_addr
 
 <Node id="118" bw="0" op_0_bw="0">
 <![CDATA[
-arrayidx15.i170.case.0:3 %br_ln28 = br void %arrayidx15.i170.exit
+arrayidx15.i90.case.0:3 %br_ln28 = br void %arrayidx15.i90.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln28"/></StgValue>
@@ -1656,7 +1656,7 @@ arrayidx15.i170.case.0:3 %br_ln28 = br void %arrayidx15.i170.exit
 
 <Node id="120" bw="0" op_0_bw="32">
 <![CDATA[
-arrayidx15.i170.case.7:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
+arrayidx15.i90.case.7:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMData_to_store_ln28"/></StgValue>
@@ -1672,7 +1672,7 @@ arrayidx15.i170.case.7:0 %muxLogicRAMData_to_store_ln28 = muxlogic i32 %mul13_i
 
 <Node id="121" bw="0" op_0_bw="7">
 <![CDATA[
-arrayidx15.i170.case.7:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_7_addr
+arrayidx15.i90.case.7:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_vec_7_addr
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicRAMAddr_to_store_ln28"/></StgValue>
@@ -1688,7 +1688,7 @@ arrayidx15.i170.case.7:1 %muxLogicRAMAddr_to_store_ln28 = muxlogic i7 %out_rms_v
 
 <Node id="122" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-arrayidx15.i170.case.7:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_7_addr
+arrayidx15.i90.case.7:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_7_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln28"/></StgValue>
@@ -1704,7 +1704,7 @@ arrayidx15.i170.case.7:2 %store_ln28 = store i32 %mul13_i, i7 %out_rms_vec_7_add
 
 <Node id="123" bw="0" op_0_bw="0">
 <![CDATA[
-arrayidx15.i170.case.7:3 %br_ln28 = br void %arrayidx15.i170.exit
+arrayidx15.i90.case.7:3 %br_ln28 = br void %arrayidx15.i90.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln28"/></StgValue>
@@ -1808,23 +1808,23 @@ arrayidx15.i170.case.7:3 %br_ln28 = br void %arrayidx15.i170.exit
 </dataflow>
 <dataflow id="164" from="gmem1" to="specinterface_ln0" fromId="134" toId="14">
 </dataflow>
-<dataflow id="166" from="empty_54" to="specinterface_ln0" fromId="165" toId="14">
+<dataflow id="166" from="empty_68" to="specinterface_ln0" fromId="165" toId="14">
 </dataflow>
 <dataflow id="168" from="StgValue_167" to="specinterface_ln0" fromId="167" toId="14">
 </dataflow>
 <dataflow id="169" from="StgValue_167" to="specinterface_ln0" fromId="167" toId="14">
 </dataflow>
-<dataflow id="171" from="empty_113" to="specinterface_ln0" fromId="170" toId="14">
+<dataflow id="171" from="empty_115" to="specinterface_ln0" fromId="170" toId="14">
 </dataflow>
 <dataflow id="172" from="StgValue_167" to="specinterface_ln0" fromId="167" toId="14">
 </dataflow>
 <dataflow id="173" from="StgValue_167" to="specinterface_ln0" fromId="167" toId="14">
 </dataflow>
-<dataflow id="175" from="empty_57" to="specinterface_ln0" fromId="174" toId="14">
+<dataflow id="175" from="empty_71" to="specinterface_ln0" fromId="174" toId="14">
 </dataflow>
-<dataflow id="177" from="empty_56" to="specinterface_ln0" fromId="176" toId="14">
+<dataflow id="177" from="empty_70" to="specinterface_ln0" fromId="176" toId="14">
 </dataflow>
-<dataflow id="178" from="empty_113" to="specinterface_ln0" fromId="170" toId="14">
+<dataflow id="178" from="empty_115" to="specinterface_ln0" fromId="170" toId="14">
 </dataflow>
 <dataflow id="180" from="StgValue_179" to="specinterface_ln0" fromId="179" toId="14">
 </dataflow>
@@ -1834,9 +1834,9 @@ arrayidx15.i170.case.7:3 %br_ln28 = br void %arrayidx15.i170.exit
 </dataflow>
 <dataflow id="184" from="StgValue_179" to="specinterface_ln0" fromId="179" toId="14">
 </dataflow>
-<dataflow id="185" from="empty_113" to="specinterface_ln0" fromId="170" toId="14">
+<dataflow id="185" from="empty_115" to="specinterface_ln0" fromId="170" toId="14">
 </dataflow>
-<dataflow id="186" from="empty_113" to="specinterface_ln0" fromId="170" toId="14">
+<dataflow id="186" from="empty_115" to="specinterface_ln0" fromId="170" toId="14">
 </dataflow>
 <dataflow id="188" from="StgValue_187" to="specinterface_ln0" fromId="187" toId="14">
 </dataflow>
@@ -1848,9 +1848,9 @@ arrayidx15.i170.case.7:3 %br_ln28 = br void %arrayidx15.i170.exit
 </dataflow>
 <dataflow id="193" from="i" to="store_ln27" fromId="10" toId="15">
 </dataflow>
-<dataflow id="194" from="i" to="i_7" fromId="10" toId="17">
+<dataflow id="194" from="i" to="i_5" fromId="10" toId="17">
 </dataflow>
-<dataflow id="195" from="i_7" to="add_ln27" fromId="17" toId="18">
+<dataflow id="195" from="i_5" to="add_ln27" fromId="17" toId="18">
 </dataflow>
 <dataflow id="197" from="StgValue_196" to="add_ln27" fromId="196" toId="18">
 </dataflow>
@@ -1858,23 +1858,23 @@ arrayidx15.i170.case.7:3 %br_ln28 = br void %arrayidx15.i170.exit
 </dataflow>
 <dataflow id="200" from="gmem1" to="specbitsmap_ln0" fromId="134" toId="19">
 </dataflow>
-<dataflow id="201" from="i_7" to="icmp_ln27" fromId="17" toId="20">
+<dataflow id="201" from="i_5" to="icmp_ln27" fromId="17" toId="20">
 </dataflow>
 <dataflow id="203" from="StgValue_202" to="icmp_ln27" fromId="202" toId="20">
 </dataflow>
 <dataflow id="204" from="icmp_ln27" to="br_ln27" fromId="20" toId="21">
 </dataflow>
-<dataflow id="205" from="i_7" to="trunc_ln27" fromId="17" toId="22">
+<dataflow id="205" from="i_5" to="trunc_ln27" fromId="17" toId="22">
 </dataflow>
-<dataflow id="207" from="_ssdm_op_PartSelect.i7.i10.i32.i32" to="lshr_ln4" fromId="206" toId="23">
+<dataflow id="207" from="_ssdm_op_PartSelect.i7.i10.i32.i32" to="lshr_ln3" fromId="206" toId="23">
 </dataflow>
-<dataflow id="208" from="i_7" to="lshr_ln4" fromId="17" toId="23">
+<dataflow id="208" from="i_5" to="lshr_ln3" fromId="17" toId="23">
 </dataflow>
-<dataflow id="210" from="StgValue_209" to="lshr_ln4" fromId="209" toId="23">
+<dataflow id="210" from="StgValue_209" to="lshr_ln3" fromId="209" toId="23">
 </dataflow>
-<dataflow id="212" from="StgValue_211" to="lshr_ln4" fromId="211" toId="23">
+<dataflow id="212" from="StgValue_211" to="lshr_ln3" fromId="211" toId="23">
 </dataflow>
-<dataflow id="213" from="lshr_ln4" to="zext_ln27" fromId="23" toId="24">
+<dataflow id="213" from="lshr_ln3" to="zext_ln27" fromId="23" toId="24">
 </dataflow>
 <dataflow id="214" from="current_input" to="current_input_addr" fromId="144" toId="25">
 </dataflow>
@@ -2110,7 +2110,7 @@ arrayidx15.i170.case.7:3 %br_ln28 = br void %arrayidx15.i170.exit
 </dataflow>
 <dataflow id="343" from="StgValue_167" to="specpipeline_ln27" fromId="167" toId="78">
 </dataflow>
-<dataflow id="344" from="empty_113" to="specpipeline_ln27" fromId="170" toId="78">
+<dataflow id="344" from="empty_115" to="specpipeline_ln27" fromId="170" toId="78">
 </dataflow>
 <dataflow id="346" from="_ssdm_op_SpecLoopTripCount" to="speclooptripcount_ln27" fromId="345" toId="79">
 </dataflow>
@@ -2122,7 +2122,7 @@ arrayidx15.i170.case.7:3 %br_ln28 = br void %arrayidx15.i170.exit
 </dataflow>
 <dataflow id="352" from="_ssdm_op_SpecLoopName" to="specloopname_ln27" fromId="351" toId="80">
 </dataflow>
-<dataflow id="354" from="empty_69" to="specloopname_ln27" fromId="353" toId="80">
+<dataflow id="354" from="empty_88" to="specloopname_ln27" fromId="353" toId="80">
 </dataflow>
 <dataflow id="355" from="mul10_i" to="mul13_i" fromId="71" toId="81">
 </dataflow>

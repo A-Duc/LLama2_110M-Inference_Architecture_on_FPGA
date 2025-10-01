@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 30
+set cdfgNum 29
 set C_modelName {load_mat}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -22,7 +22,6 @@ set C_modelArgList {
 	{ gmem1 int 32 regular {axi_master 0 stable }  }
 	{ i_mat int 64 regular {ap_stable 0} }
 	{ matrix_stream int 32 regular {fifo 1 volatile }  }
-	{ idx int 25 regular {ap_stable 0} }
 }
 set hasAXIMCache 0
 set l_AXIML2Cache [list]
@@ -30,10 +29,9 @@ set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem1", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "weights","offset": { "type": "dynamic","port_name": "weights","bundle": "control"},"direction": "READONLY"}]}]} , 
  	{ "Name" : "i_mat", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "matrix_stream", "interface" : "fifo", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "idx", "interface" : "wire", "bitwidth" : 25, "direction" : "READONLY"} ]}
+ 	{ "Name" : "matrix_stream", "interface" : "fifo", "bitwidth" : 32, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 60
+set portNum 59
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -94,7 +92,6 @@ set portList {
 	{ matrix_stream_write sc_out sc_logic 1 signal 2 } 
 	{ matrix_stream_num_data_valid sc_in sc_lv 7 signal 2 } 
 	{ matrix_stream_fifo_cap sc_in sc_lv 7 signal 2 } 
-	{ idx sc_in sc_lv 25 signal 3 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -155,15 +152,13 @@ set NewPortList {[
  	{ "name": "matrix_stream_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "matrix_stream", "role": "full_n" }} , 
  	{ "name": "matrix_stream_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "matrix_stream", "role": "write" }} , 
  	{ "name": "matrix_stream_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "matrix_stream", "role": "num_data_valid" }} , 
- 	{ "name": "matrix_stream_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "matrix_stream", "role": "fifo_cap" }} , 
- 	{ "name": "idx", "direction": "in", "datatype": "sc_lv", "bitwidth":25, "type": "signal", "bundle":{"name": "idx", "role": "default" }}  ]}
+ 	{ "name": "matrix_stream_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "matrix_stream", "role": "fifo_cap" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	load_mat {
 		gmem1 {Type I LastRead 1 FirstWrite -1}
 		i_mat {Type I LastRead 0 FirstWrite -1}
-		matrix_stream {Type O LastRead -1 FirstWrite 1}
-		idx {Type I LastRead 0 FirstWrite -1}}
+		matrix_stream {Type O LastRead -1 FirstWrite 1}}
 	load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1 {
 		gmem1 {Type I LastRead 1 FirstWrite -1}
 		sext_ln23 {Type I LastRead 0 FirstWrite -1}
@@ -183,5 +178,4 @@ set Spec2ImplPortList {
 	 { m_axi {  { m_axi_gmem1_0_AWVALID VALID 1 1 }  { m_axi_gmem1_0_AWREADY READY 0 1 }  { m_axi_gmem1_0_AWADDR ADDR 1 64 }  { m_axi_gmem1_0_AWID ID 1 1 }  { m_axi_gmem1_0_AWLEN SIZE 1 32 }  { m_axi_gmem1_0_AWSIZE BURST 1 3 }  { m_axi_gmem1_0_AWBURST LOCK 1 2 }  { m_axi_gmem1_0_AWLOCK CACHE 1 2 }  { m_axi_gmem1_0_AWCACHE PROT 1 4 }  { m_axi_gmem1_0_AWPROT QOS 1 3 }  { m_axi_gmem1_0_AWQOS REGION 1 4 }  { m_axi_gmem1_0_AWREGION USER 1 4 }  { m_axi_gmem1_0_AWUSER DATA 1 1 }  { m_axi_gmem1_0_WVALID VALID 1 1 }  { m_axi_gmem1_0_WREADY READY 0 1 }  { m_axi_gmem1_0_WDATA FIFONUM 1 32 }  { m_axi_gmem1_0_WSTRB STRB 1 4 }  { m_axi_gmem1_0_WLAST LAST 1 1 }  { m_axi_gmem1_0_WID ID 1 1 }  { m_axi_gmem1_0_WUSER DATA 1 1 }  { m_axi_gmem1_0_ARVALID VALID 1 1 }  { m_axi_gmem1_0_ARREADY READY 0 1 }  { m_axi_gmem1_0_ARADDR ADDR 1 64 }  { m_axi_gmem1_0_ARID ID 1 1 }  { m_axi_gmem1_0_ARLEN SIZE 1 32 }  { m_axi_gmem1_0_ARSIZE BURST 1 3 }  { m_axi_gmem1_0_ARBURST LOCK 1 2 }  { m_axi_gmem1_0_ARLOCK CACHE 1 2 }  { m_axi_gmem1_0_ARCACHE PROT 1 4 }  { m_axi_gmem1_0_ARPROT QOS 1 3 }  { m_axi_gmem1_0_ARQOS REGION 1 4 }  { m_axi_gmem1_0_ARREGION USER 1 4 }  { m_axi_gmem1_0_ARUSER DATA 1 1 }  { m_axi_gmem1_0_RVALID VALID 0 1 }  { m_axi_gmem1_0_RREADY READY 1 1 }  { m_axi_gmem1_0_RDATA FIFONUM 0 32 }  { m_axi_gmem1_0_RLAST LAST 0 1 }  { m_axi_gmem1_0_RID ID 0 1 }  { m_axi_gmem1_0_RFIFONUM LEN 0 13 }  { m_axi_gmem1_0_RUSER DATA 0 1 }  { m_axi_gmem1_0_RRESP RESP 0 2 }  { m_axi_gmem1_0_BVALID VALID 0 1 }  { m_axi_gmem1_0_BREADY READY 1 1 }  { m_axi_gmem1_0_BRESP RESP 0 2 }  { m_axi_gmem1_0_BID ID 0 1 }  { m_axi_gmem1_0_BUSER DATA 0 1 } } }
 	i_mat { ap_stable {  { i_mat in_data 0 64 } } }
 	matrix_stream { ap_fifo {  { matrix_stream_din fifo_data_in 1 32 }  { matrix_stream_full_n fifo_status 0 1 }  { matrix_stream_write fifo_port_we 1 1 }  { matrix_stream_num_data_valid fifo_status_num_data_valid 0 7 }  { matrix_stream_fifo_cap fifo_update 0 7 } } }
-	idx { ap_stable {  { idx in_data 0 25 } } }
 }

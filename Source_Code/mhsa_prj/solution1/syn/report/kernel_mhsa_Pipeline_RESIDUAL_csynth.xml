@@ -49,13 +49,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>kernel_MHSA.cpp:225</SourceLocation>
+<SourceLocation>kernel_MHSA.cpp:197</SourceLocation>
 <SummaryOfLoopViolations>
 <RESIDUAL>
 <Name>RESIDUAL</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>kernel_MHSA.cpp:225</SourceLocation>
+<SourceLocation>kernel_MHSA.cpp:197</SourceLocation>
 </RESIDUAL>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -146,7 +146,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_2831_p_din0</name>
+<name>grp_fu_2178_p_din0</name>
 <Object>kernel_mhsa_Pipeline_RESIDUAL</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -157,7 +157,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_2831_p_din1</name>
+<name>grp_fu_2178_p_din1</name>
 <Object>kernel_mhsa_Pipeline_RESIDUAL</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -168,7 +168,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_2831_p_opcode</name>
+<name>grp_fu_2178_p_opcode</name>
 <Object>kernel_mhsa_Pipeline_RESIDUAL</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -179,7 +179,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_2831_p_dout0</name>
+<name>grp_fu_2178_p_dout0</name>
 <Object>kernel_mhsa_Pipeline_RESIDUAL</Object>
 <Type>return value</Type>
 <Scope></Scope>

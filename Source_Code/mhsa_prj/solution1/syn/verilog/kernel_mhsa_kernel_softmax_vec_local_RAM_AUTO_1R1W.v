@@ -11,14 +11,14 @@ module kernel_mhsa_kernel_softmax_vec_local_RAM_AUTO_1R1W (
     q0, 
       
     address1, ce1,
-    
+    d1, we1, 
     q1, 
      
     reset, clk);
 
 parameter DataWidth = 32;
-parameter AddressWidth = 10;
-parameter AddressRange = 768;
+parameter AddressWidth = 9;
+parameter AddressRange = 512;
  
 input[AddressWidth-1:0] address0;
 input ce0;
@@ -28,7 +28,8 @@ output reg[DataWidth-1:0] q0;
  
 input[AddressWidth-1:0] address1;
 input ce1;
-
+input[DataWidth-1:0] d1;
+input we1; 
 output reg[DataWidth-1:0] q1; 
 
 input reset;
@@ -58,13 +59,18 @@ end
 
 
 
-always @(posedge clk) 
+
+
+//read first
+always @(posedge clk)  
 begin 
     if (ce1) begin
+        if (we1) 
+            ram[address1] <= d1; 
         q1 <= ram[address1];
+
     end
 end 
-
  
  
 

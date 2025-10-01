@@ -83,7 +83,7 @@ attribute shreg_extract : string;
     signal i_fu_54 : STD_LOGIC_VECTOR (9 downto 0) := "0000000000";
     signal add_ln43_fu_127_p2 : STD_LOGIC_VECTOR (9 downto 0);
     signal ap_loop_init : STD_LOGIC;
-    signal ap_sig_allocacmp_i_10 : STD_LOGIC_VECTOR (9 downto 0);
+    signal ap_sig_allocacmp_i_9 : STD_LOGIC_VECTOR (9 downto 0);
     signal ap_block_pp0_stage0 : BOOLEAN;
     signal ap_block_pp0_stage0_11001_grp1 : BOOLEAN;
     signal vector_stream_read_local : STD_LOGIC;
@@ -204,7 +204,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then
-                lshr_ln_reg_216 <= ap_sig_allocacmp_i_10(9 downto 2);
+                lshr_ln_reg_216 <= ap_sig_allocacmp_i_9(9 downto 2);
                 trunc_ln43_reg_212 <= trunc_ln43_fu_139_p1;
             end if;
         end if;
@@ -219,7 +219,7 @@ begin
                 ap_NS_fsm <= "X";
         end case;
     end process;
-    add_ln43_fu_127_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_i_10) + unsigned(ap_const_lv10_1));
+    add_ln43_fu_127_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_i_9) + unsigned(ap_const_lv10_1));
     ap_CS_fsm_pp0_stage0 <= ap_CS_fsm(0);
         ap_block_pp0_stage0 <= not((ap_const_boolean_1 = ap_const_boolean_1));
 
@@ -297,12 +297,12 @@ begin
     end process;
 
 
-    ap_sig_allocacmp_i_10_assign_proc : process(ap_CS_fsm_pp0_stage0, i_fu_54, ap_loop_init, ap_block_pp0_stage0)
+    ap_sig_allocacmp_i_9_assign_proc : process(ap_CS_fsm_pp0_stage0, i_fu_54, ap_loop_init, ap_block_pp0_stage0)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage0) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (ap_loop_init = ap_const_logic_1))) then 
-            ap_sig_allocacmp_i_10 <= ap_const_lv10_0;
+            ap_sig_allocacmp_i_9 <= ap_const_lv10_0;
         else 
-            ap_sig_allocacmp_i_10 <= i_fu_54;
+            ap_sig_allocacmp_i_9 <= i_fu_54;
         end if; 
     end process;
 
@@ -403,8 +403,8 @@ begin
         end if; 
     end process;
 
-    icmp_ln43_fu_133_p2 <= "1" when (ap_sig_allocacmp_i_10 = ap_const_lv10_300) else "0";
-    trunc_ln43_fu_139_p1 <= ap_sig_allocacmp_i_10(2 - 1 downto 0);
+    icmp_ln43_fu_133_p2 <= "1" when (ap_sig_allocacmp_i_9 = ap_const_lv10_300) else "0";
+    trunc_ln43_fu_139_p1 <= ap_sig_allocacmp_i_9(2 - 1 downto 0);
 
     vector_stream_blk_n_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, vector_stream_empty_n, ap_block_pp0_stage0_grp1)
     begin

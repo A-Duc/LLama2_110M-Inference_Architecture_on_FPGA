@@ -26,6 +26,22 @@ weights {
 	offset 36
 	offset_end 47
 }
+key_cache { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 48
+	offset_end 59
+}
+value_cache { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 60
+	offset_end 71
+}
 ap_start { }
 ap_done { }
 ap_ready { }

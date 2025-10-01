@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_matmul_Pipeline_VITIS_LOOP_43_1'
 ================================================================
-* Date:           Sat Sep 27 23:15:29 2025
+* Date:           Tue Sep 30 23:58:52 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -103,7 +103,7 @@
     +-------------------------+----+-----------+-----+-----------+
     |ap_done_int              |   1|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |   1|          2|    1|          2|
-    |ap_sig_allocacmp_i_10    |  16|          2|   10|         20|
+    |ap_sig_allocacmp_i_9     |  16|          2|   10|         20|
     |i_fu_54                  |  16|          2|   10|         20|
     |vector_stream_blk_n      |   1|          2|    1|          2|
     +-------------------------+----+-----------+-----+-----------+
@@ -204,24 +204,24 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.50>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [kernel_MatMul.cpp:43]   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %vector_stream, void @empty_65, i32 0, i32 0, void @empty_113, i32 0, i32 0, void @empty_113, void @empty_113, void @empty_113, i32 0, i32 0, i32 0, i32 0, void @empty_113, void @empty_113, i32 4294967295, i32 0, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %vector_stream, void @empty_101, i32 0, i32 0, void @empty_115, i32 0, i32 0, void @empty_115, void @empty_115, void @empty_115, i32 0, i32 0, i32 0, i32 0, void @empty_115, void @empty_115, i32 4294967295, i32 0, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (0.39ns)   --->   "%store_ln43 = store i10 0, i10 %i" [kernel_MatMul.cpp:43]   --->   Operation 7 'store' 'store_ln43' <Predicate = true> <Delay = 0.39>
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%br_ln43 = br void %for.inc" [kernel_MatMul.cpp:43]   --->   Operation 8 'br' 'br_ln43' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i_10 = load i10 %i" [kernel_MatMul.cpp:43]   --->   Operation 9 'load' 'i_10' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.71ns)   --->   "%add_ln43 = add i10 %i_10, i10 1" [kernel_MatMul.cpp:43]   --->   Operation 10 'add' 'add_ln43' <Predicate = true> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 11 [1/1] (0.60ns)   --->   "%icmp_ln43 = icmp_eq  i10 %i_10, i10 768" [kernel_MatMul.cpp:43]   --->   Operation 11 'icmp' 'icmp_ln43' <Predicate = true> <Delay = 0.60> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.60> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i_9 = load i10 %i" [kernel_MatMul.cpp:43]   --->   Operation 9 'load' 'i_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.71ns)   --->   "%add_ln43 = add i10 %i_9, i10 1" [kernel_MatMul.cpp:43]   --->   Operation 10 'add' 'add_ln43' <Predicate = true> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (0.60ns)   --->   "%icmp_ln43 = icmp_eq  i10 %i_9, i10 768" [kernel_MatMul.cpp:43]   --->   Operation 11 'icmp' 'icmp_ln43' <Predicate = true> <Delay = 0.60> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.60> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln43 = br i1 %icmp_ln43, void %for.inc.split, void %for.inc13.preheader.exitStub" [kernel_MatMul.cpp:43]   --->   Operation 12 'br' 'br_ln43' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%trunc_ln43 = trunc i10 %i_10" [kernel_MatMul.cpp:43]   --->   Operation 13 'trunc' 'trunc_ln43' <Predicate = (!icmp_ln43)> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i8 @_ssdm_op_PartSelect.i8.i10.i32.i32, i10 %i_10, i32 2, i32 9" [kernel_MatMul.cpp:43]   --->   Operation 14 'partselect' 'lshr_ln' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%trunc_ln43 = trunc i10 %i_9" [kernel_MatMul.cpp:43]   --->   Operation 13 'trunc' 'trunc_ln43' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i8 @_ssdm_op_PartSelect.i8.i10.i32.i32, i10 %i_9, i32 2, i32 9" [kernel_MatMul.cpp:43]   --->   Operation 14 'partselect' 'lshr_ln' <Predicate = (!icmp_ln43)> <Delay = 0.00>
 ST_1 : Operation 15 [1/1] (0.30ns)   --->   "%switch_ln46 = switch i2 %trunc_ln43, void %arrayidx.case.3, i2 0, void %arrayidx.case.0, i2 1, void %arrayidx.case.1, i2 2, void %arrayidx.case.2" [kernel_MatMul.cpp:46]   --->   Operation 15 'switch' 'switch_ln46' <Predicate = (!icmp_ln43)> <Delay = 0.30>
 ST_1 : Operation 16 [1/1] (0.39ns)   --->   "%store_ln43 = store i10 %add_ln43, i10 %i" [kernel_MatMul.cpp:43]   --->   Operation 16 'store' 'store_ln43' <Predicate = (!icmp_ln43)> <Delay = 0.39>
 ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln43 = br void %for.inc" [kernel_MatMul.cpp:43]   --->   Operation 17 'br' 'br_ln43' <Predicate = (!icmp_ln43)> <Delay = 0.00>
 ST_1 : Operation 45 [1/1] (0.28ns)   --->   "%ret_ln0 = ret"   --->   Operation 45 'ret' 'ret_ln0' <Predicate = (icmp_ln43)> <Delay = 0.28>
 
 State 2 <SV = 1> <Delay = 0.98>
-ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln44 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_113" [kernel_MatMul.cpp:44]   --->   Operation 18 'specpipeline' 'specpipeline_ln44' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln44 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_115" [kernel_MatMul.cpp:44]   --->   Operation 18 'specpipeline' 'specpipeline_ln44' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%speclooptripcount_ln45 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 768, i64 768, i64 768" [kernel_MatMul.cpp:45]   --->   Operation 19 'speclooptripcount' 'speclooptripcount_ln45' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln43 = specloopname void @_ssdm_op_SpecLoopName, void @empty_90" [kernel_MatMul.cpp:43]   --->   Operation 20 'specloopname' 'specloopname_ln43' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln43 = specloopname void @_ssdm_op_SpecLoopName, void @empty_111" [kernel_MatMul.cpp:43]   --->   Operation 20 'specloopname' 'specloopname_ln43' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln43 = zext i8 %lshr_ln" [kernel_MatMul.cpp:43]   --->   Operation 21 'zext' 'zext_ln43' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicFIFOCE_to_vector_stream_read = muxlogic"   --->   Operation 22 'muxlogic' 'muxLogicFIFOCE_to_vector_stream_read' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 23 [1/1] ( I:0.98ns O:0.09ns )   --->   "%vector_stream_read = read i32 @_ssdm_op_Read.ap_fifo.volatile.i32P0A, i32 %vector_stream" [kernel_MatMul.cpp:46]   --->   Operation 23 'read' 'vector_stream_read' <Predicate = true> <Delay = 0.98> <CoreInst = "FIFO">   --->   Core 81 'FIFO' <Latency = 0> <II = 1> <Delay = 0.98> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 64> <FIFO>
@@ -274,7 +274,7 @@ i                                                                    (alloca    
 specinterface_ln0                                                    (specinterface    ) [ 000]
 store_ln43                                                           (store            ) [ 000]
 br_ln43                                                              (br               ) [ 000]
-i_10                                                                 (load             ) [ 000]
+i_9                                                                  (load             ) [ 000]
 add_ln43                                                             (add              ) [ 000]
 icmp_ln43                                                            (icmp             ) [ 010]
 br_ln43                                                              (br               ) [ 000]
@@ -388,7 +388,7 @@ ret_ln0                                                              (ret       
 <pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_65"/></StgValue>
+<StgValue><ssdm name="empty_101"/></StgValue>
 </bind>
 </comp>
 
@@ -406,7 +406,7 @@ ret_ln0                                                              (ret       
 <pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_113"/></StgValue>
+<StgValue><ssdm name="empty_115"/></StgValue>
 </bind>
 </comp>
 
@@ -541,7 +541,7 @@ ret_ln0                                                              (ret       
 <pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_90"/></StgValue>
+<StgValue><ssdm name="empty_111"/></StgValue>
 </bind>
 </comp>
 
@@ -713,14 +713,14 @@ ret_ln0                                                              (ret       
 </bind>
 </comp>
 
-<comp id="124" class="1004" name="i_10_load_fu_124">
+<comp id="124" class="1004" name="i_9_load_fu_124">
 <pin_list>
 <pin id="125" dir="0" index="0" bw="10" slack="0"/>
 <pin id="126" dir="1" index="1" bw="10" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="i_10/1 "/>
+<opset="i_9/1 "/>
 </bind>
 </comp>
 
@@ -1031,7 +1031,7 @@ ret_ln0                                                              (ret       
   - Chain level:
 	State 1
 		store_ln43 : 1
-		i_10 : 1
+		i_9 : 1
 		add_ln43 : 2
 		icmp_ln43 : 2
 		br_ln43 : 3

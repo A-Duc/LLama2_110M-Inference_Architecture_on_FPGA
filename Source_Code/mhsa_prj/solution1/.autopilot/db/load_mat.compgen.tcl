@@ -10,7 +10,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 252 \
+    id 60 \
     name gmem1 \
     type other \
     dir I \
@@ -25,7 +25,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 253 \
+    id 61 \
     name i_mat \
     type other \
     dir I \
@@ -40,7 +40,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 254 \
+    id 62 \
     name matrix_stream \
     type fifo \
     dir O \
@@ -49,21 +49,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_matrix_stream \
     op interface \
     ports { matrix_stream_din { O 32 vector } matrix_stream_full_n { I 1 bit } matrix_stream_write { O 1 bit } matrix_stream_num_data_valid { I 7 vector } matrix_stream_fifo_cap { I 7 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 255 \
-    name idx \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_idx \
-    op interface \
-    ports { idx { I 25 vector } } \
 } "
 }
 
