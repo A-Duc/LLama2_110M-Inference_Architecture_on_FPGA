@@ -45,7 +45,7 @@ int main() {
     std::cout << "--- Bắt đầu Testbench cho Llama Layer (dựa trên run.cpp) ---" << std::endl;
 
     // 1. Load config and weights from checkpoint (adapted from Transformer<float>::load_model)
-    const char* checkpoint_path = "C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/stories110M.bin";
+    const char* checkpoint_path = "C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Demo/stories110M.bin";
     std::ifstream file(checkpoint_path, std::ios::binary);
     if (!file) {
         std::cerr << "LỖI: Không thể mở file checkpoint: " << checkpoint_path << std::endl;
@@ -81,7 +81,7 @@ std::cout << "DEBUG: config read: dim="<<config.dim
     total_weights += (size_t)config.n_layers * config.hidden_dim * config.dim;  // w1
     total_weights += (size_t)config.n_layers * config.dim * config.hidden_dim;  // w2
     total_weights += (size_t)config.n_layers * config.hidden_dim * config.dim;  // w3
-    total_weights += (size_t)config.dim;                      // rms_final_weight
+    total_weights += (size_t)config.dim;                      
     if (!shared_weights) {
         total_weights += (size_t)config.vocab_size * config.dim;  // wcls
     }
@@ -136,8 +136,108 @@ std::cout << "DEBUG: config read: dim="<<config.dim
 
     file.close();
 
+   // ...existing code...
+
+   // ...existing code...
+
     std::cout << "Đã nạp config và " << total_weights << " trọng số từ " << checkpoint_path << std::endl;
-// ...existing code...
+
+    // In 20 phần tử đầu tiên của từng khối trọng số (chỉ in layer 0 và layer cuối cùng cho các khối per-layer)
+    size_t idx = 0;
+    std::cout << "\n--- 20 phần tử đầu tiên của các khối trọng số ---\n";
+
+    // token_embedding_table
+    std::cout << "token_embedding_table: ";
+    for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+    std::cout << std::endl;
+    idx += (size_t)config.vocab_size * config.dim;
+
+    // rms_att_weight
+    std::cout << "rms_att_weight[layer 0]: ";
+    for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+    std::cout << std::endl;
+    std::cout << "rms_att_weight[layer " << config.n_layers-1 << "]: ";
+    for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + (config.n_layers-1)*config.dim + i] << " ";
+    std::cout << std::endl;
+    idx += (size_t)config.n_layers * config.dim;
+
+    // wq, wk, wv, wo per layer
+    for (int l = 0; l < config.n_layers; ++l) {
+        if (l == 0 || l == config.n_layers-1) {
+            std::cout << "wq[layer " << l << "]: ";
+            for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+            std::cout << std::endl;
+        }
+        idx += (size_t)config.dim * (config.n_heads * head_size);
+
+        if (l == 0 || l == config.n_layers-1) {
+            std::cout << "wk[layer " << l << "]: ";
+            for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+            std::cout << std::endl;
+        }
+        idx += (size_t)config.dim * (config.n_kv_heads * head_size);
+
+        if (l == 0 || l == config.n_layers-1) {
+            std::cout << "wv[layer " << l << "]: ";
+            for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+            std::cout << std::endl;
+        }
+        idx += (size_t)config.dim * (config.n_kv_heads * head_size);
+
+        if (l == 0 || l == config.n_layers-1) {
+            std::cout << "wo[layer " << l << "]: ";
+            for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+            std::cout << std::endl;
+        }
+        idx += (size_t)(config.n_heads * head_size) * config.dim;
+    }
+
+    // rms_ffn_weight
+    std::cout << "rms_ffn_weight[layer 0]: ";
+    for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+    std::cout << std::endl;
+    std::cout << "rms_ffn_weight[layer " << config.n_layers-1 << "]: ";
+    for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + (config.n_layers-1)*config.dim + i] << " ";
+    std::cout << std::endl;
+    idx += (size_t)config.n_layers * config.dim;
+
+    // w1, w2, w3 per layer
+    for (int l = 0; l < config.n_layers; ++l) {
+        if (l == 0 || l == config.n_layers-1) {
+            std::cout << "w1[layer " << l << "]: ";
+            for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+            std::cout << std::endl;
+        }
+        idx += (size_t)config.hidden_dim * config.dim;
+
+        if (l == 0 || l == config.n_layers-1) {
+            std::cout << "w2[layer " << l << "]: ";
+            for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+            std::cout << std::endl;
+        }
+        idx += (size_t)config.dim * config.hidden_dim;
+
+        if (l == 0 || l == config.n_layers-1) {
+            std::cout << "w3[layer " << l << "]: ";
+            for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+            std::cout << std::endl;
+        }
+        idx += (size_t)config.hidden_dim * config.dim;
+    }
+
+    // rms_final_weight
+    std::cout << "rms_final_weight: ";
+    for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+    std::cout << std::endl;
+    idx += (size_t)config.dim;
+
+    // wcls (if not shared)
+    if (!shared_weights) {
+        std::cout << "wcls: ";
+        for (int i = 0; i < 20; ++i) std::cout << all_weights[idx + i] << " ";
+        std::cout << std::endl;
+        idx += (size_t)config.vocab_size * config.dim;
+    }
 
     // 2. Allocate other inputs (now using global vectors, resize if needed)
     output_logits.resize(VOCAB_SIZE);
