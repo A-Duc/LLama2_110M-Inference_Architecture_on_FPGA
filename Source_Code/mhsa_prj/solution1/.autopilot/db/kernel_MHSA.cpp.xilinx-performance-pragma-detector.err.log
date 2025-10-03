@@ -1,6 +1,0 @@
-In file included from C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\kernel_MHSA.cpp:2:
-In file included from C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code/kernel_Rope.hpp:4:
-In file included from C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code/tensor.hpp:9:
-C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:26:10: fatal error: 'cmath' file not found
-#include <cmath>
-         ^~~~~~~

@@ -1,3 +1,0 @@
-29 errors generated.
-Error while processing C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\llama_layer_prj\solution1\.autopilot\db\kernel_MatMul.pp.0.cpp.
-clang-tidy applied 142 of 142 suggested fixes.

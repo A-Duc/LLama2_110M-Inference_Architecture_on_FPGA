@@ -1,3 +1,0 @@
-C:\NCKH\LLma2_110M---UIT\Source_Code\kernel_rope.cpp:4:10: fatal error: 'cmath' file not found
-#include <cmath>
-         ^~~~~~~

@@ -1,3 +1,0 @@
-26 errors generated.
-Error while processing C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\mhsa_prj\solution1\.autopilot\db\kernel_RMS_Norm.pp.0.cpp.
-clang-tidy applied 132 of 132 suggested fixes.

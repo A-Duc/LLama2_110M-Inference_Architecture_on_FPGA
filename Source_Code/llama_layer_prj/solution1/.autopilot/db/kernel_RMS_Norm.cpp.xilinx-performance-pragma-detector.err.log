@@ -1,3 +1,0 @@
-C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code\kernel_RMS_Norm.cpp:1:10: fatal error: 'cmath' file not found
-#include <cmath>
-         ^~~~~~~
