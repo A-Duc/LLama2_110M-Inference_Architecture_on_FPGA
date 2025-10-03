@@ -34,11 +34,11 @@
             <rows>
                 <row id="0" col0="FFN" col1="kernel_FFN.cpp:70" col2="572" col3="304" col4="241" col5="238" col6="363">
                     <row id="4" col0="push_tensor1d" col1="kernel_FFN.cpp:11" col2="34" col2_disp=" 34 (2 calls)" col3="18" col3_disp=" 18 (2 calls)" col4="20" col4_disp=" 20 (2 calls)" col5="20" col5_disp=" 20 (2 calls)" col6=""/>
-                    <row id="1" col0="push_tensor2d_bycol" col1="kernel_FFN.cpp:23" col2="84" col2_disp=" 84 (3 calls)" col3="75" col3_disp=" 75 (3 calls)" col4="48" col4_disp=" 48 (3 calls)" col5="48" col5_disp=" 48 (3 calls)" col6=""/>
-                    <row id="3" col0="Multiply_VecMat" col1="kernel_FFN.cpp:30" col2="264" col2_disp="264 (3 calls)" col3="132" col3_disp="132 (3 calls)" col4="93" col4_disp=" 93 (3 calls)" col5="90" col5_disp=" 90 (3 calls)" col6=""/>
-                    <row id="2" col0="Swish" col1="kernel_FFN.cpp:50" col2="42" col3="16" col4="16" col5="16" col6=""/>
-                    <row id="6" col0="Multiply_Vec" col1="kernel_FFN.cpp:59" col2="48" col3="10" col4="10" col5="10" col6=""/>
-                    <row id="5" col0="pull_tensor1d" col1="kernel_FFN.cpp:17" col2="26" col3="9" col4="10" col5="10" col6="18"/>
+                    <row id="5" col0="push_tensor2d_bycol" col1="kernel_FFN.cpp:23" col2="84" col2_disp=" 84 (3 calls)" col3="75" col3_disp=" 75 (3 calls)" col4="48" col4_disp=" 48 (3 calls)" col5="48" col5_disp=" 48 (3 calls)" col6=""/>
+                    <row id="2" col0="Multiply_VecMat" col1="kernel_FFN.cpp:30" col2="264" col2_disp="264 (3 calls)" col3="132" col3_disp="132 (3 calls)" col4="93" col4_disp=" 93 (3 calls)" col5="90" col5_disp=" 90 (3 calls)" col6=""/>
+                    <row id="1" col0="Swish" col1="kernel_FFN.cpp:50" col2="42" col3="16" col4="16" col5="16" col6=""/>
+                    <row id="3" col0="Multiply_Vec" col1="kernel_FFN.cpp:59" col2="48" col3="10" col4="10" col5="10" col6=""/>
+                    <row id="6" col0="pull_tensor1d" col1="kernel_FFN.cpp:17" col2="26" col3="9" col4="10" col5="10" col6="18"/>
                 </row>
             </rows>
             <notes/>

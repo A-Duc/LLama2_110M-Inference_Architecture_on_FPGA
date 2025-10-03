@@ -1,0 +1,150 @@
+
+
+================================================================
+== Vitis HLS Report for 'matmul_1_Loop_VITIS_LOOP_112_1_proc_Pipeline_VITIS_LOOP_112_1'
+================================================================
+* Date:           Thu Oct  2 22:22:36 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        llama_layer_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  1.503 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |      770|      770|  3.080 us|  3.080 us|  769|  769|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_112_1  |      768|      768|         2|          1|          1|   768|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.50>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%sext_ln112_read = read i62 @_ssdm_op_Read.ap_auto.i62, i62 %sext_ln112"   --->   Operation 6 'read' 'sext_ln112_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%sext_ln112_cast = sext i62 %sext_ln112_read"   --->   Operation 7 'sext' 'sext_ln112_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem1, void @empty_51, i32 0, i32 0, void @empty_107, i32 0, i32 0, void @empty_54, void @empty_53, void @empty_107, i32 16, i32 16, i32 16, i32 256, void @empty_107, void @empty_107, i32 4294967295, i32 0, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %res_stream, void @empty_69, i32 0, i32 0, void @empty_107, i32 0, i32 0, void @empty_107, void @empty_107, void @empty_107, i32 0, i32 0, i32 0, i32 0, void @empty_107, void @empty_107, i32 4294967295, i32 0, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.39ns)   --->   "%store_ln112 = store i10 0, i10 %i" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 10 'store' 'store_ln112' <Predicate = true> <Delay = 0.39>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%br_ln112 = br void %for.inc.i" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 11 'br' 'br_ln112' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%i_8 = load i10 %i" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 12 'load' 'i_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.71ns)   --->   "%add_ln112 = add i10 %i_8, i10 1" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 13 'add' 'add_ln112' <Predicate = true> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.60ns)   --->   "%icmp_ln112 = icmp_eq  i10 %i_8, i10 768" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 14 'icmp' 'icmp_ln112' <Predicate = true> <Delay = 0.60> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.60> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln112 = br i1 %icmp_ln112, void %for.inc.split.i, void %matmul.1_Loop_VITIS_LOOP_112_1_proc.1.exit.exitStub" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 15 'br' 'br_ln112' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.39ns)   --->   "%store_ln112 = store i10 %add_ln112, i10 %i" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 16 'store' 'store_ln112' <Predicate = (!icmp_ln112)> <Delay = 0.39>
+ST_1 : Operation 27 [1/1] (0.28ns)   --->   "%ret_ln0 = ret"   --->   Operation 27 'ret' 'ret_ln0' <Predicate = (icmp_ln112)> <Delay = 0.28>
+
+State 2 <SV = 1> <Delay = 1.17>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%gmem1_addr = getelementptr i32 %gmem1, i64 %sext_ln112_cast" [kernel_MatMul.cpp:112]   --->   Operation 17 'getelementptr' 'gmem1_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln113 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_107" [kernel_MatMul.cpp:113->kernel_MatMul.cpp:112]   --->   Operation 18 'specpipeline' 'specpipeline_ln113' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%speclooptripcount_ln112 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 768, i64 768, i64 768" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 19 'speclooptripcount' 'speclooptripcount_ln112' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln112 = specloopname void @_ssdm_op_SpecLoopName, void @empty_92" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 20 'specloopname' 'specloopname_ln112' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%muxLogicFIFOCE_to_res_stream_read = muxlogic"   --->   Operation 21 'muxlogic' 'muxLogicFIFOCE_to_res_stream_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] ( I:0.98ns O:0.09ns )   --->   "%res_stream_read = read i32 @_ssdm_op_Read.ap_fifo.volatile.i32P0A, i32 %res_stream" [kernel_MatMul.cpp:114->kernel_MatMul.cpp:112]   --->   Operation 22 'read' 'res_stream_read' <Predicate = true> <Delay = 0.98> <CoreInst = "FIFO">   --->   Core 81 'FIFO' <Latency = 0> <II = 1> <Delay = 0.98> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 64> <FIFO>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%muxLogicAXIMData_to_write_ln114 = muxlogic i32 %res_stream_read"   --->   Operation 23 'muxlogic' 'muxLogicAXIMData_to_write_ln114' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%muxLogicAXIMByteEnable_to_write_ln114 = muxlogic i4 15"   --->   Operation 24 'muxlogic' 'muxLogicAXIMByteEnable_to_write_ln114' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (1.08ns)   --->   "%write_ln114 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem1_addr, i32 %res_stream_read, i4 15" [kernel_MatMul.cpp:114->kernel_MatMul.cpp:112]   --->   Operation 25 'write' 'write_ln114' <Predicate = true> <Delay = 1.08> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 0> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln112 = br void %for.inc.i" [kernel_MatMul.cpp:112->kernel_MatMul.cpp:112]   --->   Operation 26 'br' 'br_ln112' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4.000ns, clock uncertainty: 1.080ns.
+
+ <State 1>: 1.503ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln112', kernel_MatMul.cpp:112->kernel_MatMul.cpp:112) of constant 0 on local variable 'i', kernel_MatMul.cpp:112->kernel_MatMul.cpp:112 [9]  (0.393 ns)
+	'load' operation 10 bit ('i', kernel_MatMul.cpp:112->kernel_MatMul.cpp:112) on local variable 'i', kernel_MatMul.cpp:112->kernel_MatMul.cpp:112 [12]  (0.000 ns)
+	'add' operation 10 bit ('add_ln112', kernel_MatMul.cpp:112->kernel_MatMul.cpp:112) [13]  (0.717 ns)
+	'store' operation 0 bit ('store_ln112', kernel_MatMul.cpp:112->kernel_MatMul.cpp:112) of variable 'add_ln112', kernel_MatMul.cpp:112->kernel_MatMul.cpp:112 on local variable 'i', kernel_MatMul.cpp:112->kernel_MatMul.cpp:112 [26]  (0.393 ns)
+
+ <State 2>: 1.173ns
+The critical path consists of the following:
+	'muxlogic' operation 32 bit ('muxLogicFIFOCE_to_res_stream_read') [21]  (0.000 ns)
+	fifo read operation ('res_stream_read', kernel_MatMul.cpp:114->kernel_MatMul.cpp:112) on port 'res_stream' (kernel_MatMul.cpp:114->kernel_MatMul.cpp:112) [22]  (0.987 ns)
+	'muxlogic' operation 0 bit ('muxLogicAXIMData_to_write_ln114') [23]  (0.000 ns)
+	bus write operation ('write_ln114', kernel_MatMul.cpp:114->kernel_MatMul.cpp:112) on port 'gmem1' (kernel_MatMul.cpp:114->kernel_MatMul.cpp:112) [25]  (1.082 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity kernel_mhsa_control_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 7;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     ACLK                  :in   STD_LOGIC;
@@ -37,7 +37,13 @@ port (
     interrupt             :out  STD_LOGIC;
     current_token         :out  STD_LOGIC_VECTOR(63 downto 0);
     position              :out  STD_LOGIC_VECTOR(31 downto 0);
-    weights               :out  STD_LOGIC_VECTOR(63 downto 0);
+    wq                    :out  STD_LOGIC_VECTOR(63 downto 0);
+    wk                    :out  STD_LOGIC_VECTOR(63 downto 0);
+    wv                    :out  STD_LOGIC_VECTOR(63 downto 0);
+    wo                    :out  STD_LOGIC_VECTOR(63 downto 0);
+    key_cache             :out  STD_LOGIC_VECTOR(63 downto 0);
+    value_cache           :out  STD_LOGIC_VECTOR(63 downto 0);
+    layer                 :out  STD_LOGIC_VECTOR(31 downto 0);
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
@@ -75,11 +81,39 @@ end entity kernel_mhsa_control_s_axi;
 -- 0x1c : Data signal of position
 --        bit 31~0 - position[31:0] (Read/Write)
 -- 0x20 : reserved
--- 0x24 : Data signal of weights
---        bit 31~0 - weights[31:0] (Read/Write)
--- 0x28 : Data signal of weights
---        bit 31~0 - weights[63:32] (Read/Write)
+-- 0x24 : Data signal of wq
+--        bit 31~0 - wq[31:0] (Read/Write)
+-- 0x28 : Data signal of wq
+--        bit 31~0 - wq[63:32] (Read/Write)
 -- 0x2c : reserved
+-- 0x30 : Data signal of wk
+--        bit 31~0 - wk[31:0] (Read/Write)
+-- 0x34 : Data signal of wk
+--        bit 31~0 - wk[63:32] (Read/Write)
+-- 0x38 : reserved
+-- 0x3c : Data signal of wv
+--        bit 31~0 - wv[31:0] (Read/Write)
+-- 0x40 : Data signal of wv
+--        bit 31~0 - wv[63:32] (Read/Write)
+-- 0x44 : reserved
+-- 0x48 : Data signal of wo
+--        bit 31~0 - wo[31:0] (Read/Write)
+-- 0x4c : Data signal of wo
+--        bit 31~0 - wo[63:32] (Read/Write)
+-- 0x50 : reserved
+-- 0x54 : Data signal of key_cache
+--        bit 31~0 - key_cache[31:0] (Read/Write)
+-- 0x58 : Data signal of key_cache
+--        bit 31~0 - key_cache[63:32] (Read/Write)
+-- 0x5c : reserved
+-- 0x60 : Data signal of value_cache
+--        bit 31~0 - value_cache[31:0] (Read/Write)
+-- 0x64 : Data signal of value_cache
+--        bit 31~0 - value_cache[63:32] (Read/Write)
+-- 0x68 : reserved
+-- 0x6c : Data signal of layer
+--        bit 31~0 - layer[31:0] (Read/Write)
+-- 0x70 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of kernel_mhsa_control_s_axi is
@@ -96,10 +130,27 @@ architecture behave of kernel_mhsa_control_s_axi is
     constant ADDR_CURRENT_TOKEN_CTRL   : INTEGER := 16#18#;
     constant ADDR_POSITION_DATA_0      : INTEGER := 16#1c#;
     constant ADDR_POSITION_CTRL        : INTEGER := 16#20#;
-    constant ADDR_WEIGHTS_DATA_0       : INTEGER := 16#24#;
-    constant ADDR_WEIGHTS_DATA_1       : INTEGER := 16#28#;
-    constant ADDR_WEIGHTS_CTRL         : INTEGER := 16#2c#;
-    constant ADDR_BITS         : INTEGER := 6;
+    constant ADDR_WQ_DATA_0            : INTEGER := 16#24#;
+    constant ADDR_WQ_DATA_1            : INTEGER := 16#28#;
+    constant ADDR_WQ_CTRL              : INTEGER := 16#2c#;
+    constant ADDR_WK_DATA_0            : INTEGER := 16#30#;
+    constant ADDR_WK_DATA_1            : INTEGER := 16#34#;
+    constant ADDR_WK_CTRL              : INTEGER := 16#38#;
+    constant ADDR_WV_DATA_0            : INTEGER := 16#3c#;
+    constant ADDR_WV_DATA_1            : INTEGER := 16#40#;
+    constant ADDR_WV_CTRL              : INTEGER := 16#44#;
+    constant ADDR_WO_DATA_0            : INTEGER := 16#48#;
+    constant ADDR_WO_DATA_1            : INTEGER := 16#4c#;
+    constant ADDR_WO_CTRL              : INTEGER := 16#50#;
+    constant ADDR_KEY_CACHE_DATA_0     : INTEGER := 16#54#;
+    constant ADDR_KEY_CACHE_DATA_1     : INTEGER := 16#58#;
+    constant ADDR_KEY_CACHE_CTRL       : INTEGER := 16#5c#;
+    constant ADDR_VALUE_CACHE_DATA_0   : INTEGER := 16#60#;
+    constant ADDR_VALUE_CACHE_DATA_1   : INTEGER := 16#64#;
+    constant ADDR_VALUE_CACHE_CTRL     : INTEGER := 16#68#;
+    constant ADDR_LAYER_DATA_0         : INTEGER := 16#6c#;
+    constant ADDR_LAYER_CTRL           : INTEGER := 16#70#;
+    constant ADDR_BITS         : INTEGER := 7;
 
     signal AWREADY_t           : STD_LOGIC;
     signal WREADY_t            : STD_LOGIC;
@@ -130,7 +181,13 @@ architecture behave of kernel_mhsa_control_s_axi is
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_current_token   : UNSIGNED(63 downto 0) := (others => '0');
     signal int_position        : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_weights         : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_wq              : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_wk              : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_wv              : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_wo              : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_key_cache       : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_value_cache     : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_layer           : UNSIGNED(31 downto 0) := (others => '0');
 
 
 begin
@@ -266,10 +323,32 @@ begin
                         rdata_data <= RESIZE(int_current_token(63 downto 32), 32);
                     when ADDR_POSITION_DATA_0 =>
                         rdata_data <= RESIZE(int_position(31 downto 0), 32);
-                    when ADDR_WEIGHTS_DATA_0 =>
-                        rdata_data <= RESIZE(int_weights(31 downto 0), 32);
-                    when ADDR_WEIGHTS_DATA_1 =>
-                        rdata_data <= RESIZE(int_weights(63 downto 32), 32);
+                    when ADDR_WQ_DATA_0 =>
+                        rdata_data <= RESIZE(int_wq(31 downto 0), 32);
+                    when ADDR_WQ_DATA_1 =>
+                        rdata_data <= RESIZE(int_wq(63 downto 32), 32);
+                    when ADDR_WK_DATA_0 =>
+                        rdata_data <= RESIZE(int_wk(31 downto 0), 32);
+                    when ADDR_WK_DATA_1 =>
+                        rdata_data <= RESIZE(int_wk(63 downto 32), 32);
+                    when ADDR_WV_DATA_0 =>
+                        rdata_data <= RESIZE(int_wv(31 downto 0), 32);
+                    when ADDR_WV_DATA_1 =>
+                        rdata_data <= RESIZE(int_wv(63 downto 32), 32);
+                    when ADDR_WO_DATA_0 =>
+                        rdata_data <= RESIZE(int_wo(31 downto 0), 32);
+                    when ADDR_WO_DATA_1 =>
+                        rdata_data <= RESIZE(int_wo(63 downto 32), 32);
+                    when ADDR_KEY_CACHE_DATA_0 =>
+                        rdata_data <= RESIZE(int_key_cache(31 downto 0), 32);
+                    when ADDR_KEY_CACHE_DATA_1 =>
+                        rdata_data <= RESIZE(int_key_cache(63 downto 32), 32);
+                    when ADDR_VALUE_CACHE_DATA_0 =>
+                        rdata_data <= RESIZE(int_value_cache(31 downto 0), 32);
+                    when ADDR_VALUE_CACHE_DATA_1 =>
+                        rdata_data <= RESIZE(int_value_cache(63 downto 32), 32);
+                    when ADDR_LAYER_DATA_0 =>
+                        rdata_data <= RESIZE(int_layer(31 downto 0), 32);
                     when others =>
                         NULL;
                     end case;
@@ -286,7 +365,13 @@ begin
     auto_restart_done    <= auto_restart_status and (ap_idle and not int_ap_idle);
     current_token        <= STD_LOGIC_VECTOR(int_current_token);
     position             <= STD_LOGIC_VECTOR(int_position);
-    weights              <= STD_LOGIC_VECTOR(int_weights);
+    wq                   <= STD_LOGIC_VECTOR(int_wq);
+    wk                   <= STD_LOGIC_VECTOR(int_wk);
+    wv                   <= STD_LOGIC_VECTOR(int_wv);
+    wo                   <= STD_LOGIC_VECTOR(int_wo);
+    key_cache            <= STD_LOGIC_VECTOR(int_key_cache);
+    value_cache          <= STD_LOGIC_VECTOR(int_value_cache);
+    layer                <= STD_LOGIC_VECTOR(int_layer);
 
     process (ACLK)
     begin
@@ -501,10 +586,10 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_weights(31 downto 0) <= (others => '0');
+                int_wq(31 downto 0) <= (others => '0');
             elsif (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_WEIGHTS_DATA_0) then
-                    int_weights(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_weights(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_WQ_DATA_0) then
+                    int_wq(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_wq(31 downto 0));
                 end if;
             end if;
         end if;
@@ -514,10 +599,153 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_weights(63 downto 32) <= (others => '0');
+                int_wq(63 downto 32) <= (others => '0');
             elsif (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_WEIGHTS_DATA_1) then
-                    int_weights(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_weights(63 downto 32));
+                if (w_hs = '1' and waddr = ADDR_WQ_DATA_1) then
+                    int_wq(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_wq(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_wk(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_WK_DATA_0) then
+                    int_wk(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_wk(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_wk(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_WK_DATA_1) then
+                    int_wk(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_wk(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_wv(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_WV_DATA_0) then
+                    int_wv(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_wv(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_wv(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_WV_DATA_1) then
+                    int_wv(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_wv(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_wo(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_WO_DATA_0) then
+                    int_wo(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_wo(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_wo(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_WO_DATA_1) then
+                    int_wo(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_wo(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_cache(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_KEY_CACHE_DATA_0) then
+                    int_key_cache(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_key_cache(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_cache(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_KEY_CACHE_DATA_1) then
+                    int_key_cache(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_key_cache(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_value_cache(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_VALUE_CACHE_DATA_0) then
+                    int_value_cache(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_value_cache(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_value_cache(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_VALUE_CACHE_DATA_1) then
+                    int_value_cache(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_value_cache(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_layer(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_LAYER_DATA_0) then
+                    int_layer(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_layer(31 downto 0));
                 end if;
             end if;
         end if;

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'kernel_softmax'
 ================================================================
-* Date:           Tue Sep 30 23:59:05 2025
+* Date:           Thu Oct  2 21:26:44 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -77,17 +77,17 @@
 
 + Detail: 
     * Instance: 
-    +------------------------------------------+-------------------------------------+---------+----+-----+-----+-----+
-    |                 Instance                 |                Module               | BRAM_18K| DSP|  FF | LUT | URAM|
-    +------------------------------------------+-------------------------------------+---------+----+-----+-----+-----+
-    |fadd_32ns_32ns_32_1_primitive_dsp_1_U428  |fadd_32ns_32ns_32_1_primitive_dsp_1  |        0|   1|    0|    0|    0|
-    |fcmp_32ns_32ns_1_1_no_dsp_1_U430          |fcmp_32ns_32ns_1_1_no_dsp_1          |        0|   0|    0|    0|    0|
-    |fdiv_32ns_32ns_32_11_no_dsp_1_U429        |fdiv_32ns_32ns_32_11_no_dsp_1        |        0|   0|    0|    0|    0|
-    |fexp_32ns_32ns_32_9_med_dsp_1_U431        |fexp_32ns_32ns_32_9_med_dsp_1        |        0|   1|  294|  928|    0|
-    |fsub_32ns_32ns_32_1_primitive_dsp_1_U427  |fsub_32ns_32ns_32_1_primitive_dsp_1  |        0|   1|    0|    0|    0|
-    +------------------------------------------+-------------------------------------+---------+----+-----+-----+-----+
-    |Total                                     |                                     |        0|   3|  294|  928|    0|
-    +------------------------------------------+-------------------------------------+---------+----+-----+-----+-----+
+    +--------------------------------------------+---------------------------------------+---------+----+-----+-----+-----+
+    |                  Instance                  |                 Module                | BRAM_18K| DSP|  FF | LUT | URAM|
+    +--------------------------------------------+---------------------------------------+---------+----+-----+-----+-----+
+    |fadd_32ns_32ns_32_1_primitive_dsp_1_x_U793  |fadd_32ns_32ns_32_1_primitive_dsp_1_x  |        0|   1|    0|    0|    0|
+    |fcmp_32ns_32ns_1_1_no_dsp_1_U795            |fcmp_32ns_32ns_1_1_no_dsp_1            |        0|   0|    0|    0|    0|
+    |fdiv_32ns_32ns_32_11_no_dsp_1_U794          |fdiv_32ns_32ns_32_11_no_dsp_1          |        0|   0|    0|    0|    0|
+    |fexp_32ns_32ns_32_9_med_dsp_1_U796          |fexp_32ns_32ns_32_9_med_dsp_1          |        0|   1|  294|  928|    0|
+    |fsub_32ns_32ns_32_1_primitive_dsp_1_U792    |fsub_32ns_32ns_32_1_primitive_dsp_1    |        0|   1|    0|    0|    0|
+    +--------------------------------------------+---------------------------------------+---------+----+-----+-----+-----+
+    |Total                                       |                                       |        0|   3|  294|  928|    0|
+    +--------------------------------------------+---------------------------------------+---------+----+-----+-----+-----+
 
     * DSP: 
     N/A
@@ -368,9 +368,9 @@ ST_2 : Operation 48 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr
 ST_2 : Operation 49 [2/2] (0.66ns) (share mux size 5)   --->   "%i_vec_load = load i9 %i_vec_addr" [kernel_Softmax.cpp:12]   --->   Operation 49 'load' 'i_vec_load' <Predicate = (icmp_ln9)> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
 
 State 3 <SV = 2> <Delay = 1.97>
-ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%specpipeline_ln10 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 1, void @empty_115" [kernel_Softmax.cpp:10]   --->   Operation 50 'specpipeline' 'specpipeline_ln10' <Predicate = (icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%specpipeline_ln10 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 1, void @empty_99" [kernel_Softmax.cpp:10]   --->   Operation 50 'specpipeline' 'specpipeline_ln10' <Predicate = (icmp_ln9)> <Delay = 0.00>
 ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%speclooptripcount_ln11 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 768, i64 384" [kernel_Softmax.cpp:11]   --->   Operation 51 'speclooptripcount' 'speclooptripcount_ln11' <Predicate = (icmp_ln9)> <Delay = 0.00>
-ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%specloopname_ln9 = specloopname void @_ssdm_op_SpecLoopName, void @empty_108" [kernel_Softmax.cpp:9]   --->   Operation 52 'specloopname' 'specloopname_ln9' <Predicate = (icmp_ln9)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%specloopname_ln9 = specloopname void @_ssdm_op_SpecLoopName, void @empty_78" [kernel_Softmax.cpp:9]   --->   Operation 52 'specloopname' 'specloopname_ln9' <Predicate = (icmp_ln9)> <Delay = 0.00>
 ST_3 : Operation 53 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 5)   --->   "%i_vec_load = load i9 %i_vec_addr" [kernel_Softmax.cpp:12]   --->   Operation 53 'load' 'i_vec_load' <Predicate = (icmp_ln9)> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
 ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%vec_local_addr = getelementptr i32 %vec_local, i64 0, i64 %zext_ln9" [kernel_Softmax.cpp:12]   --->   Operation 54 'getelementptr' 'vec_local_addr' <Predicate = (icmp_ln9)> <Delay = 0.00>
 ST_3 : Operation 55 [1/1] (0.43ns) (share mux size 4)   --->   "%muxLogicRAMData_to_store_ln12 = muxlogic i32 %i_vec_load"   --->   Operation 55 'muxlogic' 'muxLogicRAMData_to_store_ln12' <Predicate = (icmp_ln9)> <Delay = 0.43>
@@ -389,17 +389,17 @@ ST_5 : Operation 63 [1/1] (0.42ns)   --->   "%br_ln16 = br void %for.cond5.0" [k
 
 State 6 <SV = 4> <Delay = 2.62>
 ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%i_1 = phi i31 %add_ln16_1, void %for.body8.1, i31 1, void %for.end" [kernel_Softmax.cpp:16]   --->   Operation 64 'phi' 'i_1' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%zext_ln15_1 = zext i31 %i_1" [kernel_Softmax.cpp:15]   --->   Operation 65 'zext' 'zext_ln15_1' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 66 [1/1] (0.67ns)   --->   "%icmp_ln16 = icmp_slt  i32 %zext_ln15_1, i32 %vec_size_read" [kernel_Softmax.cpp:16]   --->   Operation 66 'icmp' 'icmp_ln16' <Predicate = true> <Delay = 0.67> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%zext_ln15_6 = zext i31 %i_1" [kernel_Softmax.cpp:15]   --->   Operation 65 'zext' 'zext_ln15_6' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 66 [1/1] (0.67ns)   --->   "%icmp_ln16 = icmp_slt  i32 %zext_ln15_6, i32 %vec_size_read" [kernel_Softmax.cpp:16]   --->   Operation 66 'icmp' 'icmp_ln16' <Predicate = true> <Delay = 0.67> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
 ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln15 = zext i31 %i_1" [kernel_Softmax.cpp:15]   --->   Operation 67 'zext' 'zext_ln15' <Predicate = (icmp_ln16)> <Delay = 0.00>
 ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%vec_local_addr_2 = getelementptr i32 %vec_local, i64 0, i64 %zext_ln15" [kernel_Softmax.cpp:20]   --->   Operation 68 'getelementptr' 'vec_local_addr_2' <Predicate = (icmp_ln16)> <Delay = 0.00>
 ST_6 : Operation 69 [1/1] (0.43ns) (share mux size 4)   --->   "%muxLogicRAMAddr_to_max_val_2 = muxlogic i9 %vec_local_addr_2"   --->   Operation 69 'muxlogic' 'muxLogicRAMAddr_to_max_val_2' <Predicate = (icmp_ln16)> <Delay = 0.43>
 ST_6 : Operation 70 [2/2] (0.66ns) (share mux size 7)   --->   "%max_val_2 = load i9 %vec_local_addr_2" [kernel_Softmax.cpp:20]   --->   Operation 70 'load' 'max_val_2' <Predicate = (icmp_ln16)> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
 ST_6 : Operation 71 [1/1] (0.85ns)   --->   "%add_ln16 = add i31 %i_1, i31 1" [kernel_Softmax.cpp:16]   --->   Operation 71 'add' 'add_ln16' <Predicate = (icmp_ln16)> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln15_2 = zext i31 %add_ln16" [kernel_Softmax.cpp:15]   --->   Operation 72 'zext' 'zext_ln15_2' <Predicate = (icmp_ln16)> <Delay = 0.00>
-ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%zext_ln15_3 = zext i31 %add_ln16" [kernel_Softmax.cpp:15]   --->   Operation 73 'zext' 'zext_ln15_3' <Predicate = (icmp_ln16)> <Delay = 0.00>
-ST_6 : Operation 74 [1/1] (0.67ns)   --->   "%icmp_ln16_1 = icmp_slt  i32 %zext_ln15_3, i32 %vec_size_read" [kernel_Softmax.cpp:16]   --->   Operation 74 'icmp' 'icmp_ln16_1' <Predicate = (icmp_ln16)> <Delay = 0.67> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%vec_local_addr_3 = getelementptr i32 %vec_local, i64 0, i64 %zext_ln15_2" [kernel_Softmax.cpp:20]   --->   Operation 75 'getelementptr' 'vec_local_addr_3' <Predicate = (icmp_ln16 & icmp_ln16_1)> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln15_7 = zext i31 %add_ln16" [kernel_Softmax.cpp:15]   --->   Operation 72 'zext' 'zext_ln15_7' <Predicate = (icmp_ln16)> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%zext_ln15_8 = zext i31 %add_ln16" [kernel_Softmax.cpp:15]   --->   Operation 73 'zext' 'zext_ln15_8' <Predicate = (icmp_ln16)> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (0.67ns)   --->   "%icmp_ln16_1 = icmp_slt  i32 %zext_ln15_8, i32 %vec_size_read" [kernel_Softmax.cpp:16]   --->   Operation 74 'icmp' 'icmp_ln16_1' <Predicate = (icmp_ln16)> <Delay = 0.67> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%vec_local_addr_3 = getelementptr i32 %vec_local, i64 0, i64 %zext_ln15_7" [kernel_Softmax.cpp:20]   --->   Operation 75 'getelementptr' 'vec_local_addr_3' <Predicate = (icmp_ln16 & icmp_ln16_1)> <Delay = 0.00>
 ST_6 : Operation 76 [1/1] (0.43ns) (share mux size 4)   --->   "%muxLogicRAMAddr_to_max_val_4 = muxlogic i9 %vec_local_addr_3"   --->   Operation 76 'muxlogic' 'muxLogicRAMAddr_to_max_val_4' <Predicate = (icmp_ln16 & icmp_ln16_1)> <Delay = 0.43>
 ST_6 : Operation 77 [2/2] (0.66ns) (share mux size 7)   --->   "%max_val_4 = load i9 %vec_local_addr_3" [kernel_Softmax.cpp:20]   --->   Operation 77 'load' 'max_val_4' <Predicate = (icmp_ln16 & icmp_ln16_1)> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
 
@@ -429,9 +429,9 @@ ST_7 : Operation 99 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 7)   --->   "%ma
 ST_7 : Operation 100 [1/1] (0.85ns)   --->   "%add_ln16_1 = add i31 %i_1, i31 2" [kernel_Softmax.cpp:16]   --->   Operation 100 'add' 'add_ln16_1' <Predicate = (icmp_ln16 & icmp_ln16_1)> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 
 State 8 <SV = 6> <Delay = 2.87>
-ST_8 : Operation 101 [1/1] (0.00ns)   --->   "%specpipeline_ln17 = specpipeline void @_ssdm_op_SpecPipeline, i32 2, i32 0, i32 0, i32 1, void @empty_115" [kernel_Softmax.cpp:17]   --->   Operation 101 'specpipeline' 'specpipeline_ln17' <Predicate = (icmp_ln16)> <Delay = 0.00>
+ST_8 : Operation 101 [1/1] (0.00ns)   --->   "%specpipeline_ln17 = specpipeline void @_ssdm_op_SpecPipeline, i32 2, i32 0, i32 0, i32 1, void @empty_99" [kernel_Softmax.cpp:17]   --->   Operation 101 'specpipeline' 'specpipeline_ln17' <Predicate = (icmp_ln16)> <Delay = 0.00>
 ST_8 : Operation 102 [1/1] (0.00ns)   --->   "%speclooptripcount_ln18 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 384, i64 192" [kernel_Softmax.cpp:18]   --->   Operation 102 'speclooptripcount' 'speclooptripcount_ln18' <Predicate = (icmp_ln16)> <Delay = 0.00>
-ST_8 : Operation 103 [1/1] (0.00ns)   --->   "%specloopname_ln16 = specloopname void @_ssdm_op_SpecLoopName, void @empty_107" [kernel_Softmax.cpp:16]   --->   Operation 103 'specloopname' 'specloopname_ln16' <Predicate = (icmp_ln16)> <Delay = 0.00>
+ST_8 : Operation 103 [1/1] (0.00ns)   --->   "%specloopname_ln16 = specloopname void @_ssdm_op_SpecLoopName, void @empty_77" [kernel_Softmax.cpp:16]   --->   Operation 103 'specloopname' 'specloopname_ln16' <Predicate = (icmp_ln16)> <Delay = 0.00>
 ST_8 : Operation 104 [1/1] (0.41ns)   --->   "%max_val_3 = select i1 %and_ln20_1, i32 %max_val_2, i32 %max_val_1" [kernel_Softmax.cpp:20]   --->   Operation 104 'select' 'max_val_3' <Predicate = (icmp_ln16)> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_8 : Operation 105 [1/1] (0.00ns)   --->   "%bitcast_ln20_2 = bitcast i32 %max_val_4" [kernel_Softmax.cpp:20]   --->   Operation 105 'bitcast' 'bitcast_ln20_2' <Predicate = (icmp_ln16 & icmp_ln16_1)> <Delay = 0.00>
 ST_8 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_8 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln20_2, i32 23, i32 30" [kernel_Softmax.cpp:20]   --->   Operation 106 'partselect' 'tmp_8' <Predicate = (icmp_ln16 & icmp_ln16_1)> <Delay = 0.00>
@@ -471,11 +471,11 @@ ST_10 : Operation 135 [2/2] (0.66ns) (share mux size 7)   --->   "%vec_local_loa
 
 State 11 <SV = 9> <Delay = 2.22>
 ST_11 : Operation 136 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 7)   --->   "%vec_local_load = load i9 %vec_local_addr_4" [kernel_Softmax.cpp:30]   --->   Operation 136 'load' 'vec_local_load' <Predicate = (icmp_ln26)> <Delay = 0.87> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
-ST_11 : Operation 137 [1/1] (1.35ns) (share mux size 70)   --->   "%muxLogicI0_to_sub = muxlogic i32 %vec_local_load"   --->   Operation 137 'muxlogic' 'muxLogicI0_to_sub' <Predicate = (icmp_ln26)> <Delay = 1.35>
-ST_11 : Operation 138 [1/1] (1.35ns) (share mux size 70)   --->   "%muxLogicI1_to_sub = muxlogic i32 %max_val_0_lcssa"   --->   Operation 138 'muxlogic' 'muxLogicI1_to_sub' <Predicate = (icmp_ln26)> <Delay = 1.35>
+ST_11 : Operation 137 [1/1] (1.35ns) (share mux size 66)   --->   "%muxLogicI0_to_sub = muxlogic i32 %vec_local_load"   --->   Operation 137 'muxlogic' 'muxLogicI0_to_sub' <Predicate = (icmp_ln26)> <Delay = 1.35>
+ST_11 : Operation 138 [1/1] (1.35ns) (share mux size 66)   --->   "%muxLogicI1_to_sub = muxlogic i32 %max_val_0_lcssa"   --->   Operation 138 'muxlogic' 'muxLogicI1_to_sub' <Predicate = (icmp_ln26)> <Delay = 1.35>
 
 State 12 <SV = 10> <Delay = 1.92>
-ST_12 : Operation 139 [1/1] (1.92ns) (share mux size 70)   --->   "%sub = fsub i32 %vec_local_load, i32 %max_val_0_lcssa" [kernel_Softmax.cpp:30]   --->   Operation 139 'fsub' 'sub' <Predicate = (icmp_ln26)> <Delay = 1.92> <CoreInst = "FAddSub_primitivedsp">   --->   Core 13 'FAddSub_primitivedsp' <Latency = 0> <II = 1> <Delay = 1.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 139 [1/1] (1.92ns) (share mux size 66)   --->   "%sub = fsub i32 %vec_local_load, i32 %max_val_0_lcssa" [kernel_Softmax.cpp:30]   --->   Operation 139 'fsub' 'sub' <Predicate = (icmp_ln26)> <Delay = 1.92> <CoreInst = "FAddSub_primitivedsp">   --->   Core 13 'FAddSub_primitivedsp' <Latency = 0> <II = 1> <Delay = 1.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 13 <SV = 11> <Delay = 1.82>
 ST_13 : Operation 140 [1/1] (0.00ns)   --->   "%muxLogicI0_to_tmp = muxlogic i32 %sub"   --->   Operation 140 'muxlogic' 'muxLogicI0_to_tmp' <Predicate = (icmp_ln26)> <Delay = 0.00>
@@ -507,14 +507,14 @@ ST_21 : Operation 149 [1/9] (0.09ns)   --->   "%tmp = fexp i32 @llvm.exp.f32, i3
 ST_21 : Operation 150 [1/1] (0.43ns) (share mux size 4)   --->   "%muxLogicRAMData_to_store_ln30 = muxlogic i32 %tmp"   --->   Operation 150 'muxlogic' 'muxLogicRAMData_to_store_ln30' <Predicate = (icmp_ln26)> <Delay = 0.43>
 ST_21 : Operation 151 [1/1] (0.43ns) (share mux size 4)   --->   "%muxLogicRAMAddr_to_store_ln30 = muxlogic i9 %vec_local_addr_4"   --->   Operation 151 'muxlogic' 'muxLogicRAMAddr_to_store_ln30' <Predicate = (icmp_ln26)> <Delay = 0.43>
 ST_21 : Operation 152 [1/1] ( I:0.66ns O:0.66ns ) (share mux size 7)   --->   "%store_ln30 = store i32 %tmp, i9 %vec_local_addr_4" [kernel_Softmax.cpp:30]   --->   Operation 152 'store' 'store_ln30' <Predicate = (icmp_ln26)> <Delay = 0.66> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.87> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
-ST_21 : Operation 153 [1/1] (1.35ns) (share mux size 70)   --->   "%muxLogicI0_to_sum_1 = muxlogic i32 %sum"   --->   Operation 153 'muxlogic' 'muxLogicI0_to_sum_1' <Predicate = (icmp_ln26)> <Delay = 1.35>
-ST_21 : Operation 154 [1/1] (1.35ns) (share mux size 70)   --->   "%muxLogicI1_to_sum_1 = muxlogic i32 %tmp"   --->   Operation 154 'muxlogic' 'muxLogicI1_to_sum_1' <Predicate = (icmp_ln26)> <Delay = 1.35>
+ST_21 : Operation 153 [1/1] (1.35ns) (share mux size 66)   --->   "%muxLogicI0_to_sum_1 = muxlogic i32 %sum"   --->   Operation 153 'muxlogic' 'muxLogicI0_to_sum_1' <Predicate = (icmp_ln26)> <Delay = 1.35>
+ST_21 : Operation 154 [1/1] (1.35ns) (share mux size 66)   --->   "%muxLogicI1_to_sum_1 = muxlogic i32 %tmp"   --->   Operation 154 'muxlogic' 'muxLogicI1_to_sum_1' <Predicate = (icmp_ln26)> <Delay = 1.35>
 
 State 22 <SV = 20> <Delay = 3.69>
-ST_22 : Operation 155 [1/1] (0.00ns)   --->   "%specpipeline_ln27 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 1, void @empty_115" [kernel_Softmax.cpp:27]   --->   Operation 155 'specpipeline' 'specpipeline_ln27' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_22 : Operation 155 [1/1] (0.00ns)   --->   "%specpipeline_ln27 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 1, void @empty_99" [kernel_Softmax.cpp:27]   --->   Operation 155 'specpipeline' 'specpipeline_ln27' <Predicate = (icmp_ln26)> <Delay = 0.00>
 ST_22 : Operation 156 [1/1] (0.00ns)   --->   "%speclooptripcount_ln28 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 768, i64 384" [kernel_Softmax.cpp:28]   --->   Operation 156 'speclooptripcount' 'speclooptripcount_ln28' <Predicate = (icmp_ln26)> <Delay = 0.00>
-ST_22 : Operation 157 [1/1] (0.00ns)   --->   "%specloopname_ln26 = specloopname void @_ssdm_op_SpecLoopName, void @empty_106" [kernel_Softmax.cpp:26]   --->   Operation 157 'specloopname' 'specloopname_ln26' <Predicate = (icmp_ln26)> <Delay = 0.00>
-ST_22 : Operation 158 [1/1] (1.92ns) (share mux size 70)   --->   "%sum_1 = fadd i32 %sum, i32 %tmp" [kernel_Softmax.cpp:31]   --->   Operation 158 'fadd' 'sum_1' <Predicate = (icmp_ln26)> <Delay = 1.92> <CoreInst = "FAddSub_primitivedsp">   --->   Core 13 'FAddSub_primitivedsp' <Latency = 0> <II = 1> <Delay = 1.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 157 [1/1] (0.00ns)   --->   "%specloopname_ln26 = specloopname void @_ssdm_op_SpecLoopName, void @empty_76" [kernel_Softmax.cpp:26]   --->   Operation 157 'specloopname' 'specloopname_ln26' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_22 : Operation 158 [1/1] (1.92ns) (share mux size 66)   --->   "%sum_1 = fadd i32 %sum, i32 %tmp" [kernel_Softmax.cpp:31]   --->   Operation 158 'fadd' 'sum_1' <Predicate = (icmp_ln26)> <Delay = 1.92> <CoreInst = "FAddSub_primitivedsp">   --->   Core 13 'FAddSub_primitivedsp' <Latency = 0> <II = 1> <Delay = 1.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 ST_22 : Operation 159 [1/1] (0.00ns)   --->   "%br_ln26 = br void %for.cond18" [kernel_Softmax.cpp:26]   --->   Operation 159 'br' 'br_ln26' <Predicate = (icmp_ln26)> <Delay = 0.00>
 
 State 23 <SV = 9> <Delay = 0.42>
@@ -537,40 +537,40 @@ ST_25 : Operation 170 [1/2] ( I:0.87ns O:0.87ns ) (share mux size 7)   --->   "%
 State 26 <SV = 12> <Delay = 2.58>
 ST_26 : Operation 171 [1/1] (0.00ns)   --->   "%muxLogicI0_to_div = muxlogic i32 %vec_local_load_1"   --->   Operation 171 'muxlogic' 'muxLogicI0_to_div' <Predicate = (icmp_ln34)> <Delay = 0.00>
 ST_26 : Operation 172 [1/1] (0.00ns)   --->   "%muxLogicI1_to_div = muxlogic i32 %sum"   --->   Operation 172 'muxlogic' 'muxLogicI1_to_div' <Predicate = (icmp_ln34)> <Delay = 0.00>
-ST_26 : Operation 173 [11/11] (2.58ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 173 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.58> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 173 [11/11] (2.58ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 173 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.58> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 27 <SV = 13> <Delay = 2.79>
-ST_27 : Operation 174 [10/11] (2.79ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 174 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 174 [10/11] (2.79ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 174 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 28 <SV = 14> <Delay = 2.79>
-ST_28 : Operation 175 [9/11] (2.79ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 175 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 175 [9/11] (2.79ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 175 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 29 <SV = 15> <Delay = 2.79>
-ST_29 : Operation 176 [8/11] (2.79ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 176 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 176 [8/11] (2.79ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 176 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 30 <SV = 16> <Delay = 2.79>
-ST_30 : Operation 177 [7/11] (2.79ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 177 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 177 [7/11] (2.79ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 177 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 31 <SV = 17> <Delay = 2.79>
-ST_31 : Operation 178 [6/11] (2.79ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 178 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 178 [6/11] (2.79ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 178 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 32 <SV = 18> <Delay = 2.79>
-ST_32 : Operation 179 [5/11] (2.79ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 179 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 179 [5/11] (2.79ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 179 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 33 <SV = 19> <Delay = 2.79>
-ST_33 : Operation 180 [4/11] (2.79ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 180 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 180 [4/11] (2.79ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 180 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 34 <SV = 20> <Delay = 2.79>
-ST_34 : Operation 181 [3/11] (2.79ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 181 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 181 [3/11] (2.79ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 181 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 35 <SV = 21> <Delay = 2.79>
-ST_35 : Operation 182 [2/11] (2.79ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 182 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 182 [2/11] (2.79ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 182 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 2.79> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 
 State 36 <SV = 22> <Delay = 1.19>
-ST_36 : Operation 183 [1/1] (0.00ns)   --->   "%specpipeline_ln35 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 1, void @empty_115" [kernel_Softmax.cpp:35]   --->   Operation 183 'specpipeline' 'specpipeline_ln35' <Predicate = (icmp_ln34)> <Delay = 0.00>
+ST_36 : Operation 183 [1/1] (0.00ns)   --->   "%specpipeline_ln35 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 1, void @empty_99" [kernel_Softmax.cpp:35]   --->   Operation 183 'specpipeline' 'specpipeline_ln35' <Predicate = (icmp_ln34)> <Delay = 0.00>
 ST_36 : Operation 184 [1/1] (0.00ns)   --->   "%speclooptripcount_ln36 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 768, i64 384" [kernel_Softmax.cpp:36]   --->   Operation 184 'speclooptripcount' 'speclooptripcount_ln36' <Predicate = (icmp_ln34)> <Delay = 0.00>
-ST_36 : Operation 185 [1/1] (0.00ns)   --->   "%specloopname_ln34 = specloopname void @_ssdm_op_SpecLoopName, void @empty_105" [kernel_Softmax.cpp:34]   --->   Operation 185 'specloopname' 'specloopname_ln34' <Predicate = (icmp_ln34)> <Delay = 0.00>
-ST_36 : Operation 186 [1/11] (0.09ns) (share mux size 3)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 186 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 0.09> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 185 [1/1] (0.00ns)   --->   "%specloopname_ln34 = specloopname void @_ssdm_op_SpecLoopName, void @empty_75" [kernel_Softmax.cpp:34]   --->   Operation 185 'specloopname' 'specloopname_ln34' <Predicate = (icmp_ln34)> <Delay = 0.00>
+ST_36 : Operation 186 [1/11] (0.09ns)   --->   "%div = fdiv i32 %vec_local_load_1, i32 %sum" [kernel_Softmax.cpp:38]   --->   Operation 186 'fdiv' 'div' <Predicate = (icmp_ln34)> <Delay = 0.09> <CoreInst = "FDiv">   --->   Core 24 'FDiv' <Latency = 10> <II = 1> <Delay = 2.79> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
 ST_36 : Operation 187 [1/1] (0.00ns)   --->   "%i_vec_addr_1 = getelementptr i32 %i_vec, i64 0, i64 %zext_ln34" [kernel_Softmax.cpp:38]   --->   Operation 187 'getelementptr' 'i_vec_addr_1' <Predicate = (icmp_ln34)> <Delay = 0.00>
 ST_36 : Operation 188 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMData_to_store_ln38 = muxlogic i32 %div"   --->   Operation 188 'muxlogic' 'muxLogicRAMData_to_store_ln38' <Predicate = (icmp_ln34)> <Delay = 0.43>
 ST_36 : Operation 189 [1/1] (0.43ns) (share mux size 3)   --->   "%muxLogicRAMAddr_to_store_ln38 = muxlogic i9 %i_vec_addr_1"   --->   Operation 189 'muxlogic' 'muxLogicRAMAddr_to_store_ln38' <Predicate = (icmp_ln34)> <Delay = 0.43>
@@ -592,7 +592,7 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ i_vec]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ i_vec]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=1; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
 Port [ vec_size]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 ---------------- STG Properties END ------------------
 
@@ -625,14 +625,14 @@ muxLogicRAMAddr_to_max_val          (muxlogic         ) [ 0000000000000000000000
 max_val                             (load             ) [ 00000111100000000000000000000000000000]
 br_ln16                             (br               ) [ 00000111100000000000000000000000000000]
 i_1                                 (phi              ) [ 00000011000000000000000000000000000000]
-zext_ln15_1                         (zext             ) [ 00000000000000000000000000000000000000]
+zext_ln15_6                         (zext             ) [ 00000000000000000000000000000000000000]
 icmp_ln16                           (icmp             ) [ 00000011100000000000000000000000000000]
 zext_ln15                           (zext             ) [ 00000000000000000000000000000000000000]
 vec_local_addr_2                    (getelementptr    ) [ 00000001000000000000000000000000000000]
 muxLogicRAMAddr_to_max_val_2        (muxlogic         ) [ 00000000000000000000000000000000000000]
 add_ln16                            (add              ) [ 00000000000000000000000000000000000000]
-zext_ln15_2                         (zext             ) [ 00000000000000000000000000000000000000]
-zext_ln15_3                         (zext             ) [ 00000000000000000000000000000000000000]
+zext_ln15_7                         (zext             ) [ 00000000000000000000000000000000000000]
+zext_ln15_8                         (zext             ) [ 00000000000000000000000000000000000000]
 icmp_ln16_1                         (icmp             ) [ 00000011100000000000000000000000000000]
 vec_local_addr_3                    (getelementptr    ) [ 00000001000000000000000000000000000000]
 muxLogicRAMAddr_to_max_val_4        (muxlogic         ) [ 00000000000000000000000000000000000000]
@@ -832,7 +832,7 @@ ret_ln40                            (ret              ) [ 0000000000000000000000
 <pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_115"/></StgValue>
+<StgValue><ssdm name="empty_99"/></StgValue>
 </bind>
 </comp>
 
@@ -877,7 +877,7 @@ ret_ln40                            (ret              ) [ 0000000000000000000000
 <pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_108"/></StgValue>
+<StgValue><ssdm name="empty_78"/></StgValue>
 </bind>
 </comp>
 
@@ -958,7 +958,7 @@ ret_ln40                            (ret              ) [ 0000000000000000000000
 <pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_107"/></StgValue>
+<StgValue><ssdm name="empty_77"/></StgValue>
 </bind>
 </comp>
 
@@ -985,7 +985,7 @@ ret_ln40                            (ret              ) [ 0000000000000000000000
 <pin id="55" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_106"/></StgValue>
+<StgValue><ssdm name="empty_76"/></StgValue>
 </bind>
 </comp>
 
@@ -994,7 +994,7 @@ ret_ln40                            (ret              ) [ 0000000000000000000000
 <pin id="57" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_105"/></StgValue>
+<StgValue><ssdm name="empty_75"/></StgValue>
 </bind>
 </comp>
 
@@ -1483,14 +1483,14 @@ ret_ln40                            (ret              ) [ 0000000000000000000000
 </bind>
 </comp>
 
-<comp id="292" class="1004" name="zext_ln15_1_fu_292">
+<comp id="292" class="1004" name="zext_ln15_6_fu_292">
 <pin_list>
 <pin id="293" dir="0" index="0" bw="31" slack="0"/>
 <pin id="294" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln15_1/6 "/>
+<opset="zext_ln15_6/6 "/>
 </bind>
 </comp>
 
@@ -1540,25 +1540,25 @@ ret_ln40                            (ret              ) [ 0000000000000000000000
 </bind>
 </comp>
 
-<comp id="316" class="1004" name="zext_ln15_2_fu_316">
+<comp id="316" class="1004" name="zext_ln15_7_fu_316">
 <pin_list>
 <pin id="317" dir="0" index="0" bw="31" slack="0"/>
 <pin id="318" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln15_2/6 "/>
+<opset="zext_ln15_7/6 "/>
 </bind>
 </comp>
 
-<comp id="321" class="1004" name="zext_ln15_3_fu_321">
+<comp id="321" class="1004" name="zext_ln15_8_fu_321">
 <pin_list>
 <pin id="322" dir="0" index="0" bw="31" slack="0"/>
 <pin id="323" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln15_3/6 "/>
+<opset="zext_ln15_8/6 "/>
 </bind>
 </comp>
 
@@ -2966,15 +2966,15 @@ ret_ln40                            (ret              ) [ 0000000000000000000000
 		max_val : 1
 	State 5
 	State 6
-		zext_ln15_1 : 1
+		zext_ln15_6 : 1
 		icmp_ln16 : 2
 		zext_ln15 : 1
 		vec_local_addr_2 : 2
 		muxLogicRAMAddr_to_max_val_2 : 3
 		max_val_2 : 3
 		add_ln16 : 1
-		zext_ln15_2 : 2
-		zext_ln15_3 : 2
+		zext_ln15_7 : 2
+		zext_ln15_8 : 2
 		icmp_ln16_1 : 3
 		vec_local_addr_3 : 3
 		muxLogicRAMAddr_to_max_val_4 : 4
@@ -3122,10 +3122,10 @@ ret_ln40                            (ret              ) [ 0000000000000000000000
 |----------|--------------------------------------------|---------|---------|---------|
 |          |              zext_ln9_1_fu_262             |    0    |    0    |    0    |
 |          |               zext_ln9_fu_271              |    0    |    0    |    0    |
-|          |             zext_ln15_1_fu_292             |    0    |    0    |    0    |
+|          |             zext_ln15_6_fu_292             |    0    |    0    |    0    |
 |          |              zext_ln15_fu_301              |    0    |    0    |    0    |
-|   zext   |             zext_ln15_2_fu_316             |    0    |    0    |    0    |
-|          |             zext_ln15_3_fu_321             |    0    |    0    |    0    |
+|   zext   |             zext_ln15_7_fu_316             |    0    |    0    |    0    |
+|          |             zext_ln15_8_fu_321             |    0    |    0    |    0    |
 |          |             zext_ln26_1_fu_542             |    0    |    0    |    0    |
 |          |              zext_ln26_fu_551              |    0    |    0    |    0    |
 |          |             zext_ln34_1_fu_592             |    0    |    0    |    0    |

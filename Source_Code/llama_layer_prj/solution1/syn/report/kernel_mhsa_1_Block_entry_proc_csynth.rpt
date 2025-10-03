@@ -1,0 +1,154 @@
+
+
+================================================================
+== Vitis HLS Report for 'kernel_mhsa_1_Block_entry_proc'
+================================================================
+* Date:           Thu Oct  2 22:22:46 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        llama_layer_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.893 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|      348|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        -|        -|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|      230|     -|
+|Register             |        -|      -|      201|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|      201|      578|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     2494|   3616|  1716138|   858069|   641|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     7482|  10848|  5148416|  2574208|  1925|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------+----------+----+---+----+------------+------------+
+    |      Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------+----------+----+---+----+------------+------------+
+    |add126_out_0_fu_154_p2  |         +|   0|  0|  32|          32|           1|
+    |add_fu_118_p2           |         +|   0|  0|  65|          32|          32|
+    |add_ln54_2_fu_142_p2    |         +|   0|  0|  64|          64|          64|
+    |add_ln54_fu_136_p2      |         +|   0|  0|  64|          64|          64|
+    |add_ln67_fu_148_p2      |         +|   0|  0|  33|          33|           1|
+    |mul7_out_0_fu_90_p2     |         -|   0|  0|  23|          23|          23|
+    |mul8_fu_112_p2          |         -|   0|  0|  65|          32|          32|
+    |ap_block_state1         |        or|   0|  0|   2|           1|           1|
+    +------------------------+----------+----+---+----+------------+------------+
+    |Total                   |          |   0|  0| 348|         281|         218|
+    +------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------+----+-----------+-----+-----------+
+    |     Name    | LUT| Input Size| Bits| Total Bits|
+    +-------------+----+-----------+-----+-----------+
+    |ap_done      |   1|          2|    1|          2|
+    |ap_return_0  |   8|          2|    6|         12|
+    |ap_return_1  |  63|          2|   64|        128|
+    |ap_return_2  |  63|          2|   64|        128|
+    |ap_return_3  |  63|          2|   33|         66|
+    |ap_return_4  |  32|          2|   32|         64|
+    +-------------+----+-----------+-----+-----------+
+    |Total        | 230|         12|  200|        400|
+    +-------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------+----+----+-----+-----------+
+    |       Name       | FF | LUT| Bits| Const Bits|
+    +------------------+----+----+-----+-----------+
+    |ap_CS_fsm         |   1|   0|    1|          0|
+    |ap_done_reg       |   1|   0|    1|          0|
+    |ap_return_0_preg  |   6|   0|   23|         17|
+    |ap_return_1_preg  |  64|   0|   64|          0|
+    |ap_return_2_preg  |  64|   0|   64|          0|
+    |ap_return_3_preg  |  33|   0|   33|          0|
+    |ap_return_4_preg  |  32|   0|   32|          0|
+    +------------------+----+----+-----+-----------+
+    |Total             | 201|   0|  218|         17|
+    +------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------+-----+-----+------------+--------------------------------+--------------+
+|  RTL Ports  | Dir | Bits|  Protocol  |          Source Object         |    C Type    |
++-------------+-----+-----+------------+--------------------------------+--------------+
+|ap_clk       |   in|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_rst       |   in|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_start     |   in|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_done      |  out|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_continue  |   in|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_idle      |  out|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_ready     |  out|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_return_0  |  out|   23|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_return_1  |  out|   64|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_return_2  |  out|   64|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_return_3  |  out|   33|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|ap_return_4  |  out|   32|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_proc|  return value|
+|layer        |   in|    4|   ap_stable|                           layer|        scalar|
+|position     |   in|   32|   ap_stable|                        position|        scalar|
+|key_cache    |   in|   64|   ap_stable|                       key_cache|        scalar|
+|value_cache  |   in|   64|   ap_stable|                     value_cache|        scalar|
++-------------+-----+-----+------------+--------------------------------+--------------+
+

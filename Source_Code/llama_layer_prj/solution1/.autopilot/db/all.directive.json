@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "llama_layer",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "llama_layer"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/full_layer.tcl",
+    "sourceLine": 22,
+    "success": true
+  }
+]

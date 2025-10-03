@@ -394,7 +394,7 @@ attribute shreg_extract : string;
     end component;
 
 
-    component kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arrfYi IS
+    component kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arrbkb IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -408,7 +408,7 @@ attribute shreg_extract : string;
     end component;
 
 
-    component kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arrayg8j IS
+    component kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arraycud IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -424,7 +424,7 @@ attribute shreg_extract : string;
 
 
 begin
-    pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_U : component kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arrfYi
+    pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_U : component kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arrbkb
     generic map (
         DataWidth => 27,
         AddressRange => 512,
@@ -436,7 +436,7 @@ begin
         ce0 => pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_ce0_local,
         q0 => pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_q0);
 
-    pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_U : component kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arrayg8j
+    pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_U : component kernel_mhsa_pow_generic_float_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arraycud
     generic map (
         DataWidth => 8,
         AddressRange => 32,
@@ -448,7 +448,7 @@ begin
         ce0 => pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_ce0_local,
         q0 => pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_q0);
 
-    mul_10s_36s_36_1_1_U308 : component kernel_mhsa_mul_10s_36s_36_1_1
+    mul_10s_36s_36_1_1_U327 : component kernel_mhsa_mul_10s_36s_36_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -460,7 +460,7 @@ begin
         din1 => ap_const_lv36_B17217F7D,
         dout => mul_ln568_fu_202_p2);
 
-    mul_25s_39ns_63_1_1_U309 : component kernel_mhsa_mul_25s_39ns_63_1_1
+    mul_25s_39ns_63_1_1_U328 : component kernel_mhsa_mul_25s_39ns_63_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -472,7 +472,7 @@ begin
         din1 => m_frac_l_fu_207_p1,
         dout => m_frac_l_fu_207_p2);
 
-    sparsemux_11_4_32_1_1_U310 : component kernel_mhsa_sparsemux_11_4_32_1_1
+    sparsemux_11_4_32_1_1_U329 : component kernel_mhsa_sparsemux_11_4_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -499,7 +499,7 @@ begin
         sel => UnifiedRetVal_fu_923_p12,
         dout => UnifiedRetVal_fu_923_p13);
 
-    mac_muladd_13s_12ns_16s_25_4_1_U311 : component kernel_mhsa_mac_muladd_13s_12ns_16s_25_4_1
+    mac_muladd_13s_12ns_16s_25_4_1_U330 : component kernel_mhsa_mac_muladd_13s_12ns_16s_25_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -516,7 +516,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_951_p3);
 
-    mac_muladd_18ns_18ns_44ns_44_4_1_U312 : component kernel_mhsa_mac_muladd_18ns_18ns_44ns_44_4_1
+    mac_muladd_18ns_18ns_44ns_44_4_1_U331 : component kernel_mhsa_mac_muladd_18ns_18ns_44ns_44_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,

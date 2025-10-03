@@ -6,7 +6,7 @@
 #include "tensor.hpp"
 #include "kernel_FFN.hpp"
 
-#define MAX_TENSOR_SIZE 3072
+#define MAX_TENSOR_SIZE 2048
 
 void push_tensor1d(float* tsor, hls::stream<float> &strm, int tsor_size){
     for (int i = 0; i < tsor_size; i++)

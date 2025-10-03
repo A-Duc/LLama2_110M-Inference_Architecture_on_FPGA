@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa'" level="0">
-<item name = "Date">Tue Sep 30 23:58:46 2025
+<item name = "Date">Thu Oct  2 21:26:06 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">28407702, 38366562, 0.114 sec, 0.153 sec, 28407703, 38366563, no</column>
+<column name="">?, ?, ?, ?, ?, ?, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,8 +35,6 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LAYER_LOOP">28406136, 38364996, 2367178 ~ 3197083, -, -, 12, no</column>
-<column name=" + HEAD_STREAM">252, 393708, 21 ~ 32809, -, -, 12, no</column>
 </table>
 </item>
 </section>

@@ -1,0 +1,104 @@
+  **** HLS Build v2025.1 6135595
+Sourcing Tcl script 'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/./full_layer.tcl'
+INFO: [HLS 200-1510] Running: open_project llama_layer_prj 
+WARNING: [HLS 200-2182] The 'llama_layer_prj' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Opening solution 'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/llama_layer_prj'.
+INFO: [HLS 200-1510] Running: set_top llama_layer 
+INFO: [HLS 200-1510] Running: add_files llama_layer.cpp 
+INFO: [HLS 200-10] Adding design file 'llama_layer.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_MHSA.cpp 
+INFO: [HLS 200-10] Adding design file 'kernel_MHSA.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_MHSA.hpp 
+INFO: [HLS 200-10] Adding design file 'kernel_MHSA.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_Rope.cpp 
+INFO: [HLS 200-10] Adding design file 'kernel_Rope.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_Rope.hpp 
+INFO: [HLS 200-10] Adding design file 'kernel_Rope.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_MatMul.cpp 
+INFO: [HLS 200-10] Adding design file 'kernel_MatMul.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_MatMul.hpp 
+INFO: [HLS 200-10] Adding design file 'kernel_MatMul.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_Softmax.cpp 
+INFO: [HLS 200-10] Adding design file 'kernel_Softmax.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_Softmax.hpp 
+INFO: [HLS 200-10] Adding design file 'kernel_Softmax.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_RMS_Norm.cpp 
+INFO: [HLS 200-10] Adding design file 'kernel_RMS_Norm.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_RMS_Norm.hpp 
+INFO: [HLS 200-10] Adding design file 'kernel_RMS_Norm.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files tensor.hpp 
+INFO: [HLS 200-10] Adding design file 'tensor.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_FFN.cpp 
+INFO: [HLS 200-10] Adding design file 'kernel_FFN.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files kernel_FFN.hpp 
+INFO: [HLS 200-10] Adding design file 'kernel_FFN.hpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 
+INFO: [HLS 200-10] Opening solution 'C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/llama_layer_prj/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+WARNING: [HLS 200-655] The device family 'versalhbm-2MHP' is new to HLS - using 'versalaicore-2HP' characterization library
+INFO: [HLS 200-1611] Setting target device to 'xcv80-lsva4737-2MHP-e-S'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcv80-lsva4737-2MHP-e-S 
+WARNING: [HLS 200-655] The device family 'versalhbm-2MHP' is new to HLS - using 'versalaicore-2HP' characterization library
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.836 seconds; current allocated memory: 583.223 MB.
+INFO: [HLS 200-10] Analyzing design file 'kernel_FFN.cpp' ... 
+WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
+INFO: [HLS 200-10] Analyzing design file 'kernel_RMS_Norm.cpp' ... 
+WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
+INFO: [HLS 200-10] Analyzing design file 'kernel_Softmax.cpp' ... 
+WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
+INFO: [HLS 200-10] Analyzing design file 'kernel_MatMul.cpp' ... 
+WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (kernel_MatMul.cpp:104:9)
+Resolution: For help on HLS 214-114 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-114.html
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file kernel_MatMul.cpp
+Resolution: For help on HLS 200-471 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-471.html
+INFO: [HLS 200-10] Analyzing design file 'kernel_Rope.cpp' ... 
+WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
+INFO: [HLS 200-10] Analyzing design file 'kernel_MHSA.cpp' ... 
+WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (kernel_MHSA.cpp:41:9)
+Resolution: For help on HLS 214-114 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-114.html
+WARNING: [HLS 214-169] There are a total of 8 such instances of non-canonical statements in the dataflow region (kernel_MHSA.cpp:41:9)
+Resolution: For help on HLS 214-169 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-169.html
+WARNING: [HLS 200-471] Dataflow form checks found 2 issue(s) in file kernel_MHSA.cpp
+Resolution: For help on HLS 200-471 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-471.html
+INFO: [HLS 200-10] Analyzing design file 'llama_layer.cpp' ... 
+WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 123.564 seconds; current allocated memory: 615.062 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 1,593 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/llama_layer_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,124 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/llama_layer_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 924 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/llama_layer_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 808 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/llama_layer_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 808 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/llama_layer_prj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'get_layer_weight_offset(int)' into 'get_weight_ptr(float*, int, int)' (llama_layer.cpp:43:20)
+INFO: [HLS 214-131] Inlining function 'get_weight_ptr(float*, int, int)' into 'llama_layer' (llama_layer.cpp:110:26)
+INFO: [HLS 214-131] Inlining function 'get_final_weights(float*, int)' into 'llama_layer' (llama_layer.cpp:157:29)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (llama_layer.cpp:163:5)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_65_5' is marked as complete unroll implied by the pipeline pragma (kernel_MatMul.cpp:65:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_28_3' is marked as complete unroll implied by the pipeline pragma (kernel_MatMul.cpp:28:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_15_2' is marked as complete unroll implied by the pipeline pragma (kernel_MatMul.cpp:15:19)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_57_3' (kernel_MatMul.cpp:57:19) in function 'compute_vec_mat' completely with a factor of 16 (kernel_MatMul.cpp:41:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_65_5' (kernel_MatMul.cpp:65:19) in function 'compute_vec_mat' completely with a factor of 16 (kernel_MatMul.cpp:41:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_75_6' (kernel_MatMul.cpp:75:26) in function 'compute_vec_mat' completely with a factor of 16 (kernel_MatMul.cpp:41:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_28_3' (kernel_MatMul.cpp:28:19) in function 'load_mat_burst' completely with a factor of 16 (kernel_MatMul.cpp:22:0)
+INFO: [HLS 214-178] Inlining function 'std::sqrt(float)' into 'kernel_rmsnorm' (kernel_RMS_Norm.cpp:9:0)
+INFO: [HLS 214-178] Inlining function 'kernel_rmsnorm' into 'llama_layer' (llama_layer.cpp:80:0)
+ERROR: [HLS 214-194] in function 'llama_layer': Undefined function kernel_mhsa (llama_layer.cpp:129:9)
+ERROR: [HLS 214-135] Syn check fail!
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:02:13; Allocated memory: 33.938 MB.
+Pre-synthesis failed.
+    while executing
+"source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/./full_layer.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $tclfile] "
+
+INFO: [HLS 200-112] Total CPU user time: 7 seconds. Total CPU system time: 2 seconds. Total elapsed time: 137.401 seconds; peak allocated memory: 617.016 MB.
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

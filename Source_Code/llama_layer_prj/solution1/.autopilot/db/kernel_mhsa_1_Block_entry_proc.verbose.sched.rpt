@@ -1,0 +1,137 @@
+
+
+================================================================
+== Vitis HLS Report for 'kernel_mhsa_1_Block_entry_proc'
+================================================================
+* Date:           Thu Oct  2 22:20:44 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        llama_layer_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.893 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.89>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i4 %layer, i1 1, void @p_str"   --->   Operation 2 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i64 %value_cache, i1 1, void @p_str"   --->   Operation 3 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i64 %key_cache, i1 1, void @p_str"   --->   Operation 4 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %position, i1 1, void @p_str"   --->   Operation 5 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%value_cache_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %value_cache"   --->   Operation 6 'read' 'value_cache_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%key_cache_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %key_cache"   --->   Operation 7 'read' 'key_cache_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%position_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %position"   --->   Operation 8 'read' 'position_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%layer_read = read i4 @_ssdm_op_Read.ap_auto.i4, i4 %layer"   --->   Operation 9 'read' 'layer_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%position_cast = sext i32 %position_read"   --->   Operation 10 'sext' 'position_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%p_shl = bitconcatenate i23 @_ssdm_op_BitConcatenate.i23.i4.i19, i4 %layer_read, i19 0"   --->   Operation 11 'bitconcatenate' 'p_shl' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i4.i17, i4 %layer_read, i17 0"   --->   Operation 12 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_shl11 = zext i21 %tmp"   --->   Operation 13 'zext' 'p_shl11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.82ns)   --->   "%mul7_out_0 = sub i23 %p_shl, i23 %p_shl11"   --->   Operation 14 'sub' 'mul7_out_0' <Predicate = true> <Delay = 0.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%mul7_cast = zext i23 %mul7_out_0"   --->   Operation 15 'zext' 'mul7_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%empty = shl i32 %position_read, i32 10"   --->   Operation 16 'shl' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%empty_259 = shl i32 %position_read, i32 8"   --->   Operation 17 'shl' 'empty_259' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%mul8 = sub i32 %empty, i32 %empty_259"   --->   Operation 18 'sub' 'mul8' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 19 [1/1] (1.05ns) (root node of TernaryAdder)   --->   "%add = add i32 %mul8, i32 %mul7_cast"   --->   Operation 19 'add' 'add' <Predicate = true> <Delay = 1.05> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i34 @_ssdm_op_BitConcatenate.i34.i32.i2, i32 %add, i2 0" [kernel_MHSA.cpp:54]   --->   Operation 20 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%sext_ln54 = sext i34 %shl_ln" [kernel_MHSA.cpp:54]   --->   Operation 21 'sext' 'sext_ln54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (1.01ns)   --->   "%add_ln54 = add i64 %sext_ln54, i64 %key_cache_read" [kernel_MHSA.cpp:54]   --->   Operation 22 'add' 'add_ln54' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (1.01ns)   --->   "%add_ln54_2 = add i64 %sext_ln54, i64 %value_cache_read" [kernel_MHSA.cpp:54]   --->   Operation 23 'add' 'add_ln54_2' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (0.85ns)   --->   "%add_ln67 = add i33 %position_cast, i33 1" [kernel_MHSA.cpp:67]   --->   Operation 24 'add' 'add_ln67' <Predicate = true> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (0.85ns)   --->   "%add126_out_0 = add i32 %position_read, i32 1"   --->   Operation 25 'add' 'add126_out_0' <Predicate = true> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%mrv = insertvalue i216 <undef>, i23 %mul7_out_0"   --->   Operation 26 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i216 %mrv, i64 %add_ln54" [kernel_MHSA.cpp:54]   --->   Operation 27 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i216 %mrv_1, i64 %add_ln54_2" [kernel_MHSA.cpp:54]   --->   Operation 28 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i216 %mrv_2, i33 %add_ln67" [kernel_MHSA.cpp:54]   --->   Operation 29 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i216 %mrv_3, i32 %add126_out_0" [kernel_MHSA.cpp:54]   --->   Operation 30 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%ret_ln54 = ret i216 %mrv_4" [kernel_MHSA.cpp:54]   --->   Operation 31 'ret' 'ret_ln54' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4.000ns, clock uncertainty: 1.080ns.
+
+ <State 1>: 2.893ns
+The critical path consists of the following:
+	wire read operation ('layer_read') on port 'layer' [12]  (0.000 ns)
+	'sub' operation 23 bit ('mul7_out_0') [17]  (0.823 ns)
+	'add' operation 32 bit ('add') [22]  (1.057 ns)
+	'add' operation 64 bit ('add_ln54', kernel_MHSA.cpp:54) [25]  (1.014 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

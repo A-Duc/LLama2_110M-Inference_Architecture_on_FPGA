@@ -196,7 +196,7 @@ reg   [31:0] ap_phi_mux_sum_phi_fu_201_p4;
 wire    ap_block_pp2_stage0;
 wire    ap_block_pp0_stage0;
 wire   [63:0] zext_ln15_fu_301_p1;
-wire   [63:0] zext_ln15_2_fu_316_p1;
+wire   [63:0] zext_ln15_7_fu_316_p1;
 wire   [63:0] zext_ln26_fu_551_p1;
 wire    ap_block_pp3_stage0;
 reg    i_vec_ce0_local;
@@ -217,9 +217,9 @@ reg   [31:0] grp_fu_236_p0;
 reg   [31:0] grp_fu_236_p1;
 wire    ap_block_pp1_stage1;
 wire   [31:0] zext_ln9_1_fu_262_p1;
-wire   [31:0] zext_ln15_1_fu_292_p1;
+wire   [31:0] zext_ln15_6_fu_292_p1;
 wire   [30:0] add_ln16_fu_310_p2;
-wire   [31:0] zext_ln15_3_fu_321_p1;
+wire   [31:0] zext_ln15_8_fu_321_p1;
 wire   [31:0] bitcast_ln20_fu_334_p1;
 wire   [31:0] bitcast_ln20_1_fu_352_p1;
 wire   [7:0] tmp_5_fu_338_p4;
@@ -331,19 +331,19 @@ kernel_mhsa_fsub_32ns_32ns_32_1_primitive_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fsub_32ns_32ns_32_1_primitive_dsp_1_U427(
+fsub_32ns_32ns_32_1_primitive_dsp_1_U792(
     .din0(grp_fu_220_p0),
     .din1(grp_fu_220_p1),
     .dout(grp_fu_220_p2)
 );
 
-kernel_mhsa_fadd_32ns_32ns_32_1_primitive_dsp_1 #(
+kernel_mhsa_fadd_32ns_32ns_32_1_primitive_dsp_1_x #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fadd_32ns_32ns_32_1_primitive_dsp_1_U428(
+fadd_32ns_32ns_32_1_primitive_dsp_1_x_U793(
     .din0(grp_fu_225_p0),
     .din1(grp_fu_225_p1),
     .dout(grp_fu_225_p2)
@@ -355,7 +355,7 @@ kernel_mhsa_fdiv_32ns_32ns_32_11_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fdiv_32ns_32ns_32_11_no_dsp_1_U429(
+fdiv_32ns_32ns_32_11_no_dsp_1_U794(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(reg_248),
@@ -370,7 +370,7 @@ kernel_mhsa_fcmp_32ns_32ns_1_1_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_1_no_dsp_1_U430(
+fcmp_32ns_32ns_1_1_no_dsp_1_U795(
     .din0(grp_fu_236_p0),
     .din1(grp_fu_236_p1),
     .opcode(5'd2),
@@ -383,7 +383,7 @@ kernel_mhsa_fexp_32ns_32ns_32_9_med_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
-fexp_32ns_32ns_32_9_med_dsp_1_U431(
+fexp_32ns_32ns_32_9_med_dsp_1_U796(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(32'd0),
@@ -1084,7 +1084,7 @@ always @ (*) begin
     if (((1'b0 == ap_block_pp2_stage0) & (1'b1 == ap_CS_fsm_pp2_stage0) & (icmp_ln26_fu_546_p2 == 1'd1) & (ap_enable_reg_pp2_iter0 == 1'b1))) begin
         vec_local_address0_local = zext_ln26_fu_551_p1;
     end else if (((1'b0 == ap_block_pp1_stage0) & (1'b1 == ap_CS_fsm_pp1_stage0) & (ap_enable_reg_pp1_iter0 == 1'b1) & (icmp_ln16_1_fu_325_p2 == 1'd1) & (icmp_ln16_fu_296_p2 == 1'd1))) begin
-        vec_local_address0_local = zext_ln15_2_fu_316_p1;
+        vec_local_address0_local = zext_ln15_7_fu_316_p1;
     end else if ((1'b1 == ap_CS_fsm_state4)) begin
         vec_local_address0_local = 64'd0;
     end else if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln9_reg_640 == 1'd1))) begin
@@ -1313,9 +1313,9 @@ assign i_vec_d0 = grp_fu_230_p2;
 
 assign i_vec_we0 = i_vec_we0_local;
 
-assign icmp_ln16_1_fu_325_p2 = (($signed(zext_ln15_3_fu_321_p1) < $signed(vec_size)) ? 1'b1 : 1'b0);
+assign icmp_ln16_1_fu_325_p2 = (($signed(zext_ln15_8_fu_321_p1) < $signed(vec_size)) ? 1'b1 : 1'b0);
 
-assign icmp_ln16_fu_296_p2 = (($signed(zext_ln15_1_fu_292_p1) < $signed(vec_size)) ? 1'b1 : 1'b0);
+assign icmp_ln16_fu_296_p2 = (($signed(zext_ln15_6_fu_292_p1) < $signed(vec_size)) ? 1'b1 : 1'b0);
 
 assign icmp_ln20_1_fu_376_p2 = ((trunc_ln20_fu_348_p1 == 23'd0) ? 1'b1 : 1'b0);
 
@@ -1367,11 +1367,11 @@ assign trunc_ln20_3_fu_470_p1 = bitcast_ln20_3_fu_456_p1[22:0];
 
 assign trunc_ln20_fu_348_p1 = bitcast_ln20_fu_334_p1[22:0];
 
-assign zext_ln15_1_fu_292_p1 = ap_phi_mux_i_1_phi_fu_157_p4;
+assign zext_ln15_6_fu_292_p1 = ap_phi_mux_i_1_phi_fu_157_p4;
 
-assign zext_ln15_2_fu_316_p1 = add_ln16_fu_310_p2;
+assign zext_ln15_7_fu_316_p1 = add_ln16_fu_310_p2;
 
-assign zext_ln15_3_fu_321_p1 = add_ln16_fu_310_p2;
+assign zext_ln15_8_fu_321_p1 = add_ln16_fu_310_p2;
 
 assign zext_ln15_fu_301_p1 = ap_phi_mux_i_1_phi_fu_157_p4;
 

@@ -153,6 +153,7 @@ extern "C" {
 }
 # 2 "<built-in>" 2
 # 1 "kernel_MHSA.cpp" 2
+
 # 1 "./kernel_Rope.hpp" 1
 
 
@@ -27112,7 +27113,7 @@ void RoPE(
     int pos,
     int d_model
 );
-# 2 "kernel_MHSA.cpp" 2
+# 3 "kernel_MHSA.cpp" 2
 # 1 "./kernel_MatMul.hpp" 1
 
 
@@ -27125,7 +27126,7 @@ void RoPE(
 extern "C" {
 void matmul(float* o_vec, float* i_vec, float* i_mat);
 }
-# 3 "kernel_MHSA.cpp" 2
+# 4 "kernel_MHSA.cpp" 2
 # 1 "./kernel_RMS_Norm.hpp" 1
 
 
@@ -27136,7 +27137,7 @@ void matmul(float* o_vec, float* i_vec, float* i_mat);
 extern "C" {
 void kernel_rmsnorm(float* i_vec_1, float* i_vec_2, float* o_vec);
 }
-# 4 "kernel_MHSA.cpp" 2
+# 5 "kernel_MHSA.cpp" 2
 # 1 "./kernel_Softmax.hpp" 1
 
 
@@ -27144,30 +27145,29 @@ void kernel_rmsnorm(float* i_vec_1, float* i_vec_2, float* o_vec);
 
 
 void kernel_softmax(float* i_vec, int vec_size);
-# 5 "kernel_MHSA.cpp" 2
+# 6 "kernel_MHSA.cpp" 2
 
-__attribute__((sdx_kernel("kernel_mhsa", 0))) void kernel_mhsa(float current_token[768], int position,
-                 float* weights, float* key_cache, float* value_cache) {
+__attribute__((sdx_kernel("kernel_mhsa", 0))) void kernel_mhsa(float* current_token, int position, float* wq, float* wk, float* wv, float* wo, float* key_cache, float* value_cache, int layer) {
 #line 19 "C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/MHSA.tcl"
 #pragma HLSDIRECTIVE TOP name=kernel_mhsa
 # 7 "kernel_MHSA.cpp"
 
 
+
 #pragma HLS INTERFACE m_axi port=current_token bundle=gmem0 offset=slave max_read_burst_length=256 max_write_burst_length=256
-#pragma HLS INTERFACE m_axi port=weights bundle=gmem1 offset=slave max_read_burst_length=256
+#pragma HLS INTERFACE m_axi port=wq bundle=gmem1 offset=slave max_read_burst_length=256
+#pragma HLS INTERFACE m_axi port=wk bundle=gmem5 offset=slave max_read_burst_length=256
+#pragma HLS INTERFACE m_axi port=wv bundle=gmem6 offset=slave max_read_burst_length=256
+#pragma HLS INTERFACE m_axi port=wo bundle=gmem7 offset=slave max_read_burst_length=256
 #pragma HLS INTERFACE m_axi port=key_cache bundle=gmem2 offset=slave max_read_burst_length=256 max_write_burst_length=256
 #pragma HLS INTERFACE m_axi port=value_cache bundle=gmem3 offset=slave max_read_burst_length=256 max_write_burst_length=256
 #pragma HLS INTERFACE s_axilite port=position
+#pragma HLS INTERFACE s_axilite port=layer
 #pragma HLS INTERFACE s_axilite port=return
 
  int head_num = 12;
     int head_dim = 768 / 12;
 
-
-
-
-    float in_rms_vec[768];
-    float out_rms_vec[768];
     float out_q[768];
     float out_q_rope[768];
     float out_k[768];
@@ -27176,9 +27176,6 @@ __attribute__((sdx_kernel("kernel_mhsa", 0))) void kernel_mhsa(float current_tok
     float xb[768];
     float xb2[768];
 
-
-#pragma HLS ARRAY_PARTITION variable=in_rms_vec cyclic factor=8
-#pragma HLS ARRAY_PARTITION variable=out_rms_vec cyclic factor=8
 #pragma HLS ARRAY_PARTITION variable=out_q cyclic factor=8
 #pragma HLS ARRAY_PARTITION variable=out_q_rope cyclic factor=8
 #pragma HLS ARRAY_PARTITION variable=out_k cyclic factor=8
@@ -27187,169 +27184,134 @@ __attribute__((sdx_kernel("kernel_mhsa", 0))) void kernel_mhsa(float current_tok
 #pragma HLS ARRAY_PARTITION variable=xb cyclic factor=8
 #pragma HLS ARRAY_PARTITION variable=xb2 cyclic factor=8
 
- float current_input[768];
-#pragma HLS ARRAY_PARTITION variable=current_input cyclic factor=8
 
-
- INPUT_COPY: for (int i = 0; i < 768; i++) {
-#pragma HLS PIPELINE II=1
- current_input[i] = current_token[i];
+#pragma HLS DATAFLOW
+ {
+        matmul(out_q, current_token, wq);
+        matmul(out_k, current_token, wk);
+        matmul(out_v, current_token, wv);
     }
 
 
-    LAYER_LOOP: for (unsigned int l = 0; l < 12; l++) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=12
-#pragma HLS DEPENDENCE variable=current_input inter false
+    {
+        RoPE(out_q_rope, out_q, position, 768);
+        RoPE(out_k_rope, out_k, position, 768);
+    }
 
 
- int weight_offset = l * (768 + 3 * 768 * 768 + 768 * 768);
-        float* rms_att_weight = &weights[weight_offset];
-        float* wq = &weights[weight_offset + 768];
-        float* wk = &weights[weight_offset + 768 + 768 * 768];
-        float* wv = &weights[weight_offset + 768 + 2 * 768 * 768];
-        float* wo = &weights[weight_offset + 768 + 3 * 768 * 768];
-
-
-        {
-
-            kernel_rmsnorm(current_input, rms_att_weight, out_rms_vec);
-
-
-            {
-                matmul(out_q, out_rms_vec, wq);
-                matmul(out_k, out_rms_vec, wk);
-                matmul(out_v, out_rms_vec, wv);
-            }
-        }
-
-
-        {
-            RoPE(out_q_rope, out_q, position, 768);
-            RoPE(out_k_rope, out_k, position, 768);
-        }
-
-
-        CACHE_STORE: for (int i = 0; i < 768; i++) {
+    CACHE_STORE: for (int i = 0; i < 768; i++) {
 #pragma HLS PIPELINE II=1
- key_cache[l * 512 * 768 + position * 768 + i] = out_k_rope[i];
-            value_cache[l * 512 * 768 + position * 768 + i] = out_v[i];
-        }
+#pragma HLS dependence variable=key_cache inter false
+#pragma HLS dependence variable=value_cache inter false
+ key_cache[layer * 512 * 768 + position * 768 + i] = out_k_rope[i];
+        value_cache[layer * 512 * 768 + position * 768 + i] = out_v[i];
+    }
 
 
-        float att[12][512];
+    float att[12][512];
 #pragma HLS ARRAY_PARTITION variable=att complete dim=1
 
-
  ATTENTION_COMPUTE: {
-
-
-            ATT_INIT: for (int h = 0; h < 12; h++) {
-                VITIS_LOOP_100_1: for (int t = 0; t <= position; t++) {
+        ATT_INIT: for (int h = 0; h < 12; h++) {
+            VITIS_LOOP_69_1: for (int t = 0; t <= position; t++) {
 #pragma HLS PIPELINE II=1
 #pragma HLS LOOP_TRIPCOUNT min=1 max=512
  att[h][t] = 0.0f;
+            }
+        }
+
+        HEAD_COMPUTE: for (int h = 0; h < 12; h++) {
+#pragma HLS LOOP_TRIPCOUNT min=1 max=16
+ float q_head_local[768/12];
+            float k_cache_local[512 * 768/12];
+#pragma HLS ARRAY_PARTITION variable=q_head_local complete
+#pragma HLS ARRAY_PARTITION variable=k_cache_local cyclic factor=8
+
+ LOAD_K_CACHE: for (int t = 0; t <= position; t++) {
+                VITIS_LOOP_84_2: for (int j = 0; j < head_dim; j++) {
+#pragma HLS PIPELINE II=1
+ k_cache_local[t * head_dim + j] = key_cache[layer * 512 * 768 + t * 768 + h * head_dim + j];
                 }
             }
 
-
-            HEAD_COMPUTE: for (int h = 0; h < 12; h++) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=16
-
-
- float q_head_local[768/12];
-#pragma HLS ARRAY_PARTITION variable=q_head_local complete
-
- Q_LOAD: for (int j = 0; j < head_dim; j++) {
+            Q_LOAD: for (int j = 0; j < head_dim; j++) {
 #pragma HLS PIPELINE II=1
  q_head_local[j] = out_q_rope[h * head_dim + j];
-                }
+            }
 
-
-                TOKEN_COMPUTE: for (int t = 0; t <= position; t++) {
+            TOKEN_COMPUTE: for (int t = 0; t <= position; t++) {
 #pragma HLS PIPELINE II=8
 #pragma HLS LOOP_TRIPCOUNT min=1 max=512
-
  float dot = 0.0f;
-
-
-                    DOT_COMPUTE: for (int j = 0; j < head_dim; j++) {
-#pragma HLS UNROLL factor=4
- float k_val = key_cache[l * 512 * 768 + t * 768 + h * head_dim + j];
+                DOT_COMPUTE: for (int j = 0; j < head_dim; j++) {
+#pragma HLS UNROLL factor=8
+ float k_val = k_cache_local[t * head_dim + j];
 #pragma HLS BIND_OP variable=dot op=fmul impl=dsp
  dot += q_head_local[j] * k_val;
-                    }
-
-                    att[h][t] = dot * (1.0f / hls::sqrtf((float)head_dim));
                 }
+                att[h][t] = dot * (1.0f / hls::sqrtf((float)head_dim));
             }
         }
+    }
 
 
-        SOFTMAX_HEADS: for (int h = 0; h < 12; h++) {
+    SOFTMAX_HEADS: for (int h = 0; h < 12; h++) {
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
  kernel_softmax(&att[h][0], position + 1);
-        }
+    }
 
 
-        XB_INIT: for (int i = 0; i < 768; i++) {
+    XB_INIT: for (int i = 0; i < 768; i++) {
 #pragma HLS PIPELINE II=1
  xb[i] = 0.0f;
-        }
+    }
 
-
-        VALUE_ACCUMULATION: {
-
-            HEAD_STREAM: for (int h = 0; h < 12; h++) {
+    VALUE_ACCUMULATION: {
+        HEAD_STREAM: for (int h = 0; h < 12; h++) {
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
-
-
  float local_accum[768/12];
+            float v_cache_local[512 * 768/12];
 #pragma HLS ARRAY_PARTITION variable=local_accum complete
+#pragma HLS ARRAY_PARTITION variable=v_cache_local cyclic factor=8
 
+ LOAD_V_CACHE: for (int t = 0; t <= position; t++) {
+                VITIS_LOOP_131_3: for (int i = 0; i < head_dim; i++) {
+#pragma HLS PIPELINE II=1
+ v_cache_local[t * head_dim + i] = value_cache[layer * 512 * 768 + t * 768 + h * head_dim + i];
+                }
+            }
 
- ACCUM_ZERO: for (int i = 0; i < head_dim; i++) {
+            ACCUM_ZERO: for (int i = 0; i < head_dim; i++) {
 #pragma HLS UNROLL
  local_accum[i] = 0.0f;
-                }
+            }
 
-
-                TOKEN_STREAM: for (int t = 0; t <= position; t++) {
+            TOKEN_STREAM: for (int t = 0; t <= position; t++) {
 #pragma HLS LOOP_TRIPCOUNT min=1 max=512
-
  float att_weight = att[h][t];
-
-
-                    VALUE_MAC: for (int i = 0; i < head_dim; i++) {
+                VALUE_MAC: for (int i = 0; i < head_dim; i++) {
 #pragma HLS PIPELINE II=2
-#pragma HLS UNROLL factor=2
- float v_val = value_cache[l * 512 * 768 + t * 768 + h * head_dim + i];
+#pragma HLS UNROLL factor=4
+ float v_val = v_cache_local[t * head_dim + i];
 #pragma HLS BIND_OP variable=local_accum op=fmul impl=dsp
  local_accum[i] += att_weight * v_val;
-                    }
                 }
+            }
 
-
-                ACCUM_WRITEBACK: for (int i = 0; i < head_dim; i++) {
+            ACCUM_WRITEBACK: for (int i = 0; i < head_dim; i++) {
 #pragma HLS PIPELINE II=1
 #pragma HLS UNROLL factor=4
  xb[h * head_dim + i] = local_accum[i];
-                }
             }
         }
-
-
-        matmul(xb2, xb, wo);
-
-
-        RESIDUAL: for (int i = 0; i < 768; i++) {
-#pragma HLS PIPELINE II=1
- current_input[i] = current_input[i] + xb2[i];
-        }
     }
+
+
+    matmul(xb2, xb, wo);
 
 
     OUTPUT_WRITE: for (int i = 0; i < 768; i++) {
 #pragma HLS PIPELINE II=1
- current_token[i] = current_input[i];
+ current_token[i] = xb2[i];
     }
 }

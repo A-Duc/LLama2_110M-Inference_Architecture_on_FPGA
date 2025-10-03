@@ -243,25 +243,49 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 using hls::sim::Byte;
-extern "C" void kernel_mhsa(Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, int, int, int, int, int);
-extern "C" void apatb_kernel_mhsa_hw(volatile void * __xlx_apatb_param_current_token, int __xlx_apatb_param_position, volatile void * __xlx_apatb_param_weights, volatile void * __xlx_apatb_param_key_cache, volatile void * __xlx_apatb_param_value_cache) {
+extern "C" void kernel_mhsa(Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, Byte<4>*, int, int, int, int, int, int, int, int, int);
+extern "C" void apatb_kernel_mhsa_hw(volatile void * __xlx_apatb_param_current_token, int __xlx_apatb_param_position, volatile void * __xlx_apatb_param_wq, volatile void * __xlx_apatb_param_wk, volatile void * __xlx_apatb_param_wv, volatile void * __xlx_apatb_param_wo, volatile void * __xlx_apatb_param_key_cache, volatile void * __xlx_apatb_param_value_cache, int __xlx_apatb_param_layer) {
 using hls::sim::createStream;
   // Collect __xlx_current_token__tmp_vec
 std::vector<Byte<4>> __xlx_current_token__tmp_vec;
-for (size_t i = 0; i < 768; ++i){
+for (size_t i = 0; i < 1; ++i){
 __xlx_current_token__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_current_token)[i]);
 }
-  int __xlx_size_param_current_token = 768;
+  int __xlx_size_param_current_token = 1;
   int __xlx_offset_param_current_token = 0;
   int __xlx_offset_byte_param_current_token = 0*4;
-  // Collect __xlx_weights__tmp_vec
-std::vector<Byte<4>> __xlx_weights__tmp_vec;
+  // Collect __xlx_wq__tmp_vec
+std::vector<Byte<4>> __xlx_wq__tmp_vec;
 for (size_t i = 0; i < 1; ++i){
-__xlx_weights__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_weights)[i]);
+__xlx_wq__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_wq)[i]);
 }
-  int __xlx_size_param_weights = 1;
-  int __xlx_offset_param_weights = 0;
-  int __xlx_offset_byte_param_weights = 0*4;
+  int __xlx_size_param_wq = 1;
+  int __xlx_offset_param_wq = 0;
+  int __xlx_offset_byte_param_wq = 0*4;
+  // Collect __xlx_wk__tmp_vec
+std::vector<Byte<4>> __xlx_wk__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_wk__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_wk)[i]);
+}
+  int __xlx_size_param_wk = 1;
+  int __xlx_offset_param_wk = 0;
+  int __xlx_offset_byte_param_wk = 0*4;
+  // Collect __xlx_wv__tmp_vec
+std::vector<Byte<4>> __xlx_wv__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_wv__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_wv)[i]);
+}
+  int __xlx_size_param_wv = 1;
+  int __xlx_offset_param_wv = 0;
+  int __xlx_offset_byte_param_wv = 0*4;
+  // Collect __xlx_wo__tmp_vec
+std::vector<Byte<4>> __xlx_wo__tmp_vec;
+for (size_t i = 0; i < 1; ++i){
+__xlx_wo__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_wo)[i]);
+}
+  int __xlx_size_param_wo = 1;
+  int __xlx_offset_param_wo = 0;
+  int __xlx_offset_byte_param_wo = 0*4;
   // Collect __xlx_key_cache__tmp_vec
 std::vector<Byte<4>> __xlx_key_cache__tmp_vec;
 for (size_t i = 0; i < 1; ++i){
@@ -279,14 +303,26 @@ __xlx_value_cache__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_value_cache)[i
   int __xlx_offset_param_value_cache = 0;
   int __xlx_offset_byte_param_value_cache = 0*4;
   // DUT call
-  kernel_mhsa(__xlx_current_token__tmp_vec.data(), __xlx_weights__tmp_vec.data(), __xlx_key_cache__tmp_vec.data(), __xlx_value_cache__tmp_vec.data(), __xlx_offset_byte_param_current_token, __xlx_apatb_param_position, __xlx_offset_byte_param_weights, __xlx_offset_byte_param_key_cache, __xlx_offset_byte_param_value_cache);
+  kernel_mhsa(__xlx_current_token__tmp_vec.data(), __xlx_wq__tmp_vec.data(), __xlx_wk__tmp_vec.data(), __xlx_wv__tmp_vec.data(), __xlx_wo__tmp_vec.data(), __xlx_key_cache__tmp_vec.data(), __xlx_value_cache__tmp_vec.data(), __xlx_offset_byte_param_current_token, __xlx_apatb_param_position, __xlx_offset_byte_param_wq, __xlx_offset_byte_param_wk, __xlx_offset_byte_param_wv, __xlx_offset_byte_param_wo, __xlx_offset_byte_param_key_cache, __xlx_offset_byte_param_value_cache, __xlx_apatb_param_layer);
 // print __xlx_apatb_param_current_token
 for (size_t i = 0; i < __xlx_size_param_current_token; ++i) {
 ((Byte<4>*)__xlx_apatb_param_current_token)[i] = __xlx_current_token__tmp_vec[__xlx_offset_param_current_token+i];
 }
-// print __xlx_apatb_param_weights
-for (size_t i = 0; i < __xlx_size_param_weights; ++i) {
-((Byte<4>*)__xlx_apatb_param_weights)[i] = __xlx_weights__tmp_vec[__xlx_offset_param_weights+i];
+// print __xlx_apatb_param_wq
+for (size_t i = 0; i < __xlx_size_param_wq; ++i) {
+((Byte<4>*)__xlx_apatb_param_wq)[i] = __xlx_wq__tmp_vec[__xlx_offset_param_wq+i];
+}
+// print __xlx_apatb_param_wk
+for (size_t i = 0; i < __xlx_size_param_wk; ++i) {
+((Byte<4>*)__xlx_apatb_param_wk)[i] = __xlx_wk__tmp_vec[__xlx_offset_param_wk+i];
+}
+// print __xlx_apatb_param_wv
+for (size_t i = 0; i < __xlx_size_param_wv; ++i) {
+((Byte<4>*)__xlx_apatb_param_wv)[i] = __xlx_wv__tmp_vec[__xlx_offset_param_wv+i];
+}
+// print __xlx_apatb_param_wo
+for (size_t i = 0; i < __xlx_size_param_wo; ++i) {
+((Byte<4>*)__xlx_apatb_param_wo)[i] = __xlx_wo__tmp_vec[__xlx_offset_param_wo+i];
 }
 // print __xlx_apatb_param_key_cache
 for (size_t i = 0; i < __xlx_size_param_key_cache; ++i) {

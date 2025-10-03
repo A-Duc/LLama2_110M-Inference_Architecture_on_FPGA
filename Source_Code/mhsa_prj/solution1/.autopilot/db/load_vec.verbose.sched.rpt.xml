@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'load_vec'" level="0">
-<item name = "Date">Tue Sep 30 23:58:11 2025
+<item name = "Date">Thu Oct  2 21:24:45 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00 ns, 2.562 ns, 1.08 ns</column>
+<column name="ap_clk">4.00 ns, 2.920 ns, 1.08 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">9265, 9265, 37.060 us, 37.060 us, 9265, 9265, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- mem_rd">768, 768, 2, 1, 1, 768, yes</column>
+<column name="- VITIS_LOOP_13_1">9264, 9264, 193, -, -, 48, no</column>
+<column name=" + VITIS_LOOP_15_2">191, 191, 12, -, -, 16, no</column>
 </table>
 </item>
 </section>

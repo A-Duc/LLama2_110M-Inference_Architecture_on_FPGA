@@ -34,9 +34,13 @@ module kernel_mhsa_control_s_axi
     output wire                          interrupt,
     output wire [63:0]                   current_token,
     output wire [31:0]                   position,
-    output wire [63:0]                   weights,
+    output wire [63:0]                   wq,
+    output wire [63:0]                   wk,
+    output wire [63:0]                   wv,
+    output wire [63:0]                   wo,
     output wire [63:0]                   key_cache,
     output wire [63:0]                   value_cache,
+    output wire [31:0]                   layer,
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,
@@ -72,21 +76,39 @@ module kernel_mhsa_control_s_axi
 // 0x1c : Data signal of position
 //        bit 31~0 - position[31:0] (Read/Write)
 // 0x20 : reserved
-// 0x24 : Data signal of weights
-//        bit 31~0 - weights[31:0] (Read/Write)
-// 0x28 : Data signal of weights
-//        bit 31~0 - weights[63:32] (Read/Write)
+// 0x24 : Data signal of wq
+//        bit 31~0 - wq[31:0] (Read/Write)
+// 0x28 : Data signal of wq
+//        bit 31~0 - wq[63:32] (Read/Write)
 // 0x2c : reserved
-// 0x30 : Data signal of key_cache
-//        bit 31~0 - key_cache[31:0] (Read/Write)
-// 0x34 : Data signal of key_cache
-//        bit 31~0 - key_cache[63:32] (Read/Write)
+// 0x30 : Data signal of wk
+//        bit 31~0 - wk[31:0] (Read/Write)
+// 0x34 : Data signal of wk
+//        bit 31~0 - wk[63:32] (Read/Write)
 // 0x38 : reserved
-// 0x3c : Data signal of value_cache
-//        bit 31~0 - value_cache[31:0] (Read/Write)
-// 0x40 : Data signal of value_cache
-//        bit 31~0 - value_cache[63:32] (Read/Write)
+// 0x3c : Data signal of wv
+//        bit 31~0 - wv[31:0] (Read/Write)
+// 0x40 : Data signal of wv
+//        bit 31~0 - wv[63:32] (Read/Write)
 // 0x44 : reserved
+// 0x48 : Data signal of wo
+//        bit 31~0 - wo[31:0] (Read/Write)
+// 0x4c : Data signal of wo
+//        bit 31~0 - wo[63:32] (Read/Write)
+// 0x50 : reserved
+// 0x54 : Data signal of key_cache
+//        bit 31~0 - key_cache[31:0] (Read/Write)
+// 0x58 : Data signal of key_cache
+//        bit 31~0 - key_cache[63:32] (Read/Write)
+// 0x5c : reserved
+// 0x60 : Data signal of value_cache
+//        bit 31~0 - value_cache[31:0] (Read/Write)
+// 0x64 : Data signal of value_cache
+//        bit 31~0 - value_cache[63:32] (Read/Write)
+// 0x68 : reserved
+// 0x6c : Data signal of layer
+//        bit 31~0 - layer[31:0] (Read/Write)
+// 0x70 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -100,15 +122,26 @@ localparam
     ADDR_CURRENT_TOKEN_CTRL   = 7'h18,
     ADDR_POSITION_DATA_0      = 7'h1c,
     ADDR_POSITION_CTRL        = 7'h20,
-    ADDR_WEIGHTS_DATA_0       = 7'h24,
-    ADDR_WEIGHTS_DATA_1       = 7'h28,
-    ADDR_WEIGHTS_CTRL         = 7'h2c,
-    ADDR_KEY_CACHE_DATA_0     = 7'h30,
-    ADDR_KEY_CACHE_DATA_1     = 7'h34,
-    ADDR_KEY_CACHE_CTRL       = 7'h38,
-    ADDR_VALUE_CACHE_DATA_0   = 7'h3c,
-    ADDR_VALUE_CACHE_DATA_1   = 7'h40,
-    ADDR_VALUE_CACHE_CTRL     = 7'h44,
+    ADDR_WQ_DATA_0            = 7'h24,
+    ADDR_WQ_DATA_1            = 7'h28,
+    ADDR_WQ_CTRL              = 7'h2c,
+    ADDR_WK_DATA_0            = 7'h30,
+    ADDR_WK_DATA_1            = 7'h34,
+    ADDR_WK_CTRL              = 7'h38,
+    ADDR_WV_DATA_0            = 7'h3c,
+    ADDR_WV_DATA_1            = 7'h40,
+    ADDR_WV_CTRL              = 7'h44,
+    ADDR_WO_DATA_0            = 7'h48,
+    ADDR_WO_DATA_1            = 7'h4c,
+    ADDR_WO_CTRL              = 7'h50,
+    ADDR_KEY_CACHE_DATA_0     = 7'h54,
+    ADDR_KEY_CACHE_DATA_1     = 7'h58,
+    ADDR_KEY_CACHE_CTRL       = 7'h5c,
+    ADDR_VALUE_CACHE_DATA_0   = 7'h60,
+    ADDR_VALUE_CACHE_DATA_1   = 7'h64,
+    ADDR_VALUE_CACHE_CTRL     = 7'h68,
+    ADDR_LAYER_DATA_0         = 7'h6c,
+    ADDR_LAYER_CTRL           = 7'h70,
     WRIDLE                    = 2'd0,
     WRDATA                    = 2'd1,
     WRRESP                    = 2'd2,
@@ -147,9 +180,13 @@ localparam
     reg  [1:0]                    int_isr = 2'b0;
     reg  [63:0]                   int_current_token = 'b0;
     reg  [31:0]                   int_position = 'b0;
-    reg  [63:0]                   int_weights = 'b0;
+    reg  [63:0]                   int_wq = 'b0;
+    reg  [63:0]                   int_wk = 'b0;
+    reg  [63:0]                   int_wv = 'b0;
+    reg  [63:0]                   int_wo = 'b0;
     reg  [63:0]                   int_key_cache = 'b0;
     reg  [63:0]                   int_value_cache = 'b0;
+    reg  [31:0]                   int_layer = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -268,11 +305,29 @@ always @(posedge ACLK) begin
                 ADDR_POSITION_DATA_0: begin
                     rdata <= int_position[31:0];
                 end
-                ADDR_WEIGHTS_DATA_0: begin
-                    rdata <= int_weights[31:0];
+                ADDR_WQ_DATA_0: begin
+                    rdata <= int_wq[31:0];
                 end
-                ADDR_WEIGHTS_DATA_1: begin
-                    rdata <= int_weights[63:32];
+                ADDR_WQ_DATA_1: begin
+                    rdata <= int_wq[63:32];
+                end
+                ADDR_WK_DATA_0: begin
+                    rdata <= int_wk[31:0];
+                end
+                ADDR_WK_DATA_1: begin
+                    rdata <= int_wk[63:32];
+                end
+                ADDR_WV_DATA_0: begin
+                    rdata <= int_wv[31:0];
+                end
+                ADDR_WV_DATA_1: begin
+                    rdata <= int_wv[63:32];
+                end
+                ADDR_WO_DATA_0: begin
+                    rdata <= int_wo[31:0];
+                end
+                ADDR_WO_DATA_1: begin
+                    rdata <= int_wo[63:32];
                 end
                 ADDR_KEY_CACHE_DATA_0: begin
                     rdata <= int_key_cache[31:0];
@@ -285,6 +340,9 @@ always @(posedge ACLK) begin
                 end
                 ADDR_VALUE_CACHE_DATA_1: begin
                     rdata <= int_value_cache[63:32];
+                end
+                ADDR_LAYER_DATA_0: begin
+                    rdata <= int_layer[31:0];
                 end
             endcase
         end
@@ -300,9 +358,13 @@ assign task_ap_ready     = ap_ready && !int_auto_restart;
 assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
 assign current_token     = int_current_token;
 assign position          = int_position;
-assign weights           = int_weights;
+assign wq                = int_wq;
+assign wk                = int_wk;
+assign wv                = int_wv;
+assign wo                = int_wo;
 assign key_cache         = int_key_cache;
 assign value_cache       = int_value_cache;
+assign layer             = int_layer;
 // int_interrupt
 always @(posedge ACLK) begin
     if (ARESET)
@@ -465,23 +527,83 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_weights[31:0]
+// int_wq[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_weights[31:0] <= 0;
+        int_wq[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_WEIGHTS_DATA_0)
-            int_weights[31:0] <= (WDATA[31:0] & wmask) | (int_weights[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_WQ_DATA_0)
+            int_wq[31:0] <= (WDATA[31:0] & wmask) | (int_wq[31:0] & ~wmask);
     end
 end
 
-// int_weights[63:32]
+// int_wq[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_weights[63:32] <= 0;
+        int_wq[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_WEIGHTS_DATA_1)
-            int_weights[63:32] <= (WDATA[31:0] & wmask) | (int_weights[63:32] & ~wmask);
+        if (w_hs && waddr == ADDR_WQ_DATA_1)
+            int_wq[63:32] <= (WDATA[31:0] & wmask) | (int_wq[63:32] & ~wmask);
+    end
+end
+
+// int_wk[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_wk[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_WK_DATA_0)
+            int_wk[31:0] <= (WDATA[31:0] & wmask) | (int_wk[31:0] & ~wmask);
+    end
+end
+
+// int_wk[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_wk[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_WK_DATA_1)
+            int_wk[63:32] <= (WDATA[31:0] & wmask) | (int_wk[63:32] & ~wmask);
+    end
+end
+
+// int_wv[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_wv[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_WV_DATA_0)
+            int_wv[31:0] <= (WDATA[31:0] & wmask) | (int_wv[31:0] & ~wmask);
+    end
+end
+
+// int_wv[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_wv[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_WV_DATA_1)
+            int_wv[63:32] <= (WDATA[31:0] & wmask) | (int_wv[63:32] & ~wmask);
+    end
+end
+
+// int_wo[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_wo[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_WO_DATA_0)
+            int_wo[31:0] <= (WDATA[31:0] & wmask) | (int_wo[31:0] & ~wmask);
+    end
+end
+
+// int_wo[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_wo[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_WO_DATA_1)
+            int_wo[63:32] <= (WDATA[31:0] & wmask) | (int_wo[63:32] & ~wmask);
     end
 end
 
@@ -522,6 +644,16 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_VALUE_CACHE_DATA_1)
             int_value_cache[63:32] <= (WDATA[31:0] & wmask) | (int_value_cache[63:32] & ~wmask);
+    end
+end
+
+// int_layer[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_layer[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_LAYER_DATA_0)
+            int_layer[31:0] <= (WDATA[31:0] & wmask) | (int_layer[31:0] & ~wmask);
     end
 end
 

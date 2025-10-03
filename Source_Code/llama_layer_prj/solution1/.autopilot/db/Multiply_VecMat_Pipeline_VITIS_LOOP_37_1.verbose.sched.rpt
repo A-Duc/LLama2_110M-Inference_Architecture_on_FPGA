@@ -1,0 +1,147 @@
+
+
+================================================================
+== Vitis HLS Report for 'Multiply_VecMat_Pipeline_VITIS_LOOP_37_1'
+================================================================
+* Date:           Thu Oct  2 22:22:10 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        llama_layer_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  1.503 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |      770|      770|  3.080 us|  3.080 us|  769|  769|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_37_1  |      768|      768|         2|          1|          1|   768|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.50>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [kernel_FFN.cpp:37]   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %x_strm, void @empty_69, i32 0, i32 0, void @empty_107, i32 0, i32 0, void @empty_107, void @empty_107, void @empty_107, i32 0, i32 0, i32 0, i32 0, void @empty_107, void @empty_107, i32 4294967295, i32 0, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.39ns)   --->   "%store_ln37 = store i10 0, i10 %i" [kernel_FFN.cpp:37]   --->   Operation 7 'store' 'store_ln37' <Predicate = true> <Delay = 0.39>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%br_ln37 = br void %for.inc" [kernel_FFN.cpp:37]   --->   Operation 8 'br' 'br_ln37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i_26 = load i10 %i" [kernel_FFN.cpp:37]   --->   Operation 9 'load' 'i_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.71ns)   --->   "%add_ln37 = add i10 %i_26, i10 1" [kernel_FFN.cpp:37]   --->   Operation 10 'add' 'add_ln37' <Predicate = true> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (0.60ns)   --->   "%icmp_ln37 = icmp_eq  i10 %i_26, i10 768" [kernel_FFN.cpp:37]   --->   Operation 11 'icmp' 'icmp_ln37' <Predicate = true> <Delay = 0.60> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.60> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 768, i64 768, i64 768"   --->   Operation 12 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln37 = br i1 %icmp_ln37, void %for.inc.split, void %for.inc17.preheader.exitStub" [kernel_FFN.cpp:37]   --->   Operation 13 'br' 'br_ln37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.39ns)   --->   "%store_ln37 = store i10 %add_ln37, i10 %i" [kernel_FFN.cpp:37]   --->   Operation 14 'store' 'store_ln37' <Predicate = (!icmp_ln37)> <Delay = 0.39>
+ST_1 : Operation 26 [1/1] (0.28ns)   --->   "%ret_ln0 = ret"   --->   Operation 26 'ret' 'ret_ln0' <Predicate = (icmp_ln37)> <Delay = 0.28>
+
+State 2 <SV = 1> <Delay = 1.40>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%zext_ln37 = zext i10 %i_26" [kernel_FFN.cpp:37]   --->   Operation 15 'zext' 'zext_ln37' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%specpipeline_ln38 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_107" [kernel_FFN.cpp:38]   --->   Operation 16 'specpipeline' 'specpipeline_ln38' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%specloopname_ln37 = specloopname void @_ssdm_op_SpecLoopName, void @empty_85" [kernel_FFN.cpp:37]   --->   Operation 17 'specloopname' 'specloopname_ln37' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.42ns) (share mux size 2)   --->   "%muxLogicFIFOCE_to_x_strm_read = muxlogic"   --->   Operation 18 'muxlogic' 'muxLogicFIFOCE_to_x_strm_read' <Predicate = true> <Delay = 0.42>
+ST_2 : Operation 19 [1/1] ( I:0.98ns O:0.09ns ) (share mux size 2)   --->   "%x_strm_read = read i32 @_ssdm_op_Read.ap_fifo.volatile.i32P0A, i32 %x_strm" [kernel_FFN.cpp:39]   --->   Operation 19 'read' 'x_strm_read' <Predicate = true> <Delay = 0.98> <CoreInst = "FIFO">   --->   Core 81 'FIFO' <Latency = 0> <II = 1> <Delay = 0.98> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 64> <FIFO>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%bitcast_ln39 = bitcast i32 %x_strm_read" [kernel_FFN.cpp:39]   --->   Operation 20 'bitcast' 'bitcast_ln39' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%local_vec_addr = getelementptr i32 %local_vec, i64 0, i64 %zext_ln37" [kernel_FFN.cpp:39]   --->   Operation 21 'getelementptr' 'local_vec_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicRAMData_to_store_ln39 = muxlogic i32 %bitcast_ln39"   --->   Operation 22 'muxlogic' 'muxLogicRAMData_to_store_ln39' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_store_ln39 = muxlogic i12 %local_vec_addr"   --->   Operation 23 'muxlogic' 'muxLogicRAMAddr_to_store_ln39' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] ( I:0.75ns O:0.75ns ) (share mux size 2)   --->   "%store_ln39 = store i32 %bitcast_ln39, i12 %local_vec_addr" [kernel_FFN.cpp:39]   --->   Operation 24 'store' 'store_ln39' <Predicate = true> <Delay = 0.75> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.89> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 3072> <RAM>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln37 = br void %for.inc" [kernel_FFN.cpp:37]   --->   Operation 25 'br' 'br_ln37' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4.000ns, clock uncertainty: 1.080ns.
+
+ <State 1>: 1.503ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln37', kernel_FFN.cpp:37) of constant 0 on local variable 'i', kernel_FFN.cpp:37 [5]  (0.393 ns)
+	'load' operation 10 bit ('i', kernel_FFN.cpp:37) on local variable 'i', kernel_FFN.cpp:37 [8]  (0.000 ns)
+	'add' operation 10 bit ('add_ln37', kernel_FFN.cpp:37) [9]  (0.717 ns)
+	'store' operation 0 bit ('store_ln37', kernel_FFN.cpp:37) of variable 'add_ln37', kernel_FFN.cpp:37 on local variable 'i', kernel_FFN.cpp:37 [24]  (0.393 ns)
+
+ <State 2>: 1.408ns
+The critical path consists of the following:
+	'muxlogic' operation 32 bit ('muxLogicFIFOCE_to_x_strm_read') [17]  (0.421 ns)
+	fifo read operation ('x_strm_read', kernel_FFN.cpp:39) on port 'x_strm' (kernel_FFN.cpp:39) [18]  (0.987 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -255,11 +255,11 @@ Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tdom/pkgIndex.tcl
 Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tk8.6/pkgIndex.tcl 
 Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8.6/opt0.4/pkgIndex.tcl 
 Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8.6/pkgs/win/thread2.8.7/pkgIndex.tcl 
-Command       ap_source done; 0.24 sec.
-INFO-FLOW: Workspace C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1 opened at Tue Sep 30 15:46:49 +0700 2025
+Command       ap_source done; 0.172 sec.
+INFO-FLOW: Workspace C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1 opened at Wed Oct 01 20:49:20 +0700 2025
 Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
-Command     open_solution done; 0.294 sec.
+Command     open_solution done; 0.219 sec.
 Execute     set_part xcv80-lsva4737-2MHP-e-S 
 INFO: [HLS 200-1510] Running: set_part xcv80-lsva4737-2MHP-e-S 
 Execute       create_platform xcv80-lsva4737-2MHP-e-S -board  
@@ -268,372 +268,7 @@ DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx2025/2025.1/Vivado/
 DBG:HLSDevice: init success
 WARNING: [HLS 200-655] The device family 'versalhbm-2MHP' is new to HLS - using 'versalaicore-2HP' characterization library
 INFO: [HLS 200-1611] Setting target device to 'xcv80-lsva4737-2MHP-e-S'
-Command       create_platform done; 5.689 sec.
-Execute       source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.219 sec.
-Execute       ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
-Execute       config_compile -quiet -complex-mul-dsp=1 
-Command     set_part done; 5.936 sec.
-Execute     create_clock -period 4 -name default 
-INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
-Execute       ap_set_clock -name default -period 4 -unit ns -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
-Execute     csynth_design 
-INFO: [HLS 200-1510] Running: csynth_design 
-Execute       ::AP::init_summary_file csynth 
-Execute       ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
-INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/xilinx-performance-pragma-detector kernel_FFN.cpp -- -fhls -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP58_PRIMARY__ -I /usr/include/x86_64-linux-gnu > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.xilinx-performance-pragma-detector.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.xilinx-performance-pragma-detector.err.log
-INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
-Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.013 seconds; current allocated memory: 520.793 MB.
-Execute         set_directive_top FFN -name=FFN 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle_types.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/json2huddle.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/try/try.tcl 
-INFO: [HLS 200-10] Analyzing design file 'kernel_FFN.cpp' ... 
-INFO-FLOW: Compiling one TU...
-INFO-FLOW: Handling kernel_FFN.cpp as C++
-Execute         ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
-INFO-FLOW: Running: GCC PP 39
-INFO-FLOW: Source preprocessing
-INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/clang kernel_FFN.cpp -foptimization-record-file=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx2025/2025.1/Vitis/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=4 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP58_PRIMARY__ -I /usr/include/x86_64-linux-gnu -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp {-hls-platform-db-name=C:/Xilinx2025/2025.1/Vitis\common/technology\xilinx/common/platform.db} -hls-platform-name=versal_medium -device-resource-info=BRAM_7482.000000_DSP_10848.000000_FF_5148416.000000_LUT_2574208.000000_SLICE_321776.000000_SLR_3.000000_URAM_1925.000000 -device-name-info=xcv80-lsva4737-2MHP-e-S > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.clang.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.clang.err.log
-WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
-ERROR: [HLS 207-812] 'FFN.hpp' file not found (kernel_FFN.cpp:7:10)
-INFO-FLOW: Caught error in elaborate: 
-    while executing
-"ap_compile_CCPP $srcf $skip_transform CFLAGS $skip_cdt $objdir $is_xip"
-    (procedure "AP::ap_compile_one_tu_39" line 61)
-    invoked from within
-"AP::ap_compile_one_tu_39 $srcfile $skip_transform $dbgInfo $skip_cdt "$cflags""
-    ("foreach" body line 10)
-    invoked from within
-"foreach fentry $dut_files {
-        #puts "file: $fentry"
-        set fatt [lindex $fentry 1]
-        array set opt $fatt
-        set srcfile $opt(nam..."
-    (procedure "AP::compile_dut_files_39" line 18)
-    invoked from within
-"AP::compile_dut_files_39 $dut_files $dbgInfo $skip_cdt $skip_transform"
-    (procedure "AP::compile" line 112)
-    invoked from within
-"AP::compile 1 $skip_cdt $skip_transform"
-    (procedure "ap_internal_elaborate" line 81)
-    invoked from within
-"ap_internal_elaborate "
-Command       elaborate done; error code: 2; 0.978 sec.
-INFO-FLOW: Caught error in csynth_design: 
-    while executing
-"ap_internal_csynth_design "
-Command     csynth_design done; error code: 2; 1.987 sec.
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:01; Allocated memory: 2.000 MB.
-Command   ap_source done; error code: 1; 8.316 sec.
-Execute   cleanup_all 
-Execute       source -notrace -encoding utf-8 C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
-Execute         source -encoding utf-8 C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/0compatibility/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/amazon-s3/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/asn/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/base32/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/base64/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bee/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bench/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bibtex/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cache/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/clay/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/clock/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cmdline/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/comm/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/control/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/coroutine/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/counter/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/crc/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cron/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/csv/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/debug/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/defer/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dicttool/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dns/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/docstrip/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2base/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2idx/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2toc/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dtplite/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/fileutil/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ftp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ftpd/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/fumagic/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/generator/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/gpx/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_aycock/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_fa/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_me/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_peg/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/hook/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/html/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/htmlparse/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/http/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/httpd/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/httpwget/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ident/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/imap4/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/inifile/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/interp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/irc/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/javascript/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/jpeg/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/json/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/lambda/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/lazyset/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ldap/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/log/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/map/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mapproj/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/markdown/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/math/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md4/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md5/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md5crypt/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mime/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mkdoc/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/multiplexer/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/namespacex/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ncgi/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nettool/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nmea/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nns/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nntp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ntp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oauth/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oodialect/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oometa/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ooutil/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/otp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/page/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pluginmgr/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/png/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pop3/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pop3d/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/practcl/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/processman/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/profiler/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pt/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/rcs/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/report/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/rest/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ripemd/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/sasl/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/sha1/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/simulation/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/smtpd/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/snit/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/soundex/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/stooop/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/string/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/stringprep/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/struct/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tar/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tepam/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/term/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/textutil/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tie/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tiff/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tool/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/transfer/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/treeql/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/try/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/udpcluster/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uev/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/units/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uri/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uuid/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/valtype/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_base/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_core/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_transform/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/websocket/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/wip/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/zip/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/0compatibility/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/amazon-s3/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/asn/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/base32/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/base64/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bee/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bench/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bibtex/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cache/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/clay/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/clock/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cmdline/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/comm/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/control/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/coroutine/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/counter/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/crc/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cron/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/csv/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/debug/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/defer/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dicttool/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dns/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/docstrip/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2base/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2idx/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2toc/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dtplite/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/fileutil/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ftp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ftpd/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/fumagic/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/generator/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/gpx/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_aycock/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_fa/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_me/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_peg/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/hook/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/html/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/htmlparse/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/http/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/httpd/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/httpwget/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ident/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/imap4/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/inifile/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/interp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/irc/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/javascript/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/jpeg/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/json/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/lambda/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/lazyset/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ldap/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/log/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/map/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mapproj/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/markdown/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/math/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md4/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md5/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md5crypt/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mime/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mkdoc/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/multiplexer/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/namespacex/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ncgi/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nettool/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nmea/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nns/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nntp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ntp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oauth/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oodialect/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oometa/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ooutil/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/otp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/page/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pluginmgr/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/png/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pop3/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pop3d/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/practcl/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/processman/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/profiler/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pt/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/rcs/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/report/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/rest/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ripemd/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/sasl/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/sha1/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/simulation/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/smtpd/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/snit/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/soundex/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/stooop/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/string/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/stringprep/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/struct/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tar/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tepam/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/term/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/textutil/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tie/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tiff/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tool/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/transfer/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/treeql/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/try/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/udpcluster/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uev/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/units/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uri/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uuid/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/valtype/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_base/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_core/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_transform/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/websocket/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/wip/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/zip/pkgIndex.tcl 
-Command         ap_source done; 0.134 sec.
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tdom/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tk8.6/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8.6/opt0.4/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8.6/pkgs/win/thread2.8.7/pkgIndex.tcl 
-Command       ap_source done; 0.263 sec.
-INFO-FLOW: Workspace C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1 opened at Tue Sep 30 15:47:22 +0700 2025
-Execute       ap_set_clock -name default -period 4 -unit ns -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
-Execute       set_part xcv80-lsva4737-2MHP-e-S 
-Execute         create_platform xcv80-lsva4737-2MHP-e-S -board  
-DBG:HLSDevice: Trying to load device library: C:/Xilinx2025/2025.1/Vitis\lib\win64.o\xv_hlsvwrap.dll
-DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx2025/2025.1/Vivado/data/parts/arch.xml
-DBG:HLSDevice: init success
-WARNING: [HLS 200-655] The device family 'versalhbm-2MHP' is new to HLS - using 'versalaicore-2HP' characterization library
-INFO: [HLS 200-1611] Setting target device to 'xcv80-lsva4737-2MHP-e-S'
-Command         create_platform done; 2.912 sec.
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute             source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Execute         ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
-Execute         config_compile -quiet -complex-mul-dsp=1 
-Command       set_part done; 3.023 sec.
-Execute       send_msg_by_id INFO @200-1505@%s%s  vivado 
-INFO: [HLS 200-1505] Using flow_target 'vivado'
-Command     open_solution done; 3.333 sec.
-Execute     set_part xcv80-lsva4737-2MHP-e-S 
-INFO: [HLS 200-1510] Running: set_part xcv80-lsva4737-2MHP-e-S 
-Execute       create_platform xcv80-lsva4737-2MHP-e-S -board  
-WARNING: [HLS 200-655] The device family 'versalhbm-2MHP' is new to HLS - using 'versalaicore-2HP' characterization library
-Command       create_platform done; 0.162 sec.
+Command       create_platform done; 2.5 sec.
 Execute       source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
 Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
 Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
@@ -648,376 +283,11 @@ Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/xf
 Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
 Execute       ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
 Execute       config_compile -quiet -complex-mul-dsp=1 
-Command     set_part done; 0.29 sec.
+Command     set_part done; 2.606 sec.
 Execute     create_clock -period 4 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
-Execute     csynth_design 
-INFO: [HLS 200-1510] Running: csynth_design 
-Execute       ::AP::init_summary_file csynth 
-Execute       ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
-INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/xilinx-performance-pragma-detector kernel_FFN.cpp -- -fhls -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP58_PRIMARY__ -I /usr/include/x86_64-linux-gnu > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.xilinx-performance-pragma-detector.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.xilinx-performance-pragma-detector.err.log
-INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
-Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 584.156 MB.
-Execute         set_directive_top FFN -name=FFN 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle_types.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/json2huddle.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/try/try.tcl 
-INFO: [HLS 200-10] Analyzing design file 'kernel_FFN.cpp' ... 
-INFO-FLOW: Compiling one TU...
-INFO-FLOW: Handling kernel_FFN.cpp as C++
-Execute         ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
-INFO-FLOW: Running: GCC PP 39
-INFO-FLOW: Source preprocessing
-INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/clang kernel_FFN.cpp -foptimization-record-file=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx2025/2025.1/Vitis/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=4 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP58_PRIMARY__ -I /usr/include/x86_64-linux-gnu -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp {-hls-platform-db-name=C:/Xilinx2025/2025.1/Vitis\common/technology\xilinx/common/platform.db} -hls-platform-name=versal_medium -device-resource-info=BRAM_7482.000000_DSP_10848.000000_FF_5148416.000000_LUT_2574208.000000_SLICE_321776.000000_SLR_3.000000_URAM_1925.000000 -device-name-info=xcv80-lsva4737-2MHP-e-S > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.clang.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.clang.err.log
-WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
-INFO-FLOW: Done: GCC PP 39 time: 0.4 seconds per iteration
-INFO-FLOW: Source syntax check for synthesis
-INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp {-hls-platform-db-name=C:/Xilinx2025/2025.1/Vitis\common/technology\xilinx/common/platform.db} -hls-platform-name=versal_medium -device-resource-info=BRAM_7482.000000_DSP_10848.000000_FF_5148416.000000_LUT_2574208.000000_SLICE_321776.000000_SLR_3.000000_URAM_1925.000000 -device-name-info=xcv80-lsva4737-2MHP-e-S > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/clang.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/clang.err.log
-ERROR: [HLS 207-3776] use of undeclared identifier 'q' (kernel_FFN.cpp:86:37)
-ERROR: [HLS 207-3776] use of undeclared identifier 'kDim' (kernel_FFN.cpp:104:38)
-ERROR: [HLS 207-3776] use of undeclared identifier 'kFFNDim' (kernel_FFN.cpp:110:40)
-INFO-FLOW: Error in clang_39_open_source : 
-INFO-FLOW: Caught error in elaborate:  
-    while executing
-"ap_compile_CCPP $srcf $skip_transform CFLAGS $skip_cdt $objdir $is_xip"
-    (procedure "AP::ap_compile_one_tu_39" line 61)
-    invoked from within
-"AP::ap_compile_one_tu_39 $srcfile $skip_transform $dbgInfo $skip_cdt "$cflags""
-    ("foreach" body line 10)
-    invoked from within
-"foreach fentry $dut_files {
-        #puts "file: $fentry"
-        set fatt [lindex $fentry 1]
-        array set opt $fatt
-        set srcfile $opt(nam..."
-    (procedure "AP::compile_dut_files_39" line 18)
-    invoked from within
-"AP::compile_dut_files_39 $dut_files $dbgInfo $skip_cdt $skip_transform"
-    (procedure "AP::compile" line 112)
-    invoked from within
-"AP::compile 1 $skip_cdt $skip_transform"
-    (procedure "ap_internal_elaborate" line 81)
-    invoked from within
-"ap_internal_elaborate "
-Command       elaborate done; error code: 2; 3.92 sec.
-INFO-FLOW: Caught error in csynth_design:  
-    while executing
-"ap_internal_csynth_design "
-Command     csynth_design done; error code: 2; 4.307 sec.
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:04; Allocated memory: 0.875 MB.
-Command   ap_source done; error code: 1; 7.985 sec.
-Execute   cleanup_all 
-Execute       source -notrace -encoding utf-8 C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
-Execute         source -encoding utf-8 C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/0compatibility/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/amazon-s3/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/asn/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/base32/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/base64/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bee/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bench/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bibtex/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cache/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/clay/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/clock/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cmdline/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/comm/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/control/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/coroutine/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/counter/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/crc/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cron/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/csv/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/debug/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/defer/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dicttool/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dns/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/docstrip/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2base/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2idx/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2toc/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dtplite/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/fileutil/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ftp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ftpd/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/fumagic/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/generator/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/gpx/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_aycock/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_fa/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_me/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_peg/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/hook/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/html/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/htmlparse/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/http/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/httpd/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/httpwget/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ident/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/imap4/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/inifile/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/interp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/irc/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/javascript/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/jpeg/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/json/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/lambda/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/lazyset/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ldap/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/log/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/map/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mapproj/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/markdown/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/math/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md4/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md5/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md5crypt/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mime/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mkdoc/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/multiplexer/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/namespacex/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ncgi/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nettool/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nmea/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nns/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nntp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ntp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oauth/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oodialect/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oometa/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ooutil/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/otp/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/page/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pluginmgr/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/png/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pop3/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pop3d/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/practcl/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/processman/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/profiler/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pt/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/rcs/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/report/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/rest/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ripemd/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/sasl/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/sha1/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/simulation/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/smtpd/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/snit/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/soundex/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/stooop/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/string/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/stringprep/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/struct/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tar/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tepam/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/term/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/textutil/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tie/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tiff/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tool/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/transfer/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/treeql/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/try/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/udpcluster/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uev/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/units/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uri/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uuid/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/valtype/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_base/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_core/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_transform/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/websocket/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/wip/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/zip/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/0compatibility/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/amazon-s3/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/asn/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/base32/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/base64/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bee/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bench/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/bibtex/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cache/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/clay/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/clock/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cmdline/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/comm/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/control/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/coroutine/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/counter/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/crc/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/cron/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/csv/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/debug/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/defer/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dicttool/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dns/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/docstrip/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2base/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2idx/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/doctools2toc/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/dtplite/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/fileutil/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ftp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ftpd/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/fumagic/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/generator/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/gpx/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_aycock/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_fa/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_me/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/grammar_peg/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/hook/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/html/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/htmlparse/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/http/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/httpd/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/httpwget/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ident/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/imap4/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/inifile/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/interp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/irc/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/javascript/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/jpeg/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/json/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/lambda/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/lazyset/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ldap/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/log/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/map/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mapproj/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/markdown/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/math/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md4/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md5/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/md5crypt/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mime/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/mkdoc/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/multiplexer/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/namespacex/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ncgi/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nettool/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nmea/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nns/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/nntp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ntp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oauth/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oodialect/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/oometa/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ooutil/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/otp/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/page/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pluginmgr/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/png/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pop3/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pop3d/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/practcl/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/processman/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/profiler/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/pt/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/rcs/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/report/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/rest/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/ripemd/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/sasl/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/sha1/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/simulation/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/smtpd/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/snit/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/soundex/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/stooop/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/string/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/stringprep/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/struct/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tar/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tepam/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/term/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/textutil/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tie/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tiff/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/tool/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/transfer/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/treeql/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/try/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/udpcluster/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uev/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/units/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uri/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/uuid/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/valtype/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_base/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_core/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/virtchannel_transform/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/websocket/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/wip/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/pkgIndex.tcl 
-Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/zip/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tdom/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tk8.6/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8.6/opt0.4/pkgIndex.tcl 
-Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcl8.6/pkgs/win/thread2.8.7/pkgIndex.tcl 
-Command       ap_source done; 0.206 sec.
-INFO-FLOW: Workspace C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1 opened at Tue Sep 30 15:48:29 +0700 2025
 Execute       ap_set_clock -name default -period 4 -unit ns -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
-Execute       set_part xcv80-lsva4737-2MHP-e-S 
-Execute         create_platform xcv80-lsva4737-2MHP-e-S -board  
-DBG:HLSDevice: Trying to load device library: C:/Xilinx2025/2025.1/Vitis\lib\win64.o\xv_hlsvwrap.dll
-DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx2025/2025.1/Vivado/data/parts/arch.xml
-DBG:HLSDevice: init success
-WARNING: [HLS 200-655] The device family 'versalhbm-2MHP' is new to HLS - using 'versalaicore-2HP' characterization library
-INFO: [HLS 200-1611] Setting target device to 'xcv80-lsva4737-2MHP-e-S'
-Command         create_platform done; 3.082 sec.
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute             source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Execute         ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
-Execute         config_compile -quiet -complex-mul-dsp=1 
-Command       set_part done; 3.219 sec.
-Execute       send_msg_by_id INFO @200-1505@%s%s  vivado 
-INFO: [HLS 200-1505] Using flow_target 'vivado'
-Command     open_solution done; 3.464 sec.
-Execute     set_part xcv80-lsva4737-2MHP-e-S 
-INFO: [HLS 200-1510] Running: set_part xcv80-lsva4737-2MHP-e-S 
-Execute       create_platform xcv80-lsva4737-2MHP-e-S -board  
-WARNING: [HLS 200-655] The device family 'versalhbm-2MHP' is new to HLS - using 'versalaicore-2HP' characterization library
-Command       create_platform done; 0.203 sec.
-Execute       source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/common/xilinx.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/plb46.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/axi4.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute           source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/saxilite.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/util.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/xfft.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/ip/xfir.gen 
-Execute         source C:/Xilinx2025/2025.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Execute       ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
-Execute       config_compile -quiet -complex-mul-dsp=1 
-Command     set_part done; 0.306 sec.
-Execute     create_clock -period 4 -name default 
-INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
 Execute     csynth_design 
 INFO: [HLS 200-1510] Running: csynth_design 
 Execute       ::AP::init_summary_file csynth 
@@ -1025,7 +295,7 @@ Execute       ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/xilinx-performance-pragma-detector kernel_FFN.cpp -- -fhls -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP58_PRIMARY__ -I /usr/include/x86_64-linux-gnu > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.xilinx-performance-pragma-detector.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.xilinx-performance-pragma-detector.err.log
 INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
 Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.342 seconds; current allocated memory: 583.059 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.408 seconds; current allocated memory: 522.543 MB.
 Execute         set_directive_top FFN -name=FFN 
 Execute         source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle.tcl 
 Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle_types.tcl 
@@ -1039,47 +309,45 @@ INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/clang kernel_FFN.cpp -foptimization-record-file=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx2025/2025.1/Vitis/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=4 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP58_PRIMARY__ -I /usr/include/x86_64-linux-gnu -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp {-hls-platform-db-name=C:/Xilinx2025/2025.1/Vitis\common/technology\xilinx/common/platform.db} -hls-platform-name=versal_medium -device-resource-info=BRAM_7482.000000_DSP_10848.000000_FF_5148416.000000_LUT_2574208.000000_SLICE_321776.000000_SLR_3.000000_URAM_1925.000000 -device-name-info=xcv80-lsva4737-2MHP-e-S > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.clang.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.cpp.clang.err.log
 WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
-INFO-FLOW: Done: GCC PP 39 time: 0.4 seconds per iteration
+INFO-FLOW: Done: GCC PP 39 time: 0.5 seconds per iteration
 INFO-FLOW: Source syntax check for synthesis
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp {-hls-platform-db-name=C:/Xilinx2025/2025.1/Vitis\common/technology\xilinx/common/platform.db} -hls-platform-name=versal_medium -device-resource-info=BRAM_7482.000000_DSP_10848.000000_FF_5148416.000000_LUT_2574208.000000_SLICE_321776.000000_SLR_3.000000_URAM_1925.000000 -device-name-info=xcv80-lsva4737-2MHP-e-S > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/clang.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/clang.err.log
 Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp  -target fpga  -directive=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/.systemc_flag -fix-errors C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0
-Command         clang_tidy done; 3.054 sec.
+Command         clang_tidy done; 2.437 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp  -target fpga  -directive=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/all.directive.json -fix-errors C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0
-Command         clang_tidy done; 3.249 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 3.2 seconds per iteration
+Command         clang_tidy done; 2.679 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 2.7 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
 Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp  -target fpga  
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0 > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp.clang-tidy.loop-label.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp.clang-tidy.loop-label.err.log
 Execute           source C:/Xilinx2025/2025.1/Vitis/tps/tcl/tcllib2.0/yaml/yaml.tcl 
-Command         clang_tidy done; 6.873 sec.
+Command         clang_tidy done; 4.817 sec.
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp.xilinx-dataflow-lawyer.err.log
 Execute         ap_part_info -name xcv80-lsva4737-2MHP-e-S -data info 
 INFO-FLOW: compiling source code to llvm bc
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=4 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot -I C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP58_PRIMARY__ -g -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.bc {-hls-platform-db-name=C:/Xilinx2025/2025.1/Vitis\common/technology\xilinx/common/platform.db} -hls-platform-name=versal_medium -device-resource-info=BRAM_7482.000000_DSP_10848.000000_FF_5148416.000000_LUT_2574208.000000_SLICE_321776.000000_SLR_3.000000_URAM_1925.000000 -device-name-info=xcv80-lsva4737-2MHP-e-S > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp.clang.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.pp.0.cpp.clang.err.log
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 23.789 seconds; current allocated memory: 588.273 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 17.852 seconds; current allocated memory: 529.773 MB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
 Execute         run_link_or_opt -out C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.0.bc -args  "C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.g.bc"  
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/llvm-link C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_FFN.g.bc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.0.bc > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log
-Command         run_link_or_opt done; 0.117 sec.
 Execute         run_link_or_opt -opt -out C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.1.lower.bc -args C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.1.lower.bc > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log
 INFO-FLOW: Running: gen_design_size_report post-opt
 INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
-Command         run_link_or_opt done; 0.155 sec.
 INFO-FLOW: Linking math bc lib
 Execute         run_link_or_opt -out C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.2.m1.bc -args C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx2025/2025.1/Vitis/win64/lib/libhlsm_39.bc C:/Xilinx2025/2025.1/Vitis/win64/lib/libhlsmc++_39.bc 
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/llvm-link C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx2025/2025.1/Vitis/win64/lib/libhlsm_39.bc C:/Xilinx2025/2025.1/Vitis/win64/lib/libhlsmc++_39.bc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.2.m1.bc > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
-Command         run_link_or_opt done; 1.918 sec.
+Command         run_link_or_opt done; 1.601 sec.
 Execute         run_link_or_opt -opt -out C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=FFN -reflow-float-conversion 
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=FFN -reflow-float-conversion -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.3.fpc.bc > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
 INFO-FLOW: Running: gen_design_size_report post-opt
 INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
-Command         run_link_or_opt done; 0.866 sec.
+Command         run_link_or_opt done; 0.781 sec.
 Execute         run_link_or_opt -out C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.4.m2.bc -args C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx2025/2025.1/Vitis/win64/lib/libfloatconversion_39.bc 
 INFO-FLOW: run_clang exec: C:/Xilinx2025/2025.1/Vitis/win64/tools/clang-3.9-csynth/bin/llvm-link C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx2025/2025.1/Vitis/win64/lib/libfloatconversion_39.bc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.4.m2.bc > C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
 Execute         run_link_or_opt -opt -out C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=FFN 
@@ -1121,7 +389,7 @@ Execute         send_msg_by_id INFO @200-1995@%s%s%s 238 Performance (step 4) (C
 INFO: [HLS 200-1995] There were 238 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/csynth_design_size.rpt:2)
 Execute         send_msg_by_id INFO @200-1995@%s%s%s 283 HW Transforms (step 1) (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/csynth_design_size.rpt:2) 
 INFO: [HLS 200-1995] There were 283 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/csynth_design_size.rpt:2)
-Command         send_msg_by_id done; 0.225 sec.
+Command         send_msg_by_id done; 1.499 sec.
 Execute         send_msg_by_id INFO @200-1995@%s%s%s 363 HW Transforms (step 2) (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/csynth_design_size.rpt:2) 
 INFO: [HLS 200-1995] There were 363 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/csynth_design_size.rpt:2)
 WARNING: [HLS 214-464] Skipping array undecay on variable length array 'i_vec'. (kernel_FFN.cpp:71:0)
@@ -1136,21 +404,20 @@ WARNING: [HLS 214-475] Merging processes 'push_tensor2d_bycol', 'Multiply_VecMat
 WARNING: [HLS 214-475] Merging processes 'push_tensor2d_bycol', 'push_tensor2d_bycol', 'push_tensor1d', 'Multiply_VecMat', 'push_tensor1d', 'push_tensor2d_bycol' and 'Multiply_VecMat' in function 'FFN' due to writes on 'W_strm' (kernel_FFN.cpp:71:0)
 WARNING: [HLS 214-475] Merging processes 'Swish', 'Multiply_VecMat', 'Multiply_Vec', 'push_tensor1d', 'push_tensor2d_bycol', 'Multiply_VecMat', 'push_tensor1d', 'push_tensor2d_bycol', 'Multiply_VecMat' and 'push_tensor2d_bycol' in function 'FFN' due to reads on 'W_strm' (kernel_FFN.cpp:71:0)
 INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 9.13 seconds; current allocated memory: 589.527 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 589.527 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 9.581 seconds; current allocated memory: 531.355 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.002 seconds; current allocated memory: 531.355 MB.
 Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute           cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
 Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top FFN -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -promote-dbg-pointer -norm-name C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.0.bc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-Command           transform done; 0.106 sec.
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.144 seconds; current allocated memory: 593.949 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 535.633 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute           transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.1.bc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.2.prechk.bc -f 
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute           transform -syn-check C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 596.473 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 537.598 MB.
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.g.1.bc to C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
@@ -1159,10 +426,9 @@ INFO: [XFORM 203-712] Applying dataflow to function 'FFN' (kernel_FFN.cpp:70), d
 	 'entry_proc'
 	 'Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc'
 	 'pull_tensor1d'.
-Command           transform done; 0.146 sec.
 INFO-FLOW: Presyn 2...
 Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.253 seconds; current allocated memory: 618.918 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.153 seconds; current allocated memory: 560.172 MB.
 Execute           transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -inst-simplify -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-rewind-sink-hoist -loop-outline -hls-dead-arg-elim -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -mul2addshift -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -gvn -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -inst-clarity -bitwidth -dce -validate-dataflow -dump-loop-dep-to-ir -check-all-ssdm -drop-inferred-ii -dump-complexity-metric C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.o.2.bc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
 INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_24_1'(kernel_FFN.cpp:24:22) and 'VITIS_LOOP_25_2'(kernel_FFN.cpp:25:26) in function 'push_tensor2d_bycol.4' into perfectly nested loops.
 INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_24_1'(kernel_FFN.cpp:24:22) and 'VITIS_LOOP_25_2'(kernel_FFN.cpp:25:26) in function 'push_tensor2d_bycol.2' into perfectly nested loops.
@@ -1177,16 +443,16 @@ INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_41_2' (kernel_FFN.cpp:4
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_41_2' (kernel_FFN.cpp:41:22) in function 'Multiply_VecMat.3'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_41_2' (kernel_FFN.cpp:41:22) in function 'Multiply_VecMat'.
 Execute             auto_get_db
-Command           transform done; 1.211 sec.
+Command           transform done; 1.606 sec.
 INFO-FLOW: Building ssdm...
 Execute           transform -hls -cdfg-build C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.o.3.bc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-Command           transform done; 0.15 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.362 seconds; current allocated memory: 793.176 MB.
+Command           transform done; 0.117 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.724 seconds; current allocated memory: 734.836 MB.
 INFO-FLOW: Finish building internal data model.
-Command         opt_and_import_c done; 1.861 sec.
-Command       elaborate done; 34.794 sec.
+Command         opt_and_import_c done; 2.014 sec.
+Command       elaborate done; 29.453 sec.
 Execute       ap_eval exec zip -j C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
-Command       ap_eval done; 0.195 sec.
+Command       ap_eval done; 0.114 sec.
 Execute       autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -1390,7 +656,7 @@ Execute         set_default_model entry_proc
 Execute         schedule -model entry_proc 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.397 seconds; current allocated memory: 796.035 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.203 seconds; current allocated memory: 738.004 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/entry_proc.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1404,7 +670,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 797.062 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.018 seconds; current allocated memory: 739.031 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/entry_proc.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1420,8 +686,8 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_12_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_12_1'
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 1.236 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.261 seconds; current allocated memory: 798.246 MB.
+Command         schedule done; 0.676 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.691 seconds; current allocated memory: 740.312 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_Pipeline_VITIS_LOOP_12_1.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1435,7 +701,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 798.484 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.041 seconds; current allocated memory: 740.500 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_Pipeline_VITIS_LOOP_12_1.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1449,13 +715,13 @@ Execute         set_default_model push_tensor1d
 Execute         schedule -model push_tensor1d 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.547 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.616 seconds; current allocated memory: 798.598 MB.
+Command         schedule done; 0.354 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.408 seconds; current allocated memory: 740.680 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.448 sec.
+Command         syn_report done; 0.341 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d.sched.adb -f 
 INFO-FLOW: Finish scheduling push_tensor1d.
 Execute         set_default_model push_tensor1d 
@@ -1465,13 +731,13 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command         bind done; 0.145 sec.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.598 seconds; current allocated memory: 798.676 MB.
+Command         bind done; 0.126 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.472 seconds; current allocated memory: 740.688 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.509 sec.
+Command         syn_report done; 0.315 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d.bind.adb -f 
 INFO-FLOW: Finish binding push_tensor1d.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1483,13 +749,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_24_1_VITIS_LOOP_25_2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 14, loop 'VITIS_LOOP_24_1_VITIS_LOOP_25_2'
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.901 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.416 seconds; current allocated memory: 799.070 MB.
+Command         schedule done; 0.75 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.073 seconds; current allocated memory: 741.098 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.407 sec.
+Command         syn_report done; 0.332 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol.sched.adb -f 
 INFO-FLOW: Finish scheduling push_tensor2d_bycol.
 Execute         set_default_model push_tensor2d_bycol 
@@ -1499,12 +765,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.423 seconds; current allocated memory: 799.156 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.345 seconds; current allocated memory: 741.426 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.398 sec.
+Command         syn_report done; 0.333 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol.bind.adb -f 
 INFO-FLOW: Finish binding push_tensor2d_bycol.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1516,7 +782,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_37_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_37_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.46 seconds; current allocated memory: 799.348 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.382 seconds; current allocated memory: 741.922 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_Pipeline_VITIS_LOOP_37_1.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1530,7 +796,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 799.391 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.017 seconds; current allocated memory: 741.934 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_Pipeline_VITIS_LOOP_37_1.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1547,8 +813,8 @@ INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_41_2_VITIS_LOOP_43_3'.
 WARNING: [HLS 200-880] The II Violation in module 'Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3' (loop 'VITIS_LOOP_41_2_VITIS_LOOP_43_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_write_ln42', kernel_FFN.cpp:42) of variable 'sum', kernel_FFN.cpp:45 on local variable 'sum', kernel_FFN.cpp:42 and 'load' operation 32 bit ('sum_load', kernel_FFN.cpp:41) on local variable 'sum', kernel_FFN.cpp:42.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 4, loop 'VITIS_LOOP_41_2_VITIS_LOOP_43_3'
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.169 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.191 seconds; current allocated memory: 800.004 MB.
+Command         schedule done; 0.136 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.154 seconds; current allocated memory: 742.281 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1562,7 +828,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.022 seconds; current allocated memory: 800.008 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.018 seconds; current allocated memory: 742.312 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1576,7 +842,7 @@ Execute         set_default_model Multiply_VecMat
 Execute         schedule -model Multiply_VecMat 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.025 seconds; current allocated memory: 800.164 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.028 seconds; current allocated memory: 742.344 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1590,7 +856,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.054 seconds; current allocated memory: 800.246 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 742.512 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1606,8 +872,8 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_12_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_12_1'
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.378 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.399 seconds; current allocated memory: 800.434 MB.
+Command         schedule done; 0.238 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.258 seconds; current allocated memory: 742.641 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_1_Pipeline_VITIS_LOOP_12_1.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1621,7 +887,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 800.496 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.038 seconds; current allocated memory: 742.711 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_1_Pipeline_VITIS_LOOP_12_1.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1635,13 +901,13 @@ Execute         set_default_model push_tensor1d.1
 Execute         schedule -model push_tensor1d.1 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.387 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.454 seconds; current allocated memory: 800.520 MB.
+Command         schedule done; 0.221 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.266 seconds; current allocated memory: 742.887 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_1.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.537 sec.
+Command         syn_report done; 0.314 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_1.sched.adb -f 
 INFO-FLOW: Finish scheduling push_tensor1d.1.
 Execute         set_default_model push_tensor1d.1 
@@ -1651,12 +917,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.547 seconds; current allocated memory: 800.535 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 742.953 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_1.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.494 sec.
+Command         syn_report done; 0.309 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_1.bind.adb -f 
 INFO-FLOW: Finish binding push_tensor1d.1.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1668,13 +934,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_24_1_VITIS_LOOP_25_2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 14, loop 'VITIS_LOOP_24_1_VITIS_LOOP_25_2'
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.642 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.146 seconds; current allocated memory: 800.902 MB.
+Command         schedule done; 0.461 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.777 seconds; current allocated memory: 743.301 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_2.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.419 sec.
+Command         syn_report done; 0.354 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_2.sched.adb -f 
 INFO-FLOW: Finish scheduling push_tensor2d_bycol.2.
 Execute         set_default_model push_tensor2d_bycol.2 
@@ -1684,12 +950,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.432 seconds; current allocated memory: 801.070 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.366 seconds; current allocated memory: 743.355 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_2.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.563 sec.
+Command         syn_report done; 0.335 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_2.bind.adb -f 
 INFO-FLOW: Finish binding push_tensor2d_bycol.2.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1701,7 +967,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_37_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_37_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.614 seconds; current allocated memory: 801.227 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.371 seconds; current allocated memory: 743.586 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_3_Pipeline_VITIS_LOOP_37_1.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1715,7 +981,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.017 seconds; current allocated memory: 801.262 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.015 seconds; current allocated memory: 743.590 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_3_Pipeline_VITIS_LOOP_37_1.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1732,7 +998,7 @@ INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_41_2_VITIS_LOOP_43_3'.
 WARNING: [HLS 200-880] The II Violation in module 'Multiply_VecMat_3_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3' (loop 'VITIS_LOOP_41_2_VITIS_LOOP_43_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_write_ln42', kernel_FFN.cpp:42) of variable 'sum', kernel_FFN.cpp:45 on local variable 'sum', kernel_FFN.cpp:42 and 'load' operation 32 bit ('sum_load', kernel_FFN.cpp:41) on local variable 'sum', kernel_FFN.cpp:42.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 4, loop 'VITIS_LOOP_41_2_VITIS_LOOP_43_3'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.061 seconds; current allocated memory: 801.844 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 743.930 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_3_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1746,7 +1012,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.024 seconds; current allocated memory: 801.961 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 743.992 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_3_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1760,7 +1026,7 @@ Execute         set_default_model Multiply_VecMat.3
 Execute         schedule -model Multiply_VecMat.3 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.198 seconds; current allocated memory: 802.234 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.022 seconds; current allocated memory: 744.047 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_3.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1774,7 +1040,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.059 seconds; current allocated memory: 802.293 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 744.133 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_3.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1790,8 +1056,8 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 47, loop 'VITIS_LOOP_52_1'
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.233 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.257 seconds; current allocated memory: 802.516 MB.
+Command         schedule done; 0.157 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.176 seconds; current allocated memory: 744.633 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Swish.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1805,7 +1071,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 802.719 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.021 seconds; current allocated memory: 744.699 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Swish.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1821,7 +1087,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_64_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_64_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.067 seconds; current allocated memory: 802.984 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.044 seconds; current allocated memory: 744.832 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_Vec.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1835,7 +1101,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.026 seconds; current allocated memory: 802.984 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.016 seconds; current allocated memory: 744.832 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_Vec.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1851,13 +1117,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_24_1_VITIS_LOOP_25_2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 14, loop 'VITIS_LOOP_24_1_VITIS_LOOP_25_2'
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.788 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.819 seconds; current allocated memory: 803.285 MB.
+Command         schedule done; 0.444 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.463 seconds; current allocated memory: 745.340 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_4.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.593 sec.
+Command         syn_report done; 0.331 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_4.sched.adb -f 
 INFO-FLOW: Finish scheduling push_tensor2d_bycol.4.
 Execute         set_default_model push_tensor2d_bycol.4 
@@ -1867,12 +1133,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.607 seconds; current allocated memory: 803.395 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.344 seconds; current allocated memory: 745.410 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_4.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.447 sec.
+Command         syn_report done; 0.34 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_4.bind.adb -f 
 INFO-FLOW: Finish binding push_tensor2d_bycol.4.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1884,7 +1150,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_37_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_37_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.496 seconds; current allocated memory: 803.520 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.377 seconds; current allocated memory: 745.535 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_5_Pipeline_VITIS_LOOP_37_1.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1898,7 +1164,8 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 803.707 MB.
+Command         bind done; 0.559 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.573 seconds; current allocated memory: 745.535 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_5_Pipeline_VITIS_LOOP_37_1.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1915,7 +1182,7 @@ INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_41_2_VITIS_LOOP_43_3'.
 WARNING: [HLS 200-880] The II Violation in module 'Multiply_VecMat_5_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3' (loop 'VITIS_LOOP_41_2_VITIS_LOOP_43_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_write_ln42', kernel_FFN.cpp:42) of variable 'sum', kernel_FFN.cpp:45 on local variable 'sum', kernel_FFN.cpp:42 and 'load' operation 32 bit ('sum_load', kernel_FFN.cpp:41) on local variable 'sum', kernel_FFN.cpp:42.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 5, loop 'VITIS_LOOP_41_2_VITIS_LOOP_43_3'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 804.141 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 745.863 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_5_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1929,7 +1196,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.025 seconds; current allocated memory: 804.285 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.021 seconds; current allocated memory: 745.879 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_5_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1943,7 +1210,7 @@ Execute         set_default_model Multiply_VecMat.5
 Execute         schedule -model Multiply_VecMat.5 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 804.312 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.025 seconds; current allocated memory: 746.000 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_5.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1957,7 +1224,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.039 seconds; current allocated memory: 804.371 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.038 seconds; current allocated memory: 746.082 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_5.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1971,8 +1238,7 @@ Execute         set_default_model Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_st
 Execute         schedule -model Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 1.457 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.476 seconds; current allocated memory: 804.668 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 746.141 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -1986,7 +1252,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.045 seconds; current allocated memory: 804.746 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 746.473 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -2002,13 +1268,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_18_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 14, loop 'VITIS_LOOP_18_1'
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 1.621 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.663 seconds; current allocated memory: 805.371 MB.
+Command         schedule done; 1.789 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.818 seconds; current allocated memory: 747.059 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/pull_tensor1d.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.784 sec.
+Command         syn_report done; 0.377 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/pull_tensor1d.sched.adb -f 
 INFO-FLOW: Finish scheduling pull_tensor1d.
 Execute         set_default_model pull_tensor1d 
@@ -2018,12 +1284,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.8 seconds; current allocated memory: 805.469 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.385 seconds; current allocated memory: 747.207 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/pull_tensor1d.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.561 sec.
+Command         syn_report done; 0.355 sec.
 Execute         db_write -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/pull_tensor1d.bind.adb -f 
 INFO-FLOW: Finish binding pull_tensor1d.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -2033,7 +1299,7 @@ Execute         set_default_model FFN
 Execute         schedule -model FFN 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.592 seconds; current allocated memory: 805.699 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.375 seconds; current allocated memory: 747.613 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.verbose.sched.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -2047,7 +1313,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 805.762 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.018 seconds; current allocated memory: 747.707 MB.
 Execute         syn_report -verbosereport -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.verbose.bind.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -2084,7 +1350,7 @@ INFO: [HLS 200-10] -- Generating RTL for module 'entry_proc'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute         create_rtl_model entry_proc -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/entry_proc.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'entry_proc'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.074 seconds; current allocated memory: 806.945 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.049 seconds; current allocated memory: 748.980 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl entry_proc -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_entry_proc 
 Execute         gen_rtl entry_proc -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_entry_proc 
@@ -2121,7 +1387,7 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'push_tensor1d_Pipeline_VITIS
 WARNING: [RTGEN 206-101] Setting dangling out port 'push_tensor1d_Pipeline_VITIS_LOOP_12_1/m_axi_gmem_0_ARREGION' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'push_tensor1d_Pipeline_VITIS_LOOP_12_1/m_axi_gmem_0_ARUSER' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'push_tensor1d_Pipeline_VITIS_LOOP_12_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.097 seconds; current allocated memory: 808.500 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 750.391 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl push_tensor1d_Pipeline_VITIS_LOOP_12_1 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_push_tensor1d_Pipeline_VITIS_LOOP_12_1 
 Execute         gen_rtl push_tensor1d_Pipeline_VITIS_LOOP_12_1 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_push_tensor1d_Pipeline_VITIS_LOOP_12_1 
@@ -2145,7 +1411,7 @@ INFO: [HLS 200-10] -- Generating RTL for module 'push_tensor1d'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute         create_rtl_model push_tensor1d -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'push_tensor1d'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.728 seconds; current allocated memory: 809.480 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.127 seconds; current allocated memory: 751.340 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl push_tensor1d -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_push_tensor1d 
 Execute         gen_rtl push_tensor1d -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_push_tensor1d 
@@ -2153,7 +1419,7 @@ Execute         syn_report -csynth -model push_tensor1d -o C:/NCKH/LLama2_110M-I
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.873 sec.
+Command         syn_report done; 0.466 sec.
 Execute         syn_report -rtlxml -model push_tensor1d -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/push_tensor1d_csynth.xml 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -2162,7 +1428,7 @@ Execute         syn_report -verbosereport -model push_tensor1d -o C:/NCKH/LLama2
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.528 sec.
+Command         syn_report done; 0.31 sec.
 Execute         db_write -model push_tensor1d -f -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d.adb 
 Execute         db_write -model push_tensor1d -bindview -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/design.bindinfo.xml 
 Execute         gen_tb_info push_tensor1d -p C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d 
@@ -2172,7 +1438,7 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         create_rtl_model push_tensor2d_bycol -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol.compgen.tcl 
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'push_tensor2d_bycol' pipeline 'VITIS_LOOP_24_1_VITIS_LOOP_25_2' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'push_tensor2d_bycol'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.509 seconds; current allocated memory: 810.402 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.848 seconds; current allocated memory: 752.227 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl push_tensor2d_bycol -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_push_tensor2d_bycol 
 Execute         gen_rtl push_tensor2d_bycol -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_push_tensor2d_bycol 
@@ -2188,7 +1454,7 @@ Execute         syn_report -verbosereport -model push_tensor2d_bycol -o C:/NCKH/
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.502 sec.
+Command         syn_report done; 0.389 sec.
 Execute         db_write -model push_tensor2d_bycol -f -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol.adb 
 Execute         db_write -model push_tensor2d_bycol -bindview -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/design.bindinfo.xml 
 Execute         gen_tb_info push_tensor2d_bycol -p C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol 
@@ -2198,7 +1464,7 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         create_rtl_model Multiply_VecMat_Pipeline_VITIS_LOOP_37_1 -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_Pipeline_VITIS_LOOP_37_1.compgen.tcl 
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Multiply_VecMat_Pipeline_VITIS_LOOP_37_1' pipeline 'VITIS_LOOP_37_1' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_VecMat_Pipeline_VITIS_LOOP_37_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.647 seconds; current allocated memory: 811.805 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.494 seconds; current allocated memory: 753.723 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_VecMat_Pipeline_VITIS_LOOP_37_1 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_VecMat_Pipeline_VITIS_LOOP_37_1 
 Execute         gen_rtl Multiply_VecMat_Pipeline_VITIS_LOOP_37_1 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_VecMat_Pipeline_VITIS_LOOP_37_1 
@@ -2224,7 +1490,7 @@ Execute         create_rtl_model Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3' pipeline 'VITIS_LOOP_41_2_VITIS_LOOP_43_3' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.131 seconds; current allocated memory: 812.742 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 754.719 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 
 Execute         gen_rtl Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_VecMat_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 
@@ -2250,7 +1516,7 @@ Execute         create_rtl_model Multiply_VecMat -top_prefix FFN_ -sub_prefix FF
 INFO: [RTGEN 206-100] Generating core module 'fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_VecMat'.
 INFO: [RTMG 210-278] Implementing memory 'FFN_Multiply_VecMat_local_vec_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.189 seconds; current allocated memory: 814.270 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.119 seconds; current allocated memory: 756.145 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_VecMat -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_VecMat 
 Execute         gen_rtl Multiply_VecMat -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_VecMat 
@@ -2258,7 +1524,7 @@ Execute         syn_report -csynth -model Multiply_VecMat -o C:/NCKH/LLama2_110M
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.18 sec.
+Command         syn_report done; 0.103 sec.
 Execute         syn_report -rtlxml -model Multiply_VecMat -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/Multiply_VecMat_csynth.xml 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -2288,8 +1554,8 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'push_tensor1d_1_Pipeline_VIT
 WARNING: [RTGEN 206-101] Setting dangling out port 'push_tensor1d_1_Pipeline_VITIS_LOOP_12_1/m_axi_gmem_0_ARREGION' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'push_tensor1d_1_Pipeline_VITIS_LOOP_12_1/m_axi_gmem_0_ARUSER' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'push_tensor1d_1_Pipeline_VITIS_LOOP_12_1'.
-Command         create_rtl_model done; 1.259 sec.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.52 seconds; current allocated memory: 814.613 MB.
+Command         create_rtl_model done; 0.291 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.458 seconds; current allocated memory: 756.469 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl push_tensor1d.1_Pipeline_VITIS_LOOP_12_1 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_push_tensor1d_1_Pipeline_VITIS_LOOP_12_1 
 Execute         gen_rtl push_tensor1d.1_Pipeline_VITIS_LOOP_12_1 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_push_tensor1d_1_Pipeline_VITIS_LOOP_12_1 
@@ -2313,7 +1579,7 @@ INFO: [HLS 200-10] -- Generating RTL for module 'push_tensor1d_1'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute         create_rtl_model push_tensor1d.1 -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_1.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'push_tensor1d_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.202 seconds; current allocated memory: 815.812 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.131 seconds; current allocated memory: 757.359 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl push_tensor1d.1 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_push_tensor1d_1 
 Execute         gen_rtl push_tensor1d.1 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_push_tensor1d_1 
@@ -2329,7 +1595,7 @@ Execute         syn_report -verbosereport -model push_tensor1d.1 -o C:/NCKH/LLam
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.752 sec.
+Command         syn_report done; 0.379 sec.
 Execute         db_write -model push_tensor1d.1 -f -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_1.adb 
 Execute         db_write -model push_tensor1d.1 -bindview -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/design.bindinfo.xml 
 Execute         gen_tb_info push_tensor1d.1 -p C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor1d_1 
@@ -2339,7 +1605,7 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         create_rtl_model push_tensor2d_bycol.2 -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_2.compgen.tcl 
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'push_tensor2d_bycol_2' pipeline 'VITIS_LOOP_24_1_VITIS_LOOP_25_2' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'push_tensor2d_bycol_2'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.874 seconds; current allocated memory: 816.566 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.47 seconds; current allocated memory: 758.371 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl push_tensor2d_bycol.2 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_push_tensor2d_bycol_2 
 Execute         gen_rtl push_tensor2d_bycol.2 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_push_tensor2d_bycol_2 
@@ -2355,7 +1621,7 @@ Execute         syn_report -verbosereport -model push_tensor2d_bycol.2 -o C:/NCK
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.594 sec.
+Command         syn_report done; 0.344 sec.
 Execute         db_write -model push_tensor2d_bycol.2 -f -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_2.adb 
 Execute         db_write -model push_tensor2d_bycol.2 -bindview -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/design.bindinfo.xml 
 Execute         gen_tb_info push_tensor2d_bycol.2 -p C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_2 
@@ -2365,7 +1631,7 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         create_rtl_model Multiply_VecMat.3_Pipeline_VITIS_LOOP_37_1 -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_3_Pipeline_VITIS_LOOP_37_1.compgen.tcl 
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Multiply_VecMat_3_Pipeline_VITIS_LOOP_37_1' pipeline 'VITIS_LOOP_37_1' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_VecMat_3_Pipeline_VITIS_LOOP_37_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.745 seconds; current allocated memory: 817.871 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.448 seconds; current allocated memory: 759.895 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_VecMat.3_Pipeline_VITIS_LOOP_37_1 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_VecMat_3_Pipeline_VITIS_LOOP_37_1 
 Execute         gen_rtl Multiply_VecMat.3_Pipeline_VITIS_LOOP_37_1 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_VecMat_3_Pipeline_VITIS_LOOP_37_1 
@@ -2391,7 +1657,7 @@ Execute         create_rtl_model Multiply_VecMat.3_Pipeline_VITIS_LOOP_41_2_VITI
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Multiply_VecMat_3_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3' pipeline 'VITIS_LOOP_41_2_VITIS_LOOP_43_3' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_VecMat_3_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.126 seconds; current allocated memory: 818.422 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 760.512 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_VecMat.3_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_VecMat_3_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 
 Execute         gen_rtl Multiply_VecMat.3_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_VecMat_3_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 
@@ -2417,7 +1683,7 @@ Execute         create_rtl_model Multiply_VecMat.3 -top_prefix FFN_ -sub_prefix 
 INFO: [RTGEN 206-100] Generating core module 'fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_VecMat_3'.
 INFO: [RTMG 210-278] Implementing memory 'FFN_Multiply_VecMat_3_local_vec_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.176 seconds; current allocated memory: 819.598 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.117 seconds; current allocated memory: 761.570 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_VecMat.3 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_VecMat_3 
 Execute         gen_rtl Multiply_VecMat.3 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_VecMat_3 
@@ -2448,8 +1714,8 @@ INFO: [RTGEN 206-100] Generating core module 'fexp_32ns_32ns_32_9_med_dsp_1': 1 
 INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_1_no_dsp_1': 2 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'fptrunc_64ns_32_1_no_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Swish'.
-Command         create_rtl_model done; 0.209 sec.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.305 seconds; current allocated memory: 821.523 MB.
+Command         create_rtl_model done; 0.688 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.764 seconds; current allocated memory: 763.043 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Swish -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Swish 
 Execute         gen_rtl Swish -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Swish 
@@ -2475,7 +1741,7 @@ Execute         create_rtl_model Multiply_Vec -top_prefix FFN_ -sub_prefix FFN_ 
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Multiply_Vec' pipeline 'VITIS_LOOP_64_1' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_1_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_Vec'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.295 seconds; current allocated memory: 823.172 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.228 seconds; current allocated memory: 764.621 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_Vec -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_Vec 
 Execute         gen_rtl Multiply_Vec -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_Vec 
@@ -2500,7 +1766,7 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         create_rtl_model push_tensor2d_bycol.4 -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_4.compgen.tcl 
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'push_tensor2d_bycol_4' pipeline 'VITIS_LOOP_24_1_VITIS_LOOP_25_2' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'push_tensor2d_bycol_4'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.126 seconds; current allocated memory: 823.676 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 765.039 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl push_tensor2d_bycol.4 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_push_tensor2d_bycol_4 
 Execute         gen_rtl push_tensor2d_bycol.4 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_push_tensor2d_bycol_4 
@@ -2516,7 +1782,7 @@ Execute         syn_report -verbosereport -model push_tensor2d_bycol.4 -o C:/NCK
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.429 sec.
+Command         syn_report done; 0.351 sec.
 Execute         db_write -model push_tensor2d_bycol.4 -f -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_4.adb 
 Execute         db_write -model push_tensor2d_bycol.4 -bindview -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/design.bindinfo.xml 
 Execute         gen_tb_info push_tensor2d_bycol.4 -p C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/push_tensor2d_bycol_4 
@@ -2526,7 +1792,7 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         create_rtl_model Multiply_VecMat.5_Pipeline_VITIS_LOOP_37_1 -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/Multiply_VecMat_5_Pipeline_VITIS_LOOP_37_1.compgen.tcl 
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Multiply_VecMat_5_Pipeline_VITIS_LOOP_37_1' pipeline 'VITIS_LOOP_37_1' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_VecMat_5_Pipeline_VITIS_LOOP_37_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.559 seconds; current allocated memory: 825.113 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.463 seconds; current allocated memory: 766.516 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_VecMat.5_Pipeline_VITIS_LOOP_37_1 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_VecMat_5_Pipeline_VITIS_LOOP_37_1 
 Execute         gen_rtl Multiply_VecMat.5_Pipeline_VITIS_LOOP_37_1 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_VecMat_5_Pipeline_VITIS_LOOP_37_1 
@@ -2552,7 +1818,7 @@ Execute         create_rtl_model Multiply_VecMat.5_Pipeline_VITIS_LOOP_41_2_VITI
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Multiply_VecMat_5_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3' pipeline 'VITIS_LOOP_41_2_VITIS_LOOP_43_3' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_VecMat_5_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.619 seconds; current allocated memory: 825.695 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.095 seconds; current allocated memory: 767.109 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_VecMat.5_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_VecMat_5_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 
 Execute         gen_rtl Multiply_VecMat.5_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_VecMat_5_Pipeline_VITIS_LOOP_41_2_VITIS_LOOP_43_3 
@@ -2578,7 +1844,7 @@ Execute         create_rtl_model Multiply_VecMat.5 -top_prefix FFN_ -sub_prefix 
 INFO: [RTGEN 206-100] Generating core module 'fmadd_32ns_32ns_32ns_32ns_32_2_primitive_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Multiply_VecMat_5'.
 INFO: [RTMG 210-278] Implementing memory 'FFN_Multiply_VecMat_5_local_vec_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.211 seconds; current allocated memory: 826.734 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.122 seconds; current allocated memory: 768.164 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Multiply_VecMat.5 -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Multiply_VecMat_5 
 Execute         gen_rtl Multiply_VecMat.5 -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Multiply_VecMat_5 
@@ -2609,8 +1875,8 @@ INFO: [RTMG 210-285] Implementing FIFO 'z2_strm_U(FFN_fifo_w32_d64_A)' using Viv
 INFO: [RTMG 210-285] Implementing FIFO 'z1_strm_U(FFN_fifo_w32_d64_A)' using Vivado Default RAMs.
 INFO: [RTMG 210-285] Implementing FIFO 'W_strm_U(FFN_fifo_w32_d64_A)' using Vivado Default RAMs.
 INFO: [RTMG 210-285] Implementing FIFO 'x_strm_U(FFN_fifo_w32_d64_A)' using Vivado Default RAMs.
-Command         create_rtl_model done; 0.196 sec.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.306 seconds; current allocated memory: 829.305 MB.
+Command         create_rtl_model done; 0.974 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.05 seconds; current allocated memory: 770.879 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc 
 Execute         gen_rtl Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc 
@@ -2618,7 +1884,7 @@ Execute         syn_report -csynth -model Block_entry_x_strm_wr_x_strm_rd_W_strm
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 1.341 sec.
+Command         syn_report done; 0.72 sec.
 Execute         syn_report -rtlxml -model Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/Block_entry_x_strm_wr_x_strm_rd_W_strm_wr_W_strm_rd_proc_csynth.xml 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -2636,7 +1902,7 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         create_rtl_model pull_tensor1d -top_prefix FFN_ -sub_prefix FFN_ -mg_file C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/pull_tensor1d.compgen.tcl 
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pull_tensor1d' pipeline 'VITIS_LOOP_18_1' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pull_tensor1d'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.508 seconds; current allocated memory: 830.613 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.833 seconds; current allocated memory: 772.406 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl pull_tensor1d -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN_pull_tensor1d 
 Execute         gen_rtl pull_tensor1d -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN_pull_tensor1d 
@@ -2652,7 +1918,7 @@ Execute         syn_report -verbosereport -model pull_tensor1d -o C:/NCKH/LLama2
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.597 sec.
+Command         syn_report done; 0.373 sec.
 Execute         db_write -model pull_tensor1d -f -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/pull_tensor1d.adb 
 Execute         db_write -model pull_tensor1d -bindview -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/design.bindinfo.xml 
 Execute         gen_tb_info pull_tensor1d -p C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/pull_tensor1d 
@@ -2675,18 +1941,15 @@ INFO: [RTGEN 206-100] Finished creating RTL model for 'FFN'.
 INFO: [RTMG 210-285] Implementing FIFO 'o_vec_c_U(FFN_fifo_w64_d3_S)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'res_strm_U(FFN_fifo_w32_d64_A_x)' using Vivado Default RAMs.
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_pull_tensor1d_U0_U(FFN_start_for_pull_tensor1d_U0)' using Shift Registers.
-Command         create_rtl_model done; 0.195 sec.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.007 seconds; current allocated memory: 833.332 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.577 seconds; current allocated memory: 774.758 MB.
 Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.rtl_wrap.cfg.tcl 
 Execute         gen_rtl FFN -istop -style xilinx -f -lang vhdl -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/vhdl/FFN 
-Command         gen_rtl done; 0.23 sec.
+Command         gen_rtl done; 0.192 sec.
 Execute         gen_rtl FFN -istop -style xilinx -f -lang vlog -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/verilog/FFN 
-Command         gen_rtl done; 0.147 sec.
 Execute         syn_report -csynth -model FFN -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/FFN_csynth.rpt 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.126 sec.
 Execute         syn_report -rtlxml -model FFN -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/FFN_csynth.xml 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -2695,13 +1958,12 @@ Execute         syn_report -verbosereport -model FFN -o C:/NCKH/LLama2_110M-Infe
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
 Execute             ap_part_info -quiet -name xcv80-lsva4737-2MHP-e-S -data family 
-Command         syn_report done; 0.103 sec.
 Execute         db_write -model FFN -f -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.adb 
 Execute         db_write -model FFN -bindview -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/design.bindinfo.xml 
 Execute         gen_tb_info FFN -p C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN 
 Execute         export_constraint_db -f -tool general -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.constraint.tcl 
 Execute         syn_report -designview -model FFN -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/FFN.design.xml 
-Command         syn_report done; 0.294 sec.
+Command         syn_report done; 0.233 sec.
 Execute         syn_report -csynthDesign -model FFN -o C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/syn/report/csynth.rpt -MHOut C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn_prj/solution1/.autopilot/db/kernel_module_hierarchy.tcl 
 Execute           list_part -family xcv80-lsva4737-2MHP-e-S 
 Execute             ap_family_info -name xcv80-lsva4737-2MHP-e-S -data names 
@@ -3032,8 +2294,7 @@ Execute         source C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source
 Execute           source ./control.slave.tcl 
 Execute           source ./control.slave.tcl 
 Execute           source ./control_r.slave.tcl 
-Command         ap_source done; 0.101 sec.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.6 seconds; current allocated memory: 837.977 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.102 seconds; current allocated memory: 779.176 MB.
 INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='FFN_' outfile=''
 INFO-FLOW: Running: create_csynth_xml read xml data
 INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
@@ -3161,13 +2422,13 @@ INFO-FLOW: Running: gen_csynth_sec_pragma
 INFO-FLOW: Done: gen_csynth_sec_pragma time: 0.1 seconds per iteration
 INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
 INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.232 seconds; current allocated memory: 847.922 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.874 seconds; current allocated memory: 789.164 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for FFN.
 INFO: [VLOG 209-307] Generating Verilog RTL for FFN.
 Execute         syn_report -model FFN -printsummary 
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 342.47 MHz
-Command       autosyn done; 33.467 sec.
-Command     csynth_design done; 68.797 sec.
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:01:08; Allocated memory: 265.035 MB.
+Command       autosyn done; 27.221 sec.
+Command     csynth_design done; 57.195 sec.
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:57; Allocated memory: 266.926 MB.
 Execute     cleanup_all 

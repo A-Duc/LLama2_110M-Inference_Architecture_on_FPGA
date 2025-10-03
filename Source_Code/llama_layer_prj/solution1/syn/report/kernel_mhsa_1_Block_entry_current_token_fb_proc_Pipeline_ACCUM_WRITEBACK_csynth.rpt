@@ -1,0 +1,273 @@
+
+
+================================================================
+== Vitis HLS Report for 'kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_ACCUM_WRITEBACK'
+================================================================
+* Date:           Thu Oct  2 22:23:23 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        llama_layer_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.575 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min    |    max    | min | max |                      Type                      |
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+    |       18|       18|  72.000 ns|  72.000 ns|   17|   17|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- ACCUM_WRITEBACK  |       16|       16|         1|          1|          1|    16|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|        8|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        0|     2688|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|       17|     -|
+|Register             |        -|      -|        9|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|        9|     2713|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     2494|   3616|  1716138|   858069|   641|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     7482|  10848|  5148416|  2574208|  1925|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------+-----------------------+---------+----+---+-----+-----+
+    |           Instance          |         Module        | BRAM_18K| DSP| FF| LUT | URAM|
+    +-----------------------------+-----------------------+---------+----+---+-----+-----+
+    |sparsemux_33_6_32_1_1_U1034  |sparsemux_33_6_32_1_1  |        0|   0|  0|  672|    0|
+    |sparsemux_33_6_32_1_1_U1035  |sparsemux_33_6_32_1_1  |        0|   0|  0|  672|    0|
+    |sparsemux_33_6_32_1_1_U1036  |sparsemux_33_6_32_1_1  |        0|   0|  0|  672|    0|
+    |sparsemux_33_6_32_1_1_U1037  |sparsemux_33_6_32_1_1  |        0|   0|  0|  672|    0|
+    +-----------------------------+-----------------------+---------+----+---+-----+-----+
+    |Total                        |                       |        0|   0|  0| 2688|    0|
+    +-----------------------------+-----------------------+---------+----+---+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+----+---+----+------------+------------+
+    |add_ln153_fu_1372_p2  |         +|   0|  0|   8|           7|           3|
+    +----------------------+----------+----+---+----+------------+------------+
+    |Total                 |          |   0|  0|   8|           7|           3|
+    +----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |ap_done_int            |   1|          2|    1|          2|
+    |ap_sig_allocacmp_i_17  |   8|          2|    7|         14|
+    |i_fu_250               |   8|          2|    7|         14|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  |  17|          6|   15|         30|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+---+----+-----+-----------+
+    |     Name    | FF| LUT| Bits| Const Bits|
+    +-------------+---+----+-----+-----------+
+    |ap_CS_fsm    |  1|   0|    1|          0|
+    |ap_done_reg  |  1|   0|    1|          0|
+    |i_fu_250     |  7|   0|    7|          0|
+    +-------------+---+----+-----+-----------+
+    |Total        |  9|   0|    9|          0|
+    +-------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+--------------------------------------------------------------------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  |                               Source Object                              |    C Type    |
++---------------------------+-----+-----+------------+--------------------------------------------------------------------------+--------------+
+|ap_clk                     |   in|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_current_token_fb_proc_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_rst                     |   in|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_current_token_fb_proc_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_start                   |   in|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_current_token_fb_proc_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_done                    |  out|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_current_token_fb_proc_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_idle                    |  out|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_current_token_fb_proc_Pipeline_ACCUM_WRITEBACK|  return value|
+|ap_ready                   |  out|    1|  ap_ctrl_hs|  kernel_mhsa.1_Block_entry_current_token_fb_proc_Pipeline_ACCUM_WRITEBACK|  return value|
+|xb_15_address1             |  out|    6|   ap_memory|                                                                     xb_15|         array|
+|xb_15_ce1                  |  out|    1|   ap_memory|                                                                     xb_15|         array|
+|xb_15_we1                  |  out|    1|   ap_memory|                                                                     xb_15|         array|
+|xb_15_d1                   |  out|   32|   ap_memory|                                                                     xb_15|         array|
+|xb_14_address1             |  out|    6|   ap_memory|                                                                     xb_14|         array|
+|xb_14_ce1                  |  out|    1|   ap_memory|                                                                     xb_14|         array|
+|xb_14_we1                  |  out|    1|   ap_memory|                                                                     xb_14|         array|
+|xb_14_d1                   |  out|   32|   ap_memory|                                                                     xb_14|         array|
+|xb_13_address1             |  out|    6|   ap_memory|                                                                     xb_13|         array|
+|xb_13_ce1                  |  out|    1|   ap_memory|                                                                     xb_13|         array|
+|xb_13_we1                  |  out|    1|   ap_memory|                                                                     xb_13|         array|
+|xb_13_d1                   |  out|   32|   ap_memory|                                                                     xb_13|         array|
+|xb_12_address1             |  out|    6|   ap_memory|                                                                     xb_12|         array|
+|xb_12_ce1                  |  out|    1|   ap_memory|                                                                     xb_12|         array|
+|xb_12_we1                  |  out|    1|   ap_memory|                                                                     xb_12|         array|
+|xb_12_d1                   |  out|   32|   ap_memory|                                                                     xb_12|         array|
+|xb_11_address1             |  out|    6|   ap_memory|                                                                     xb_11|         array|
+|xb_11_ce1                  |  out|    1|   ap_memory|                                                                     xb_11|         array|
+|xb_11_we1                  |  out|    1|   ap_memory|                                                                     xb_11|         array|
+|xb_11_d1                   |  out|   32|   ap_memory|                                                                     xb_11|         array|
+|xb_10_address1             |  out|    6|   ap_memory|                                                                     xb_10|         array|
+|xb_10_ce1                  |  out|    1|   ap_memory|                                                                     xb_10|         array|
+|xb_10_we1                  |  out|    1|   ap_memory|                                                                     xb_10|         array|
+|xb_10_d1                   |  out|   32|   ap_memory|                                                                     xb_10|         array|
+|xb_9_address1              |  out|    6|   ap_memory|                                                                      xb_9|         array|
+|xb_9_ce1                   |  out|    1|   ap_memory|                                                                      xb_9|         array|
+|xb_9_we1                   |  out|    1|   ap_memory|                                                                      xb_9|         array|
+|xb_9_d1                    |  out|   32|   ap_memory|                                                                      xb_9|         array|
+|xb_8_address1              |  out|    6|   ap_memory|                                                                      xb_8|         array|
+|xb_8_ce1                   |  out|    1|   ap_memory|                                                                      xb_8|         array|
+|xb_8_we1                   |  out|    1|   ap_memory|                                                                      xb_8|         array|
+|xb_8_d1                    |  out|   32|   ap_memory|                                                                      xb_8|         array|
+|xb_7_address1              |  out|    6|   ap_memory|                                                                      xb_7|         array|
+|xb_7_ce1                   |  out|    1|   ap_memory|                                                                      xb_7|         array|
+|xb_7_we1                   |  out|    1|   ap_memory|                                                                      xb_7|         array|
+|xb_7_d1                    |  out|   32|   ap_memory|                                                                      xb_7|         array|
+|xb_6_address1              |  out|    6|   ap_memory|                                                                      xb_6|         array|
+|xb_6_ce1                   |  out|    1|   ap_memory|                                                                      xb_6|         array|
+|xb_6_we1                   |  out|    1|   ap_memory|                                                                      xb_6|         array|
+|xb_6_d1                    |  out|   32|   ap_memory|                                                                      xb_6|         array|
+|xb_5_address1              |  out|    6|   ap_memory|                                                                      xb_5|         array|
+|xb_5_ce1                   |  out|    1|   ap_memory|                                                                      xb_5|         array|
+|xb_5_we1                   |  out|    1|   ap_memory|                                                                      xb_5|         array|
+|xb_5_d1                    |  out|   32|   ap_memory|                                                                      xb_5|         array|
+|xb_4_address1              |  out|    6|   ap_memory|                                                                      xb_4|         array|
+|xb_4_ce1                   |  out|    1|   ap_memory|                                                                      xb_4|         array|
+|xb_4_we1                   |  out|    1|   ap_memory|                                                                      xb_4|         array|
+|xb_4_d1                    |  out|   32|   ap_memory|                                                                      xb_4|         array|
+|xb_3_address1              |  out|    6|   ap_memory|                                                                      xb_3|         array|
+|xb_3_ce1                   |  out|    1|   ap_memory|                                                                      xb_3|         array|
+|xb_3_we1                   |  out|    1|   ap_memory|                                                                      xb_3|         array|
+|xb_3_d1                    |  out|   32|   ap_memory|                                                                      xb_3|         array|
+|xb_2_address1              |  out|    6|   ap_memory|                                                                      xb_2|         array|
+|xb_2_ce1                   |  out|    1|   ap_memory|                                                                      xb_2|         array|
+|xb_2_we1                   |  out|    1|   ap_memory|                                                                      xb_2|         array|
+|xb_2_d1                    |  out|   32|   ap_memory|                                                                      xb_2|         array|
+|xb_1_address1              |  out|    6|   ap_memory|                                                                      xb_1|         array|
+|xb_1_ce1                   |  out|    1|   ap_memory|                                                                      xb_1|         array|
+|xb_1_we1                   |  out|    1|   ap_memory|                                                                      xb_1|         array|
+|xb_1_d1                    |  out|   32|   ap_memory|                                                                      xb_1|         array|
+|xb_0_address1              |  out|    6|   ap_memory|                                                                      xb_0|         array|
+|xb_0_ce1                   |  out|    1|   ap_memory|                                                                      xb_0|         array|
+|xb_0_we1                   |  out|    1|   ap_memory|                                                                      xb_0|         array|
+|xb_0_d1                    |  out|   32|   ap_memory|                                                                      xb_0|         array|
+|mux_case_0119786_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_0119786_i_i_i_i|        scalar|
+|mux_case_4121788_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_4121788_i_i_i_i|        scalar|
+|mux_case_8123790_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_8123790_i_i_i_i|        scalar|
+|mux_case_12125792_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_12125792_i_i_i_i|        scalar|
+|mux_case_16794_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_16794_i_i_i_i|        scalar|
+|mux_case_20796_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_20796_i_i_i_i|        scalar|
+|mux_case_24798_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_24798_i_i_i_i|        scalar|
+|mux_case_28800_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_28800_i_i_i_i|        scalar|
+|mux_case_32802_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_32802_i_i_i_i|        scalar|
+|mux_case_36804_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_36804_i_i_i_i|        scalar|
+|mux_case_40806_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_40806_i_i_i_i|        scalar|
+|mux_case_44808_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_44808_i_i_i_i|        scalar|
+|mux_case_48810_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_48810_i_i_i_i|        scalar|
+|mux_case_52812_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_52812_i_i_i_i|        scalar|
+|mux_case_56137814_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_56137814_i_i_i_i|        scalar|
+|mux_case_60816_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_60816_i_i_i_i|        scalar|
+|h_3                        |   in|    4|     ap_none|                                                                       h_3|        scalar|
+|mux_case_1140818_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_1140818_i_i_i_i|        scalar|
+|mux_case_5142820_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_5142820_i_i_i_i|        scalar|
+|mux_case_9144822_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_9144822_i_i_i_i|        scalar|
+|mux_case_13146824_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_13146824_i_i_i_i|        scalar|
+|mux_case_17826_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_17826_i_i_i_i|        scalar|
+|mux_case_21828_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_21828_i_i_i_i|        scalar|
+|mux_case_25830_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_25830_i_i_i_i|        scalar|
+|mux_case_29832_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_29832_i_i_i_i|        scalar|
+|mux_case_33834_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_33834_i_i_i_i|        scalar|
+|mux_case_37836_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_37836_i_i_i_i|        scalar|
+|mux_case_41838_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_41838_i_i_i_i|        scalar|
+|mux_case_45155840_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_45155840_i_i_i_i|        scalar|
+|mux_case_49842_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_49842_i_i_i_i|        scalar|
+|mux_case_53844_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_53844_i_i_i_i|        scalar|
+|mux_case_57846_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_57846_i_i_i_i|        scalar|
+|mux_case_61848_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_61848_i_i_i_i|        scalar|
+|mux_case_2161850_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_2161850_i_i_i_i|        scalar|
+|mux_case_6163852_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_6163852_i_i_i_i|        scalar|
+|mux_case_10165854_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_10165854_i_i_i_i|        scalar|
+|mux_case_14167856_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_14167856_i_i_i_i|        scalar|
+|mux_case_18858_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_18858_i_i_i_i|        scalar|
+|mux_case_22860_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_22860_i_i_i_i|        scalar|
+|mux_case_26862_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_26862_i_i_i_i|        scalar|
+|mux_case_30864_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_30864_i_i_i_i|        scalar|
+|mux_case_34173866_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_34173866_i_i_i_i|        scalar|
+|mux_case_38868_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_38868_i_i_i_i|        scalar|
+|mux_case_42870_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_42870_i_i_i_i|        scalar|
+|mux_case_46872_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_46872_i_i_i_i|        scalar|
+|mux_case_50874_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_50874_i_i_i_i|        scalar|
+|mux_case_54876_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_54876_i_i_i_i|        scalar|
+|mux_case_58878_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_58878_i_i_i_i|        scalar|
+|mux_case_62880_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_62880_i_i_i_i|        scalar|
+|mux_case_3182882_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_3182882_i_i_i_i|        scalar|
+|mux_case_7184884_i_i_i_i   |   in|   32|     ap_none|                                                  mux_case_7184884_i_i_i_i|        scalar|
+|mux_case_11186886_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_11186886_i_i_i_i|        scalar|
+|mux_case_15188888_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_15188888_i_i_i_i|        scalar|
+|mux_case_19890_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_19890_i_i_i_i|        scalar|
+|mux_case_23191892_i_i_i_i  |   in|   32|     ap_none|                                                 mux_case_23191892_i_i_i_i|        scalar|
+|mux_case_27894_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_27894_i_i_i_i|        scalar|
+|mux_case_31896_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_31896_i_i_i_i|        scalar|
+|mux_case_35898_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_35898_i_i_i_i|        scalar|
+|mux_case_39900_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_39900_i_i_i_i|        scalar|
+|mux_case_43902_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_43902_i_i_i_i|        scalar|
+|mux_case_47904_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_47904_i_i_i_i|        scalar|
+|mux_case_51906_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_51906_i_i_i_i|        scalar|
+|mux_case_55908_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_55908_i_i_i_i|        scalar|
+|mux_case_59910_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_59910_i_i_i_i|        scalar|
+|mux_case_63912_i_i_i_i     |   in|   32|     ap_none|                                                    mux_case_63912_i_i_i_i|        scalar|
++---------------------------+-----+-----+------------+--------------------------------------------------------------------------+--------------+
+

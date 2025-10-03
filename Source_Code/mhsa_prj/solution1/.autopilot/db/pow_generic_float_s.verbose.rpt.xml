@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'pow_generic_float_s'" level="0">
-<item name = "Date">Tue Sep 30 23:58:55 2025
+<item name = "Date">Thu Oct  2 21:26:29 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -63,21 +63,21 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mul_10s_36s_36_1_1_U114">mul_10s_36s_36_1_1, 0, 2, 0, 0, 0</column>
-<column name="mul_25s_39ns_63_1_1_U115">mul_25s_39ns_63_1_1, 0, 2, 0, 0, 0</column>
-<column name="sparsemux_11_4_32_1_1_U116">sparsemux_11_4_32_1_1, 0, 0, 0, 65, 0</column>
+<column name="mul_10s_36s_36_1_1_U327">mul_10s_36s_36_1_1, 0, 2, 0, 0, 0</column>
+<column name="mul_25s_39ns_63_1_1_U328">mul_25s_39ns_63_1_1, 0, 2, 0, 0, 0</column>
+<column name="sparsemux_11_4_32_1_1_U329">sparsemux_11_4_32_1_1, 0, 0, 0, 65, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
 <keys size="3">Instance, Module, Expression</keys>
-<column name="mac_muladd_13s_12ns_16s_25_4_1_U117">mac_muladd_13s_12ns_16s_25_4_1, i0 * i1 + i2</column>
-<column name="mac_muladd_18ns_18ns_44ns_44_4_1_U118">mac_muladd_18ns_18ns_44ns_44_4_1, i0 + i1 * i2</column>
+<column name="mac_muladd_13s_12ns_16s_25_4_1_U330">mac_muladd_13s_12ns_16s_25_4_1, i0 * i1 + i2</column>
+<column name="mac_muladd_18ns_18ns_44ns_44_4_1_U331">mac_muladd_18ns_18ns_44ns_44_4_1, i0 + i1 * i2</column>
 </table>
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_U">pow_generic_float_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arrfYi, 1, 0, 0, 0, 512, 27, 1, 13824</column>
-<column name="pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_U">pow_generic_float_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arrayg8j, 0, 8, 5, 0, 32, 8, 1, 256</column>
+<column name="pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_U">pow_generic_float_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arrbkb, 1, 0, 0, 0, 512, 27, 1, 13824</column>
+<column name="pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_U">pow_generic_float_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arraycud, 0, 8, 5, 0, 32, 8, 1, 256</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">

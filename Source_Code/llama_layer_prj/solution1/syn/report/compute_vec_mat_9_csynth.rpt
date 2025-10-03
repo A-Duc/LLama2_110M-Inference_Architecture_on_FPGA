@@ -1,0 +1,233 @@
+
+
+================================================================
+== Vitis HLS Report for 'compute_vec_mat_9'
+================================================================
+* Date:           Thu Oct  2 22:22:51 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        llama_layer_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.861 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   590603|   590603|  2.362 ms|  2.362 ms|  590603|  590603|       no|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------------------------------+------------------------------------------------------------+---------+---------+----------+----------+--------+--------+------------------------------------------------+
+        |                                                                       |                                                            |  Latency (cycles) |  Latency (absolute) |     Interval    |                    Pipeline                    |
+        |                                Instance                               |                           Module                           |   min   |   max   |    min   |    max   |   min  |   max  |                      Type                      |
+        +-----------------------------------------------------------------------+------------------------------------------------------------+---------+---------+----------+----------+--------+--------+------------------------------------------------+
+        |grp_compute_vec_mat_9_Pipeline_VITIS_LOOP_48_1_fu_96                   |compute_vec_mat_9_Pipeline_VITIS_LOOP_48_1                  |      770|      770|  3.080 us|  3.080 us|     769|     769|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_compute_vec_mat_9_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4_fu_134  |compute_vec_mat_9_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4  |   589830|   589830|  2.359 ms|  2.359 ms|  589829|  589829|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        +-----------------------------------------------------------------------+------------------------------------------------------------+---------+---------+----------+----------+--------+--------+------------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|        2|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      2|     1307|     1784|     -|
+|Memory               |       16|      -|        0|        0|     -|
+|Multiplexer          |        -|      -|        0|       53|     -|
+|Register             |        -|      -|        8|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |       16|      2|     1315|     1839|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     2494|   3616|  1716138|   858069|   641|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |       ~0|     ~0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     7482|  10848|  5148416|  2574208|  1925|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |       ~0|     ~0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------------------------------------+------------------------------------------------------------+---------+----+------+------+-----+
+    |                                Instance                               |                           Module                           | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +-----------------------------------------------------------------------+------------------------------------------------------------+---------+----+------+------+-----+
+    |grp_compute_vec_mat_9_Pipeline_VITIS_LOOP_48_1_fu_96                   |compute_vec_mat_9_Pipeline_VITIS_LOOP_48_1                  |        0|   0|    23|    53|    0|
+    |grp_compute_vec_mat_9_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4_fu_134  |compute_vec_mat_9_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4  |        0|   2|  1284|  1731|    0|
+    +-----------------------------------------------------------------------+------------------------------------------------------------+---------+----+------+------+-----+
+    |Total                                                                  |                                                            |        0|   2|  1307|  1784|    0|
+    +-----------------------------------------------------------------------+------------------------------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +----------------+----------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |     Memory     |                    Module                    | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------------+----------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |vec_local_U     |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_1_U   |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_2_U   |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_3_U   |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_4_U   |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_5_U   |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_6_U   |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_7_U   |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_8_U   |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_9_U   |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_10_U  |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_11_U  |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_12_U  |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_13_U  |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_14_U  |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |vec_local_15_U  |compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    +----------------+----------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total           |                                              |       16|  0|   0|    0|  4096|  512|    16|       131072|
+    +----------------+----------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm         |   3|          5|    1|          5|
+    |ap_done           |   1|          2|    1|          2|
+    |real_start        |   1|          2|    1|          2|
+    |vec_local_10_ce0  |   1|          2|    1|          2|
+    |vec_local_10_ce1  |   1|          2|    1|          2|
+    |vec_local_10_we1  |   1|          2|    1|          2|
+    |vec_local_11_ce0  |   1|          2|    1|          2|
+    |vec_local_11_ce1  |   1|          2|    1|          2|
+    |vec_local_11_we1  |   1|          2|    1|          2|
+    |vec_local_12_ce0  |   1|          2|    1|          2|
+    |vec_local_12_ce1  |   1|          2|    1|          2|
+    |vec_local_12_we1  |   1|          2|    1|          2|
+    |vec_local_13_ce0  |   1|          2|    1|          2|
+    |vec_local_13_ce1  |   1|          2|    1|          2|
+    |vec_local_13_we1  |   1|          2|    1|          2|
+    |vec_local_14_ce0  |   1|          2|    1|          2|
+    |vec_local_14_ce1  |   1|          2|    1|          2|
+    |vec_local_14_we1  |   1|          2|    1|          2|
+    |vec_local_15_ce0  |   1|          2|    1|          2|
+    |vec_local_15_ce1  |   1|          2|    1|          2|
+    |vec_local_15_we1  |   1|          2|    1|          2|
+    |vec_local_1_ce0   |   1|          2|    1|          2|
+    |vec_local_1_ce1   |   1|          2|    1|          2|
+    |vec_local_1_we1   |   1|          2|    1|          2|
+    |vec_local_2_ce0   |   1|          2|    1|          2|
+    |vec_local_2_ce1   |   1|          2|    1|          2|
+    |vec_local_2_we1   |   1|          2|    1|          2|
+    |vec_local_3_ce0   |   1|          2|    1|          2|
+    |vec_local_3_ce1   |   1|          2|    1|          2|
+    |vec_local_3_we1   |   1|          2|    1|          2|
+    |vec_local_4_ce0   |   1|          2|    1|          2|
+    |vec_local_4_ce1   |   1|          2|    1|          2|
+    |vec_local_4_we1   |   1|          2|    1|          2|
+    |vec_local_5_ce0   |   1|          2|    1|          2|
+    |vec_local_5_ce1   |   1|          2|    1|          2|
+    |vec_local_5_we1   |   1|          2|    1|          2|
+    |vec_local_6_ce0   |   1|          2|    1|          2|
+    |vec_local_6_ce1   |   1|          2|    1|          2|
+    |vec_local_6_we1   |   1|          2|    1|          2|
+    |vec_local_7_ce0   |   1|          2|    1|          2|
+    |vec_local_7_ce1   |   1|          2|    1|          2|
+    |vec_local_7_we1   |   1|          2|    1|          2|
+    |vec_local_8_ce0   |   1|          2|    1|          2|
+    |vec_local_8_ce1   |   1|          2|    1|          2|
+    |vec_local_8_we1   |   1|          2|    1|          2|
+    |vec_local_9_ce0   |   1|          2|    1|          2|
+    |vec_local_9_ce1   |   1|          2|    1|          2|
+    |vec_local_9_we1   |   1|          2|    1|          2|
+    |vec_local_ce0     |   1|          2|    1|          2|
+    |vec_local_ce1     |   1|          2|    1|          2|
+    |vec_local_we1     |   1|          2|    1|          2|
+    +------------------+----+-----------+-----+-----------+
+    |Total             |  53|        105|   51|        105|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |                                        Name                                        | FF| LUT| Bits| Const Bits|
+    +------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                                                                           |  4|   0|    4|          0|
+    |ap_done_reg                                                                         |  1|   0|    1|          0|
+    |grp_compute_vec_mat_9_Pipeline_VITIS_LOOP_48_1_fu_96_ap_start_reg                   |  1|   0|    1|          0|
+    |grp_compute_vec_mat_9_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4_fu_134_ap_start_reg  |  1|   0|    1|          0|
+    |start_once_reg                                                                      |  1|   0|    1|          0|
+    +------------------------------------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                                               |  8|   0|    8|          0|
+    +------------------------------------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+-------------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++---------------------------+-----+-----+------------+-------------------+--------------+
+|ap_clk                     |   in|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|ap_rst                     |   in|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|ap_start                   |   in|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|start_full_n               |   in|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|ap_done                    |  out|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|ap_continue                |   in|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|ap_idle                    |  out|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|ap_ready                   |  out|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|start_out                  |  out|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|start_write                |  out|    1|  ap_ctrl_hs|  compute_vec_mat.9|  return value|
+|vec_stream_dout            |   in|   32|     ap_fifo|         vec_stream|       pointer|
+|vec_stream_empty_n         |   in|    1|     ap_fifo|         vec_stream|       pointer|
+|vec_stream_read            |  out|    1|     ap_fifo|         vec_stream|       pointer|
+|vec_stream_num_data_valid  |   in|    8|     ap_fifo|         vec_stream|       pointer|
+|vec_stream_fifo_cap        |   in|    8|     ap_fifo|         vec_stream|       pointer|
+|mat_stream_dout            |   in|   32|     ap_fifo|         mat_stream|       pointer|
+|mat_stream_empty_n         |   in|    1|     ap_fifo|         mat_stream|       pointer|
+|mat_stream_read            |  out|    1|     ap_fifo|         mat_stream|       pointer|
+|mat_stream_num_data_valid  |   in|    9|     ap_fifo|         mat_stream|       pointer|
+|mat_stream_fifo_cap        |   in|    9|     ap_fifo|         mat_stream|       pointer|
+|res_stream_din             |  out|   32|     ap_fifo|         res_stream|       pointer|
+|res_stream_full_n          |   in|    1|     ap_fifo|         res_stream|       pointer|
+|res_stream_write           |  out|    1|     ap_fifo|         res_stream|       pointer|
+|res_stream_num_data_valid  |   in|   32|     ap_fifo|         res_stream|       pointer|
+|res_stream_fifo_cap        |   in|   32|     ap_fifo|         res_stream|       pointer|
++---------------------------+-----+-----+------------+-------------------+--------------+
+

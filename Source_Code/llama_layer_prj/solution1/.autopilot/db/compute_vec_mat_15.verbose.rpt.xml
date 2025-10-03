@@ -1,0 +1,204 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'compute_vec_mat_15'" level="0">
+<item name = "Date">Thu Oct  2 22:23:04 2025
+</item>
+<item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
+<item name = "Project">llama_layer_prj</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">versalhbm</item>
+<item name = "Target device">xcv80-lsva4737-2MHP-e-S</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00 ns, 2.861 ns, 1.08 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">590603, 590603, 2.362 ms, 2.362 ms, 590603, 590603, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_compute_vec_mat_15_Pipeline_VITIS_LOOP_48_1_fu_96">compute_vec_mat_15_Pipeline_VITIS_LOOP_48_1, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_compute_vec_mat_15_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4_fu_134">compute_vec_mat_15_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4, 589830, 589830, 2.359 ms, 2.359 ms, 589829, 589829, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 2, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 2, 1307, 1784, -</column>
+<column name="Memory">16, -, 0, 0, -</column>
+<column name="Multiplexer">-, -, 0, 53, -</column>
+<column name="Register">-, -, 8, -, -</column>
+<specialColumn name="Available SLR">2494, 3616, 1716138, 858069, 641</specialColumn>
+<specialColumn name="Utilization SLR (%)">~0, ~0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Available">7482, 10848, 5148416, 2574208, 1925</specialColumn>
+<specialColumn name="Utilization (%)">~0, ~0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_compute_vec_mat_15_Pipeline_VITIS_LOOP_48_1_fu_96">compute_vec_mat_15_Pipeline_VITIS_LOOP_48_1, 0, 0, 23, 53, 0</column>
+<column name="grp_compute_vec_mat_15_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4_fu_134">compute_vec_mat_15_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4, 0, 2, 1284, 1731, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="vec_local_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_1_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_2_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_3_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_4_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_5_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_6_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_7_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_8_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_9_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_10_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_11_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_12_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_13_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_14_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="vec_local_15_U">compute_vec_mat_9_vec_local_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">3, 5, 1, 5</column>
+<column name="ap_done">1, 2, 1, 2</column>
+<column name="real_start">1, 2, 1, 2</column>
+<column name="vec_local_10_ce0">1, 2, 1, 2</column>
+<column name="vec_local_10_ce1">1, 2, 1, 2</column>
+<column name="vec_local_10_we1">1, 2, 1, 2</column>
+<column name="vec_local_11_ce0">1, 2, 1, 2</column>
+<column name="vec_local_11_ce1">1, 2, 1, 2</column>
+<column name="vec_local_11_we1">1, 2, 1, 2</column>
+<column name="vec_local_12_ce0">1, 2, 1, 2</column>
+<column name="vec_local_12_ce1">1, 2, 1, 2</column>
+<column name="vec_local_12_we1">1, 2, 1, 2</column>
+<column name="vec_local_13_ce0">1, 2, 1, 2</column>
+<column name="vec_local_13_ce1">1, 2, 1, 2</column>
+<column name="vec_local_13_we1">1, 2, 1, 2</column>
+<column name="vec_local_14_ce0">1, 2, 1, 2</column>
+<column name="vec_local_14_ce1">1, 2, 1, 2</column>
+<column name="vec_local_14_we1">1, 2, 1, 2</column>
+<column name="vec_local_15_ce0">1, 2, 1, 2</column>
+<column name="vec_local_15_ce1">1, 2, 1, 2</column>
+<column name="vec_local_15_we1">1, 2, 1, 2</column>
+<column name="vec_local_1_ce0">1, 2, 1, 2</column>
+<column name="vec_local_1_ce1">1, 2, 1, 2</column>
+<column name="vec_local_1_we1">1, 2, 1, 2</column>
+<column name="vec_local_2_ce0">1, 2, 1, 2</column>
+<column name="vec_local_2_ce1">1, 2, 1, 2</column>
+<column name="vec_local_2_we1">1, 2, 1, 2</column>
+<column name="vec_local_3_ce0">1, 2, 1, 2</column>
+<column name="vec_local_3_ce1">1, 2, 1, 2</column>
+<column name="vec_local_3_we1">1, 2, 1, 2</column>
+<column name="vec_local_4_ce0">1, 2, 1, 2</column>
+<column name="vec_local_4_ce1">1, 2, 1, 2</column>
+<column name="vec_local_4_we1">1, 2, 1, 2</column>
+<column name="vec_local_5_ce0">1, 2, 1, 2</column>
+<column name="vec_local_5_ce1">1, 2, 1, 2</column>
+<column name="vec_local_5_we1">1, 2, 1, 2</column>
+<column name="vec_local_6_ce0">1, 2, 1, 2</column>
+<column name="vec_local_6_ce1">1, 2, 1, 2</column>
+<column name="vec_local_6_we1">1, 2, 1, 2</column>
+<column name="vec_local_7_ce0">1, 2, 1, 2</column>
+<column name="vec_local_7_ce1">1, 2, 1, 2</column>
+<column name="vec_local_7_we1">1, 2, 1, 2</column>
+<column name="vec_local_8_ce0">1, 2, 1, 2</column>
+<column name="vec_local_8_ce1">1, 2, 1, 2</column>
+<column name="vec_local_8_we1">1, 2, 1, 2</column>
+<column name="vec_local_9_ce0">1, 2, 1, 2</column>
+<column name="vec_local_9_ce1">1, 2, 1, 2</column>
+<column name="vec_local_9_we1">1, 2, 1, 2</column>
+<column name="vec_local_ce0">1, 2, 1, 2</column>
+<column name="vec_local_ce1">1, 2, 1, 2</column>
+<column name="vec_local_we1">1, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">4, 0, 4, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="grp_compute_vec_mat_15_Pipeline_VITIS_LOOP_48_1_fu_96_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_compute_vec_mat_15_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_62_4_fu_134_ap_start_reg">1, 0, 1, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, compute_vec_mat.15, return value</column>
+<column name="vec_stream_dout">in, 32, ap_fifo, vec_stream, pointer</column>
+<column name="vec_stream_empty_n">in, 1, ap_fifo, vec_stream, pointer</column>
+<column name="vec_stream_read">out, 1, ap_fifo, vec_stream, pointer</column>
+<column name="vec_stream_num_data_valid">in, 8, ap_fifo, vec_stream, pointer</column>
+<column name="vec_stream_fifo_cap">in, 8, ap_fifo, vec_stream, pointer</column>
+<column name="mat_stream_dout">in, 32, ap_fifo, mat_stream, pointer</column>
+<column name="mat_stream_empty_n">in, 1, ap_fifo, mat_stream, pointer</column>
+<column name="mat_stream_read">out, 1, ap_fifo, mat_stream, pointer</column>
+<column name="mat_stream_num_data_valid">in, 9, ap_fifo, mat_stream, pointer</column>
+<column name="mat_stream_fifo_cap">in, 9, ap_fifo, mat_stream, pointer</column>
+<column name="res_stream_din">out, 32, ap_fifo, res_stream, pointer</column>
+<column name="res_stream_full_n">in, 1, ap_fifo, res_stream, pointer</column>
+<column name="res_stream_write">out, 1, ap_fifo, res_stream, pointer</column>
+<column name="res_stream_num_data_valid">in, 32, ap_fifo, res_stream, pointer</column>
+<column name="res_stream_fifo_cap">in, 32, ap_fifo, res_stream, pointer</column>
+</table>
+</item>
+</section>
+</profile>

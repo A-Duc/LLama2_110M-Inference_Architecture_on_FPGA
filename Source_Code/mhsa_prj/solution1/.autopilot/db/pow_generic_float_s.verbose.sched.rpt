@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'pow_generic_float_s'
 ================================================================
-* Date:           Tue Sep 30 23:58:15 2025
+* Date:           Thu Oct  2 21:25:30 2025
 
 * Version:        2025.1 (Build 6135595 on May 21 2025)
 * Project:        mhsa_prj
@@ -223,7 +223,7 @@ ST_11 : Operation 122 [2/2] (0.79ns) (root node of the DSP)   --->   "%add_ln616
 ST_11 : Operation 123 [1/1] (0.71ns)   --->   "%r_exp_1 = add i10 %r_exp, i10 1023" [C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:624]   --->   Operation 123 'add' 'r_exp_1' <Predicate = true> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 
 State 12 <SV = 11> <Delay = 2.54>
-ST_12 : Operation 124 [1/1] (0.00ns)   --->   "%specpipeline_ln291 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_115" [C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:291]   --->   Operation 124 'specpipeline' 'specpipeline_ln291' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 124 [1/1] (0.00ns)   --->   "%specpipeline_ln291 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_99" [C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:291]   --->   Operation 124 'specpipeline' 'specpipeline_ln291' <Predicate = true> <Delay = 0.00>
 ST_12 : Operation 125 [1/1] (0.41ns)   --->   "%select_ln378 = select i1 %y_is_0, i32 1, i32 nan" [C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:378]   --->   Operation 125 'select' 'select_ln378' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_12 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node and_ln431_1)   --->   "%xor_ln413 = xor i1 %es_sign, i1 1" [C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:413]   --->   Operation 126 'xor' 'xor_ln413' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.25> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_12 : Operation 127 [1/1] (0.00ns) (grouped into LUT with out node and_ln438_2)   --->   "%and_ln438 = and i1 %y_is_inf, i1 %es_sign" [C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:438]   --->   Operation 127 'and' 'and_ln438' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.25> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>

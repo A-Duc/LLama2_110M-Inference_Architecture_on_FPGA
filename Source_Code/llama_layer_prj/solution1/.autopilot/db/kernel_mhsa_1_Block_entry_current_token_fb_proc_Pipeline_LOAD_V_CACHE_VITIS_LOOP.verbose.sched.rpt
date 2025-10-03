@@ -1,0 +1,346 @@
+
+
+================================================================
+== Vitis HLS Report for 'kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_LOAD_V_CACHE_VITIS_LOOP'
+================================================================
+* Date:           Thu Oct  2 22:21:42 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        llama_layer_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: versalhbm
+* Target device:  xcv80-lsva4737-2MHP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  4.00 ns|  2.920 ns|     1.08 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |        ?|        ?|         ?|         ?|    0|    0|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                 |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |            Loop Name            |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- LOAD_V_CACHE_VITIS_LOOP_130_3  |        ?|        ?|        14|          1|          1|     ?|       yes|
+        +---------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 15
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 15
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 15, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.46>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 17 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%t_2 = alloca i32 1" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 18 'alloca' 't_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%indvar_flatten7 = alloca i32 1"   --->   Operation 19 'alloca' 'indvar_flatten7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%value_cache_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %value_cache"   --->   Operation 20 'read' 'value_cache_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln124_1_read = read i24 @_ssdm_op_Read.ap_auto.i24, i24 %zext_ln124_1"   --->   Operation 21 'read' 'zext_ln124_1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_30_read = read i39 @_ssdm_op_Read.ap_auto.i39, i39 %tmp_30"   --->   Operation 22 'read' 'tmp_30_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%zext_ln124_1_cast = zext i24 %zext_ln124_1_read"   --->   Operation 23 'zext' 'zext_ln124_1_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i64 %value_cache, i1 1, void @p_str"   --->   Operation 24 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem4, void @empty_51, i32 0, i32 0, void @empty_107, i32 0, i32 0, void @empty_57, void @empty_53, void @empty_107, i32 16, i32 16, i32 256, i32 256, void @empty_107, void @empty_107, i32 4294967295, i32 0, i32 0"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%bound = sext i39 %tmp_30_read"   --->   Operation 26 'sext' 'bound' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.46ns)   --->   "%store_ln0 = store i70 0, i70 %indvar_flatten7"   --->   Operation 27 'store' 'store_ln0' <Predicate = true> <Delay = 0.46>
+ST_1 : Operation 28 [1/1] (0.46ns)   --->   "%store_ln129 = store i64 0, i64 %t_2" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 28 'store' 'store_ln129' <Predicate = true> <Delay = 0.46>
+ST_1 : Operation 29 [1/1] (0.36ns)   --->   "%store_ln130 = store i7 0, i7 %i" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 29 'store' 'store_ln130' <Predicate = true> <Delay = 0.36>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc168.i.i.i.i"   --->   Operation 30 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 1.51>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%indvar_flatten7_load = load i70 %indvar_flatten7" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 31 'load' 'indvar_flatten7_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (1.05ns)   --->   "%add_ln129_2 = add i70 %indvar_flatten7_load, i70 1" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 32 'add' 'add_ln129_2' <Predicate = true> <Delay = 1.05> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.05> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.75ns)   --->   "%icmp_ln129 = icmp_eq  i70 %indvar_flatten7_load, i70 %bound" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 33 'icmp' 'icmp_ln129' <Predicate = true> <Delay = 0.75> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%br_ln129 = br i1 %icmp_ln129, void %for.inc171.i.i.i.i, void %for.inc206.i.i.i.i.preheader.exitStub" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 34 'br' 'br_ln129' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.46ns)   --->   "%store_ln129 = store i70 %add_ln129_2, i70 %indvar_flatten7" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 35 'store' 'store_ln129' <Predicate = (!icmp_ln129)> <Delay = 0.46>
+
+State 3 <SV = 2> <Delay = 2.64>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%i_load = load i7 %i" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 36 'load' 'i_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%t_2_load = load i64 %t_2" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 37 'load' 't_2_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.57ns)   --->   "%icmp_ln130 = icmp_eq  i7 %i_load, i7 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 38 'icmp' 'icmp_ln130' <Predicate = true> <Delay = 0.57> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [1/1] (0.34ns)   --->   "%select_ln129 = select i1 %icmp_ln130, i7 0, i7 %i_load" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 39 'select' 'select_ln129' <Predicate = true> <Delay = 0.34> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 40 [1/1] (1.01ns)   --->   "%add_ln129_3 = add i64 %t_2_load, i64 1" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 40 'add' 'add_ln129_3' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 41 [1/1] (0.42ns)   --->   "%select_ln129_1 = select i1 %icmp_ln130, i64 %add_ln129_3, i64 %t_2_load" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 41 'select' 'select_ln129_1' <Predicate = true> <Delay = 0.42> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.42> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 42 [1/1] (0.57ns)   --->   "%first_iter_1 = icmp_eq  i7 %select_ln129, i7 0" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 42 'icmp' 'first_iter_1' <Predicate = true> <Delay = 0.57> <CoreInst = "ICmp_EQ">   --->   Core 156 'ICmp_EQ' <Latency = 0> <II = 1> <Delay = 0.57> <FuncUnit> <Opcode : 'seteq' 'setne'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%trunc_ln129 = trunc i64 %select_ln129_1" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 43 'trunc' 'trunc_ln129' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%p_shl = bitconcatenate i62 @_ssdm_op_BitConcatenate.i62.i52.i10, i52 %trunc_ln129, i10 0" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 44 'bitconcatenate' 'p_shl' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%trunc_ln129_1 = trunc i64 %select_ln129_1" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 45 'trunc' 'trunc_ln129_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%p_shl9 = bitconcatenate i62 @_ssdm_op_BitConcatenate.i62.i54.i8, i54 %trunc_ln129_1, i8 0" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 46 'bitconcatenate' 'p_shl9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln129 = sub i62 %p_shl, i62 %p_shl9" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 47 'sub' 'sub_ln129' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.60> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 48 [1/1] (1.20ns) (root node of TernaryAdder)   --->   "%add_ln129 = add i62 %sub_ln129, i62 %zext_ln124_1_cast" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 48 'add' 'add_ln129' <Predicate = true> <Delay = 1.20> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.60> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%br_ln130 = br i1 %first_iter_1, void %for.inc168.split.i.i.i.i, void %for.first.iter.for.inc168.i.i.i.i" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 49 'br' 'br_ln130' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%trunc_ln130 = trunc i7 %select_ln129" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 50 'trunc' 'trunc_ln130' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i3 @_ssdm_op_PartSelect.i3.i7.i32.i32, i7 %select_ln129, i32 3, i32 5" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 51 'partselect' 'lshr_ln' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%trunc_ln132 = trunc i64 %select_ln129_1" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 52 'trunc' 'trunc_ln132' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (0.36ns)   --->   "%switch_ln132 = switch i3 %trunc_ln130, void %arrayidx167.case.7.i.i.i.i, i3 0, void %arrayidx167.case.0.i.i.i.i, i3 1, void %arrayidx167.case.1.i.i.i.i, i3 2, void %arrayidx167.case.2.i.i.i.i, i3 3, void %arrayidx167.case.3.i.i.i.i, i3 4, void %arrayidx167.case.4.i.i.i.i, i3 5, void %arrayidx167.case.5.i.i.i.i, i3 6, void %arrayidx167.case.6.i.i.i.i" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 53 'switch' 'switch_ln132' <Predicate = true> <Delay = 0.36>
+ST_3 : Operation 54 [1/1] (0.66ns)   --->   "%add_ln130 = add i7 %select_ln129, i7 1" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 54 'add' 'add_ln130' <Predicate = true> <Delay = 0.66> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 55 [1/1] (0.46ns)   --->   "%store_ln129 = store i64 %select_ln129_1, i64 %t_2" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 55 'store' 'store_ln129' <Predicate = true> <Delay = 0.46>
+ST_3 : Operation 56 [1/1] (0.36ns)   --->   "%store_ln130 = store i7 %add_ln130, i7 %i" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 56 'store' 'store_ln130' <Predicate = true> <Delay = 0.36>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%br_ln130 = br void %for.inc168.i.i.i.i" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 57 'br' 'br_ln130' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 2.09>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @LOAD_V_CACHE_VITIS_LOOP_130_3_str"   --->   Operation 58 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 59 [1/1] (0.00ns)   --->   "%shl_ln4 = bitconcatenate i64 @_ssdm_op_BitConcatenate.i64.i62.i2, i62 %add_ln129, i2 0" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 59 'bitconcatenate' 'shl_ln4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 60 [1/1] (1.01ns)   --->   "%add_ln129_1 = add i64 %shl_ln4, i64 %value_cache_read" [kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 60 'add' 'add_ln129_1' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln129_1, i32 2, i32 63" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 61 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "%sext_ln130 = sext i62 %trunc_ln" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 62 'sext' 'sext_ln130' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%gmem4_addr = getelementptr i32 %gmem4, i64 %sext_ln130" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 63 'getelementptr' 'gmem4_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%muxLogicAXIMAddr_to_empty = muxlogic i32 %gmem4_addr"   --->   Operation 64 'muxlogic' 'muxLogicAXIMAddr_to_empty' <Predicate = (first_iter_1)> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%muxLogicAXIMBurst_to_empty = muxlogic i64 64"   --->   Operation 65 'muxlogic' 'muxLogicAXIMBurst_to_empty' <Predicate = (first_iter_1)> <Delay = 0.00>
+ST_4 : Operation 66 [11/11] (1.08ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 66 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 1.08> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 2.92>
+ST_5 : Operation 67 [10/11] (2.92ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 67 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 2.92>
+ST_6 : Operation 68 [9/11] (2.92ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 68 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 2.92>
+ST_7 : Operation 69 [8/11] (2.92ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 69 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 2.92>
+ST_8 : Operation 70 [7/11] (2.92ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 70 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 2.92>
+ST_9 : Operation 71 [6/11] (2.92ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 71 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 2.92>
+ST_10 : Operation 72 [5/11] (2.92ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 72 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 2.92>
+ST_11 : Operation 73 [4/11] (2.92ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 73 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 2.92>
+ST_12 : Operation 74 [3/11] (2.92ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 74 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 12> <Delay = 2.92>
+ST_13 : Operation 75 [2/11] (2.92ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 75 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 2.92> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 14 <SV = 13> <Delay = 1.08>
+ST_14 : Operation 76 [1/11] (1.08ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem4_addr, i64 64" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 76 'readreq' 'empty' <Predicate = (first_iter_1)> <Delay = 1.08> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 9> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 77 [1/1] (0.00ns)   --->   "%br_ln130 = br void %for.inc168.split.i.i.i.i" [kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 77 'br' 'br_ln130' <Predicate = (first_iter_1)> <Delay = 0.00>
+ST_14 : Operation 124 [1/1] (0.28ns)   --->   "%ret_ln0 = ret"   --->   Operation 124 'ret' 'ret_ln0' <Predicate = (icmp_ln129)> <Delay = 0.28>
+
+State 15 <SV = 14> <Delay = 1.83>
+ST_15 : Operation 78 [1/1] (0.00ns)   --->   "%specpipeline_ln131 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_107" [kernel_MHSA.cpp:131->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 78 'specpipeline' 'specpipeline_ln131' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 79 [1/1] (0.00ns)   --->   "%muxLogicAXIMCE_to_gmem4_addr_read = muxlogic"   --->   Operation 79 'muxlogic' 'muxLogicAXIMCE_to_gmem4_addr_read' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 80 [1/1] (1.08ns)   --->   "%gmem4_addr_read = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %gmem4_addr" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 80 'read' 'gmem4_addr_read' <Predicate = true> <Delay = 1.08> <CoreInst = "m_axi">   --->   Core 123 'm_axi' <Latency = 0> <II = 1> <Delay = 1.60> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 81 [1/1] (0.00ns)   --->   "%bitcast_ln132 = bitcast i32 %gmem4_addr_read" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 81 'bitcast' 'bitcast_ln132' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 82 [1/1] (0.00ns)   --->   "%or_ln1 = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i9.i3, i9 %trunc_ln132, i3 %lshr_ln" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 82 'bitconcatenate' 'or_ln1' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 83 [1/1] (0.00ns)   --->   "%zext_ln132 = zext i12 %or_ln1" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 83 'zext' 'zext_ln132' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 84 [1/1] (0.00ns)   --->   "%v_cache_local_0_i_i_i_addr = getelementptr i32 %v_cache_local_0_i_i_i, i64 0, i64 %zext_ln132" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 84 'getelementptr' 'v_cache_local_0_i_i_i_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 85 [1/1] (0.00ns)   --->   "%v_cache_local_1_i_i_i_addr = getelementptr i32 %v_cache_local_1_i_i_i, i64 0, i64 %zext_ln132" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 85 'getelementptr' 'v_cache_local_1_i_i_i_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 86 [1/1] (0.00ns)   --->   "%v_cache_local_2_i_i_i_addr = getelementptr i32 %v_cache_local_2_i_i_i, i64 0, i64 %zext_ln132" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 86 'getelementptr' 'v_cache_local_2_i_i_i_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 87 [1/1] (0.00ns)   --->   "%v_cache_local_3_i_i_i_addr = getelementptr i32 %v_cache_local_3_i_i_i, i64 0, i64 %zext_ln132" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 87 'getelementptr' 'v_cache_local_3_i_i_i_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 88 [1/1] (0.00ns)   --->   "%v_cache_local_4_i_i_i_addr = getelementptr i32 %v_cache_local_4_i_i_i, i64 0, i64 %zext_ln132" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 88 'getelementptr' 'v_cache_local_4_i_i_i_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 89 [1/1] (0.00ns)   --->   "%v_cache_local_5_i_i_i_addr = getelementptr i32 %v_cache_local_5_i_i_i, i64 0, i64 %zext_ln132" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 89 'getelementptr' 'v_cache_local_5_i_i_i_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 90 [1/1] (0.00ns)   --->   "%v_cache_local_6_i_i_i_addr = getelementptr i32 %v_cache_local_6_i_i_i, i64 0, i64 %zext_ln132" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 90 'getelementptr' 'v_cache_local_6_i_i_i_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 91 [1/1] (0.00ns)   --->   "%v_cache_local_7_i_i_i_addr = getelementptr i32 %v_cache_local_7_i_i_i, i64 0, i64 %zext_ln132" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 91 'getelementptr' 'v_cache_local_7_i_i_i_addr' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 92 [1/1] (0.00ns)   --->   "%muxLogicRAMData_to_store_ln132 = muxlogic i32 %bitcast_ln132"   --->   Operation 92 'muxlogic' 'muxLogicRAMData_to_store_ln132' <Predicate = (trunc_ln130 == 6)> <Delay = 0.00>
+ST_15 : Operation 93 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_store_ln132 = muxlogic i12 %v_cache_local_6_i_i_i_addr"   --->   Operation 93 'muxlogic' 'muxLogicRAMAddr_to_store_ln132' <Predicate = (trunc_ln130 == 6)> <Delay = 0.00>
+ST_15 : Operation 94 [1/1] ( I:0.75ns O:0.75ns ) (share mux size 2)   --->   "%store_ln132 = store i32 %bitcast_ln132, i12 %v_cache_local_6_i_i_i_addr" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 94 'store' 'store_ln132' <Predicate = (trunc_ln130 == 6)> <Delay = 0.75> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.89> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_15 : Operation 95 [1/1] (0.00ns)   --->   "%br_ln132 = br void %arrayidx167.exit.i.i.i.i" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 95 'br' 'br_ln132' <Predicate = (trunc_ln130 == 6)> <Delay = 0.00>
+ST_15 : Operation 96 [1/1] (0.00ns)   --->   "%muxLogicRAMData_to_store_ln132 = muxlogic i32 %bitcast_ln132"   --->   Operation 96 'muxlogic' 'muxLogicRAMData_to_store_ln132' <Predicate = (trunc_ln130 == 5)> <Delay = 0.00>
+ST_15 : Operation 97 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_store_ln132 = muxlogic i12 %v_cache_local_5_i_i_i_addr"   --->   Operation 97 'muxlogic' 'muxLogicRAMAddr_to_store_ln132' <Predicate = (trunc_ln130 == 5)> <Delay = 0.00>
+ST_15 : Operation 98 [1/1] ( I:0.75ns O:0.75ns ) (share mux size 2)   --->   "%store_ln132 = store i32 %bitcast_ln132, i12 %v_cache_local_5_i_i_i_addr" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 98 'store' 'store_ln132' <Predicate = (trunc_ln130 == 5)> <Delay = 0.75> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.89> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_15 : Operation 99 [1/1] (0.00ns)   --->   "%br_ln132 = br void %arrayidx167.exit.i.i.i.i" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 99 'br' 'br_ln132' <Predicate = (trunc_ln130 == 5)> <Delay = 0.00>
+ST_15 : Operation 100 [1/1] (0.00ns)   --->   "%muxLogicRAMData_to_store_ln132 = muxlogic i32 %bitcast_ln132"   --->   Operation 100 'muxlogic' 'muxLogicRAMData_to_store_ln132' <Predicate = (trunc_ln130 == 4)> <Delay = 0.00>
+ST_15 : Operation 101 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_store_ln132 = muxlogic i12 %v_cache_local_4_i_i_i_addr"   --->   Operation 101 'muxlogic' 'muxLogicRAMAddr_to_store_ln132' <Predicate = (trunc_ln130 == 4)> <Delay = 0.00>
+ST_15 : Operation 102 [1/1] ( I:0.75ns O:0.75ns ) (share mux size 2)   --->   "%store_ln132 = store i32 %bitcast_ln132, i12 %v_cache_local_4_i_i_i_addr" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 102 'store' 'store_ln132' <Predicate = (trunc_ln130 == 4)> <Delay = 0.75> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.89> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_15 : Operation 103 [1/1] (0.00ns)   --->   "%br_ln132 = br void %arrayidx167.exit.i.i.i.i" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 103 'br' 'br_ln132' <Predicate = (trunc_ln130 == 4)> <Delay = 0.00>
+ST_15 : Operation 104 [1/1] (0.00ns)   --->   "%muxLogicRAMData_to_store_ln132 = muxlogic i32 %bitcast_ln132"   --->   Operation 104 'muxlogic' 'muxLogicRAMData_to_store_ln132' <Predicate = (trunc_ln130 == 3)> <Delay = 0.00>
+ST_15 : Operation 105 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_store_ln132 = muxlogic i12 %v_cache_local_3_i_i_i_addr"   --->   Operation 105 'muxlogic' 'muxLogicRAMAddr_to_store_ln132' <Predicate = (trunc_ln130 == 3)> <Delay = 0.00>
+ST_15 : Operation 106 [1/1] ( I:0.75ns O:0.75ns ) (share mux size 2)   --->   "%store_ln132 = store i32 %bitcast_ln132, i12 %v_cache_local_3_i_i_i_addr" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 106 'store' 'store_ln132' <Predicate = (trunc_ln130 == 3)> <Delay = 0.75> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.89> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_15 : Operation 107 [1/1] (0.00ns)   --->   "%br_ln132 = br void %arrayidx167.exit.i.i.i.i" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 107 'br' 'br_ln132' <Predicate = (trunc_ln130 == 3)> <Delay = 0.00>
+ST_15 : Operation 108 [1/1] (0.00ns)   --->   "%muxLogicRAMData_to_store_ln132 = muxlogic i32 %bitcast_ln132"   --->   Operation 108 'muxlogic' 'muxLogicRAMData_to_store_ln132' <Predicate = (trunc_ln130 == 2)> <Delay = 0.00>
+ST_15 : Operation 109 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_store_ln132 = muxlogic i12 %v_cache_local_2_i_i_i_addr"   --->   Operation 109 'muxlogic' 'muxLogicRAMAddr_to_store_ln132' <Predicate = (trunc_ln130 == 2)> <Delay = 0.00>
+ST_15 : Operation 110 [1/1] ( I:0.75ns O:0.75ns ) (share mux size 2)   --->   "%store_ln132 = store i32 %bitcast_ln132, i12 %v_cache_local_2_i_i_i_addr" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 110 'store' 'store_ln132' <Predicate = (trunc_ln130 == 2)> <Delay = 0.75> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.89> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_15 : Operation 111 [1/1] (0.00ns)   --->   "%br_ln132 = br void %arrayidx167.exit.i.i.i.i" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 111 'br' 'br_ln132' <Predicate = (trunc_ln130 == 2)> <Delay = 0.00>
+ST_15 : Operation 112 [1/1] (0.00ns)   --->   "%muxLogicRAMData_to_store_ln132 = muxlogic i32 %bitcast_ln132"   --->   Operation 112 'muxlogic' 'muxLogicRAMData_to_store_ln132' <Predicate = (trunc_ln130 == 1)> <Delay = 0.00>
+ST_15 : Operation 113 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_store_ln132 = muxlogic i12 %v_cache_local_1_i_i_i_addr"   --->   Operation 113 'muxlogic' 'muxLogicRAMAddr_to_store_ln132' <Predicate = (trunc_ln130 == 1)> <Delay = 0.00>
+ST_15 : Operation 114 [1/1] ( I:0.75ns O:0.75ns ) (share mux size 2)   --->   "%store_ln132 = store i32 %bitcast_ln132, i12 %v_cache_local_1_i_i_i_addr" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 114 'store' 'store_ln132' <Predicate = (trunc_ln130 == 1)> <Delay = 0.75> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.89> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_15 : Operation 115 [1/1] (0.00ns)   --->   "%br_ln132 = br void %arrayidx167.exit.i.i.i.i" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 115 'br' 'br_ln132' <Predicate = (trunc_ln130 == 1)> <Delay = 0.00>
+ST_15 : Operation 116 [1/1] (0.00ns)   --->   "%muxLogicRAMData_to_store_ln132 = muxlogic i32 %bitcast_ln132"   --->   Operation 116 'muxlogic' 'muxLogicRAMData_to_store_ln132' <Predicate = (trunc_ln130 == 0)> <Delay = 0.00>
+ST_15 : Operation 117 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_store_ln132 = muxlogic i12 %v_cache_local_0_i_i_i_addr"   --->   Operation 117 'muxlogic' 'muxLogicRAMAddr_to_store_ln132' <Predicate = (trunc_ln130 == 0)> <Delay = 0.00>
+ST_15 : Operation 118 [1/1] ( I:0.75ns O:0.75ns ) (share mux size 2)   --->   "%store_ln132 = store i32 %bitcast_ln132, i12 %v_cache_local_0_i_i_i_addr" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 118 'store' 'store_ln132' <Predicate = (trunc_ln130 == 0)> <Delay = 0.75> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.89> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_15 : Operation 119 [1/1] (0.00ns)   --->   "%br_ln132 = br void %arrayidx167.exit.i.i.i.i" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 119 'br' 'br_ln132' <Predicate = (trunc_ln130 == 0)> <Delay = 0.00>
+ST_15 : Operation 120 [1/1] (0.00ns)   --->   "%muxLogicRAMData_to_store_ln132 = muxlogic i32 %bitcast_ln132"   --->   Operation 120 'muxlogic' 'muxLogicRAMData_to_store_ln132' <Predicate = (trunc_ln130 == 7)> <Delay = 0.00>
+ST_15 : Operation 121 [1/1] (0.00ns)   --->   "%muxLogicRAMAddr_to_store_ln132 = muxlogic i12 %v_cache_local_7_i_i_i_addr"   --->   Operation 121 'muxlogic' 'muxLogicRAMAddr_to_store_ln132' <Predicate = (trunc_ln130 == 7)> <Delay = 0.00>
+ST_15 : Operation 122 [1/1] ( I:0.75ns O:0.75ns ) (share mux size 2)   --->   "%store_ln132 = store i32 %bitcast_ln132, i12 %v_cache_local_7_i_i_i_addr" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 122 'store' 'store_ln132' <Predicate = (trunc_ln130 == 7)> <Delay = 0.75> <CoreInst = "RAM">   --->   Core 86 'RAM' <Latency = 1> <II = 1> <Delay = 0.89> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_15 : Operation 123 [1/1] (0.00ns)   --->   "%br_ln132 = br void %arrayidx167.exit.i.i.i.i" [kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54]   --->   Operation 123 'br' 'br_ln132' <Predicate = (trunc_ln130 == 7)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4.000ns, clock uncertainty: 1.080ns.
+
+ <State 1>: 0.467ns
+The critical path consists of the following:
+	'alloca' operation 70 bit ('indvar_flatten7') [15]  (0.000 ns)
+	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'indvar_flatten7' [23]  (0.467 ns)
+
+ <State 2>: 1.519ns
+The critical path consists of the following:
+	'load' operation 70 bit ('indvar_flatten7_load', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on local variable 'indvar_flatten7' [28]  (0.000 ns)
+	'add' operation 70 bit ('add_ln129_2', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [29]  (1.052 ns)
+	'store' operation 0 bit ('store_ln129', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) of variable 'add_ln129_2', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54 on local variable 'indvar_flatten7' [119]  (0.467 ns)
+
+ <State 3>: 2.650ns
+The critical path consists of the following:
+	'load' operation 64 bit ('t_2_load', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on local variable 't', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54 [34]  (0.000 ns)
+	'add' operation 64 bit ('add_ln129_3', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [38]  (1.014 ns)
+	'select' operation 64 bit ('select_ln129_1', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [39]  (0.429 ns)
+	'sub' operation 62 bit ('sub_ln129', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [45]  (0.000 ns)
+	'add' operation 62 bit ('add_ln129', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [46]  (1.207 ns)
+
+ <State 4>: 2.096ns
+The critical path consists of the following:
+	'add' operation 64 bit ('add_ln129_1', kernel_MHSA.cpp:129->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [48]  (1.014 ns)
+	'getelementptr' operation 32 bit ('gmem4_addr', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [51]  (0.000 ns)
+	'muxlogic' operation 1 bit ('muxLogicAXIMAddr_to_empty') [54]  (0.000 ns)
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (1.082 ns)
+
+ <State 5>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (2.920 ns)
+
+ <State 6>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (2.920 ns)
+
+ <State 7>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (2.920 ns)
+
+ <State 8>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (2.920 ns)
+
+ <State 9>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (2.920 ns)
+
+ <State 10>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (2.920 ns)
+
+ <State 11>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (2.920 ns)
+
+ <State 12>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (2.920 ns)
+
+ <State 13>: 2.920ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (2.920 ns)
+
+ <State 14>: 1.082ns
+The critical path consists of the following:
+	bus request operation ('empty', kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:130->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [56]  (1.082 ns)
+
+ <State 15>: 1.832ns
+The critical path consists of the following:
+	'muxlogic' operation 32 bit ('muxLogicAXIMCE_to_gmem4_addr_read') [61]  (0.000 ns)
+	bus read operation ('gmem4_addr_read', kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) on port 'gmem4' (kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) [62]  (1.082 ns)
+	'muxlogic' operation 0 bit ('muxLogicRAMData_to_store_ln132') [78]  (0.000 ns)
+	'store' operation 0 bit ('store_ln132', kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54) of variable 'bitcast_ln132', kernel_MHSA.cpp:132->kernel_MHSA.cpp:122->kernel_MHSA.cpp:127->kernel_MHSA.cpp:54->kernel_MHSA.cpp:54 on array 'v_cache_local_6_i_i_i' [80]  (0.750 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

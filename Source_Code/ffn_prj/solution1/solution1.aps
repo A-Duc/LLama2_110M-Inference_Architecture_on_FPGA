@@ -1,7 +1,4 @@
 <AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
-    <clockList>
-        <clock name="default" period="4" default="false"/>
-    </clockList>
     <name>
         <value string="solution1"/>
     </name>
@@ -15,5 +12,8 @@
     <libraryList>
         <library value="xilinx/versal/versal" name="DefaultPlatform"/>
     </libraryList>
+    <clockList>
+        <clock name="default" period="4" default="false"/>
+    </clockList>
 </AutoPilot:solution>
 

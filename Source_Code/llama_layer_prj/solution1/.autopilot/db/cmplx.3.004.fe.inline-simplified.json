@@ -1,0 +1,321 @@
+{
+  "0": {
+    "basicblocks": 25,
+    "calls": "7 16 19",
+    "control_depth": 0,
+    "def_use_depth": 4,
+    "file": "llama_layer.cpp",
+    "fileloc": 73,
+    "instructions": 186,
+    "loads": {
+      "G": 11,
+      "T": 5
+    },
+    "memory_accesses": 24,
+    "name": "llama_layer",
+    "stores": {
+      "G": 7,
+      "T": 1
+    },
+    "total_instructions": 4505
+  },
+  "1": {
+    "basicblocks": 15,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 30,
+    "instructions": 44,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 4,
+    "name": "Multiply_VecMat",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 44
+  },
+  "10": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 16,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 36,
+    "instructions": 187,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 34,
+    "name": "compute_vec_mat",
+    "stores": {
+      "L": 17
+    },
+    "total_instructions": 187
+  },
+  "11": {
+    "basicblocks": 3,
+    "calls": "5 8",
+    "control_depth": 0,
+    "def_use_depth": 6,
+    "file": "kernel_Rope.cpp",
+    "fileloc": 3,
+    "instructions": 40,
+    "loads": {
+      "L": 4
+    },
+    "memory_accesses": 7,
+    "name": "RoPE",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 616
+  },
+  "12": {
+    "basicblocks": 9,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 4,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 23,
+    "instructions": 25,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 2,
+    "name": "push_tensor2d_bycol",
+    "total_instructions": 25
+  },
+  "13": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 59,
+    "instructions": 10,
+    "memory_accesses": 3,
+    "name": "Multiply_Vec",
+    "total_instructions": 10
+  },
+  "14": {
+    "basicblocks": 14,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 5,
+    "file": "kernel_Softmax.cpp",
+    "fileloc": 2,
+    "instructions": 60,
+    "loads": {
+      "L": 6
+    },
+    "memory_accesses": 8,
+    "name": "kernel_softmax",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 60
+  },
+  "15": {
+    "basicblocks": 3,
+    "calls": "3 18 10",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 84,
+    "instructions": 21,
+    "memory_accesses": 2,
+    "name": "matmul",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 335
+  },
+  "16": {
+    "basicblocks": 1,
+    "calls": "4 12 1 4 12 1 2 13 12 1 9",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 70,
+    "instructions": 33,
+    "memory_accesses": 0,
+    "name": "FFN",
+    "total_instructions": 293
+  },
+  "17": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "x_hls_float_utils.h",
+    "fileloc": 256,
+    "instructions": 42,
+    "memory_accesses": 0,
+    "name": "scaled_fixed2ieee<29, 1>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 42
+  },
+  "18": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 22,
+    "instructions": 106,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 32,
+    "name": "load_mat_burst",
+    "total_instructions": 106
+  },
+  "19": {
+    "basicblocks": 3,
+    "calls": "3 18 10",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 84,
+    "instructions": 21,
+    "memory_accesses": 2,
+    "name": "matmul",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 335
+  },
+  "2": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 6,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 50,
+    "instructions": 16,
+    "memory_accesses": 2,
+    "name": "Swish",
+    "total_instructions": 16
+  },
+  "3": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 11,
+    "instructions": 21,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 2,
+    "name": "load_vec",
+    "total_instructions": 21
+  },
+  "4": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 11,
+    "instructions": 9,
+    "loads": {
+      "G": 1
+    },
+    "memory_accesses": 2,
+    "name": "push_tensor1d",
+    "total_instructions": 9
+  },
+  "5": {
+    "basicblocks": 23,
+    "calls": "6 6 6 6 6 6 6 6",
+    "control_depth": 6,
+    "def_use_depth": 34,
+    "file": "hls_pow.h",
+    "fileloc": 291,
+    "instructions": 202,
+    "loads": {
+      "G": 2
+    },
+    "memory_accesses": 23,
+    "name": "pow_generic<float>",
+    "stores": {
+      "L": 13
+    },
+    "total_instructions": 274
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "x_hls_utils.h",
+    "fileloc": 346,
+    "instructions": 9,
+    "loads": {
+      "L": 3
+    },
+    "memory_accesses": 0,
+    "name": "to_ieee",
+    "total_instructions": 9
+  },
+  "7": {
+    "basicblocks": 45,
+    "calls": "15 15 15 11 11 14 15",
+    "control_depth": 0,
+    "def_use_depth": 69,
+    "file": "kernel_MHSA.cpp",
+    "fileloc": 6,
+    "instructions": 1059,
+    "loads": {
+      "L": 147
+    },
+    "memory_accesses": 235,
+    "name": "kernel_mhsa",
+    "stores": {
+      "G": 1,
+      "L": 80
+    },
+    "total_instructions": 3691
+  },
+  "8": {
+    "basicblocks": 5,
+    "calls": "17 17",
+    "control_depth": 0,
+    "def_use_depth": 19,
+    "file": "hls_hotbm.h",
+    "fileloc": 129,
+    "instructions": 218,
+    "loads": {
+      "G": 10,
+      "L": 2
+    },
+    "memory_accesses": 0,
+    "name": "generic_sincos<float>",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 302
+  },
+  "9": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 17,
+    "instructions": 9,
+    "memory_accesses": 2,
+    "name": "pull_tensor1d",
+    "stores": {
+      "G": 1
+    },
+    "total_instructions": 9
+  }
+}

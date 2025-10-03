@@ -1317,7 +1317,7 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>zext_ln15_1</name>
+						<name>zext_ln15_6</name>
 						<fileName>kernel_Softmax.cpp</fileName>
 						<fileDirectory>C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code</fileDirectory>
 						<lineNumber>15</lineNumber>
@@ -2754,7 +2754,7 @@
 					<Obj>
 						<type>0</type>
 						<id>63</id>
-						<name>zext_ln15_2</name>
+						<name>zext_ln15_7</name>
 						<fileName>kernel_Softmax.cpp</fileName>
 						<fileDirectory>C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code</fileDirectory>
 						<lineNumber>15</lineNumber>
@@ -2810,7 +2810,7 @@
 					<Obj>
 						<type>0</type>
 						<id>64</id>
-						<name>zext_ln15_3</name>
+						<name>zext_ln15_8</name>
 						<fileName>kernel_Softmax.cpp</fileName>
 						<fileDirectory>C:\NCKH\LLama2_110M-Inference_Architecture_on_FPGA\Source_Code</fileDirectory>
 						<lineNumber>15</lineNumber>
@@ -13405,7 +13405,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln15_1_fu_292</first>
+			<first>zext_ln15_6_fu_292</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -13413,7 +13413,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln15_2_fu_316</first>
+			<first>zext_ln15_7_fu_316</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -13421,7 +13421,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln15_3_fu_321</first>
+			<first>zext_ln15_8_fu_321</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

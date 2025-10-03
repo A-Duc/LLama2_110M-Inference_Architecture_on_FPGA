@@ -1,0 +1,61 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'kernel_mhsa_1_Block_entry_current_token_fb_proc'" level="0">
+<item name = "Date">Thu Oct  2 22:22:06 2025
+</item>
+<item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
+<item name = "Project">llama_layer_prj</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">versalhbm</item>
+<item name = "Target device">xcv80-lsva4737-2MHP-e-S</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00 ns, 3.906 ns, 1.08 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_matmul_245_254_1_1_fu_1808">matmul_245_254_1_1, 590629, 590629, 2.363 ms, 2.363 ms, 590604, 590604, dataflow</column>
+<column name="grp_kernel_mhsa_1_Block_entry_current_token_fb_proc_Outline_ATT_INIT_fu_1880">kernel_mhsa_1_Block_entry_current_token_fb_proc_Outline_ATT_INIT, 25, 6193, 0.100 us, 24.772 us, 25, 6193, no</column>
+<column name="grp_kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_XB_INIT_fu_1910">kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_XB_INIT, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_matmul_245_255_1_fu_1946">matmul_245_255_1, 590629, 590629, 2.363 ms, 2.363 ms, 590604, 590604, dataflow</column>
+<column name="grp_RoPE_fu_2002">RoPE, 424, 424, 1.696 us, 1.696 us, 424, 424, no</column>
+<column name="grp_matmul_245_256_1_fu_2049">matmul_245_256_1, 590629, 590629, 2.363 ms, 2.363 ms, 590604, 590604, dataflow</column>
+<column name="grp_RoPE_1_fu_2105">RoPE_1, 424, 424, 1.696 us, 1.696 us, 424, 424, no</column>
+<column name="grp_kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_CACHE_STORE_fu_2152">kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_CACHE_STORE, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_1_Block_entry_current_token_fb_proc_Outline_HEAD_COMPUTE_fu_2188">kernel_mhsa_1_Block_entry_current_token_fb_proc_Outline_HEAD_COMPUTE, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_kernel_mhsa_1_Block_entry_current_token_fb_proc_Outline_SOFTMAX_HEADS_fu_2220">kernel_mhsa_1_Block_entry_current_token_fb_proc_Outline_SOFTMAX_HEADS, 481, 37285, 1.924 us, 0.149 ms, 481, 37285, no</column>
+<column name="grp_kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_LOAD_V_CACHE_VITIS_LOOP_fu_2238">kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_LOAD_V_CACHE_VITIS_LOOP, ?, ?, ?, ?, 0, 0, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_matmul_245_1_fu_2255">matmul_245_1, 590629, 590629, 2.363 ms, 2.363 ms, 590604, 590604, dataflow</column>
+<column name="grp_kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_2294">kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_TOKEN_STREAM_VALUE_MAC, 40, 16392, 0.160 us, 65.568 us, 34, 16386, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_ACCUM_WRITEBACK_fu_2384">kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_ACCUM_WRITEBACK, 18, 18, 72.000 ns, 72.000 ns, 17, 17, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_OUTPUT_WRITE_fu_2533">kernel_mhsa_1_Block_entry_current_token_fb_proc_Pipeline_OUTPUT_WRITE, 771, 771, 3.084 us, 3.084 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- HEAD_STREAM">?, ?, ?, -, -, 12, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

@@ -1,4 +1,4 @@
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1054:
@@ -12,7 +12,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\utils/x_hls_utils.h:225:9
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\utils/x_hls_utils.h:226:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=reg_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INLINE off
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1054:
@@ -124,7 +124,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:4
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:428:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=sinf_or_cosf_XLX_SEP_ PragmaOptions=variable=neg_cos_table complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS array_partition variable=neg_cos_table complete
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1054:
@@ -161,7 +161,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_cordic_apfixed.h:
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_cordic_apfixed.h:860:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=sinh_cosh_range_redux_cordic_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1055:
@@ -423,7 +423,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_exp_apfixed.h:341
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_exp_apfixed.h:3415:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=exp10_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS unroll
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1056:
@@ -445,7 +445,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_log_apfixed.h:106
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_log_apfixed.h:1346:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=log2_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS unroll
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1057:
@@ -464,7 +464,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:37
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:417:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=recip_fixed_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS pipeline
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1058:
@@ -483,7 +483,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_round_copysign_ap
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_round_copysign_apfixed.h:213:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rint_fixed_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS pipeline
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1059:
@@ -514,7 +514,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_pow_apfixed.h:434
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_pow_apfixed.h:448:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rootn_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS unroll
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1060:
@@ -536,14 +536,14 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_diff_apfixed.h:22
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_diff_apfixed.h:249:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=minmag_fixed_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1062:
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_frexp_apfixed.h:45:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=frexp_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS pipeline II=1
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1064:
@@ -595,7 +595,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_isequal_isnotequa
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_isequal_isnotequal_apfixed.h:138:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=generic_isnotequal_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS pipeline
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1065:
@@ -623,7 +623,7 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_all_any_apfixed.h
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_all_any_apfixed.h:92:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=generic_any_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS pipeline II=1
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1066:
@@ -639,35 +639,35 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_select_bitselect_
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_select_bitselect_apfixed.h:62:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=generic_bitselect_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS pipeline
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1067:
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_erf_apfixed.h:490:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=erfc_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1069:
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_lgamma_apfixed.h:17:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=lgamma_generic_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS pipeline
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1070:
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_tgamma_apfixed.h:18:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=tgamma_generic_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS pipeline
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1072:
 C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_mad_apfixed.h:27:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=generic_mad_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS unroll
         ^
-In file included from kernel_MHSA.cpp:1:
+In file included from kernel_MHSA.cpp:2:
 In file included from ./kernel_Rope.hpp:4:
 In file included from ./tensor.hpp:9:
 In file included from C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot\hls_math.h:1074:
@@ -677,133 +677,145 @@ C:/Xilinx2025/2025.1/Vitis/common/technology/autopilot/etc/hls_hypot_apfixed.h:1
 C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/MHSA.tcl:19:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=name=kernel_mhsa_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLSDIRECTIVE TOP name=kernel_mhsa
         ^
-kernel_MHSA.cpp:9:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=current_token bundle=gmem0 offset=slave max_read_burst_length=256 max_write_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:10:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=current_token bundle=gmem0 offset=slave max_read_burst_length=256 max_write_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INTERFACE m_axi port=current_token bundle=gmem0 offset=slave max_read_burst_length=256 max_write_burst_length=256
         ^
-kernel_MHSA.cpp:10:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=weights bundle=gmem1 offset=slave max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS INTERFACE m_axi port=weights bundle=gmem1 offset=slave max_read_burst_length=256
+kernel_MHSA.cpp:11:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=wq bundle=gmem1 offset=slave max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=wq bundle=gmem1 offset=slave max_read_burst_length=256
         ^
-kernel_MHSA.cpp:11:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=key_cache bundle=gmem2 offset=slave max_read_burst_length=256 max_write_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:12:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=wk bundle=gmem5 offset=slave max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=wk bundle=gmem5 offset=slave max_read_burst_length=256
+        ^
+kernel_MHSA.cpp:13:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=wv bundle=gmem6 offset=slave max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=wv bundle=gmem6 offset=slave max_read_burst_length=256
+        ^
+kernel_MHSA.cpp:14:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=wo bundle=gmem7 offset=slave max_read_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=wo bundle=gmem7 offset=slave max_read_burst_length=256
+        ^
+kernel_MHSA.cpp:15:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=key_cache bundle=gmem2 offset=slave max_read_burst_length=256 max_write_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INTERFACE m_axi port=key_cache bundle=gmem2 offset=slave max_read_burst_length=256 max_write_burst_length=256
         ^
-kernel_MHSA.cpp:12:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=value_cache bundle=gmem3 offset=slave max_read_burst_length=256 max_write_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:16:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=m_axi port=value_cache bundle=gmem3 offset=slave max_read_burst_length=256 max_write_burst_length=256_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INTERFACE m_axi port=value_cache bundle=gmem3 offset=slave max_read_burst_length=256 max_write_burst_length=256
         ^
-kernel_MHSA.cpp:13:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=s_axilite port=position_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:17:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=s_axilite port=position_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INTERFACE s_axilite port=position
         ^
-kernel_MHSA.cpp:14:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=s_axilite port=return_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:18:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=s_axilite port=layer_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer
+        ^
+kernel_MHSA.cpp:19:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=s_axilite port=return_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INTERFACE s_axilite port=return
         ^
-kernel_MHSA.cpp:33:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=in_rms_vec cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS ARRAY_PARTITION variable=in_rms_vec cyclic factor=8
-        ^
-kernel_MHSA.cpp:34:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_rms_vec cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS ARRAY_PARTITION variable=out_rms_vec cyclic factor=8
-        ^
-kernel_MHSA.cpp:35:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_q cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:32:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_q cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=out_q cyclic factor=8
         ^
-kernel_MHSA.cpp:36:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_q_rope cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:33:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_q_rope cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=out_q_rope cyclic factor=8
         ^
-kernel_MHSA.cpp:37:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_k cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:34:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_k cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=out_k cyclic factor=8
         ^
-kernel_MHSA.cpp:38:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_k_rope cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:35:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_k_rope cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=out_k_rope cyclic factor=8
         ^
-kernel_MHSA.cpp:39:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_v cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:36:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=out_v cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=out_v cyclic factor=8
         ^
-kernel_MHSA.cpp:40:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=xb cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:37:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=xb cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=xb cyclic factor=8
         ^
-kernel_MHSA.cpp:41:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=xb2 cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:38:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=xb2 cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=xb2 cyclic factor=8
         ^
-kernel_MHSA.cpp:44:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=current_input cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS ARRAY_PARTITION variable=current_input cyclic factor=8
+kernel_MHSA.cpp:41:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dataflow_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS DATAFLOW
         ^
-kernel_MHSA.cpp:48:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:56:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-kernel_MHSA.cpp:54:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=12_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS LOOP_TRIPCOUNT min=1 max=12
+kernel_MHSA.cpp:57:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dependence_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=key_cache inter false_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS dependence variable=key_cache inter false
         ^
-kernel_MHSA.cpp:55:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dependence_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=current_input inter false_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS DEPENDENCE variable=current_input inter false
+kernel_MHSA.cpp:58:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dependence_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=value_cache inter false_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS dependence variable=value_cache inter false
         ^
-kernel_MHSA.cpp:86:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS PIPELINE II=1
-        ^
-kernel_MHSA.cpp:93:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=att complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:65:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=att complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=att complete dim=1
         ^
-kernel_MHSA.cpp:101:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:70:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-kernel_MHSA.cpp:102:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=512_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:71:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=512_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=1 max=512
         ^
-kernel_MHSA.cpp:109:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=16_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:77:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=16_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
         ^
-kernel_MHSA.cpp:113:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=q_head_local complete_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:80:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=q_head_local complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=q_head_local complete
         ^
-kernel_MHSA.cpp:116:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:81:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=k_cache_local cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=k_cache_local cyclic factor=8
+        ^
+kernel_MHSA.cpp:85:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-kernel_MHSA.cpp:122:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=8_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:91:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+kernel_MHSA.cpp:96:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=8_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=8
         ^
-kernel_MHSA.cpp:123:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=512_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:97:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=512_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=1 max=512
         ^
-kernel_MHSA.cpp:129:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS UNROLL factor=4
+kernel_MHSA.cpp:100:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=8
         ^
-kernel_MHSA.cpp:131:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_op_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=dot op=fmul impl=dsp_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:102:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_op_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=dot op=fmul impl=dsp_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS BIND_OP variable=dot op=fmul impl=dsp
         ^
-kernel_MHSA.cpp:142:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=16_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:112:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=16_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
         ^
-kernel_MHSA.cpp:148:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:118:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-kernel_MHSA.cpp:156:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=16_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:124:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=16_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=1 max=16
         ^
-kernel_MHSA.cpp:160:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=local_accum complete_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:127:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=local_accum complete_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS ARRAY_PARTITION variable=local_accum complete
         ^
-kernel_MHSA.cpp:164:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:128:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=v_cache_local cyclic factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=v_cache_local cyclic factor=8
+        ^
+kernel_MHSA.cpp:132:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+kernel_MHSA.cpp:138:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL
         ^
-kernel_MHSA.cpp:170:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=512_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:143:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=min=1 max=512_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS LOOP_TRIPCOUNT min=1 max=512
         ^
-kernel_MHSA.cpp:176:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=2_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:146:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=2_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=2
         ^
-kernel_MHSA.cpp:177:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS UNROLL factor=2
-        ^
-kernel_MHSA.cpp:179:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_op_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=local_accum op=fmul impl=dsp_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS BIND_OP variable=local_accum op=fmul impl=dsp
-        ^
-kernel_MHSA.cpp:186:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS PIPELINE II=1
-        ^
-kernel_MHSA.cpp:187:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:147:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS UNROLL factor=4
         ^
-kernel_MHSA.cpp:198:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:149:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_op_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=variable=local_accum op=fmul impl=dsp_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS BIND_OP variable=local_accum op=fmul impl=dsp
+        ^
+kernel_MHSA.cpp:155:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-kernel_MHSA.cpp:205:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+kernel_MHSA.cpp:156:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=4
+        ^
+kernel_MHSA.cpp:167:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=kernel_mhsa_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS PIPELINE II=1
         ^
-245 warnings generated.
+249 warnings generated.

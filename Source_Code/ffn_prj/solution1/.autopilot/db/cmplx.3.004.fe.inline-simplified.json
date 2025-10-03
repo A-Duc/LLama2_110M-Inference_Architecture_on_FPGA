@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "1 5 2 1 5 2 4 6 5 2 3",
+    "calls": "4 3 6 4 3 6 5 1 3 6 2",
     "control_depth": 0,
     "def_use_depth": 1,
     "file": "kernel_FFN.cpp",
@@ -17,6 +17,48 @@
     "control_depth": 0,
     "def_use_depth": 3,
     "file": "kernel_FFN.cpp",
+    "fileloc": 59,
+    "instructions": 10,
+    "memory_accesses": 3,
+    "name": "Multiply_Vec",
+    "total_instructions": 10
+  },
+  "2": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 17,
+    "instructions": 9,
+    "memory_accesses": 2,
+    "name": "pull_tensor1d",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 9
+  },
+  "3": {
+    "basicblocks": 9,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 4,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 23,
+    "instructions": 25,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 2,
+    "name": "push_tensor2d_bycol",
+    "total_instructions": 25
+  },
+  "4": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "kernel_FFN.cpp",
     "fileloc": 11,
     "instructions": 9,
     "loads": {
@@ -26,7 +68,19 @@
     "name": "push_tensor1d",
     "total_instructions": 9
   },
-  "2": {
+  "5": {
+    "basicblocks": 3,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 6,
+    "file": "kernel_FFN.cpp",
+    "fileloc": 50,
+    "instructions": 16,
+    "memory_accesses": 2,
+    "name": "Swish",
+    "total_instructions": 16
+  },
+  "6": {
     "basicblocks": 15,
     "calls": "",
     "control_depth": 0,
@@ -43,59 +97,5 @@
       "L": 1
     },
     "total_instructions": 44
-  },
-  "3": {
-    "basicblocks": 3,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "kernel_FFN.cpp",
-    "fileloc": 17,
-    "instructions": 9,
-    "memory_accesses": 2,
-    "name": "pull_tensor1d",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 9
-  },
-  "4": {
-    "basicblocks": 3,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 6,
-    "file": "kernel_FFN.cpp",
-    "fileloc": 50,
-    "instructions": 16,
-    "memory_accesses": 2,
-    "name": "Swish",
-    "total_instructions": 16
-  },
-  "5": {
-    "basicblocks": 9,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 4,
-    "file": "kernel_FFN.cpp",
-    "fileloc": 23,
-    "instructions": 25,
-    "loads": {
-      "L": 1
-    },
-    "memory_accesses": 2,
-    "name": "push_tensor2d_bycol",
-    "total_instructions": 25
-  },
-  "6": {
-    "basicblocks": 3,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "kernel_FFN.cpp",
-    "fileloc": 59,
-    "instructions": 10,
-    "memory_accesses": 3,
-    "name": "Multiply_Vec",
-    "total_instructions": 10
   }
 }

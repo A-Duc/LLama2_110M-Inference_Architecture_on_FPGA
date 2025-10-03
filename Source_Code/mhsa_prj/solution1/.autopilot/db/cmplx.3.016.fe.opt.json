@@ -1,35 +1,306 @@
 {
   "0": {
-    "basicblocks": 236,
-    "calls": "1 1 1 5 5 2 2 2 2 2 2 2 2 2 2 2 2 1",
-    "control_depth": 2,
-    "def_use_depth": 73,
+    "basicblocks": 1,
+    "calls": "11 16 3 5 10 27 8 14 13",
+    "control_depth": 0,
+    "def_use_depth": 1,
     "file": "kernel_MHSA.cpp",
-    "fileloc": 6,
-    "instructions": 2157,
-    "loads": {
-      "L": 204
-    },
-    "memory_accesses": 469,
+    "fileloc": 7,
+    "instructions": 685,
+    "memory_accesses": 0,
     "name": "kernel_mhsa",
-    "stores": {
-      "L": 192
-    },
-    "total_instructions": 5043
+    "total_instructions": 7203
   },
   "1": {
+    "basicblocks": 21,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 0,
+    "instructions": 84,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 19,
+    "name": "matmul.216.218.1_for.inc",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 84
+  },
+  "10": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 4,
+    "file": "kernel_MHSA.cpp",
+    "fileloc": 0,
+    "instructions": 85,
+    "loads": {
+      "L": 26
+    },
+    "memory_accesses": 26,
+    "name": "_Z11kernel_mhsaPfiS_S_S_S_S_S_i_entry.aft",
+    "total_instructions": 85
+  },
+  "11": {
     "basicblocks": 1,
-    "calls": "4 6 8 9",
+    "calls": "19 28 12",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "kernel_MHSA.cpp",
+    "fileloc": 0,
+    "instructions": 5,
+    "memory_accesses": 0,
+    "name": "_Z11kernel_mhsaPfiS_S_S_S_S_S_i_",
+    "total_instructions": 1928
+  },
+  "12": {
+    "basicblocks": 1,
+    "calls": "20 25 23 21",
     "control_depth": 0,
     "def_use_depth": 1,
     "file": "kernel_MatMul.cpp",
-    "fileloc": 75,
+    "fileloc": 85,
     "instructions": 16,
     "memory_accesses": 0,
     "name": "matmul",
-    "total_instructions": 211
+    "total_instructions": 641
+  },
+  "13": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 4,
+    "file": "kernel_MHSA.cpp",
+    "fileloc": 0,
+    "instructions": 53,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 17,
+    "name": "_Z11kernel_mhsaPfiS_S_S_S_S_S_i_",
+    "total_instructions": 53
+  },
+  "14": {
+    "basicblocks": 1,
+    "calls": "18 6 24 30",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 85,
+    "instructions": 16,
+    "memory_accesses": 0,
+    "name": "matmul",
+    "total_instructions": 672
+  },
+  "15": {
+    "basicblocks": 27,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 16,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 36,
+    "instructions": 330,
+    "loads": {
+      "L": 33
+    },
+    "memory_accesses": 67,
+    "name": "compute_vec_mat",
+    "stores": {
+      "L": 17
+    },
+    "total_instructions": 330
+  },
+  "16": {
+    "basicblocks": 21,
+    "calls": "31",
+    "control_depth": 2,
+    "def_use_depth": 55,
+    "file": "kernel_Rope.cpp",
+    "fileloc": 3,
+    "instructions": 364,
+    "loads": {
+      "G": 7,
+      "L": 16
+    },
+    "memory_accesses": 35,
+    "name": "RoPE",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 577
+  },
+  "17": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 11,
+    "instructions": 32,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 3,
+    "name": "load_vec",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 32
+  },
+  "18": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 11,
+    "instructions": 63,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 18,
+    "name": "load_vec",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 63
+  },
+  "19": {
+    "basicblocks": 1,
+    "calls": "2 7 29 1",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 85,
+    "instructions": 16,
+    "memory_accesses": 0,
+    "name": "matmul",
+    "total_instructions": 641
   },
   "2": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 11,
+    "instructions": 32,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 3,
+    "name": "load_vec",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 32
+  },
+  "20": {
+    "basicblocks": 6,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 11,
+    "instructions": 32,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 3,
+    "name": "load_vec",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 32
+  },
+  "21": {
+    "basicblocks": 21,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 0,
+    "instructions": 84,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 19,
+    "name": "matmul.216.1_for.inc",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 84
+  },
+  "22": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 2,
+    "file": "x_hls_utils.h",
+    "fileloc": 346,
+    "instructions": 5,
+    "memory_accesses": 0,
+    "name": "to_ieee",
+    "total_instructions": 5
+  },
+  "23": {
+    "basicblocks": 27,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 16,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 36,
+    "instructions": 330,
+    "loads": {
+      "L": 33
+    },
+    "memory_accesses": 67,
+    "name": "compute_vec_mat",
+    "stores": {
+      "L": 17
+    },
+    "total_instructions": 330
+  },
+  "24": {
+    "basicblocks": 27,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 16,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 36,
+    "instructions": 330,
+    "loads": {
+      "L": 33
+    },
+    "memory_accesses": 67,
+    "name": "compute_vec_mat",
+    "stores": {
+      "L": 17
+    },
+    "total_instructions": 330
+  },
+  "25": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 22,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 22,
+    "instructions": 179,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 48,
+    "name": "load_mat_burst",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 179
+  },
+  "26": {
     "basicblocks": 14,
     "calls": "",
     "control_depth": 2,
@@ -47,73 +318,94 @@
     },
     "total_instructions": 77
   },
-  "3": {
-    "basicblocks": 1,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 2,
-    "file": "x_hls_utils.h",
-    "fileloc": 346,
-    "instructions": 5,
-    "memory_accesses": 0,
-    "name": "to_ieee",
-    "total_instructions": 5
-  },
-  "4": {
-    "basicblocks": 4,
-    "calls": "",
-    "control_depth": 1,
-    "def_use_depth": 4,
-    "file": "kernel_MatMul.cpp",
-    "fileloc": 9,
-    "instructions": 34,
+  "27": {
+    "basicblocks": 143,
+    "calls": "26 26 26 26 26 26 26 26 26 26 26 26",
+    "control_depth": 2,
+    "def_use_depth": 69,
+    "file": "kernel_MHSA.cpp",
+    "fileloc": 0,
+    "instructions": 1034,
     "loads": {
-      "L": 8
+      "L": 75
     },
-    "memory_accesses": 10,
-    "name": "load_vec",
+    "memory_accesses": 237,
+    "name": "_Z11kernel_mhsaPfiS_S_S_S_S_S_i_entry.aft.aft.aft",
     "stores": {
-      "L": 1
+      "L": 32
     },
-    "total_instructions": 34
+    "total_instructions": 1958
   },
-  "5": {
+  "28": {
+    "basicblocks": 1,
+    "calls": "17 4 15 9",
+    "control_depth": 0,
+    "def_use_depth": 1,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 85,
+    "instructions": 16,
+    "memory_accesses": 0,
+    "name": "matmul",
+    "total_instructions": 641
+  },
+  "29": {
+    "basicblocks": 27,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 16,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 36,
+    "instructions": 330,
+    "loads": {
+      "L": 33
+    },
+    "memory_accesses": 67,
+    "name": "compute_vec_mat",
+    "stores": {
+      "L": 17
+    },
+    "total_instructions": 330
+  },
+  "3": {
     "basicblocks": 21,
-    "calls": "7",
+    "calls": "31",
     "control_depth": 2,
     "def_use_depth": 55,
     "file": "kernel_Rope.cpp",
     "fileloc": 3,
-    "instructions": 346,
+    "instructions": 364,
     "loads": {
       "G": 7,
-      "L": 8
+      "L": 16
     },
-    "memory_accesses": 27,
+    "memory_accesses": 35,
     "name": "RoPE",
     "stores": {
       "L": 8
     },
-    "total_instructions": 559
+    "total_instructions": 577
   },
-  "6": {
-    "basicblocks": 7,
+  "30": {
+    "basicblocks": 21,
     "calls": "",
-    "control_depth": 1,
-    "def_use_depth": 2,
+    "control_depth": 2,
+    "def_use_depth": 3,
     "file": "kernel_MatMul.cpp",
-    "fileloc": 20,
-    "instructions": 26,
-    "memory_accesses": 3,
-    "name": "load_mat",
-    "stores": {
+    "fileloc": 0,
+    "instructions": 84,
+    "loads": {
       "L": 1
     },
-    "total_instructions": 26
+    "memory_accesses": 19,
+    "name": "matmul.1_for.inc",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 84
   },
-  "7": {
+  "31": {
     "basicblocks": 23,
-    "calls": "3 3 3 3 3 3 3 3",
+    "calls": "22 22 22 22 22 22 22 22",
     "control_depth": 6,
     "def_use_depth": 35,
     "file": "hls_pow.h",
@@ -126,42 +418,109 @@
     "name": "pow_generic<float>",
     "total_instructions": 213
   },
+  "4": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 22,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 22,
+    "instructions": 179,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 48,
+    "name": "load_mat_burst",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 179
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "kernel_MHSA.cpp",
+    "fileloc": 0,
+    "instructions": 18,
+    "memory_accesses": 0,
+    "name": "_Z11kernel_mhsaPfiS_S_S_S_S_S_i_",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 18
+  },
+  "6": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 22,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 22,
+    "instructions": 179,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 48,
+    "name": "load_mat_burst",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 179
+  },
+  "7": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 22,
+    "file": "kernel_MatMul.cpp",
+    "fileloc": 22,
+    "instructions": 179,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 48,
+    "name": "load_mat_burst",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 179
+  },
   "8": {
-    "basicblocks": 15,
+    "basicblocks": 71,
     "calls": "",
     "control_depth": 2,
-    "def_use_depth": 5,
-    "file": "kernel_MatMul.cpp",
-    "fileloc": 34,
-    "instructions": 83,
+    "def_use_depth": 7,
+    "file": "kernel_MHSA.cpp",
+    "fileloc": 0,
+    "instructions": 650,
     "loads": {
-      "G": 4,
-      "L": 2
+      "L": 22
     },
-    "memory_accesses": 13,
-    "name": "compute_matmul",
+    "memory_accesses": 57,
+    "name": "_Z11kernel_mhsaPfiS_S_S_S_S_S_i_entry.aft.aft.aft.aft.aft",
     "stores": {
-      "G": 4,
-      "L": 1
+      "L": 40
     },
-    "total_instructions": 83
+    "total_instructions": 650
   },
   "9": {
-    "basicblocks": 13,
+    "basicblocks": 21,
     "calls": "",
     "control_depth": 2,
     "def_use_depth": 3,
     "file": "kernel_MatMul.cpp",
-    "fileloc": 63,
-    "instructions": 52,
+    "fileloc": 0,
+    "instructions": 84,
     "loads": {
       "L": 1
     },
-    "memory_accesses": 11,
-    "name": "store_result",
+    "memory_accesses": 19,
+    "name": "matmul.216.219.1_for.inc",
     "stores": {
-      "L": 8
+      "L": 16
     },
-    "total_instructions": 52
+    "total_instructions": 84
   }
 }

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'kernel_mhsa'" level="0">
-<item name = "Date">Tue Sep 30 23:58:48 2025
+<item name = "Date">Thu Oct  2 21:26:07 2025
 </item>
 <item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
 <item name = "Project">mhsa_prj</item>
@@ -24,33 +24,27 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">28407702, 38366562, 0.114 sec, 0.153 sec, 28407703, 38366563, no</column>
+<column name="">?, ?, ?, ?, ?, ?, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_kernel_mhsa_Pipeline_INPUT_COPY_fu_1690">kernel_mhsa_Pipeline_INPUT_COPY, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_19_1_fu_1705">kernel_mhsa_Pipeline_VITIS_LOOP_19_1, 772, 772, 3.088 us, 3.088 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Outline_ATT_INIT_fu_1718">kernel_mhsa_Outline_ATT_INIT, 25, 6193, 0.100 us, 24.772 us, 25, 6193, no</column>
-<column name="grp_kernel_mhsa_Pipeline_XB_INIT_fu_1736">kernel_mhsa_Pipeline_XB_INIT, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_VITIS_LOOP_27_2_fu_1748">kernel_mhsa_Pipeline_VITIS_LOOP_27_2, 775, 775, 3.100 us, 3.100 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_matmul_1_fu_1772">matmul_1, 590611, 590611, 2.362 ms, 2.362 ms, 590602, 590602, dataflow</column>
-<column name="grp_RoPE_fu_1803">RoPE, 424, 424, 1.696 us, 1.696 us, 424, 424, no</column>
-<column name="grp_kernel_mhsa_Pipeline_CACHE_STORE_fu_1842">kernel_mhsa_Pipeline_CACHE_STORE, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Outline_HEAD_COMPUTE_fu_1868">kernel_mhsa_Outline_HEAD_COMPUTE, 841, 395065, 3.364 us, 1.580 ms, 841, 395065, no</column>
-<column name="grp_kernel_mhsa_Outline_SOFTMAX_HEADS_fu_1898">kernel_mhsa_Outline_SOFTMAX_HEADS, 481, 37285, 1.924 us, 0.149 ms, 481, 37285, no</column>
-<column name="grp_kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC_fu_1915">kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC, 82, 32786, 0.328 us, 0.131 ms, 66, 32770, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_ACCUM_WRITEBACK_fu_2002">kernel_mhsa_Pipeline_ACCUM_WRITEBACK, 18, 18, 72.000 ns, 72.000 ns, 17, 17, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_RESIDUAL_fu_2143">kernel_mhsa_Pipeline_RESIDUAL, 773, 773, 3.092 us, 3.092 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_kernel_mhsa_Pipeline_OUTPUT_WRITE_fu_2163">kernel_mhsa_Pipeline_OUTPUT_WRITE, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="call_ln41_entry_proc_fu_698">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_Block_entry_gmem0_rd_proc_fu_706">Block_entry_gmem0_rd_proc, 1771889, 1771889, 7.088 ms, 7.088 ms, 1771889, 1771889, no</column>
+<column name="grp_Block_entry_proc_fu_770">Block_entry_proc, 1, 1, 4.000 ns, 4.000 ns, 1, 1, no</column>
+<column name="grp_RoPE_fu_780">RoPE, 427, 427, 1.708 us, 1.708 us, 427, 427, no</column>
+<column name="grp_RoPE_1_fu_827">RoPE_1, 427, 427, 1.708 us, 1.708 us, 427, 427, no</column>
+<column name="grp_Loop_CACHE_STORE_proc_fu_874">Loop_CACHE_STORE_proc, 783, 783, 3.132 us, 3.132 us, 783, 783, no</column>
+<column name="grp_Block_entry_att_0_wr_proc_fu_912">Block_entry_att_0_wr_proc, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_Block_entry_xb_0_wr_proc_fu_943">Block_entry_xb_0_wr_proc, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_matmul_1_fu_981">matmul_1, 590628, 590628, 2.363 ms, 2.363 ms, 590604, 590604, dataflow</column>
+<column name="grp_Loop_OUTPUT_WRITE_proc_fu_1020">Loop_OUTPUT_WRITE_proc, 782, 782, 3.128 us, 3.128 us, 768, 768, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LAYER_LOOP">28406136, 38364996, 2367178 ~ 3197083, -, -, 12, no</column>
-<column name=" + HEAD_STREAM">252, 393708, 21 ~ 32809, -, -, 12, no</column>
 </table>
 </item>
 </section>

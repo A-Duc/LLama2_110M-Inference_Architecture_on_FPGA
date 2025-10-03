@@ -1800,7 +1800,7 @@ entry_ifconv:105 %r_exp_1 = add i10 %r_exp, i10 1023
 
 <Node id="4" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-entry_ifconv:0 %specpipeline_ln291 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_115
+entry_ifconv:0 %specpipeline_ln291 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_99
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln291"/></StgValue>

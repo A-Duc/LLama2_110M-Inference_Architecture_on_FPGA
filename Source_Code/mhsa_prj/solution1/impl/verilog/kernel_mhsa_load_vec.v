@@ -15,40 +15,76 @@ module kernel_mhsa_load_vec (
         ap_continue,
         ap_idle,
         ap_ready,
-        vector_stream_din,
-        vector_stream_full_n,
-        vector_stream_write,
-        vector_stream_num_data_valid,
-        vector_stream_fifo_cap,
         start_out,
         start_write,
-        i_vec_0_address0,
-        i_vec_0_ce0,
-        i_vec_0_q0,
-        i_vec_1_address0,
-        i_vec_1_ce0,
-        i_vec_1_q0,
-        i_vec_2_address0,
-        i_vec_2_ce0,
-        i_vec_2_q0,
-        i_vec_3_address0,
-        i_vec_3_ce0,
-        i_vec_3_q0,
-        i_vec_4_address0,
-        i_vec_4_ce0,
-        i_vec_4_q0,
-        i_vec_5_address0,
-        i_vec_5_ce0,
-        i_vec_5_q0,
-        i_vec_6_address0,
-        i_vec_6_ce0,
-        i_vec_6_q0,
-        i_vec_7_address0,
-        i_vec_7_ce0,
-        i_vec_7_q0
+        m_axi_gmem0_0_AWVALID,
+        m_axi_gmem0_0_AWREADY,
+        m_axi_gmem0_0_AWADDR,
+        m_axi_gmem0_0_AWID,
+        m_axi_gmem0_0_AWLEN,
+        m_axi_gmem0_0_AWSIZE,
+        m_axi_gmem0_0_AWBURST,
+        m_axi_gmem0_0_AWLOCK,
+        m_axi_gmem0_0_AWCACHE,
+        m_axi_gmem0_0_AWPROT,
+        m_axi_gmem0_0_AWQOS,
+        m_axi_gmem0_0_AWREGION,
+        m_axi_gmem0_0_AWUSER,
+        m_axi_gmem0_0_WVALID,
+        m_axi_gmem0_0_WREADY,
+        m_axi_gmem0_0_WDATA,
+        m_axi_gmem0_0_WSTRB,
+        m_axi_gmem0_0_WLAST,
+        m_axi_gmem0_0_WID,
+        m_axi_gmem0_0_WUSER,
+        m_axi_gmem0_0_ARVALID,
+        m_axi_gmem0_0_ARREADY,
+        m_axi_gmem0_0_ARADDR,
+        m_axi_gmem0_0_ARID,
+        m_axi_gmem0_0_ARLEN,
+        m_axi_gmem0_0_ARSIZE,
+        m_axi_gmem0_0_ARBURST,
+        m_axi_gmem0_0_ARLOCK,
+        m_axi_gmem0_0_ARCACHE,
+        m_axi_gmem0_0_ARPROT,
+        m_axi_gmem0_0_ARQOS,
+        m_axi_gmem0_0_ARREGION,
+        m_axi_gmem0_0_ARUSER,
+        m_axi_gmem0_0_RVALID,
+        m_axi_gmem0_0_RREADY,
+        m_axi_gmem0_0_RDATA,
+        m_axi_gmem0_0_RLAST,
+        m_axi_gmem0_0_RID,
+        m_axi_gmem0_0_RFIFONUM,
+        m_axi_gmem0_0_RUSER,
+        m_axi_gmem0_0_RRESP,
+        m_axi_gmem0_0_BVALID,
+        m_axi_gmem0_0_BREADY,
+        m_axi_gmem0_0_BRESP,
+        m_axi_gmem0_0_BID,
+        m_axi_gmem0_0_BUSER,
+        vec,
+        vec_stream_din,
+        vec_stream_full_n,
+        vec_stream_write,
+        vec_stream_num_data_valid,
+        vec_stream_fifo_cap
 );
 
-parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
+parameter    ap_ST_fsm_state1 = 14'd1;
+parameter    ap_ST_fsm_state2 = 14'd2;
+parameter    ap_ST_fsm_state3 = 14'd4;
+parameter    ap_ST_fsm_state4 = 14'd8;
+parameter    ap_ST_fsm_state5 = 14'd16;
+parameter    ap_ST_fsm_state6 = 14'd32;
+parameter    ap_ST_fsm_state7 = 14'd64;
+parameter    ap_ST_fsm_state8 = 14'd128;
+parameter    ap_ST_fsm_state9 = 14'd256;
+parameter    ap_ST_fsm_state10 = 14'd512;
+parameter    ap_ST_fsm_state11 = 14'd1024;
+parameter    ap_ST_fsm_state12 = 14'd2048;
+parameter    ap_ST_fsm_state13 = 14'd4096;
+parameter    ap_ST_fsm_state14 = 14'd8192;
 
 input   ap_clk;
 input   ap_rst;
@@ -58,162 +94,127 @@ output   ap_done;
 input   ap_continue;
 output   ap_idle;
 output   ap_ready;
-output  [31:0] vector_stream_din;
-input   vector_stream_full_n;
-output   vector_stream_write;
-input  [31:0] vector_stream_num_data_valid;
-input  [31:0] vector_stream_fifo_cap;
 output   start_out;
 output   start_write;
-output  [6:0] i_vec_0_address0;
-output   i_vec_0_ce0;
-input  [31:0] i_vec_0_q0;
-output  [6:0] i_vec_1_address0;
-output   i_vec_1_ce0;
-input  [31:0] i_vec_1_q0;
-output  [6:0] i_vec_2_address0;
-output   i_vec_2_ce0;
-input  [31:0] i_vec_2_q0;
-output  [6:0] i_vec_3_address0;
-output   i_vec_3_ce0;
-input  [31:0] i_vec_3_q0;
-output  [6:0] i_vec_4_address0;
-output   i_vec_4_ce0;
-input  [31:0] i_vec_4_q0;
-output  [6:0] i_vec_5_address0;
-output   i_vec_5_ce0;
-input  [31:0] i_vec_5_q0;
-output  [6:0] i_vec_6_address0;
-output   i_vec_6_ce0;
-input  [31:0] i_vec_6_q0;
-output  [6:0] i_vec_7_address0;
-output   i_vec_7_ce0;
-input  [31:0] i_vec_7_q0;
+output   m_axi_gmem0_0_AWVALID;
+input   m_axi_gmem0_0_AWREADY;
+output  [63:0] m_axi_gmem0_0_AWADDR;
+output  [0:0] m_axi_gmem0_0_AWID;
+output  [31:0] m_axi_gmem0_0_AWLEN;
+output  [2:0] m_axi_gmem0_0_AWSIZE;
+output  [1:0] m_axi_gmem0_0_AWBURST;
+output  [1:0] m_axi_gmem0_0_AWLOCK;
+output  [3:0] m_axi_gmem0_0_AWCACHE;
+output  [2:0] m_axi_gmem0_0_AWPROT;
+output  [3:0] m_axi_gmem0_0_AWQOS;
+output  [3:0] m_axi_gmem0_0_AWREGION;
+output  [0:0] m_axi_gmem0_0_AWUSER;
+output   m_axi_gmem0_0_WVALID;
+input   m_axi_gmem0_0_WREADY;
+output  [31:0] m_axi_gmem0_0_WDATA;
+output  [3:0] m_axi_gmem0_0_WSTRB;
+output   m_axi_gmem0_0_WLAST;
+output  [0:0] m_axi_gmem0_0_WID;
+output  [0:0] m_axi_gmem0_0_WUSER;
+output   m_axi_gmem0_0_ARVALID;
+input   m_axi_gmem0_0_ARREADY;
+output  [63:0] m_axi_gmem0_0_ARADDR;
+output  [0:0] m_axi_gmem0_0_ARID;
+output  [31:0] m_axi_gmem0_0_ARLEN;
+output  [2:0] m_axi_gmem0_0_ARSIZE;
+output  [1:0] m_axi_gmem0_0_ARBURST;
+output  [1:0] m_axi_gmem0_0_ARLOCK;
+output  [3:0] m_axi_gmem0_0_ARCACHE;
+output  [2:0] m_axi_gmem0_0_ARPROT;
+output  [3:0] m_axi_gmem0_0_ARQOS;
+output  [3:0] m_axi_gmem0_0_ARREGION;
+output  [0:0] m_axi_gmem0_0_ARUSER;
+input   m_axi_gmem0_0_RVALID;
+output   m_axi_gmem0_0_RREADY;
+input  [31:0] m_axi_gmem0_0_RDATA;
+input   m_axi_gmem0_0_RLAST;
+input  [0:0] m_axi_gmem0_0_RID;
+input  [12:0] m_axi_gmem0_0_RFIFONUM;
+input  [0:0] m_axi_gmem0_0_RUSER;
+input  [1:0] m_axi_gmem0_0_RRESP;
+input   m_axi_gmem0_0_BVALID;
+output   m_axi_gmem0_0_BREADY;
+input  [1:0] m_axi_gmem0_0_BRESP;
+input  [0:0] m_axi_gmem0_0_BID;
+input  [0:0] m_axi_gmem0_0_BUSER;
+input  [63:0] vec;
+output  [31:0] vec_stream_din;
+input   vec_stream_full_n;
+output   vec_stream_write;
+input  [7:0] vec_stream_num_data_valid;
+input  [7:0] vec_stream_fifo_cap;
 
+reg ap_done;
 reg ap_idle;
 reg start_write;
+reg m_axi_gmem0_0_ARVALID;
+reg m_axi_gmem0_0_RREADY;
 
 reg    real_start;
 reg    start_once_reg;
-(* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
-wire    ap_CS_fsm_pp0_stage0;
-wire    ap_enable_reg_pp0_iter0;
-reg    ap_enable_reg_pp0_iter1;
-reg    ap_idle_pp0;
-wire    internal_ap_ready;
 reg    ap_done_reg;
-reg    ap_block_state1_pp0_stage0_iter0;
-reg    ap_block_state2_pp0_stage0_iter1;
-reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln12_fu_211_p2;
-reg    ap_condition_exit_pp0_iter0_stage0;
-wire    ap_loop_exit_ready;
-reg    ap_ready_int;
-reg    vector_stream_blk_n;
-wire    ap_block_pp0_stage0;
-wire   [2:0] trunc_ln12_fu_217_p1;
-reg   [2:0] trunc_ln12_reg_338;
-reg    ap_block_pp0_stage0_11001;
-wire   [63:0] zext_ln12_fu_231_p1;
-reg   [9:0] i_fu_82;
-wire   [9:0] add_ln12_fu_205_p2;
-wire    ap_loop_init;
-reg   [9:0] ap_sig_allocacmp_i_2;
-wire   [31:0] bitcast_ln15_fu_319_p1;
-reg    ap_block_pp0_stage0_01001;
-reg    vector_stream_write_local;
-reg    i_vec_0_ce0_local;
-reg    i_vec_1_ce0_local;
-reg    i_vec_2_ce0_local;
-reg    i_vec_3_ce0_local;
-reg    i_vec_4_ce0_local;
-reg    i_vec_5_ce0_local;
-reg    i_vec_6_ce0_local;
-reg    i_vec_7_ce0_local;
-wire   [6:0] lshr_ln_fu_221_p4;
-wire   [31:0] tmp_fu_280_p17;
-wire   [31:0] tmp_fu_280_p19;
-wire    ap_continue_int;
-reg    ap_done_int;
-reg   [0:0] ap_NS_fsm;
-wire    ap_enable_pp0;
-wire    ap_start_int;
-wire    ap_done_sig;
-reg    ap_condition_166;
-wire   [2:0] tmp_fu_280_p1;
-wire   [2:0] tmp_fu_280_p3;
-wire   [2:0] tmp_fu_280_p5;
-wire   [2:0] tmp_fu_280_p7;
-wire  signed [2:0] tmp_fu_280_p9;
-wire  signed [2:0] tmp_fu_280_p11;
-wire  signed [2:0] tmp_fu_280_p13;
-wire  signed [2:0] tmp_fu_280_p15;
+(* fsm_encoding = "none" *) reg   [13:0] ap_CS_fsm;
+wire    ap_CS_fsm_state1;
+reg    internal_ap_ready;
+reg    gmem0_blk_n_AR;
+wire    ap_CS_fsm_state3;
+reg    gmem0_blk_n_R;
+wire    ap_CS_fsm_state14;
+reg    vec_stream_blk_n;
+reg   [63:0] vec_read_reg_242;
+reg    ap_block_state1;
+wire   [3:0] trunc_ln15_fu_206_p1;
+reg    ap_block_state14;
+wire   [9:0] add_ln15_4_fu_214_p2;
+reg   [9:0] add5_in_reg_110;
+wire    ap_CS_fsm_state2;
+wire   [0:0] icmp_ln13_fu_138_p2;
+wire   [0:0] icmp_ln15_fu_219_p2;
+reg   [3:0] j_reg_119;
+wire  signed [63:0] sext_ln17_fu_171_p1;
+reg   [9:0] i_fu_80;
+wire   [9:0] add_ln13_fu_225_p2;
+reg    vec_stream_write_local;
+wire   [11:0] shl_ln_fu_144_p3;
+wire   [63:0] zext_ln17_fu_152_p1;
+wire   [63:0] add_ln17_fu_156_p2;
+wire   [61:0] trunc_ln_fu_161_p4;
+wire   [4:0] zext_ln15_fu_190_p1;
+wire   [4:0] add_ln15_fu_200_p2;
+wire   [9:0] zext_ln15_5_fu_210_p1;
+reg   [13:0] ap_NS_fsm;
+reg    ap_ST_fsm_state1_blk;
+wire    ap_ST_fsm_state2_blk;
+reg    ap_ST_fsm_state3_blk;
+wire    ap_ST_fsm_state4_blk;
+wire    ap_ST_fsm_state5_blk;
+wire    ap_ST_fsm_state6_blk;
+wire    ap_ST_fsm_state7_blk;
+wire    ap_ST_fsm_state8_blk;
+wire    ap_ST_fsm_state9_blk;
+wire    ap_ST_fsm_state10_blk;
+wire    ap_ST_fsm_state11_blk;
+wire    ap_ST_fsm_state12_blk;
+wire    ap_ST_fsm_state13_blk;
+reg    ap_ST_fsm_state14_blk;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
 #0 start_once_reg = 1'b0;
-#0 ap_CS_fsm = 1'd1;
-#0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_done_reg = 1'b0;
-#0 i_fu_82 = 10'd0;
+#0 ap_CS_fsm = 14'd1;
+#0 i_fu_80 = 10'd0;
 end
-
-(* dissolve_hierarchy = "yes" *) kernel_mhsa_sparsemux_17_3_32_1_1 #(
-    .ID( 1 ),
-    .NUM_STAGE( 1 ),
-    .CASE0( 3'h0 ),
-    .din0_WIDTH( 32 ),
-    .CASE1( 3'h1 ),
-    .din1_WIDTH( 32 ),
-    .CASE2( 3'h2 ),
-    .din2_WIDTH( 32 ),
-    .CASE3( 3'h3 ),
-    .din3_WIDTH( 32 ),
-    .CASE4( 3'h4 ),
-    .din4_WIDTH( 32 ),
-    .CASE5( 3'h5 ),
-    .din5_WIDTH( 32 ),
-    .CASE6( 3'h6 ),
-    .din6_WIDTH( 32 ),
-    .CASE7( 3'h7 ),
-    .din7_WIDTH( 32 ),
-    .def_WIDTH( 32 ),
-    .sel_WIDTH( 3 ),
-    .dout_WIDTH( 32 ))
-sparsemux_17_3_32_1_1_U239(
-    .din0(i_vec_0_q0),
-    .din1(i_vec_1_q0),
-    .din2(i_vec_2_q0),
-    .din3(i_vec_3_q0),
-    .din4(i_vec_4_q0),
-    .din5(i_vec_5_q0),
-    .din6(i_vec_6_q0),
-    .din7(i_vec_7_q0),
-    .def(tmp_fu_280_p17),
-    .sel(trunc_ln12_reg_338),
-    .dout(tmp_fu_280_p19)
-);
-
-kernel_mhsa_flow_control_loop_pipe flow_control_loop_pipe_U(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(real_start),
-    .ap_ready(internal_ap_ready),
-    .ap_done(ap_done_sig),
-    .ap_start_int(ap_start_int),
-    .ap_loop_init(ap_loop_init),
-    .ap_ready_int(ap_ready_int),
-    .ap_loop_exit_ready(ap_condition_exit_pp0_iter0_stage0),
-    .ap_loop_exit_done(ap_done_int),
-    .ap_continue_int(ap_continue_int),
-    .ap_done_int(ap_done_int),
-    .ap_continue(ap_continue)
-);
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_CS_fsm <= ap_ST_fsm_pp0_stage0;
+        ap_CS_fsm <= ap_ST_fsm_state1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
     end
@@ -223,22 +224,10 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_done_reg <= 1'b0;
     end else begin
-        if ((ap_continue_int == 1'b1)) begin
+        if ((ap_continue == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if (((ap_loop_exit_ready == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        end else if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln13_fu_138_p2 == 1'd0))) begin
             ap_done_reg <= 1'b1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_enable_reg_pp0_iter1 <= 1'b0;
-    end else begin
-        if ((1'b1 == ap_condition_exit_pp0_iter0_stage0)) begin
-            ap_enable_reg_pp0_iter1 <= 1'b0;
-        end else if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-            ap_enable_reg_pp0_iter1 <= ap_start_int;
         end
     end
 end
@@ -247,7 +236,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         start_once_reg <= 1'b0;
     end else begin
-        if (((real_start == 1'b1) & (internal_ap_ready == 1'b0))) begin
+        if (((internal_ap_ready == 1'b0) & (real_start == 1'b1))) begin
             start_once_reg <= 1'b1;
         end else if ((internal_ap_ready == 1'b1)) begin
             start_once_reg <= 1'b0;
@@ -256,39 +245,91 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_166)) begin
-        if ((icmp_ln12_fu_211_p2 == 1'd0)) begin
-            i_fu_82 <= add_ln12_fu_205_p2;
-        end else if ((ap_loop_init == 1'b1)) begin
-            i_fu_82 <= 10'd0;
-        end
+    if (((1'b1 == ap_CS_fsm_state14) & (icmp_ln15_fu_219_p2 == 1'd0) & (1'b0 == ap_block_state14))) begin
+        add5_in_reg_110 <= add_ln15_4_fu_214_p2;
+    end else if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln13_fu_138_p2 == 1'd1))) begin
+        add5_in_reg_110 <= i_fu_80;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        trunc_ln12_reg_338 <= trunc_ln12_fu_217_p1;
+    if (((1'b1 == ap_CS_fsm_state1) & (1'b0 == ap_block_state1))) begin
+        i_fu_80 <= 10'd0;
+    end else if (((1'b1 == ap_CS_fsm_state14) & (icmp_ln15_fu_219_p2 == 1'd1) & (1'b0 == ap_block_state14))) begin
+        i_fu_80 <= add_ln13_fu_225_p2;
     end
 end
 
+always @ (posedge ap_clk) begin
+    if (((1'b1 == ap_CS_fsm_state14) & (icmp_ln15_fu_219_p2 == 1'd0) & (1'b0 == ap_block_state14))) begin
+        j_reg_119 <= trunc_ln15_fu_206_p1;
+    end else if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln13_fu_138_p2 == 1'd1))) begin
+        j_reg_119 <= 4'd0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b1 == ap_CS_fsm_state1) & (1'b0 == ap_block_state1))) begin
+        vec_read_reg_242 <= vec;
+    end
+end
+
+assign ap_ST_fsm_state10_blk = 1'b0;
+
+assign ap_ST_fsm_state11_blk = 1'b0;
+
+assign ap_ST_fsm_state12_blk = 1'b0;
+
+assign ap_ST_fsm_state13_blk = 1'b0;
+
 always @ (*) begin
-    if (((icmp_ln12_fu_211_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_condition_exit_pp0_iter0_stage0 = 1'b1;
+    if ((1'b1 == ap_block_state14)) begin
+        ap_ST_fsm_state14_blk = 1'b1;
     end else begin
-        ap_condition_exit_pp0_iter0_stage0 = 1'b0;
+        ap_ST_fsm_state14_blk = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((ap_loop_exit_ready == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_done_int = 1'b1;
+    if ((1'b1 == ap_block_state1)) begin
+        ap_ST_fsm_state1_blk = 1'b1;
     end else begin
-        ap_done_int = ap_done_reg;
+        ap_ST_fsm_state1_blk = 1'b0;
+    end
+end
+
+assign ap_ST_fsm_state2_blk = 1'b0;
+
+always @ (*) begin
+    if ((m_axi_gmem0_0_ARREADY == 1'b0)) begin
+        ap_ST_fsm_state3_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state3_blk = 1'b0;
+    end
+end
+
+assign ap_ST_fsm_state4_blk = 1'b0;
+
+assign ap_ST_fsm_state5_blk = 1'b0;
+
+assign ap_ST_fsm_state6_blk = 1'b0;
+
+assign ap_ST_fsm_state7_blk = 1'b0;
+
+assign ap_ST_fsm_state8_blk = 1'b0;
+
+assign ap_ST_fsm_state9_blk = 1'b0;
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln13_fu_138_p2 == 1'd0))) begin
+        ap_done = 1'b1;
+    end else begin
+        ap_done = ap_done_reg;
     end
 end
 
 always @ (*) begin
-    if (((ap_idle_pp0 == 1'b1) & (ap_start_int == 1'b0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((real_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -296,95 +337,47 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
-        ap_idle_pp0 = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state3)) begin
+        gmem0_blk_n_AR = m_axi_gmem0_0_ARREADY;
     end else begin
-        ap_idle_pp0 = 1'b0;
+        gmem0_blk_n_AR = 1'b1;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_ready_int = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state14)) begin
+        gmem0_blk_n_R = m_axi_gmem0_0_RVALID;
     end else begin
-        ap_ready_int = 1'b0;
+        gmem0_blk_n_R = 1'b1;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
-        ap_sig_allocacmp_i_2 = 10'd0;
+    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln13_fu_138_p2 == 1'd0))) begin
+        internal_ap_ready = 1'b1;
     end else begin
-        ap_sig_allocacmp_i_2 = i_fu_82;
+        internal_ap_ready = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln12_fu_211_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        i_vec_0_ce0_local = 1'b1;
+    if (((m_axi_gmem0_0_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+        m_axi_gmem0_0_ARVALID = 1'b1;
     end else begin
-        i_vec_0_ce0_local = 1'b0;
+        m_axi_gmem0_0_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln12_fu_211_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        i_vec_1_ce0_local = 1'b1;
+    if (((1'b1 == ap_CS_fsm_state14) & (1'b0 == ap_block_state14))) begin
+        m_axi_gmem0_0_RREADY = 1'b1;
     end else begin
-        i_vec_1_ce0_local = 1'b0;
+        m_axi_gmem0_0_RREADY = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln12_fu_211_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        i_vec_2_ce0_local = 1'b1;
-    end else begin
-        i_vec_2_ce0_local = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((icmp_ln12_fu_211_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        i_vec_3_ce0_local = 1'b1;
-    end else begin
-        i_vec_3_ce0_local = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((icmp_ln12_fu_211_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        i_vec_4_ce0_local = 1'b1;
-    end else begin
-        i_vec_4_ce0_local = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((icmp_ln12_fu_211_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        i_vec_5_ce0_local = 1'b1;
-    end else begin
-        i_vec_5_ce0_local = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((icmp_ln12_fu_211_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        i_vec_6_ce0_local = 1'b1;
-    end else begin
-        i_vec_6_ce0_local = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((icmp_ln12_fu_211_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        i_vec_7_ce0_local = 1'b1;
-    end else begin
-        i_vec_7_ce0_local = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((start_full_n == 1'b0) & (start_once_reg == 1'b0))) begin
+    if (((start_once_reg == 1'b0) & (start_full_n == 1'b0))) begin
         real_start = 1'b0;
     end else begin
         real_start = ap_start;
@@ -392,7 +385,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((real_start == 1'b1) & (start_once_reg == 1'b0))) begin
+    if (((start_once_reg == 1'b0) & (real_start == 1'b1))) begin
         start_write = 1'b1;
     end else begin
         start_write = 1'b0;
@@ -400,25 +393,82 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        vector_stream_blk_n = vector_stream_full_n;
+    if ((1'b1 == ap_CS_fsm_state14)) begin
+        vec_stream_blk_n = vec_stream_full_n;
     end else begin
-        vector_stream_blk_n = 1'b1;
+        vec_stream_blk_n = 1'b1;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        vector_stream_write_local = 1'b1;
+    if (((1'b1 == ap_CS_fsm_state14) & (1'b0 == ap_block_state14))) begin
+        vec_stream_write_local = 1'b1;
     end else begin
-        vector_stream_write_local = 1'b0;
+        vec_stream_write_local = 1'b0;
     end
 end
 
 always @ (*) begin
     case (ap_CS_fsm)
-        ap_ST_fsm_pp0_stage0 : begin
-            ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+        ap_ST_fsm_state1 : begin
+            if (((1'b1 == ap_CS_fsm_state1) & (1'b0 == ap_block_state1))) begin
+                ap_NS_fsm = ap_ST_fsm_state2;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state1;
+            end
+        end
+        ap_ST_fsm_state2 : begin
+            if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln13_fu_138_p2 == 1'd0))) begin
+                ap_NS_fsm = ap_ST_fsm_state1;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end
+        end
+        ap_ST_fsm_state3 : begin
+            if (((m_axi_gmem0_0_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+                ap_NS_fsm = ap_ST_fsm_state4;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end
+        end
+        ap_ST_fsm_state4 : begin
+            ap_NS_fsm = ap_ST_fsm_state5;
+        end
+        ap_ST_fsm_state5 : begin
+            ap_NS_fsm = ap_ST_fsm_state6;
+        end
+        ap_ST_fsm_state6 : begin
+            ap_NS_fsm = ap_ST_fsm_state7;
+        end
+        ap_ST_fsm_state7 : begin
+            ap_NS_fsm = ap_ST_fsm_state8;
+        end
+        ap_ST_fsm_state8 : begin
+            ap_NS_fsm = ap_ST_fsm_state9;
+        end
+        ap_ST_fsm_state9 : begin
+            ap_NS_fsm = ap_ST_fsm_state10;
+        end
+        ap_ST_fsm_state10 : begin
+            ap_NS_fsm = ap_ST_fsm_state11;
+        end
+        ap_ST_fsm_state11 : begin
+            ap_NS_fsm = ap_ST_fsm_state12;
+        end
+        ap_ST_fsm_state12 : begin
+            ap_NS_fsm = ap_ST_fsm_state13;
+        end
+        ap_ST_fsm_state13 : begin
+            ap_NS_fsm = ap_ST_fsm_state14;
+        end
+        ap_ST_fsm_state14 : begin
+            if (((1'b1 == ap_CS_fsm_state14) & (icmp_ln15_fu_219_p2 == 1'd1) & (1'b0 == ap_block_state14))) begin
+                ap_NS_fsm = ap_ST_fsm_state2;
+            end else if (((1'b1 == ap_CS_fsm_state14) & (icmp_ln15_fu_219_p2 == 1'd0) & (1'b0 == ap_block_state14))) begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state14;
+            end
         end
         default : begin
             ap_NS_fsm = 'bx;
@@ -426,94 +476,114 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln12_fu_205_p2 = (ap_sig_allocacmp_i_2 + 10'd1);
+assign add_ln13_fu_225_p2 = (i_fu_80 + 10'd16);
 
-assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
+assign add_ln15_4_fu_214_p2 = (i_fu_80 + zext_ln15_5_fu_210_p1);
 
-assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
+assign add_ln15_fu_200_p2 = (zext_ln15_fu_190_p1 + 5'd1);
+
+assign add_ln17_fu_156_p2 = (zext_ln17_fu_152_p1 + vec_read_reg_242);
+
+assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+
+assign ap_CS_fsm_state14 = ap_CS_fsm[32'd13];
+
+assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+
+assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
 always @ (*) begin
-    ap_block_pp0_stage0_01001 = ((ap_done_reg == 1'b1) | ((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_block_state2_pp0_stage0_iter1)) | ((ap_start_int == 1'b1) & (1'b1 == ap_block_state1_pp0_stage0_iter0)));
+    ap_block_state1 = ((ap_done_reg == 1'b1) | (real_start == 1'b0));
 end
 
 always @ (*) begin
-    ap_block_pp0_stage0_11001 = ((ap_done_reg == 1'b1) | ((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_block_state2_pp0_stage0_iter1)) | ((ap_start_int == 1'b1) & (1'b1 == ap_block_state1_pp0_stage0_iter0)));
+    ap_block_state14 = ((m_axi_gmem0_0_RVALID == 1'b0) | (vec_stream_full_n == 1'b0));
 end
-
-always @ (*) begin
-    ap_block_pp0_stage0_subdone = ((ap_done_reg == 1'b1) | ((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_block_state2_pp0_stage0_iter1)) | ((ap_start_int == 1'b1) & (1'b1 == ap_block_state1_pp0_stage0_iter0)));
-end
-
-always @ (*) begin
-    ap_block_state1_pp0_stage0_iter0 = (ap_done_reg == 1'b1);
-end
-
-always @ (*) begin
-    ap_block_state2_pp0_stage0_iter1 = (vector_stream_full_n == 1'b0);
-end
-
-always @ (*) begin
-    ap_condition_166 = ((1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0));
-end
-
-assign ap_done = ap_done_sig;
-
-assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
-
-assign ap_enable_reg_pp0_iter0 = ap_start_int;
-
-assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
 assign ap_ready = internal_ap_ready;
 
-assign bitcast_ln15_fu_319_p1 = tmp_fu_280_p19;
+assign icmp_ln13_fu_138_p2 = ((i_fu_80 < 10'd768) ? 1'b1 : 1'b0);
 
-assign i_vec_0_address0 = zext_ln12_fu_231_p1;
+assign icmp_ln15_fu_219_p2 = ((add_ln15_fu_200_p2 == 5'd16) ? 1'b1 : 1'b0);
 
-assign i_vec_0_ce0 = i_vec_0_ce0_local;
+assign m_axi_gmem0_0_ARADDR = sext_ln17_fu_171_p1;
 
-assign i_vec_1_address0 = zext_ln12_fu_231_p1;
+assign m_axi_gmem0_0_ARBURST = 2'd0;
 
-assign i_vec_1_ce0 = i_vec_1_ce0_local;
+assign m_axi_gmem0_0_ARCACHE = 4'd0;
 
-assign i_vec_2_address0 = zext_ln12_fu_231_p1;
+assign m_axi_gmem0_0_ARID = 1'd0;
 
-assign i_vec_2_ce0 = i_vec_2_ce0_local;
+assign m_axi_gmem0_0_ARLEN = 64'd1;
 
-assign i_vec_3_address0 = zext_ln12_fu_231_p1;
+assign m_axi_gmem0_0_ARLOCK = 2'd0;
 
-assign i_vec_3_ce0 = i_vec_3_ce0_local;
+assign m_axi_gmem0_0_ARPROT = 3'd0;
 
-assign i_vec_4_address0 = zext_ln12_fu_231_p1;
+assign m_axi_gmem0_0_ARQOS = 4'd0;
 
-assign i_vec_4_ce0 = i_vec_4_ce0_local;
+assign m_axi_gmem0_0_ARREGION = 4'd0;
 
-assign i_vec_5_address0 = zext_ln12_fu_231_p1;
+assign m_axi_gmem0_0_ARSIZE = 3'd0;
 
-assign i_vec_5_ce0 = i_vec_5_ce0_local;
+assign m_axi_gmem0_0_ARUSER = 1'd0;
 
-assign i_vec_6_address0 = zext_ln12_fu_231_p1;
+assign m_axi_gmem0_0_AWADDR = 64'd0;
 
-assign i_vec_6_ce0 = i_vec_6_ce0_local;
+assign m_axi_gmem0_0_AWBURST = 2'd0;
 
-assign i_vec_7_address0 = zext_ln12_fu_231_p1;
+assign m_axi_gmem0_0_AWCACHE = 4'd0;
 
-assign i_vec_7_ce0 = i_vec_7_ce0_local;
+assign m_axi_gmem0_0_AWID = 1'd0;
 
-assign icmp_ln12_fu_211_p2 = ((ap_sig_allocacmp_i_2 == 10'd768) ? 1'b1 : 1'b0);
+assign m_axi_gmem0_0_AWLEN = 32'd0;
 
-assign lshr_ln_fu_221_p4 = {{ap_sig_allocacmp_i_2[9:3]}};
+assign m_axi_gmem0_0_AWLOCK = 2'd0;
+
+assign m_axi_gmem0_0_AWPROT = 3'd0;
+
+assign m_axi_gmem0_0_AWQOS = 4'd0;
+
+assign m_axi_gmem0_0_AWREGION = 4'd0;
+
+assign m_axi_gmem0_0_AWSIZE = 3'd0;
+
+assign m_axi_gmem0_0_AWUSER = 1'd0;
+
+assign m_axi_gmem0_0_AWVALID = 1'b0;
+
+assign m_axi_gmem0_0_BREADY = 1'b0;
+
+assign m_axi_gmem0_0_WDATA = 32'd0;
+
+assign m_axi_gmem0_0_WID = 1'd0;
+
+assign m_axi_gmem0_0_WLAST = 1'b0;
+
+assign m_axi_gmem0_0_WSTRB = 4'd0;
+
+assign m_axi_gmem0_0_WUSER = 1'd0;
+
+assign m_axi_gmem0_0_WVALID = 1'b0;
+
+assign sext_ln17_fu_171_p1 = $signed(trunc_ln_fu_161_p4);
+
+assign shl_ln_fu_144_p3 = {{add5_in_reg_110}, {2'd0}};
 
 assign start_out = real_start;
 
-assign tmp_fu_280_p17 = 'bx;
+assign trunc_ln15_fu_206_p1 = add_ln15_fu_200_p2[3:0];
 
-assign trunc_ln12_fu_217_p1 = ap_sig_allocacmp_i_2[2:0];
+assign trunc_ln_fu_161_p4 = {{add_ln17_fu_156_p2[63:2]}};
 
-assign vector_stream_din = bitcast_ln15_fu_319_p1;
+assign vec_stream_din = m_axi_gmem0_0_RDATA;
 
-assign vector_stream_write = vector_stream_write_local;
+assign vec_stream_write = vec_stream_write_local;
 
-assign zext_ln12_fu_231_p1 = lshr_ln_fu_221_p4;
+assign zext_ln15_5_fu_210_p1 = add_ln15_fu_200_p2;
+
+assign zext_ln15_fu_190_p1 = j_reg_119;
+
+assign zext_ln17_fu_152_p1 = shl_ln_fu_144_p3;
 
 endmodule //kernel_mhsa_load_vec

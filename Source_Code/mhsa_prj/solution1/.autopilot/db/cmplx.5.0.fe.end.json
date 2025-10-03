@@ -1,192 +1,51 @@
 {
     "1": {
-        "name": "matmul",
+        "name": "load_vec",
         "file": "kernel_MatMul.cpp",
-        "fileloc": "75",
-        "instructions": "27",
-        "total_instructions": "234",
-        "calls": "21 4 2 23",
-        "basicblocks": "1",
+        "fileloc": "11",
+        "instructions": "39",
+        "total_instructions": "39",
+        "calls": "",
+        "basicblocks": "6",
         "memory_accesses": "0",
         "control_depth": "0",
-        "def_use_depth": "1"
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
+        }
     },
     "2": {
-        "name": "compute_matmul",
+        "name": "compute_vec_mat.7_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_63_4",
         "file": "kernel_MatMul.cpp",
-        "fileloc": "34",
-        "instructions": "8",
-        "total_instructions": "87",
-        "calls": "15 3",
-        "basicblocks": "1",
-        "memory_accesses": "0",
-        "control_depth": "0",
-        "def_use_depth": "0"
+        "fileloc": "53",
+        "instructions": "221",
+        "total_instructions": "221",
+        "calls": "",
+        "basicblocks": "6",
+        "memory_accesses": "69",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "34"
+        },
+        "stores": {
+            "L": "36"
+        },
+        "loops": {
+            "L": "1"
+        }
     },
     "3": {
-        "name": "compute_matmul_Pipeline_execute_dot_product",
-        "file": "kernel_MatMul.cpp",
-        "fileloc": "50",
-        "instructions": "47",
-        "total_instructions": "47",
-        "calls": "",
-        "basicblocks": "6",
-        "memory_accesses": "12",
-        "control_depth": "2",
-        "def_use_depth": "1",
-        "loads": {
-            "G": "4",
-            "L": "3"
-        },
-        "stores": {
-            "L": "6"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "4": {
-        "name": "load_mat",
-        "file": "kernel_MatMul.cpp",
-        "fileloc": "20",
-        "instructions": "11",
-        "total_instructions": "32",
-        "calls": "8",
-        "basicblocks": "1",
-        "memory_accesses": "0",
-        "control_depth": "0",
-        "def_use_depth": "2"
-    },
-    "5": {
-        "name": "kernel_mhsa_Pipeline_TOKEN_STREAM_VALUE_MAC",
+        "name": "Block_entry_att_0_wr_proc_Pipeline_Q_LOAD",
         "file": "kernel_MHSA.cpp",
-        "fileloc": "169",
-        "instructions": "545",
-        "total_instructions": "545",
-        "calls": "",
-        "basicblocks": "39",
-        "memory_accesses": "173",
-        "control_depth": "2",
-        "def_use_depth": "1",
-        "loads": {
-            "L": "155"
-        },
-        "stores": {
-            "L": "146"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "6": {
-        "name": "kernel_mhsa_Outline_HEAD_COMPUTE",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "108",
-        "instructions": "153",
-        "total_instructions": "1095",
-        "calls": "11 17",
-        "basicblocks": "6",
-        "memory_accesses": "0",
-        "control_depth": "0",
-        "def_use_depth": "1",
-        "loads": {
-            "L": "65"
-        },
-        "stores": {
-            "L": "2"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "7": {
-        "name": "kernel_mhsa_Pipeline_CACHE_STORE",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "85",
-        "instructions": "64",
-        "total_instructions": "64",
-        "calls": "",
-        "basicblocks": "4",
-        "memory_accesses": "20",
-        "control_depth": "1",
-        "def_use_depth": "1",
-        "loads": {
-            "L": "17"
-        },
-        "stores": {
-            "L": "2"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "8": {
-        "name": "load_mat_Pipeline_mem_rd_VITIS_LOOP_25_1",
-        "file": "kernel_MatMul.cpp",
-        "fileloc": "23",
-        "instructions": "21",
-        "total_instructions": "21",
-        "calls": "",
-        "basicblocks": "4",
-        "memory_accesses": "4",
-        "control_depth": "1",
-        "def_use_depth": "1",
-        "loads": {
-            "L": "1"
-        },
-        "stores": {
-            "L": "2"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "9": {
-        "name": "kernel_mhsa_Outline_ATT_INIT",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "99",
-        "instructions": "17",
-        "total_instructions": "71",
-        "calls": "13",
-        "basicblocks": "6",
-        "memory_accesses": "0",
-        "control_depth": "0",
-        "def_use_depth": "1",
-        "loads": {
-            "L": "1"
-        },
-        "stores": {
-            "L": "2"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "10": {
-        "name": "kernel_mhsa_Outline_SOFTMAX_HEADS",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "141",
-        "instructions": "71",
-        "total_instructions": "1367",
-        "calls": "20 20 20 20 20 20 20 20 20 20 20 20",
-        "basicblocks": "17",
-        "memory_accesses": "0",
-        "control_depth": "0",
-        "def_use_depth": "1",
-        "loads": {
-            "L": "1"
-        },
-        "stores": {
-            "L": "2"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "11": {
-        "name": "kernel_mhsa_Pipeline_Q_LOAD",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "112",
+        "fileloc": "76",
         "instructions": "358",
         "total_instructions": "358",
         "calls": "",
@@ -204,60 +63,19 @@
             "L": "1"
         }
     },
-    "12": {
-        "name": "kernel_mhsa_Pipeline_OUTPUT_WRITE",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "47",
-        "instructions": "40",
-        "total_instructions": "40",
-        "calls": "",
-        "basicblocks": "4",
-        "memory_accesses": "11",
-        "control_depth": "1",
-        "def_use_depth": "1",
-        "loads": {
-            "L": "9"
-        },
-        "stores": {
-            "L": "2"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "13": {
-        "name": "kernel_mhsa_Pipeline_VITIS_LOOP_100_1",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "100",
-        "instructions": "54",
-        "total_instructions": "54",
-        "calls": "",
-        "basicblocks": "17",
-        "memory_accesses": "14",
+    "4": {
+        "name": "RoPE_Pipeline_VITIS_LOOP_16_1",
+        "file": "kernel_Rope.cpp",
+        "fileloc": "16",
+        "instructions": "285",
+        "total_instructions": "414",
+        "calls": "40",
+        "basicblocks": "8",
+        "memory_accesses": "33",
         "control_depth": "2",
         "def_use_depth": "1",
         "loads": {
-            "L": "1"
-        },
-        "stores": {
-            "L": "14"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "14": {
-        "name": "kernel_mhsa_Pipeline_RESIDUAL",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "197",
-        "instructions": "68",
-        "total_instructions": "68",
-        "calls": "",
-        "basicblocks": "13",
-        "memory_accesses": "26",
-        "control_depth": "2",
-        "def_use_depth": "1",
-        "loads": {
+            "G": "7",
             "L": "17"
         },
         "stores": {
@@ -267,56 +85,19 @@
             "L": "1"
         }
     },
-    "15": {
-        "name": "compute_matmul_Pipeline_VITIS_LOOP_43_1",
-        "file": "kernel_MatMul.cpp",
-        "fileloc": "43",
-        "instructions": "32",
-        "total_instructions": "32",
-        "calls": "",
-        "basicblocks": "9",
-        "memory_accesses": "7",
-        "control_depth": "2",
-        "def_use_depth": "1",
-        "loads": {
-            "L": "1"
-        },
-        "stores": {
-            "G": "4",
-            "L": "2"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "16": {
-        "name": "pow_generic<float>",
-        "file": "hls_pow.h",
-        "fileloc": "291",
-        "instructions": "129",
-        "total_instructions": "129",
-        "calls": "",
-        "basicblocks": "1",
-        "memory_accesses": "3",
-        "control_depth": "0",
-        "def_use_depth": "34",
-        "loads": {
-            "G": "2"
-        }
-    },
-    "17": {
-        "name": "kernel_mhsa_Pipeline_TOKEN_COMPUTE",
+    "5": {
+        "name": "Block_entry_att_0_wr_proc_Pipeline_TOKEN_COMPUTE",
         "file": "kernel_MHSA.cpp",
-        "fileloc": "121",
+        "fileloc": "76",
         "instructions": "584",
         "total_instructions": "584",
         "calls": "",
         "basicblocks": "17",
-        "memory_accesses": "79",
+        "memory_accesses": "78",
         "control_depth": "2",
         "def_use_depth": "1",
         "loads": {
-            "L": "1"
+            "L": "65"
         },
         "stores": {
             "L": "14"
@@ -325,72 +106,182 @@
             "L": "1"
         }
     },
-    "0": {
-        "name": "kernel_mhsa",
+    "6": {
+        "name": "Block_entry_gmem0_rd_proc",
         "file": "kernel_MHSA.cpp",
-        "fileloc": "6",
-        "instructions": "413",
-        "total_instructions": "5666",
-        "calls": "24 26 25 1 1 1 19 19 7 9 6 10 22 1 14 18 5 12",
-        "basicblocks": "9",
+        "fileloc": "43",
+        "instructions": "60",
+        "total_instructions": "2259",
+        "calls": "48 37 30",
+        "basicblocks": "1",
         "memory_accesses": "0",
         "control_depth": "0",
-        "def_use_depth": "5",
+        "def_use_depth": "1"
+    },
+    "7": {
+        "name": "load_vec",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "11",
+        "instructions": "80",
+        "total_instructions": "80",
+        "calls": "",
+        "basicblocks": "6",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1",
         "loads": {
-            "L": "67"
+            "L": "17"
         },
         "stores": {
-            "L": "4"
+            "L": "2"
         },
         "loops": {
             "L": "1",
             "N": "1"
         }
     },
-    "18": {
-        "name": "kernel_mhsa_Pipeline_ACCUM_WRITEBACK",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "185",
-        "instructions": "108",
-        "total_instructions": "108",
+    "8": {
+        "name": "matmul.1_for.inc",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "0",
+        "instructions": "83",
+        "total_instructions": "83",
         "calls": "",
-        "basicblocks": "7",
-        "memory_accesses": "10",
+        "basicblocks": "20",
+        "memory_accesses": "19",
         "control_depth": "2",
         "def_use_depth": "1",
         "loads": {
             "L": "1"
         },
         "stores": {
-            "L": "10"
+            "L": "18"
         },
         "loops": {
             "L": "1"
         }
     },
-    "19": {
-        "name": "RoPE",
-        "file": "kernel_Rope.cpp",
-        "fileloc": "3",
-        "instructions": "252",
-        "total_instructions": "381",
-        "calls": "16",
-        "basicblocks": "9",
-        "memory_accesses": "25",
+    "9": {
+        "name": "Block_entry_att_0_wr_proc",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "76",
+        "instructions": "260",
+        "total_instructions": "2630",
+        "calls": "23 3 5 12 16 16 16 16 16 16 16 16 16 16 16 16",
+        "basicblocks": "29",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "3",
+        "loads": {
+            "L": "67"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "3"
+        }
+    },
+    "10": {
+        "name": "matmul",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "85",
+        "instructions": "49",
+        "total_instructions": "785",
+        "calls": "7 32 44 8",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "11": {
+        "name": "load_mat_burst",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "22",
+        "instructions": "226",
+        "total_instructions": "226",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "54",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "12": {
+        "name": "Block_entry_att_0_wr_proc_Pipeline_LOAD_K_CACHE_VITIS_LOOP_84_2",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "76",
+        "instructions": "78",
+        "total_instructions": "78",
+        "calls": "",
+        "basicblocks": "15",
+        "memory_accesses": "16",
         "control_depth": "2",
         "def_use_depth": "1",
         "loads": {
-            "G": "7",
-            "L": "9"
+            "L": "3"
         },
         "stores": {
-            "L": "10"
+            "L": "14"
         },
         "loops": {
             "L": "1"
         }
     },
-    "20": {
+    "13": {
+        "name": "compute_vec_mat",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "36",
+        "instructions": "40",
+        "total_instructions": "345",
+        "calls": "14 35",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "14": {
+        "name": "compute_vec_mat.4_Pipeline_VITIS_LOOP_48_1",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "48",
+        "instructions": "84",
+        "total_instructions": "84",
+        "calls": "",
+        "basicblocks": "21",
+        "memory_accesses": "19",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "18"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "15": {
+        "name": "entry_proc",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "0",
+        "instructions": "6",
+        "total_instructions": "6",
+        "calls": "",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "16": {
         "name": "kernel_softmax",
         "file": "kernel_Softmax.cpp",
         "fileloc": "2",
@@ -411,19 +302,86 @@
             "L": "4"
         }
     },
-    "21": {
-        "name": "load_vec",
+    "17": {
+        "name": "load_mat_burst",
         "file": "kernel_MatMul.cpp",
-        "fileloc": "9",
-        "instructions": "44",
-        "total_instructions": "44",
+        "fileloc": "22",
+        "instructions": "226",
+        "total_instructions": "226",
         "calls": "",
         "basicblocks": "4",
-        "memory_accesses": "11",
+        "memory_accesses": "54",
         "control_depth": "1",
         "def_use_depth": "1",
         "loads": {
-            "L": "9"
+            "L": "3"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "18": {
+        "name": "Loop_CACHE_STORE_proc",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "55",
+        "instructions": "42",
+        "total_instructions": "140",
+        "calls": "46",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "2"
+    },
+    "19": {
+        "name": "Block_entry_proc",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "55",
+        "instructions": "28",
+        "total_instructions": "28",
+        "calls": "",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "11"
+    },
+    "20": {
+        "name": "load_vec",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "11",
+        "instructions": "39",
+        "total_instructions": "39",
+        "calls": "",
+        "basicblocks": "6",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
+        }
+    },
+    "21": {
+        "name": "Block_entry_xb_0_wr_proc",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "76",
+        "instructions": "250",
+        "total_instructions": "1052",
+        "calls": "31 26 22 28",
+        "basicblocks": "6",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "4",
+        "loads": {
+            "L": "65"
         },
         "stores": {
             "L": "2"
@@ -433,81 +391,487 @@
         }
     },
     "22": {
-        "name": "kernel_mhsa_Pipeline_XB_INIT",
+        "name": "Block_entry_xb_0_wr_proc_Pipeline_LOAD_V_CACHE_VITIS_LOOP_131_3",
         "file": "kernel_MHSA.cpp",
-        "fileloc": "147",
-        "instructions": "41",
-        "total_instructions": "41",
+        "fileloc": "76",
+        "instructions": "78",
+        "total_instructions": "78",
         "calls": "",
-        "basicblocks": "13",
-        "memory_accesses": "10",
+        "basicblocks": "15",
+        "memory_accesses": "16",
         "control_depth": "2",
         "def_use_depth": "1",
         "loads": {
-            "L": "1"
+            "L": "3"
         },
         "stores": {
-            "L": "10"
+            "L": "14"
         },
         "loops": {
             "L": "1"
         }
     },
+    "0": {
+        "name": "kernel_mhsa",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "7",
+        "instructions": "271",
+        "total_instructions": "8140",
+        "calls": "15 6 43 36 19 18 9 21 10 29",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "5"
+    },
     "23": {
-        "name": "store_result",
-        "file": "kernel_MatMul.cpp",
-        "fileloc": "63",
-        "instructions": "44",
-        "total_instructions": "44",
+        "name": "Block_entry_att_0_wr_proc_Pipeline_VITIS_LOOP_69_1",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "76",
+        "instructions": "54",
+        "total_instructions": "54",
         "calls": "",
-        "basicblocks": "13",
-        "memory_accesses": "11",
+        "basicblocks": "17",
+        "memory_accesses": "14",
         "control_depth": "2",
         "def_use_depth": "1",
         "loads": {
             "L": "1"
         },
         "stores": {
-            "L": "10"
+            "L": "14"
         },
         "loops": {
             "L": "1"
         }
     },
     "24": {
-        "name": "kernel_mhsa_Pipeline_INPUT_COPY",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "47",
-        "instructions": "48",
-        "total_instructions": "48",
+        "name": "compute_vec_mat_Pipeline_VITIS_LOOP_48_1",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "48",
+        "instructions": "84",
+        "total_instructions": "84",
         "calls": "",
-        "basicblocks": "13",
-        "memory_accesses": "11",
+        "basicblocks": "21",
+        "memory_accesses": "19",
         "control_depth": "2",
         "def_use_depth": "1",
         "loads": {
             "L": "1"
         },
         "stores": {
-            "L": "10"
+            "L": "18"
         },
         "loops": {
             "L": "1"
         }
     },
     "25": {
-        "name": "kernel_mhsa_Pipeline_VITIS_LOOP_27_2",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "68",
-        "instructions": "68",
-        "total_instructions": "68",
+        "name": "compute_vec_mat.7_Pipeline_VITIS_LOOP_48_1",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "48",
+        "instructions": "84",
+        "total_instructions": "84",
         "calls": "",
-        "basicblocks": "13",
+        "basicblocks": "21",
         "memory_accesses": "19",
         "control_depth": "2",
         "def_use_depth": "1",
         "loads": {
-            "L": "9"
+            "L": "1"
+        },
+        "stores": {
+            "L": "18"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "26": {
+        "name": "Block_entry_xb_0_wr_proc_Pipeline_ACCUM_WRITEBACK",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "76",
+        "instructions": "140",
+        "total_instructions": "140",
+        "calls": "",
+        "basicblocks": "9",
+        "memory_accesses": "18",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "18"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "27": {
+        "name": "compute_vec_mat",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "36",
+        "instructions": "40",
+        "total_instructions": "345",
+        "calls": "24 34",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "28": {
+        "name": "Block_entry_xb_0_wr_proc_Pipeline_TOKEN_STREAM_VALUE_MAC",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "76",
+        "instructions": "503",
+        "total_instructions": "503",
+        "calls": "",
+        "basicblocks": "21",
+        "memory_accesses": "154",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "151"
+        },
+        "stores": {
+            "L": "134"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "29": {
+        "name": "Loop_OUTPUT_WRITE_proc",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "166",
+        "instructions": "78",
+        "total_instructions": "78",
+        "calls": "",
+        "basicblocks": "7",
+        "memory_accesses": "21",
+        "control_depth": "4",
+        "def_use_depth": "2",
+        "loads": {
+            "L": "17"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "30": {
+        "name": "matmul",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "85",
+        "instructions": "39",
+        "total_instructions": "733",
+        "calls": "50 17 39 42",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "31": {
+        "name": "Block_entry_xb_0_wr_proc_Pipeline_XB_INIT",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "76",
+        "instructions": "81",
+        "total_instructions": "81",
+        "calls": "",
+        "basicblocks": "21",
+        "memory_accesses": "18",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "18"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "32": {
+        "name": "load_mat_burst",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "22",
+        "instructions": "228",
+        "total_instructions": "228",
+        "calls": "",
+        "basicblocks": "3",
+        "memory_accesses": "56",
+        "control_depth": "0",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "4"
+        },
+        "stores": {
+            "L": "8"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "33": {
+        "name": "compute_vec_mat.10_Pipeline_VITIS_LOOP_48_1",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "48",
+        "instructions": "84",
+        "total_instructions": "84",
+        "calls": "",
+        "basicblocks": "21",
+        "memory_accesses": "19",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "18"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "34": {
+        "name": "compute_vec_mat_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_63_4",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "53",
+        "instructions": "221",
+        "total_instructions": "221",
+        "calls": "",
+        "basicblocks": "6",
+        "memory_accesses": "69",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "34"
+        },
+        "stores": {
+            "L": "36"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "35": {
+        "name": "compute_vec_mat.4_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_63_4",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "53",
+        "instructions": "221",
+        "total_instructions": "221",
+        "calls": "",
+        "basicblocks": "6",
+        "memory_accesses": "69",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "34"
+        },
+        "stores": {
+            "L": "36"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "36": {
+        "name": "RoPE.1",
+        "file": "kernel_Rope.cpp",
+        "fileloc": "4",
+        "instructions": "35",
+        "total_instructions": "456",
+        "calls": "47",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "37": {
+        "name": "matmul",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "85",
+        "instructions": "39",
+        "total_instructions": "733",
+        "calls": "1 11 13 49",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "38": {
+        "name": "compute_vec_mat.10_Pipeline_VITIS_LOOP_53_2_VITIS_LOOP_63_4",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "53",
+        "instructions": "221",
+        "total_instructions": "221",
+        "calls": "",
+        "basicblocks": "6",
+        "memory_accesses": "69",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "34"
+        },
+        "stores": {
+            "L": "36"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "39": {
+        "name": "compute_vec_mat",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "36",
+        "instructions": "40",
+        "total_instructions": "345",
+        "calls": "25 2",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "40": {
+        "name": "pow_generic<float>",
+        "file": "hls_pow.h",
+        "fileloc": "291",
+        "instructions": "129",
+        "total_instructions": "129",
+        "calls": "",
+        "basicblocks": "1",
+        "memory_accesses": "3",
+        "control_depth": "0",
+        "def_use_depth": "34",
+        "loads": {
+            "G": "2"
+        }
+    },
+    "41": {
+        "name": "load_mat_burst",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "22",
+        "instructions": "226",
+        "total_instructions": "226",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "54",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "42": {
+        "name": "matmul.216.1_for.inc",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "0",
+        "instructions": "84",
+        "total_instructions": "84",
+        "calls": "",
+        "basicblocks": "21",
+        "memory_accesses": "19",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "18"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "43": {
+        "name": "RoPE",
+        "file": "kernel_Rope.cpp",
+        "fileloc": "4",
+        "instructions": "21",
+        "total_instructions": "435",
+        "calls": "4",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "44": {
+        "name": "compute_vec_mat",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "36",
+        "instructions": "40",
+        "total_instructions": "345",
+        "calls": "33 38",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "45": {
+        "name": "matmul.216.218.1_for.inc",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "0",
+        "instructions": "84",
+        "total_instructions": "84",
+        "calls": "",
+        "basicblocks": "21",
+        "memory_accesses": "19",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "18"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "46": {
+        "name": "Loop_CACHE_STORE_proc_Pipeline_CACHE_STORE",
+        "file": "kernel_MHSA.cpp",
+        "fileloc": "55",
+        "instructions": "98",
+        "total_instructions": "98",
+        "calls": "",
+        "basicblocks": "3",
+        "memory_accesses": "28",
+        "control_depth": "0",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "25"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "47": {
+        "name": "RoPE.1_Pipeline_VITIS_LOOP_16_1",
+        "file": "kernel_Rope.cpp",
+        "fileloc": "16",
+        "instructions": "292",
+        "total_instructions": "421",
+        "calls": "40",
+        "basicblocks": "8",
+        "memory_accesses": "33",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "G": "7",
+            "L": "17"
         },
         "stores": {
             "L": "10"
@@ -516,25 +880,59 @@
             "L": "1"
         }
     },
-    "26": {
-        "name": "kernel_mhsa_Pipeline_VITIS_LOOP_19_1",
-        "file": "kernel_MHSA.cpp",
-        "fileloc": "68",
-        "instructions": "40",
-        "total_instructions": "40",
+    "48": {
+        "name": "matmul",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "85",
+        "instructions": "39",
+        "total_instructions": "733",
+        "calls": "20 41 27 45",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "49": {
+        "name": "matmul.216.219.1_for.inc",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "0",
+        "instructions": "84",
+        "total_instructions": "84",
         "calls": "",
-        "basicblocks": "4",
-        "memory_accesses": "11",
-        "control_depth": "1",
+        "basicblocks": "21",
+        "memory_accesses": "19",
+        "control_depth": "2",
         "def_use_depth": "1",
         "loads": {
-            "L": "10"
+            "L": "1"
         },
         "stores": {
-            "L": "4"
+            "L": "18"
         },
         "loops": {
             "L": "1"
+        }
+    },
+    "50": {
+        "name": "load_vec",
+        "file": "kernel_MatMul.cpp",
+        "fileloc": "11",
+        "instructions": "39",
+        "total_instructions": "39",
+        "calls": "",
+        "basicblocks": "6",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
         }
     }
 }

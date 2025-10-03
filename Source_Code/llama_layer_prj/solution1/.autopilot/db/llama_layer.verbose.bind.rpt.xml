@@ -1,0 +1,60 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'llama_layer'" level="0">
+<item name = "Date">Thu Oct  2 22:22:42 2025
+</item>
+<item name = "Version">2025.1 (Build 6135595 on May 21 2025)</item>
+<item name = "Project">llama_layer_prj</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">versalhbm</item>
+<item name = "Target device">xcv80-lsva4737-2MHP-e-S</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00 ns, 3.906 ns, 1.08 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_100_1_fu_390">llama_layer_Pipeline_VITIS_LOOP_100_1, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_19_1_fu_429">llama_layer_Pipeline_VITIS_LOOP_19_1, 772, 772, 3.088 us, 3.088 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_19_13_fu_466">llama_layer_Pipeline_VITIS_LOOP_19_13, 772, 772, 3.088 us, 3.088 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_27_2_fu_503">llama_layer_Pipeline_VITIS_LOOP_27_2, 774, 774, 3.096 us, 3.096 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_124_2_fu_575">llama_layer_Pipeline_VITIS_LOOP_124_2, 771, 771, 3.084 us, 3.084 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_kernel_mhsa_1_fu_643">kernel_mhsa_1, ?, ?, ?, ?, ?, ?, dataflow</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_132_3_fu_725">llama_layer_Pipeline_VITIS_LOOP_132_3, 772, 772, 3.088 us, 3.088 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_19_11_fu_780">llama_layer_Pipeline_VITIS_LOOP_19_11, 772, 772, 3.088 us, 3.088 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_27_22_fu_801">llama_layer_Pipeline_VITIS_LOOP_27_22, 774, 774, 3.096 us, 3.096 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_FFN_1_fu_841">FFN_1, 21241426, 21241426, 84.966 ms, 84.966 ms, 21241427, 21241427, dataflow</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_144_4_fu_898">llama_layer_Pipeline_VITIS_LOOP_144_4, 772, 772, 3.088 us, 3.088 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_150_5_fu_982">llama_layer_Pipeline_VITIS_LOOP_150_5, 770, 770, 3.080 us, 3.080 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_llama_layer_Pipeline_VITIS_LOOP_27_24_fu_1021">llama_layer_Pipeline_VITIS_LOOP_27_24, 774, 774, 3.096 us, 3.096 us, 769, 769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_matmul_1_fu_1093">matmul_1, 590629, 590629, 2.363 ms, 2.363 ms, 590604, 590604, dataflow</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- LAYER_LOOP">?, ?, ?, -, -, 12, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

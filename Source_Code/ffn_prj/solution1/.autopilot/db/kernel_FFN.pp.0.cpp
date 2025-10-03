@@ -27114,7 +27114,7 @@ typedef float w3[12][3072];
 
 extern "C" {
 __attribute__((sdx_kernel("FFN", 0))) void FFN(float*, float*,
-         float*, float*, float*);
+            float*, float*, float*);
 }
 # 8 "kernel_FFN.cpp" 2
 
@@ -27180,7 +27180,7 @@ void Multiply_Vec(hls::stream<float> &res_strm,
 
 extern "C" {
 __attribute__((sdx_kernel("FFN", 0))) void FFN(float* i_vec, float* o_vec,
-         float* W1_vec, float* W2_vec, float* W3_vec){
+            float* W1_vec, float* W2_vec, float* W3_vec) {
 #line 10 "C:/NCKH/LLama2_110M-Inference_Architecture_on_FPGA/Source_Code/ffn.tcl"
 #pragma HLSDIRECTIVE TOP name=FFN
 # 71 "kernel_FFN.cpp"
