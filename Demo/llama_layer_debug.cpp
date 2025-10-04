@@ -165,7 +165,8 @@ void llama_layer_debug(
     }
     
     LAYER_LOOP:
-    for (int layer = 0; layer < layers; layer++) {
+    for (int layer = 0; layer < layers; layer++) 
+    {
 #pragma HLS LOOP_TRIPCOUNT min=12 max=12
         
         rms_att_weight = get_weight_ptr(all_weights, layer, 0);
@@ -212,12 +213,13 @@ void llama_layer_debug(
         }
         
         kernel_mhsa(current_token, position, wq, wk, wv, wo, key_cache, value_cache, layer);
-        
-        // Copy MHSA output to debug
-        for (int i = 0; i < dim; i++) {
+
+        if (layer == 0) {
+            for (int i = 0; i < dim; i++) {
 #pragma HLS PIPELINE II=1
             debug_mhsa_out[i] = current_token[i];
         }
+    }
         
         for (int i = 0; i < dim; i++) {
 #pragma HLS PIPELINE II=1
@@ -227,29 +229,14 @@ void llama_layer_debug(
         
         kernel_rmsnorm(layer_output, rms_ffn_weight, ffn_input);
         
-        
-  
-        
-        FFN(ffn_input, norm_output, w1, w2, w3);
-        if (layer == 0) {
-            {
-                      for (int i = 0; i < dim; i++) {
-#pragma HLS PIPELINE II=1
-            debug_ffn_norm_out[i] = ffn_input[i];
-        }
-            }
-        // Copy FFN output to debug
-        for (int i = 0; i < dim; i++) {
-#pragma HLS PIPELINE II=1
-            debug_ffn_out[i] = norm_output[i];
-        }
+        FFN(ffn_input, debug_ffn_out, w1, w2, w3);
         
         for (int i = 0; i < dim; i++) {
 #pragma HLS PIPELINE II=1
             current_token[i] = layer_output[i] + norm_output[i];
             debug_residual2_out[i] = current_token[i];
         }
-        
+    
         for (int i = 0; i < dim; i++) {
 #pragma HLS PIPELINE II=1
             token_embed[i] = current_token[i];
@@ -268,5 +255,7 @@ void llama_layer_debug(
     }
     
     matmul(output_logits, norm_output, lm_head_weight);
+
+
 }
 }
