@@ -9,89 +9,76 @@
 #include <hls_stream.h>
 #include <cmath>
 
-#ifndef dim
-#define dim 768
-#endif
-#ifndef ffn_dim
-#define ffn_dim 2048
-#endif
-#ifndef vocab_size
-#define vocab_size 32000
-#endif
-#ifndef n_heads
-#define n_heads 12
-#endif
-
-#define MAX_SEQ_LEN 1024
-#define LAYERS 12
-
-static int get_layer_weight_offset(int layer_id);
-static float* get_weight_ptr(float* all_weights, int layer_id, int weight_type);
-static float* get_final_weights(float* all_weights, int weight_type);
-
-
-static int get_layer_weight_offset(int layer_id) {
-#pragma HLS INLINE
-    // Calculate based on actual Llama2 architecture
-    int head_size = dim / n_heads;
-    int kv_dim = n_heads * head_size; // Assuming n_kv_heads = n_heads for 110M model
-    
-    return layer_id * (
-        dim +                           // rms_att_weight
-        dim * dim +                     // wq (full dim x dim for multi-head)
-        dim * kv_dim +                  // wk  
-        dim * kv_dim +                  // wv
-        dim * dim +                     // wo
-        dim +                           // rms_ffn_weight
-        ffn_dim * dim +                 // w1
-        dim * ffn_dim +                 // w2
-        ffn_dim * dim                   // w3
-    );
+int LAYERS = layers;
+static size_t get_batch_offset ()
+{
+    return vocab_size * dim;
 }
 
-static float* get_weight_ptr(float* all_weights, int layer_id, int weight_type) {
-#pragma HLS INLINE
-    int head_size = dim / n_heads;
-    int kv_dim = n_heads * head_size; // Assuming n_kv_heads = n_heads
+static float* get_weight_ptr(float* all_weights, int layer_id, int weight_type)
+{
+    size_t offset = get_batch_offset();
+    size_t n_layers = layers;
     
-    // Skip token_embedding_table first
-    int base_offset = vocab_size * dim + get_layer_weight_offset(layer_id);
-    
-    switch(weight_type) {
-        case 0: return &all_weights[base_offset]; // rms_att_weight
-        case 1: return &all_weights[base_offset + dim]; // wq
-        case 2: return &all_weights[base_offset + dim + dim * dim]; // wk  
-        case 3: return &all_weights[base_offset + dim + dim * dim + dim * kv_dim]; // wv
-        case 4: return &all_weights[base_offset + dim + dim * dim + 2 * dim * kv_dim]; // wo
-        case 5: return &all_weights[base_offset + dim + 2 * dim * dim + 2 * dim * kv_dim]; // rms_ffn_weight
-        case 6: return &all_weights[base_offset + dim + 2 * dim * dim + 2 * dim * kv_dim + dim]; // w1
-        case 7: return &all_weights[base_offset + dim + 2 * dim * dim + 2 * dim * kv_dim + dim + ffn_dim * dim]; // w2
-        case 8: return &all_weights[base_offset + dim + 2 * dim * dim + 2 * dim * kv_dim + dim + ffn_dim * dim + dim * ffn_dim]; // w3
-        default: return &all_weights[0];
+    switch (weight_type) {
+        case 0: // rms_att_weight[layer_id]
+            return &all_weights[offset + (size_t)layer_id * dim];
+        case 1: // wq[layer_id]
+            offset += n_layers * dim; // skip all rms_att
+            return &all_weights[offset + (size_t)layer_id * dim * dim];
+        case 2: // wk[layer_id]
+            offset += n_layers * dim; // skip rms_att
+            offset += n_layers * dim * dim; // skip all wq
+            return &all_weights[offset + (size_t)layer_id * dim * dim];
+        case 3: // wv[layer_id]
+            offset += n_layers * dim;
+            offset += 2ULL * n_layers * dim * dim; // skip wq + wk
+            return &all_weights[offset + (size_t)layer_id * dim * dim];
+        case 4: // wo[layer_id]
+            offset += n_layers * dim;
+            offset += 3ULL * n_layers * dim * dim; // skip wq + wk + wv
+            return &all_weights[offset + (size_t)layer_id * dim * dim];
+        case 5: // rms_ffn_weight[layer_id]
+            offset += n_layers * dim;
+            offset += 4ULL * n_layers * dim * dim; // skip all qkvo
+            return &all_weights[offset + (size_t)layer_id * dim];
+        case 6: // w1[layer_id]
+            offset += n_layers * dim;
+            offset += 4ULL * n_layers * dim * dim;
+            offset += n_layers * dim; // skip all rms_ffn
+            return &all_weights[offset + (size_t)layer_id * dim * ffn_dim];
+        case 7: // w2[layer_id]
+            offset += n_layers * dim;
+            offset += 4ULL * n_layers * dim * dim;
+            offset += n_layers * dim;
+            offset += n_layers * dim * ffn_dim; // skip all w1
+            return &all_weights[offset + (size_t)layer_id * ffn_dim * dim];
+        case 8: // w3[layer_id]
+            offset += n_layers * dim;
+            offset += 4ULL * n_layers * dim * dim;
+            offset += n_layers * dim;
+            offset += n_layers * dim * ffn_dim;
+            offset += n_layers * ffn_dim * dim; // skip w1 + w2
+            return &all_weights[offset + (size_t)layer_id * dim * ffn_dim];
+        default: return nullptr;
     }
 }
 
 static float* get_final_weights(float* all_weights, int weight_type) {
 #pragma HLS INLINE
-    int head_size = dim / n_heads;
-    int kv_dim = n_heads * head_size;
+    int offset = get_batch_offset();
+    int n_layers = layers;
     
-    // Skip token_embedding + all layers
-    int all_layers_offset = vocab_size * dim + LAYERS * (
-        dim +                           // rms_att_weight
-        dim * dim +                     // wq
-        dim * kv_dim +                  // wk  
-        dim * kv_dim +                  // wv
-        dim * dim +                     // wo
-        dim +                           // rms_ffn_weight
-        ffn_dim * dim +                 // w1
-        dim * ffn_dim +                 // w2
-        ffn_dim * dim                   // w3
-    );
+    offset += n_layers * dim; // rms_att
+    offset += 4ULL * n_layers * dim * dim; // qkvo
+    offset += n_layers * dim; // rms_ffn
+    offset += n_layers * dim * ffn_dim; // w1
+    offset += n_layers * ffn_dim * dim; // w2
+    offset += n_layers * dim * ffn_dim; // w3
     
     switch(weight_type) {
-        case 0: return &all_weights[all_layers_offset]; // rms_final_weight
-        case 1: return &all_weights[all_layers_offset + dim]; // lm_head/wcls
+        case 0: return &all_weights[offset]; // rms_final_weight
+        case 1: return &all_weights[offset + dim]; // lm_head/wcls
         default: return &all_weights[0];
     }
 }
@@ -178,7 +165,7 @@ void llama_layer_debug(
     }
     
     LAYER_LOOP:
-    for (int layer = 0; layer < LAYERS; layer++) {
+    for (int layer = 0; layer < layers; layer++) {
 #pragma HLS LOOP_TRIPCOUNT min=12 max=12
         
         rms_att_weight = get_weight_ptr(all_weights, layer, 0);
@@ -240,14 +227,17 @@ void llama_layer_debug(
         
         kernel_rmsnorm(layer_output, rms_ffn_weight, ffn_input);
         
-        // Copy FFN norm to debug
-        for (int i = 0; i < dim; i++) {
+        
+  
+        
+        FFN(ffn_input, norm_output, w1, w2, w3);
+        if (layer == 0) {
+            {
+                      for (int i = 0; i < dim; i++) {
 #pragma HLS PIPELINE II=1
             debug_ffn_norm_out[i] = ffn_input[i];
         }
-        
-        FFN(ffn_input, norm_output, w1, w2, w3);
-        
+            }
         // Copy FFN output to debug
         for (int i = 0; i < dim; i++) {
 #pragma HLS PIPELINE II=1

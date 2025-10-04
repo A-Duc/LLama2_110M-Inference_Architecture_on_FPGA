@@ -408,6 +408,10 @@ int main() {
     for (int i = 0; i < 20; ++i) std::cout << debug_k_rope_out[i] << " ";
     std::cout << std::endl;
 
+    
+    std::cout << "dau ra output_logits: ";
+    for (int i = 0; i < 20; ++i) std::cout << output_logits[i] << " ";
+    std::cout << std::endl;
     std::cout << "--- Testbench hoàn tất! ---" << std::endl;
     return 0;
 }
