@@ -29,7 +29,7 @@ void Mul_Vec(float * res,
 }
 
 
-
+//Add 2 vector
 void Add_Vec(float * res,
              float * vec_1,
              float * vec_2,
